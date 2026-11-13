@@ -1,0 +1,12 @@
+# Local backup snapshots
+backups/
+
+# Environment & secrets
+.env
+.env.*
+
+# OS & editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log

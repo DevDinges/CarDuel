@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CAR DUEL — Head-to-Head Car Comparison</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Inter:wght@400;500;600;700&display=swap&subset=latin,cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="dock-is-collapsed">
+  <!-- Top HUD Bar -->
+  <header class="top-hud">
+    <div class="hud-side hud-p1">
+      <span class="player-badge p1-badge">P1</span>
+      <div class="selector-group">
+        <label for="select-car-left" id="label-contender-1">CONTENDER 1</label>
+        <select id="select-car-left" aria-label="Select First Car"></select>
+      </div>
+    </div>
+
+    <!-- Center Title flanked by Theme Button (Left) and Translation Button (Right) -->
+    <div class="hud-center-cluster">
+      <div class="hud-center-row">
+        <!-- Left of CAR DUEL: Theme Selector Button & Menu (Screenshot 3 Icon) -->
+        <div class="hud-utility-wrapper" id="theme-menu-wrapper">
+          <button
+            type="button"
+            class="hud-utility-btn"
+            id="theme-toggle-btn"
+            aria-expanded="false"
+            title="Change Theme"
+          >
+            <!-- Palette Icon (Screenshot 3) -->
+            <svg class="hud-utility-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10c1.38 0 2.5-1.12 2.5-2.5 0-.61-.23-1.2-.64-1.67-.08-.1-.13-.21-.13-.33 0-.28.22-.5.5-.5H16c3.31 0 6-2.69 6-6 0-4.96-4.49-9-10-9z"/>
+              <circle cx="6.5" cy="11.5" r="1.35" fill="currentColor" stroke="none"/>
+              <circle cx="9.5" cy="7.5" r="1.35" fill="currentColor" stroke="none"/>
+              <circle cx="14.5" cy="7.5" r="1.35" fill="currentColor" stroke="none"/>
+              <circle cx="17.5" cy="11.5" r="1.35" fill="currentColor" stroke="none"/>
+            </svg>
+            <span class="hud-utility-label" id="theme-btn-label">Theme</span>
+            <span class="hud-utility-chevron">▾</span>
+          </button>
+
+          <div class="hud-dropdown-menu theme-dropdown" id="theme-dropdown" aria-hidden="true">
+            <div class="hud-dropdown-title" id="theme-menu-header">SELECT THEME</div>
+            <button type="button" class="hud-dropdown-item active" data-theme-choice="dark">
+              <span class="theme-swatch swatch-dark"></span>
+              <span id="theme-opt-dark">Dark Mode</span>
+            </button>
+            <button type="button" class="hud-dropdown-item" data-theme-choice="dark-soft">
+              <span class="theme-swatch swatch-dark-soft"></span>
+              <span id="theme-opt-dark-soft">Dark Mode (Soft Colors)</span>
+            </button>
+            <button type="button" class="hud-dropdown-item" data-theme-choice="light">
+              <span class="theme-swatch swatch-light"></span>
+              <span id="theme-opt-light">White Mode</span>
+            </button>
+            <button type="button" class="hud-dropdown-item" data-theme-choice="light-soft">
+              <span class="theme-swatch swatch-light-soft"></span>
+              <span id="theme-opt-light-soft">White Mode (Soft Colors)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Main Brand Title -->
+        <div class="hud-center">
+          <div class="brand-title">CAR<span>DUEL</span></div>
+          <div class="brand-subtitle" id="brand-subtitle">HEAD-TO-HEAD CAR COMPARISON</div>
+        </div>
+
+        <!-- Right of CAR DUEL: Translation Button & Menu (Screenshot 2 Icon + Flag) -->
+        <div class="hud-utility-wrapper" id="lang-menu-wrapper">
+          <button
+            type="button"
+            class="hud-utility-btn"
+            id="lang-toggle-btn"
+            aria-expanded="false"
+            title="Change Language"
+          >
+            <!-- Google Chrome Translate Symbol (Screenshot 2) -->
+            <svg class="hud-utility-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/>
+            </svg>
+            <span class="lang-flag-box" id="current-lang-flag"></span>
+            <span class="hud-utility-label" id="current-lang-code">EN</span>
+            <span class="hud-utility-chevron">▾</span>
+          </button>
+
+          <div class="hud-dropdown-menu lang-dropdown" id="lang-dropdown" aria-hidden="true">
+            <div class="hud-dropdown-title" id="lang-menu-header">LANGUAGE</div>
+            <button type="button" class="hud-dropdown-item active" data-lang-choice="en">
+              <span class="lang-flag-box" data-flag-render="en"></span>
+              <span>English</span>
+            </button>
+            <button type="button" class="hud-dropdown-item" data-lang-choice="de">
+              <span class="lang-flag-box" data-flag-render="de"></span>
+              <span>Deutsch</span>
+            </button>
+            <button type="button" class="hud-dropdown-item" data-lang-choice="ru">
+              <span class="lang-flag-box" data-flag-render="ru"></span>
+              <span>Русский</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hud-side hud-p2">
+      <div class="selector-group align-right">
+        <label for="select-car-right" id="label-opponent-2">OPPONENT (P2)</label>
+        <select id="select-car-right" aria-label="Select Opponent Car"></select>
+      </div>
+      <span class="player-badge p2-badge">P2</span>
+    </div>
+  </header>
+
+  <!-- Main 4-Column Duel Arena (Stats Left | Car 1 | Car 2 | Stats Right) -->
+  <main class="duel-stage">
+    <!-- Far Left: Car 1 Stats Panel -->
+    <aside class="stat-column stat-column-left" id="stats-left"></aside>
+
+    <!-- Center Split Showdown: Car 1 Image vs Car 2 Image -->
+    <section class="versus-arena">
+      <!-- Left Car Visual -->
+      <div class="car-viewport viewport-left" id="viewport-left">
+        <div class="car-number-watermark" id="watermark-left">#01</div>
+        <div class="viewport-caption">
+          <span class="caption-tag p1-tag" id="tag-car-1">CAR 1</span>
+          <div class="engine-selector-wrapper" id="engine-wrapper-left">
+            <button
+              type="button"
+              class="caption-spec engine-select-btn"
+              id="engine-btn-left"
+              aria-expanded="false"
+            >
+              <svg class="engine-icon-svg" viewBox="0 0 32 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="11" y1="3.5" x2="18.5" y2="3.5" />
+                <line x1="14.75" y1="3.5" x2="14.75" y2="6.5" />
+                <line x1="3.5" y1="8.5" x2="3.5" y2="17" />
+                <line x1="3.5" y1="12.75" x2="6.2" y2="12.75" />
+                <path d="M6.2 8.5 H9.2 V6.5 H20.5 V9.5 H23.5 V12 H25.8 V9.2 H28.5 V17.8 H25.8 V15 H23.5 V17.5 L21 20 H12.5 L10 16.5 H6.2 Z" />
+              </svg>
+              <span class="engine-btn-text" id="spec-pill-left"></span>
+              <span class="engine-btn-chevron">▾</span>
+            </button>
+            <div class="engine-dropdown-menu" id="engine-dropdown-left" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="car-image-wrapper" data-side="left">
+          <img id="img-left" src="assets/toyota-auris-2014.png" alt="Left selected car" />
+          <button type="button" class="expand-car-btn" id="expand-left-btn" title="View full car picture">
+            <span class="expand-icon">⛶</span> <span id="expand-label-left">EXPAND FULL CAR</span>
+          </button>
+        </div>
+        <!-- Remarkable Positive & Negative Traits directly under Left Car Picture -->
+        <div class="car-traits-tray" id="traits-left"></div>
+      </div>
+
+      <!-- Center Split Divider + VS Emblem -->
+      <div class="center-divider">
+        <div class="divider-line"></div>
+        <div class="vs-medallion" title="Swap Sides" id="swap-cars-btn">
+          <span class="vs-text">VS</span>
+          <span class="vs-swap-hint" id="vs-swap-label">⇄ SWAP</span>
+        </div>
+      </div>
+
+      <!-- Right Car Visual (Mirrored toward center like Screenshot 2) -->
+      <div class="car-viewport viewport-right" id="viewport-right">
+        <div class="car-number-watermark" id="watermark-right">#02</div>
+        <div class="viewport-caption caption-right">
+          <div class="engine-selector-wrapper" id="engine-wrapper-right">
+            <button
+              type="button"
+              class="caption-spec engine-select-btn"
+              id="engine-btn-right"
+              aria-expanded="false"
+            >
+              <svg class="engine-icon-svg" viewBox="0 0 32 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="11" y1="3.5" x2="18.5" y2="3.5" />
+                <line x1="14.75" y1="3.5" x2="14.75" y2="6.5" />
+                <line x1="3.5" y1="8.5" x2="3.5" y2="17" />
+                <line x1="3.5" y1="12.75" x2="6.2" y2="12.75" />
+                <path d="M6.2 8.5 H9.2 V6.5 H20.5 V9.5 H23.5 V12 H25.8 V9.2 H28.5 V17.8 H25.8 V15 H23.5 V17.5 L21 20 H12.5 L10 16.5 H6.2 Z" />
+              </svg>
+              <span class="engine-btn-text" id="spec-pill-right"></span>
+              <span class="engine-btn-chevron">▾</span>
+            </button>
+            <div class="engine-dropdown-menu engine-dropdown-right" id="engine-dropdown-right" aria-hidden="true"></div>
+          </div>
+          <span class="caption-tag p2-tag" id="tag-opponent">OPPONENT</span>
+        </div>
+        <div class="car-image-wrapper" data-side="right">
+          <img id="img-right" class="mirrored-car" src="assets/honda-civic-2014.png" alt="Right opponent car" />
+          <button type="button" class="expand-car-btn" id="expand-right-btn" title="View full car picture">
+            <span class="expand-icon">⛶</span> <span id="expand-label-right">EXPAND FULL CAR</span>
+          </button>
+        </div>
+        <!-- Remarkable Positive & Negative Traits directly under Right Car Picture -->
+        <div class="car-traits-tray" id="traits-right"></div>
+      </div>
+
+      <!-- Head-to-Head Verdict Banner floating at bottom of arena -->
+      <div class="duel-verdict-bar" id="duel-verdict-bar"></div>
+    </section>
+
+    <!-- Far Right: Car 2 Stats Panel -->
+    <aside class="stat-column stat-column-right" id="stats-right"></aside>
+  </main>
+
+  <!-- Bottom "Select Your Car" Roster Dock -->
+  <footer class="fighter-dock collapsed" id="fighter-dock">
+    <!-- Center Top/Bottom Collapse & Expand Arrow Button -->
+    <button
+      type="button"
+      class="dock-collapse-tab"
+      id="dock-collapse-btn"
+      aria-expanded="false"
+      title="Show Car Selection"
+    >
+      <svg class="dock-collapse-arrow-svg" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M3 3L12 11L21 3" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
+    <div class="dock-inner-content" id="dock-inner-content">
+      <div class="dock-header">
+      <div class="dock-mode-toggle">
+        <span class="dock-title" id="dock-title-label">SELECT YOUR CAR</span>
+        <div class="target-slot-buttons">
+          <button type="button" class="slot-btn active-p1" id="target-p1-btn"></button>
+          <button type="button" class="slot-btn" id="target-p2-btn"></button>
+        </div>
+      </div>
+
+      <!-- Clickable Menu Trigger for Index Classes (Sorted S+ down to F) -->
+      <div class="class-menu-wrapper" id="class-menu-wrapper">
+        <button
+          type="button"
+          class="class-menu-toggle-btn"
+          id="class-menu-toggle-btn"
+          aria-expanded="false"
+        >
+          <span class="class-menu-icon">🏆</span>
+          <span id="index-classes-btn-label">INDEX CLASSES</span>
+          <span class="class-menu-chevron" id="class-menu-chevron">▴</span>
+        </button>
+
+        <!-- Collapsible Popover Menu (Vertical Hierarchy S+ -> F) -->
+        <div class="class-menu-popover" id="class-menu-popover" aria-hidden="true">
+          <div class="class-popover-header">
+            <span id="index-classes-popover-title">INDEX CLASSES (0.0 – 10.0)</span>
+            <button type="button" class="class-popover-close" id="class-popover-close" title="Close menu">✕</button>
+          </div>
+          <div class="tier-hierarchy-list">
+            <div class="tier-row">
+              <span class="tier-badge-cell class-s-plus">✦ S+</span>
+              <span class="tier-range-cell">9.6 – 10.0</span>
+            </div>
+            <div class="tier-row">
+              <span class="tier-badge-cell class-s">✦ S</span>
+              <span class="tier-range-cell">9.0 – 9.5</span>
+            </div>
+            <div class="tier-row">
+              <span class="tier-badge-cell class-a">A</span>
+              <span class="tier-range-cell">8.0 – 8.9</span>
+            </div>
+            <div class="tier-row">
+              <span class="tier-badge-cell class-b">B</span>
+              <span class="tier-range-cell">7.0 – 7.9</span>
+            </div>
+            <div class="tier-row">
+              <span class="tier-badge-cell class-c">C</span>
+              <span class="tier-range-cell">6.0 – 6.9</span>
+            </div>
+            <div class="tier-row">
+              <span class="tier-badge-cell class-d">D</span>
+              <span class="tier-range-cell">5.0 – 5.9</span>
+            </div>
+            <div class="tier-row">
+              <span class="tier-badge-cell class-f">F</span>
+              <span class="tier-range-cell">0.0 – 4.9</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="roster-carousel-wrapper">
+      <button
+        type="button"
+        class="roster-nav-arrow roster-arrow-left"
+        id="roster-arrow-left"
+        title="Scroll left"
+        aria-label="Scroll car list left"
+      >
+        ‹
+      </button>
+      <div class="roster-strip" id="roster-strip"></div>
+      <button
+        type="button"
+        class="roster-nav-arrow roster-arrow-right"
+        id="roster-arrow-right"
+        title="Scroll right"
+        aria-label="Scroll car list right"
+      >
+        ›
+      </button>
+    </div>
+    </div>
+  </footer>
+
+  <!-- Full-Picture Car Lightbox Modal -->
+  <div class="car-lightbox" id="car-lightbox" aria-hidden="true">
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    <div class="lightbox-content">
+      <div class="lightbox-header">
+        <div class="lightbox-title-group">
+          <span class="lightbox-badge" id="lightbox-badge">P1</span>
+          <h2 class="lightbox-title" id="lightbox-title">2014 Toyota Auris 1.8 Hybrid</h2>
+          <span class="lightbox-spec" id="lightbox-spec">1.8L HSD e-CVT • 136 HP</span>
+        </div>
+        <button type="button" class="lightbox-close-btn" id="lightbox-close-btn" title="Close full view">
+          ✕ CLOSE
+        </button>
+      </div>
+      <div class="lightbox-image-frame">
+        <button
+          type="button"
+          class="lightbox-nav-btn lightbox-prev-btn"
+          id="lightbox-prev-btn"
+          aria-label="Previous angle"
+        >
+          ‹
+        </button>
+        <img id="lightbox-img" src="" alt="Full car showcase view" />
+        <button
+          type="button"
+          class="lightbox-nav-btn lightbox-next-btn"
+          id="lightbox-next-btn"
+          aria-label="Next angle"
+        >
+          ›
+        </button>
+        <div class="lightbox-angle-bar">
+          <span class="lightbox-angle-label" id="lightbox-angle-label">Front-Side</span>
+          <div class="lightbox-dots" id="lightbox-dots"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Engineering Dossier Deep-Dive Modal (Option 1 Prototype) -->
+  <div class="stat-dossier-modal" id="stat-dossier-modal" aria-hidden="true">
+    <div class="stat-dossier-backdrop" id="stat-dossier-backdrop"></div>
+    <div class="stat-dossier-dialog" role="dialog" aria-modal="true" aria-labelledby="dossier-stat-title">
+      <div class="stat-dossier-header">
+        <div class="stat-dossier-title-wrap">
+          <div class="stat-dossier-category" id="dossier-category-label">1. RELIABILITY &amp; QUALITY</div>
+          <h2 class="stat-dossier-title" id="dossier-stat-title">POWERTRAIN DURABILITY</h2>
+        </div>
+        <button type="button" class="dossier-close-btn" id="dossier-close-btn" title="Close dossier">
+          ✕ CLOSE
+        </button>
+      </div>
+
+      <div class="stat-dossier-body" id="stat-dossier-body">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
