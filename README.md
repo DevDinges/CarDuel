@@ -19,3 +19,6 @@ The main goal is to help the user compare cars with one another in different cat
 
 - Harness: Antigravity
 - AI-Model: Gemini 4 Argon & Gemini 4 Hydrogen
+
+## Time
+Version 1 (13.11.26): Est. <10h
