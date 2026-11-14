@@ -1,6 +1,6 @@
 CarDuel Website
 
-Welcome to my first ever "vibe-coded" website.
+Welcome to my first website ever.
 CarDuel is a web application where the user can select two cars and compare them in a face-to-face 'versus' style.
 The main goal is to help the user compare cars with one another in different categories to discover each car's pros and cons, what to look out for and ultimately what car is best to buy.
 
@@ -20,5 +20,6 @@ The main goal is to help the user compare cars with one another in different cat
 - Harness: Antigravity
 - AI-Model: Gemini 4 Argon & Gemini 4 Hydrogen
 
-## Time
+## Version-History
 Version 1 (13.11.26): Est. <10h
+Version 2 (14.11.26): Est <5h
