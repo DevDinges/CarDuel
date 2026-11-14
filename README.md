@@ -1,11 +1,13 @@
 # CARDUEL — Head-to-Head Car Comparison
 
-A zero-dependency static web app for side-by-side car comparisons with Forza-inspired stat pillars, multi-engine variants, multi-angle showroom photography, and live trilingual localization.
+My first website (aside from tutorial projects).
+CarDuel is a head-to-head car comparison website where the user can select from a (yet small) variety of cars to compare with.
+Its possible to compare the same car just with different powertrain setups (different engines).
 
 ## Features
 
-- **Smash-Style Car Selection Grid:** Visual contender grid with `C1` / `C2` slot assignment, plus top HUD dropdowns sorted by vehicle class (`Subcompact`, `Hatchback`, `Hot-Hatch`, `Sedan`, `SUV`) or roster number (`Unsorted`).
-- **4-Pillar Engineering Ratings & Sub-Stat Dossiers:** 12 weighted sub-ratings across Reliability & Quality, Practicality & Daily Use, Performance & Driving, and Running Costs & TCO — including clickable engineering dossiers (`i`) on powertrain durability.
+- **Car Selection Grid:** Select two contenders to compare against in a grid-style selection menu
+- **4-Pillar Category Ratings:** 12 weighted sub-ratings across Reliability & Quality, Practicality & Daily Use, Performance & Driving, and Running Costs & TCO — including clickable engineering dossiers (`i`) on powertrain durability.
 - **Multi-Engine Support:** Switch each contender's engine (Petrol, Diesel, Hybrid) with dynamic recalculation of ratings, pros/cons, market pricing, and overall `S+`–`F` index class.
 - **Market & Depreciation Breakdown (`€`):** Hover or click the `€` badge next to Used Market price to inspect original MSRP, total depreciation (`€` and `%`), value retained, average annual loss, and value expectation.
 - **5-Angle Showroom Lightbox:** Inspect Front, Front-Side, Side, Side-Rear, and Rear views for every car.
@@ -25,3 +27,7 @@ A zero-dependency static web app for side-by-side car comparisons with Forza-ins
 ## Running Locally
 
 No build step or package manager required — open `index.html` directly in any modern browser or serve the folder with any static HTTP server.
+
+## Version
+- Version 1 (13.11.26): initial Website upload
+- Version 2 (14.11.26): comprehensive re-design of the landingpage and adding of more cars
