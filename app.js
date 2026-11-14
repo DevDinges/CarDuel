@@ -12,8 +12,8 @@ const FLAG_SVGS = {
 const UI_TRANSLATIONS = {
   en: {
     code: 'EN',
-    contender1: 'CONTENDER 1',
-    opponentP2: 'OPPONENT (P2)',
+    contender1: 'CONTENDER',
+    opponentP2: 'OPPONENT',
     brandSubtitle: 'HEAD-TO-HEAD CAR COMPARISON',
     themeBtn: 'Theme',
     selectTheme: 'SELECT THEME',
@@ -31,16 +31,16 @@ const UI_TRANSLATIONS = {
     expandAll: '+ Expand All',
     collapseAll: '− Collapse All',
     ratingCol: 'Rating',
-    vsOppCol: 'vs Opp',
+    vsOppCol: 'Opp',
     originalMsrp: 'Original MSRP',
     estUsedMarket: 'Est. Used Market',
     overallRating: 'Overall Rating',
     classSuffix: '-Class',
     selectYourCar: 'SELECT YOUR CAR',
-    pickingP1: 'Picking for: <strong>P1 (Left)</strong>',
+    pickingP1: 'Picking for: <strong>Contender (Left)</strong>',
     pickingP2: 'Picking for: <strong>Opponent (Right)</strong>',
-    indexClassesBtn: 'INDEX CLASSES',
-    indexClassesTitle: 'INDEX CLASSES (0.0 – 10.0)',
+    indexClassesBtn: 'INDEX',
+    indexClassesTitle: 'INDEX CLASSES',
     carLabel: 'CAR',
     p1Pillars: 'P1 PILLARS',
     p2Pillars: 'P2 PILLARS',
@@ -54,6 +54,13 @@ const UI_TRANSLATIONS = {
     engineCategoryDiesel: 'Diesel',
     engineCategoryHybrid: 'Hybrid',
     defaultEngineBadge: 'DEFAULT',
+    selectCarHeader: 'SELECT VEHICLE BY TYPE',
+    carSortUnsorted: 'UNSORTED',
+    carTypeSubcompact: 'Subcompact',
+    carTypeHatchback: 'Hatchback',
+    carTypeHotHatch: 'Hot-Hatch',
+    carTypeSedan: 'Sedan',
+    carTypeSuv: 'SUV',
     hideRosterTooltip: 'Hide Car Selection',
     showRosterTooltip: 'Show Car Selection',
     dossierTitle: 'ENGINEERING DOSSIER',
@@ -68,12 +75,31 @@ const UI_TRANSLATIONS = {
     angleFrontSide: 'Front-Side',
     angleSide: 'Side',
     angleSideRear: 'Side-Rear',
-    angleRear: 'Rear'
+    angleRear: 'Rear',
+    chooseCarPlaceholder: 'Select a Car...',
+    smashTitle: 'CHOOSE YOUR CONTENDERS',
+    smashSlotP1: 'C1 CONTENDER',
+    smashSlotP2: 'C2 OPPONENT',
+    smashPickingHint: 'Click a car below to assign',
+    smashReadyHint: 'Both contenders locked in!',
+    smashClearSlot: 'Clear',
+    backToGridBtn: 'CAR SELECTION MENU',
+    priceTitle: 'MARKET & DEPRECIATION',
+    priceMsrpLabel: 'Original MSRP',
+    priceCurrentLabel: 'Current Value',
+    priceDepTotalLabel: 'Total Depreciation',
+    priceRetainedLabel: 'Value Retained',
+    priceAnnualLabel: 'Avg. Loss / Year',
+    priceOutlookLabel: 'Value Expectation',
+    outlookFloor: 'Bottomed Out • Minimal Further Drop',
+    outlookStrong: 'Strong Resale • High Demand',
+    outlookEnthusiast: 'Enthusiast Icon • Rising / Firm',
+    outlookSteady: 'Steady • Predictable Curve'
   },
   de: {
     code: 'DE',
-    contender1: 'KANDIDAT 1',
-    opponentP2: 'GEGNER (P2)',
+    contender1: 'KANDIDAT',
+    opponentP2: 'GEGNER',
     brandSubtitle: 'DIREKTER FAHRZEUGVERGLEICH',
     themeBtn: 'Design',
     selectTheme: 'DESIGN WÄHLEN',
@@ -91,16 +117,16 @@ const UI_TRANSLATIONS = {
     expandAll: '+ Alle öffnen',
     collapseAll: '− Alle schließen',
     ratingCol: 'Wertung',
-    vsOppCol: 'vgl. Geg.',
+    vsOppCol: 'Geg.',
     originalMsrp: 'Neupreis (UVP)',
     estUsedMarket: 'Gebrauchtmarkt (ca.)',
     overallRating: 'Gesamtwertung',
     classSuffix: '-Klasse',
     selectYourCar: 'WÄHLE DEIN AUTO',
-    pickingP1: 'Auswahl für: <strong>P1 (Links)</strong>',
+    pickingP1: 'Auswahl für: <strong>Kandidat (Links)</strong>',
     pickingP2: 'Auswahl für: <strong>Gegner (Rechts)</strong>',
-    indexClassesBtn: 'INDEX-KLASSEN',
-    indexClassesTitle: 'INDEX-KLASSEN (0.0 – 10.0)',
+    indexClassesBtn: 'INDEX',
+    indexClassesTitle: 'INDEX-KLASSEN',
     carLabel: 'AUTO',
     p1Pillars: 'P1 SÄULEN',
     p2Pillars: 'P2 SÄULEN',
@@ -114,6 +140,13 @@ const UI_TRANSLATIONS = {
     engineCategoryDiesel: 'Diesel',
     engineCategoryHybrid: 'Hybrid',
     defaultEngineBadge: 'STANDARD',
+    selectCarHeader: 'FAHRZEUG NACH TYP WÄHLEN',
+    carSortUnsorted: 'UNSORTIERT',
+    carTypeSubcompact: 'Kleinwagen',
+    carTypeHatchback: 'Kompaktwagen (Hatchback)',
+    carTypeHotHatch: 'Hot-Hatch',
+    carTypeSedan: 'Limousine (Sedan)',
+    carTypeSuv: 'SUV',
     hideRosterTooltip: 'Fahrzeugauswahl ausblenden',
     showRosterTooltip: 'Fahrzeugauswahl einblenden',
     dossierTitle: 'TECHNIK-DOSSIER',
@@ -128,12 +161,31 @@ const UI_TRANSLATIONS = {
     angleFrontSide: 'Front-Seite',
     angleSide: 'Seite',
     angleSideRear: 'Heck-Seite',
-    angleRear: 'Heck'
+    angleRear: 'Heck',
+    chooseCarPlaceholder: 'Fahrzeug wählen...',
+    smashTitle: 'WÄHLE DEINE FAHRZEUGE',
+    smashSlotP1: 'C1 KANDIDAT',
+    smashSlotP2: 'C2 GEGNER',
+    smashPickingHint: 'Klicke unten auf ein Auto zur Auswahl',
+    smashReadyHint: 'Beide Fahrzeuge ausgewählt!',
+    smashClearSlot: 'Entfernen',
+    backToGridBtn: 'FAHRZEUGAUSWAHL-MENÜ',
+    priceTitle: 'MARKT & WERTVERLUST',
+    priceMsrpLabel: 'Neupreis (UVP)',
+    priceCurrentLabel: 'Aktueller Wert',
+    priceDepTotalLabel: 'Wertverlust Gesamt',
+    priceRetainedLabel: 'Restwert-Anteil',
+    priceAnnualLabel: 'Ø Verlust / Jahr',
+    priceOutlookLabel: 'Werterwartung',
+    outlookFloor: 'Talsohle erreicht • Kaum weiterer Verlust',
+    outlookStrong: 'Wertstabil • Hohe Nachfrage',
+    outlookEnthusiast: 'Liebhaber-Status • Stabil bis steigend',
+    outlookSteady: 'Solide • Planbarer Wertverlauf'
   },
   ru: {
     code: 'RU',
-    contender1: 'УЧАСТНИК 1',
-    opponentP2: 'СОПЕРНИК (P2)',
+    contender1: 'УЧАСТНИК',
+    opponentP2: 'СОПЕРНИК',
     brandSubtitle: 'ПРЯМОЕ СРАВНЕНИЕ АВТОМОБИЛЕЙ',
     themeBtn: 'Тема',
     selectTheme: 'ВЫБЕРИТЕ ТЕМУ',
@@ -151,16 +203,16 @@ const UI_TRANSLATIONS = {
     expandAll: '+ Развернуть',
     collapseAll: '− Свернуть',
     ratingCol: 'Оценка',
-    vsOppCol: 'vs Соп.',
+    vsOppCol: 'Соп.',
     originalMsrp: 'Цена нового',
     estUsedMarket: 'Рынок б/у (прим.)',
     overallRating: 'Общий рейтинг',
     classSuffix: '-Класс',
     selectYourCar: 'ВЫБЕРИТЕ АВТОМОБИЛЬ',
-    pickingP1: 'Выбор для: <strong>P1 (Слева)</strong>',
+    pickingP1: 'Выбор для: <strong>Участника (Слева)</strong>',
     pickingP2: 'Выбор для: <strong>Соперника (Справа)</strong>',
-    indexClassesBtn: 'КЛАССЫ ИНДЕКСА',
-    indexClassesTitle: 'КЛАССЫ ИНДЕКСА (0.0 – 10.0)',
+    indexClassesBtn: 'ИНДЕКС',
+    indexClassesTitle: 'КЛАССЫ ИНДЕКСА',
     carLabel: 'АВТО',
     p1Pillars: 'P1 КАТЕГОРИИ',
     p2Pillars: 'P2 КАТЕГОРИИ',
@@ -174,6 +226,13 @@ const UI_TRANSLATIONS = {
     engineCategoryDiesel: 'Дизель',
     engineCategoryHybrid: 'Гибрид',
     defaultEngineBadge: 'ОСНОВНОЙ',
+    selectCarHeader: 'ВЫБЕРИТЕ АВТО ПО ТИПУ',
+    carSortUnsorted: 'БЕЗ СОРТИРОВКИ',
+    carTypeSubcompact: 'Субкомпакт',
+    carTypeHatchback: 'Хэтчбек',
+    carTypeHotHatch: 'Хот-хэтч',
+    carTypeSedan: 'Седан',
+    carTypeSuv: 'SUV (Кроссовер)',
     hideRosterTooltip: 'Скрыть выбор авто',
     showRosterTooltip: 'Показать выбор авто',
     dossierTitle: 'ТЕХНИЧЕСКОЕ ДОСЬЕ',
@@ -188,7 +247,26 @@ const UI_TRANSLATIONS = {
     angleFrontSide: 'Спереди сбоку',
     angleSide: 'Сбоку',
     angleSideRear: 'Сзади сбоку',
-    angleRear: 'Сзади'
+    angleRear: 'Сзади',
+    chooseCarPlaceholder: 'Выберите авто...',
+    smashTitle: 'ВЫБЕРИТЕ АВТОМОБИЛИ',
+    smashSlotP1: 'C1 УЧАСТНИК',
+    smashSlotP2: 'C2 СОПЕРНИК',
+    smashPickingHint: 'Нажмите на автомобиль ниже для выбора',
+    smashReadyHint: 'Оба автомобиля выбраны!',
+    smashClearSlot: 'Сбросить',
+    backToGridBtn: 'МЕНЮ ВЫБОРА АВТО',
+    priceTitle: 'РЫНОК И АМОРТИЗАЦИЯ',
+    priceMsrpLabel: 'Цена нового',
+    priceCurrentLabel: 'Текущая цена',
+    priceDepTotalLabel: 'Общая потеря цены',
+    priceRetainedLabel: 'Остаточная стоимость',
+    priceAnnualLabel: 'Потеря в год (ср.)',
+    priceOutlookLabel: 'Прогноз цены',
+    outlookFloor: 'Дно рынка • Минимальное падение',
+    outlookStrong: 'Высокая ликвидность • Хороший спрос',
+    outlookEnthusiast: 'Культовая модель • Стабильный / рост',
+    outlookSteady: 'Умеренное снижение • Предсказуемо'
   }
 };
 
@@ -446,7 +524,12 @@ const CAR_ROSTER = [
   {
     id: 'toyota-auris-2014',
     number: '01',
-    yearMake: '2014 TOYOTA',
+    carType: 'hatchback',
+    gridOrder: 1,
+    gridLabel: 'Toyota Auris',
+    yearMake: '2012-2019 TOYOTA',
+    shortTitle: 'AURIS (E180)',
+    fullName: '2012-2019 Toyota Auris (E180)',
     rarityClass: 'rarity-legendary',
     drivetrain: 'FWD',
     image: 'assets/toyota-auris-2014.png',
@@ -589,7 +672,7 @@ const CAR_ROSTER = [
             score: 7.6,
             badges: {
               en: ['360L Boot (1,200L Max)', 'Compact Rear Space'],
-              de: ['360L Boot (1.200L Max)', 'Kompakter Fond'],
+              de: ['360L Kofferraum (1.200L Max)', 'Kompakter Fond'],
               ru: ['Багажник 360–1 200 л', 'Тесновато сзади']
             }
           },
@@ -697,7 +780,7 @@ const CAR_ROSTER = [
           de: [
             '6.900 € EINSTIEGSPREIS',
             'SIMPLER 1.33 KETTENMOTOR',
-            'NIEDRIGE STEUER & TYP',
+            'NIEDRIGE STEUER & VERSICHERUNG',
             '1.000 KG ANHÄNGELAST',
             'LEICHTE STADTLENKUNG'
           ],
@@ -761,7 +844,7 @@ const CAR_ROSTER = [
             score: 7.6,
             badges: {
               en: ['360L Boot (1,200L Max)', 'Compact Rear Space'],
-              de: ['360L Boot (1.200L Max)', 'Kompakter Fond'],
+              de: ['360L Kofferraum (1.200L Max)', 'Kompakter Fond'],
               ru: ['Багажник 360–1 200 л', 'Тесновато сзади']
             }
           },
@@ -927,7 +1010,7 @@ const CAR_ROSTER = [
             score: 7.6,
             badges: {
               en: ['360L Boot (1,200L Max)', 'Compact Rear Space'],
-              de: ['360L Boot (1.200L Max)', 'Kompakter Fond'],
+              de: ['360L Kofferraum (1.200L Max)', 'Kompakter Fond'],
               ru: ['Багажник 360–1 200 л', 'Тесновато сзади']
             }
           },
@@ -1096,7 +1179,7 @@ const CAR_ROSTER = [
             score: 7.6,
             badges: {
               en: ['360L Boot (1,200L Max)', 'Compact Rear Space'],
-              de: ['360L Boot (1.200L Max)', 'Kompakter Fond'],
+              de: ['360L Kofferraum (1.200L Max)', 'Kompakter Fond'],
               ru: ['Багажник 360–1 200 л', 'Тесновато сзади']
             }
           },
@@ -1265,7 +1348,7 @@ const CAR_ROSTER = [
             score: 7.6,
             badges: {
               en: ['360L Boot (1,200L Max)', 'Compact Rear Space'],
-              de: ['360L Boot (1.200L Max)', 'Kompakter Fond'],
+              de: ['360L Kofferraum (1.200L Max)', 'Kompakter Fond'],
               ru: ['Багажник 360–1 200 л', 'Тесновато сзади']
             }
           },
@@ -1334,13 +1417,420 @@ const CAR_ROSTER = [
             }
           }
         }
+      },
+      {
+        id: '1.2-turbo',
+        isDefault: false,
+        shortTitle: 'AURIS 1.2 TURBO',
+        fullName: '2014 Toyota Auris 1.2 Turbo',
+        engineBadge: '1.2L Turbo • 116 HP',
+        engineSubLabel: {
+          en: '8NR-FTS 1.2L Turbo Petrol (06/2015–03/2019) • 6-MT • 185 Nm',
+          de: '8NR-FTS 1.2L Turbobenziner (06/2015–03/2019) • 6-Gang • 185 Nm',
+          ru: '8NR-FTS 1.2L Турбобензин (06/2015–03/2019) • 6-ст. МКПП • 185 Н·м'
+        },
+        rarityLabel: {
+          en: 'FACELIFT TURBO',
+          de: 'FACELIFT-TURBO',
+          ru: 'РЕСТАЙЛ-ТУРБО'
+        },
+        originalMsrp: {
+          en: '€21,290 New',
+          de: '21.290 € Neu',
+          ru: '€21 290 новый'
+        },
+        estUsedPrice: '€10,400',
+        perkLabel: {
+          en: '✦ 185 Nm Low-End Turbo Pull • Multi-Link Rear • Toyota Relax Eligible',
+          de: '✦ 185 Nm Turbo-Durchzug • Mehrlenker-Hinterachse • Toyota Relax fähig',
+          ru: '✦ Тяга 185 Н·м с низов • Многорычажка сзади • Надёжность Toyota'
+        },
+        remarkablePositives: {
+          en: [
+            'PUNCHY 185 NM LOW-END PULL',
+            '6.5L/100KM REAL ECONOMY',
+            'COMFORTABLE REAR SUSPENSION',
+            'TOYOTA BUILD QUALITY',
+            '1,300 KG BRAKED TOWING'
+          ],
+          de: [
+            'KRAFTVOLLE 185 NM AB 1.500/MIN',
+            '6,5 L/100KM REALVERBRAUCH',
+            'KOMFORTABLE MEHRLENKERACHSE',
+            'SOLIDE TOYOTA-VERARBEITUNG',
+            '1.300 KG ANHÄNGELAST'
+          ],
+          ru: [
+            'БОДРАЯ ТЯГА 185 Н·М С НИЗОВ',
+            'РАСХОД 6,5 Л/100 КМ',
+            'КОМФОРТНАЯ ЗАДНЯЯ МНОГОРЫЧАЖКА',
+            'КАЧЕСТВО СБОРКИ TOYOTA',
+            'БУКСИРОВКА ДО 1 300 КГ'
+          ]
+        },
+        notableNegatives: {
+          en: [
+            'VALVE CARBON BUILDUP RISK',
+            'MORE COMPLEX THAN 1.6 NA',
+            '360L AVERAGE BOOT SPACE'
+          ],
+          de: [
+            'VERKOKUNG DER EINLASSVENTILE',
+            'KOMPLEXER ALS 1.6 SAUGMOTOR',
+            '360L DURCHSCHNITTS-KOFFERRAUM'
+          ],
+          ru: [
+            'НАГАР НА ВПУСКНЫХ КЛАПАНАХ',
+            'СЛОЖНЕЕ АТМОСФЕРНИКА 1.6',
+            'СРЕДНИЙ БАГАЖНИК 360 Л'
+          ]
+        },
+        subStats: {
+          powertrainDurability: {
+            score: 8.3,
+            badges: {
+              en: ['8NR-FTS Chain Turbo', 'DI Carbon Watchout'],
+              de: ['8NR-FTS Ketten-Turbo', 'Verkokung im Blick'],
+              ru: ['Цепной турбо 8NR-FTS', 'Следить за нагаром']
+            },
+            dossier: {
+              en: {
+                headline: 'Toyota’s First European Downsized Turbo: Refined & Reliable with GDI Care',
+                strengths: [
+                  'Strong Mid-Range Pull: 185 Nm from 1,500 rpm feels much livelier in city and highway merging than the naturally aspirated 1.33L.',
+                  'Timing Chain & Water-Cooled Intercooler: Compact, quick-warming layout with solid TÜV reliability scores.'
+                ],
+                watchouts: [
+                  'Direct Injection Valve Coking: Short urban trips can build carbon on intake valves over 100,000 km.',
+                  'Wastegate & Fuel Pump Updates: Check service history for Toyota fuel-pump recalls and keep oil changes at 10,000–15,000 km.'
+                ]
+              },
+              de: {
+                headline: 'Toyotas erster Downsizing-Turbo: Kultiviert & solide bei guter Pflege',
+                strengths: [
+                  'Kräftiger Durchzug: 185 Nm ab 1.500/min wirken deutlich souveräner als der 1.33er Saugmotor.',
+                  'Steuerkette & wassergekühlter Ladeluftkühler: Schnelle Erwärmung und gute TÜV-Bilanz.'
+                ],
+                watchouts: [
+                  'Einlassventil-Verkokung: Direkteinspritzung kann bei viel Kurzstrecke ab ca. 100.000 km Ablagerungen bilden.',
+                  'Wastegate & Kraftstoffpumpe: Rückrufe prüfen und Ölwechsel alle 10.000–15.000 km einhalten.'
+                ]
+              },
+              ru: {
+                headline: 'Первый европейский турбомотор Toyota: тяговитый и надёжный при должном уходе',
+                strengths: [
+                  'Уверенная тяга с низов: 185 Н·м с 1 500 об/мин намного бодрее атмосферника 1.33.',
+                  'Цепь ГРМ и жидкостный интеркулер: Быстро прогревается и хорошо показывает себя в рейтингах TÜV.'
+                ],
+                watchouts: [
+                  'Нагар на впускных клапанах: Прямой впрыск на коротких поездках со временем даёт отложения.',
+                  'Вестгейт и топливный насос: Проверить отзывные кампании и менять масло каждые 10–15 тыс. км.'
+                ]
+              }
+            }
+          },
+          electronicsInfotainment: {
+            score: 7.7,
+            badges: {
+              en: ['Toyota Touch 2', 'Facelift Safety Sense'],
+              de: ['Toyota Touch 2', 'Facelift Safety Sense'],
+              ru: ['Мультимедиа Touch 2', 'Пакет Safety Sense']
+            }
+          },
+          buildQualityRust: {
+            score: 8.4,
+            badges: {
+              en: ['Facelift Cabin Trim', 'Solid Rust Protection'],
+              de: ['Aufgewerteter Innenraum', 'Guter Rostschutz'],
+              ru: ['Обновлённый салон', 'Хорошая антикоррозийка']
+            }
+          },
+          interiorBootSpace: {
+            score: 7.3,
+            badges: {
+              en: ['360L Boot (1,199L Max)', 'Flat Rear Floor'],
+              de: ['360L Kofferraum (1.199L Max)', 'Ebener Fondboden'],
+              ru: ['Багажник 360–1 199 л', 'Ровный пол сзади']
+            }
+          },
+          cabinErgonomicsVisibility: {
+            score: 8.1,
+            badges: {
+              en: ['10.4 m Turning Circle', 'Reverse Camera Std.'],
+              de: ['10,4 m Wendekreis', 'Rückfahrkamera Serie'],
+              ru: ['Разворот 10,4 м', 'Камера заднего вида']
+            }
+          },
+          payloadTowing: {
+            score: 7.5,
+            badges: {
+              en: ['515 kg Payload', '1,300 kg Braked Tow'],
+              de: ['515 kg Zuladung', '1.300 kg Anhängelast'],
+              ru: ['Нагрузка 515 кг', 'Прицеп до 1 300 кг']
+            }
+          },
+          accelerationOvertaking: {
+            score: 7.0,
+            badges: {
+              en: ['0–100 km/h: 10.1 s', '185 Nm (200 km/h)'],
+              de: ['0–100 km/h: 10,1 s', '185 Nm (200 km/h)'],
+              ru: ['0–100 км/ч: 10,1 с', '185 Н·м (200 км/ч)']
+            }
+          },
+          handlingAgility: {
+            score: 7.9,
+            badges: {
+              en: ['Multi-Link Rear Axle', 'Light Turbo Nose'],
+              de: ['Mehrlenker-Hinterachse', 'Leichte Vorderachse'],
+              ru: ['Многорычажка сзади', 'Лёгкий передок']
+            }
+          },
+          brakingSafety: {
+            score: 8.3,
+            badges: {
+              en: ['100–0 km/h: 36.2 m', 'Pre-Collision Assist'],
+              de: ['100–0 km/h: 36,2 m', 'Notbremsassistent'],
+              ru: ['100–0 км/ч: 36,2 м', 'Автоторможение']
+            }
+          },
+          efficiencyFuel: {
+            score: 8.2,
+            badges: {
+              en: ['6.5 L/100km Real', '106–112 g/km CO2'],
+              de: ['6,5 L/100km Real', '106–112 g/km CO2'],
+              ru: ['6,5 л/100 км в жизни', '106–112 г/км CO2']
+            }
+          },
+          depreciationResale: {
+            score: 8.3,
+            badges: {
+              en: ['2015+ Facelift Value', '15-Yr Relax Eligible'],
+              de: ['2015+ Facelift-Wert', '15-J.-Relax-fähig'],
+              ru: ['Свежий рестайл 2015+', 'Высокая ликвидность']
+            }
+          },
+          maintenanceInsurance: {
+            score: 8.2,
+            badges: {
+              en: ['Low 1.2L Tax & Ins.', 'More Complex Than NA'],
+              de: ['Günstige 1.2L Steuer', 'Komplexer als Sauger'],
+              ru: ['Низкий налог на 1.2 л', 'Сложнее атмосферника']
+            }
+          }
+        }
+      },
+      {
+        id: '1.6-d4d',
+        isDefault: false,
+        shortTitle: 'AURIS 1.6 D-4D',
+        fullName: '2014 Toyota Auris 1.6 D-4D',
+        engineBadge: '1.6L D-4D • 112 HP',
+        engineSubLabel: {
+          en: '1WW (BMW N47) 1.6L Turbo-Diesel (06/2015–01/2018) • 6-MT • 270 Nm',
+          de: '1WW (BMW N47) 1.6L Turbodiesel (06/2015–01/2018) • 6-Gang • 270 Nm',
+          ru: '1WW (BMW N47) 1.6L Турбодизель (06/2015–01/2018) • 6-ст. МКПП • 270 Н·м'
+        },
+        rarityLabel: {
+          en: 'BMW-SOURCED DIESEL',
+          de: 'BMW-KOOP-DIESEL',
+          ru: 'ДИЗЕЛЬ ОТ BMW'
+        },
+        originalMsrp: {
+          en: '€23,990 New',
+          de: '23.990 € Neu',
+          ru: '€23 990 новый'
+        },
+        estUsedPrice: '€9,600',
+        perkLabel: {
+          en: '✦ 5.4 L/100km Real Economy • 270 Nm Torque • Euro 6 Compliant',
+          de: '✦ 5,4 L/100km Realverbrauch • 270 Nm Drehmoment • Euro 6',
+          ru: '✦ Расход 5,4 л/100 км • Тяга 270 Н·м • Эко-класс Евро-6'
+        },
+        remarkablePositives: {
+          en: [
+            '5.4L/100KM REAL ECONOMY',
+            'STRONG 270 NM TORQUE',
+            'EURO 6 HIGHWAY CRUISER',
+            '1,300 KG BRAKED TOWING',
+            'TOYOTA BUILD QUALITY'
+          ],
+          de: [
+            '5,4 L/100KM REALVERBRAUCH',
+            'STARKE 270 NM DREHMOMENT',
+            'EURO-6 LANGSTRECKEN-DIESEL',
+            '1.300 KG ANHÄNGELAST',
+            'SOLIDE TOYOTA-VERARBEITUNG'
+          ],
+          ru: [
+            'РАСХОД 5,4 Л/100 КМ',
+            'ОТЛИЧНАЯ ТЯГА 270 Н·М',
+            'ЕВРО-6 ДЛЯ ДАЛЬНИХ ТРАСС',
+            'БУКСИРОВКА ДО 1 300 КГ',
+            'КАЧЕСТВО СБОРКИ TOYOTA'
+          ]
+        },
+        notableNegatives: {
+          en: [
+            'BMW-BASED DIESEL (NOT TOYOTA)',
+            'COOLING & DPF SHORT-TRIP RISK',
+            '360L AVERAGE BOOT SPACE'
+          ],
+          de: [
+            'BMW-MOTORBASIS (KEIN TOYOTA-BLOCK)',
+            'KÜHLUNG & DPF BEI KURZSTRECKE',
+            '360L DURCHSCHNITTS-KOFFERRAUM'
+          ],
+          ru: [
+            'МОТОР БАЗЫ BMW (НЕ TOYOTA)',
+            'РИСК ОХЛАЖДЕНИЯ И DPF В ГОРОДЕ',
+            'СРЕДНИЙ БАГАЖНИК 360 Л'
+          ]
+        },
+        subStats: {
+          powertrainDurability: {
+            score: 7.4,
+            badges: {
+              en: ['BMW 1WW 1.6 Diesel', 'Check Coolant & DPF'],
+              de: ['BMW 1WW 1.6 Diesel', 'Kühlung & DPF prüfen'],
+              ru: ['Дизель BMW 1WW 1.6', 'Проверить ОЖ и DPF']
+            },
+            dossier: {
+              en: {
+                headline: 'BMW-Sourced 1WW 1.6L Diesel: Efficient Euro 6 Cruiser, Less Bulletproof Than Toyota Units',
+                strengths: [
+                  'Strong 270 Nm Pull & Euro 6: Replaced the older 2.0 D-4D with lower CO2 (104–108 g/km) and better emissions.',
+                  'Smooth 6-Speed Manual: Relaxed gearing for long Autobahn commutes.'
+                ],
+                watchouts: [
+                  'BMW N47-Derived Architecture: Demands clean oil and cooling-system checks (EGR cooler / coolant loss) unlike Toyota’s simpler 1ND 1.4 D-4D.',
+                  'DPF & Dual-Mass Flywheel: Needs regular highway runs to keep the DPF clean.'
+                ]
+              },
+              de: {
+                headline: 'BMW-basierter 1WW 1.6 Diesel: Sparsamer Euro-6-Gleiter mit mehr Wartungsbedarf',
+                strengths: [
+                  '270 Nm Durchzug & Euro 6: Ersetzte den alten 2.0 D-4D mit nur 104–108 g/km CO2.',
+                  'Langes 6-Gang-Getriebe: Sehr sparsam auf der Autobahn.'
+                ],
+                watchouts: [
+                  'BMW-N47-Verwandtschaft: Empfindlicher bei Kühlmittelverlust/AGR-Kühler als Toyotas eigener 1.4 D-4D.',
+                  'DPF & Zweimassenschwungrad: Benötigt Langstrecken-Einsatz.'
+                ]
+              },
+              ru: {
+                headline: 'Дизель 1WW 1.6 от BMW: экономичный Евро-6, но требовательнее моторов Toyota',
+                strengths: [
+                  'Тяга 270 Н·м и Евро-6: Заменил старый 2.0 D-4D, снизив налоги и расход.',
+                  'Длинная 6-ст. МКПП: Отлично экономит топливо на трассе.'
+                ],
+                watchouts: [
+                  'База BMW N47: Требует контроля системы охлаждения и радиатора ЕГР, уступая по простоте родному 1.4 D-4D.',
+                  'Сажевый фильтр и маховик: Нуждается в регулярных поездках по трассе.'
+                ]
+              }
+            }
+          },
+          electronicsInfotainment: {
+            score: 7.7,
+            badges: {
+              en: ['Toyota Touch 2', 'Facelift Safety Sense'],
+              de: ['Toyota Touch 2', 'Facelift Safety Sense'],
+              ru: ['Мультимедиа Touch 2', 'Пакет Safety Sense']
+            }
+          },
+          buildQualityRust: {
+            score: 8.3,
+            badges: {
+              en: ['Facelift Cabin Trim', 'Good Diesel Insulation'],
+              de: ['Aufgewerteter Innenraum', 'Gute Diesel-Dämmung'],
+              ru: ['Обновлённый салон', 'Хорошая шумоизоляция']
+            }
+          },
+          interiorBootSpace: {
+            score: 7.3,
+            badges: {
+              en: ['360L Boot (1,199L Max)', 'Flat Rear Floor'],
+              de: ['360L Kofferraum (1.199L Max)', 'Ebener Fondboden'],
+              ru: ['Багажник 360–1 199 л', 'Ровный пол сзади']
+            }
+          },
+          cabinErgonomicsVisibility: {
+            score: 8.1,
+            badges: {
+              en: ['10.4 m Turning Circle', 'Reverse Camera Std.'],
+              de: ['10,4 m Wendekreis', 'Rückfahrkamera Serie'],
+              ru: ['Разворот 10,4 м', 'Камера заднего вида']
+            }
+          },
+          payloadTowing: {
+            score: 7.7,
+            badges: {
+              en: ['515 kg Payload', '1,300 kg Braked Tow'],
+              de: ['515 kg Zuladung', '1.300 kg Anhängelast'],
+              ru: ['Нагрузка 515 кг', 'Прицеп до 1 300 кг']
+            }
+          },
+          accelerationOvertaking: {
+            score: 6.9,
+            badges: {
+              en: ['0–100 km/h: 10.5 s', '270 Nm (195 km/h)'],
+              de: ['0–100 km/h: 10,5 s', '270 Nm (195 km/h)'],
+              ru: ['0–100 км/ч: 10,5 с', '270 Н·м (195 км/ч)']
+            }
+          },
+          handlingAgility: {
+            score: 7.7,
+            badges: {
+              en: ['Balanced Highway Ride', 'Heavier Diesel Nose'],
+              de: ['Ruhiger Geradeauslauf', 'Schwerere Diesel-Front'],
+              ru: ['Стабильность на трассе', 'Тяжелее передок']
+            }
+          },
+          brakingSafety: {
+            score: 8.3,
+            badges: {
+              en: ['100–0 km/h: 36.4 m', 'Pre-Collision Assist'],
+              de: ['100–0 km/h: 36,4 m', 'Notbremsassistent'],
+              ru: ['100–0 км/ч: 36,4 м', 'Автоторможение']
+            }
+          },
+          efficiencyFuel: {
+            score: 9.0,
+            badges: {
+              en: ['5.4 L/100km Real', '104–108 g/km CO2'],
+              de: ['5,4 L/100km Real', '104–108 g/km CO2'],
+              ru: ['5,4 л/100 км в жизни', '104–108 г/км CO2']
+            }
+          },
+          depreciationResale: {
+            score: 7.9,
+            badges: {
+              en: ['Euro 6 Diesel Value', 'Fleet Commuter Demand'],
+              de: ['Euro-6-Vorteil', 'Gefragt bei Pendlern'],
+              ru: ['Плюс Евро-6', 'Спрос у трассовых водителей']
+            }
+          },
+          maintenanceInsurance: {
+            score: 7.4,
+            badges: {
+              en: ['Lower 1.6L Diesel Tax', 'BMW-Spec Service Parts'],
+              de: ['Günstigere 1.6L Steuer', 'BMW-Teilekosten beachten'],
+              ru: ['Ниже налог на 1.6 л', 'Запчасти уровня BMW']
+            }
+          }
+        }
       }
     ]
   },
   {
     id: 'honda-civic-2014',
     number: '02',
-    yearMake: '2014 HONDA',
+    carType: 'hatchback',
+    gridOrder: 2,
+    gridLabel: 'Honda Civic',
+    yearMake: '2011-2017 HONDA',
+    shortTitle: 'CIVIC (FK)',
+    fullName: '2011-2017 Honda Civic (FK)',
     rarityClass: 'rarity-dependable',
     drivetrain: 'FWD',
     image: 'assets/honda-civic-2014.png',
@@ -1480,7 +1970,7 @@ const CAR_ROSTER = [
             score: 9.6,
             badges: {
               en: ['477L Boot (1,378L Max)', 'Fold-Up Magic Seats'],
-              de: ['477L Boot (1.378L Max)', 'Magic Seats Rückbank'],
+              de: ['477L Kofferraum (1.378L Max)', 'Magic Seats Rückbank'],
               ru: ['Багажник 477–1 378 л', 'Сиденья Magic Seats']
             }
           },
@@ -1587,8 +2077,8 @@ const CAR_ROSTER = [
           ],
           de: [
             'ROBUSTER 1.4 KETTENMOTOR',
-            '477L BOOT & MAGIC SEATS',
-            'NIEDRIGSTE STEUER & TYP',
+            '477L KOFFERRAUM & MAGIC SEATS',
+            'NIEDRIGSTE STEUER & VERSICHERUNG',
             'LEICHTE 1.180 KG AGILITÄT',
             '1.200 KG ANHÄNGELAST'
           ],
@@ -1649,7 +2139,7 @@ const CAR_ROSTER = [
             score: 9.6,
             badges: {
               en: ['477L Boot (1,378L Max)', 'Fold-Up Magic Seats'],
-              de: ['477L Boot (1.378L Max)', 'Magic Seats Rückbank'],
+              de: ['477L Kofferraum (1.378L Max)', 'Magic Seats Rückbank'],
               ru: ['Багажник 477–1 378 л', 'Сиденья Magic Seats']
             }
           },
@@ -1713,7 +2203,7 @@ const CAR_ROSTER = [
             score: 9.0,
             badges: {
               en: ['Lowest Civic Tax/Ins.', 'Minimal Service Cost'],
-              de: ['Niedrige Steuer & Typ', 'Minimale Wartung'],
+              de: ['Niedrige Steuer & Versicherung', 'Minimale Wartung'],
               ru: ['Малый налог и ОСАГО', 'Дешёвое ТО']
             }
           }
@@ -1742,8 +2232,8 @@ const CAR_ROSTER = [
         },
         estUsedPrice: '€8,600',
         perkLabel: {
-          en: '✦ 4.3 L/100km Economy • 300 Nm Earth Dreams Diesel • 477L Boot',
-          de: '✦ 4,3 L/100km Realverbrauch • 300 Nm Earth-Dreams-Diesel • 477L Boot',
+          en: '✦ 4.3 L/100km Economy • 300 Nm Earth Dreams Diesel • 477L Kofferraum',
+          de: '✦ 4,3 L/100km Realverbrauch • 300 Nm Earth-Dreams-Diesel • 477L Kofferraum',
           ru: '✦ Расход 4,3 л/100 км • 300 Н·м дизель Earth Dreams • Багажник 477 л'
         },
         remarkablePositives: {
@@ -1758,7 +2248,7 @@ const CAR_ROSTER = [
             '4,3 L/100KM REALVERBRAUCH',
             '1.100+ KM TANKREICHWEITE',
             '300 NM ALU-DIESEL (N16A1)',
-            '477L BOOT & MAGIC SEATS',
+            '477L KOFFERRAUM & MAGIC SEATS',
             '1.400 KG ANHÄNGELAST'
           ],
           ru: [
@@ -1818,7 +2308,7 @@ const CAR_ROSTER = [
             score: 9.6,
             badges: {
               en: ['477L Boot (1,378L Max)', 'Fold-Up Magic Seats'],
-              de: ['477L Boot (1.378L Max)', 'Magic Seats Rückbank'],
+              de: ['477L Kofferraum (1.378L Max)', 'Magic Seats Rückbank'],
               ru: ['Багажник 477–1 378 л', 'Сиденья Magic Seats']
             }
           },
@@ -1968,9 +2458,9 @@ const CAR_ROSTER = [
           powertrainDurability: {
             score: 9.1,
             badges: {
-              en: ['2.2 Chain-Driven Block', 'Watch DPF & DMF Wear'],
-              de: ['Robuster 2.2 Kettenmotor', 'DPF & ZMS beachten'],
-              ru: ['Цепной дизель 2.2', 'Внимание к DPF и ZMS']
+              en: ['Updated 2.2 Chain Block', 'Watch DPF & DMF Wear'],
+              de: ['Überarb. 2.2 Kettenmotor', 'DPF & ZMS beachten'],
+              ru: ['Обновл. цепной дизель 2.2', 'Внимание к DPF и ZMS']
             }
           },
           electronicsInfotainment: {
@@ -1993,7 +2483,7 @@ const CAR_ROSTER = [
             score: 9.6,
             badges: {
               en: ['477L Boot (1,378L Max)', 'Fold-Up Magic Seats'],
-              de: ['477L Boot (1.378L Max)', 'Magic Seats Rückbank'],
+              de: ['477L Kofferraum (1.378L Max)', 'Magic Seats Rückbank'],
               ru: ['Багажник 477–1 378 л', 'Сиденья Magic Seats']
             }
           },
@@ -2068,7 +2558,12 @@ const CAR_ROSTER = [
   {
     id: 'honda-crv-2010',
     number: '03',
-    yearMake: '2010 HONDA',
+    carType: 'suv',
+    gridOrder: 6,
+    gridLabel: 'Honda CR-V',
+    yearMake: '2006-2012 HONDA',
+    shortTitle: 'CR-V (RE)',
+    fullName: '2006-2012 Honda CR-V (RE)',
     rarityClass: 'rarity-common',
     drivetrain: 'AWD',
     image: 'assets/honda-crv-2010.png',
@@ -2106,21 +2601,21 @@ const CAR_ROSTER = [
             'BULLETPROOF 2.0 NA ENGINE',
             '556L DOUBLE-DECK BOOT',
             'SLIDING 40:20:40 REAR SEATS',
-            'COMMANDING SUV VISIBILITY',
+            'GREAT ALL-AROUND VISIBILITY',
             '1,600 KG TOWING + AWD'
           ],
           de: [
             'ROBUSTER 2.0 KETTENMOTOR',
-            '556L DOPPELBODEN-BOOT',
+            '556L DOPPELBODEN-KOFFERRAUM',
             'VERSCHIEBBARE RÜCKBANK',
-            'TOP SUV-RUNDSICHT',
+            'SEHR GUTE RUNDUMSICHT',
             '1.600 KG ZUGLAST & ALLRAD'
           ],
           ru: [
             'ВЕЧНЫЙ ЦЕПНОЙ 2.0 R20A2',
             'БАГАЖНИК 556 Л (2 ПОЛКИ)',
             'СДВИЖНОЙ ЗАДНИЙ РЯД',
-            'ОТЛИЧНАЯ ОБЗОРНОСТЬ SUV',
+            'ОТЛИЧНАЯ ОБЗОРНОСТЬ ВОКРУГ',
             'БУКСИРОВКА 1 600 КГ + AWD'
           ]
         },
@@ -2214,7 +2709,7 @@ const CAR_ROSTER = [
             score: 9.7,
             badges: {
               en: ['556L Boot (1,532L Max)', 'Sliding Rear + Shelf'],
-              de: ['556L Boot (1.532L Max)', 'Schiebebank & Doppelboden'],
+              de: ['556L Kofferraum (1.532L Max)', 'Schiebebank & Doppelboden'],
               ru: ['Багажник 556–1 532 л', 'Сдвижной ряд + полка']
             }
           },
@@ -2322,7 +2817,7 @@ const CAR_ROSTER = [
           de: [
             'LEGENDÄRER 2.4 K24 MOTOR',
             'ROBUSTE 5-GANG-AUTOMATIK',
-            '556L DOPPELBODEN-BOOT',
+            '556L DOPPELBODEN-KOFFERRAUM',
             'SOUVERÄNE 220 NM KRAFT',
             '1.500 KG ZUGLAST & ALLRAD'
           ],
@@ -2383,7 +2878,7 @@ const CAR_ROSTER = [
             score: 9.7,
             badges: {
               en: ['556L Boot (1,532L Max)', 'Sliding Rear + Shelf'],
-              de: ['556L Boot (1.532L Max)', 'Schiebebank & Doppelboden'],
+              de: ['556L Kofferraum (1.532L Max)', 'Schiebebank & Doppelboden'],
               ru: ['Багажник 556–1 532 л', 'Сдвижной ряд + полка']
             }
           },
@@ -2491,7 +2986,7 @@ const CAR_ROSTER = [
           de: [
             '2.000 KG ANHÄNGELAST',
             '350 NM DIESEL-DREHMOMENT',
-            '556L DOPPELBODEN-BOOT',
+            '556L DOPPELBODEN-KOFFERRAUM',
             '6,7 L/100KM SUV-VERBRAUCH',
             'ROBUSTER N22B3 ALU-DIESEL'
           ],
@@ -2527,7 +3022,7 @@ const CAR_ROSTER = [
           powertrainDurability: {
             score: 8.9,
             badges: {
-              en: ['Updated 2.2 Chain Block', 'Watch DPF & DMF Wear'],
+              en: ['2.2 Chain-Driven Block', 'Watch DPF & DMF Wear'],
               de: ['2.2 Alu-Kettenmotor', 'DPF & ZMS beachten'],
               ru: ['Цепной дизель 2.2', 'Внимание к DPF и ZMS']
             }
@@ -2552,7 +3047,7 @@ const CAR_ROSTER = [
             score: 9.7,
             badges: {
               en: ['556L Boot (1,532L Max)', 'Sliding Rear + Shelf'],
-              de: ['556L Boot (1.532L Max)', 'Schiebebank & Doppelboden'],
+              de: ['556L Kofferraum (1.532L Max)', 'Schiebebank & Doppelboden'],
               ru: ['Багажник 556–1 532 л', 'Сдвижной ряд + полка']
             }
           },
@@ -2621,13 +3116,222 @@ const CAR_ROSTER = [
             }
           }
         }
+      },
+      {
+        id: '2.2-ictdi',
+        isDefault: false,
+        shortTitle: 'CR-V (RE)',
+        fullName: '2006-2012 Honda CR-V (RE)',
+        engineBadge: '2.2L i-CTDi AWD • 140 HP',
+        engineSubLabel: {
+          en: 'N22A2 2.2L Turbo-Diesel (2007–2009) • 6-MT • 340 Nm • Real Time AWD',
+          de: 'N22A2 2.2L Turbodiesel (2007–2009) • 6-Gang • 340 Nm • Allrad',
+          ru: 'N22A2 2.2L Турбодизель (2007–2009) • 6-ст. МКПП • 340 Н·м • Полный привод'
+        },
+        rarityLabel: {
+          en: 'EARLY DIESEL TOW',
+          de: 'UR-DIESEL-ZUGTIER',
+          ru: 'РАННИЙ ДИЗЕЛЬ'
+        },
+        originalMsrp: {
+          en: '€31,500 New',
+          de: '31.500 € Neu',
+          ru: '€31 500 новый'
+        },
+        estUsedPrice: '€6,800',
+        perkLabel: {
+          en: '✦ 340 Nm Diesel Torque • 2,000 kg Towing • 7.4 L/100km Real Economy',
+          de: '✦ 340 Nm Drehmoment • 2.000 kg Anhängelast • 7,4 L/100km Realverbrauch',
+          ru: '✦ Тяга 340 Н·м • Прицеп 2 000 кг • Расход 7,4 л/100 км'
+        },
+        remarkablePositives: {
+          en: [
+            '340 NM DIESEL TORQUE',
+            '2,000 KG BRAKED TOWING',
+            '7.4L/100KM REAL ECONOMY',
+            'TOUGH N22A2 ALU DIESEL',
+            '556L SQUARE SUV BOOT'
+          ],
+          de: [
+            '340 NM DIESEL-DREHMOMENT',
+            '2.000 KG ANHÄNGELAST',
+            '7,4 L/100KM REALVERBRAUCH',
+            'ROBUSTER N22A2 ALU-DIESEL',
+            '556L KASTEN-KOFFERRAUM'
+          ],
+          ru: [
+            'ДИЗЕЛЬНАЯ ТЯГА 340 Н·М',
+            'БУКСИРОВКА ДО 2 000 КГ',
+            'РАСХОД 7,4 Л/100 КМ',
+            'КРЕПКИЙ ДИЗЕЛЬ N22A2',
+            'КВАДРАТНЫЙ БАГАЖНИК 556 Л'
+          ]
+        },
+        notableNegatives: {
+          en: [
+            'EXHAUST MANIFOLD CRACK RISK',
+            'TIMING CHAIN & DMF WEAR',
+            'HIGH 2.2L DIESEL ROAD TAX',
+            'EURO 4 CITY ZONE LIMITS'
+          ],
+          de: [
+            'RISIKO ABGASKRÜMMER-RISS',
+            'STEUERKETTE & ZMS-VERSCHLEISS',
+            'HOHE 2.2L DIESEL-STEUER',
+            'EURO-4 UMWELTPLAKETTE'
+          ],
+          ru: [
+            'ТРЕЩИНЫ ВЫПУСКНОГО КОЛЛЕКТОРА',
+            'ИЗНОС ЦЕПИ ГРМ И МАХОВИКА',
+            'ВЫСОКИЙ НАЛОГ НА 2.2 ДИЗЕЛЬ',
+            'ЭКО-КЛАСС ЕВРО-4 (2007–2009)'
+          ]
+        },
+        subStats: {
+          powertrainDurability: {
+            score: 8.2,
+            badges: {
+              en: ['Alu N22A2 2.2 Diesel', 'Check Manifold & Chain'],
+              de: ['Alu-N22A2 2.2 Diesel', 'Krümmer & Kette prüfen'],
+              ru: ['Алюминиевый N22A2', 'Проверить коллектор и цепь']
+            },
+            dossier: {
+              en: {
+                headline: 'Honda’s First In-House Diesel (N22A2): 300k+ km Tough with Two Known Watchouts',
+                strengths: [
+                  'Refined All-Aluminum Block: Quiet, smooth 2.2L common-rail diesel with strong 340 Nm pull and no timing belt.',
+                  'Proven 6-Speed Manual: Durable gearbox paired with mechanical Real Time 4WD.'
+                ],
+                watchouts: [
+                  'Cast Exhaust Manifold Cracking: Cold-start ticking or exhaust smell in the cabin signals a cracked manifold (common on N22A2).',
+                  'Timing Chain & Dual-Mass Flywheel: Neglected oil changes stretch the rear-mounted timing/oil-pump chains; heavy towing wears the DMF.'
+                ]
+              },
+              de: {
+                headline: 'Hondas erster Eigenbau-Diesel (N22A2): Sehr langlebig mit zwei bekannten Schwachstellen',
+                strengths: [
+                  'Laufruhiger Vollalu-Diesel: Kräftige 340 Nm, Steuerkette statt Zahnriemen, läuft bei Pflege über 300.000 km.',
+                  'Robustes 6-Gang-Schaltgetriebe mit mechanischem Real-Time-Allrad.'
+                ],
+                watchouts: [
+                  'Abgaskrümmer-Risse: Abgasgeruch im Innenraum oder Tickern bei Kaltstart deutet auf einen gerissenen Krümmer hin.',
+                  'Steuerkette & ZMS: Lange Ölwechselintervalle längen die Steuerkette; schweres Ziehen belastet das ZMS.'
+                ]
+              },
+              ru: {
+                headline: 'Первый собственный дизель Honda (N22A2): ресурс 300+ тыс. км с двумя нюансами',
+                strengths: [
+                  'Тихий алюминиевый дизель: Мощная тяга 340 Н·м с 2 000 об/мин и цепной привод ГРМ.',
+                  'Надёжная 6-ст. МКПП с полным приводом Real Time 4WD.'
+                ],
+                watchouts: [
+                  'Трещины выпускного коллектора: Запах выхлопа в салоне и цокот на холодную — частая болезнь N22A2.',
+                  'Цепь ГРМ и маховик: Затянутая замена масла ведёт к растяжению цепи, а буксировка — к износу ZMS.'
+                ]
+              }
+            }
+          },
+          electronicsInfotainment: {
+            score: 7.5,
+            badges: {
+              en: ['Simple Pre-2010 Dash', 'Optional Reversing Cam'],
+              de: ['Einfache Vor-2010-Technik', 'Optional Rückfahrkamera'],
+              ru: ['Простая электроника', 'Камера заднего вида (опц.)']
+            }
+          },
+          buildQualityRust: {
+            score: 8.2,
+            badges: {
+              en: ['UK-Built SUV Body', 'Check Rear Subframe Rust'],
+              de: ['Solide SUV-Karosserie', 'Hinterachse auf Rost prüfen'],
+              ru: ['Крепкий кузов', 'Проверить задний подрамник']
+            }
+          },
+          interiorBootSpace: {
+            score: 9.0,
+            badges: {
+              en: ['556L Boot (1,532L Max)', 'Sliding Rear Bench'],
+              de: ['556L Kofferraum (1.532L Max)', 'Verschiebbare Rückbank'],
+              ru: ['Багажник 556–1 532 л', 'Сдвижной задний диван']
+            }
+          },
+          cabinErgonomicsVisibility: {
+            score: 8.5,
+            badges: {
+              en: ['11.2 m Turning Circle', 'Commanding SUV View'],
+              de: ['11,2 m Wendekreis', 'Hohe SUV-Übersicht'],
+              ru: ['Разворот 11,2 м', 'Высокая посадка и обзор']
+            }
+          },
+          payloadTowing: {
+            score: 9.1,
+            badges: {
+              en: ['560 kg Payload', '2,000 kg Braked Tow'],
+              de: ['560 kg Zuladung', '2.000 kg Anhängelast'],
+              ru: ['Нагрузка 560 кг', 'Прицеп до 2 000 кг']
+            }
+          },
+          accelerationOvertaking: {
+            score: 6.7,
+            badges: {
+              en: ['0–100 km/h: 10.3 s', '340 Nm (187 km/h)'],
+              de: ['0–100 km/h: 10,3 s', '340 Nm (187 km/h)'],
+              ru: ['0–100 км/ч: 10,3 с', '340 Н·м (187 км/ч)']
+            }
+          },
+          handlingAgility: {
+            score: 7.4,
+            badges: {
+              en: ['Car-Like SUV Ride', 'Real Time 4WD Grip'],
+              de: ['PKW-artiges Fahrverhalten', 'Real-Time-4WD-Traktion'],
+              ru: ['Легковая управляемость', 'Полный привод 4WD']
+            }
+          },
+          brakingSafety: {
+            score: 7.9,
+            badges: {
+              en: ['100–0 km/h: 38.2 m', 'VSA Stability Std.'],
+              de: ['100–0 km/h: 38,2 m', 'VSA-ESP Serie'],
+              ru: ['100–0 км/ч: 38,2 м', 'Система VSA в базе']
+            }
+          },
+          efficiencyFuel: {
+            score: 7.7,
+            badges: {
+              en: ['7.4 L/100km Real', '173 g/km CO2 (Euro 4)'],
+              de: ['7,4 L/100km Real', '173 g/km CO2 (Euro 4)'],
+              ru: ['7,4 л/100 км в жизни', '173 г/км CO2 (Евро-4)']
+            }
+          },
+          depreciationResale: {
+            score: 7.7,
+            badges: {
+              en: ['Affordable 4WD Tow SUV', 'Euro 4 Age Discount'],
+              de: ['Günstiges 4WD-Zugfahrzeug', 'Euro-4-Abschlag'],
+              ru: ['Доступный дизель 4WD', 'Возраст Евро-4']
+            }
+          },
+          maintenanceInsurance: {
+            score: 7.1,
+            badges: {
+              en: ['High 2.2L Tax & Ins.', 'Manifold & DMF Risk'],
+              de: ['Hohe 2.2L Kfz-Steuer', 'Krümmer- & ZMS-Risiko'],
+              ru: ['Высокий налог (2.2 л)', 'Коллектор и маховик']
+            }
+          }
+        }
       }
     ]
   },
   {
     id: 'peugeot-308-gti-2019',
     number: '04',
-    yearMake: '2019 PEUGEOT',
+    carType: 'hot-hatch',
+    gridOrder: 4,
+    gridLabel: '308 GTi',
+    yearMake: '2015-2020 PEUGEOT',
+    shortTitle: '308 GTi (T9)',
+    fullName: '2015-2020 Peugeot 308 GTi (T9)',
     rarityClass: 'rarity-epic',
     drivetrain: 'FWD',
     image: 'assets/peugeot-308-gti-2019.png',
@@ -2664,7 +3368,7 @@ const CAR_ROSTER = [
         remarkablePositives: {
           en: [
             '1,205 KG FEATHERWEIGHT',
-            'MECHANICAL TORSEN LSD',
+            'HIGH-GRIP FRONT DIFF',
             'BIG BRAKES FROM FACTORY (380MM)',
             '6.0S 0–100 • 250 KM/H TOP SPEED',
             '7.4L/100KM REAL ECONOMY',
@@ -2672,15 +3376,15 @@ const CAR_ROSTER = [
           ],
           de: [
             'NUR 1.205 KG LEERGEWICHT',
-            'MECHANISCHE TORSEN-SPERRE',
+            'SPERRDIFFERENTIAL VORN',
             'GROSSE BREMSEN AB WERK (380MM)',
             '6,0S 0–100 • 250 KM/H SPITZE',
             '7,4 L/100KM REALVERBRAUCH',
-            '420L BOOT & MASSAGESITZE'
+            '420L KOFFERRAUM & MASSAGESITZE'
           ],
           ru: [
             'ВЕС ВСЕГО 1 205 КГ',
-            'САМОБЛОК TORSEN В МКПП',
+            'ПЕРЕДНИЙ САМОБЛОК ДИФФ.',
             'БОЛЬШИЕ ТОРМОЗА С ЗАВОДА (380 ММ)',
             '6,0 С ДО 100 • МАКС. 250 КМ/Ч',
             'РАСХОД 7,4 Л/100 КМ',
@@ -2777,7 +3481,7 @@ const CAR_ROSTER = [
             score: 8.4,
             badges: {
               en: ['420L Boot (1,228L Max)', 'Large Hot-Hatch Boot'],
-              de: ['420L Boot (1.228L Max)', 'Groß für 263-PS-Sportler'],
+              de: ['420L Kofferraum (1.228L Max)', 'Groß für 263-PS-Sportler'],
               ru: ['Багажник 420–1 228 л', 'Большой для хот-хэтча']
             }
           },
@@ -2852,7 +3556,12 @@ const CAR_ROSTER = [
   {
     id: 'ford-mondeo-2012',
     number: '05',
-    yearMake: '2012 FORD',
+    carType: 'sedan',
+    gridOrder: 5,
+    gridLabel: 'Ford Mondeo',
+    yearMake: '2007-2014 FORD',
+    shortTitle: 'MONDEO (BA7)',
+    fullName: '2007-2014 Ford Mondeo (BA7)',
     rarityClass: 'rarity-dependable',
     drivetrain: 'FWD',
     image: 'assets/ford-mondeo-2012.png',
@@ -4902,17 +5611,1432 @@ const CAR_ROSTER = [
         }
       }
     ]
+  },
+  {
+    id: 'honda-civic-type-r-2015',
+    number: '06',
+    carType: 'hot-hatch',
+    gridOrder: 3,
+    gridLabel: 'Civic Type-R',
+    yearMake: '2015-2017 HONDA',
+    shortTitle: 'CIVIC TYPE R (FK)',
+    fullName: '2015-2017 Honda Civic Type R (FK)',
+    rarityClass: 'rarity-epic',
+    drivetrain: 'FWD',
+    image: 'assets/honda-civic-type-r-2015.png',
+    defaultEngineId: '2.0-vtec-turbo',
+    engines: [
+      {
+        id: '2.0-vtec-turbo',
+        isDefault: true,
+        shortTitle: 'CIVIC TYPE R (FK)',
+        fullName: '2015-2017 Honda Civic Type R (FK)',
+        engineBadge: '2.0L VTEC Turbo • 310 HP',
+        engineSubLabel: {
+          en: 'K20C1 (FK2) 2.0L VTEC Turbo • 6-MT + Helical LSD • 400 Nm',
+          de: 'K20C1 (FK2) 2.0L VTEC-Turbo • 6-Gang + Sperrdiff. • 400 Nm',
+          ru: 'K20C1 (FK2) 2.0L VTEC Турбо • 6-ст. МКПП + Самоблок • 400 Н·м'
+        },
+        rarityLabel: {
+          en: 'TRACK WEAPON',
+          de: 'RUNDSTRECKEN-IKONE',
+          ru: 'ТРЕКОВЫЙ БОЕЦ'
+        },
+        originalMsrp: {
+          en: '€34,500 New',
+          de: '34.500 € Neu',
+          ru: '€34 500 новый'
+        },
+        estUsedPrice: '€24,900',
+        perkLabel: {
+          en: '✦ 5.7s 0–100 • 270 km/h Top Speed • Brembo 350mm Brakes & 498L Boot',
+          de: '✦ 5,7s 0–100 • 270 km/h Spitze • 350mm Brembo-Bremse & 498L Kofferraum',
+          ru: '✦ 5,7 с до 100 • Макс. 270 км/ч • Тормоза Brembo 350 мм и багажник 498 л'
+        },
+        remarkablePositives: {
+          en: [
+            '5.7S 0–100 • 270 KM/H TOP SPEED',
+            'ROBUST K20C1 TURBO ENGINE',
+            'BIG BREMBO BRAKES (350MM)',
+            'HIGH-GRIP FRONT DIFF',
+            'HUGE 498L HOT-HATCH BOOT'
+          ],
+          de: [
+            '5,7S 0–100 • 270 KM/H SPITZE',
+            'ROBUSTER K20C1 TURBOMOTOR',
+            'GROSSE BREMBO-BREMSEN (350MM)',
+            'TRAKTIONSSTARKE VORDERACHSE',
+            'RIESIGER 498L KOFFERRAUM'
+          ],
+          ru: [
+            '5,7 С ДО 100 • МАКС. 270 КМ/Ч',
+            'КРЕПКИЙ ТУРБОМОТОР K20C1',
+            'БОЛЬШИЕ ТОРМОЗА BREMBO 350 ММ',
+            'САМОБЛОК НА ПЕРЕДНЕЙ ОСИ',
+            'ОГРОМНЫЙ БАГАЖНИК 498 Л'
+          ]
+        },
+        notableNegatives: {
+          en: [
+            'IMPAIRED REAR VISIBILITY',
+            'THIRSTY 9.8L/100KM',
+            'STIFF TRACK-TUNED RIDE',
+            'LOW FRONT SPLITTER SCRAPES',
+            '0 KG TOWING (NO TRAILER)'
+          ],
+          de: [
+            'EINGESCHRÄNKTE SICHT NACH HINTEN',
+            'HOHER VERBRAUCH (9,8L/100KM)',
+            'SEHR HARTES SPORTFAHRWERK',
+            'TIEFER FRONT-SPLITTER SETZT AUF',
+            '0 KG ANHÄNGELAST (KEINE AHK)'
+          ],
+          ru: [
+            'ОГРАНИЧЕННЫЙ ОБЗОР СЗАДИ',
+            'РАСХОД 9,8 Л/100 КМ',
+            'ЖЁСТКАЯ ТРЕКОВАЯ ПОДВЕСКА',
+            'НИЗКАЯ ГУБА БАМПЕРА ЦЕПЛЯЕТ',
+            '0 КГ БУКСИРОВКА (БЕЗ ТСУ)'
+          ]
+        },
+        subStats: {
+          powertrainDurability: {
+            score: 8.6,
+            badges: {
+              en: ['K20C1 Forged Internals', 'Crisp 6-MT + LSD'],
+              de: ['K20C1 Schmiede-Basis', 'Präzise 6-Gang + Sperre'],
+              ru: ['Крепкий K20C1', 'Чёткая 6-ст. МКПП + LSD']
+            },
+            dossier: {
+              en: {
+                headline: 'Honda’s First Turbo Type R (K20C1): Overbuilt & Track-Proven 2.0L',
+                strengths: [
+                  'Overbuilt K20C1 Block: Forged crankshaft/connecting rods, sodium-filled exhaust valves, and oil-jet piston cooling handle 310 HP reliably.',
+                  'Mechanical 6-Speed + Helical LSD: Short-throw shifter and dual-axis front strut eliminate torque steer.'
+                ],
+                watchouts: [
+                  'Track Heat Management: Sustained hot-weather track lapping can trigger high coolant/oil temps on stock radiator.',
+                  'Stock Clutch Under Tuning: Holds 400 Nm fine stock, but remaps quickly overwhelm the factory clutch.'
+                ]
+              },
+              de: {
+                headline: 'Hondas erster Turbo-Type-R (K20C1): Überdimensioniert & rennstreckenfest',
+                strengths: [
+                  'Standfester K20C1-Block: Geschmiedete Kurbelwelle/Pleuel und natriumgefüllte Auslassventile für hohe Dauerbelastung.',
+                  'Mechanisches 6-Gang-Getriebe + Torsen-Sperre: Kurze Schaltwege und Dual-Axis-Vorderachse gegen Antriebseinflüsse.'
+                ],
+                watchouts: [
+                  'Hitze auf der Rennstrecke: Bei langen Track-Sessions im Sommer steigen Öl- und Wassertemperaturen.',
+                  'Kupplung bei Chiptuning: Serie für 400 Nm ausgelegt, bei Leistungssteigerung schnell überfordert.'
+                ]
+              },
+              ru: {
+                headline: 'Первый турбо-Type R (K20C1): огромный запас прочности для трека и дорог',
+                strengths: [
+                  'Усиленный блок K20C1: Кованый коленвал и шатуны, клапаны с натрием и масляные форсунки спокойно держат 310 л.с.',
+                  'Механика 6-ст. + самоблок: Короткие ходы кулисы и поворотные кулаки Dual-Axis убирают силовое подруливание.'
+                ],
+                watchouts: [
+                  'Охлаждение на треке: В жару при длительных заездах на треке возможен перегрев без доп. радиатора.',
+                  'Сцепление при чип-тюнинге: Заводское рассчитано на 400 Н·м и не любит прошивки.'
+                ]
+              }
+            }
+          },
+          electronicsInfotainment: {
+            score: 7.3,
+            badges: {
+              en: ['+R Track Mode Telemetry', 'Lagging Honda Connect'],
+              de: ['+R Track-Telemetrie', 'Träges Honda Connect'],
+              ru: ['Телеметрия +R Mode', 'Медленная Honda Connect']
+            }
+          },
+          buildQualityRust: {
+            score: 8.3,
+            badges: {
+              en: ['Alcantara Type R Buckets', 'Wide-Body Aero Shell'],
+              de: ['Type-R-Schalensitze', 'Breite Aero-Karosserie'],
+              ru: ['Ковши Type R из алькантары', 'Широкий аэро-кузов']
+            }
+          },
+          interiorBootSpace: {
+            score: 8.7,
+            badges: {
+              en: ['498L Boot (1,427L Max)', 'Huge Hot-Hatch Practicality'],
+              de: ['498L Kofferraum (1.427L Max)', 'Riesig für einen Hot-Hatch'],
+              ru: ['Багажник 498–1 427 л', 'Огромный для хот-хэтча']
+            }
+          },
+          cabinErgonomicsVisibility: {
+            score: 7.4,
+            badges: {
+              en: ['11.8 m Turning Circle', 'Wing Blocks Rear Glass'],
+              de: ['11,8 m Wendekreis', 'Heckflügel im Blickfeld'],
+              ru: ['Разворот 11,8 м', 'Спойлер перекрывает обзор']
+            }
+          },
+          payloadTowing: {
+            score: 5.7,
+            badges: {
+              en: ['410 kg Payload', '0 / 0 kg Towing'],
+              de: ['410 kg Zuladung', '0 / 0 kg Anhängelast'],
+              ru: ['Нагрузка 410 кг', 'Прицеп: 0 / 0 кг']
+            }
+          },
+          accelerationOvertaking: {
+            score: 8.7,
+            badges: {
+              en: ['0–100 km/h: 5.7 s', '400 Nm (270 km/h)'],
+              de: ['0–100 km/h: 5,7 s', '400 Nm (270 km/h)'],
+              ru: ['0–100 км/ч: 5,7 с', '400 Н·м (270 км/ч)']
+            }
+          },
+          handlingAgility: {
+            score: 9.0,
+            badges: {
+              en: ['High-Grip Front Diff', '7:50.63 Nürburgring'],
+              de: ['Traktionsstarke Vorderachse', '7:50,63 Nürburgring'],
+              ru: ['Самоблок на передней оси', '7:50,63 Нюрбургринг']
+            }
+          },
+          brakingSafety: {
+            score: 8.8,
+            badges: {
+              en: ['100–0 km/h: 34.5 m', '350 mm Brembo 4-Pot'],
+              de: ['100–0 km/h: 34,5 m', '350 mm Brembo 4-Kolben'],
+              ru: ['100–0 км/ч: 34,5 м', 'Brembo 350 мм (4 поршня)']
+            }
+          },
+          efficiencyFuel: {
+            score: 5.8,
+            badges: {
+              en: ['9.8 L/100km Real', '170 g/km CO2'],
+              de: ['9,8 L/100km Real', '170 g/km CO2'],
+              ru: ['9,8 л/100 км в жизни', '170 г/км CO2']
+            }
+          },
+          depreciationResale: {
+            score: 9.1,
+            badges: {
+              en: ['Collector Type R Status', 'Strong Value Retention'],
+              de: ['Sammler-Status Type R', 'Sehr wertstabil'],
+              ru: ['Коллекционный статус', 'Отлично держит цену']
+            }
+          },
+          maintenanceInsurance: {
+            score: 6.1,
+            badges: {
+              en: ['19" Conti Tyres & Brembo', 'High Sport Insurance'],
+              de: ['Teure 19"-Reifen & Brembo', 'Hohe Sport-Versicherung'],
+              ru: ['Дорогие шины R19 и Brembo', 'Дорогая страховка']
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    id: 'honda-accord-2011',
+    number: '07',
+    carType: 'sedan',
+    gridOrder: 7,
+    gridLabel: 'Honda Accord',
+    yearMake: '2008-2015 HONDA',
+    shortTitle: 'ACCORD (CU)',
+    fullName: '2008-2015 Honda Accord (CU)',
+    rarityClass: 'rarity-legendary',
+    drivetrain: 'FWD',
+    image: 'assets/honda-accord-2011.png',
+    defaultEngineId: '2.0-ivtec',
+    engines: [
+      {
+        id: '2.0-ivtec',
+        isDefault: true,
+        fuelType: 'petrol',
+        hp: 156,
+        shortTitle: 'ACCORD 2.0 i-VTEC',
+        fullName: '2011 Honda Accord 2.0 i-VTEC',
+        engineBadge: '2.0L i-VTEC NA • 156 HP',
+        engineSubLabel: {
+          en: 'R20A3 SOHC Chain NA (2008–2015) • 6-MT / Opt. 5-AT • 192 Nm',
+          de: 'R20A3 SOHC-Ketten-Saugmotor (2008–2015) • 6-Gang / Opt. 5-AT • 192 Nm',
+          ru: 'Атмосферный R20A3 с цепью (2008–2015) • 6-ст. МКПП / Опц. 5-АКПП • 192 Н·м'
+        },
+        rarityLabel: {
+          en: 'RELIABILITY ICON',
+          de: 'ZUVERLÄSSIGKEITS-IKONE',
+          ru: 'ИКОНА НАДЁЖНОСТИ'
+        },
+        originalMsrp: {
+          en: '€27,900 New',
+          de: '27.900 € Neu',
+          ru: '€27 900 новый'
+        },
+        estUsedPrice: '€8,900',
+        perkLabel: {
+          en: '✦ Bulletproof R20A3 Chain NA • Double-Wishbone Front • Japanese Build Quality',
+          de: '✦ Unverwüstlicher R20A3 Kettenmotor • Doppelquerlenker vorn • Top-Verarbeitung',
+          ru: '✦ Вечный цепной R20A3 • Двухрычажная подвеска • Японская сборка'
+        },
+        remarkablePositives: {
+          en: [
+            'BULLETPROOF R20A3 CHAIN NA',
+            'DOUBLE-WISHBONE HANDLING',
+            'LOWEST ROUTINE REPAIR RISK',
+            'QUIET & COMFORTABLE RIDE',
+            '1,500 KG BRAKED TOWING'
+          ],
+          de: [
+            'UNVERWÜSTLICHER R20A3 MOTOR',
+            'DOPPELQUERLENKER-FAHRWERK',
+            'SEHR GERINGES REPARATURRISIKO',
+            'LEISER & KOMFORTABLER FAHRKOMFORT',
+            '1.500 KG ANHÄNGELAST'
+          ],
+          ru: [
+            'ВЕЧНЫЙ ЦЕПНОЙ ДВИГАТЕЛЬ R20A3',
+            'ДВУХРЫЧАЖНАЯ ПОДВЕСКА',
+            'МИНИМАЛЬНЫЙ РИСК ПОЛОМОК',
+            'ТИХИЙ И КОМФОРТНЫЙ ХОД',
+            'БУКСИРОВКА ДО 1 500 КГ'
+          ]
+        },
+        notableNegatives: {
+          en: [
+            'MODEST TORQUE (192 NM)',
+            'NARROW 467L SEDAN TRUNK OPENING',
+            'TIGHT REAR HEADROOM FOR TALL ADULTS'
+          ],
+          de: [
+            'MÄSSIGES DREHMOMENT (192 NM)',
+            'SCHMALE 467L LIMO-LADELUKE',
+            'KNAPPE KOPFFREIHEIT HINTEN'
+          ],
+          ru: [
+            'СКРОМНАЯ ТЯГА (192 Н·М)',
+            'УЗКИЙ ПРОЁМ БАГАЖНИКА (467 Л)',
+            'ТЕСНОВАТО ПО ВЫСОТЕ СЗАДИ'
+          ]
+        },
+        pillarScores: {
+          reliabilityQuality: 9.2,
+          practicalityDaily: 7.4,
+          performanceDriving: 7.5,
+          runningCostsTco: 8.3
+        },
+        subStats: {
+          powertrainDurability: {
+            score: 9.5,
+            badges: {
+              en: ['R20A3 Chain SOHC NA', 'No Turbo / No Injectors Risk'],
+              de: ['R20A3 SOHC-Kettenmotor', 'Kein Turbo / Direkteinspritzer'],
+              ru: ['Цепной R20A3 без турбины', 'Простой распределённый впрыск']
+            }
+          },
+          electronicsInfotainment: {
+            score: 8.9,
+            badges: {
+              en: ['Rock-Solid Denso Electrics', 'Basic Infotainment UI'],
+              de: ['Solide Denso-Elektronik', 'Schlichtes Infotainment'],
+              ru: ['Надёжная электрика Denso', 'Простая мультимедиа']
+            }
+          },
+          buildQualityRust: {
+            score: 9.1,
+            badges: {
+              en: ['High-Quality Made in Japan', 'Check Rear Arch Lips'],
+              de: ['Top-Qualität Made in Japan', 'Radläufe hinten prüfen'],
+              ru: ['Японская сборка высокого качества', 'Проверить задние арки']
+            }
+          },
+          interiorBootSpace: {
+            score: 7.1,
+            badges: {
+              en: ['467L Sedan Boot', 'Tighter Rear Legroom'],
+              de: ['467L Stufenheck-Kofferraum', 'Knapperer Fondraum'],
+              ru: ['Багажник седана 467 л', 'Средний запас места сзади']
+            }
+          },
+          cabinErgonomicsVisibility: {
+            score: 8.2,
+            badges: {
+              en: ['Supportive Long-Trip Seats', 'Refined Cabin Acoustics'],
+              de: ['Langstrecken-Sitze', 'Gute Geräuschdämmung'],
+              ru: ['Удобные кресла для трассы', 'Хорошая шумоизоляция']
+            }
+          },
+          payloadTowing: {
+            score: 7.0,
+            badges: {
+              en: ['1,500 kg Braked Tow', '475 kg Payload'],
+              de: ['1.500 kg Anhängelast', '475 kg Zuladung'],
+              ru: ['Прицеп до 1 500 кг', 'Грузоподъёмность 475 кг']
+            }
+          },
+          accelerationOvertaking: {
+            score: 6.9,
+            badges: {
+              en: ['9.3s 0–100 • 192 Nm', 'Needs Revs to Pass'],
+              de: ['9,3s 0–100 • 192 Nm', 'Braucht Drehzahl'],
+              ru: ['9,3 с до 100 • 192 Н·м', 'Любит обороты']
+            }
+          },
+          handlingAgility: {
+            score: 8.3,
+            badges: {
+              en: ['Double-Wishbone Front', 'Composed Highway Grip'],
+              de: ['Doppelquerlenker vorn', 'Sehr spurstabil'],
+              ru: ['Двухрычажка спереди', 'Отличная курсовая устойчивость']
+            }
+          },
+          brakingSafety: {
+            score: 7.4,
+            badges: {
+              en: ['5-Star Euro NCAP', '300mm Front Discs'],
+              de: ['5 Sterne Euro NCAP', '300mm Scheiben vorn'],
+              ru: ['5 звёзд Euro NCAP', 'Диски 300 мм спереди']
+            }
+          },
+          efficiencyFuel: {
+            score: 7.4,
+            badges: {
+              en: ['7.6 L/100km Real', '165 g/km CO2'],
+              de: ['7,6 L/100km Real', '165 g/km CO2'],
+              ru: ['7,6 л/100 км в жизни', '165 г/км CO2']
+            }
+          },
+          depreciationResale: {
+            score: 8.8,
+            badges: {
+              en: ['High Honda Resale Demand', 'Slow Value Drop'],
+              de: ['Hohe Gebrauchtnachfrage', 'Sehr wertstabil'],
+              ru: ['Высокий спрос на вторичке', 'Медленно теряет в цене']
+            }
+          },
+          maintenanceInsurance: {
+            score: 8.6,
+            badges: {
+              en: ['Simple Routine Servicing', 'Moderate Sedan Insurance'],
+              de: ['Günstiger Regelservice', 'Faire Versicherung'],
+              ru: ['Недорогое плановое ТО', 'Умеренная страховка']
+            }
+          }
+        }
+      },
+      {
+        id: '2.4-ivtec',
+        isDefault: false,
+        fuelType: 'petrol',
+        hp: 201,
+        shortTitle: 'ACCORD 2.4 i-VTEC',
+        fullName: '2011 Honda Accord 2.4 i-VTEC',
+        engineBadge: '2.4L i-VTEC NA • 201 HP',
+        engineSubLabel: {
+          en: 'K24Z3 DOHC Chain NA (2008–2015) • 6-MT / Opt. 5-AT • 234 Nm',
+          de: 'K24Z3 DOHC-Ketten-Saugmotor (2008–2015) • 6-Gang / Opt. 5-AT • 234 Nm',
+          ru: 'Легендарный цепной K24Z3 (2008–2015) • 6-ст. МКПП / Опц. 5-АКПП • 234 Н·м'
+        },
+        rarityLabel: {
+          en: 'NA DRIVER\'S SEDAN',
+          de: 'SAUGMOTOR-KLASSIKER',
+          ru: 'АТМОСФЕРНЫЙ ХИТ'
+        },
+        originalMsrp: {
+          en: '€34,400 New',
+          de: '34.400 € Neu',
+          ru: '€34 400 новый'
+        },
+        estUsedPrice: '€11,500',
+        perkLabel: {
+          en: '✦ Legendary K24Z3 201 HP • 7,100 RPM VTEC • Bulletproof Chain NA',
+          de: '✦ Legendärer K24Z3 (201 PS) • 7.100 U/min VTEC • Robuste Steuerkette',
+          ru: '✦ Легендарный K24Z3 (201 л.с.) • 7 100 об/мин VTEC • Вечная цепь'
+        },
+        remarkablePositives: {
+          en: [
+            'LEGENDARY K24Z3 NA ENGINE',
+            '7.8S 0–100 • 227 KM/H TOP SPEED',
+            'DOUBLE-WISHBONE CHASSIS',
+            'GOOD BRAKES (320MM)',
+            'STRONG ENTHUSIAST RESALE'
+          ],
+          de: [
+            'LEGENDÄRER K24Z3 SAUGMOTOR',
+            '7,8S 0–100 • 227 KM/H SPITZE',
+            'DOPPELQUERLENKER-FAHRWERK',
+            'STARKE BREMSEN (320MM)',
+            'STARKER WERTERHALT'
+          ],
+          ru: [
+            'ЛЕГЕНДАРНЫЙ АТМОСФЕРНЫЙ K24Z3',
+            '7,8 С ДО 100 • МАКС. 227 КМ/Ч',
+            'ДВУХРЫЧАЖНАЯ ПОДВЕСКА',
+            'ХОРОШИЕ ТОРМОЗА (320 ММ)',
+            'ОТЛИЧНАЯ ЛИКВИДНОСТЬ'
+          ]
+        },
+        notableNegatives: {
+          en: [
+            'THIRSTY 9.1 L/100KM',
+            'CHECK OIL LEVEL BETWEEN SERVICES',
+            'NARROW 467L SEDAN TRUNK OPENING'
+          ],
+          de: [
+            'DURSTIGE 9,1 L/100KM',
+            'ÖLSTAND REGELMÄSSIG PRÜFEN',
+            'SCHMALE 467L LIMO-LADELUKE'
+          ],
+          ru: [
+            'РАСХОД 9,1 Л/100 КМ',
+            'КОНТРОЛЬ УРОВНЯ МАСЛА В K24',
+            'УЗКИЙ ПРОЁМ БАГАЖНИКА (467 Л)'
+          ]
+        },
+        pillarScores: {
+          reliabilityQuality: 9.1,
+          practicalityDaily: 7.4,
+          performanceDriving: 8.2,
+          runningCostsTco: 7.3
+        },
+        subStats: {
+          powertrainDurability: {
+            score: 9.4,
+            badges: {
+              en: ['K24Z3 Chain DOHC NA', 'Forged Internals & Chain'],
+              de: ['K24Z3 DOHC-Kettenmotor', 'Geschmiedeter Kurbeltrieb'],
+              ru: ['Цепной K24Z3 DOHC', 'Надёжный цепной ГРМ']
+            }
+          },
+          electronicsInfotainment: {
+            score: 8.9,
+            badges: {
+              en: ['Rock-Solid Denso Electrics', 'Basic Infotainment UI'],
+              de: ['Solide Denso-Elektronik', 'Schlichtes Infotainment'],
+              ru: ['Надёжная электрика Denso', 'Простая мультимедиа']
+            }
+          },
+          buildQualityRust: {
+            score: 9.0,
+            badges: {
+              en: ['High-Quality Made in Japan', 'Check Rear Arch Lips'],
+              de: ['Top-Qualität Made in Japan', 'Radläufe hinten prüfen'],
+              ru: ['Японская сборка высокого качества', 'Проверить задние арки']
+            }
+          },
+          interiorBootSpace: {
+            score: 7.1,
+            badges: {
+              en: ['467L Sedan Boot', 'Tighter Rear Legroom'],
+              de: ['467L Stufenheck-Kofferraum', 'Knapperer Fondraum'],
+              ru: ['Багажник седана 467 л', 'Средний запас места сзади']
+            }
+          },
+          cabinErgonomicsVisibility: {
+            score: 8.1,
+            badges: {
+              en: ['Sporty Bolstered Seats', 'Refined Cabin Acoustics'],
+              de: ['Sportliche Sitze mit Halt', 'Gute Geräuschdämmung'],
+              ru: ['Спортивные сиденья', 'Хорошая шумоизоляция']
+            }
+          },
+          payloadTowing: {
+            score: 7.0,
+            badges: {
+              en: ['1,500 kg Braked Tow', '470 kg Payload'],
+              de: ['1.500 kg Anhängelast', '470 kg Zuladung'],
+              ru: ['Прицеп до 1 500 кг', 'Грузоподъёмность 470 кг']
+            }
+          },
+          accelerationOvertaking: {
+            score: 8.3,
+            badges: {
+              en: ['7.8s 0–100 • 201 HP', 'High RPM VTEC Pull'],
+              de: ['7,8s 0–100 • 201 PS', 'Hohe VTEC-Drehfreude'],
+              ru: ['7,8 с до 100 • 201 л.с.', 'Высокооборотистый VTEC']
+            }
+          },
+          handlingAgility: {
+            score: 8.5,
+            badges: {
+              en: ['Double-Wishbone Front', 'Firm Executive Balance'],
+              de: ['Doppelquerlenker vorn', 'Straffe Reise-Abstimmung'],
+              ru: ['Двухрычажка спереди', 'Собранное шасси']
+            }
+          },
+          brakingSafety: {
+            score: 7.8,
+            badges: {
+              en: ['5-Star Euro NCAP', 'Upgraded 320mm Brakes'],
+              de: ['5 Sterne Euro NCAP', 'Größere 320mm Bremsen'],
+              ru: ['5 звёзд Euro NCAP', 'Увеличенные диски 320 мм']
+            }
+          },
+          efficiencyFuel: {
+            score: 5.9,
+            badges: {
+              en: ['9.1 L/100km Real', '204 g/km CO2'],
+              de: ['9,1 L/100km Real', '204 g/km CO2'],
+              ru: ['9,1 л/100 км в жизни', '204 г/км CO2']
+            }
+          },
+          depreciationResale: {
+            score: 9.0,
+            badges: {
+              en: ['High 2.4L Accord Demand', 'Appreciating Clean Units'],
+              de: ['Hohe 2.4L Nachfrage', 'Sehr hoher Werterhalt'],
+              ru: ['Высокий спрос на 2.4 л', 'Почти не теряет в цене']
+            }
+          },
+          maintenanceInsurance: {
+            score: 7.0,
+            badges: {
+              en: ['Higher 2.4L Tax & CO2', '17"/18" Tyres & 320mm Pads'],
+              de: ['Höhere 2.4L Steuer', '17"/18"-Reifen & 320mm Beläge'],
+              ru: ['Выше налог за 2.4 л', 'Шины R17/R18 и колодки 320 мм']
+            }
+          }
+        }
+      },
+      {
+        id: '2.2-idtec',
+        isDefault: false,
+        fuelType: 'diesel',
+        hp: 150,
+        shortTitle: 'ACCORD 2.2 i-DTEC',
+        fullName: '2011 Honda Accord 2.2 i-DTEC',
+        engineBadge: '2.2L i-DTEC • 150 / 180 HP',
+        engineSubLabel: {
+          en: 'N22B1 / N22B2 Closed-Deck Diesel (2008–2015) • 6-MT / 5-AT • 350–380 Nm',
+          de: 'N22B1 / N22B2 Alu-Ketten-Diesel (2008–2015) • 6-Gang / 5-AT • 350–380 Nm',
+          ru: 'Дизель N22B1 / N22B2 с цепью (2008–2015) • 6-МКПП / 5-АКПП • 350–380 Н·м'
+        },
+        rarityLabel: {
+          en: 'AUTOBAHN CRUISER',
+          de: 'LANGSTRECKEN-EXPRESS',
+          ru: 'ТРАССОВЫЙ КРЕЙСЕР'
+        },
+        originalMsrp: {
+          en: '€32,200 New',
+          de: '32.200 € Neu',
+          ru: '€32 200 новый'
+        },
+        estUsedPrice: '€8,400',
+        perkLabel: {
+          en: '✦ 350–380 Nm Diesel Torque • 5.9 L/100km • 1,700 kg Towing',
+          de: '✦ 350–380 Nm Diesel-Drehmoment • 5,9 L/100km • 1.700 kg Zuglast',
+          ru: '✦ Тяга 350–380 Н·м • Расход 5,9 л/100 км • Прицеп 1 700 кг'
+        },
+        remarkablePositives: {
+          en: [
+            '350–380 NM HIGHWAY TORQUE',
+            '5.9 L/100KM REAL ECONOMY',
+            '1,700 KG BRAKED TOWING',
+            'DOUBLE-WISHBONE CHASSIS',
+            'QUIET REFINED N22B DIESEL'
+          ],
+          de: [
+            '350–380 NM AUTOBAHN-DURCHZUG',
+            '5,9 L/100KM REALVERBRAUCH',
+            '1.700 KG ANHÄNGELAST',
+            'DOPPELQUERLENKER-FAHRWERK',
+            'LAUFRUHIGER N22B DIESEL'
+          ],
+          ru: [
+            'МОЩНАЯ ТЯГА 350–380 Н·М',
+            'РАСХОД 5,9 Л/100 КМ',
+            'БУКСИРОВКА ДО 1 700 КГ',
+            'ДВУХРЫЧАЖНАЯ ПОДВЕСКА',
+            'ТИХИЙ ДИЗЕЛЬ N22B'
+          ]
+        },
+        notableNegatives: {
+          en: [
+            'DPF CLOGGING ON SHORT CITY TRIPS',
+            'EXPENSIVE DUAL-MASS FLYWHEEL',
+            'EURO 5 CITY BAN RESTRICTIONS'
+          ],
+          de: [
+            'DPF MAG KEINE KURZSTRECKE',
+            'TEURES ZWEIMASSENSCHWUNGRAD',
+            'EURO-5-UMWELTZONEN-LIMIT'
+          ],
+          ru: [
+            'DPF НЕ ЛЮБИТ КОРОТКИЕ ПОЕЗДКИ',
+            'ДОРОГОЙ ДВУХМАССОВЫЙ МАХОВИК',
+            'НОРМЫ EURO 5 ДЛЯ ЦЕНТРА ГОРОДОВ'
+          ]
+        },
+        pillarScores: {
+          reliabilityQuality: 8.8,
+          practicalityDaily: 7.5,
+          performanceDriving: 7.9,
+          runningCostsTco: 7.6
+        },
+        subStats: {
+          powertrainDurability: {
+            score: 8.9,
+            badges: {
+              en: ['Updated 2.2 Chain Block', 'Watch DPF & DMF Wear'],
+              de: ['Überarb. 2.2 Kettenmotor', 'DPF & ZMS beachten'],
+              ru: ['Обновл. цепной дизель 2.2', 'Внимание к DPF и ZMS']
+            }
+          },
+          electronicsInfotainment: {
+            score: 8.6,
+            badges: {
+              en: ['Solid Denso Electrics', 'DPF Sensor Watch-Out'],
+              de: ['Solide Denso-Elektronik', 'DPF-Sensoren beachten'],
+              ru: ['Надёжная электрика Denso', 'Датчики DPF']
+            }
+          },
+          buildQualityRust: {
+            score: 8.9,
+            badges: {
+              en: ['High-Quality Made in Japan', 'Check Rear Arch Lips'],
+              de: ['Top-Qualität Made in Japan', 'Radläufe hinten prüfen'],
+              ru: ['Японская сборка высокого качества', 'Проверить задние арки']
+            }
+          },
+          interiorBootSpace: {
+            score: 7.1,
+            badges: {
+              en: ['467L Sedan Boot', 'Tighter Rear Legroom'],
+              de: ['467L Stufenheck-Kofferraum', 'Knapperer Fondraum'],
+              ru: ['Багажник седана 467 л', 'Средний запас места сзади']
+            }
+          },
+          cabinErgonomicsVisibility: {
+            score: 8.2,
+            badges: {
+              en: ['Supportive Long-Trip Seats', 'Refined Diesel Acoustics'],
+              de: ['Langstrecken-Sitze', 'Leiser Diesel-Innenraum'],
+              ru: ['Удобные кресла для трассы', 'Тихий дизель в салоне']
+            }
+          },
+          payloadTowing: {
+            score: 7.3,
+            badges: {
+              en: ['1,700 kg Braked Tow', 'Strong Diesel Pull'],
+              de: ['1.700 kg Anhängelast', 'Starker Durchzug'],
+              ru: ['Прицеп до 1 700 кг', 'Уверенная тяга с грузом']
+            }
+          },
+          accelerationOvertaking: {
+            score: 7.6,
+            badges: {
+              en: ['8.5s–9.6s • 350–380 Nm', 'Effortless Mid-Range'],
+              de: ['8,5s–9,6s • 350–380 Nm', 'Souveräne Mitte'],
+              ru: ['8,5–9,6 с • 350–380 Н·м', 'Отличный подхват в середине']
+            }
+          },
+          handlingAgility: {
+            score: 8.2,
+            badges: {
+              en: ['Double-Wishbone Front', 'Slightly Heavier Nose'],
+              de: ['Doppelquerlenker vorn', 'Etwas schwerere Front'],
+              ru: ['Двухрычажка спереди', 'Чуть тяжелее передок']
+            }
+          },
+          brakingSafety: {
+            score: 7.8,
+            badges: {
+              en: ['5-Star Euro NCAP', '320mm Front Discs'],
+              de: ['5 Sterne Euro NCAP', '320mm Scheiben vorn'],
+              ru: ['5 звёзд Euro NCAP', 'Диски 320 мм спереди']
+            }
+          },
+          efficiencyFuel: {
+            score: 8.0,
+            badges: {
+              en: ['5.9 L/100km Real', '147 g/km CO2'],
+              de: ['5,9 L/100km Real', '147 g/km CO2'],
+              ru: ['5,9 л/100 км в жизни', '147 г/км CO2']
+            }
+          },
+          depreciationResale: {
+            score: 8.0,
+            badges: {
+              en: ['Steady Diesel Demand', 'Euro 5 Zone Discount'],
+              de: ['Solide Diesel-Nachfrage', 'Euro-5-Abschlag'],
+              ru: ['Стабильный спрос', 'Уценка из-за Euro 5']
+            }
+          },
+          maintenanceInsurance: {
+            score: 6.7,
+            badges: {
+              en: ['Higher 2.2L Diesel Tax', 'DPF & Dual-Mass Flywheel'],
+              de: ['Höhere 2.2L Dieselsteuer', 'DPF & ZMS-Kosten'],
+              ru: ['Выше налог на дизель 2.2', 'DPF и двухмассовый маховик']
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    id: 'honda-jazz-2011',
+    number: '08',
+    carType: 'subcompact',
+    gridOrder: 8,
+    gridLabel: 'Honda Jazz',
+    yearMake: '2008-2015 HONDA',
+    shortTitle: 'JAZZ (GE)',
+    fullName: '2008-2015 Honda Jazz (GE)',
+    rarityClass: 'rarity-legendary',
+    drivetrain: 'FWD',
+    image: 'assets/honda-jazz-2011.png',
+    defaultEngineId: '1.3-ivtec',
+    engines: [
+      {
+        id: '1.2-ivtec',
+        isDefault: false,
+        fuelType: 'petrol',
+        hp: 90,
+        shortTitle: 'JAZZ 1.2 i-VTEC',
+        fullName: '2011 Honda Jazz 1.2 i-VTEC',
+        engineBadge: '1.2L i-VTEC NA • 90 HP',
+        engineSubLabel: {
+          en: 'L12B1 Chain NA (11/2008–09/2015) • 5-MT • 114 Nm',
+          de: 'L12B1 Ketten-Saugmotor (11/2008–09/2015) • 5-Gang • 114 Nm',
+          ru: 'Цепной L12B1 (11/2008–09/2015) • 5-ст. МКПП • 114 Н·м'
+        },
+        rarityLabel: {
+          en: 'CITY RELIABILITY KING',
+          de: 'STADT-DAUERLÄUFER',
+          ru: 'КОРОЛЬ ГОРОДА'
+        },
+        originalMsrp: {
+          en: '€14,950 New',
+          de: '14.950 € Neu',
+          ru: '€14 950 новый'
+        },
+        estUsedPrice: '€5,800',
+        perkLabel: {
+          en: '✦ 399L Boot + Magic Seats • Bulletproof L12B1 Chain NA • 5.6 L/100km',
+          de: '✦ 399L Kofferraum + Magic Seats • Unverwüstlicher L12B1 • 5,6 L/100km',
+          ru: '✦ Багажник 399 л + Magic Seats • Вечный L12B1 • 5,6 л/100 км'
+        },
+        remarkablePositives: {
+          en: [
+            'MAGIC SEATS (1,321L CARGO)',
+            '399L CLASS-LEADING SUBCOMPACT BOOT',
+            'BULLETPROOF L12B1 CHAIN ENGINE',
+            '5.6 L/100KM REAL ECONOMY',
+            '9.8M TIGHT TURNING CIRCLE'
+          ],
+          de: [
+            'MAGIC SEATS (1.321L LADERAUM)',
+            '399L RIESIGER KLEINWAGEN-KOFFERRAUM',
+            'UNVERWÜSTLICHER L12B1 KETTENMOTOR',
+            '5,6 L/100KM REALVERBRAUCH',
+            '9,8M WENDEKREIS IN DER STADT'
+          ],
+          ru: [
+            'ТРАНСФОРМАЦИЯ MAGIC SEATS (1 321 Л)',
+            'ОГРОМНЫЙ БАГАЖНИК 399 Л В КЛАССЕ',
+            'ВЕЧНЫЙ ЦЕПНОЙ ДВИГАТЕЛЬ L12B1',
+            'РАСХОД 5,6 Л/100 КМ',
+            'МАЛЫЙ РАДИУС РАЗВОРОТА 9,8 М'
+          ]
+        },
+        notableNegatives: {
+          en: [
+            'MODEST 12.6S 0–100 HIGHWAY PACE',
+            'HIGH-REVVING ON AUTOBAHN INCLINES',
+            'NOISY AT HIGHWAY SPEEDS'
+          ],
+          de: [
+            'GEMÄCHLICHE 12,6S 0–100 AUF DER BAHN',
+            'HOHE DREHZAHLEN BEI 130 KM/H',
+            'LAUT BEI AUTOBAHN-TEMPO'
+          ],
+          ru: [
+            'СПОКОЙНЫЙ РАЗГОН 12,6 С ДО 100',
+            'ВЫСОКИЕ ОБОРОТЫ НА ТРАССЕ',
+            'ШУМНОВАТ НА ВЫСОКОЙ СКОРОСТИ'
+          ]
+        },
+        pillarScores: {
+          reliabilityQuality: 9.2,
+          practicalityDaily: 8.6,
+          performanceDriving: 6.4,
+          runningCostsTco: 8.9
+        },
+        subStats: {
+          powertrainDurability: {
+            score: 9.6,
+            badges: {
+              en: ['Bulletproof L12B1 Chain NA', 'No Turbo / Zero EGR Issues'],
+              de: ['Robuster L12B1 Kettenmotor', 'Kein Turbo / Keine AGR-Probleme'],
+              ru: ['Вечный цепной L12B1', 'Без турбины и проблем с EGR']
+            },
+            dossier: {
+              en: {
+                headline: 'Ultra-Simple Port-Injected Chain Engine Built for 300,000+ km City Abuse',
+                strengths: [
+                  'Multi-Point Port Injection: Washes intake valves cleanly, avoiding the carbon buildup common on direct-injection city cars.',
+                  'Timing Chain Drive: Durable steel timing chain with no wet-belt or scheduled timing-belt replacement costs.',
+                  'Zero Complex Emissions Gear: Naturally aspirated with no turbocharger, no intercooler, no high-pressure fuel pump, and no DPF.'
+                ],
+                watchouts: [
+                  'Check 5-speed manual gearbox input-shaft bearing noise on high-mileage examples (whirring in neutral that disappears when clutching in).',
+                  'Mechanical valve clearance inspection every ~80,000–100,000 km keeps idle smooth and fuel consumption low.'
+                ]
+              },
+              de: {
+                headline: 'Extrem schlichter Ketten-Saugmotor für 300.000+ km im Stadtalltag',
+                strengths: [
+                  'Saugrohreinspritzung (MPI): Spült die Einlassventile sauber — keine Verkokungsprobleme wie bei modernen Direkteinspritzern.',
+                  'Steuerkette statt Zahnriemen: Wartungsarme Metall-Steuerkette ohne teure Zahnriemenwechsel-Intervalle.',
+                  'Keine anfällige Aufladung: Kein Turbolader, keine Hochdruckpumpe und kein Partikelfilter.'
+                ],
+                watchouts: [
+                  'Bei hoher Laufleistung auf das Eingangswellenlager des 5-Gang-Getriebes achten (Geräusch im Leerlauf, das beim Kupplungstreten verschwindet).',
+                  'Ventilspiel alle ca. 80.000–100.000 km prüfen für ruhigen Leerlauf und niedrigen Verbrauch.'
+                ]
+              },
+              ru: {
+                headline: 'Простейший цепной атмосферник с ресурсом свыше 300 000 км в городе',
+                strengths: [
+                  'Распределённый впрыск (MPI): Бензин омывает впускные клапаны, полностью исключая нагар.',
+                  'Цепной привод ГРМ: Надёжная металлическая цепь без затрат на замену ремня.',
+                  'Минимум сложных узлов: Нет турбины, ТНВД, сажевого фильтра и двухмассового маховика.'
+                ],
+                watchouts: [
+                  'На больших пробегах проверить подшипник первичного вала 5-МКПП (шум на холостых, пропадающий при выжиме сцепления).',
+                  'Регулировка зазоров клапанов каждые ~80–100 тыс. км сохраняет тихую работу и низкий расход.'
+                ]
+              }
+            }
+          },
+          electronicsInfotainment: {
+            score: 9.0,
+            badges: {
+              en: ['Simple Reliable Electrics', 'Basic Factory Radio'],
+              de: ['Sehr solide Elektrik', 'Schlichtes Serienradio'],
+              ru: ['Простая надёжная электрика', 'Базовая аудиосистема']
+            }
+          },
+          buildQualityRust: {
+            score: 8.9,
+            badges: {
+              en: ['TÜV Top-Ranked Chassis', 'Check Rear Sill Seams'],
+              de: ['TÜV-Musterknabe', 'Hintere Schweller prüfen'],
+              ru: ['Лидер рейтингов TÜV', 'Проверить задние пороги']
+            }
+          },
+          interiorBootSpace: {
+            score: 8.9,
+            badges: {
+              en: ['399L Boot + 1,321L Max', 'Fold-Up Magic Seats'],
+              de: ['399L Kofferraum (1.321L Max)', 'Geniale Magic Seats'],
+              ru: ['Багажник 399 л (до 1 321 л)', 'Сиденья Magic Seats']
+            }
+          },
+          cabinErgonomicsVisibility: {
+            score: 8.8,
+            badges: {
+              en: ['Great All-Around Visibility', '9.8m Tight Turning Circle'],
+              de: ['Sehr gute Rundumsicht', '9,8m Mini-Wendekreis'],
+              ru: ['Отличная обзорность', 'Разворот всего 9,8 м']
+            }
+          },
+          payloadTowing: {
+            score: 7.4,
+            badges: {
+              en: ['1,000 kg Braked Tow', '420 kg Subcompact Payload'],
+              de: ['1.000 kg Anhängelast', '420 kg Zuladung'],
+              ru: ['Прицеп до 1 000 кг', 'Грузоподъёмность 420 кг']
+            }
+          },
+          accelerationOvertaking: {
+            score: 5.5,
+            badges: {
+              en: ['12.6s 0–100 • 114 Nm', 'Needs Downshifts to Pass'],
+              de: ['12,6s 0–100 • 114 Nm', 'Braucht Herunterschalten'],
+              ru: ['12,6 с до 100 • 114 Н·м', 'Нужно крутить на обгонах']
+            }
+          },
+          handlingAgility: {
+            score: 7.2,
+            badges: {
+              en: ['1,075 kg Nimble City Feel', 'Some Body Roll in Corners'],
+              de: ['1.075 kg Leichtgewicht', 'Etwas Seitenneigung'],
+              ru: ['Лёгкий вес 1 075 кг', 'Небольшие крены в поворотах']
+            }
+          },
+          brakingSafety: {
+            score: 7.3,
+            badges: {
+              en: ['5-Star Euro NCAP', 'Strong Fade-Free Braking'],
+              de: ['5 Sterne Euro NCAP', 'Starke Bremsen + ESP'],
+              ru: ['5 звёзд Euro NCAP', 'Уверенные тормоза + VSA']
+            }
+          },
+          efficiencyFuel: {
+            score: 8.6,
+            badges: {
+              en: ['5.6 L/100km Real', '123 g/km CO2'],
+              de: ['5,6 L/100km Real', '123 g/km CO2'],
+              ru: ['5,6 л/100 км в жизни', '123 г/км CO2']
+            }
+          },
+          depreciationResale: {
+            score: 9.0,
+            badges: {
+              en: ['Strong Used Jazz Demand', 'Minimal Value Drop'],
+              de: ['Hohe Gebrauchtnachfrage', 'Sehr wertstabil'],
+              ru: ['Высокий спрос на вторичке', 'Минимальная потеря цены']
+            }
+          },
+          maintenanceInsurance: {
+            score: 9.2,
+            badges: {
+              en: ['Lowest Tax & Insurance', 'Cheap 15" Tyres & Servicing'],
+              de: ['Günstige Steuer & Vers.', 'Preiswerte Wartung'],
+              ru: ['Минимальный налог и страховка', 'Дешёвое ТО и шины']
+            }
+          }
+        }
+      },
+      {
+        id: '1.3-ivtec',
+        isDefault: true,
+        fuelType: 'petrol',
+        hp: 99,
+        shortTitle: 'JAZZ 1.3 i-VTEC',
+        fullName: '2011 Honda Jazz 1.3 i-VTEC',
+        engineBadge: '1.3L i-VTEC NA • 99 HP',
+        engineSubLabel: {
+          en: 'L13Z1 Chain NA (11/2008–09/2015) • 5-MT / Opt. CVT • 127 Nm',
+          de: 'L13Z1 Ketten-Saugmotor (11/2008–09/2015) • 5-Gang / Opt. CVT • 127 Nm',
+          ru: 'Цепной L13Z1 (11/2008–09/2015) • 5-МКПП / Опц. CVT • 127 Н·м'
+        },
+        rarityLabel: {
+          en: 'SPACE & RELIABILITY ICON',
+          de: 'RAUMWUNDER & DAUERLÄUFER',
+          ru: 'ЭТАЛОН ПРАКТИЧНОСТИ'
+        },
+        originalMsrp: {
+          en: '€16,800 New',
+          de: '16.800 € Neu',
+          ru: '€16 800 новый'
+        },
+        estUsedPrice: '€6,500',
+        perkLabel: {
+          en: '✦ Magic Seats + 399L Boot • Bulletproof L13Z1 Chain NA • 5.8 L/100km',
+          de: '✦ Magic Seats + 399L Kofferraum • Robuster L13Z1 • 5,8 L/100km',
+          ru: '✦ Magic Seats + Багажник 399 л • Вечный L13Z1 • 5,8 л/100 км'
+        },
+        remarkablePositives: {
+          en: [
+            'MAGIC SEATS (1,321L CARGO)',
+            '399L CLASS-LEADING SUBCOMPACT BOOT',
+            'BULLETPROOF L13Z1 CHAIN ENGINE',
+            '5.8 L/100KM REAL ECONOMY',
+            '9.8M TIGHT TURNING CIRCLE'
+          ],
+          de: [
+            'MAGIC SEATS (1.321L LADERAUM)',
+            '399L RIESIGER KLEINWAGEN-KOFFERRAUM',
+            'UNVERWÜSTLICHER L13Z1 KETTENMOTOR',
+            '5,8 L/100KM REALVERBRAUCH',
+            '9,8M WENDEKREIS IN DER STADT'
+          ],
+          ru: [
+            'ТРАНСФОРМАЦИЯ MAGIC SEATS (1 321 Л)',
+            'ОГРОМНЫЙ БАГАЖНИК 399 Л В КЛАССЕ',
+            'ВЕЧНЫЙ ЦЕПНОЙ ДВИГАТЕЛЬ L13Z1',
+            'РАСХОД 5,8 Л/100 КМ',
+            'МАЛЫЙ РАДИУС РАЗВОРОТА 9,8 М'
+          ]
+        },
+        notableNegatives: {
+          en: [
+            'HIGH-REVVING FOR HIGHWAY PASSES',
+            'FIRMER LOW-SPEED RIDE ON 16" WHEELS',
+            'NOISY AT HIGHWAY SPEEDS'
+          ],
+          de: [
+            'BRAUCHT DREHZAHL BEIM ÜBERHOLEN',
+            'MIT 16"-FELGEN ETWAS STRAFF',
+            'LAUT BEI AUTOBAHN-TEMPO'
+          ],
+          ru: [
+            'НУЖНО КРУТИТЬ ПРИ ОБГОНАХ',
+            'ПЛОТНАЯ ПОДВЕСКА НА R16',
+            'ШУМНОВАТ НА ВЫСОКОЙ СКОРОСТИ'
+          ]
+        },
+        pillarScores: {
+          reliabilityQuality: 9.2,
+          practicalityDaily: 8.6,
+          performanceDriving: 6.7,
+          runningCostsTco: 8.8
+        },
+        subStats: {
+          powertrainDurability: {
+            score: 9.6,
+            badges: {
+              en: ['Bulletproof L13Z1 Chain NA', 'Proven CVT / 5-MT Options'],
+              de: ['Robuster L13Z1 Kettenmotor', 'Solide 5-Gang / CVT'],
+              ru: ['Вечный цепной L13Z1', 'Надёжные 5-МКПП / CVT']
+            },
+            dossier: {
+              en: {
+                headline: 'Proven 1.3L Chain-Driven SOHC Engine — One of Europe\'s Most Reliable Subcompacts',
+                strengths: [
+                  'Long-Life Timing Chain & Port Injection: No timing belt intervals and zero intake-valve carbon buildup.',
+                  'Facelift CVT Upgrade (2011+): Replaces the jerky early i-SHIFT automated manual with a smooth torque-converter CVT.',
+                  'Top TÜV Reliability Scores: Consistently ranks among the lowest-defect used small cars in Germany and the UK.'
+                ],
+                watchouts: [
+                  'If equipped with CVT, change Honda HMMF/CVT fluid strictly every 40,000 km for smooth take-offs.',
+                  'Check valve clearance around 80,000–100,000 km and inspect 5-MT input-shaft bearing on older high-km units.'
+                ]
+              },
+              de: {
+                headline: 'Bewährter 1.3L Ketten-Saugmotor — einer der zuverlässigsten Kleinwagen Europas',
+                strengths: [
+                  'Steuerkette & Saugrohreinspritzung: Keine Zahnriemenwechsel und keine Einlass-Verkokung.',
+                  'Facelift-CVT-Upgrade (ab 2011): Ersetzt das ruckelige frühe i-SHIFT-Getriebe durch eine sanfte Wandler-CVT.',
+                  'TÜV-Spitzenreiter: Belegt regelmäßig vordere Plätze bei den mängelärmsten Gebrauchtwagen.'
+                ],
+                watchouts: [
+                  'Bei CVT-Automatik das Getriebeöl konsequent alle 40.000 km wechseln.',
+                  'Ventilspiel bei 80.000–100.000 km prüfen und bei 5-Gang-Schaltern auf Lagergeräusche achten.'
+                ]
+              },
+              ru: {
+                headline: 'Проверенный цепной 1.3L — один из самых надёжных компактных авто в Европе',
+                strengths: [
+                  'Цепь ГРМ и впрыск MPI: Без замены ремня ГРМ и без проблем с нагаром на клапанах.',
+                  'Обновлённый вариатор с 2011 года: На рестайлинге вместо дёрганого робота i-SHIFT стоит плавный CVT с гидротрансформатором.',
+                  'Лидер рейтингов TÜV: Стабильно занимает верхние строчки по минимальному количеству поломок.'
+                ],
+                watchouts: [
+                  'На версиях с вариатором CVT менять жидкость строго каждые 40 000 км.',
+                  'Проверять зазоры клапанов на 80–100 тыс. км и слушать подшипник первичного вала 5-МКПП.'
+                ]
+              }
+            }
+          },
+          electronicsInfotainment: {
+            score: 9.0,
+            badges: {
+              en: ['Simple Reliable Electrics', 'Basic Factory Radio'],
+              de: ['Sehr solide Elektrik', 'Schlichtes Serienradio'],
+              ru: ['Простая надёжная электрика', 'Базовая аудиосистема']
+            }
+          },
+          buildQualityRust: {
+            score: 8.9,
+            badges: {
+              en: ['TÜV Top-Ranked Chassis', 'Check Rear Sill Seams'],
+              de: ['TÜV-Musterknabe', 'Hintere Schweller prüfen'],
+              ru: ['Лидер рейтингов TÜV', 'Проверить задние пороги']
+            }
+          },
+          interiorBootSpace: {
+            score: 8.9,
+            badges: {
+              en: ['399L Boot + 1,321L Max', 'Fold-Up Magic Seats'],
+              de: ['399L Kofferraum (1.321L Max)', 'Geniale Magic Seats'],
+              ru: ['Багажник 399 л (до 1 321 л)', 'Сиденья Magic Seats']
+            }
+          },
+          cabinErgonomicsVisibility: {
+            score: 8.8,
+            badges: {
+              en: ['Great All-Around Visibility', '9.8m Tight Turning Circle'],
+              de: ['Sehr gute Rundumsicht', '9,8m Mini-Wendekreis'],
+              ru: ['Отличная обзорность', 'Разворот всего 9,8 м']
+            }
+          },
+          payloadTowing: {
+            score: 7.4,
+            badges: {
+              en: ['1,000 kg Braked Tow', '425 kg Subcompact Payload'],
+              de: ['1.000 kg Anhängelast', '425 kg Zuladung'],
+              ru: ['Прицеп до 1 000 кг', 'Грузоподъёмность 425 кг']
+            }
+          },
+          accelerationOvertaking: {
+            score: 6.1,
+            badges: {
+              en: ['11.4s 0–100 • 99 HP', 'Snappy Up to 80 km/h'],
+              de: ['11,4s 0–100 • 99 PS', 'Spritzig in der Stadt'],
+              ru: ['11,4 с до 100 • 99 л.с.', 'Бодрый в городе']
+            }
+          },
+          handlingAgility: {
+            score: 7.3,
+            badges: {
+              en: ['1,095 kg Nimble Handling', 'Facelift Suspension Tuning'],
+              de: ['1.095 kg Handlichkeit', 'Verbessertes Facelift-Fahrwerk'],
+              ru: ['Лёгкий вес 1 095 кг', 'Доработанная подвеска']
+            }
+          },
+          brakingSafety: {
+            score: 7.4,
+            badges: {
+              en: ['5-Star Euro NCAP', 'Strong Fade-Free Braking'],
+              de: ['5 Sterne Euro NCAP', 'Starke Bremsen + ESP'],
+              ru: ['5 звёзд Euro NCAP', 'Уверенные тормоза + VSA']
+            }
+          },
+          efficiencyFuel: {
+            score: 8.5,
+            badges: {
+              en: ['5.8 L/100km Real', '126 g/km CO2'],
+              de: ['5,8 L/100km Real', '126 g/km CO2'],
+              ru: ['5,8 л/100 км в жизни', '126 г/км CO2']
+            }
+          },
+          depreciationResale: {
+            score: 9.0,
+            badges: {
+              en: ['High Used Jazz Demand', 'Minimal Value Drop'],
+              de: ['Hohe Gebrauchtnachfrage', 'Sehr wertstabil'],
+              ru: ['Высокий спрос на вторичке', 'Минимальная потеря цены']
+            }
+          },
+          maintenanceInsurance: {
+            score: 9.0,
+            badges: {
+              en: ['Low Tax & Insurance', 'Cheap Routine Servicing'],
+              de: ['Günstige Steuer & Vers.', 'Preiswerte Wartung'],
+              ru: ['Низкий налог и страховка', 'Недорогое плановое ТО']
+            }
+          }
+        }
+      },
+      {
+        id: '1.3-ima',
+        isDefault: false,
+        fuelType: 'hybrid',
+        hp: 98,
+        shortTitle: 'JAZZ 1.3 IMA HYBRID',
+        fullName: '2011 Honda Jazz 1.3 IMA Hybrid',
+        engineBadge: '1.3L i-DSI i-VTEC IMA • 98 HP',
+        engineSubLabel: {
+          en: 'LDA-MF6 Mild Hybrid (04/2011–09/2015) • CVT • 167 Nm Combined',
+          de: 'LDA-MF6 IMA-Hybrid (04/2011–09/2015) • CVT-Automatik • 167 Nm System',
+          ru: 'Гибрид LDA-MF6 IMA (04/2011–09/2015) • Вариатор CVT • 167 Н·м'
+        },
+        rarityLabel: {
+          en: 'CITY HYBRID PIONEER',
+          de: 'STADT-HYBRID-PIONIER',
+          ru: 'ГОРОДСКОЙ ГИБРИД'
+        },
+        originalMsrp: {
+          en: '€19,900 New',
+          de: '19.900 € Neu',
+          ru: '€19 900 новый'
+        },
+        estUsedPrice: '€7,200',
+        perkLabel: {
+          en: '✦ 4.8 L/100km Real City Economy • CVT Auto • Magic Seats Retained',
+          de: '✦ 4,8 L/100km Stadtverbrauch • CVT-Automatik • Magic Seats bleiben',
+          ru: '✦ Расход 4,8 л/100 км • Вариатор CVT • Сохранены Magic Seats'
+        },
+        remarkablePositives: {
+          en: [
+            '4.8 L/100KM REAL ECONOMY',
+            'SMOOTH CVT CITY DRIVING',
+            'MAGIC SEATS STILL FOLD FLAT',
+            'SIMPLE MILD-HYBRID ARCHITECTURE',
+            '104 G/KM LOW CO2 TAX'
+          ],
+          de: [
+            '4,8 L/100KM REALVERBRAUCH',
+            'SANFTE CVT-STADTAUTOMATIK',
+            'MAGIC SEATS BLEIBEN ERHALTEN',
+            'ROBUSTES IMA-HYBRIDSYSTEM',
+            '104 G/KM NIEDRIGE KFZ-STEUER'
+          ],
+          ru: [
+            'РАСХОД 4,8 Л/100 КМ В ГОРОДЕ',
+            'ПЛАВНЫЙ ВАРИАТОР CVT',
+            'СОХРАНЕНЫ СИДЕНЬЯ MAGIC SEATS',
+            'ПРОСТАЯ СХЕМА ГИБРИДА IMA',
+            'НИЗКИЙ ВЫБРОС 104 Г/КМ CO2'
+          ]
+        },
+        notableNegatives: {
+          en: [
+            'SMALLER 300L BOOT (IMA BATTERY)',
+            '0 KG TOWING RATING (NO TRAILER)',
+            'AGED NIMH PACK NEEDS HEALTH CHECK'
+          ],
+          de: [
+            'KLEINERER 300L KOFFERRAUM (AKKU)',
+            '0 KG ANHÄNGELAST (KEIN HÄNGER)',
+            'NIMH-HYBRIDAKKU PRÜFEN LASSEN'
+          ],
+          ru: [
+            'МЕНЬШИЙ БАГАЖНИК 300 Л (АКБ)',
+            'БУКСИРОВКА ПРИЦЕПА ЗАПРЕЩЕНА',
+            'ПРОВЕРИТЬ СОСТОЯНИЕ БАТАРЕИ NIMH'
+          ]
+        },
+        pillarScores: {
+          reliabilityQuality: 8.8,
+          practicalityDaily: 7.7,
+          performanceDriving: 6.5,
+          runningCostsTco: 8.9
+        },
+        subStats: {
+          powertrainDurability: {
+            score: 8.9,
+            badges: {
+              en: ['Reliable LDA Chain Engine', 'Check NiMH IMA Battery'],
+              de: ['Robuster LDA-Kettenmotor', 'NiMH-Akku prüfen'],
+              ru: ['Надёжный цепной LDA', 'Проверить батарею NiMH']
+            },
+            dossier: {
+              en: {
+                headline: 'Simple Parallel Mild-Hybrid System with Proven Chain-Driven Petrol Core',
+                strengths: [
+                  'Parallel Hybrid Backup: A thin electric motor sits between the 1.3L chain engine and CVT; even with low battery assist, a conventional 12V starter keeps it running.',
+                  'Minimal Engine Stress: Low-compression i-VTEC/i-DSI engine tuned for economy with zero turbocharger or direct-injection hardware.',
+                  'Compact CVT Packaging: Smooth city drivability without dual-mass flywheels or dry dual-clutch packs.'
+                ],
+                watchouts: [
+                  '10+ year-old NiMH IMA battery packs can lose capacity over time — check for IMA warning lights or frequent state-of-charge drops.',
+                  'Change CVT transmission fluid every 40,000 km and keep the rear trunk battery cooling vent unobstructed.'
+                ]
+              },
+              de: {
+                headline: 'Einfaches Parallel-Hybridsystem auf Basis eines bewährten Ketten-Benziners',
+                strengths: [
+                  'Parallel-Hybrid mit Notlauf-Reserve: Der kompakte E-Motor sitzt zwischen 1.3L-Kettenmotor und CVT; ein klassischer 12V-Anlasser dient als Backup.',
+                  'Geringe Motorbelastung: Auf Sparsamkeit ausgelegter Saugmotor ohne Turbolader oder Direkteinspritzung.',
+                  'Sanfte CVT-Abstimmung: Kein Zweimassenschwungrad und keine trockene Doppelkupplung.'
+                ],
+                watchouts: [
+                  'Über 10 Jahre alte NiMH-Hybridakkus können an Kapazität verlieren — auf IMA-Warnleuchten und Ladezustand achten.',
+                  'CVT-Getriebeöl alle 40.000 km wechseln und die Akku-Lüftung im Kofferraum freihalten.'
+                ]
+              },
+              ru: {
+                headline: 'Простой параллельный гибрид на базе надёжного цепного мотора 1.3L',
+                strengths: [
+                  'Параллельная схема IMA: Компактный электромотор между цепным ДВС и вариатором, плюс обычный стартер 12В в резерве.',
+                  'Низкая теплонагруженность: Спокойный атмосферник без турбины и прямого впрыска.',
+                  'Плавный вариатор CVT: Нет двухмассового маховика и сухих сцеплений робота.'
+                ],
+                watchouts: [
+                  'Батарея NiMH старше 10 лет может терять ёмкость — важно проверить отсутствие ошибок IMA.',
+                  'Менять масло в CVT каждые 40 000 км и не перекрывать вентиляцию батареи в багажнике.'
+                ]
+              }
+            }
+          },
+          electronicsInfotainment: {
+            score: 8.7,
+            badges: {
+              en: ['Eco Coaching Dash Display', 'Simple Reliable Electrics'],
+              de: ['Eco-Coaching-Display', 'Solide Bordelektrik'],
+              ru: ['Eco-дисплей подсказок', 'Надёжная электрика']
+            }
+          },
+          buildQualityRust: {
+            score: 8.8,
+            badges: {
+              en: ['TÜV Top-Ranked Chassis', 'Check Rear Sill Seams'],
+              de: ['TÜV-Musterknabe', 'Hintere Schweller prüfen'],
+              ru: ['Лидер рейтингов TÜV', 'Проверить задние пороги']
+            }
+          },
+          interiorBootSpace: {
+            score: 7.9,
+            badges: {
+              en: ['300L Boot (Battery Under Floor)', 'Magic Seats Retained'],
+              de: ['300L Kofferraum (Akku unter Boden)', 'Magic Seats erhalten'],
+              ru: ['Багажник 300 л (АКБ под полом)', 'Magic Seats сохранены']
+            }
+          },
+          cabinErgonomicsVisibility: {
+            score: 8.8,
+            badges: {
+              en: ['Great All-Around Visibility', '9.8m Tight Turning Circle'],
+              de: ['Sehr gute Rundumsicht', '9,8m Mini-Wendekreis'],
+              ru: ['Отличная обзорность', 'Разворот всего 9,8 м']
+            }
+          },
+          payloadTowing: {
+            score: 5.8,
+            badges: {
+              en: ['0 kg Towing Limit', '370 kg Payload'],
+              de: ['0 kg Anhängelast', '370 kg Zuladung'],
+              ru: ['Без буксировки прицепа', 'Грузоподъёмность 370 кг']
+            }
+          },
+          accelerationOvertaking: {
+            score: 5.8,
+            badges: {
+              en: ['12.1s 0–100 • 167 Nm', 'Smooth Electric Assist'],
+              de: ['12,1s 0–100 • 167 Nm', 'E-Boost beim Anfahren'],
+              ru: ['12,1 с до 100 • 167 Н·м', 'Электроподхват с низов']
+            }
+          },
+          handlingAgility: {
+            score: 7.0,
+            badges: {
+              en: ['1,162 kg City Agility', 'Soft Eco-Tuned Ride'],
+              de: ['1.162 kg Wendigkeit', 'Komfortables Eco-Fahrwerk'],
+              ru: ['Лёгкость в городе (1 162 кг)', 'Мягкая настройка']
+            }
+          },
+          brakingSafety: {
+            score: 7.4,
+            badges: {
+              en: ['5-Star Euro NCAP', 'Regen Braking + VSA'],
+              de: ['5 Sterne Euro NCAP', 'Rekuperation + ESP'],
+              ru: ['5 звёзд Euro NCAP', 'Рекуперация + VSA']
+            }
+          },
+          efficiencyFuel: {
+            score: 9.2,
+            badges: {
+              en: ['4.8 L/100km Real', '104 g/km CO2'],
+              de: ['4,8 L/100km Real', '104 g/km CO2'],
+              ru: ['4,8 л/100 км в жизни', '104 г/км CO2']
+            }
+          },
+          depreciationResale: {
+            score: 8.7,
+            badges: {
+              en: ['High City Hybrid Demand', 'Strong Resale Value'],
+              de: ['Hohe Hybrid-Nachfrage', 'Guter Werterhalt'],
+              ru: ['Высокий спрос на гибрид', 'Отлично держит цену']
+            }
+          },
+          maintenanceInsurance: {
+            score: 8.6,
+            badges: {
+              en: ['Low Hybrid Tax & Fuel', 'CVT Fluid Every 40k km'],
+              de: ['Niedrige Steuer & Spritkosten', 'CVT-Öl alle 40 tkm'],
+              ru: ['Низкий налог и расход', 'Масло CVT каждые 40 тыс. км']
+            }
+          }
+        }
+      }
+    ]
   }
 ];
 
 // Maximum number of standout pros / cons displayed per car
 const MAX_TRAITS_PER_GROUP = 7;
 
-// Application State
-let selectedLeftId = 'toyota-auris-2014';
-let selectedRightId = 'honda-civic-2014';
-let selectedLeftEngineId = '1.8-hybrid';
-let selectedRightEngineId = '1.8-ivtec';
+// Application State (Default: awaiting contender selection on the Smash-style grid)
+let selectedLeftId = null;
+let selectedRightId = null;
+let selectedLeftEngineId = null;
+let selectedRightEngineId = null;
+let smashPickerForceOpen = false;
+let smashAlignmentTimer = null;
 let activeRosterTarget = 'p1'; // 'p1' (left) or 'p2' (right)
 let currentLang = 'en'; // 'en' | 'de' | 'ru'
 let currentTheme = 'dark'; // 'dark' | 'light' | 'dark-soft' | 'light-soft'
@@ -4944,6 +7068,8 @@ function getCarById(id, engineId) {
     ...baseCar,
     ...engineObj,
     id: baseCar.id,
+    shortTitle: baseCar.shortTitle || engineObj.shortTitle,
+    fullName: baseCar.fullName || engineObj.fullName,
     selectedEngineId: engineObj.id
   };
 }
@@ -5031,7 +7157,7 @@ function getDrivetrainSvg(drivetrain) {
 // Helper: Get comparison classes & symbol for two scores
 function getComparisonState(val, oppVal) {
   const diff = Number((val - oppVal).toFixed(1));
-  let indicatorSymbol = '—';
+  let indicatorSymbol = '~';
   let squareClass = '';
   let valueColorClass = '';
   let barColorClass = '';
@@ -5057,6 +7183,75 @@ function getComparisonState(val, oppVal) {
 }
 
 // Build a Forza-style Stat Column HTML with Two-Level 4-Pillar Accordion
+function parseEuroPrice(priceStr) {
+  const digits = String(priceStr || '').replace(/[^\d]/g, '');
+  return digits ? Number(digits) : 0;
+}
+
+function formatEuroAmount(amount) {
+  return `€${Math.round(amount).toLocaleString('en-US')}`;
+}
+
+function buildPriceBreakdownHtml(car, ui) {
+  const msrp = parseEuroPrice(car.originalMsrp && car.originalMsrp.en);
+  const used = parseEuroPrice(car.estUsedPrice);
+  const depTotal = Math.max(0, msrp - used);
+  const depPct = msrp > 0 ? ((depTotal / msrp) * 100).toFixed(1) : '0.0';
+  const retainedPct = msrp > 0 ? ((used / msrp) * 100).toFixed(1) : '100.0';
+
+  // Estimate model age relative to 2026 from production span (e.g. "2012-2019 TOYOTA")
+  const years = String(car.yearMake || '').match(/\d{4}/g);
+  let avgYear = 2016;
+  if (years && years.length >= 2) {
+    avgYear = Math.round((Number(years[0]) + Number(years[1])) / 2);
+  } else if (years && years.length === 1) {
+    avgYear = Number(years[0]);
+  }
+  const ageYears = Math.max(1, 2026 - avgYear);
+  const annualLoss = depTotal / ageYears;
+
+  let outlook = ui.outlookSteady;
+  if (Number(retainedPct) >= 62 || car.id === 'honda-civic-type-r-2015') {
+    outlook = ui.outlookEnthusiast;
+  } else if (Number(depPct) >= 72) {
+    outlook = ui.outlookFloor;
+  } else if ((car.pillars && car.pillars.runningCostsTco && car.pillars.runningCostsTco.resaleValue >= 8.0) || Number(retainedPct) >= 40) {
+    outlook = ui.outlookStrong;
+  }
+
+  return `
+    <div class="price-popover" role="dialog" aria-label="${ui.priceTitle}">
+      <div class="price-popover-header">${ui.priceTitle}</div>
+      <div class="price-popover-grid">
+        <div class="price-metric-row">
+          <span class="price-metric-label">${ui.priceMsrpLabel}</span>
+          <span class="price-metric-val">${formatEuroAmount(msrp)}</span>
+        </div>
+        <div class="price-metric-row">
+          <span class="price-metric-label">${ui.priceCurrentLabel}</span>
+          <span class="price-metric-val is-accent">${formatEuroAmount(used)}</span>
+        </div>
+        <div class="price-metric-row">
+          <span class="price-metric-label">${ui.priceDepTotalLabel}</span>
+          <span class="price-metric-val is-loss">-${formatEuroAmount(depTotal)} (-${depPct}%)</span>
+        </div>
+        <div class="price-metric-row">
+          <span class="price-metric-label">${ui.priceRetainedLabel}</span>
+          <span class="price-metric-val">${retainedPct}%</span>
+        </div>
+        <div class="price-metric-row">
+          <span class="price-metric-label">${ui.priceAnnualLabel}</span>
+          <span class="price-metric-val">~${formatEuroAmount(annualLoss)}/yr</span>
+        </div>
+      </div>
+      <div class="price-outlook-bar">
+        <span class="price-outlook-label">${ui.priceOutlookLabel}</span>
+        <span class="price-outlook-val">${outlook}</span>
+      </div>
+    </div>
+  `;
+}
+
 function buildForzaStatColumnHtml(car, opponent, side = 'left') {
   const ui = t();
   const { piScore, piBadgeText, piClassLabel, piClassCss } = calculateOverallIndex(car);
@@ -5221,7 +7416,13 @@ function buildForzaStatColumnHtml(car, opponent, side = 'left') {
       </div>
       <div class="forza-purchase-box">
         <span>${ui.estUsedMarket}</span>
-        <span><span class="cr-badge">€</span>${car.estUsedPrice}</span>
+        <span class="price-value-wrap">
+          <span class="price-info-anchor">
+            <button type="button" class="cr-badge price-info-trigger" title="${ui.priceTitle}" aria-label="${ui.priceTitle}">€</button>
+            ${buildPriceBreakdownHtml(car, ui)}
+          </span>
+          <span>${car.estUsedPrice}</span>
+        </span>
       </div>
       <div class="forza-secondary-box">
         <span>${ui.overallRating} (${piClassLabel})</span>
@@ -5291,6 +7492,17 @@ function bindStatColumnEvents() {
     });
   });
 
+  document.querySelectorAll('.price-info-trigger').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const anchor = btn.closest('.price-info-anchor');
+      if (!anchor) return;
+      const wasOpen = anchor.classList.contains('is-open');
+      document.querySelectorAll('.price-info-anchor.is-open').forEach((el) => el.classList.remove('is-open'));
+      if (!wasOpen) anchor.classList.add('is-open');
+    });
+  });
+
   // Synchronize scrolling between Left and Right Stats boxes
   const leftList = document.querySelector('#stats-left .stats-rows-list');
   const rightList = document.querySelector('#stats-right .stats-rows-list');
@@ -5330,6 +7542,7 @@ function bindStatColumnEvents() {
 
 // Update Stat Columns while preserving synchronized scroll position
 function updateStatColumnsOnly() {
+  if (!selectedLeftId || !selectedRightId) return;
   const leftCar = getCarById(selectedLeftId, selectedLeftEngineId);
   const rightCar = getCarById(selectedRightId, selectedRightEngineId);
 
@@ -5363,25 +7576,131 @@ function setPopupOpen(btn, menu, isOpen) {
   menu.setAttribute('aria-hidden', String(!isOpen));
 }
 
-function buildCarSelectOptionsHtml(selectedCarId, selectedEngineId) {
-  return CAR_ROSTER.map((baseCar) => {
-    const engineId = baseCar.id === selectedCarId ? selectedEngineId : baseCar.defaultEngineId;
-    const car = getCarById(baseCar.id, engineId);
-    const { piClass, piScore } = calculateOverallIndex(car);
-    return `<option value="${car.id}">#${car.number} — ${car.fullName} [${piClass} ${piScore}/10]</option>`;
-  }).join('');
+const CAR_TYPE_ORDER = ['subcompact', 'hatchback', 'hot-hatch', 'sedan', 'suv'];
+let carListSortMode = 'byType';
+
+function getCarType(baseCar) {
+  return (baseCar && baseCar.carType) || 'hatchback';
 }
 
-// Render Top Select Dropdowns
+function renderCarSelectorSide(side, selectedCarId, selectedEngineId) {
+  const ui = t();
+  const pillSpan = document.getElementById(side === 'left' ? 'car-pill-left' : 'car-pill-right');
+  const dropdown = document.getElementById(side === 'left' ? 'car-dropdown-left' : 'car-dropdown-right');
+  const btn = document.getElementById(side === 'left' ? 'car-btn-left' : 'car-btn-right');
+
+  if (!pillSpan || !dropdown || !btn) return;
+
+  if (selectedCarId) {
+    const activeCar = getCarById(selectedCarId, selectedEngineId);
+    const activePi = calculateOverallIndex(activeCar);
+    pillSpan.textContent = `#${activeCar.number} — ${activeCar.fullName} [${activePi.piClass} ${activePi.piScore}/10]`;
+  } else {
+    pillSpan.textContent = ui.chooseCarPlaceholder;
+  }
+
+  const buildCarOptionHtml = (baseCar) => {
+    const isSelected = baseCar.id === selectedCarId;
+    const engineId = isSelected ? selectedEngineId : baseCar.defaultEngineId;
+    const car = getCarById(baseCar.id, engineId);
+    const { piBadgeText, piScore, piClassCss } = calculateOverallIndex(car);
+
+    return `
+      <button
+        type="button"
+        class="engine-option-btn ${isSelected ? 'active' : ''}"
+        data-car-id="${car.id}"
+      >
+        <div class="engine-option-main">
+          <div class="engine-option-title">
+            <span>#${car.number} — ${car.fullName}</span>
+          </div>
+          <div class="engine-option-sub">${car.engineBadge}</div>
+        </div>
+        <span class="roster-class-pill ${piClassCss} engine-option-pi">${piBadgeText} ${piScore}/10</span>
+      </button>
+    `;
+  };
+
+  let bodyHtml = '';
+  if (carListSortMode === 'unsorted') {
+    const sortedByNumber = [...CAR_ROSTER].sort((a, b) => Number(a.number) - Number(b.number));
+    bodyHtml = `<div class="engine-category-group">${sortedByNumber.map(buildCarOptionHtml).join('')}</div>`;
+  } else {
+    const categories = [
+      { key: 'subcompact', label: ui.carTypeSubcompact },
+      { key: 'hatchback', label: ui.carTypeHatchback },
+      { key: 'hot-hatch', label: ui.carTypeHotHatch },
+      { key: 'sedan', label: ui.carTypeSedan },
+      { key: 'suv', label: ui.carTypeSuv }
+    ];
+
+    bodyHtml = categories
+      .map((cat) => {
+        const carsInCat = CAR_ROSTER
+          .filter((baseCar) => getCarType(baseCar) === cat.key)
+          .sort((a, b) => Number(a.number) - Number(b.number));
+
+        if (carsInCat.length === 0) return '';
+
+        return `
+          <div class="engine-category-group">
+            <div class="engine-category-header car-cat-${cat.key}">
+              <span class="engine-category-dot"></span>
+              <span>${cat.label}</span>
+            </div>
+            ${carsInCat.map(buildCarOptionHtml).join('')}
+          </div>
+        `;
+      })
+      .filter(Boolean)
+      .join('');
+  }
+
+  dropdown.innerHTML = `
+    <div class="engine-dropdown-header car-dropdown-header">
+      <button type="button" class="car-sort-tab ${carListSortMode === 'unsorted' ? 'active' : ''}" data-car-sort="unsorted">${ui.carSortUnsorted}</button>
+      <button type="button" class="car-sort-tab ${carListSortMode === 'byType' ? 'active' : ''}" data-car-sort="byType">${ui.selectCarHeader}</button>
+    </div>
+    ${bodyHtml}
+  `;
+
+  dropdown.querySelectorAll('[data-car-sort]').forEach((sortBtn) => {
+    sortBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const nextMode = sortBtn.getAttribute('data-car-sort');
+      if (nextMode && nextMode !== carListSortMode) {
+        carListSortMode = nextMode;
+        renderDropdowns();
+        setPopupOpen(btn, dropdown, true);
+      }
+    });
+  });
+
+  dropdown.querySelectorAll('.engine-option-btn').forEach((optBtn) => {
+    optBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const chosenId = optBtn.getAttribute('data-car-id');
+      if (side === 'left') {
+        selectedLeftId = chosenId;
+        selectedLeftEngineId = getBaseCarById(chosenId).defaultEngineId;
+      } else {
+        selectedRightId = chosenId;
+        selectedRightEngineId = getBaseCarById(chosenId).defaultEngineId;
+      }
+      if (selectedLeftId && selectedRightId) {
+        smashPickerForceOpen = false;
+      }
+      setPopupOpen(btn, dropdown, false);
+      updateArena();
+    });
+  });
+}
+
+// Render Top Select Dropdowns (Grouped & Sorted by Car Type)
 function renderDropdowns() {
-  const selectLeft = document.getElementById('select-car-left');
-  const selectRight = document.getElementById('select-car-right');
-
-  selectLeft.innerHTML = buildCarSelectOptionsHtml(selectedLeftId, selectedLeftEngineId);
-  selectRight.innerHTML = buildCarSelectOptionsHtml(selectedRightId, selectedRightEngineId);
-
-  selectLeft.value = selectedLeftId;
-  selectRight.value = selectedRightId;
+  renderCarSelectorSide('left', selectedLeftId, selectedLeftEngineId);
+  renderCarSelectorSide('right', selectedRightId, selectedRightEngineId);
 }
 
 function getEngineCategory(eng) {
@@ -5479,6 +7798,9 @@ function renderEngineSelector(side, resolvedCar) {
       } else {
         selectedRightEngineId = chosenEngineId;
       }
+      if (selectedLeftId && selectedRightId) {
+        smashPickerForceOpen = false;
+      }
       setPopupOpen(btn, dropdown, false);
       updateArena();
     });
@@ -5504,6 +7826,7 @@ function updateRosterArrowStates() {
 function renderFighterRoster() {
   const ui = t();
   const rosterStrip = document.getElementById('roster-strip');
+  if (!rosterStrip) return;
   const previousScrollLeft = rosterStrip ? rosterStrip.scrollLeft : 0;
 
   rosterStrip.innerHTML = CAR_ROSTER.map((baseCar) => {
@@ -5522,9 +7845,11 @@ function renderFighterRoster() {
     else if (isP1) tileStateClass = 'selected-p1';
     else if (isP2) tileStateClass = 'selected-p2';
 
+    const mirrorClass = (car.imageFacing || 'right') === 'left' ? 'mirrored-car' : '';
+
     return `
       <div class="fighter-tile ${tileStateClass}" data-car-id="${car.id}">
-        <img class="fighter-thumb" src="${car.image}" alt="${car.fullName}" draggable="false" />
+        <img class="fighter-thumb ${mirrorClass}" src="${car.image}" alt="${car.fullName}" draggable="false" />
         <div class="fighter-info">
           <div class="fighter-number">
             <span>${ui.carLabel} #${car.number}</span>
@@ -5534,8 +7859,8 @@ function renderFighterRoster() {
           <div class="fighter-sub">${car.perkLabel[currentLang]}</div>
         </div>
         <div class="fighter-selection-badges">
-          ${isP1 ? '<span class="mini-p-badge p1-badge">P1</span>' : ''}
-          ${isP2 ? '<span class="mini-p-badge p2-badge">P2</span>' : ''}
+          ${isP1 ? '<span class="mini-p-badge p1-badge">C1</span>' : ''}
+          ${isP2 ? '<span class="mini-p-badge p2-badge">C2</span>' : ''}
         </div>
       </div>
     `;
@@ -5592,10 +7917,16 @@ function renderVerdictBanner(leftCar, rightCar) {
   }
 
   verdictBar.innerHTML = `
-    <span class="verdict-score-pill verdict-p1">${ui.p1Pillars}: ${leftPillarWins}/4</span>
-    <span class="verdict-summary">${headline}</span>
-    <span class="verdict-score-pill verdict-p2">${ui.p2Pillars}: ${rightPillarWins}/4</span>
+    <button type="button" class="verdict-grid-btn" id="back-to-grid-btn">${ui.backToGridBtn}</button>
   `;
+
+  const backToGridBtn = document.getElementById('back-to-grid-btn');
+  if (backToGridBtn) {
+    backToGridBtn.addEventListener('click', () => {
+      smashPickerForceOpen = true;
+      updateArena();
+    });
+  }
 }
 
 // Update Static HUD & Dock Text for Current Language
@@ -5625,9 +7956,12 @@ function applyStaticTranslations() {
   document.getElementById('expand-label-right').textContent = ui.expandFullCar;
   document.getElementById('lightbox-close-btn').textContent = ui.closeBtn;
 
-  document.getElementById('dock-title-label').textContent = ui.selectYourCar;
-  document.getElementById('target-p1-btn').innerHTML = ui.pickingP1;
-  document.getElementById('target-p2-btn').innerHTML = ui.pickingP2;
+  const dockTitle = document.getElementById('dock-title-label');
+  if (dockTitle) dockTitle.textContent = ui.selectYourCar;
+  const targetP1Btn = document.getElementById('target-p1-btn');
+  if (targetP1Btn) targetP1Btn.innerHTML = ui.pickingP1;
+  const targetP2Btn = document.getElementById('target-p2-btn');
+  if (targetP2Btn) targetP2Btn.innerHTML = ui.pickingP2;
   document.getElementById('index-classes-btn-label').textContent = ui.indexClassesBtn;
   document.getElementById('index-classes-popover-title').textContent = ui.indexClassesTitle;
 
@@ -5646,11 +7980,15 @@ const CAR_AVAILABLE_ANGLES = {
   'honda-civic-2014': ['front', 'frontSide', 'side', 'sideRear', 'rear'],
   'honda-crv-2010': ['front', 'frontSide', 'side', 'sideRear', 'rear'],
   'peugeot-308-gti-2019': ['front', 'frontSide', 'side', 'sideRear', 'rear'],
-  'ford-mondeo-2012': ['front', 'frontSide', 'side', 'rear']
+  'ford-mondeo-2012': ['front', 'frontSide', 'side', 'sideRear', 'rear'],
+  'honda-civic-type-r-2015': ['front', 'frontSide', 'side', 'sideRear', 'rear'],
+  'honda-accord-2011': ['front', 'frontSide', 'side', 'sideRear', 'rear'],
+  'honda-jazz-2011': ['front', 'frontSide', 'side', 'sideRear', 'rear']
 };
 
 const CAR_MIRRORED_ANGLES = {
-  'toyota-auris-2014': { sideRear: true }
+  'toyota-auris-2014': { sideRear: true },
+  'honda-jazz-2011': { sideRear: true }
 };
 
 function getCarGallery(car) {
@@ -5949,6 +8287,18 @@ function syncCarViewportAlignment() {
     viewportRight.style.paddingTop = '';
   }
 
+  const vsMedallion = document.getElementById('swap-cars-btn');
+  const arena = document.querySelector('.versus-arena');
+  const firstImgWrap = viewportLeft ? viewportLeft.querySelector('.car-image-wrapper') : null;
+  if (vsMedallion && arena && firstImgWrap) {
+    const arenaRect = arena.getBoundingClientRect();
+    const imgRect = firstImgWrap.getBoundingClientRect();
+    const gapAbovePictures = imgRect.top - arenaRect.top;
+    const medallionHeight = vsMedallion.offsetHeight || 70;
+    const centeredTop = Math.max(8, Math.round((gapAbovePictures - medallionHeight) / 2));
+    vsMedallion.style.top = `${centeredTop}px`;
+  }
+
   let maxTraitsHeight = 142;
   if (isDockCollapsed && viewportLeft) {
     const vpRect = viewportLeft.getBoundingClientRect();
@@ -5983,12 +8333,160 @@ function syncCarViewportAlignment() {
 }
 
 // Master Update Function
+const CAR_TYPE_DOT_COLORS = {
+  subcompact: '#2dd4bf',
+  hatchback: '#38bdf8',
+  'hot-hatch': '#f97316',
+  sedan: '#a78bfa',
+  suv: '#ccff00'
+};
+
+function getSmashGridLabel(baseCar) {
+  return baseCar.gridLabel || baseCar.shortTitle || baseCar.fullName;
+}
+
+function renderSmashPicker() {
+  const ui = t();
+  const titleEl = document.getElementById('smash-title');
+  const hintEl = document.getElementById('smash-hint');
+  const slotsBar = document.getElementById('smash-slots-bar');
+  const gridEl = document.getElementById('smash-car-grid');
+  if (!slotsBar || !gridEl) return;
+
+  if (!selectedLeftId) activeRosterTarget = 'p1';
+  else if (!selectedRightId) activeRosterTarget = 'p2';
+
+  const bothSelected = Boolean(selectedLeftId && selectedRightId);
+  if (titleEl) titleEl.textContent = ui.smashTitle;
+  if (hintEl) hintEl.textContent = bothSelected ? ui.smashReadyHint : ui.smashPickingHint;
+
+  const leftBase = selectedLeftId ? getBaseCarById(selectedLeftId) : null;
+  const rightBase = selectedRightId ? getBaseCarById(selectedRightId) : null;
+
+  slotsBar.innerHTML = `
+    <div class="smash-slot-pill slot-p1 ${activeRosterTarget === 'p1' ? 'is-target' : ''}" data-slot="p1" role="button" tabindex="0">
+      <span class="smash-slot-tag p1">C1</span>
+      <span>${leftBase ? getSmashGridLabel(leftBase) : ui.chooseCarPlaceholder}</span>
+      ${leftBase ? `<button type="button" class="smash-slot-clear" data-clear-slot="p1" title="${ui.smashClearSlot}">✕</button>` : ''}
+    </div>
+    <div class="smash-slot-pill slot-p2 ${activeRosterTarget === 'p2' ? 'is-target' : ''}" data-slot="p2" role="button" tabindex="0">
+      <span class="smash-slot-tag p2">C2</span>
+      <span>${rightBase ? getSmashGridLabel(rightBase) : ui.chooseCarPlaceholder}</span>
+      ${rightBase ? `<button type="button" class="smash-slot-clear" data-clear-slot="p2" title="${ui.smashClearSlot}">✕</button>` : ''}
+    </div>
+  `;
+
+  slotsBar.querySelectorAll('.smash-slot-pill').forEach((pill) => {
+    pill.addEventListener('click', (e) => {
+      if (e.target.closest('[data-clear-slot]')) return;
+      activeRosterTarget = pill.getAttribute('data-slot') || 'p1';
+      renderSmashPicker();
+    });
+  });
+
+  slotsBar.querySelectorAll('[data-clear-slot]').forEach((clearBtn) => {
+    clearBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const slot = clearBtn.getAttribute('data-clear-slot');
+      if (slot === 'p1') {
+        selectedLeftId = null;
+        selectedLeftEngineId = null;
+        activeRosterTarget = 'p1';
+      } else {
+        selectedRightId = null;
+        selectedRightEngineId = null;
+        activeRosterTarget = 'p2';
+      }
+      smashPickerForceOpen = false;
+      updateArena();
+    });
+  });
+
+  const orderedCars = [...CAR_ROSTER].sort(
+    (a, b) => (a.gridOrder ?? Number(a.number)) - (b.gridOrder ?? Number(b.number))
+  );
+
+  gridEl.innerHTML = orderedCars.map((baseCar) => {
+    const isP1 = baseCar.id === selectedLeftId;
+    const isP2 = baseCar.id === selectedRightId;
+    let stateClass = '';
+    if (isP1 && isP2) stateClass = 'selected-both';
+    else if (isP1) stateClass = 'selected-p1';
+    else if (isP2) stateClass = 'selected-p2';
+
+    const dotColor = CAR_TYPE_DOT_COLORS[getCarType(baseCar)] || '#38bdf8';
+    const mirrorClass = (baseCar.imageFacing || 'right') === 'left' ? 'mirrored-car' : '';
+
+    return `
+      <button type="button" class="smash-car-tile ${stateClass}" data-smash-car-id="${baseCar.id}">
+        <div class="smash-car-thumb-wrap">
+          <img class="smash-car-thumb ${mirrorClass}" src="${baseCar.image}" alt="${getSmashGridLabel(baseCar)}" draggable="false" />
+          <div class="smash-car-badges">
+            ${isP1 ? '<span class="mini-p-badge p1-badge">C1</span>' : ''}
+            ${isP2 ? '<span class="mini-p-badge p2-badge">C2</span>' : ''}
+          </div>
+        </div>
+        <div class="smash-car-nameplate">
+          <span class="smash-car-name">${getSmashGridLabel(baseCar)}</span>
+          <span class="smash-car-type-dot" style="background:${dotColor}"></span>
+        </div>
+      </button>
+    `;
+  }).join('');
+
+  gridEl.querySelectorAll('.smash-car-tile').forEach((tile) => {
+    tile.addEventListener('click', () => {
+      const chosenId = tile.getAttribute('data-smash-car-id');
+      const baseCar = getBaseCarById(chosenId);
+
+      if (activeRosterTarget === 'p1') {
+        selectedLeftId = chosenId;
+        selectedLeftEngineId = baseCar.defaultEngineId;
+        if (!selectedRightId) activeRosterTarget = 'p2';
+      } else {
+        selectedRightId = chosenId;
+        selectedRightEngineId = baseCar.defaultEngineId;
+        if (!selectedLeftId) activeRosterTarget = 'p1';
+      }
+
+      if (selectedLeftId && selectedRightId) {
+        smashPickerForceOpen = false;
+      }
+      updateArena();
+    });
+  });
+}
+
 function updateArena() {
-  const leftCar = getCarById(selectedLeftId, selectedLeftEngineId);
-  const rightCar = getCarById(selectedRightId, selectedRightEngineId);
+  const bothSelected = Boolean(selectedLeftId && selectedRightId);
+  const showSmashGrid = !bothSelected || smashPickerForceOpen;
+
+  const duelStage = document.querySelector('.duel-stage');
+  const versusArena = document.getElementById('versus-arena');
+  const smashStage = document.getElementById('smash-picker-stage');
+
+  if (duelStage) duelStage.classList.toggle('awaiting-selection', !bothSelected);
+  if (versusArena) versusArena.classList.toggle('awaiting-selection', showSmashGrid);
+  if (smashStage) {
+    smashStage.classList.toggle('is-hidden', !showSmashGrid);
+    smashStage.setAttribute('aria-hidden', String(!showSmashGrid));
+  }
 
   applyStaticTranslations();
   renderDropdowns();
+  renderSmashPicker();
+  renderFighterRoster();
+
+  if (!bothSelected) {
+    const statsLeft = document.getElementById('stats-left');
+    const statsRight = document.getElementById('stats-right');
+    if (statsLeft) statsLeft.innerHTML = '';
+    if (statsRight) statsRight.innerHTML = '';
+    return;
+  }
+
+  const leftCar = getCarById(selectedLeftId, selectedLeftEngineId);
+  const rightCar = getCarById(selectedRightId, selectedRightEngineId);
 
   // Render Left and Right Forza Stat Columns
   updateStatColumnsOnly();
@@ -6015,9 +8513,13 @@ function updateArena() {
   renderCarTraitsTray(rightCar, 'traits-right');
   syncCarViewportAlignment();
 
-  // Render Verdict Banner & Bottom Roster
+  if (smashAlignmentTimer) clearTimeout(smashAlignmentTimer);
+  smashAlignmentTimer = setTimeout(() => {
+    syncCarViewportAlignment();
+  }, 430);
+
+  // Render Verdict Banner
   renderVerdictBanner(leftCar, rightCar);
-  renderFighterRoster();
 }
 
 // Initialize Interactive Engine Selector Menus on Both Sides
@@ -6249,25 +8751,49 @@ function initDockCollapseToggle() {
   });
 }
 
+function initCarSelectorMenus() {
+  const leftWrapper = document.getElementById('car-wrapper-left');
+  const leftBtn = document.getElementById('car-btn-left');
+  const leftDropdown = document.getElementById('car-dropdown-left');
+
+  const rightWrapper = document.getElementById('car-wrapper-right');
+  const rightBtn = document.getElementById('car-btn-right');
+  const rightDropdown = document.getElementById('car-dropdown-right');
+
+  if (!leftBtn || !rightBtn || !leftDropdown || !rightDropdown) return;
+
+  leftBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const open = !leftDropdown.classList.contains('open');
+    setPopupOpen(leftBtn, leftDropdown, open);
+    setPopupOpen(rightBtn, rightDropdown, false);
+  });
+
+  rightBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const open = !rightDropdown.classList.contains('open');
+    setPopupOpen(rightBtn, rightDropdown, open);
+    setPopupOpen(leftBtn, leftDropdown, false);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (leftWrapper && !leftWrapper.contains(e.target)) {
+      setPopupOpen(leftBtn, leftDropdown, false);
+    }
+    if (rightWrapper && !rightWrapper.contains(e.target)) {
+      setPopupOpen(rightBtn, rightDropdown, false);
+    }
+  });
+}
+
 // Initialize Event Listeners
 function initCarDuel() {
   initHudUtilityMenus();
+  initCarSelectorMenus();
   initEngineSelectorMenus();
   initClassIndexMenu();
   initRosterCarousel();
   initDockCollapseToggle();
-
-  document.getElementById('select-car-left').addEventListener('change', (e) => {
-    selectedLeftId = e.target.value;
-    selectedLeftEngineId = getBaseCarById(selectedLeftId).defaultEngineId;
-    updateArena();
-  });
-
-  document.getElementById('select-car-right').addEventListener('change', (e) => {
-    selectedRightId = e.target.value;
-    selectedRightEngineId = getBaseCarById(selectedRightId).defaultEngineId;
-    updateArena();
-  });
 
   // Swap button in center VS medallion (swaps both cars and their active engines)
   document.getElementById('swap-cars-btn').addEventListener('click', () => {
@@ -6325,6 +8851,16 @@ function initCarDuel() {
       closeCarLightbox();
       closeStatDossier();
       setPopupOpen(
+        document.getElementById('car-btn-left'),
+        document.getElementById('car-dropdown-left'),
+        false
+      );
+      setPopupOpen(
+        document.getElementById('car-btn-right'),
+        document.getElementById('car-dropdown-right'),
+        false
+      );
+      setPopupOpen(
         document.getElementById('engine-btn-left'),
         document.getElementById('engine-dropdown-left'),
         false
@@ -6352,21 +8888,23 @@ function initCarDuel() {
     }
   });
 
-  // Car roster target slot buttons (P1 vs P2)
+  // Car roster target slot buttons (if bottom dock exists)
   const btnP1 = document.getElementById('target-p1-btn');
   const btnP2 = document.getElementById('target-p2-btn');
 
-  btnP1.addEventListener('click', () => {
-    activeRosterTarget = 'p1';
-    btnP1.className = 'slot-btn active-p1';
-    btnP2.className = 'slot-btn';
-  });
+  if (btnP1 && btnP2) {
+    btnP1.addEventListener('click', () => {
+      activeRosterTarget = 'p1';
+      btnP1.className = 'slot-btn active-p1';
+      btnP2.className = 'slot-btn';
+    });
 
-  btnP2.addEventListener('click', () => {
-    activeRosterTarget = 'p2';
-    btnP1.className = 'slot-btn';
-    btnP2.className = 'slot-btn active-p2';
-  });
+    btnP2.addEventListener('click', () => {
+      activeRosterTarget = 'p2';
+      btnP1.className = 'slot-btn';
+      btnP2.className = 'slot-btn active-p2';
+    });
+  }
 
   window.addEventListener('resize', syncCarViewportAlignment);
 

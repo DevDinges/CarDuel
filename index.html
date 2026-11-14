@@ -13,10 +13,22 @@
   <!-- Top HUD Bar -->
   <header class="top-hud">
     <div class="hud-side hud-p1">
-      <span class="player-badge p1-badge">P1</span>
+      <span class="player-badge p1-badge">C1</span>
       <div class="selector-group">
-        <label for="select-car-left" id="label-contender-1">CONTENDER 1</label>
-        <select id="select-car-left" aria-label="Select First Car"></select>
+        <label id="label-contender-1">CONTENDER</label>
+        <div class="car-selector-wrapper" id="car-wrapper-left">
+          <button
+            type="button"
+            class="car-select-btn"
+            id="car-btn-left"
+            aria-expanded="false"
+            aria-label="Select First Car"
+          >
+            <span class="car-btn-text" id="car-pill-left"></span>
+            <span class="car-btn-chevron">▾</span>
+          </button>
+          <div class="engine-dropdown-menu car-dropdown-menu" id="car-dropdown-left" aria-hidden="true"></div>
+        </div>
       </div>
     </div>
 
@@ -109,11 +121,75 @@
     </div>
 
     <div class="hud-side hud-p2">
-      <div class="selector-group align-right">
-        <label for="select-car-right" id="label-opponent-2">OPPONENT (P2)</label>
-        <select id="select-car-right" aria-label="Select Opponent Car"></select>
+      <!-- Clickable Menu Trigger for Index (Sorted S+ down to F) -->
+      <div class="class-menu-wrapper" id="class-menu-wrapper">
+        <button
+          type="button"
+          class="class-menu-toggle-btn"
+          id="class-menu-toggle-btn"
+          aria-expanded="false"
+        >
+          <span class="class-menu-icon">🏆</span>
+          <span id="index-classes-btn-label">INDEX</span>
+          <span class="class-menu-chevron" id="class-menu-chevron">▾</span>
+        </button>
+
+        <!-- Collapsible Popover Menu (Vertical Hierarchy S+ -> F) -->
+        <div class="class-menu-popover" id="class-menu-popover" aria-hidden="true">
+          <div class="class-popover-header">
+            <span id="index-classes-popover-title">INDEX CLASSES</span>
+            <button type="button" class="class-popover-close" id="class-popover-close" title="Close menu">✕</button>
+          </div>
+          <div class="tier-hierarchy-list">
+            <div class="tier-row">
+              <span class="tier-badge-cell class-s-plus">✦ S+</span>
+              <span class="tier-range-cell">9.6 – 10.0</span>
+            </div>
+            <div class="tier-row">
+              <span class="tier-badge-cell class-s">✦ S</span>
+              <span class="tier-range-cell">9.0 – 9.5</span>
+            </div>
+            <div class="tier-row">
+              <span class="tier-badge-cell class-a">A</span>
+              <span class="tier-range-cell">8.0 – 8.9</span>
+            </div>
+            <div class="tier-row">
+              <span class="tier-badge-cell class-b">B</span>
+              <span class="tier-range-cell">7.0 – 7.9</span>
+            </div>
+            <div class="tier-row">
+              <span class="tier-badge-cell class-c">C</span>
+              <span class="tier-range-cell">6.0 – 6.9</span>
+            </div>
+            <div class="tier-row">
+              <span class="tier-badge-cell class-d">D</span>
+              <span class="tier-range-cell">5.0 – 5.9</span>
+            </div>
+            <div class="tier-row">
+              <span class="tier-badge-cell class-f">F</span>
+              <span class="tier-range-cell">0.0 – 4.9</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <span class="player-badge p2-badge">P2</span>
+
+      <div class="selector-group align-right">
+        <label id="label-opponent-2">OPPONENT</label>
+        <div class="car-selector-wrapper" id="car-wrapper-right">
+          <button
+            type="button"
+            class="car-select-btn"
+            id="car-btn-right"
+            aria-expanded="false"
+            aria-label="Select Opponent Car"
+          >
+            <span class="car-btn-text" id="car-pill-right"></span>
+            <span class="car-btn-chevron">▾</span>
+          </button>
+          <div class="engine-dropdown-menu car-dropdown-menu engine-dropdown-right" id="car-dropdown-right" aria-hidden="true"></div>
+        </div>
+      </div>
+      <span class="player-badge p2-badge">C2</span>
     </div>
   </header>
 
@@ -123,7 +199,19 @@
     <aside class="stat-column stat-column-left" id="stats-left"></aside>
 
     <!-- Center Split Showdown: Car 1 Image vs Car 2 Image -->
-    <section class="versus-arena">
+    <section class="versus-arena" id="versus-arena">
+      <!-- Smash-Style Car Selection Grid (Shown until both P1 & P2 are selected) -->
+      <div class="smash-picker-stage" id="smash-picker-stage" aria-hidden="false">
+        <div class="smash-picker-header">
+          <div class="smash-title-row">
+            <h2 class="smash-title" id="smash-title">CHOOSE YOUR CONTENDERS</h2>
+            <span class="smash-hint" id="smash-hint">Click a car below to assign</span>
+          </div>
+          <div class="smash-slots-bar" id="smash-slots-bar"></div>
+        </div>
+        <div class="smash-car-grid" id="smash-car-grid"></div>
+      </div>
+
       <!-- Left Car Visual -->
       <div class="car-viewport viewport-left" id="viewport-left">
         <div class="car-number-watermark" id="watermark-left">#01</div>
@@ -211,115 +299,13 @@
     <aside class="stat-column stat-column-right" id="stats-right"></aside>
   </main>
 
-  <!-- Bottom "Select Your Car" Roster Dock -->
-  <footer class="fighter-dock collapsed" id="fighter-dock">
-    <!-- Center Top/Bottom Collapse & Expand Arrow Button -->
-    <button
-      type="button"
-      class="dock-collapse-tab"
-      id="dock-collapse-btn"
-      aria-expanded="false"
-      title="Show Car Selection"
-    >
-      <svg class="dock-collapse-arrow-svg" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M3 3L12 11L21 3" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </button>
-
-    <div class="dock-inner-content" id="dock-inner-content">
-      <div class="dock-header">
-      <div class="dock-mode-toggle">
-        <span class="dock-title" id="dock-title-label">SELECT YOUR CAR</span>
-        <div class="target-slot-buttons">
-          <button type="button" class="slot-btn active-p1" id="target-p1-btn"></button>
-          <button type="button" class="slot-btn" id="target-p2-btn"></button>
-        </div>
-      </div>
-
-      <!-- Clickable Menu Trigger for Index Classes (Sorted S+ down to F) -->
-      <div class="class-menu-wrapper" id="class-menu-wrapper">
-        <button
-          type="button"
-          class="class-menu-toggle-btn"
-          id="class-menu-toggle-btn"
-          aria-expanded="false"
-        >
-          <span class="class-menu-icon">🏆</span>
-          <span id="index-classes-btn-label">INDEX CLASSES</span>
-          <span class="class-menu-chevron" id="class-menu-chevron">▴</span>
-        </button>
-
-        <!-- Collapsible Popover Menu (Vertical Hierarchy S+ -> F) -->
-        <div class="class-menu-popover" id="class-menu-popover" aria-hidden="true">
-          <div class="class-popover-header">
-            <span id="index-classes-popover-title">INDEX CLASSES (0.0 – 10.0)</span>
-            <button type="button" class="class-popover-close" id="class-popover-close" title="Close menu">✕</button>
-          </div>
-          <div class="tier-hierarchy-list">
-            <div class="tier-row">
-              <span class="tier-badge-cell class-s-plus">✦ S+</span>
-              <span class="tier-range-cell">9.6 – 10.0</span>
-            </div>
-            <div class="tier-row">
-              <span class="tier-badge-cell class-s">✦ S</span>
-              <span class="tier-range-cell">9.0 – 9.5</span>
-            </div>
-            <div class="tier-row">
-              <span class="tier-badge-cell class-a">A</span>
-              <span class="tier-range-cell">8.0 – 8.9</span>
-            </div>
-            <div class="tier-row">
-              <span class="tier-badge-cell class-b">B</span>
-              <span class="tier-range-cell">7.0 – 7.9</span>
-            </div>
-            <div class="tier-row">
-              <span class="tier-badge-cell class-c">C</span>
-              <span class="tier-range-cell">6.0 – 6.9</span>
-            </div>
-            <div class="tier-row">
-              <span class="tier-badge-cell class-d">D</span>
-              <span class="tier-range-cell">5.0 – 5.9</span>
-            </div>
-            <div class="tier-row">
-              <span class="tier-badge-cell class-f">F</span>
-              <span class="tier-range-cell">0.0 – 4.9</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="roster-carousel-wrapper">
-      <button
-        type="button"
-        class="roster-nav-arrow roster-arrow-left"
-        id="roster-arrow-left"
-        title="Scroll left"
-        aria-label="Scroll car list left"
-      >
-        ‹
-      </button>
-      <div class="roster-strip" id="roster-strip"></div>
-      <button
-        type="button"
-        class="roster-nav-arrow roster-arrow-right"
-        id="roster-arrow-right"
-        title="Scroll right"
-        aria-label="Scroll car list right"
-      >
-        ›
-      </button>
-    </div>
-    </div>
-  </footer>
-
   <!-- Full-Picture Car Lightbox Modal -->
   <div class="car-lightbox" id="car-lightbox" aria-hidden="true">
     <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
     <div class="lightbox-content">
       <div class="lightbox-header">
         <div class="lightbox-title-group">
-          <span class="lightbox-badge" id="lightbox-badge">P1</span>
+          <span class="lightbox-badge" id="lightbox-badge">C1</span>
           <h2 class="lightbox-title" id="lightbox-title">2014 Toyota Auris 1.8 Hybrid</h2>
           <span class="lightbox-spec" id="lightbox-spec">1.8L HSD e-CVT • 136 HP</span>
         </div>
