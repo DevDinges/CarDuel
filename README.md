@@ -1,25 +1,27 @@
-CarDuel Website
+# CARDUEL — Head-to-Head Car Comparison
 
-Welcome to my first website ever.
-CarDuel is a web application where the user can select two cars and compare them in a face-to-face 'versus' style.
-The main goal is to help the user compare cars with one another in different categories to discover each car's pros and cons, what to look out for and ultimately what car is best to buy.
-
+A zero-dependency static web app for side-by-side car comparisons with Forza-inspired stat pillars, multi-engine variants, multi-angle showroom photography, and live trilingual localization.
 
 ## Features
 
-- Head-to-Head Car Battles: Two cars face each other and get compared in four different categories, each valued from 0.0 to 10, giving out ranks and an overall index ranking
-- Select Engine Configuration: Ability to select all available engines of each model with changing stats
-- Pictures: Each car has five pictures available starting from front to back
-- Advanced Powertrain Info: Under "Powertrain Durability" the user can click the info-button to get more information on the power-trains strengths and weaknesses
-- Pros and Cons: The best aspects of each car is listed under the main picture 
-- Themes: Darkmode, Lightmode and two 'Soft-colors' modes
-- Languages: Translated into three languages (en, de, ru)
+- **Smash-Style Car Selection Grid:** Visual contender grid with `C1` / `C2` slot assignment, plus top HUD dropdowns sorted by vehicle class (`Subcompact`, `Hatchback`, `Hot-Hatch`, `Sedan`, `SUV`) or roster number (`Unsorted`).
+- **4-Pillar Engineering Ratings & Sub-Stat Dossiers:** 12 weighted sub-ratings across Reliability & Quality, Practicality & Daily Use, Performance & Driving, and Running Costs & TCO — including clickable engineering dossiers (`i`) on powertrain durability.
+- **Multi-Engine Support:** Switch each contender's engine (Petrol, Diesel, Hybrid) with dynamic recalculation of ratings, pros/cons, market pricing, and overall `S+`–`F` index class.
+- **Market & Depreciation Breakdown (`€`):** Hover or click the `€` badge next to Used Market price to inspect original MSRP, total depreciation (`€` and `%`), value retained, average annual loss, and value expectation.
+- **5-Angle Showroom Lightbox:** Inspect Front, Front-Side, Side, Side-Rear, and Rear views for every car.
+- **Trilingual & Multi-Theme:** Instant switching between **English (`EN`)**, **German (`DE`)**, and **Russian (`RU`)**, with 4 UI themes (`Dark`, `Dark Soft`, `Light`, `Light Soft`).
 
-## Tech Stack
+## Included Vehicles
 
-- Harness: Antigravity
-- AI-Model: Gemini 4 Argon & Gemini 4 Hydrogen
+1. **2012–2019 Toyota Auris (E180)** — 1.33 Dual VVT-i, 1.2 Turbo, 1.6 Valvematic, 1.8 Hybrid, 1.4 D-4D, 1.6 D-4D, 2.0 D-4D
+2. **2011–2017 Honda Civic (FK)** — 1.4 i-VTEC, 1.8 i-VTEC, 1.6 i-DTEC, 2.2 i-DTEC
+3. **2006–2012 Honda CR-V (RE)** — 2.0 i-VTEC, 2.4 i-VTEC, 2.2 i-CTDI, 2.2 i-DTEC
+4. **2015–2020 Peugeot 308 GTi (T9)** — 1.6 THP GTi (263 HP)
+5. **2007–2014 Ford Mondeo (BA7)** — 1.6 Ti-VCT, 1.6 EcoBoost, 2.0 Duratec, 2.0 EcoBoost, 2.3 Duratec, 2.5T, 1.6 TDCi, 1.8 TDCi, 2.0 TDCi, 2.2 TDCi
+6. **2015–2017 Honda Civic Type R (FK)** — 2.0 VTEC Turbo (310 HP)
+7. **2008–2015 Honda Accord (CU)** — 2.0 i-VTEC, 2.4 i-VTEC, 2.2 i-DTEC
+8. **2008–2015 Honda Jazz (GE)** — 1.2 i-VTEC, 1.3 i-VTEC, 1.3 i-DSI i-VTEC IMA (Hybrid)
 
-## Version-History
-Version 1 (13.11.26): Est. <10h
-Version 2 (14.11.26): Est <5h
+## Running Locally
+
+No build step or package manager required — open `index.html` directly in any modern browser or serve the folder with any static HTTP server.
