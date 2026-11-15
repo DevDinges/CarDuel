@@ -39,6 +39,13 @@ Keep all future changes consistent with the established visual design:
 6. `#03` `honda-crv-2010` (`suv`, `gridOrder: 6`) — `Honda CR-V` (4 engines)
 7. `#07` `honda-accord-2011` (`sedan`, `gridOrder: 7`) — `Honda Accord` (3 engines)
 8. `#08` `honda-jazz-2011` (`subcompact`, `gridOrder: 8`) — `Honda Jazz` (3 engines, incl. `1.3-ima` Hybrid)
+9. `#09` `mercedes-c-class-2011` (`sedan`, `gridOrder: 9`) — `Mercedes C-Class` (21 engines, excl. C 63 AMG)
+10. `#10` `toyota-rav4-2010` (`suv`, `gridOrder: 10`) — `Toyota RAV4` (5 engines)
+11. `#11` `kia-sportage-2014` (`suv`, `gridOrder: 11`) — `Kia Sportage` (6 engines)
+12. `#12` `mazda-6-2010` (`sedan`, `gridOrder: 12`) — `Mazda 6` (8 engines, default `2.0-mzr-disi`)
+13. `#13` `toyota-avensis-2012` (`sedan`, `gridOrder: 13`) — `Toyota Avensis` (9 engines, default `1.8-valvematic`; 1st-facelift sedan look, `?` placeholder images until AI quota resets)
+14. `#14` `audi-a3-8p-2010` (`hatchback`, `gridOrder: 14`) — `Audi A3 (8P)` (14 engines, default `2.0-tdi-140`, excl. S3/RS3/3.2; 5-door Sportback facelift, `?` placeholder images)
+15. `#15` `audi-a3-8v-2016` (`hatchback`, `gridOrder: 15`) — `Audi A3 (8V)` (24 engines, default `2.0-tdi-150`, excl. S3/RS3; 5-door Sportback facelift, `?` placeholder images)
 
 ## 3. Adding a New Car Checklist (`app.js`)
 When adding a car to `CAR_ROSTER`:
@@ -54,13 +61,17 @@ When adding a car to `CAR_ROSTER`:
 2. **Engines (`engines: [...]`):**
    - Set `fuelType`: `'petrol' | 'diesel' | 'hybrid'` and numeric `hp` on every engine so engine categorization & sorting work automatically.
    - Keep trait wording **clear and non-technical** (e.g., `"High-Grip Front Diff"` instead of `"Mechanical Torsen LSD"`, `"Eco Coaching Dash Display"` instead of `"IMA Inverter"`).
-3. **Exact `subStats` Keys (all 12 required — never invent key names or ratings will show `0.0`):**
-   - Pillar 1: `powertrainDurability`, `electronicsInfotainment`, `buildQualityRust`
-   - Pillar 2: `interiorBootSpace`, `cabinErgonomicsVisibility`, `payloadTowing`
-   - Pillar 3: `accelerationOvertaking`, `handlingAgility`, `brakingSafety`
-   - Pillar 4: `efficiencyFuel`, `depreciationResale`, `maintenanceInsurance`
+3. **Exact `subStats` Keys (all 19 across 5 Pillars required — never invent key names or ratings will show `0.0`):**
+   - Pillar 1 (`reliabilityQuality`): `powertrainDurability`, `transmissionDriveline`, `buildQualityRust`, `electronicsReliability`
+   - Pillar 2 (`comfortCabin`): `rideNoiseComfort`, `interiorQualityFeatures`, `visibilityManeuverability`, `safetyProtection`
+   - Pillar 3 (`spacePracticality`): `passengerSpaceErgonomics`, `interiorBootSpace`, `payloadTowing`
+   - Pillar 4 (`performanceDynamics`): `accelerationOvertaking`, `midRangeTorquePassing`, `handlingAgility`, `brakingPerformance`
+   - Pillar 5 (`runningCostsTco`): `efficiencyFuel`, `taxInsuranceNorm`, `maintenanceRepairCosts`, `depreciationResale`
 4. **Powertrain Durability Dossier (`dossier`):**
-   - Every engine **must** include `subStats.powertrainDurability.dossier` with `en`, `de`, and `ru` (`headline`, `strengths[]`, `watchouts[]`) so the clickable `i` info button appears.
+   - Every engine **must** include `subStats.powertrainDurability.dossier` with `en`, `de`, and `ru` containing:
+     - `headline`, `strengths[]`, `watchouts[]` (triggers the clickable `i` info button).
+     - `beforeYouBuy[]`: 3 plain-language buyer inspection checks (no internal engine/OBD codes).
+     - `highMileage[]`: 6 chronological service/repair/cost milestones covering `0–250,000 km` including calendar age & part aging (rubber belts/wet belts, hoses, plastic housings, seals, fluids, mounts, bushings, hybrid battery cells), each as `{ tier: 'yellow' | 'orange' | 'red', km, action, cost, ifIgnored, damageCost }` (rendered in the collapsible **Service, Repair & Cost Roadmap** drawer).
 5. **5 Showroom Images (`assets/`):**
    - Generate all 5 angles in the matching glass-and-concrete showroom with zoomed-out Mondeo-level side margins:
      - `assets/<id>.png` (Front-Side 3/4, facing right)

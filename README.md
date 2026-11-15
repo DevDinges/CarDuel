@@ -23,6 +23,7 @@ Its possible to compare the same car just with different powertrain setups (diff
 6. **2015–2017 Honda Civic Type R (FK)** — 2.0 VTEC Turbo (310 HP)
 7. **2008–2015 Honda Accord (CU)** — 2.0 i-VTEC, 2.4 i-VTEC, 2.2 i-DTEC
 8. **2008–2015 Honda Jazz (GE)** — 1.2 i-VTEC, 1.3 i-VTEC, 1.3 i-DSI i-VTEC IMA (Hybrid)
+9. **2007–2015 Mercedes-Benz C-Class (W204)** — C 180/200 Kompressor, C 180/200/250 CGI & 1.6T, C 230/280/300/350 V6 & CGI/M276, C 180/200/220/250 CDI (OM646 & OM651), C 300/320/350 CDI V6 (excl. C 63 AMG)
 
 ## Running Locally
 
