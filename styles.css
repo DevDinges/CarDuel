@@ -265,7 +265,7 @@ body {
    ===================================================== */
 .top-hud {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: flex-end;
   gap: 16px;
   padding: 8px 20px 10px;
@@ -279,6 +279,7 @@ body {
   display: flex;
   align-items: flex-end;
   gap: 12px;
+  min-width: 0;
 }
 
 .hud-p2 {
@@ -309,6 +310,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  min-width: 0;
 }
 
 .selector-group.align-right {
@@ -345,6 +347,8 @@ body {
 .car-selector-wrapper {
   position: relative;
   display: inline-flex;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .car-select-btn {
@@ -364,6 +368,7 @@ body {
   border-radius: 3px;
   cursor: pointer;
   min-width: 265px;
+  max-width: 100%;
   text-align: left;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
@@ -647,14 +652,14 @@ body {
   flex: 1;
   min-height: 0; /* Critical so child flex columns can scroll internally */
   display: grid;
-  grid-template-columns: 340px 1fr 340px;
+  grid-template-columns: 340px minmax(0, 1fr) 340px;
   position: relative;
   overflow: hidden;
   transition: grid-template-columns 0.42s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .duel-stage.awaiting-selection {
-  grid-template-columns: 0px 1fr 0px;
+  grid-template-columns: 0px minmax(0, 1fr) 0px;
 }
 
 /* =====================================================
@@ -1815,10 +1820,11 @@ html[data-theme="light-soft"] .detail-badge {
    ===================================================== */
 .versus-arena {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   position: relative;
   overflow: hidden;
   min-height: 0;
+  min-width: 0;
   background: var(--arena-bg);
 }
 
@@ -2121,6 +2127,7 @@ html[data-theme="light-soft"] .detail-badge {
   overflow: hidden;
   padding: 52px 14px 56px;
   min-height: 0;
+  min-width: 0;
   gap: 10px;
 }
 
@@ -3767,7 +3774,9 @@ html[data-theme="light-soft"] .hm-damage-pill {
   }
 
   .car-select-btn {
-    min-width: 210px;
+    min-width: 0;
+    width: 210px;
+    max-width: 100%;
     padding: 4px 10px;
   }
 
@@ -3797,11 +3806,11 @@ html[data-theme="light-soft"] .hm-damage-pill {
 
   /* Duel Stage & Stat Columns */
   .duel-stage {
-    grid-template-columns: 276px 1fr 276px;
+    grid-template-columns: 276px minmax(0, 1fr) 276px;
   }
 
   .duel-stage.awaiting-selection {
-    grid-template-columns: 0px 1fr 0px;
+    grid-template-columns: 0px minmax(0, 1fr) 0px;
   }
 
   .stat-column {

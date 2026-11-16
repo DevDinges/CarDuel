@@ -28,14 +28,14 @@ When the gate triggers, output **only** this compact block before touching any f
 
 ## 2. Tech Stack, Tooling & Verification
 
-- **Stack:** Zero-build vanilla HTML5 (`index.html`), CSS3 (`styles.css`), and JavaScript (`app.js`) with local static images (`assets/*.png`).
+- **Stack:** Zero-build vanilla HTML5 (`index.html`), CSS3 (`styles.css`), and JavaScript (`cars-data.js` roster data loaded before `app.js` logic) with local static images (`assets/*.png`).
 - **Package Manager / Bundler:** None. Do not introduce `npm`, `pnpm`, or external runtime dependencies unless explicitly requested.
 - **OS & Shell:** Windows PowerShell (portable across PC & laptop via GitHub Desktop / Git). Always use relative paths (`assets/...`) in source code—never hardcode `C:\`, `D:\`, or `file:///`.
 - **Domain & Styling Conventions:** Follow `AGENTS.md` for HUD layout, Smash-style selection grid, `C1`/`C2` labels, 4 CSS-variable themes (`dark`, `dark-soft`, `light`, `light-soft`), mandatory `en`/`de`/`ru` translations, all 19 `subStats` keys, and 5-angle showroom assets.
 - **Standard Verification Command (PowerShell):**
   ```powershell
-  $c = Get-Content -Raw ./app.js; $b=0; $sq=0; $p=0
+  foreach($f in './cars-data.js','./app.js'){ $c = Get-Content -Raw $f; $b=0; $sq=0; $p=0
   foreach($ch in $c.ToCharArray()){ if($ch -eq '{'){$b++} elseif($ch -eq '}'){$b--} elseif($ch -eq '['){$sq++} elseif($ch -eq ']'){$sq--} elseif($ch -eq '('){$p++} elseif($ch -eq ')'){$p--} }
-  Write-Output "Braces: $b, Brackets: $sq, Parens: $p"
+  Write-Output "$f -> Braces: $b, Brackets: $sq, Parens: $p" }
   ```
-  *(Run inside the `CarDuel` repository root; all three counts must equal `0`.)*
+  *(Run inside the `CarDuel` repository root; all three counts must equal `0` for each file.)*

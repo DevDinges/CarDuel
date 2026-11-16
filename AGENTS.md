@@ -1,7 +1,8 @@
 # CarDuel — Project Invariants & Schema
 
 ## 1. Architecture & UI Invariants
-- **Zero-Build Static App:** Always keep `index.html`, `styles.css`, `app.js`, and `assets/*.png` dependency-free with relative paths; never hardcode `C:\`, `D:\`, `file:///`, or commit `backups/` / `.env*`.
+- **Zero-Build Static App:** Always keep `index.html`, `styles.css`, `cars-data.js`, `app.js`, and `assets/*.png` dependency-free with relative paths; never hardcode `C:\`, `D:\`, `file:///`, or commit `backups/` / `.env*`.
+- **Data/Logic Split:** Always keep `CAR_ROSTER`, `CAR_AVAILABLE_ANGLES`, and `CAR_MIRRORED_ANGLES` in `cars-data.js` (loaded via `<script>` before `app.js`); never redefine them in `app.js`. `STAT_PILLARS`, `UI_TRANSLATIONS`, `CAR_TYPE_ORDER`, and `CAR_TYPE_DOT_COLORS` stay in `app.js`.
 - **Top HUD & Equalizer:** Always keep `.top-hud` as a single horizontal `1fr auto 1fr` row: C1 selector + `WEIGHTS`, `THEME`, `EN`, `INDEX` (`.hud-p2 .class-menu-wrapper`), and C2 selector.
 - **No Bottom Dock:** Never restore `fighter-dock` or summary pills; only `#back-to-grid-btn` inside `#duel-verdict-bar` sits centered at the bottom during a duel.
 - **Smash Picker Grid:** Always boot with `selectedLeftId = null` and `selectedRightId = null` (`.awaiting-selection` hides stat columns until both contenders are picked); use 3 columns (2 under `900px`) ordered by `gridOrder` with `gridLabel` and right-facing `car.image`.
@@ -26,7 +27,7 @@
 14. `#14` `audi-a3-8p-2010` (`hatchback`, `gridOrder: 14`) — `Audi A3 (8P)`
 15. `#15` `audi-a3-8v-2016` (`hatchback`, `gridOrder: 15`) — `Audi A3 (8V)`
 
-## 3. Vehicle Schema & Asset Invariants (`app.js`)
+## 3. Vehicle Schema & Asset Invariants (`cars-data.js`)
 - **Metadata:** Always set `id` (`<brand>-<model>-<year>`), zero-padded `number`, `carType` (`subcompact | hatchback | hot-hatch | sedan | suv`), `gridOrder`, `gridLabel`, `yearMake`, `shortTitle`, and `fullName`.
 - **Engines:** Always set `fuelType` (`petrol | diesel | hybrid`) and numeric `hp` on every engine; keep trait wording non-technical.
 - **All 19 `subStats` Keys (Required on Every Engine):**

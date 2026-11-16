@@ -10,37 +10,38 @@ description: >-
 
 # Verify Loop (`/verify-loop`)
 
-CarDuel is a **zero-build vanilla HTML/CSS/JS** application (`index.html`, `styles.css`, `app.js`, `assets/*.png`) with no `package.json`, `pyproject.toml`, or `Makefile`. Always verify changes using the staged sequence below.
+CarDuel is a **zero-build vanilla HTML/CSS/JS** application (`index.html`, `styles.css`, `cars-data.js` roster data, `app.js` logic, `assets/*.png`) with no `package.json`, `pyproject.toml`, or `Makefile`. Always verify changes using the staged sequence below.
 
 ## 1. Verification Sequence (Fastest -> Full Structural Check)
 
 Run checks in this exact order, stopping at the first failure to enter the **3-Strike Circuit Breaker**:
 
-### Stage A: Fast Syntax & Delimiter Check (Always Run After `app.js` or `styles.css` Edits)
+### Stage A: Fast Syntax & Delimiter Check (Always Run After `cars-data.js`, `app.js`, or `styles.css` Edits)
 1. **Node JS Syntax Check (if Node is available, with Windows path fallback):**
    ```powershell
    $node = @((Get-Command node -ErrorAction SilentlyContinue).Source, "$env:ProgramFiles\nodejs\node.exe", "$env:LOCALAPPDATA\Programs\nodejs\node.exe") | Where-Object { $_ -and (Test-Path $_) } | Select-Object -First 1
-   if ($node) { & $node --check ./app.js; Write-Output "node --check exit: $LASTEXITCODE" }
+   if ($node) { foreach($f in './cars-data.js','./app.js'){ & $node --check $f; Write-Output "node --check $f exit: $LASTEXITCODE" } }
    ```
 2. **PowerShell Delimiter Balance Check (Zero-Dependency Fallback — Mandatory):**
    ```powershell
-   $c = Get-Content -Raw ./app.js; $b=0; $sq=0; $p=0
+   foreach($f in './cars-data.js','./app.js'){ $c = Get-Content -Raw $f; $b=0; $sq=0; $p=0
    foreach($ch in $c.ToCharArray()){ if($ch -eq '{'){$b++} elseif($ch -eq '}'){$b--} elseif($ch -eq '['){$sq++} elseif($ch -eq ']'){$sq--} elseif($ch -eq '('){$p++} elseif($ch -eq ')'){$p--} }
-   Write-Output "app.js -> Braces: $b, Brackets: $sq, Parens: $p"
+   Write-Output "$f -> Braces: $b, Brackets: $sq, Parens: $p" }
    ```
-   *(All three counts must equal `0`. If `styles.css` was edited, run the same brace balance check on `./styles.css`.)*
+   *(All three counts must equal `0` for each file. If `styles.css` was edited, run the same brace balance check on `./styles.css`.)*
 
 ### Stage B: Targeted Schema, Trilingual & Visual/Browser Check
-1. **Schema, Trilingual & Asset Integrity (When `CAR_ROSTER`, `UI_TRANSLATIONS`, or Assets Change):**
-   - Every car in `CAR_ROSTER` has a matching entry in `CAR_AVAILABLE_ANGLES` and all 5 showroom image files exist in `assets/` (`<id>.png`, `<id>-front.png`, `<id>-side.png`, `<id>-side-rear.png`, `<id>-rear.png`).
-   - All 19 `subStats` keys across the 5 pillars and trilingual (`en`, `de`, `ru`) `powertrainDurability.dossier` entries (`beforeYouBuy` + 6 `highMileage` items) are present.
+1. **Schema, Trilingual & Asset Integrity (When `cars-data.js`, `UI_TRANSLATIONS`, or Assets Change):**
+   - Scan `cars-data.js` (never `app.js`) for roster data: every car in `CAR_ROSTER` has a matching entry in `CAR_AVAILABLE_ANGLES` and all 5 showroom image files exist in `assets/` (`<id>.png`, `<id>-front.png`, `<id>-side.png`, `<id>-side-rear.png`, `<id>-rear.png`).
+   - All 19 `subStats` keys (defined by `STAT_PILLARS` in `app.js`) and trilingual (`en`, `de`, `ru`) `powertrainDurability.dossier` entries (`beforeYouBuy` + 6 `highMileage` items) are present on every engine in `cars-data.js`.
+   - `app.js` must contain **zero** `const CAR_ROSTER`, `const CAR_AVAILABLE_ANGLES`, or `const CAR_MIRRORED_ANGLES` declarations (duplicate `const` across scripts throws a `SyntaxError`).
 2. **Deterministic Browser Verification (When `styles.css`, `index.html`, or UI Rendering Logic in `app.js` Changes):**
    Run Antigravity's built-in `browser` subagent against the served page (preserving zero hardcoded paths in source files and obeying the 3-strike circuit breaker):
    - **Active Local Server Check (`localhost:5500` / `localhost:8000` / `localhost:8080`):**
-     - Never spawn `System.Net.HttpListener` or request `BypassSandbox: true` to start a server.
-     - Check whether a local static server is already listening on `http://localhost:5500`, `http://localhost:8000`, or `http://localhost:8080`.
+     - **During automatic `/verify-loop` runs:** Keep the check passive—do not spawn a background server. Check whether a local static server is already listening on `http://localhost:5500`, `http://localhost:8000`, or `http://localhost:8080`.
      - If an active local server is found, run the 4 Desktop `1440x900` browser assertions below against it.
      - If no local server is running, mark Stage B2 as `SKIPPED (No active server on 5500/8000/8080)` in the summary line without failing or triggering the 3-strike fix loop.
+     - **When the user explicitly asks to "start local server" (or similar):** Start a PowerShell `System.Net.HttpListener` static server on `http://localhost:8080/` in the background (`IsDaemon: true`, using `BypassSandbox: true` if needed) so the user can approve the prompt once and preview in the built-in browser or Chrome.
    - **Viewport Coverage:**
      - **Desktop (`1440x900`) — Blocking:** Sole blocking viewport for the 4 DOM/visual assertions below.
      - **Mobile (`390x844`) — Non-Blocking Info Only:** CarDuel is currently PC/laptop-only; if checked, log any `390x844` overflow or layout issues strictly as a non-blocking informational warning and **never** trigger or burn a 3-strike fix attempt on mobile viewports.
@@ -50,14 +51,15 @@ Run checks in this exact order, stopping at the first failure to enter the **3-S
      3. **Showroom & Angle Rendering:** Verify the active car image renders with `naturalWidth > 0` and switching camera angles updates the image cleanly without layout shift or clipping.
      4. **Trilingual Text Fit (`en` / `de` / `ru`):** Spot-check the longest language strings (especially German `de` and Russian `ru` labels/dossiers) to ensure no clipped buttons, overlapping badges, or broken card grids.
 
-### Stage C: Structural Integrity / Static Build Check (When `index.html`, `styles.css`, or Core `app.js` Architecture Changes)
+### Stage C: Structural Integrity / Static Build Check (When `index.html`, `styles.css`, `cars-data.js`, or Core `app.js` Architecture Changes)
 ```powershell
-$html = Get-Content -Raw ./index.html
-$css  = Get-Content -Raw ./styles.css
-$badPaths = Select-String -Path ./index.html, ./styles.css, ./app.js -Pattern '([A-Za-z]:\\|file:///)'
+$badPaths = Select-String -Path ./index.html, ./styles.css, ./cars-data.js, ./app.js -Pattern '([A-Za-z]:\\|file:///)'
 Write-Output "Hardcoded machine paths count: $($badPaths.Count)"
+$html = Get-Content -Raw ./index.html
+$order = $html.IndexOf('src="cars-data.js"') -ge 0 -and $html.IndexOf('src="cars-data.js"') -lt $html.IndexOf('src="app.js"')
+Write-Output "Script order (cars-data.js before app.js): $order"
 ```
-*(Must report `0` hardcoded machine paths and intact stylesheet/script links in `index.html`.)*
+*(Must report `0` hardcoded machine paths, `Script order: True`, and an intact `styles.css` link in `index.html`.)*
 
 ---
 
