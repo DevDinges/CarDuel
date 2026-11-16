@@ -41,6 +41,7 @@ const UI_TRANSLATIONS = {
     weightMenuBtn: 'WEIGHTS',
     weightPopoverTitle: 'PRIORITY EQUALIZER',
     weightResetBtn: 'RESET',
+    weightDefaultLabel: 'Default',
     weightHint: 'Adjust pillar priorities',
     fwdTooltip: 'Front-Wheel Drive',
     rwdTooltip: 'Rear-Wheel Drive',
@@ -125,6 +126,7 @@ const UI_TRANSLATIONS = {
     weightMenuBtn: 'GEWICHTUNG',
     weightPopoverTitle: 'PRIORITÄTEN-EQUALIZER',
     weightResetBtn: 'RESET',
+    weightDefaultLabel: 'Standard',
     weightHint: 'Kategorie-Prioritäten anpassen',
     fwdTooltip: 'Frontantrieb',
     rwdTooltip: 'Hinterradantrieb',
@@ -209,6 +211,7 @@ const UI_TRANSLATIONS = {
     weightMenuBtn: 'ВЕСА',
     weightPopoverTitle: 'ЭКВАЛАЙЗЕР ПРИОРИТЕТОВ',
     weightResetBtn: 'СБРОС',
+    weightDefaultLabel: 'Стандарт',
     weightHint: 'Настройте приоритеты категорий',
     fwdTooltip: 'Передний привод',
     rwdTooltip: 'Задний привод',
@@ -265,11 +268,11 @@ const UI_TRANSLATIONS = {
 };
 
 const PILLAR_ICONS = {
-  reliabilityQuality: `<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.6 2.3l1.3.3.5 1.3c.4.1.8.3 1.1.5l1.2-.6.9.9-.6 1.2c.2.3.4.7.5 1.1l1.3.5.3 1.3-1.1.7a5 5 0 010 1.2l1.1.7-.3 1.3-1.3.5a4.5 4.5 0 01-.5 1.1l.6 1.2-.9.9-1.2-.6c-.3.2-.7.4-1.1.5l-.5 1.3-1.3.3-.7-1.1a5 5 0 01-1.2 0l-.7 1.1-1.3-.3-.5-1.3a4.5 4.5 0 01-1.1-.5l-1.2.6-.9-.9.6-1.2a4.5 4.5 0 01-.5-1.1l-1.3-.5-.3-1.3 1.1-.7a5 5 0 010-1.2l-1.1-.7.3-1.3 1.3-.5c.1-.4.3-.8.5-1.1l-.6-1.2.9-.9 1.2.6c.3-.2.7-.4 1.1-.5l.5-1.3 1.3-.3.7 1.1a5 5 0 011.2 0l.7-1.1z" fill="currentColor"/><circle cx="9.6" cy="9.8" r="2.6" fill="#202328"/><path d="M16.5 11.2l4.5 1.7v3.4c0 2.9-1.9 5.3-4.5 6.2-2.6-.9-4.5-3.3-4.5-6.2v-3.4l4.5-1.7z" fill="currentColor" stroke="#202328" stroke-width="1.3" stroke-linejoin="round"/><path d="M14.6 16.5l1.3 1.3 2.6-2.7" stroke="#202328" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-  comfortCabin: `<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4.5" y="3.5" width="3.6" height="3.2" rx="1.2" fill="currentColor"/><path d="M4.5 7.6a1.4 1.4 0 011.4-1.4h1.1c.7 0 1.3.5 1.4 1.2l1.1 5.9h5.6a1.7 1.7 0 011.7 1.7v2a1 1 0 01-1 1H6.8a2.3 2.3 0 01-2.3-2.3V7.6z" fill="currentColor"/><line x1="5.5" y1="19.8" x2="15.8" y2="19.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M16.2 6.8a4.2 4.2 0 010 5.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M19.1 4.6a7.2 7.2 0 010 9.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
-  spacePracticality: `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 4h6a2 2 0 012 2v1h3a2 2 0 012 2v3H2V9a2 2 0 012-2h3V6a2 2 0 012-2zm0 3h6V6H9v1zm-7 7h20v5a2 2 0 01-2 2H4a2 2 0 01-2-2v-5z"/></svg>`,
-  performanceDynamics: `<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M 4.5 17.5 A 8.5 8.5 0 1 1 19.5 17.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><line x1="12" y1="4.5" x2="12" y2="6.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="6.3" y1="7.1" x2="7.9" y2="8.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="17.7" y1="7.1" x2="16.1" y2="8.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="3.8" y1="12.8" x2="6.0" y2="12.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="20.2" y1="12.8" x2="18.0" y2="12.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="12" y1="14" x2="16.5" y2="9.2" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="12" cy="14" r="2.2" fill="currentColor"/></svg>`,
-  runningCostsTco: `<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><ellipse cx="7.2" cy="11.5" rx="4.2" ry="1.5" fill="currentColor"/><path d="M 3.0 13.5 A 4.2 1.5 0 0 0 11.4 13.5 L 11.4 15.2 A 4.2 1.5 0 0 1 3.0 15.2 Z" fill="currentColor"/><path d="M 3.0 16.4 A 4.2 1.5 0 0 0 11.4 16.4 L 11.4 18.1 A 4.2 1.5 0 0 1 3.0 18.1 Z" fill="currentColor"/><ellipse cx="16.8" cy="5.7" rx="4.2" ry="1.5" fill="currentColor"/><path d="M 12.6 7.7 A 4.2 1.5 0 0 0 21.0 7.7 L 21.0 9.4 A 4.2 1.5 0 0 1 12.6 9.4 Z" fill="currentColor"/><path d="M 12.6 10.6 A 4.2 1.5 0 0 0 21.0 10.6 L 21.0 12.3 A 4.2 1.5 0 0 1 12.6 12.3 Z" fill="currentColor"/><path d="M 12.6 13.5 A 4.2 1.5 0 0 0 21.0 13.5 L 21.0 15.2 A 4.2 1.5 0 0 1 12.6 15.2 Z" fill="currentColor"/><path d="M 12.6 16.4 A 4.2 1.5 0 0 0 21.0 16.4 L 21.0 18.1 A 4.2 1.5 0 0 1 12.6 18.1 Z" fill="currentColor"/></svg>`
+  reliabilityQuality: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.2 16.2l-.7-.1-.7 1.1H7.9l-.6-1.3-1.2-.5-1.2.6-1.4-1.4.6-1.2-.5-1.2-1.3-.6V9.7l1.3-.6.5-1.2-.6-1.2 1.4-1.4 1.2.6 1.2-.5.6-1.3h1.9l.6 1.3 1.2.5 1.2-.6 1.4 1.4-.6 1.2.5 1.2 1.3.6v1.4"/><circle cx="8.9" cy="10.7" r="2.4"/><path d="M17 11.4l4.4 1.7v3.2c0 2.8-1.9 4.9-4.4 5.8-2.5-.9-4.4-3-4.4-5.8v-3.2l4.4-1.7z"/><path d="M15 16.7l1.4 1.4 2.8-2.9"/></svg>`,
+  comfortCabin: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.2" y="3.5" width="2.4" height="3" rx="1"/><path d="M2.6 8l1.7 9.2c.2.9 1 1.5 1.9 1.5h6.3"/><circle cx="10.2" cy="5.2" r="2.1" fill="currentColor" stroke="none"/><path d="M8.8 9.2l1.4 5.4h4.4l2.9 4.2" stroke-width="2.4"/><path d="M9.5 10.6l3.3 1.5 3.2-1.2" stroke-width="2"/><path d="M18.6 7.8l-1.3 5.2M18 10.4l2.8.7" stroke-width="1.8"/></svg>`,
+  spacePracticality: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.2 4.6h3.2c2.1 0 3.7 1.1 4.8 3l1.4 2.3 4.8.7c1.4.2 2.4 1.2 2.4 2.6v2.2c0 .8-.5 1.3-1.3 1.3h-3.6"/><path d="M2.2 16.7h4.3"/><circle cx="10.2" cy="16.7" r="3.3"/><path d="M11.6 9.9c1.5-1.5 3.3-2.3 5.5-2.3"/><path d="M18.8 15.2h2.2a1.2 1.2 0 001.2-1.2v-1"/></svg>`,
+  performanceDynamics: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.2 17.5a9 9 0 1115.6 0"/><path d="M12 4.5v2M5.6 7.6l1.4 1.4M18.4 7.6l-1.4 1.4M3.8 13.5h2M18.2 13.5h2"/><circle cx="12" cy="14.5" r="1.8"/><path d="M13.3 13.2L17 9.5"/></svg>`,
+  runningCostsTco: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="9.2" cy="6.2" rx="6.2" ry="2.4"/><path d="M3 6.2v9.6M15.4 6.2v2.4"/><path d="M3 9.4a6.2 2.4 0 008.2 1.8M3 12.6a6.2 2.4 0 006.8 1.9M3 15.8a6.2 2.4 0 007.4 1.9"/><circle cx="15.2" cy="14.8" r="6.2"/><path d="M17.3 12.4a3.1 3.1 0 100 4.8M12.4 14h3.6M12.4 15.6h3.2"/></svg>`
 };
 
 const STAT_PILLARS = [
@@ -668,20 +671,20 @@ const CAR_ROSTER = [
         estUsedPrice: '€9,400',
         perkLabel: {
           en: '✦ 9.8 Reliability (TÜV Top 3%) • 4.1 L/100km Economy',
-          de: '✦ 9.8 Zuverlässigkeit (TÜV Top 3%) • 4,1 L/100km Realverbrauch',
+          de: '✦ 9.8 Zuverlässigkeit (TÜV Top 3%) • Sparsam (4,1 L/100km)',
           ru: '✦ 9.8 Надёжность (TÜV Топ 3%) • Расход 4,1 л/100 км'
         },
         remarkablePositives: {
           en: [
             'TÜV TOP 3% RELIABILITY',
-            '4.1L/100KM REAL ECONOMY',
+            'EFFICIENT 4.1 L/100KM',
             'LOW RUNNING COSTS',
             'FEWER PARTS THAT CAN BREAK',
             'SILENT EV CITY DRIVING'
           ],
           de: [
             'TÜV TOP 3% ZUVERLÄSSIGKEIT',
-            '4,1 L/100KM REALVERBRAUCH',
+            'SPARSAM: 4,1 L/100KM',
             'NIEDRIGE HALTUNGSKOSTEN',
             'WENIGER VERSCHLEISSTEILE',
             'LAUTLOSES EV-STADTFAHREN'
@@ -922,9 +925,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 9.5,
             badges: {
-              en: ['4.1 L/100km Real', 'Silent EV City Mode'],
-              de: ['4,1 L/100km Real', 'Lautloser EV-Modus'],
-              ru: ['4,1 л/100 км в жизни', 'EV-режим в городе']
+              en: ['Efficient (4.1 L/100km)', 'Silent EV City Mode'],
+              de: ['Sparsam (4,1 L/100km)', 'Lautloser EV-Modus'],
+              ru: ['Экономичный (4,1 л/100 км)', 'EV-режим в городе']
             }
           },
           taxInsuranceNorm: {
@@ -1239,9 +1242,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 7.8,
             badges: {
-              en: ['6.1 L/100km Real', 'Stop & Start System'],
-              de: ['6,1 L/100km Real', 'Start-Stopp-System'],
-              ru: ['6,1 л/100 км в жизни', 'Система Старт-Стоп']
+              en: ['6.1 L/100km', 'Stop & Start System'],
+              de: ['6,1 L/100km', 'Start-Stopp-System'],
+              ru: ['6,1 л/100 км', 'Система Старт-Стоп']
             }
           },
           taxInsuranceNorm: {
@@ -1325,12 +1328,12 @@ const CAR_ROSTER = [
         notableNegatives: {
           en: [
             'NEEDS REVS FOR TORQUE',
-            '6.6 L/100KM REAL FUEL USE',
+            '6.6 L/100KM ECONOMY',
             'COMPACT 360L BOOT'
           ],
           de: [
             'BRAUCHT VIEL DREHZAHL',
-            '6,6 L/100KM REALVERBRAUCH',
+            '6,6 L/100KM VERBRAUCH',
             'KOMPAKTER 360L KOFFERRAUM'
           ],
           ru: [
@@ -1550,9 +1553,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 7.2,
             badges: {
-              en: ['6.6 L/100km Real', 'Valvematic Lift'],
-              de: ['6,6 L/100km Real', 'Valvematic-System'],
-              ru: ['6,6 л/100 км в жизни', 'Фазы Valvematic']
+              en: ['6.6 L/100km', 'Valvematic Lift'],
+              de: ['6,6 L/100km', 'Valvematic-System'],
+              ru: ['6,6 л/100 км', 'Фазы Valvematic']
             }
           },
           taxInsuranceNorm: {
@@ -1612,14 +1615,14 @@ const CAR_ROSTER = [
         },
         remarkablePositives: {
           en: [
-            '4.7L/100KM REAL ECONOMY',
+            'EFFICIENT 4.7 L/100KM',
             'TOUGH 1.4 DIESEL ENGINE',
             'CHEAPER CLUTCH REPAIRS',
             'LOW 1.4L DIESEL ROAD TAX',
             '1,000 KG BRAKED TOWING'
           ],
           de: [
-            '4,7 L/100KM REALVERBRAUCH',
+            'SPARSAM: 4,7 L/100KM',
             'ROBUSTER 1.4 DIESELMOTOR',
             'GÜNSTIGERE KUPPLUNGSREPARATUR',
             'NIEDRIGE 1.4L KFZ-STEUER',
@@ -1864,9 +1867,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 9.0,
             badges: {
-              en: ['4.7 L/100km Real', '1,000+ km Tank Range'],
-              de: ['4,7 L/100km Real', '1.000+ km Reichweite'],
-              ru: ['4,7 л/100 км в жизни', 'Запас хода 1 000+ км']
+              en: ['Efficient (4.7 L/100km)', '1,000+ km Tank Range'],
+              de: ['Sparsam (4,7 L/100km)', '1.000+ km Reichweite'],
+              ru: ['Экономичный (4,7 л/100 км)', 'Запас хода 1 000+ км']
             }
           },
           taxInsuranceNorm: {
@@ -1930,14 +1933,14 @@ const CAR_ROSTER = [
             '1,500 KG BRAKED TOWING',
             'MULTI-LINK REAR AXLE',
             '200 KM/H HIGHWAY CRUISER',
-            '5.3L/100KM REAL ECONOMY'
+            'EFFICIENT 5.3 L/100KM'
           ],
           de: [
             '310 NM DREHMOMENT',
             '1.500 KG ANHÄNGELAST',
             'MEHRLENKER-HINTERACHSE',
             '200 KM/H AUTOBAHN-GLEITER',
-            '5,3 L/100KM REALVERBRAUCH'
+            'SPARSAM: 5,3 L/100KM'
           ],
           ru: [
             'ТЯГА 310 Н·М С НИЗОВ',
@@ -2178,9 +2181,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 8.5,
             badges: {
-              en: ['5.3 L/100km Real', '940+ km Tank Range'],
-              de: ['5,3 L/100km Real', '940+ km Reichweite'],
-              ru: ['5,3 л/100 км в жизни', 'Запас хода 940+ км']
+              en: ['Efficient (5.3 L/100km)', '940+ km Tank Range'],
+              de: ['Sparsam (5,3 L/100km)', '940+ km Reichweite'],
+              ru: ['Экономичный (5,3 л/100 км)', 'Запас хода 940+ км']
             }
           },
           taxInsuranceNorm: {
@@ -2241,14 +2244,14 @@ const CAR_ROSTER = [
         remarkablePositives: {
           en: [
             'PUNCHY 185 NM LOW-END PULL',
-            '6.5L/100KM REAL ECONOMY',
+            '6.5 L/100KM ECONOMY',
             'COMFORTABLE REAR SUSPENSION',
             'TOYOTA BUILD QUALITY',
             '1,300 KG BRAKED TOWING'
           ],
           de: [
             'KRAFTVOLLE 185 NM AB 1.500/MIN',
-            '6,5 L/100KM REALVERBRAUCH',
+            '6,5 L/100KM VERBRAUCH',
             'KOMFORTABLE MEHRLENKERACHSE',
             'SOLIDE TOYOTA-VERARBEITUNG',
             '1.300 KG ANHÄNGELAST'
@@ -2483,9 +2486,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 8.2,
             badges: {
-              en: ['6.5 L/100km Real', '106–112 g/km CO2'],
-              de: ['6,5 L/100km Real', '106–112 g/km CO2'],
-              ru: ['6,5 л/100 км в жизни', '106–112 г/км CO2']
+              en: ['6.5 L/100km', '106–112 g/km CO2'],
+              de: ['6,5 L/100km', '106–112 g/km CO2'],
+              ru: ['6,5 л/100 км', '106–112 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -2539,20 +2542,20 @@ const CAR_ROSTER = [
         },
         estUsedPrice: '€9,600',
         perkLabel: {
-          en: '✦ 5.4 L/100km Real Economy • 270 Nm Torque • Euro 6 Compliant',
-          de: '✦ 5,4 L/100km Realverbrauch • 270 Nm Drehmoment • Euro 6',
+          en: '✦ Efficient 5.4 L/100km • 270 Nm Torque • Euro 6 Compliant',
+          de: '✦ Sparsam (5,4 L/100km) • 270 Nm Drehmoment • Euro 6',
           ru: '✦ Расход 5,4 л/100 км • Тяга 270 Н·м • Эко-класс Евро-6'
         },
         remarkablePositives: {
           en: [
-            '5.4L/100KM REAL ECONOMY',
+            'EFFICIENT 5.4 L/100KM',
             'STRONG 270 NM TORQUE',
             'EURO 6 HIGHWAY CRUISER',
             '1,300 KG BRAKED TOWING',
             'TOYOTA BUILD QUALITY'
           ],
           de: [
-            '5,4 L/100KM REALVERBRAUCH',
+            'SPARSAM: 5,4 L/100KM',
             'STARKE 270 NM DREHMOMENT',
             'EURO-6 LANGSTRECKEN-DIESEL',
             '1.300 KG ANHÄNGELAST',
@@ -2788,9 +2791,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 9.0,
             badges: {
-              en: ['5.4 L/100km Real', '104–108 g/km CO2'],
-              de: ['5,4 L/100km Real', '104–108 g/km CO2'],
-              ru: ['5,4 л/100 км в жизни', '104–108 г/км CO2']
+              en: ['Efficient (5.4 L/100km)', '104–108 g/km CO2'],
+              de: ['Sparsam (5,4 L/100km)', '104–108 g/km CO2'],
+              ru: ['Экономичный (5,4 л/100 км)', '104–108 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -3112,9 +3115,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 7.4,
             badges: {
-              en: ['6.3 L/100km Real', 'ECON Eco Mode'],
-              de: ['6,3 L/100km Real', 'ECON-Sparmodus'],
-              ru: ['6,3 л/100 км в жизни', 'Эко-режим ECON']
+              en: ['6.3 L/100km', 'ECON Eco Mode'],
+              de: ['6,3 L/100km', 'ECON-Sparmodus'],
+              ru: ['6,3 л/100 км', 'Эко-режим ECON']
             }
           },
           taxInsuranceNorm: {
@@ -3426,9 +3429,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 8.0,
             badges: {
-              en: ['5.9 L/100km Real', 'ECON + Idle Stop'],
-              de: ['5,9 L/100km Real', 'ECON & Start-Stopp'],
-              ru: ['5,9 л/100 км в жизни', 'ECON + Старт-Стоп']
+              en: ['5.9 L/100km', 'ECON + Idle Stop'],
+              de: ['5,9 L/100km', 'ECON & Start-Stopp'],
+              ru: ['5,9 л/100 км', 'ECON + Старт-Стоп']
             }
           },
           taxInsuranceNorm: {
@@ -3483,19 +3486,19 @@ const CAR_ROSTER = [
         estUsedPrice: '€8,600',
         perkLabel: {
           en: '✦ 4.3 L/100km Economy • 300 Nm Earth Dreams Diesel • 477L Kofferraum',
-          de: '✦ 4,3 L/100km Realverbrauch • 300 Nm Earth-Dreams-Diesel • 477L Kofferraum',
+          de: '✦ Sparsam (4,3 L/100km) • 300 Nm Earth-Dreams-Diesel • 477L Kofferraum',
           ru: '✦ Расход 4,3 л/100 км • 300 Н·м дизель Earth Dreams • Багажник 477 л'
         },
         remarkablePositives: {
           en: [
-            '4.3L/100KM REAL ECONOMY',
+            'EFFICIENT 4.3 L/100KM',
             '1,100+ KM TANK RANGE',
             '300 NM TORQUE (N16A1)',
             '477L BOOT & MAGIC SEATS',
             '1,400 KG BRAKED TOWING'
           ],
           de: [
-            '4,3 L/100KM REALVERBRAUCH',
+            'SPARSAM: 4,3 L/100KM',
             '1.100+ KM TANKREICHWEITE',
             '300 NM ALU-DIESEL (N16A1)',
             '477L KOFFERRAUM & MAGIC SEATS',
@@ -3740,9 +3743,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 9.4,
             badges: {
-              en: ['4.3 L/100km Real', '1,100+ km Tank Range'],
-              de: ['4,3 L/100km Real', '1.100+ km Reichweite'],
-              ru: ['4,3 л/100 км в жизни', 'Запас хода 1 100+ км']
+              en: ['Efficient (4.3 L/100km)', '1,100+ km Tank Range'],
+              de: ['Sparsam (4,3 L/100km)', '1.100+ km Reichweite'],
+              ru: ['Экономичный (4,3 л/100 км)', 'Запас хода 1 100+ км']
             }
           },
           taxInsuranceNorm: {
@@ -3803,7 +3806,7 @@ const CAR_ROSTER = [
         remarkablePositives: {
           en: [
             '350 NM HIGHWAY TORQUE',
-            '5.1L/100KM REAL ECONOMY',
+            'EFFICIENT 5.1 L/100KM',
             'CLASS-LEADING 477L BOOT',
             'FOLD-UP MAGIC SEATS',
             '1,500 KG BRAKED TOWING',
@@ -3811,7 +3814,7 @@ const CAR_ROSTER = [
           ],
           de: [
             '350 NM AUTOBAHN-DURCHZUG',
-            '5,1 L/100KM REALVERBRAUCH',
+            'SPARSAM: 5,1 L/100KM',
             '477L KOFFERRAUM',
             'HOCHKLAPPBARE MAGIC SEATS',
             '1.500 KG ANHÄNGELAST',
@@ -4060,9 +4063,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 8.8,
             badges: {
-              en: ['5.1 L/100km Real', '950+ km Tank Range'],
-              de: ['5,1 L/100km Real', '950+ km Reichweite'],
-              ru: ['5,1 л/100 км в жизни', 'Запас хода 950+ км']
+              en: ['Efficient (5.1 L/100km)', '950+ km Tank Range'],
+              de: ['Sparsam (5,1 L/100km)', '950+ km Reichweite'],
+              ru: ['Экономичный (5,1 л/100 км)', 'Запас хода 950+ км']
             }
           },
           taxInsuranceNorm: {
@@ -4161,13 +4164,13 @@ const CAR_ROSTER = [
         },
         notableNegatives: {
           en: [
-            '8.4L/100KM REAL ECONOMY',
+            'THIRSTY 8.4 L/100KM',
             'WEAK PULLING POWER (192 NM)',
             'REACTIVE DUAL-PUMP AWD',
             'SUV BODY ROLL IN CORNERS'
           ],
           de: [
-            '8,4 L/100KM REALVERBRAUCH',
+            'DURSTIG: 8,4 L/100KM',
             'WENIG DURCHZUG (192 NM)',
             'TRÄGER DUAL-PUMP-ALLRAD',
             'MEHR KURVEN-SEITENNEIGUNG'
@@ -4390,9 +4393,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 6.4,
             badges: {
-              en: ['8.4 L/100km Real', 'SUV Aero & AWD Drag'],
-              de: ['8,4 L/100km Real', 'SUV-Luftwiderstand'],
-              ru: ['8,4 л/100 км в жизни', 'Аэродинамика SUV']
+              en: ['Thirsty (8.4 L/100km)', 'SUV Aero & AWD Drag'],
+              de: ['Durstig (8,4 L/100km)', 'SUV-Luftwiderstand'],
+              ru: ['Прожорливый (8,4 л/100 км)', 'Аэродинамика SUV']
             }
           },
           taxInsuranceNorm: {
@@ -4704,9 +4707,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 5.5,
             badges: {
-              en: ['9.6 L/100km Real', '2.4 NA + 5-AT Thirst'],
-              de: ['9,6 L/100km Real', 'Durstig im Stadtverkehr'],
-              ru: ['9,6 л/100 км в жизни', 'Расход 2.4 АКПП в городе']
+              en: ['Thirsty (9.6 L/100km)', '2.4 NA + 5-AT Thirst'],
+              de: ['Durstig (9,6 L/100km)', 'Durstig im Stadtverkehr'],
+              ru: ['Прожорливый (9,6 л/100 км)', 'Расход 2.4 АКПП в городе']
             }
           },
           taxInsuranceNorm: {
@@ -5018,9 +5021,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 7.8,
             badges: {
-              en: ['6.7 L/100km Real', '850+ km Tank Range'],
-              de: ['6,7 L/100km Real', '850+ km Reichweite'],
-              ru: ['6,7 л/100 км в жизни', 'Запас хода 850+ км']
+              en: ['6.7 L/100km', '850+ km Tank Range'],
+              de: ['6,7 L/100km', '850+ km Reichweite'],
+              ru: ['6,7 л/100 км', 'Запас хода 850+ км']
             }
           },
           taxInsuranceNorm: {
@@ -5074,22 +5077,22 @@ const CAR_ROSTER = [
         },
         estUsedPrice: '€6,800',
         perkLabel: {
-          en: '✦ 340 Nm Diesel Torque • 2,000 kg Towing • 7.4 L/100km Real Economy',
-          de: '✦ 340 Nm Drehmoment • 2.000 kg Anhängelast • 7,4 L/100km Realverbrauch',
+          en: '✦ 340 Nm Diesel Torque • 2,000 kg Towing • 7.4 L/100km Economy',
+          de: '✦ 340 Nm Drehmoment • 2.000 kg Anhängelast • 7,4 L/100km Verbrauch',
           ru: '✦ Тяга 340 Н·м • Прицеп 2 000 кг • Расход 7,4 л/100 км'
         },
         remarkablePositives: {
           en: [
             '340 NM DIESEL TORQUE',
             '2,000 KG BRAKED TOWING',
-            '7.4L/100KM REAL ECONOMY',
+            '7.4 L/100KM ECONOMY',
             'TOUGH N22A2 ALU DIESEL',
             '556L SQUARE SUV BOOT'
           ],
           de: [
             '340 NM DIESEL-DREHMOMENT',
             '2.000 KG ANHÄNGELAST',
-            '7,4 L/100KM REALVERBRAUCH',
+            '7,4 L/100KM VERBRAUCH',
             'ROBUSTER N22A2 ALU-DIESEL',
             '556L KASTEN-KOFFERRAUM'
           ],
@@ -5326,9 +5329,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 7.7,
             badges: {
-              en: ['7.4 L/100km Real', '173 g/km CO2 (Euro 4)'],
-              de: ['7,4 L/100km Real', '173 g/km CO2 (Euro 4)'],
-              ru: ['7,4 л/100 км в жизни', '173 г/км CO2 (Евро-4)']
+              en: ['7.4 L/100km', '173 g/km CO2 (Euro 4)'],
+              de: ['7,4 L/100km', '173 g/km CO2 (Euro 4)'],
+              ru: ['7,4 л/100 км', '173 г/км CO2 (Евро-4)']
             }
           },
           taxInsuranceNorm: {
@@ -5409,7 +5412,7 @@ const CAR_ROSTER = [
             'HIGH-GRIP FRONT DIFF',
             'BIG BRAKES FROM FACTORY (380MM)',
             '6.0S 0–100 • 250 KM/H TOP SPEED',
-            '7.4L/100KM REAL ECONOMY',
+            '7.4 L/100KM ECONOMY',
             '420L BOOT & MASSAGE SEATS'
           ],
           de: [
@@ -5417,7 +5420,7 @@ const CAR_ROSTER = [
             'SPERRDIFFERENTIAL VORN',
             'GROSSE BREMSEN AB WERK (380MM)',
             '6,0S 0–100 • 250 KM/H SPITZE',
-            '7,4 L/100KM REALVERBRAUCH',
+            '7,4 L/100KM VERBRAUCH',
             '420L KOFFERRAUM & MASSAGESITZE'
           ],
           ru: [
@@ -5660,9 +5663,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 8.1,
             badges: {
-              en: ['7.4 L/100km Real', 'Light 1.6L Efficiency'],
-              de: ['7,4 L/100km Real', 'Sparsamer 1.6L Turbo'],
-              ru: ['7,4 л/100 км в жизни', 'Экономичный 1.6 турбо']
+              en: ['7.4 L/100km', 'Light 1.6L Efficiency'],
+              de: ['7,4 L/100km', 'Sparsamer 1.6L Turbo'],
+              ru: ['7,4 л/100 км', 'Экономичный 1.6 турбо']
             }
           },
           taxInsuranceNorm: {
@@ -5741,14 +5744,14 @@ const CAR_ROSTER = [
             'HUGE 550L SEDAN BOOT',
             'HIGHWAY CRUISER COMFORT',
             'SHARP MONDEO STEERING',
-            '7.7L/100KM REAL ECONOMY',
+            '7.7 L/100KM ECONOMY',
             '1,600 KG BRAKED TOWING'
           ],
           de: [
             'RIESIGER 550L KOFFERRAUM',
             'HOHER LANGSTRECKEN-KOMFORT',
             'PRÄZISE MONDEO-LENKUNG',
-            '7,7 L/100KM REALVERBRAUCH',
+            '7,7 L/100KM VERBRAUCH',
             '1.600 KG ANHÄNGELAST'
           ],
           ru: [
@@ -5987,9 +5990,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 7.6,
             badges: {
-              en: ['7.7 L/100km Real', '149 g/km CO2'],
-              de: ['7,7 L/100km Real', '149 g/km CO2'],
-              ru: ['7,7 л/100 км в жизни', '149 г/км CO2']
+              en: ['7.7 L/100km', '149 g/km CO2'],
+              de: ['7,7 L/100km', '149 g/km CO2'],
+              ru: ['7,7 л/100 км', '149 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -6053,14 +6056,14 @@ const CAR_ROSTER = [
             'HUGE 550L SEDAN BOOT',
             'HIGHWAY CRUISER COMFORT',
             'SHARP MONDEO STEERING',
-            '8.0L/100KM REAL ECONOMY'
+            'THIRSTY 8.0 L/100KM'
           ],
           de: [
             'EINFACHER SAUGMOTOR OHNE TURBO',
             'RIESIGER 550L KOFFERRAUM',
             'HOHER LANGSTRECKEN-KOMFORT',
             'PRÄZISE MONDEO-LENKUNG',
-            '8,0 L/100KM REALVERBRAUCH'
+            'DURSTIG: 8,0 L/100KM'
           ],
           ru: [
             'ПРОСТОЙ АТМОСФЕРНИК БЕЗ ТУРБИНЫ',
@@ -6295,9 +6298,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 7.3,
             badges: {
-              en: ['8.0 L/100km Real', '159 g/km CO2'],
-              de: ['8,0 L/100km Real', '159 g/km CO2'],
-              ru: ['8,0 л/100 км в жизни', '159 г/км CO2']
+              en: ['Thirsty (8.0 L/100km)', '159 g/km CO2'],
+              de: ['Durstig (8,0 L/100km)', '159 g/km CO2'],
+              ru: ['Прожорливый (8,0 л/100 км)', '159 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -6381,13 +6384,13 @@ const CAR_ROSTER = [
         notableNegatives: {
           en: [
             '5-SPEED MANUAL (HIGH REVS)',
-            '8.6L/100KM REAL ECONOMY',
+            'THIRSTY 8.6 L/100KM',
             'NARROW BOOT OPENING (4-DOOR SEDAN)',
             'WIDE 11.4M TURNING CIRCLE'
           ],
           de: [
             'NUR 5 GÄNGE (HOHE DREHZAHL)',
-            '8,6 L/100KM REALVERBRAUCH',
+            'DURSTIG: 8,6 L/100KM',
             'SCHMALE LADELUKE (4-TÜRER-LIMO)',
             'GROSSER 11,4M WENDEKREIS'
           ],
@@ -6603,9 +6606,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 6.8,
             badges: {
-              en: ['8.6 L/100km Real', '179 g/km CO2'],
-              de: ['8,6 L/100km Real', '179 g/km CO2'],
-              ru: ['8,6 л/100 км в жизни', '179 г/км CO2']
+              en: ['Thirsty (8.6 L/100km)', '179 g/km CO2'],
+              de: ['Durstig (8,6 L/100km)', '179 g/km CO2'],
+              ru: ['Прожорливый (8,6 л/100 км)', '179 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -6911,9 +6914,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 5.9,
             badges: {
-              en: ['9.6 L/100km Real', '179 g/km CO2'],
-              de: ['9,6 L/100km Real', '179 g/km CO2'],
-              ru: ['9,6 л/100 км в жизни', '179 г/км CO2']
+              en: ['Thirsty (9.6 L/100km)', '179 g/km CO2'],
+              de: ['Durstig (9,6 L/100km)', '179 g/km CO2'],
+              ru: ['Прожорливый (9,6 л/100 км)', '179 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -7219,9 +7222,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 5.2,
             badges: {
-              en: ['10.2 L/100km Real', '223 g/km CO2'],
-              de: ['10,2 L/100km Real', '223 g/km CO2'],
-              ru: ['10,2 л/100 км в жизни', '223 г/км CO2']
+              en: ['Thirsty (10.2 L/100km)', '223 g/km CO2'],
+              de: ['Durstig (10,2 L/100km)', '223 g/km CO2'],
+              ru: ['Прожорливый (10,2 л/100 км)', '223 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -7527,9 +7530,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 4.8,
             badges: {
-              en: ['10.8 L/100km Real', '222 g/km CO2'],
-              de: ['10,8 L/100km Real', '222 g/km CO2'],
-              ru: ['10,8 л/100 км в жизни', '222 г/км CO2']
+              en: ['Thirsty (10.8 L/100km)', '222 g/km CO2'],
+              de: ['Durstig (10,8 L/100km)', '222 g/km CO2'],
+              ru: ['Прожорливый (10,8 л/100 км)', '222 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -7583,20 +7586,20 @@ const CAR_ROSTER = [
         },
         estUsedPrice: '€6,300',
         perkLabel: {
-          en: '✦ 5.4 L/100km Real Economy • 109–114g CO2 • Huge 550L Sedan Boot',
-          de: '✦ 5,4 L/100km Realverbrauch • 109–114g CO2 • Riesiger 550L Kofferraum',
+          en: '✦ Efficient 5.4 L/100km • 109–114g CO2 • Huge 550L Sedan Boot',
+          de: '✦ Sparsam (5,4 L/100km) • 109–114g CO2 • Riesiger 550L Kofferraum',
           ru: '✦ Расход 5,4 л/100 км • 109–114 г CO2 • Огромный багажник 550 л'
         },
         remarkablePositives: {
           en: [
-            '5.4L/100KM REAL ECONOMY',
+            'EFFICIENT 5.4 L/100KM',
             'LOW 1.6L DIESEL TAX',
             'HUGE 550L SEDAN BOOT',
             'HIGHWAY CRUISER COMFORT',
             'SHARP MONDEO STEERING'
           ],
           de: [
-            '5,4 L/100KM REALVERBRAUCH',
+            'SPARSAM: 5,4 L/100KM',
             'GÜNSTIGE 1.6L DIESEL-STEUER',
             'RIESIGER 550L KOFFERRAUM',
             'HOHER LANGSTRECKEN-KOMFORT',
@@ -7835,9 +7838,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 9.0,
             badges: {
-              en: ['5.4 L/100km Real', '109–114 g/km CO2'],
-              de: ['5,4 L/100km Real', '109–114 g/km CO2'],
-              ru: ['5,4 л/100 км в жизни', '109–114 г/км CO2']
+              en: ['Efficient (5.4 L/100km)', '109–114 g/km CO2'],
+              de: ['Sparsam (5,4 L/100km)', '109–114 g/km CO2'],
+              ru: ['Экономичный (5,4 л/100 км)', '109–114 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -7891,21 +7894,21 @@ const CAR_ROSTER = [
         },
         estUsedPrice: '€4,900',
         perkLabel: {
-          en: '✦ 100 or 125 HP • Often No Factory DPF (2007) • 6.3 L/100km Real Economy',
-          de: '✦ 100 oder 125 PS • Oft ohne DPF (2007) • 6,3 L/100km Realverbrauch',
+          en: '✦ 100 or 125 HP • Often No Factory DPF (2007) • 6.3 L/100km Economy',
+          de: '✦ 100 oder 125 PS • Oft ohne DPF (2007) • 6,3 L/100km Verbrauch',
           ru: '✦ 100 или 125 л.с. • Часто без сажевого фильтра (2007) • 6,3 л/100 км'
         },
         remarkablePositives: {
           en: [
             'TOUGH CAST-IRON BLOCK',
-            '6.3L/100KM REAL ECONOMY',
+            '6.3 L/100KM ECONOMY',
             'OFTEN NO DPF CLOGGING (2007)',
             'HUGE 550L SEDAN BOOT',
             'HIGHWAY CRUISER COMFORT'
           ],
           de: [
             'ROBUSTER GUSS-MOTORBLOCK',
-            '6,3 L/100KM REALVERBRAUCH',
+            '6,3 L/100KM VERBRAUCH',
             'OFT OHNE DPF-PROBLEME (2007)',
             'RIESIGER 550L KOFFERRAUM',
             'HOHER LANGSTRECKEN-KOMFORT'
@@ -8143,9 +8146,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 8.2,
             badges: {
-              en: ['6.3 L/100km Real', '154 g/km CO2'],
-              de: ['6,3 L/100km Real', '154 g/km CO2'],
-              ru: ['6,3 л/100 км в жизни', '154 г/км CO2']
+              en: ['6.3 L/100km', '154 g/km CO2'],
+              de: ['6,3 L/100km', '154 g/km CO2'],
+              ru: ['6,3 л/100 км', '154 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -8199,21 +8202,21 @@ const CAR_ROSTER = [
         },
         estUsedPrice: '€7,200',
         perkLabel: {
-          en: '✦ 115–163 HP PSA DW10 • 6.4 L/100km Real • 1,800 kg Towing • 400k+ km Proven',
-          de: '✦ 115–163 PS PSA DW10 • 6,4 L/100km Real • 1.800 kg Anhängelast • Dauerläufer',
+          en: '✦ 115–163 HP PSA DW10 • 6.4 L/100km • 1,800 kg Towing • 400k+ km Proven',
+          de: '✦ 115–163 PS PSA DW10 • 6,4 L/100km • 1.800 kg Anhängelast • Dauerläufer',
           ru: '✦ 115–163 л.с. PSA DW10 • 6,4 л/100 км • Прицеп 1 800 кг • Ресурс 400+ тыс. км'
         },
         remarkablePositives: {
           en: [
             'PROVEN 400K+ KM DIESEL',
-            '6.4L/100KM REAL ECONOMY',
+            '6.4 L/100KM ECONOMY',
             '1,800 KG BRAKED TOWING',
             'HUGE 550L SEDAN BOOT',
             'HIGHWAY CRUISER COMFORT'
           ],
           de: [
             'BEWÄHRTER 400.000-KM-DIESEL',
-            '6,4 L/100KM REALVERBRAUCH',
+            '6,4 L/100KM VERBRAUCH',
             '1.800 KG ANHÄNGELAST',
             'RIESIGER 550L KOFFERRAUM',
             'HOHER LANGSTRECKEN-KOMFORT'
@@ -8451,9 +8454,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 8.4,
             badges: {
-              en: ['6.4 L/100km Real', '139–156 g/km CO2'],
-              de: ['6,4 L/100km Real', '139–156 g/km CO2'],
-              ru: ['6,4 л/100 км в жизни', '139–156 г/км CO2']
+              en: ['6.4 L/100km', '139–156 g/km CO2'],
+              de: ['6,4 L/100km', '139–156 g/km CO2'],
+              ru: ['6,4 л/100 км', '139–156 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -8515,14 +8518,14 @@ const CAR_ROSTER = [
           en: [
             'MASSIVE 420 NM TORQUE',
             '2,000 KG BRAKED TOWING',
-            '7.2L/100KM REAL ECONOMY',
+            '7.2 L/100KM ECONOMY',
             'HUGE 550L SEDAN BOOT',
             'RELIABLE AISIN 6-AT OPTION'
           ],
           de: [
             'GEWALTIGE 420 NM DREHMOMENT',
             'BIS 2.000 KG ANHÄNGELAST',
-            '7,2 L/100KM REALVERBRAUCH',
+            '7,2 L/100KM VERBRAUCH',
             'RIESIGER 550L KOFFERRAUM',
             'ROBUSTE AISIN-6-AUTOMATIK'
           ],
@@ -8759,9 +8762,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 7.6,
             badges: {
-              en: ['7.2 L/100km Real', '165–179 g/km CO2'],
-              de: ['7,2 L/100km Real', '165–179 g/km CO2'],
-              ru: ['7,2 л/100 км в жизни', '165–179 г/км CO2']
+              en: ['7.2 L/100km', '165–179 g/km CO2'],
+              de: ['7,2 L/100km', '165–179 g/km CO2'],
+              ru: ['7,2 л/100 км', '165–179 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -9086,9 +9089,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 5.8,
             badges: {
-              en: ['9.8 L/100km Real', '170 g/km CO2'],
-              de: ['9,8 L/100km Real', '170 g/km CO2'],
-              ru: ['9,8 л/100 км в жизни', '170 г/км CO2']
+              en: ['Thirsty (9.8 L/100km)', '170 g/km CO2'],
+              de: ['Durstig (9,8 L/100km)', '170 g/km CO2'],
+              ru: ['Прожорливый (9,8 л/100 км)', '170 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -9413,9 +9416,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 7.4,
             badges: {
-              en: ['7.6 L/100km Real', '165 g/km CO2'],
-              de: ['7,6 L/100km Real', '165 g/km CO2'],
-              ru: ['7,6 л/100 км в жизни', '165 г/км CO2']
+              en: ['7.6 L/100km', '165 g/km CO2'],
+              de: ['7,6 L/100km', '165 g/km CO2'],
+              ru: ['7,6 л/100 км', '165 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -9724,9 +9727,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 5.9,
             badges: {
-              en: ['9.1 L/100km Real', '204 g/km CO2'],
-              de: ['9,1 L/100km Real', '204 g/km CO2'],
-              ru: ['9,1 л/100 км в жизни', '204 г/км CO2']
+              en: ['Thirsty (9.1 L/100km)', '204 g/km CO2'],
+              de: ['Durstig (9,1 L/100km)', '204 g/km CO2'],
+              ru: ['Прожорливый (9,1 л/100 км)', '204 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -9787,14 +9790,14 @@ const CAR_ROSTER = [
         remarkablePositives: {
           en: [
             '350–380 NM HIGHWAY TORQUE',
-            '5.9 L/100KM REAL ECONOMY',
+            '5.9 L/100KM ECONOMY',
             '1,700 KG BRAKED TOWING',
             'DOUBLE-WISHBONE CHASSIS',
             'QUIET REFINED N22B DIESEL'
           ],
           de: [
             '350–380 NM AUTOBAHN-DURCHZUG',
-            '5,9 L/100KM REALVERBRAUCH',
+            '5,9 L/100KM VERBRAUCH',
             '1.700 KG ANHÄNGELAST',
             'DOPPELQUERLENKER-FAHRWERK',
             'LAUFRUHIGER N22B DIESEL'
@@ -10035,9 +10038,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 8.0,
             badges: {
-              en: ['5.9 L/100km Real', '147 g/km CO2'],
-              de: ['5,9 L/100km Real', '147 g/km CO2'],
-              ru: ['5,9 л/100 км в жизни', '147 г/км CO2']
+              en: ['5.9 L/100km', '147 g/km CO2'],
+              de: ['5,9 L/100km', '147 g/km CO2'],
+              ru: ['5,9 л/100 км', '147 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -10116,14 +10119,14 @@ const CAR_ROSTER = [
             'MAGIC SEATS (1,321L CARGO)',
             '399L CLASS-LEADING SUBCOMPACT BOOT',
             'BULLETPROOF L12B1 CHAIN ENGINE',
-            '5.6 L/100KM REAL ECONOMY',
+            '5.6 L/100KM ECONOMY',
             '9.8M TIGHT TURNING CIRCLE'
           ],
           de: [
             'MAGIC SEATS (1.321L LADERAUM)',
             '399L RIESIGER KLEINWAGEN-KOFFERRAUM',
             'UNVERWÜSTLICHER L12B1 KETTENMOTOR',
-            '5,6 L/100KM REALVERBRAUCH',
+            '5,6 L/100KM VERBRAUCH',
             '9,8M WENDEKREIS IN DER STADT'
           ],
           ru: [
@@ -10359,9 +10362,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 8.6,
             badges: {
-              en: ['5.6 L/100km Real', '123 g/km CO2'],
-              de: ['5,6 L/100km Real', '123 g/km CO2'],
-              ru: ['5,6 л/100 км в жизни', '123 г/км CO2']
+              en: ['5.6 L/100km', '123 g/km CO2'],
+              de: ['5,6 L/100km', '123 g/km CO2'],
+              ru: ['5,6 л/100 км', '123 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -10424,14 +10427,14 @@ const CAR_ROSTER = [
             'MAGIC SEATS (1,321L CARGO)',
             '399L CLASS-LEADING SUBCOMPACT BOOT',
             'BULLETPROOF L13Z1 CHAIN ENGINE',
-            '5.8 L/100KM REAL ECONOMY',
+            '5.8 L/100KM ECONOMY',
             '9.8M TIGHT TURNING CIRCLE'
           ],
           de: [
             'MAGIC SEATS (1.321L LADERAUM)',
             '399L RIESIGER KLEINWAGEN-KOFFERRAUM',
             'UNVERWÜSTLICHER L13Z1 KETTENMOTOR',
-            '5,8 L/100KM REALVERBRAUCH',
+            '5,8 L/100KM VERBRAUCH',
             '9,8M WENDEKREIS IN DER STADT'
           ],
           ru: [
@@ -10667,9 +10670,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 8.5,
             badges: {
-              en: ['5.8 L/100km Real', '126 g/km CO2'],
-              de: ['5,8 L/100km Real', '126 g/km CO2'],
-              ru: ['5,8 л/100 км в жизни', '126 г/км CO2']
+              en: ['5.8 L/100km', '126 g/km CO2'],
+              de: ['5,8 L/100km', '126 g/km CO2'],
+              ru: ['5,8 л/100 км', '126 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -10723,20 +10726,20 @@ const CAR_ROSTER = [
         },
         estUsedPrice: '€7,200',
         perkLabel: {
-          en: '✦ 4.8 L/100km Real City Economy • CVT Auto • Magic Seats Retained',
+          en: '✦ Efficient (4.8 L/100km) City Economy • CVT Auto • Magic Seats Retained',
           de: '✦ 4,8 L/100km Stadtverbrauch • CVT-Automatik • Magic Seats bleiben',
           ru: '✦ Расход 4,8 л/100 км • Вариатор CVT • Сохранены Magic Seats'
         },
         remarkablePositives: {
           en: [
-            '4.8 L/100KM REAL ECONOMY',
+            'EFFICIENT 4.8 L/100KM',
             'SMOOTH CVT CITY DRIVING',
             'MAGIC SEATS STILL FOLD FLAT',
             'SIMPLE MILD-HYBRID ARCHITECTURE',
             '104 G/KM LOW CO2 TAX'
           ],
           de: [
-            '4,8 L/100KM REALVERBRAUCH',
+            'SPARSAM: 4,8 L/100KM',
             'SANFTE CVT-STADTAUTOMATIK',
             'MAGIC SEATS BLEIBEN ERHALTEN',
             'ROBUSTES IMA-HYBRIDSYSTEM',
@@ -10975,9 +10978,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 9.2,
             badges: {
-              en: ['4.8 L/100km Real', '104 g/km CO2'],
-              de: ['4,8 L/100km Real', '104 g/km CO2'],
-              ru: ['4,8 л/100 км в жизни', '104 г/км CO2']
+              en: ['Efficient (4.8 L/100km)', '104 g/km CO2'],
+              de: ['Sparsam (4,8 L/100km)', '104 g/km CO2'],
+              ru: ['Экономичный (4,8 л/100 км)', '104 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -11078,12 +11081,12 @@ const CAR_ROSTER = [
           en: [
             'TIMING CHAIN STRETCH PAST 120K KM',
             'CHECK REAR AXLE SUBFRAME RUST',
-            '8.2 L/100KM REAL CONSUMPTION'
+            'THIRSTY 8.2 L/100KM'
           ],
           de: [
             'STEUERKETTE AB 120 TKM PRÜFEN',
             'HINTERACHSTRÄGER AUF ROST PRÜFEN',
-            '8,2 L/100KM REALVERBRAUCH'
+            'DURSTIG: 8,2 L/100KM'
           ],
           ru: [
             'РАСТЯЖЕНИЕ ЦЕПИ ГРМ ПОСЛЕ 120 ТЫС.',
@@ -11299,9 +11302,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 6.5,
             badges: {
-              en: ['8.2 L/100km Real', '177 g/km CO2'],
-              de: ['8,2 L/100km Real', '177 g/km CO2'],
-              ru: ['8,2 л/100 км в жизни', '177 г/км CO2']
+              en: ['Thirsty (8.2 L/100km)', '177 g/km CO2'],
+              de: ['Durstig (8,2 L/100km)', '177 g/km CO2'],
+              ru: ['Прожорливый (8,2 л/100 км)', '177 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -11355,8 +11358,8 @@ const CAR_ROSTER = [
         },
         estUsedPrice: '€7,300',
         perkLabel: {
-          en: '✦ Lower 1.6L Road Tax • 7.8 L/100km Real • Proven Port Injection',
-          de: '✦ Günstigere 1.6L Kfz-Steuer • 7,8 L/100km Real • Robuste Saugrohreinspritzung',
+          en: '✦ Lower 1.6L Road Tax • 7.8 L/100km • Proven Port Injection',
+          de: '✦ Günstigere 1.6L Kfz-Steuer • 7,8 L/100km • Robuste Saugrohreinspritzung',
           ru: '✦ Ниже налог за 1.6 л • 7,8 л/100 км • Надёжный распределённый впрыск'
         },
         remarkablePositives: {
@@ -11604,9 +11607,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 6.9,
             badges: {
-              en: ['7.8 L/100km Real', '159 g/km CO2'],
-              de: ['7,8 L/100km Real', '159 g/km CO2'],
-              ru: ['7,8 л/100 км в жизни', '159 г/км CO2']
+              en: ['7.8 L/100km', '159 g/km CO2'],
+              de: ['7,8 L/100km', '159 g/km CO2'],
+              ru: ['7,8 л/100 км', '159 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -11912,9 +11915,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 7.2,
             badges: {
-              en: ['7.6 L/100km Real', '155 g/km CO2'],
-              de: ['7,6 L/100km Real', '155 g/km CO2'],
-              ru: ['7,6 л/100 км в жизни', '155 г/км CO2']
+              en: ['7.6 L/100km', '155 g/km CO2'],
+              de: ['7,6 L/100km', '155 g/km CO2'],
+              ru: ['7,6 л/100 км', '155 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -11968,21 +11971,21 @@ const CAR_ROSTER = [
         },
         estUsedPrice: '€10,900',
         perkLabel: {
-          en: '✦ Modern M274 Turbo • 7.0 L/100km Real • No M271 Timing Chain Failures',
-          de: '✦ Moderner M274-Turbo • 7,0 L/100km Real • Ohne M271-Kettenproblem',
+          en: '✦ Modern M274 Turbo • 7.0 L/100km • No M271 Timing Chain Failures',
+          de: '✦ Moderner M274-Turbo • 7,0 L/100km • Ohne M271-Kettenproblem',
           ru: '✦ Современный M274 • 7,0 л/100 км • Без проблем цепи M271'
         },
         remarkablePositives: {
           en: [
             'MOST RELIABLE W204 4-CYL PETROL',
-            '7.0 L/100KM REAL ECONOMY',
+            '7.0 L/100KM ECONOMY',
             '8.5S 0–100 + 250 NM FROM 1,250 RPM',
             'LATEST FACELIFT CABIN & TECH',
             '7G-TRONIC PLUS START-STOP'
           ],
           de: [
             'ZUVERLÄSSIGSTER W204 4-ZYL.-BENZINER',
-            '7,0 L/100KM REALVERBRAUCH',
+            '7,0 L/100KM VERBRAUCH',
             '8,5S 0–100 + 250 NM AB 1.250 U/MIN',
             'MODERNSTER MOPF-INNENRAUM',
             '7G-TRONIC PLUS START-STOPP'
@@ -12057,7 +12060,7 @@ const CAR_ROSTER = [
                 headline: 'Später Mopf-Turbobenziner (M274) — löst die Steuerketten-Probleme des Vorgängers',
                 strengths: [
                   'Überarbeiteter Kettentrieb: Ab 04/2012 löst der M274 den M271 ab und beseitigt die hohen Ketten- und Verstellerschäden.',
-                  'Breites Drehmomentband: 250 Nm schon ab 1.250 U/min sorgen für elastischen Durchzug bei rund 7,0 L/100km Realverbrauch.',
+                  'Breites Drehmomentband: 250 Nm schon ab 1.250 U/min sorgen für elastischen Durchzug bei rund 7,0 L/100km Verbrauch.',
                   'Moderne 7G-Tronic Plus: Sparsamer Wandler mit langem 7. Gang, bei Ölwechsel alle 75–100 tkm sehr standfest.'
                 ],
                 watchouts: [
@@ -12220,9 +12223,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 7.9,
             badges: {
-              en: ['7.0 L/100km Real', '136 g/km CO2'],
-              de: ['7,0 L/100km Real', '136 g/km CO2'],
-              ru: ['7,0 л/100 км в жизни', '136 г/км CO2']
+              en: ['7.0 L/100km', '136 g/km CO2'],
+              de: ['7,0 L/100km', '136 g/km CO2'],
+              ru: ['7,0 л/100 км', '136 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -12310,7 +12313,7 @@ const CAR_ROSTER = [
             'CHECK REAR AXLE SUBFRAME RUST'
           ],
           de: [
-            '8,5 L/100KM REALVERBRAUCH',
+            'DURSTIG: 8,5 L/100KM',
             'STEUERKETTE AB 120 TKM PRÜFEN',
             'HINTERACHSTRÄGER AUF ROST PRÜFEN'
           ],
@@ -12528,9 +12531,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 6.3,
             badges: {
-              en: ['8.5 L/100km Real', '185 g/km CO2'],
-              de: ['8,5 L/100km Real', '185 g/km CO2'],
-              ru: ['8,5 л/100 км в жизни', '185 г/км CO2']
+              en: ['Thirsty (8.5 L/100km)', '185 g/km CO2'],
+              de: ['Durstig (8,5 L/100km)', '185 g/km CO2'],
+              ru: ['Прожорливый (8,5 л/100 км)', '185 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -12584,8 +12587,8 @@ const CAR_ROSTER = [
         },
         estUsedPrice: '€9,800',
         perkLabel: {
-          en: '✦ 7.8s 0–100 & 270 Nm • 7G-Tronic Plus (2011+) • 7.8 L/100km Real',
-          de: '✦ 7,8s 0–100 & 270 Nm • 7G-Tronic Plus (ab 2011) • 7,8 L/100km Real',
+          en: '✦ 7.8s 0–100 & 270 Nm • 7G-Tronic Plus (2011+) • 7.8 L/100km',
+          de: '✦ 7,8s 0–100 & 270 Nm • 7G-Tronic Plus (ab 2011) • 7,8 L/100km',
           ru: '✦ 7,8 с до 100 и 270 Н·м • 7G-Tronic Plus (2011+) • 7,8 л/100 км'
         },
         remarkablePositives: {
@@ -12601,7 +12604,7 @@ const CAR_ROSTER = [
             '7,8S 0–100 • 237 KM/H SPITZE',
             'SANFTE 7G-TRONIC PLUS (AB 2011)',
             'AGILES HECKANTRIEB-FAHRWERK',
-            'SOLIDE 7,8 L/100KM REALVERBRAUCH'
+            'SOLIDE 7,8 L/100KM VERBRAUCH'
           ],
           ru: [
             'УВЕРЕННАЯ ТЯГА 270 Н·М',
@@ -12836,9 +12839,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 7.1,
             badges: {
-              en: ['7.8 L/100km Real', '154 g/km CO2'],
-              de: ['7,8 L/100km Real', '154 g/km CO2'],
-              ru: ['7,8 л/100 км в жизни', '154 г/км CO2']
+              en: ['7.8 L/100km', '154 g/km CO2'],
+              de: ['7,8 L/100km', '154 g/km CO2'],
+              ru: ['7,8 л/100 км', '154 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -12902,7 +12905,7 @@ const CAR_ROSTER = [
             'LIGHTER FRONT AXLE THAN V6',
             '240 KM/H AUTOBAHN TOP SPEED',
             'STANDARD AUTOMATIC (5-AT / 7G-PLUS)',
-            '8.2 L/100KM REAL FOR 204 HP'
+            'THIRSTY 8.2 L/100KM (204 HP)'
           ],
           de: [
             '310 NM TURBO-SCHUB (7,2S 0–100)',
@@ -13144,9 +13147,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 6.7,
             badges: {
-              en: ['8.2 L/100km Real', '152 g/km CO2'],
-              de: ['8,2 L/100km Real', '152 g/km CO2'],
-              ru: ['8,2 л/100 км в жизни', '152 г/км CO2']
+              en: ['Thirsty (8.2 L/100km)', '152 g/km CO2'],
+              de: ['Durstig (8,2 L/100km)', '152 g/km CO2'],
+              ru: ['Прожорливый (8,2 л/100 км)', '152 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -13234,12 +13237,12 @@ const CAR_ROSTER = [
             'PLASTIC INTAKE MANIFOLD FLAPS WEAR'
           ],
           de: [
-            'DURSTIGE 9,8 L/100KM REALVERBRAUCH',
+            'DURSTIGE DURSTIG: 9,8 L/100KM',
             'BIS ENDE 2007 AUSGLEICHSWELLE PRÜFEN',
             'SAUGROHR-DRALLKLAPPEN VERSCHLEISSEN'
           ],
           ru: [
-            'РАСХОД 9,8 Л/100 КМ В ЖИЗНИ',
+            'ПРОЖОРЛИВЫЙ: 9,8 Л/100 КМ',
             'ДО 2008 Г. ПРОВЕРИТЬ ЗВЕЗДУ БАЛАНСИРА',
             'ИЗНОС ЗАСЛОНОК ВПУСКНОГО КОЛЛЕКТОРА'
           ]
@@ -13452,9 +13455,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 5.7,
             badges: {
-              en: ['9.8 L/100km Real', '216 g/km CO2'],
-              de: ['9,8 L/100km Real', '216 g/km CO2'],
-              ru: ['9,8 л/100 км в жизни', '216 г/км CO2']
+              en: ['Thirsty (9.8 L/100km)', '216 g/km CO2'],
+              de: ['Durstig (9,8 L/100km)', '216 g/km CO2'],
+              ru: ['Прожорливый (9,8 л/100 км)', '216 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -13542,7 +13545,7 @@ const CAR_ROSTER = [
             'PLASTIC INTAKE MANIFOLD FLAPS WEAR'
           ],
           de: [
-            'DURSTIGE 10,2 L/100KM REALVERBRAUCH',
+            'DURSTIGE DURSTIG: 10,2 L/100KM',
             'FRÜHE 2007ER C 280 AUSGLEICHSWELLE PRÜFEN',
             'SAUGROHR-DRALLKLAPPEN VERSCHLEISSEN'
           ],
@@ -13760,9 +13763,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 5.4,
             badges: {
-              en: ['10.2 L/100km Real', '224 g/km CO2'],
-              de: ['10,2 L/100km Real', '224 g/km CO2'],
-              ru: ['10,2 л/100 км в жизни', '224 г/км CO2']
+              en: ['Thirsty (10.2 L/100km)', '224 g/km CO2'],
+              de: ['Durstig (10,2 L/100km)', '224 g/km CO2'],
+              ru: ['Прожорливый (10,2 л/100 км)', '224 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -13845,12 +13848,12 @@ const CAR_ROSTER = [
         },
         notableNegatives: {
           en: [
-            '10.8 L/100KM REAL FUEL CONSUMPTION',
+            'THIRSTY 10.8 L/100KM',
             'CHECK PRE-2008 BALANCE SHAFT',
             'HIGHER 3.5L TAX & RUNNING COSTS'
           ],
           de: [
-            '10,8 L/100KM REALVERBRAUCH',
+            'DURSTIG: 10,8 L/100KM',
             'FRÜHE 2007ER AUSGLEICHSWELLE PRÜFEN',
             'HÖHERE 3.5L STEUER & UNTERHALT'
           ],
@@ -14068,9 +14071,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 5.0,
             badges: {
-              en: ['10.8 L/100km Real', '232 g/km CO2'],
-              de: ['10,8 L/100km Real', '232 g/km CO2'],
-              ru: ['10,8 л/100 км в жизни', '232 г/км CO2']
+              en: ['Thirsty (10.8 L/100km)', '232 g/km CO2'],
+              de: ['Durstig (10,8 L/100km)', '232 g/km CO2'],
+              ru: ['Прожорливый (10,8 л/100 км)', '232 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -14213,7 +14216,7 @@ const CAR_ROSTER = [
                 headline: '292-PS-Schichtlade-V6 — spürbar schneller und sparsamer, aber teure Injektortechnik',
                 strengths: [
                   'Kein Ausgleichswellen-Risiko: Da erst ab 10/2008 gebaut, besitzen alle C 350 CGI das gehärtete Kettenrad.',
-                  'Erstaunlich sparsamer V6: Dank Mager-Schichtladung rund 9,6 L/100km Realverbrauch bei 292 PS.',
+                  'Erstaunlich sparsamer V6: Dank Mager-Schichtladung rund Durstig (9,6 L/100km) bei 292 PS.',
                   'Satter Vortrieb: 365 Nm und 6,2 Sekunden auf 100 km/h.'
                 ],
                 watchouts: [
@@ -14376,9 +14379,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 5.7,
             badges: {
-              en: ['9.6 L/100km Real', '193 g/km CO2'],
-              de: ['9,6 L/100km Real', '193 g/km CO2'],
-              ru: ['9,6 л/100 км в жизни', '193 г/км CO2']
+              en: ['Thirsty (9.6 L/100km)', '193 g/km CO2'],
+              de: ['Durstig (9,6 L/100km)', '193 g/km CO2'],
+              ru: ['Прожорливый (9,6 л/100 км)', '193 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -14432,8 +14435,8 @@ const CAR_ROSTER = [
         },
         estUsedPrice: '€16,500',
         perkLabel: {
-          en: '✦ 306 HP / 6.0s 0–100 • Bulletproof M276 V6 • 8.8 L/100km Real',
-          de: '✦ 306 PS / 6,0s 0–100 • Robuster M276-V6 • Nur 8,8 L/100km Real',
+          en: '✦ 306 HP / 6.0s 0–100 • Bulletproof M276 V6 • Thirsty (8.8 L/100km)',
+          de: '✦ 306 PS / 6,0s 0–100 • Robuster M276-V6 • Nur Durstig (8,8 L/100km)',
           ru: '✦ 306 л.с. / 6,0 с до 100 • Надёжный V6 M276 • Расход 8,8 л/100 км'
         },
         remarkablePositives: {
@@ -14684,9 +14687,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 6.3,
             badges: {
-              en: ['8.8 L/100km Real', '159 g/km CO2'],
-              de: ['8,8 L/100km Real', '159 g/km CO2'],
-              ru: ['8,8 л/100 км в жизни', '159 г/км CO2']
+              en: ['Thirsty (8.8 L/100km)', '159 g/km CO2'],
+              de: ['Durstig (8,8 L/100km)', '159 g/km CO2'],
+              ru: ['Прожорливый (8,8 л/100 км)', '159 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -14740,20 +14743,20 @@ const CAR_ROSTER = [
         },
         estUsedPrice: '€7,900',
         perkLabel: {
-          en: '✦ 5.3 L/100km Real Economy • Under-Stressed 2.1L Block • 300 Nm',
-          de: '✦ 5,3 L/100km Realverbrauch • Entspannter 2.1L Block • 300 Nm',
+          en: '✦ Efficient 5.3 L/100km • Under-Stressed 2.1L Block • 300 Nm',
+          de: '✦ Sparsam (5,3 L/100km) • Entspannter 2.1L Block • 300 Nm',
           ru: '✦ Расход 5,3 л/100 км • Дефорсированный 2.1 л • 300 Н·м'
         },
         remarkablePositives: {
           en: [
-            '5.3 L/100KM REAL-WORLD ECONOMY',
+            'EFFICIENT 5.3 L/100KM',
             '300 NM FROM DETUNED 2.1L BLOCK',
             'LOW STRESS ON ENGINE INTERNALS',
             'CRISP RWD CHASSIS BALANCE',
             '1,800 KG BRAKED TOWING'
           ],
           de: [
-            '5,3 L/100KM REALVERBRAUCH',
+            'SPARSAM: 5,3 L/100KM',
             '300 NM TROTZ GEDROSSELTER LEISTUNG',
             'GERINGE MOTORBELASTUNG (LANGLEBIG)',
             'AUSGEWOGENES HECKANTRIEB-FAHRWERK',
@@ -14992,9 +14995,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 8.8,
             badges: {
-              en: ['5.3 L/100km Real', '125 g/km CO2'],
-              de: ['5,3 L/100km Real', '125 g/km CO2'],
-              ru: ['5,3 л/100 км в жизни', '125 г/км CO2']
+              en: ['Efficient (5.3 L/100km)', '125 g/km CO2'],
+              de: ['Sparsam (5,3 L/100km)', '125 g/km CO2'],
+              ru: ['Экономичный (5,3 л/100 км)', '125 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -15057,14 +15060,14 @@ const CAR_ROSTER = [
             'LEGENDARY DUPLEX-CHAIN OM646 ENGINE',
             'IRON BLOCK & FRONT-ACCESS TIMING CHAIN',
             'BULLETPROOF 5-SPEED AUTOMATIC',
-            '6.1 L/100KM REAL CONSUMPTION',
+            '6.1 L/100KM',
             'CHEAPEST RELIABLE DIESEL ENTRY'
           ],
           de: [
             'LEGENDÄRER DUPLEX-KETTEN-OM646',
             'GRAUGUSS-BLOCK & SOLIDE VORDER-KETTE',
             'UNVERWÜSTLICHE 5G-TRONIC AUTOMATIK',
-            '6,1 L/100KM REALVERBRAUCH',
+            '6,1 L/100KM VERBRAUCH',
             'GÜNSTIGSTER ROBUSTER DIESEL-EINSTIEG'
           ],
           ru: [
@@ -15300,9 +15303,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 8.2,
             badges: {
-              en: ['6.1 L/100km Real', '156 g/km CO2'],
-              de: ['6,1 L/100km Real', '156 g/km CO2'],
-              ru: ['6,1 л/100 км в жизни', '156 г/км CO2']
+              en: ['6.1 L/100km', '156 g/km CO2'],
+              de: ['6,1 L/100km', '156 g/km CO2'],
+              ru: ['6,1 л/100 км', '156 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -15363,13 +15366,13 @@ const CAR_ROSTER = [
         remarkablePositives: {
           en: [
             'BIG 360 NM MID-RANGE PUNCH',
-            '5.5 L/100KM REAL-WORLD ECONOMY',
+            'EFFICIENT 5.5 L/100KM',
             'EURO 5 & 7G-TRONIC PLUS OPTION',
             'PROVEN 350K+ KM FLEET BASE'
           ],
           de: [
             'STARKE 360 NM DREHMOMENT-AUSBEUTE',
-            '5,5 L/100KM REALVERBRAUCH',
+            'SPARSAM: 5,5 L/100KM',
             'EURO 5 & 7G-TRONIC PLUS OPTIONAL',
             'LANGSTRECKENERPROBTE TAXI-BASIS'
           ],
@@ -15442,7 +15445,7 @@ const CAR_ROSTER = [
                 headline: '90 Nm stärker als der alte OM646 — nach Injektor-Update ein erstklassiger Langstreckenläufer',
                 strengths: [
                   '360 Nm Drehmoment: Bei identischen 136 PS bietet der OM651 spürbar mehr Durchzug als der frühe OM646.',
-                  'Sparsame 7G-Tronic Plus (ab 2011): Ideal auf der Autobahn bei ca. 5,5 L/100km Realverbrauch.',
+                  'Sparsame 7G-Tronic Plus (ab 2011): Ideal auf der Autobahn bei ca. Sparsam (5,5 L/100km).',
                   'Solide Taxi-Langlebigkeit: Ab Modelljahr 2012 technisch ausgereift für 300.000+ km.'
                 ],
                 watchouts: [
@@ -15605,9 +15608,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 8.6,
             badges: {
-              en: ['5.5 L/100km Real', '127 g/km CO2'],
-              de: ['5,5 L/100km Real', '127 g/km CO2'],
-              ru: ['5,5 л/100 км в жизни', '127 г/км CO2']
+              en: ['Efficient (5.5 L/100km)', '127 g/km CO2'],
+              de: ['Sparsam (5,5 L/100km)', '127 g/km CO2'],
+              ru: ['Экономичный (5,5 л/100 км)', '127 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -15670,14 +15673,14 @@ const CAR_ROSTER = [
             '170 HP & 400 NM AUTOBAHN PUNCH',
             'LEGENDARY DUPLEX-CHAIN OM646 BLOCK',
             'INDESTRUCTIBLE 5-SPEED AUTOMATIC',
-            '6.3 L/100KM REAL CONSUMPTION',
+            '6.3 L/100KM',
             'NO PIEZO INJECTOR RECALL ISSUES'
           ],
           de: [
             '170 PS & 400 NM AUTOBAHN-DURCHZUG',
             'UNZERSTÖRBARER DUPLEX-KETTEN-OM646',
             'ROBUSTE 5G-TRONIC WANDLERAUTOMATIK',
-            '6,3 L/100KM REALVERBRAUCH',
+            '6,3 L/100KM VERBRAUCH',
             'OHNE PIEZO-INJEKTOR-PROBLEME'
           ],
           ru: [
@@ -15913,9 +15916,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 8.0,
             badges: {
-              en: ['6.3 L/100km Real', '159 g/km CO2'],
-              de: ['6,3 L/100km Real', '159 g/km CO2'],
-              ru: ['6,3 л/100 км в жизни', '159 г/км CO2']
+              en: ['6.3 L/100km', '159 g/km CO2'],
+              de: ['6,3 L/100km', '159 g/km CO2'],
+              ru: ['6,3 л/100 км', '159 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -15976,14 +15979,14 @@ const CAR_ROSTER = [
         remarkablePositives: {
           en: [
             '400 NM BI-TURBO SMOOTH PULL (8.1S)',
-            '5.6 L/100KM REAL HIGHWAY ECONOMY',
+            '5.6 L/100KM HIGHWAY',
             '7G-TRONIC PLUS + OPTIONAL 4MATIC',
             '1,800 KG BRAKED TOWING CAPACITY',
             'HIGHEST PARTS & MECHANIC SUPPORT'
           ],
           de: [
             '400 NM BI-TURBO-DURCHZUG (8,1S)',
-            '5,6 L/100KM AUTOBAHN-REALVERBRAUCH',
+            '5,6 L/100KM AUTOBAHN',
             '7G-TRONIC PLUS + OPTIONAL 4MATIC',
             '1.800 KG STARKE ANHÄNGELAST',
             'BESTE TEILE- & WERKSTATTVERSORGUNG'
@@ -16221,9 +16224,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 8.5,
             badges: {
-              en: ['5.6 L/100km Real', '128 g/km CO2'],
-              de: ['5,6 L/100km Real', '128 g/km CO2'],
-              ru: ['5,6 л/100 км в жизни', '128 г/км CO2']
+              en: ['5.6 L/100km', '128 g/km CO2'],
+              de: ['5,6 L/100km', '128 g/km CO2'],
+              ru: ['5,6 л/100 км', '128 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -16277,22 +16280,22 @@ const CAR_ROSTER = [
         },
         estUsedPrice: '€10,900',
         perkLabel: {
-          en: '✦ V8-Matching 500 Nm Torque • 7.0s 0–100 • Only 5.9 L/100km Real',
-          de: '✦ Brachiale 500 Nm (V8-Niveau) • 7,0s 0–100 • Nur 5,9 L/100km Real',
+          en: '✦ V8-Matching 500 Nm Torque • 7.0s 0–100 • Only 5.9 L/100km',
+          de: '✦ Brachiale 500 Nm (V8-Niveau) • 7,0s 0–100 • Nur 5,9 L/100km',
           ru: '✦ Паровозные 500 Н·м • 7,0 с до 100 • Расход лишь 5,9 л/100 км'
         },
         remarkablePositives: {
           en: [
             'MONSTROUS 500 NM FROM 4-CYLINDER',
             '7.0S 0–100 • 240 KM/H TOP SPEED',
-            'ONLY 5.9 L/100KM REAL CONSUMPTION',
+            'ONLY 5.9 L/100KM',
             'LIGHTER FRONT END THAN V6 CDI',
             '7G-TRONIC PLUS + OPTIONAL 4MATIC'
           ],
           de: [
             'BRACHIALE 500 NM AUS VIER ZYLINDERN',
             '7,0S 0–100 • 240 KM/H SPITZE',
-            'NUR 5,9 L/100KM REALVERBRAUCH',
+            'NUR 5,9 L/100KM VERBRAUCH',
             'HANDLICHER ALS DIE SCHWEREN V6 CDI',
             '7G-TRONIC PLUS + OPTIONAL 4MATIC'
           ],
@@ -16529,9 +16532,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 8.2,
             badges: {
-              en: ['5.9 L/100km Real', '134 g/km CO2'],
-              de: ['5,9 L/100km Real', '134 g/km CO2'],
-              ru: ['5,9 л/100 км в жизни', '134 г/км CO2']
+              en: ['5.9 L/100km', '134 g/km CO2'],
+              de: ['5,9 L/100km', '134 g/km CO2'],
+              ru: ['5,9 л/100 км', '134 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -16840,9 +16843,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 7.0,
             badges: {
-              en: ['7.6 L/100km Real', '182 g/km CO2'],
-              de: ['7,6 L/100km Real', '182 g/km CO2'],
-              ru: ['7,6 л/100 км в жизни', '182 г/км CO2']
+              en: ['7.6 L/100km', '182 g/km CO2'],
+              de: ['7,6 L/100km', '182 g/km CO2'],
+              ru: ['7,6 л/100 км', '182 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -16927,12 +16930,12 @@ const CAR_ROSTER = [
         notableNegatives: {
           en: [
             'WATCH OM642 OIL COOLER & EKAS MOTOR',
-            '7.5 L/100KM REAL + AWD WEIGHT',
+            '7.5 L/100KM + AWD WEIGHT',
             'HIGHER 3.0L TAX & TRANSFER CASE SERVICE'
           ],
           de: [
             'OM642 ÖLKÜHLER-DICHTUNG & EKAS PRÜFEN',
-            '7,5 L/100KM REAL + ALLRAD-GEWICHT',
+            '7,5 L/100KM + ALLRAD-GEWICHT',
             'HOHE 3.0L STEUER & 4MATIC-WARTUNG'
           ],
           ru: [
@@ -17149,9 +17152,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 7.1,
             badges: {
-              en: ['7.5 L/100km Real', '174 g/km CO2'],
-              de: ['7,5 L/100km Real', '174 g/km CO2'],
-              ru: ['7,5 л/100 км в жизни', '174 г/км CO2']
+              en: ['7.5 L/100km', '174 g/km CO2'],
+              de: ['7,5 L/100km', '174 g/km CO2'],
+              ru: ['7,5 л/100 км', '174 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -17457,9 +17460,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 7.4,
             badges: {
-              en: ['7.2 L/100km Real', '154 g/km CO2'],
-              de: ['7,2 L/100km Real', '154 g/km CO2'],
-              ru: ['7,2 л/100 км в жизни', '154 г/км CO2']
+              en: ['7.2 L/100km', '154 g/km CO2'],
+              de: ['7,2 L/100km', '154 g/km CO2'],
+              ru: ['7,2 л/100 км', '154 г/км CO2']
             }
           },
           taxInsuranceNorm: {
@@ -17562,13 +17565,13 @@ const CAR_ROSTER = [
         notableNegatives: {
           en: [
             'SIDE-HINGED TAILGATE NEEDS SPACE',
-            '8.3 L/100KM REAL FUEL USE',
+            'THIRSTY 8.3 L/100KM',
             'MODEST 198 NM PULLING POWER',
             'HARD DASHBOARD PLASTICS'
           ],
           de: [
             'HECKTÜR BRAUCHT PLATZ HINTEN',
-            '8,3 L/100KM REALVERBRAUCH',
+            'DURSTIG: 8,3 L/100KM',
             'MÄSSIGE 198 NM DURCHZUGSKRAFT',
             'HARTPLASTIK IM ARMATURENBRETT'
           ],
@@ -17790,9 +17793,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 6.5,
             badges: {
-              en: ['8.3 L/100km Real', '174 g/km CO2 (Euro 5)'],
-              de: ['8,3 L/100km Real', '174 g/km CO2 (Euro 5)'],
-              ru: ['8,3 л/100 км в жизни', '174 г/км CO2 (Евро-5)']
+              en: ['Thirsty (8.3 L/100km)', '174 g/km CO2 (Euro 5)'],
+              de: ['Durstig (8,3 L/100km)', '174 g/km CO2 (Euro 5)'],
+              ru: ['Прожорливый (8,3 л/100 км)', '174 г/км CO2 (Евро-5)']
             }
           },
           taxInsuranceNorm: {
@@ -17881,7 +17884,7 @@ const CAR_ROSTER = [
             'MODEST 194 NM TORQUE'
           ],
           de: [
-            'DURSTIGE 9,1 L/100KM REALVERBRAUCH',
+            'DURSTIGE DURSTIG: 9,1 L/100KM',
             'NUR 5-GANG / 4-STUFEN-AUTOMATIK',
             'HECKTÜR BRAUCHT PLATZ HINTEN',
             'MÄSSIGE 194 NM DURCHZUGSKRAFT'
@@ -18104,9 +18107,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 5.8,
             badges: {
-              en: ['9.1 L/100km Real', '5-MT / 4-AT High RPM'],
-              de: ['9,1 L/100km Real', 'Höhere Autobahn-Drehzahl'],
-              ru: ['9,1 л/100 км в жизни', 'Нет 6-й передачи']
+              en: ['Thirsty (9.1 L/100km)', '5-MT / 4-AT High RPM'],
+              de: ['Durstig (9,1 L/100km)', 'Höhere Autobahn-Drehzahl'],
+              ru: ['Прожорливый (9,1 л/100 км)', 'Нет 6-й передачи']
             }
           },
           taxInsuranceNorm: {
@@ -18418,9 +18421,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 7.4,
             badges: {
-              en: ['7.1 L/100km Real', 'Euro 4 City Restrictions'],
-              de: ['7,1 L/100km Real', 'Euro-4-Umweltzonen'],
-              ru: ['7,1 л/100 км в жизни', 'Класс Евро-4']
+              en: ['7.1 L/100km', 'Euro 4 City Restrictions'],
+              de: ['7,1 L/100km', 'Euro-4-Umweltzonen'],
+              ru: ['7,1 л/100 км', 'Класс Евро-4']
             }
           },
           taxInsuranceNorm: {
@@ -18482,14 +18485,14 @@ const CAR_ROSTER = [
           en: [
             'REVISED 2009+ GASKET SPEC',
             'STRONG 340 NM TORQUE',
-            '6.8 L/100KM REAL ECONOMY (6-MT)',
+            '6.8 L/100KM ECONOMY (6-MT)',
             '2,000 KG BRAKED TOWING',
             'OPTIONAL 6-SPEED AUTOMATIC'
           ],
           de: [
             'ÜBERARBEITETER BLOCK AB 2009',
             'STARKE 340 NM DREHMOMENT',
-            '6,8 L/100KM REALVERBRAUCH (6-MT)',
+            '6,8 L/100KM VERBRAUCH (6-MT)',
             '2.000 KG ANHÄNGELAST',
             'OPTIONALE 6-STUFEN-AUTOMATIK'
           ],
@@ -18732,8 +18735,8 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 7.6,
             badges: {
-              en: ['6.8 L/100km Real (MT)', '~7.9 L/100km on 6-AT'],
-              de: ['6,8 L/100km Real (MT)', 'Ca. 7,9 L/100km (6-AT)'],
+              en: ['6.8 L/100km (MT)', '~7.9 L/100km on 6-AT'],
+              de: ['6,8 L/100km (MT)', 'Ca. 7,9 L/100km (6-AT)'],
               ru: ['6,8 л/100 км (МКПП)', 'Около 7,9 л (АКПП)']
             }
           },
@@ -19046,9 +19049,9 @@ const CAR_ROSTER = [
           efficiencyFuel: {
             score: 6.9,
             badges: {
-              en: ['7.7 L/100km Real', 'D-CAT Regen Fuel Extra'],
-              de: ['7,7 L/100km Real', 'Mehrverbrauch durch D-CAT'],
-              ru: ['7,7 л/100 км в жизни', 'Доп. расход на D-CAT']
+              en: ['7.7 L/100km', 'D-CAT Regen Fuel Extra'],
+              de: ['7,7 L/100km', 'Mehrverbrauch durch D-CAT'],
+              ru: ['7,7 л/100 км', 'Доп. расход на D-CAT']
             }
           },
           taxInsuranceNorm: {
@@ -19495,15 +19498,15 @@ const CAR_ROSTER = [
             score: 7.1,
             badges: {
               en: [
-                '7.6 L/100km Real',
+                '7.6 L/100km',
                 '158 g/km CO2 (Euro 5)'
               ],
               de: [
-                '7,6 L/100km Real',
+                '7,6 L/100km',
                 '158 g/km CO2 (Euro 5)'
               ],
               ru: [
-                '7,6 л/100 км в жизни',
+                '7,6 л/100 км',
                 '158 г/км CO2 (Евро-5)'
               ]
             }
@@ -19617,7 +19620,7 @@ const CAR_ROSTER = [
         notableNegatives: {
           en: [
             'KNOWN COLD PISTON-KNOCK RISK',
-            'THIRSTY 8.5–9.5 L/100KM REAL',
+            'THIRSTY 8.5–9.5 L/100KM',
             'AWD SPLINE SHAFT CAN RUST',
             'PRE-FACELIFT ONLY (TO 01/2014)'
           ],
@@ -19957,11 +19960,11 @@ const CAR_ROSTER = [
             score: 5.9,
             badges: {
               en: [
-                '8.5 L/100km Real (9+ AWD)',
+                'Thirsty (8.5 L/100km) (9+ AWD)',
                 '179–195 g/km CO2'
               ],
               de: [
-                '8,5 L/100km Real (9+ AWD)',
+                'Durstig (8,5 L/100km) (9+ AWD)',
                 '179–195 g/km CO2'
               ],
               ru: [
@@ -20419,15 +20422,15 @@ const CAR_ROSTER = [
             score: 6.2,
             badges: {
               en: [
-                '8.1 L/100km Real',
+                'Thirsty (8.1 L/100km)',
                 'Cleaner Euro 5 Facelift'
               ],
               de: [
-                '8,1 L/100km Real',
+                'Durstig (8,1 L/100km)',
                 'Effizienteres Facelift'
               ],
               ru: [
-                '8,1 л/100 км в жизни',
+                'Прожорливый (8,1 л/100 км)',
                 'Экономичнее дорестайлинга'
               ]
             }
@@ -20884,15 +20887,15 @@ const CAR_ROSTER = [
             score: 8.4,
             badges: {
               en: [
-                '5.8 L/100km Real',
+                '5.8 L/100km',
                 '135 g/km CO2 (Euro 5)'
               ],
               de: [
-                '5,8 L/100km Real',
+                '5,8 L/100km',
                 '135 g/km CO2 (Euro 5)'
               ],
               ru: [
-                '5,8 л/100 км в жизни',
+                '5,8 л/100 км',
                 '135 г/км CO2 (Евро-5)'
               ]
             }
@@ -21349,11 +21352,11 @@ const CAR_ROSTER = [
             score: 7.5,
             badges: {
               en: [
-                '6.6 L/100km Real (~7.2 AT)',
+                '6.6 L/100km (~7.2 AT)',
                 '149–179 g/km CO2'
               ],
               de: [
-                '6,6 L/100km Real (~7,2 AT)',
+                '6,6 L/100km (~7,2 AT)',
                 '149–179 g/km CO2'
               ],
               ru: [
@@ -21485,7 +21488,7 @@ const CAR_ROSTER = [
             'ВЫСОКИЙ КРУТЯЩИЙ МОМЕНТ ГРУЗИТ 4WD',
             'ДОРОЖЕ НАЛОГ И СТРАХОВКА 184 Л.С.',
             'ШКИВ И ПАТРУБКИ СТАРЕЮТ БЫСТРЕЕ',
-            'РАСХОД В ЖИЗНИ 7,1–7,8 Л/100 КМ'
+            'РАСХОД 7,1–7,8 Л/100 КМ'
           ]
         },
         pillarScores: {
@@ -21811,15 +21814,15 @@ const CAR_ROSTER = [
             score: 7.0,
             badges: {
               en: [
-                '7.1 L/100km Real',
+                '7.1 L/100km',
                 '161–189 g/km CO2'
               ],
               de: [
-                '7,1 L/100km Real',
+                '7,1 L/100km',
                 '161–189 g/km CO2'
               ],
               ru: [
-                '7,1 л/100 км в жизни',
+                '7,1 л/100 км',
                 '161–189 г/км CO2'
               ]
             }
@@ -22295,15 +22298,15 @@ const CAR_ROSTER = [
             score: 7.2,
             badges: {
               en: [
-                '7.5 L/100km Real',
+                '7.5 L/100km',
                 '159 g/km CO2 (Euro 5)'
               ],
               de: [
-                '7,5 L/100km Real',
+                '7,5 L/100km',
                 '159 g/km CO2 (Euro 5)'
               ],
               ru: [
-                '7,5 л/100 км в жизни',
+                '7,5 л/100 км',
                 '159 г/км CO2 (Евро-5)'
               ]
             }
@@ -22757,15 +22760,15 @@ const CAR_ROSTER = [
             score: 7.3,
             badges: {
               en: [
-                '7.4 L/100km Real',
+                '7.4 L/100km',
                 '152–159 g/km CO2'
               ],
               de: [
-                '7,4 L/100km Real',
+                '7,4 L/100km',
                 '152–159 g/km CO2'
               ],
               ru: [
-                '7,4 л/100 км в жизни',
+                '7,4 л/100 км',
                 '152–159 г/км CO2'
               ]
             }
@@ -23219,15 +23222,15 @@ const CAR_ROSTER = [
             score: 6.8,
             badges: {
               en: [
-                '7.8 L/100km Real',
+                '7.8 L/100km',
                 '166–182 g/km CO2'
               ],
               de: [
-                '7,8 L/100km Real',
+                '7,8 L/100km',
                 '166–182 g/km CO2'
               ],
               ru: [
-                '7,8 л/100 км в жизни',
+                '7,8 л/100 км',
                 '166–182 г/км CO2'
               ]
             }
@@ -23584,7 +23587,7 @@ const CAR_ROSTER = [
                 ],
                 watchouts: [
                   'Rechtes Hydrolager & Steuerkette ab 150 Tkm: Alterndes Motorlager sorgt für Brummen im Leerlauf; beim Kaltstart auf Kettenrasseln achten.',
-                  '8,3 L/100km Realverbrauch & Rostcheck: Im Stadtverkehr durstig, dazu stets Hinterachse und Radläufe prüfen.'
+                  'Durstig (8,3 L/100km) & Rostcheck: Im Stadtverkehr durstig, dazu stets Hinterachse und Radläufe prüfen.'
                 ],
                 beforeYouBuy: [
                   'Beim Kaltstart an der Steuerketten-Seite horchen: Kurzes Rasseln oder Klappern deutet auf gelängte Kette oder schwachen Spanner hin.',
@@ -23681,15 +23684,15 @@ const CAR_ROSTER = [
             score: 6.0,
             badges: {
               en: [
-                '8.3 L/100km Real',
+                'Thirsty (8.3 L/100km)',
                 '192 g/km CO2'
               ],
               de: [
-                '8,3 L/100km Real',
+                'Durstig (8,3 L/100km)',
                 '192 g/km CO2'
               ],
               ru: [
-                '8,3 л/100 км в жизни',
+                'Прожорливый (8,3 л/100 км)',
                 '192 г/км CO2'
               ]
             }
@@ -24041,7 +24044,7 @@ const CAR_ROSTER = [
               de: {
                 headline: 'Früher 2.0L-Zahnriemen-Diesel (nur 2008) — kräftig, erfordert aber strikte Ölsieb- & Kupferring-Pflege',
                 strengths: [
-                  '330 Nm & 6,1 L/100km Realverbrauch: Durchzugsstarkes Langstrecken-Auto mit kleinem Kaufpreis.',
+                  '330 Nm & 6,1 L/100km Verbrauch: Durchzugsstarkes Langstrecken-Auto mit kleinem Kaufpreis.',
                   'Bekannter Zahnriementrieb: Keine Steuerketten-Längung wie beim Nachfolger.'
                 ],
                 watchouts: [
@@ -24143,15 +24146,15 @@ const CAR_ROSTER = [
             score: 7.9,
             badges: {
               en: [
-                '6.1 L/100km Real',
+                '6.1 L/100km',
                 '149 g/km CO2 (Euro 4)'
               ],
               de: [
-                '6,1 L/100km Real',
+                '6,1 L/100km',
                 '149 g/km CO2 (Euro 4)'
               ],
               ru: [
-                '6,1 л/100 км в жизни',
+                '6,1 л/100 км',
                 '149 г/км CO2 (Евро-4)'
               ]
             }
@@ -24605,15 +24608,15 @@ const CAR_ROSTER = [
             score: 8.5,
             badges: {
               en: [
-                '5.6 L/100km Real',
+                '5.6 L/100km',
                 '133–138 g/km CO2 (Euro 5)'
               ],
               de: [
-                '5,6 L/100km Real',
+                '5,6 L/100km',
                 '133–138 g/km CO2 (Euro 5)'
               ],
               ru: [
-                '5,6 л/100 км в жизни',
+                '5,6 л/100 км',
                 '133–138 г/км CO2 (Евро-5)'
               ]
             }
@@ -24704,14 +24707,14 @@ const CAR_ROSTER = [
         remarkablePositives: {
           en: [
             'SWEET-SPOT 360 NM TORQUE & 9.0S',
-            'FRUGAL 5.9 L/100KM REAL BURN',
+            '5.9 L/100KM',
             'LESS CLUTCH STRAIN THAN 180 HP',
             'LONG 6-SPEED MOTORWAY GEARING',
             'SHARP DOUBLE-WISHBONE HANDLING'
           ],
           de: [
             'IDEALER MIX: 360 NM & 9,0S',
-            'NUR 5,9 L/100KM REALVERBRAUCH',
+            'NUR 5,9 L/100KM VERBRAUCH',
             'VERTRÄGLICHER FÜR ZMS ALS 180 PS',
             'LANGE 6-GANG-AUTOBAHN-ÜBERSETZUNG',
             'SEHR PRÄZISE KURVENLAGE'
@@ -25067,15 +25070,15 @@ const CAR_ROSTER = [
             score: 8.1,
             badges: {
               en: [
-                '5.9 L/100km Real',
+                '5.9 L/100km',
                 '139–144 g/km CO2 (Euro 5)'
               ],
               de: [
-                '5,9 L/100km Real',
+                '5,9 L/100km',
                 '139–144 g/km CO2 (Euro 5)'
               ],
               ru: [
-                '5,9 л/100 км в жизни',
+                '5,9 л/100 км',
                 '139–144 г/км CO2 (Евро-5)'
               ]
             }
@@ -25529,15 +25532,15 @@ const CAR_ROSTER = [
             score: 7.7,
             badges: {
               en: [
-                '6.2 L/100km Real',
+                '6.2 L/100km',
                 '142–149 g/km CO2 (Euro 5)'
               ],
               de: [
-                '6,2 L/100km Real',
+                '6,2 L/100km',
                 '142–149 g/km CO2 (Euro 5)'
               ],
               ru: [
-                '6,2 л/100 км в жизни',
+                '6,2 л/100 км',
                 '142–149 г/км CO2 (Евро-5)'
               ]
             }
@@ -26004,15 +26007,15 @@ const CAR_ROSTER = [
             score: 7.4,
             badges: {
               en: [
-                '7.2 L/100km Real',
+                '7.2 L/100km',
                 '142 g/km CO2 (Euro 5)'
               ],
               de: [
-                '7,2 L/100km Real',
+                '7,2 L/100km',
                 '142 g/km CO2 (Euro 5)'
               ],
               ru: [
-                '7,2 л/100 км в жизни',
+                '7,2 л/100 км',
                 '142 г/км CO2 (Евро-5)'
               ]
             }
@@ -26466,15 +26469,15 @@ const CAR_ROSTER = [
             score: 7.1,
             badges: {
               en: [
-                '7.4 L/100km Real',
+                '7.4 L/100km',
                 '148–153 g/km CO2 (Euro 5)'
               ],
               de: [
-                '7,4 L/100km Real',
+                '7,4 L/100km',
                 '148–153 g/km CO2 (Euro 5)'
               ],
               ru: [
-                '7,4 л/100 км в жизни',
+                '7,4 л/100 км',
                 '148–153 г/км CO2 (Евро-5)'
               ]
             }
@@ -26584,12 +26587,12 @@ const CAR_ROSTER = [
         },
         notableNegatives: {
           en: [
-            'THIRSTIER 7.8 L/100KM REAL',
+            'THIRSTIER 7.8 L/100KM',
             'ONLY 196 NM — NOT TORQUEY',
             'HIGHER 2.0L TAX & INSURANCE'
           ],
           de: [
-            'DURSTIGER: 7,8 L/100KM REAL',
+            'DURSTIGER: 7,8 L/100KM',
             'NUR 196 NM — NICHT DREHMOMENTSTARK',
             'HÖHERE 2.0L-STEUER & VERSICHERUNG'
           ],
@@ -26925,15 +26928,15 @@ const CAR_ROSTER = [
             score: 6.7,
             badges: {
               en: [
-                '7.8 L/100km Real',
+                '7.8 L/100km',
                 '155–159 g/km CO2 (Euro 5)'
               ],
               de: [
-                '7,8 L/100km Real',
+                '7,8 L/100km',
                 '155–159 g/km CO2 (Euro 5)'
               ],
               ru: [
-                '7,8 л/100 км в жизни',
+                '7,8 л/100 км',
                 '155–159 г/км CO2 (Евро-5)'
               ]
             }
@@ -27023,13 +27026,13 @@ const CAR_ROSTER = [
         },
         remarkablePositives: {
           en: [
-            'FRUGAL 5.0 L/100KM REAL USE',
+            'EFFICIENT 5.0 L/100KM',
             '270 NM FROM LOW REVS',
             'YOUNGEST CARS, EURO 6 EMISSIONS',
             'QUIET MODERN DIESEL'
           ],
           de: [
-            'SPARSAME 5,0 L/100KM REALVERBRAUCH',
+            'SPARSAME SPARSAM: 5,0 L/100KM',
             '270 NM AB NIEDRIGEN DREHZAHLEN',
             'JÜNGSTE AUTOS, EURO 6',
             'LEISER MODERNER DIESEL'
@@ -27384,15 +27387,15 @@ const CAR_ROSTER = [
             score: 9.0,
             badges: {
               en: [
-                '5.0 L/100km Real',
+                'Efficient (5.0 L/100km)',
                 '109–112 g/km CO2 (Euro 6)'
               ],
               de: [
-                '5,0 L/100km Real',
+                'Sparsam (5,0 L/100km)',
                 '109–112 g/km CO2 (Euro 6)'
               ],
               ru: [
-                '5,0 л/100 км в жизни',
+                'Экономичный (5,0 л/100 км)',
                 '109–112 г/км CO2 (Евро-6)'
               ]
             }
@@ -27843,15 +27846,15 @@ const CAR_ROSTER = [
             score: 8.0,
             badges: {
               en: [
-                '5.9 L/100km Real',
+                '5.9 L/100km',
                 '129–138 g/km CO2 (Euro 5)'
               ],
               de: [
-                '5,9 L/100km Real',
+                '5,9 L/100km',
                 '129–138 g/km CO2 (Euro 5)'
               ],
               ru: [
-                '5,9 л/100 км в жизни',
+                '5,9 л/100 км',
                 '129–138 г/км CO2 (Евро-5)'
               ]
             }
@@ -28302,15 +28305,15 @@ const CAR_ROSTER = [
             score: 8.2,
             badges: {
               en: [
-                '5.7 L/100km Real',
+                '5.7 L/100km',
                 '124–132 g/km CO2 (Euro 5)'
               ],
               de: [
-                '5,7 L/100km Real',
+                '5,7 L/100km',
                 '124–132 g/km CO2 (Euro 5)'
               ],
               ru: [
-                '5,7 л/100 км в жизни',
+                '5,7 л/100 км',
                 '124–132 г/км CO2 (Евро-5)'
               ]
             }
@@ -28402,13 +28405,13 @@ const CAR_ROSTER = [
           en: [
             'MODERN QUIET DIESEL (EURO 6)',
             '9.7S 0–100 KM/H & 210 KM/H',
-            'FRUGAL 5.5 L/100KM REAL USE',
+            'EFFICIENT 5.5 L/100KM',
             'YOUNGEST CARS, LOWEST WEAR'
           ],
           de: [
             'MODERNER LEISER DIESEL (EURO 6)',
             '9,7S AUF 100 KM/H & 210 KM/H',
-            'SPARSAME 5,5 L/100KM REALVERBRAUCH',
+            'SPARSAME SPARSAM: 5,5 L/100KM',
             'JÜNGSTE AUTOS, WENIG VERSCHLEISS'
           ],
           ru: [
@@ -28761,15 +28764,15 @@ const CAR_ROSTER = [
             score: 8.5,
             badges: {
               en: [
-                '5.5 L/100km Real',
+                'Efficient (5.5 L/100km)',
                 '112–119 g/km CO2 (Euro 6)'
               ],
               de: [
-                '5,5 L/100km Real',
+                'Sparsam (5,5 L/100km)',
                 '112–119 g/km CO2 (Euro 6)'
               ],
               ru: [
-                '5,5 л/100 км в жизни',
+                'Экономичный (5,5 л/100 км)',
                 '112–119 г/км CO2 (Евро-6)'
               ]
             }
@@ -29220,15 +29223,15 @@ const CAR_ROSTER = [
             score: 7.2,
             badges: {
               en: [
-                '6.6 L/100km Real',
+                '6.6 L/100km',
                 '149–159 g/km CO2 (Euro 5)'
               ],
               de: [
-                '6,6 L/100km Real',
+                '6,6 L/100km',
                 '149–159 g/km CO2 (Euro 5)'
               ],
               ru: [
-                '6,6 л/100 км в жизни',
+                '6,6 л/100 км',
                 '149–159 г/км CO2 (Евро-5)'
               ]
             }
@@ -29679,15 +29682,15 @@ const CAR_ROSTER = [
             score: 6.8,
             badges: {
               en: [
-                '7.2 L/100km Real',
+                '7.2 L/100km',
                 '156–165 g/km CO2 (Euro 5)'
               ],
               de: [
-                '7,2 L/100km Real',
+                '7,2 L/100km',
                 '156–165 g/km CO2 (Euro 5)'
               ],
               ru: [
-                '7,2 л/100 км в жизни',
+                '7,2 л/100 км',
                 '156–165 г/км CO2 (Евро-5)'
               ]
             }
@@ -30286,15 +30289,15 @@ const CAR_ROSTER = [
             "score": 8.0,
             "badges": {
               "en": [
-                "5.9–6.4 L/100km Real",
+                "5.9–6.4 L/100km",
                 "Efficient Light Turbo"
               ],
               "de": [
-                "5,9–6,4 L/100km Real",
+                "5,9–6,4 L/100km",
                 "Sparsamer Klein-Turbo"
               ],
               "ru": [
-                "5,9–6,4 л/100 км в жизни",
+                "5,9–6,4 л/100 км",
                 "Экономичный турбомотор"
               ]
             }
@@ -30876,15 +30879,15 @@ const CAR_ROSTER = [
             "score": 7.8,
             "badges": {
               "en": [
-                "6.4–6.9 L/100km Real",
+                "6.4–6.9 L/100km",
                 "Good Petrol Economy"
               ],
               "de": [
-                "6,4–6,9 L/100km Real",
+                "6,4–6,9 L/100km",
                 "Guter Alltagsverbrauch"
               ],
               "ru": [
-                "6,4–6,9 л/100 км в жизни",
+                "6,4–6,9 л/100 км",
                 "Умеренный расход"
               ]
             }
@@ -31466,15 +31469,15 @@ const CAR_ROSTER = [
             "score": 6.9,
             "badges": {
               "en": [
-                "7.3–7.9 L/100km Real",
+                "7.3–7.9 L/100km",
                 "Thirsty on Motorway"
               ],
               "de": [
-                "7,3–7,9 L/100km Real",
+                "7,3–7,9 L/100km",
                 "Auf Autobahn etwas durstig"
               ],
               "ru": [
-                "7,3–7,9 л/100 км в жизни",
+                "7,3–7,9 л/100 км",
                 "На трассе выше среднего"
               ]
             }
@@ -32056,15 +32059,15 @@ const CAR_ROSTER = [
             "score": 7.2,
             "badges": {
               "en": [
-                "6.8–7.4 L/100km Real",
+                "6.8–7.4 L/100km",
                 "Prefers 98 RON Fuel"
               ],
               "de": [
-                "6,8–7,4 L/100km Real",
+                "6,8–7,4 L/100km",
                 "Empfiehlt Super Plus 98"
               ],
               "ru": [
-                "6,8–7,4 л/100 км в жизни",
+                "6,8–7,4 л/100 км",
                 "Предпочитает АИ-98"
               ]
             }
@@ -32646,15 +32649,15 @@ const CAR_ROSTER = [
             "score": 7.1,
             "badges": {
               "en": [
-                "7.4–8.2 L/100km Real",
+                "7.4–Thirsty (8.2 L/100km)",
                 "Plus Oil Top-Ups if Unfixed"
               ],
               "de": [
-                "7,4–8,2 L/100km Real",
+                "7,4–Durstig (8,2 L/100km)",
                 "Plus Ölverbrauch ohne Überholung"
               ],
               "ru": [
-                "7,4–8,2 л/100 км в жизни",
+                "7,4–Прожорливый (8,2 л/100 км)",
                 "Плюс доливы масла до ремонта"
               ]
             }
@@ -33236,15 +33239,15 @@ const CAR_ROSTER = [
             "score": 6.5,
             "badges": {
               "en": [
-                "7.8–8.6 L/100km Real",
+                "7.8–Thirsty (8.6 L/100km)",
                 "Prefers 98 RON Fuel"
               ],
               "de": [
-                "7,8–8,6 L/100km Real",
+                "7,8–Durstig (8,6 L/100km)",
                 "Empfiehlt Super Plus 98"
               ],
               "ru": [
-                "7,8–8,6 л/100 км в жизни",
+                "7,8–Прожорливый (8,6 л/100 км)",
                 "Просит АИ-98"
               ]
             }
@@ -33826,15 +33829,15 @@ const CAR_ROSTER = [
             "score": 6.3,
             "badges": {
               "en": [
-                "8.3–9.5 L/100km Real",
+                "8.3–Thirsty (9.5 L/100km)",
                 "Likes 98 RON Fuel"
               ],
               "de": [
-                "8,3–9,5 L/100km Real",
+                "8,3–Durstig (9,5 L/100km)",
                 "Bevorzugt Super Plus 98"
               ],
               "ru": [
-                "8,3–9,5 л/100 км в жизни",
+                "8,3–Прожорливый (9,5 л/100 км)",
                 "Предпочитает АИ-98"
               ]
             }
@@ -34416,15 +34419,15 @@ const CAR_ROSTER = [
             "score": 8.9,
             "badges": {
               "en": [
-                "4.4–4.9 L/100km Real",
+                "4.4–Efficient (4.9 L/100km)",
                 "1,100+ km Tank Range"
               ],
               "de": [
-                "4,4–4,9 L/100km Real",
+                "4,4–Sparsam (4,9 L/100km)",
                 "Über 1.100 km Reichweite"
               ],
               "ru": [
-                "4,4–4,9 л/100 км в жизни",
+                "4,4–Экономичный (4,9 л/100 км)",
                 "Запас хода 1100+ км"
               ]
             }
@@ -34520,7 +34523,7 @@ const CAR_ROSTER = [
           ],
           "de": [
             "250 Nm sorgen für guten Alltags-Durchzug",
-            "4,4–4,9 L/100km Realverbrauch",
+            "4,4–Sparsam (4,9 L/100km)",
             "Kultivierter Euro-5-Common-Rail"
           ],
           "ru": [
@@ -35006,15 +35009,15 @@ const CAR_ROSTER = [
             "score": 8.9,
             "badges": {
               "en": [
-                "4.5–5.0 L/100km Real",
+                "4.5–Efficient (5.0 L/100km)",
                 "Top Commuter Economy"
               ],
               "de": [
-                "4,5–5,0 L/100km Real",
+                "4,5–Sparsam (5,0 L/100km)",
                 "Top-Pendlerverbrauch"
               ],
               "ru": [
-                "4,5–5,0 л/100 км в жизни",
+                "4,5–Экономичный (5,0 л/100 км)",
                 "Отличная экономичность"
               ]
             }
@@ -35596,15 +35599,15 @@ const CAR_ROSTER = [
             "score": 8.5,
             "badges": {
               "en": [
-                "4.8–5.4 L/100km Real",
+                "4.8–Efficient (5.4 L/100km)",
                 "Very Thrifty Everywhere"
               ],
               "de": [
-                "4,8–5,4 L/100km Real",
+                "4,8–Sparsam (5,4 L/100km)",
                 "Überall extrem sparsam"
               ],
               "ru": [
-                "4,8–5,4 л/100 км в жизни",
+                "4,8–Экономичный (5,4 л/100 км)",
                 "Очень экономичный"
               ]
             }
@@ -35701,7 +35704,7 @@ const CAR_ROSTER = [
           "de": [
             "Kräftige 320 Nm Durchzugskraft",
             "6-Gang & nasses 6-DSG verfügbar",
-            "5,5 L/100km Realverbrauch"
+            "Sparsam (5,5 L/100km)"
           ],
           "ru": [
             "Мощная тяга 320 Н·м",
@@ -36186,15 +36189,15 @@ const CAR_ROSTER = [
             "score": 8.2,
             "badges": {
               "en": [
-                "5.3–5.9 L/100km Real",
+                "5.3–5.9 L/100km",
                 "Very Efficient 2.0L"
               ],
               "de": [
-                "5,3–5,9 L/100km Real",
+                "5,3–5,9 L/100km",
                 "Sparsamer 2.0L"
               ],
               "ru": [
-                "5,3–5,9 л/100 км в жизни",
+                "5,3–5,9 л/100 км",
                 "Экономичный 2.0 л"
               ]
             }
@@ -36776,15 +36779,15 @@ const CAR_ROSTER = [
             "score": 8.4,
             "badges": {
               "en": [
-                "5.1–5.7 L/100km Real",
+                "5.1–5.7 L/100km",
                 "1,000+ km Highway Range"
               ],
               "de": [
-                "5,1–5,7 L/100km Real",
+                "5,1–5,7 L/100km",
                 "Über 1.000 km Reichweite"
               ],
               "ru": [
-                "5,1–5,7 л/100 км в жизни",
+                "5,1–5,7 л/100 км",
                 "Запас хода 1000+ км"
               ]
             }
@@ -37366,15 +37369,15 @@ const CAR_ROSTER = [
             "score": 7.8,
             "badges": {
               "en": [
-                "5.8–6.4 L/100km Real",
+                "5.8–6.4 L/100km",
                 "Efficient For 170 HP"
               ],
               "de": [
-                "5,8–6,4 L/100km Real",
+                "5,8–6,4 L/100km",
                 "Sparsam für 170 PS"
               ],
               "ru": [
-                "5,8–6,4 л/100 км в жизни",
+                "5,8–6,4 л/100 км",
                 "Экономичен для 170 л.с."
               ]
             }
@@ -37956,15 +37959,15 @@ const CAR_ROSTER = [
             "score": 8.0,
             "badges": {
               "en": [
-                "5.4–6.0 L/100km Real",
+                "5.4–6.0 L/100km",
                 "Great Power-to-Fuel Ratio"
               ],
               "de": [
-                "5,4–6,0 L/100km Real",
+                "5,4–6,0 L/100km",
                 "Top Verhältnis aus Kraft & Verbrauch"
               ],
               "ru": [
-                "5,4–6,0 л/100 км в жизни",
+                "5,4–6,0 л/100 км",
                 "Отличный баланс тяги и расхода"
               ]
             }
@@ -39152,15 +39155,15 @@ const CAR_ROSTER = [
             "score": 8.2,
             "badges": {
               "en": [
-                "5.6 L/100km Real",
+                "5.6 L/100km",
                 "Low Running Costs"
               ],
               "de": [
-                "5.6 L/100km Real",
+                "5.6 L/100km",
                 "Günstig im Alltag"
               ],
               "ru": [
-                "5.6 л/100 км в жизни",
+                "5.6 л/100 км",
                 "Низкие затраты на топливо"
               ]
             }
@@ -39742,15 +39745,15 @@ const CAR_ROSTER = [
             "score": 8.2,
             "badges": {
               "en": [
-                "5.9 L/100km Real",
+                "5.9 L/100km",
                 "Low Running Costs"
               ],
               "de": [
-                "5.9 L/100km Real",
+                "5.9 L/100km",
                 "Günstig im Alltag"
               ],
               "ru": [
-                "5.9 л/100 км в жизни",
+                "5.9 л/100 км",
                 "Низкие затраты на топливо"
               ]
             }
@@ -40332,15 +40335,15 @@ const CAR_ROSTER = [
             "score": 8.2,
             "badges": {
               "en": [
-                "5.8 L/100km Real",
+                "5.8 L/100km",
                 "Low Running Costs"
               ],
               "de": [
-                "5.8 L/100km Real",
+                "5.8 L/100km",
                 "Günstig im Alltag"
               ],
               "ru": [
-                "5.8 л/100 км в жизни",
+                "5.8 л/100 км",
                 "Низкие затраты на топливо"
               ]
             }
@@ -40922,15 +40925,15 @@ const CAR_ROSTER = [
             "score": 8.2,
             "badges": {
               "en": [
-                "6.0 L/100km Real",
+                "6.0 L/100km",
                 "Low Running Costs"
               ],
               "de": [
-                "6.0 L/100km Real",
+                "6.0 L/100km",
                 "Günstig im Alltag"
               ],
               "ru": [
-                "6.0 л/100 км в жизни",
+                "6.0 л/100 км",
                 "Низкие затраты на топливо"
               ]
             }
@@ -41512,15 +41515,15 @@ const CAR_ROSTER = [
             "score": 7.8,
             "badges": {
               "en": [
-                "6.1 L/100km Real",
+                "6.1 L/100km",
                 "Low Running Costs"
               ],
               "de": [
-                "6.1 L/100km Real",
+                "6.1 L/100km",
                 "Günstig im Alltag"
               ],
               "ru": [
-                "6.1 л/100 км в жизни",
+                "6.1 л/100 км",
                 "Низкие затраты на топливо"
               ]
             }
@@ -42102,15 +42105,15 @@ const CAR_ROSTER = [
             "score": 7.8,
             "badges": {
               "en": [
-                "5.9 L/100km Real",
+                "5.9 L/100km",
                 "Low Running Costs"
               ],
               "de": [
-                "5.9 L/100km Real",
+                "5.9 L/100km",
                 "Günstig im Alltag"
               ],
               "ru": [
-                "5.9 л/100 км в жизни",
+                "5.9 л/100 км",
                 "Низкие затраты на топливо"
               ]
             }
@@ -42692,15 +42695,15 @@ const CAR_ROSTER = [
             "score": 7.8,
             "badges": {
               "en": [
-                "5.8 L/100km Real",
+                "5.8 L/100km",
                 "Low Running Costs"
               ],
               "de": [
-                "5.8 L/100km Real",
+                "5.8 L/100km",
                 "Günstig im Alltag"
               ],
               "ru": [
-                "5.8 л/100 км в жизни",
+                "5.8 л/100 км",
                 "Низкие затраты на топливо"
               ]
             }
@@ -43872,15 +43875,15 @@ const CAR_ROSTER = [
             "score": 7.1,
             "badges": {
               "en": [
-                "7.1 L/100km Real",
+                "7.1 L/100km",
                 "Low Running Costs"
               ],
               "de": [
-                "7.1 L/100km Real",
+                "7.1 L/100km",
                 "Günstig im Alltag"
               ],
               "ru": [
-                "7.1 л/100 км в жизни",
+                "7.1 л/100 км",
                 "Низкие затраты на топливо"
               ]
             }
@@ -44462,15 +44465,15 @@ const CAR_ROSTER = [
             "score": 7.1,
             "badges": {
               "en": [
-                "7.3 L/100km Real",
+                "7.3 L/100km",
                 "Low Running Costs"
               ],
               "de": [
-                "7.3 L/100km Real",
+                "7.3 L/100km",
                 "Günstig im Alltag"
               ],
               "ru": [
-                "7.3 л/100 км в жизни",
+                "7.3 л/100 км",
                 "Низкие затраты на топливо"
               ]
             }
@@ -44680,7 +44683,7 @@ const CAR_ROSTER = [
                 "headline": "Kultivierter EA288 1.6 TDI (105) — gemacht für entspannte Langstrecken bei niedrigem Verbrauch.",
                 "strengths": [
                   "210.000 km Zahnriemenintervall und extrem haltbarer Block",
-                  "Nur 4,5–5,3 L/100km Realverbrauch"
+                  "Nur 4,5–Sparsam (5,3 L/100km)"
                 ],
                 "watchouts": [
                   "Undichte/klemmende schaltbare Wasserpumpe",
@@ -45052,15 +45055,15 @@ const CAR_ROSTER = [
             "score": 9.0,
             "badges": {
               "en": [
-                "4.5 L/100km Real",
+                "Efficient (4.5 L/100km)",
                 "1,000+ km Tank Range"
               ],
               "de": [
-                "4.5 L/100km Real",
+                "Efficient (4.5 L/100km)",
                 "Über 1.000 km Reichweite"
               ],
               "ru": [
-                "4.5 л/100 км в жизни",
+                "Экономичный (4.5 л/100 км)",
                 "Запас хода 1000+ км"
               ]
             }
@@ -45270,7 +45273,7 @@ const CAR_ROSTER = [
                 "headline": "Kultivierter EA288 1.6 TDI ultra (110) — gemacht für entspannte Langstrecken bei niedrigem Verbrauch.",
                 "strengths": [
                   "210.000 km Zahnriemenintervall und extrem haltbarer Block",
-                  "Nur 4,5–5,3 L/100km Realverbrauch"
+                  "Nur 4,5–Sparsam (5,3 L/100km)"
                 ],
                 "watchouts": [
                   "Undichte/klemmende schaltbare Wasserpumpe",
@@ -45642,15 +45645,15 @@ const CAR_ROSTER = [
             "score": 9.0,
             "badges": {
               "en": [
-                "4.4 L/100km Real",
+                "Efficient (4.4 L/100km)",
                 "1,000+ km Tank Range"
               ],
               "de": [
-                "4.4 L/100km Real",
+                "Efficient (4.4 L/100km)",
                 "Über 1.000 km Reichweite"
               ],
               "ru": [
-                "4.4 л/100 км в жизни",
+                "Экономичный (4.4 л/100 км)",
                 "Запас хода 1000+ км"
               ]
             }
@@ -45860,7 +45863,7 @@ const CAR_ROSTER = [
                 "headline": "Kultivierter EA288 1.6 TDI (115) — gemacht für entspannte Langstrecken bei niedrigem Verbrauch.",
                 "strengths": [
                   "210.000 km Zahnriemenintervall und extrem haltbarer Block",
-                  "Nur 4,5–5,3 L/100km Realverbrauch"
+                  "Nur 4,5–Sparsam (5,3 L/100km)"
                 ],
                 "watchouts": [
                   "Undichte/klemmende schaltbare Wasserpumpe",
@@ -46232,15 +46235,15 @@ const CAR_ROSTER = [
             "score": 9.0,
             "badges": {
               "en": [
-                "4.5 L/100km Real",
+                "Efficient (4.5 L/100km)",
                 "1,000+ km Tank Range"
               ],
               "de": [
-                "4.5 L/100km Real",
+                "Efficient (4.5 L/100km)",
                 "Über 1.000 km Reichweite"
               ],
               "ru": [
-                "4.5 л/100 км в жизни",
+                "Экономичный (4.5 л/100 км)",
                 "Запас хода 1000+ км"
               ]
             }
@@ -46450,7 +46453,7 @@ const CAR_ROSTER = [
                 "headline": "Kultivierter EA288 2.0 TDI (150) — gemacht für entspannte Langstrecken bei niedrigem Verbrauch.",
                 "strengths": [
                   "210.000 km Zahnriemenintervall und extrem haltbarer Block",
-                  "Nur 4,5–5,3 L/100km Realverbrauch"
+                  "Nur 4,5–Sparsam (5,3 L/100km)"
                 ],
                 "watchouts": [
                   "Undichte/klemmende schaltbare Wasserpumpe",
@@ -46822,15 +46825,15 @@ const CAR_ROSTER = [
             "score": 8.6,
             "badges": {
               "en": [
-                "4.9 L/100km Real",
+                "Efficient (4.9 L/100km)",
                 "1,000+ km Tank Range"
               ],
               "de": [
-                "4.9 L/100km Real",
+                "Efficient (4.9 L/100km)",
                 "Über 1.000 km Reichweite"
               ],
               "ru": [
-                "4.9 л/100 км в жизни",
+                "Экономичный (4.9 л/100 км)",
                 "Запас хода 1000+ км"
               ]
             }
@@ -47040,7 +47043,7 @@ const CAR_ROSTER = [
                 "headline": "Kultivierter EA288 2.0 TDI (184) — gemacht für entspannte Langstrecken bei niedrigem Verbrauch.",
                 "strengths": [
                   "210.000 km Zahnriemenintervall und extrem haltbarer Block",
-                  "Nur 4,5–5,3 L/100km Realverbrauch"
+                  "Nur 4,5–Sparsam (5,3 L/100km)"
                 ],
                 "watchouts": [
                   "Undichte/klemmende schaltbare Wasserpumpe",
@@ -47412,15 +47415,15 @@ const CAR_ROSTER = [
             "score": 8.1,
             "badges": {
               "en": [
-                "5.4 L/100km Real",
+                "Efficient (5.4 L/100km)",
                 "1,000+ km Tank Range"
               ],
               "de": [
-                "5.4 L/100km Real",
+                "Efficient (5.4 L/100km)",
                 "Über 1.000 km Reichweite"
               ],
               "ru": [
-                "5.4 л/100 км в жизни",
+                "Экономичный (5.4 л/100 км)",
                 "Запас хода 1000+ км"
               ]
             }
@@ -48002,15 +48005,15 @@ const CAR_ROSTER = [
             "score": 8.2,
             "badges": {
               "en": [
-                "5.7 L/100km Real",
+                "5.7 L/100km",
                 "Low Running Costs"
               ],
               "de": [
-                "5.7 L/100km Real",
+                "5.7 L/100km",
                 "Günstig im Alltag"
               ],
               "ru": [
-                "5.7 л/100 км в жизни",
+                "5.7 л/100 км",
                 "Низкие затраты на топливо"
               ]
             }
@@ -49182,15 +49185,15 @@ const CAR_ROSTER = [
             "score": 7.8,
             "badges": {
               "en": [
-                "5.9 L/100km Real",
+                "5.9 L/100km",
                 "Low Running Costs"
               ],
               "de": [
-                "5.9 L/100km Real",
+                "5.9 L/100km",
                 "Günstig im Alltag"
               ],
               "ru": [
-                "5.9 л/100 км в жизни",
+                "5.9 л/100 км",
                 "Низкие затраты на топливо"
               ]
             }
@@ -49772,15 +49775,15 @@ const CAR_ROSTER = [
             "score": 7.1,
             "badges": {
               "en": [
-                "7.4 L/100km Real",
+                "7.4 L/100km",
                 "Low Running Costs"
               ],
               "de": [
-                "7.4 L/100km Real",
+                "7.4 L/100km",
                 "Günstig im Alltag"
               ],
               "ru": [
-                "7.4 л/100 км в жизни",
+                "7.4 л/100 км",
                 "Низкие затраты на топливо"
               ]
             }
@@ -50580,7 +50583,7 @@ const CAR_ROSTER = [
                 "headline": "Kultivierter EA288 30 TDI — gemacht für entspannte Langstrecken bei niedrigem Verbrauch.",
                 "strengths": [
                   "210.000 km Zahnriemenintervall und extrem haltbarer Block",
-                  "Nur 4,5–5,3 L/100km Realverbrauch"
+                  "Nur 4,5–Sparsam (5,3 L/100km)"
                 ],
                 "watchouts": [
                   "Undichte/klemmende schaltbare Wasserpumpe",
@@ -50952,15 +50955,15 @@ const CAR_ROSTER = [
             "score": 9.0,
             "badges": {
               "en": [
-                "4.6 L/100km Real",
+                "Efficient (4.6 L/100km)",
                 "1,000+ km Tank Range"
               ],
               "de": [
-                "4.6 L/100km Real",
+                "Efficient (4.6 L/100km)",
                 "Über 1.000 km Reichweite"
               ],
               "ru": [
-                "4.6 л/100 км в жизни",
+                "Экономичный (4.6 л/100 км)",
                 "Запас хода 1000+ км"
               ]
             }
@@ -51170,7 +51173,7 @@ const CAR_ROSTER = [
                 "headline": "Kultivierter EA288 35 TDI — gemacht für entspannte Langstrecken bei niedrigem Verbrauch.",
                 "strengths": [
                   "210.000 km Zahnriemenintervall und extrem haltbarer Block",
-                  "Nur 4,5–5,3 L/100km Realverbrauch"
+                  "Nur 4,5–Sparsam (5,3 L/100km)"
                 ],
                 "watchouts": [
                   "Undichte/klemmende schaltbare Wasserpumpe",
@@ -51542,15 +51545,15 @@ const CAR_ROSTER = [
             "score": 8.6,
             "badges": {
               "en": [
-                "5.0 L/100km Real",
+                "Efficient (5.0 L/100km)",
                 "1,000+ km Tank Range"
               ],
               "de": [
-                "5.0 L/100km Real",
+                "Efficient (5.0 L/100km)",
                 "Über 1.000 km Reichweite"
               ],
               "ru": [
-                "5.0 л/100 км в жизни",
+                "Экономичный (5.0 л/100 км)",
                 "Запас хода 1000+ км"
               ]
             }
@@ -51760,7 +51763,7 @@ const CAR_ROSTER = [
                 "headline": "Kultivierter EA288 40 TDI — gemacht für entspannte Langstrecken bei niedrigem Verbrauch.",
                 "strengths": [
                   "210.000 km Zahnriemenintervall und extrem haltbarer Block",
-                  "Nur 4,5–5,3 L/100km Realverbrauch"
+                  "Nur 4,5–Sparsam (5,3 L/100km)"
                 ],
                 "watchouts": [
                   "Undichte/klemmende schaltbare Wasserpumpe",
@@ -52132,15 +52135,15 @@ const CAR_ROSTER = [
             "score": 8.1,
             "badges": {
               "en": [
-                "5.5 L/100km Real",
+                "Efficient (5.5 L/100km)",
                 "1,000+ km Tank Range"
               ],
               "de": [
-                "5.5 L/100km Real",
+                "Efficient (5.5 L/100km)",
                 "Über 1.000 km Reichweite"
               ],
               "ru": [
-                "5.5 л/100 км в жизни",
+                "Экономичный (5.5 л/100 км)",
                 "Запас хода 1000+ км"
               ]
             }
@@ -53940,9 +53943,14 @@ function getEqFillSegment(level) {
 }
 
 function updateWeightEqualizerVisuals() {
+  const isCustom = hasCustomPillarWeights();
   const toggleBtn = document.getElementById('weight-menu-toggle-btn');
   if (toggleBtn) {
-    toggleBtn.classList.toggle('has-custom-weights', hasCustomPillarWeights());
+    toggleBtn.classList.toggle('has-custom-weights', isCustom);
+  }
+  const resetBtn = document.getElementById('weight-reset-btn');
+  if (resetBtn) {
+    resetBtn.classList.toggle('has-custom-weights', isCustom);
   }
 
   const lineEl = document.getElementById('eq-curve-line');
@@ -53978,6 +53986,11 @@ function updateWeightEqualizerVisuals() {
 function renderWeightEqualizer() {
   const board = document.getElementById('weight-eq-board');
   if (!board) return;
+  if (board.dataset.lang === currentLang && board.querySelector('.eq-rows-wrap')) {
+    updateWeightEqualizerVisuals();
+    return;
+  }
+  board.dataset.lang = currentLang;
   const ui = t();
   const { linePath } = getEqCurveGeometry();
 
@@ -54029,11 +54042,9 @@ function renderWeightEqualizer() {
     <div class="eq-scale-header">
       <span></span>
       <div class="eq-scale-ticks" aria-hidden="true">
-        <span>1/5</span>
-        <span>2/5</span>
-        <span class="eq-axis-mid">3/5</span>
-        <span>4/5</span>
-        <span>5/5</span>
+        <span></span>
+        <span class="eq-axis-mid">${ui.weightDefaultLabel}</span>
+        <span></span>
       </div>
       <span></span>
     </div>
@@ -54080,10 +54091,12 @@ function renderWeightEqualizer() {
       const onMouseUp = () => {
         window.removeEventListener('mousemove', onMouseMove);
         window.removeEventListener('mouseup', onMouseUp);
+        window.removeEventListener('blur', onMouseUp);
       };
 
       window.addEventListener('mousemove', onMouseMove);
       window.addEventListener('mouseup', onMouseUp);
+      window.addEventListener('blur', onMouseUp);
     });
 
     trackWrap.addEventListener('touchstart', (e) => {

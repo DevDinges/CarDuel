@@ -36,6 +36,11 @@ Run checks in this exact order, stopping at the first failure to enter the **3-S
    - All 19 `subStats` keys across the 5 pillars and trilingual (`en`, `de`, `ru`) `powertrainDurability.dossier` entries (`beforeYouBuy` + 6 `highMileage` items) are present.
 2. **Deterministic Browser Verification (When `styles.css`, `index.html`, or UI Rendering Logic in `app.js` Changes):**
    Run Antigravity's built-in `browser` subagent against the served page (preserving zero hardcoded paths in source files and obeying the 3-strike circuit breaker):
+   - **Active Local Server Check (`localhost:5500` / `localhost:8000` / `localhost:8080`):**
+     - Never spawn `System.Net.HttpListener` or request `BypassSandbox: true` to start a server.
+     - Check whether a local static server is already listening on `http://localhost:5500`, `http://localhost:8000`, or `http://localhost:8080`.
+     - If an active local server is found, run the 4 Desktop `1440x900` browser assertions below against it.
+     - If no local server is running, mark Stage B2 as `SKIPPED (No active server on 5500/8000/8080)` in the summary line without failing or triggering the 3-strike fix loop.
    - **Viewport Coverage:**
      - **Desktop (`1440x900`) — Blocking:** Sole blocking viewport for the 4 DOM/visual assertions below.
      - **Mobile (`390x844`) — Non-Blocking Info Only:** CarDuel is currently PC/laptop-only; if checked, log any `390x844` overflow or layout issues strictly as a non-blocking informational warning and **never** trigger or burn a 3-strike fix attempt on mobile viewports.
