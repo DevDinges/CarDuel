@@ -9,7 +9,30 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Inter:wght@400;500;600;700&display=swap&subset=latin,cyrillic" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="dock-is-collapsed">
+<body class="dock-is-collapsed is-home-view">
+  <!-- Armored Split-Door Intro Overlay (Plays on initial load/refresh) -->
+  <div class="garage-door-intro" id="garage-door-intro" aria-hidden="true">
+    <div class="door-panel door-panel-left">
+      <div class="door-frame-light door-light-left"></div>
+      <div class="door-armor-plate">
+        <div class="door-rib door-rib-top"></div>
+        <div class="door-rib door-rib-bottom"></div>
+        <div class="door-hub-ring door-hub-left"></div>
+      </div>
+      <div class="door-wordmark door-wordmark-left">CAR</div>
+    </div>
+    <div class="door-panel door-panel-right">
+      <div class="door-frame-light door-light-right"></div>
+      <div class="door-armor-plate">
+        <div class="door-rib door-rib-top"></div>
+        <div class="door-rib door-rib-bottom"></div>
+        <div class="door-hub-ring door-hub-right"></div>
+      </div>
+      <div class="door-wordmark door-wordmark-right">DUEL</div>
+    </div>
+    <div class="door-center-seam"></div>
+  </div>
+
   <!-- Top HUD Bar -->
   <header class="top-hud">
     <div class="hud-side hud-p1">
@@ -117,7 +140,7 @@
         </div>
 
         <!-- Main Brand Title -->
-        <div class="hud-center">
+        <div class="hud-center" id="hud-brand-home-btn" role="button" tabindex="0" title="Return to Homepage">
           <div class="brand-title">CAR<span>DUEL</span></div>
           <div class="brand-subtitle" id="brand-subtitle">HEAD-TO-HEAD CAR COMPARISON</div>
         </div>
@@ -239,8 +262,28 @@
 
     <!-- Center Split Showdown: Car 1 Image vs Car 2 Image -->
     <section class="versus-arena" id="versus-arena">
+      <!-- Homepage Landing Stage (Shown on initial load) -->
+      <div class="home-landing-stage" id="home-landing-stage" aria-hidden="false">
+        <div class="home-bg-marquee" id="home-bg-marquee" aria-hidden="true"></div>
+        <div class="home-hero-card">
+          <div class="home-kicker-pill" id="home-kicker">AUTOMOTIVE SHOWDOWN</div>
+          <h1 class="home-hero-title" id="home-title">HEAD-TO-HEAD CAR COMPARISON</h1>
+          <p class="home-hero-intro" id="home-intro">
+            CarDuel pits two vehicles side by side across 5 core pillars and 19 real-world scores, exposing engine weak spots, upcoming service bills, and real resale value so you know which one belongs in your driveway.
+          </p>
+          <div class="home-pillars-strip" id="home-pillars-strip"></div>
+          <div class="home-cta-wrap">
+            <button type="button" class="home-start-btn" id="home-start-btn">
+              <span class="home-start-btn-text" id="home-start-btn-text">CHOOSE YOUR CONTENDERS</span>
+              <span class="home-start-btn-arrow" aria-hidden="true">➔</span>
+            </button>
+            <span class="home-roster-meta" id="home-roster-meta">15 Vehicles • Multiple Engine Variants • Custom Priority Weights</span>
+          </div>
+        </div>
+      </div>
+
       <!-- Smash-Style Car Selection Grid (Shown until both P1 & P2 are selected) -->
-      <div class="smash-picker-stage" id="smash-picker-stage" aria-hidden="false">
+      <div class="smash-picker-stage is-hidden" id="smash-picker-stage" aria-hidden="true">
         <div class="smash-picker-header">
           <div class="smash-title-row">
             <h2 class="smash-title" id="smash-title">CHOOSE YOUR CONTENDERS</h2>

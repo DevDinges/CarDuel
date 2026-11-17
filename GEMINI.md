@@ -23,6 +23,7 @@ When the gate triggers, output **only** this compact block before touching any f
 ### Execution Gate & Self-Correction Loop
 - **STOP and wait for explicit user approval** after outputting the gate block before editing any files or running state-changing commands.
 - **Self-Correction Loop:** Whenever the user corrects a convention, pattern, wording, or mistake during a session, proactively offer a **1-line rule addition** to `GEMINI.md` (and `AGENTS.md` if project-specific) so the mistake is never repeated.
+- **Anti-Bloat / DRY Gate:** Before generating repetitive N×M data across multiple engines or cars, always propose a shared-base / delta-override structure (e.g., `baseSubStats` + engine deltas or shared dossier templates) first.
 
 ---
 

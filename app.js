@@ -58,8 +58,8 @@ const UI_TRANSLATIONS = {
     carTypeHotHatch: 'Hot-Hatch',
     carTypeSedan: 'Sedan',
     carTypeSuv: 'SUV',
-    dossierStrengths: 'Core Engineering Strengths',
-    dossierWatchouts: 'Maintenance & Known Watch-Outs',
+    dossierStrengths: 'Key Strengths',
+    dossierWatchouts: 'Watch-Outs & Trade-Offs',
     dossierBeforeYouBuy: 'Before You Buy:',
     dossierHighMileage: 'Service, Repair & Cost Roadmap (0 – 250,000 km)',
     dossierIfIgnored: 'If ignored:',
@@ -69,7 +69,7 @@ const UI_TRANSLATIONS = {
     dossierShowRoadmap: 'Show Roadmap ▾',
     dossierHideRoadmap: 'Hide Roadmap ▴',
     dossierOpponentContrast: 'Head-to-Head Opponent Contrast',
-    dossierInspectBtn: 'View Powertrain Durability Dossier',
+    dossierInspectBtn: 'View Category Details',
     dossierDefaultStrength: 'Standard factory component reliability.',
     dossierDefaultWatchout: 'Standard scheduled maintenance intervals required.',
     angleFront: 'Front',
@@ -93,7 +93,17 @@ const UI_TRANSLATIONS = {
     outlookFloor: 'Bottomed Out • Minimal Further Drop',
     outlookStrong: 'Strong Resale • High Demand',
     outlookEnthusiast: 'Enthusiast Icon • Rising / Firm',
-    outlookSteady: 'Steady • Predictable Curve'
+    outlookSteady: 'Steady • Predictable Curve',
+    homeKicker: 'AUTOMOTIVE SHOWDOWN',
+    homeTitle: 'HEAD-TO-HEAD CAR COMPARISON',
+    homeIntro: 'CarDuel pits two vehicles side by side across {pillars} core pillars and {ratings} real-world scores, exposing engine weak spots, upcoming service bills, and real resale value so you know which one belongs in your driveway.',
+    homeStartBtn: 'CHOOSE YOUR CONTENDERS',
+    homeRosterMeta: '{cars} Vehicles • Multiple Engine Variants • Custom Priority Weights',
+    homeBrandTooltip: 'Return to Homepage',
+    buyerFitBtn: 'BUYER FIT — WHO IS THIS FOR?',
+    buyerFitCategory: 'BUYER FIT & PRACTICAL SUMMARY',
+    buyerFitIdealTitle: 'Great Fit For',
+    buyerFitNotIdealTitle: 'Rather Not For'
   },
   de: {
     code: 'DE',
@@ -143,8 +153,8 @@ const UI_TRANSLATIONS = {
     carTypeHotHatch: 'Hot-Hatch',
     carTypeSedan: 'Limousine (Sedan)',
     carTypeSuv: 'SUV',
-    dossierStrengths: 'Konstruktive Stärken & Zuverlässigkeit',
-    dossierWatchouts: 'Wartung & Bekannte Schwachstellen',
+    dossierStrengths: 'Stärken & Vorteile',
+    dossierWatchouts: 'Schwachstellen & Hinweise',
     dossierBeforeYouBuy: 'Vor dem Kauf prüfen:',
     dossierHighMileage: 'Wartungs-, Reparatur- & Kosten-Fahrplan (0 – 250.000 km)',
     dossierIfIgnored: 'Wenn ignoriert:',
@@ -154,7 +164,7 @@ const UI_TRANSLATIONS = {
     dossierShowRoadmap: 'Fahrplan anzeigen ▾',
     dossierHideRoadmap: 'Fahrplan ausblenden ▴',
     dossierOpponentContrast: 'Direkter Vergleich mit dem Gegner',
-    dossierInspectBtn: 'Technik-Dossier ansehen',
+    dossierInspectBtn: 'Kategorie-Details ansehen',
     dossierDefaultStrength: 'Serienmäßige Zuverlässigkeit der Werkskomponenten.',
     dossierDefaultWatchout: 'Regelmäßige Wartungsintervalle nach Herstellervorgabe erforderlich.',
     angleFront: 'Front',
@@ -178,7 +188,17 @@ const UI_TRANSLATIONS = {
     outlookFloor: 'Talsohle erreicht • Kaum weiterer Verlust',
     outlookStrong: 'Wertstabil • Hohe Nachfrage',
     outlookEnthusiast: 'Liebhaber-Status • Stabil bis steigend',
-    outlookSteady: 'Solide • Planbarer Wertverlauf'
+    outlookSteady: 'Solide • Planbarer Wertverlauf',
+    homeKicker: 'FAHRZEUG-SHOWDOWN',
+    homeTitle: 'FAHRZEUGE IM DIREKTEN DUELL',
+    homeIntro: 'CarDuel stellt zwei Fahrzeuge über {pillars} zentrale Säulen und {ratings} praxisnahe Einzelwertungen direkt gegenüber – und deckt Motorschwachstellen, anstehende Wartungskosten sowie den realen Wiederverkaufswert auf, damit du sofort weißt, welches Auto in deine Einfahrt gehört.',
+    homeStartBtn: 'WÄHLE DEINE FAHRZEUGE',
+    homeRosterMeta: '{cars} Fahrzeuge • Mehrere Motorisierungen • Eigene Prioritäten-Gewichtung',
+    homeBrandTooltip: 'Zurück zur Startseite',
+    buyerFitBtn: 'FÜR WEN GEEIGNET? • FAZIT',
+    buyerFitCategory: 'KAUFBERATUNG & ZIELGRUPPE',
+    buyerFitIdealTitle: 'Ideal geeignet für',
+    buyerFitNotIdealTitle: 'Eher nicht geeignet für'
   },
   ru: {
     code: 'RU',
@@ -228,8 +248,8 @@ const UI_TRANSLATIONS = {
     carTypeHotHatch: 'Хот-хэтч',
     carTypeSedan: 'Седан',
     carTypeSuv: 'SUV (Кроссовер)',
-    dossierStrengths: 'Конструктивные преимущества и надёжность',
-    dossierWatchouts: 'Обслуживание и слабые места',
+    dossierStrengths: 'Ключевые преимущества',
+    dossierWatchouts: 'Слабые места и нюансы',
     dossierBeforeYouBuy: 'Перед покупкой:',
     dossierHighMileage: 'План обслуживания, ремонтов и расходов (0 – 250 000 км)',
     dossierIfIgnored: 'Если запустить:',
@@ -239,7 +259,7 @@ const UI_TRANSLATIONS = {
     dossierShowRoadmap: 'Показать план ▾',
     dossierHideRoadmap: 'Скрыть план ▴',
     dossierOpponentContrast: 'Сравнение с соперником',
-    dossierInspectBtn: 'Открыть техническое досье',
+    dossierInspectBtn: 'Подробнее о категории',
     dossierDefaultStrength: 'Стандартная заводская надёжность узлов и агрегатов.',
     dossierDefaultWatchout: 'Требуется соблюдение регламентных интервалов ТО.',
     angleFront: 'Спереди',
@@ -263,7 +283,17 @@ const UI_TRANSLATIONS = {
     outlookFloor: 'Дно рынка • Минимальное падение',
     outlookStrong: 'Высокая ликвидность • Хороший спрос',
     outlookEnthusiast: 'Культовая модель • Стабильный / рост',
-    outlookSteady: 'Умеренное снижение • Предсказуемо'
+    outlookSteady: 'Умеренное снижение • Предсказуемо',
+    homeKicker: 'АВТОМОБИЛЬНАЯ ДУЭЛЬ',
+    homeTitle: 'ПРЯМАЯ ДУЭЛЬ АВТОМОБИЛЕЙ',
+    homeIntro: 'CarDuel сталкивает два автомобиля лицом к лицу по {pillars} ключевым категориям и {ratings} реальным оценкам — раскрывая слабые места двигателей, предстоящие затраты на ТО и реальную остаточную стоимость, чтобы вы точно знали, какая машина подходит именно вам.',
+    homeStartBtn: 'ВЫБЕРИТЕ АВТОМОБИЛИ',
+    homeRosterMeta: '{cars} автомобилей • Разные двигатели • Настройка приоритетов',
+    homeBrandTooltip: 'Вернуться на главную',
+    buyerFitBtn: 'КОМУ ПОДОЙДЁТ? • ИТОГ',
+    buyerFitCategory: 'КОМУ ПОДОЙДЁТ АВТОМОБИЛЬ',
+    buyerFitIdealTitle: 'Отлично подойдёт',
+    buyerFitNotIdealTitle: 'Скорее не подойдёт'
   }
 };
 
@@ -635,13 +665,15 @@ const STAT_PILLARS = [
 // Maximum number of standout pros / cons displayed per car
 const MAX_TRAITS_PER_GROUP = 7;
 
-// Application State (Default: awaiting contender selection on the Smash-style grid)
+// Application State (Default: Homepage landing view, then Smash-style contender selection)
+let isHomeView = true;
 let selectedLeftId = null;
 let selectedRightId = null;
 let selectedLeftEngineId = null;
 let selectedRightEngineId = null;
 let smashPickerForceOpen = false;
 let smashAlignmentTimer = null;
+let smashLockInTimer = null;
 let activeRosterTarget = 'p1'; // 'p1' (left) or 'p2' (right)
 let currentLang = 'en'; // 'en' | 'de' | 'ru'
 let currentTheme = 'dark'; // 'dark' | 'light' | 'dark-soft' | 'light-soft'
@@ -929,34 +961,137 @@ function buildPriceBreakdownHtml(car, ui) {
   `;
 }
 
+function buildAutoSubStatDossier(car, statKey) {
+  const subObj = car && car.subStats && car.subStats[statKey];
+  if (!subObj) return null;
+
+  const lang = currentLang;
+  const badges = (subObj.badges && subObj.badges[lang]) || [];
+  const b0 = badges[0] || '';
+  const b1 = badges[1] || '';
+  const score = Number(subObj.score || 0);
+  const fuel = car.fuelType || 'petrol';
+  const hp = car.hp ? `${car.hp} HP` : '';
+
+  const tierText = {
+    en: score >= 8.5 ? 'Strong Category Performer' : score >= 7.0 ? 'Solid Everyday Benchmark' : 'Modest Category Output',
+    de: score >= 8.5 ? 'Starke Kategorie-Wertung' : score >= 7.0 ? 'Solider Alltags-Standard' : 'Zurückhaltende Kategorie-Wertung',
+    ru: score >= 8.5 ? 'Сильный показатель в классе' : score >= 7.0 ? 'Крепкий повседневный уровень' : 'Сдержанный показатель в классе'
+  }[lang];
+
+  const headline = b0 ? `${b0} — ${tierText}` : `${car.engineBadge || car.shortTitle} — ${tierText}`;
+
+  const fuelNote = {
+    en: {
+      hybrid: 'Hybrid system prioritizes smooth urban efficiency and low wear.',
+      diesel: 'Diesel setup shines on steady highway runs; short city trips require DPF care.',
+      petrol: 'Petrol configuration keeps cold-weather warm-up quick and city access unrestricted.'
+    },
+    de: {
+      hybrid: 'Das Hybridsystem punktet mit hoher Stadteffizienz und geringem Verschleiß.',
+      diesel: 'Ideal für konstante Langstrecken; häufige Kurzstrecken fordern den Partikelfilter.',
+      petrol: 'Schnelle Warmlaufphase im Winter und freie Fahrt in allen Umweltzonen.'
+    },
+    ru: {
+      hybrid: 'Гибридная установка ориентирована на городскую экономичность и малый износ.',
+      diesel: 'Дизель раскрывается на трассе; частые короткие поездки нагружают сажевый фильтр.',
+      petrol: 'Бензиновый мотор быстро прогревается зимой и не ограничен в эко-зонах.'
+    }
+  }[lang][fuel];
+
+  const strengths = [];
+  if (b0) strengths.push(b0 + (hp && (statKey === 'accelerationOvertaking' || statKey === 'midRangeTorquePassing') ? ` (${hp})` : '') + '.');
+  if (b1 && score >= 7.5) strengths.push(`${b1}.`);
+  if (strengths.length === 0) strengths.push(fuelNote);
+  else if (strengths.length === 1) strengths.push(fuelNote);
+
+  const watchouts = [];
+  if (b1 && score < 7.5) {
+    watchouts.push(`${b1}.`);
+  }
+  if (statKey === 'accelerationOvertaking' || statKey === 'midRangeTorquePassing') {
+    watchouts.push({
+      en: score < 7.0 ? 'Requires planning or downshifts for brisk country-road overtakes.' : 'Real-world pace depends on keeping the engine in its sweet spot.',
+      de: score < 7.0 ? 'Überholvorgänge auf der Landstraße erfordern rechtzeitiges Runterschalten.' : 'Volle Durchzugskraft liegt im mittleren bis oberen Drehzahlbereich.',
+      ru: score < 7.0 ? 'Для уверенных обгонов на трассе нужен запас дистанции или пониженная передача.' : 'Максимальная отдача раскрывается в рабочем диапазоне оборотов.'
+    }[lang]);
+  } else if (statKey === 'efficiencyFuel') {
+    watchouts.push({
+      en: fuel === 'hybrid' ? 'Sustained motorway speeds above 130 km/h and cold winter trips raise fuel use.' : 'Brisk motorway driving and stop-and-go city traffic increase real-world consumption.',
+      de: fuel === 'hybrid' ? 'Dauertempo über 130 km/h und kurze Winterfahrten erhöhen den Verbrauch.' : 'Zügiges Autobahntempo und dichter Stadtverkehr treiben den Praxisverbrauch hoch.',
+      ru: fuel === 'hybrid' ? 'Высокая скорость на трассе (130+ км/ч) и зимние прогревы повышают расход.' : 'Активная езда и городские пробки заметно увеличивают реальный расход.'
+    }[lang]);
+  } else if (statKey === 'taxInsuranceNorm') {
+    watchouts.push({
+      en: fuel === 'diesel' ? 'Check local Euro 5 vs Euro 6 diesel zone rules and higher annual diesel tax.' : 'General insurance pricing varies by trim level, age, and region.',
+      de: fuel === 'diesel' ? 'Euro-5-/Euro-6-Umweltzonen und höhere Diesel-Kfz-Steuer beachten.' : 'Versicherungstarife variieren je nach Ausstattung, Baujahr und Region.',
+      ru: fuel === 'diesel' ? 'Учитывайте экологический класс (Euro 5/6) и повышенный налог на дизель.' : 'Стоимость страховки зависит от комплектации, года и региона.'
+    }[lang]);
+  } else {
+    watchouts.push({
+      en: score < 7.0 ? 'One of this variant\'s softer areas compared to class leaders.' : 'Verify trim-specific condition and service records before purchase.',
+      de: score < 7.0 ? 'Im Klassenvergleich eine der schwächeren Kategorien dieser Variante.' : 'Ausstattungsdetails und Wartungsnachweise vor dem Kauf prüfen.',
+      ru: score < 7.0 ? 'Одна из более скромных характеристик данной версии на фоне конкурентов.' : 'Перед покупкой проверьте состояние узла и историю обслуживания.'
+    }[lang]);
+  }
+
+  return { headline, strengths, watchouts };
+}
+
+function getSubStatDossier(car, statKey) {
+  if (!car) return null;
+  const subObj = car.subStats && car.subStats[statKey];
+  const engDossier = subObj && subObj.dossier && subObj.dossier[currentLang];
+  if (engDossier) return engDossier;
+
+  const groupKey = car.dossierGroup;
+  const groupObj = groupKey && car.dossierGroups && car.dossierGroups[groupKey];
+  const groupDossier = groupObj && groupObj[statKey] && groupObj[statKey][currentLang];
+  if (groupDossier) return groupDossier;
+
+  const shared = car.sharedDossiers && car.sharedDossiers[statKey];
+  if (shared && shared[currentLang]) return shared[currentLang];
+
+  // Auto-template fallback for cars opted into the full 19-category dossier system
+  if (car.sharedDossiers || car.dossierGroups) {
+    return buildAutoSubStatDossier(car, statKey);
+  }
+  return null;
+}
+
 function buildForzaStatColumnHtml(car, opponent, side = 'left') {
   const ui = t();
+  const hasOpponent = Boolean(opponent);
   const { piScore, piBadgeText, piClassLabel, piClassCss } = calculateOverallIndex(car);
   const allExpanded = expandedPillars.size === STAT_PILLARS.length;
 
   const pillarsHtml = STAT_PILLARS.map((pillar) => {
     const val = getPillarScore(car, pillar);
-    const oppVal = getPillarScore(opponent, pillar);
+    const oppVal = hasOpponent ? getPillarScore(opponent, pillar) : val;
     const isExpanded = expandedPillars.has(pillar.id);
-    const { indicatorSymbol, squareClass, valueColorClass, barColorClass, isSPlus } =
-      getComparisonState(val, oppVal);
+    const cmpState = getComparisonState(val, oppVal);
+    const indicatorSymbol = hasOpponent ? cmpState.indicatorSymbol : '';
+    const valueColorClass = hasOpponent ? cmpState.valueColorClass : '';
+    const isSPlus = cmpState.isSPlus;
 
     // Build the sub-ratings for this pillar
     const subRowsHtml = pillar.subRatings
       .map((sub) => {
         const subObj = (car.subStats && car.subStats[sub.key]) || { score: 0, badges: {} };
-        const oppSubObj = (opponent.subStats && opponent.subStats[sub.key]) || { score: 0, badges: {} };
+        const oppSubObj = hasOpponent ? (opponent.subStats && opponent.subStats[sub.key]) || { score: 0, badges: {} } : null;
         const sVal = subObj.score;
-        const sOppVal = oppSubObj.score;
+        const sOppVal = oppSubObj ? oppSubObj.score : sVal;
         const subCmp = getComparisonState(sVal, sOppVal);
+        const subIndicator = hasOpponent ? subCmp.indicatorSymbol : '';
+        const subColorClass = hasOpponent ? subCmp.valueColorClass : '';
 
         const localizedBadges = (subObj.badges && subObj.badges[currentLang]) || [];
 
         const ratingDisplayHtml = subCmp.isSPlus
           ? `<span class="stat-stock-val score-s-plus" title="S+ (9.6–10)">✦ ${sVal.toFixed(1)}</span>`
-          : `<span class="stat-stock-val ${subCmp.valueColorClass}">${sVal.toFixed(1)}</span>`;
+          : `<span class="stat-stock-val ${subColorClass}">${sVal.toFixed(1)}</span>`;
 
-        const hasDossier = Boolean(subObj.dossier && subObj.dossier[currentLang]);
+        const hasDossier = Boolean(getSubStatDossier(car, sub.key));
         const infoBtnHtml = hasDossier
           ? `<button type="button" class="stat-info-btn" data-dossier-stat="${sub.key}" data-side="${side}" title="${ui.dossierInspectBtn}" aria-label="${ui.dossierInspectBtn}"><svg class="stat-info-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="4.25" r="1.3" fill="currentColor" /><path d="M8 7.25V12.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg></button>`
           : '';
@@ -975,11 +1110,11 @@ function buildForzaStatColumnHtml(car, opponent, side = 'left') {
                 <span class="stat-name">• ${sub.label[currentLang]}${infoBtnHtml}</span>
               </div>
               <div class="stat-stock-cell">
-                <span class="diff-arrow ${subCmp.valueColorClass}">${subCmp.indicatorSymbol}</span>
+                <span class="diff-arrow ${subColorClass}">${subIndicator}</span>
                 ${ratingDisplayHtml}
               </div>
               <div class="stat-current-cell">
-                <span class="stat-opp-val">${sOppVal.toFixed(1)}</span>
+                <span class="stat-opp-val">${hasOpponent ? sOppVal.toFixed(1) : '—'}</span>
               </div>
             </div>
             ${badgesHtml}
@@ -1000,12 +1135,15 @@ function buildForzaStatColumnHtml(car, opponent, side = 'left') {
       .map((tag) => `<span class="pillar-sub-tag">${tag.trim()}</span>`)
       .join('');
 
-    const segmentStateClass = isSPlus ? 'seg-s-plus' : val < oppVal ? 'seg-loss' : 'seg-win';
+    const segmentStateClass = isSPlus ? 'seg-s-plus' : !hasOpponent ? 'seg-win' : val < oppVal ? 'seg-loss' : 'seg-win';
     const segmentsHtml = Array.from({ length: 10 }, (_, idx) => {
       const fillRatio = Math.max(0, Math.min(1, val - idx));
       const fillPct = Math.round(fillRatio * 100);
       return `<div class="hud-seg"><div class="hud-seg-fill ${segmentStateClass}" style="width: ${fillPct}%"></div></div>`;
     }).join('');
+    const oppMarkerHtml = hasOpponent
+      ? `<div class="stat-bar-opp-marker" style="left: calc(${(oppVal * 10).toFixed(1)}%)" title="${opponent.shortTitle}: ${oppVal.toFixed(1)}"></div>`
+      : '';
 
     return `
       <div class="pillar-cluster ${isExpanded ? 'expanded' : ''}" data-pillar-id="${pillar.id}">
@@ -1034,12 +1172,12 @@ function buildForzaStatColumnHtml(car, opponent, side = 'left') {
               ${pillarRatingHtml}
             </div>
             <div class="stat-current-cell">
-              <span class="stat-opp-val">${oppVal.toFixed(1)}</span>
+              <span class="stat-opp-val">${hasOpponent ? oppVal.toFixed(1) : '—'}</span>
             </div>
           </div>
           <div class="hud-seg-bar">
             ${segmentsHtml}
-            <div class="stat-bar-opp-marker" style="left: calc(${(oppVal * 10).toFixed(1)}%)" title="${opponent.shortTitle}: ${oppVal.toFixed(1)}"></div>
+            ${oppMarkerHtml}
           </div>
         </button>
 
@@ -1114,6 +1252,23 @@ function renderCarTraitsTray(car, elementId) {
   const container = document.getElementById(elementId);
   if (!container) return;
 
+  const ui = t();
+  const side = elementId === 'traits-left' ? 'left' : 'right';
+  const hasBuyerFit = Boolean(getBuyerFit(car));
+
+  const buyerFitBtnHtml = hasBuyerFit
+    ? `<div class="traits-buyer-fit-row">
+        <button type="button" class="traits-buyer-fit-btn" data-buyer-fit-side="${side}">
+          <span class="traits-buyer-fit-meter" aria-hidden="true">
+            <span class="meter-pro"></span>
+            <span class="meter-con"></span>
+          </span>
+          <span class="traits-buyer-fit-label">${ui.buyerFitBtn}</span>
+          <span class="traits-buyer-fit-arrow" aria-hidden="true">↗</span>
+        </button>
+      </div>`
+    : '';
+
   const positives = ((car.remarkablePositives && car.remarkablePositives[currentLang]) || []).slice(
     0,
     MAX_TRAITS_PER_GROUP
@@ -1141,7 +1296,14 @@ function renderCarTraitsTray(car, elementId) {
         </div>`
       : '';
 
-  container.innerHTML = `${positivesHtml}${negativesHtml}`;
+  container.innerHTML = `${buyerFitBtnHtml}${positivesHtml}${negativesHtml}`;
+
+  const fitBtn = container.querySelector('[data-buyer-fit-side]');
+  if (fitBtn) {
+    fitBtn.addEventListener('click', () => {
+      openBuyerFitModal(side);
+    });
+  }
 }
 
 // Attach Accordion & Synchronized Scroll Event Listeners inside both Stat Columns
@@ -1223,25 +1385,28 @@ function bindStatColumnEvents() {
 
 // Update Stat Columns while preserving synchronized scroll position
 function updateStatColumnsOnly() {
-  if (!selectedLeftId || !selectedRightId) return;
-  const leftCar = getCarById(selectedLeftId, selectedLeftEngineId);
-  const rightCar = getCarById(selectedRightId, selectedRightEngineId);
+  const statsLeftEl = document.getElementById('stats-left');
+  const statsRightEl = document.getElementById('stats-right');
+  if (!selectedLeftId && !selectedRightId) {
+    if (statsLeftEl) statsLeftEl.innerHTML = '';
+    if (statsRightEl) statsRightEl.innerHTML = '';
+    return;
+  }
+
+  const leftCar = selectedLeftId ? getCarById(selectedLeftId, selectedLeftEngineId) : null;
+  const rightCar = selectedRightId ? getCarById(selectedRightId, selectedRightEngineId) : null;
 
   const leftList = document.querySelector('#stats-left .stats-rows-list');
   const rightList = document.querySelector('#stats-right .stats-rows-list');
   const activeList = activeStatsScrollSide === 'right' ? (rightList || leftList) : (leftList || rightList);
   const sharedScrollTop = activeList ? activeList.scrollTop : 0;
 
-  document.getElementById('stats-left').innerHTML = buildForzaStatColumnHtml(
-    leftCar,
-    rightCar,
-    'left'
-  );
-  document.getElementById('stats-right').innerHTML = buildForzaStatColumnHtml(
-    rightCar,
-    leftCar,
-    'right'
-  );
+  if (statsLeftEl) {
+    statsLeftEl.innerHTML = leftCar ? buildForzaStatColumnHtml(leftCar, rightCar, 'left') : '';
+  }
+  if (statsRightEl) {
+    statsRightEl.innerHTML = rightCar ? buildForzaStatColumnHtml(rightCar, leftCar, 'right') : '';
+  }
 
   const newLeftList = document.querySelector('#stats-left .stats-rows-list');
   const newRightList = document.querySelector('#stats-right .stats-rows-list');
@@ -1509,6 +1674,79 @@ function renderVerdictBanner() {
   }
 }
 
+// Render Homepage Hero Content & 5-Pillar Strip
+function renderHomeLanding() {
+  const ui = t();
+  const kickerEl = document.getElementById('home-kicker');
+  const titleEl = document.getElementById('home-title');
+  const introEl = document.getElementById('home-intro');
+  const startTextEl = document.getElementById('home-start-btn-text');
+  const metaEl = document.getElementById('home-roster-meta');
+  const pillarsStrip = document.getElementById('home-pillars-strip');
+  const brandHomeBtn = document.getElementById('hud-brand-home-btn');
+
+  const carCount = Array.isArray(CAR_ROSTER) ? CAR_ROSTER.length : 0;
+  const pillarCount = Array.isArray(STAT_PILLARS) ? STAT_PILLARS.length : 0;
+  const ratingCount = Array.isArray(STAT_PILLARS)
+    ? STAT_PILLARS.reduce((sum, p) => sum + (Array.isArray(p.subRatings) ? p.subRatings.length : 0), 0)
+    : 0;
+
+  const formatCounts = (str) =>
+    String(str || '')
+      .replace(/\{cars\}/g, carCount)
+      .replace(/\{pillars\}/g, pillarCount)
+      .replace(/\{ratings\}/g, ratingCount);
+
+  if (kickerEl) kickerEl.textContent = formatCounts(ui.homeKicker);
+  if (titleEl) titleEl.textContent = ui.homeTitle;
+  if (introEl) introEl.textContent = formatCounts(ui.homeIntro);
+  if (startTextEl) startTextEl.textContent = ui.homeStartBtn;
+  if (metaEl) metaEl.textContent = formatCounts(ui.homeRosterMeta);
+  if (brandHomeBtn) brandHomeBtn.title = ui.homeBrandTooltip;
+
+  if (pillarsStrip) {
+    pillarsStrip.innerHTML = STAT_PILLARS.map((p) => {
+      const label = p.label[currentLang] || p.label.en;
+      const iconSvg = PILLAR_ICONS[p.id] || '';
+      return `
+        <div class="home-pillar-chip">
+          <span class="home-pillar-chip-icon">${iconSvg}</span>
+          <span class="home-pillar-chip-label">${p.number}. ${label}</span>
+        </div>
+      `;
+    }).join('');
+  }
+
+  const marqueeEl = document.getElementById('home-bg-marquee');
+  if (marqueeEl && !marqueeEl.dataset.populated) {
+    const orderedCars = [...CAR_ROSTER].sort(
+      (a, b) => (a.gridOrder ?? Number(a.number)) - (b.gridOrder ?? Number(b.number))
+    );
+    const buildMarqueeTile = (baseCar) => {
+      const mirrorClass = (baseCar.imageFacing || 'right') === 'left' ? 'mirrored-car' : '';
+      const label = getSmashGridLabel(baseCar);
+      return `
+        <div class="home-marquee-tile">
+          <div class="home-marquee-thumb-wrap">
+            <img class="home-marquee-thumb ${mirrorClass}" src="${baseCar.image}" alt="" loading="lazy" draggable="false" />
+          </div>
+          <div class="home-marquee-nameplate">
+            <span class="home-marquee-name">${label}</span>
+          </div>
+        </div>
+      `;
+    };
+    const singleSetHtml = orderedCars.map(buildMarqueeTile).join('');
+    marqueeEl.innerHTML = `
+      <div class="home-marquee-track">
+        <div class="home-marquee-set">${singleSetHtml}</div>
+        <div class="home-marquee-set">${singleSetHtml}</div>
+      </div>
+    `;
+    marqueeEl.dataset.populated = 'true';
+  }
+}
+
 // Update Static HUD Text for Current Language
 function applyStaticTranslations() {
   const ui = t();
@@ -1546,6 +1784,7 @@ function applyStaticTranslations() {
   if (weightPopoverTitle) weightPopoverTitle.textContent = ui.weightPopoverTitle;
   if (weightResetBtn) weightResetBtn.textContent = ui.weightResetBtn;
   if (typeof renderWeightEqualizer === 'function') renderWeightEqualizer();
+  renderHomeLanding();
 }
 
 let lightboxGallery = [];
@@ -1641,6 +1880,134 @@ function closeCarLightbox() {
   lightbox.setAttribute('aria-hidden', 'true');
 }
 
+function getBuyerFit(car) {
+  if (!car) return null;
+
+  if (car.buyerFit && car.buyerFit[currentLang]) {
+    return car.buyerFit[currentLang];
+  }
+
+  const cards = car.sharedBuyerFit && car.sharedBuyerFit.cards;
+  const group = car.buyerFitGroup && car.buyerFitGroups && car.buyerFitGroups[car.buyerFitGroup];
+  if (!cards || !group) return null;
+
+  const overrides = car.buyerFitOverrides || {};
+  const summaryObj = overrides.summary || group.summary;
+  const idealKeys = overrides.ideal || group.ideal || [];
+  const skipKeys = overrides.skip || group.skip || [];
+
+  const resolveKeys = (keys) =>
+    keys
+      .map((key) => (cards[key] && (cards[key][currentLang] || cards[key].en)) || null)
+      .filter(Boolean);
+
+  const summary = summaryObj ? (summaryObj[currentLang] || summaryObj.en || '') : '';
+  const idealFor = resolveKeys(idealKeys);
+  const notIdealFor = resolveKeys(skipKeys);
+
+  if (!summary && idealFor.length === 0 && notIdealFor.length === 0) return null;
+  return { summary, idealFor, notIdealFor };
+}
+
+function splitBuyerFitPoint(text) {
+  const idx = String(text || '').indexOf(':');
+  if (idx === -1) {
+    return { title: String(text || '').trim(), desc: '' };
+  }
+  return {
+    title: text.slice(0, idx).trim(),
+    desc: text.slice(idx + 1).trim(),
+  };
+}
+
+// Open Buyer Fit ("Who Is This For?") Summary Modal
+function openBuyerFitModal(side) {
+  const ui = t();
+  const modal = document.getElementById('stat-dossier-modal');
+  const body = document.getElementById('stat-dossier-body');
+  const categoryLabel = document.getElementById('dossier-category-label');
+  const statTitle = document.getElementById('dossier-stat-title');
+  if (!modal || !body) return;
+  modal.classList.remove('buyer-fit-mode');
+
+  const currentCar =
+    side === 'left'
+      ? (selectedLeftId ? getCarById(selectedLeftId, selectedLeftEngineId) : null)
+      : (selectedRightId ? getCarById(selectedRightId, selectedRightEngineId) : null);
+  const fit = getBuyerFit(currentCar);
+  if (!fit) return;
+
+  const idealItems = fit.idealFor || [];
+  const notIdealItems = fit.notIdealFor || [];
+
+  modal.classList.add('buyer-fit-mode');
+  categoryLabel.textContent = ui.buyerFitCategory;
+  statTitle.textContent = `${currentCar.shortTitle} — ${currentCar.engineBadge}`;
+
+  const renderPersonaCards = (items, kind) =>
+    items
+      .map((raw) => {
+        const { title, desc } = splitBuyerFitPoint(raw);
+        const icon = kind === 'ideal' ? '✔' : '✖';
+        return `
+        <div class="buyer-fit-item is-${kind}">
+          <span class="buyer-fit-item-badge" aria-hidden="true">${icon}</span>
+          <div class="buyer-fit-item-text">
+            <div class="buyer-fit-item-title">${title}</div>
+            ${desc ? `<div class="buyer-fit-item-desc">${desc}</div>` : ''}
+          </div>
+        </div>`;
+      })
+      .join('');
+
+  body.innerHTML = `
+    <div class="buyer-fit-hero">
+      <div class="buyer-fit-hero-visual">
+        <img src="${currentCar.image}" alt="${currentCar.fullName}" class="buyer-fit-hero-img" />
+      </div>
+      <div class="buyer-fit-hero-content">
+        <div class="buyer-fit-hero-meta">
+          <span class="mini-p-badge ${side === 'left' ? 'p1-badge' : 'p2-badge'}">${side === 'left' ? 'C1' : 'C2'}</span>
+          <span class="buyer-fit-hero-car">${currentCar.fullName}</span>
+          <span class="buyer-fit-hero-engine">${currentCar.engineBadge}</span>
+        </div>
+        ${fit.summary ? `<div class="buyer-fit-verdict">${fit.summary}</div>` : ''}
+      </div>
+    </div>
+
+    <div class="buyer-fit-columns">
+      <div class="buyer-fit-col is-ideal">
+        <div class="buyer-fit-col-header">
+          <div class="buyer-fit-col-title-wrap">
+            <span class="buyer-fit-col-dot" aria-hidden="true"></span>
+            <span class="buyer-fit-col-title">${ui.buyerFitIdealTitle}</span>
+          </div>
+          <span class="buyer-fit-col-count">${idealItems.length}</span>
+        </div>
+        <div class="buyer-fit-items-list">
+          ${renderPersonaCards(idealItems, 'ideal')}
+        </div>
+      </div>
+
+      <div class="buyer-fit-col is-skip">
+        <div class="buyer-fit-col-header">
+          <div class="buyer-fit-col-title-wrap">
+            <span class="buyer-fit-col-dot" aria-hidden="true"></span>
+            <span class="buyer-fit-col-title">${ui.buyerFitNotIdealTitle}</span>
+          </div>
+          <span class="buyer-fit-col-count">${notIdealItems.length}</span>
+        </div>
+        <div class="buyer-fit-items-list">
+          ${renderPersonaCards(notIdealItems, 'skip')}
+        </div>
+      </div>
+    </div>
+  `;
+
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+}
+
 // Open Engineering Sub-Stat Dossier Modal (Option 1)
 function openStatDossier(statKey, side) {
   const ui = t();
@@ -1649,15 +2016,17 @@ function openStatDossier(statKey, side) {
   const categoryLabel = document.getElementById('dossier-category-label');
   const statTitle = document.getElementById('dossier-stat-title');
   if (!modal || !body) return;
+  modal.classList.remove('buyer-fit-mode');
 
   const currentCar =
     side === 'left'
-      ? getCarById(selectedLeftId, selectedLeftEngineId)
-      : getCarById(selectedRightId, selectedRightEngineId);
+      ? (selectedLeftId ? getCarById(selectedLeftId, selectedLeftEngineId) : null)
+      : (selectedRightId ? getCarById(selectedRightId, selectedRightEngineId) : null);
+  if (!currentCar) return;
   const oppCar =
     side === 'left'
-      ? getCarById(selectedRightId, selectedRightEngineId)
-      : getCarById(selectedLeftId, selectedLeftEngineId);
+      ? (selectedRightId ? getCarById(selectedRightId, selectedRightEngineId) : null)
+      : (selectedLeftId ? getCarById(selectedLeftId, selectedLeftEngineId) : null);
 
   // Find pillar and subRating definition
   let foundPillar = null;
@@ -1679,9 +2048,9 @@ function openStatDossier(statKey, side) {
   statTitle.textContent = foundSub.label[currentLang].toUpperCase();
 
   const subObj = (currentCar.subStats && currentCar.subStats[statKey]) || { score: 0 };
-  const oppSubObj = (oppCar.subStats && oppCar.subStats[statKey]) || { score: 0 };
-  const dossier = (subObj.dossier && subObj.dossier[currentLang]) || null;
-  const oppDossier = (oppSubObj.dossier && oppSubObj.dossier[currentLang]) || null;
+  const oppSubObj = oppCar ? (oppCar.subStats && oppCar.subStats[statKey]) || { score: 0 } : null;
+  const dossier = getSubStatDossier(currentCar, statKey);
+  const oppDossier = oppSubObj && oppSubObj.dossier ? oppSubObj.dossier[currentLang] || null : null;
 
   const isSPlus = subObj.score >= 9.6;
   const scoreDisplayHtml = isSPlus
@@ -1805,32 +2174,54 @@ function openStatDossier(statKey, side) {
     : '';
 
   // Opponent Contrast takeaway
-  const diff = Number((subObj.score - oppSubObj.score).toFixed(1));
-  let contrastSummary = '';
-  if (currentLang === 'de') {
-    if (diff > 0) {
-      contrastSummary = `<strong>+${diff} Punkte Vorteil</strong> gegenüber <em>${oppCar.shortTitle}</em> (${oppSubObj.score.toFixed(1)}). Überlegene konstruktive Haltbarkeit und deutlich geringeres Ausfallrisiko bei hoher Laufleistung.`;
-    } else if (diff < 0) {
-      contrastSummary = `<strong>${diff} Punkte im Vergleich</strong>: <em>${oppCar.shortTitle}</em> (${oppSubObj.score.toFixed(1)}) bietet konstruktiv einfachere Baugruppen oder geringere Verschleißanfälligkeit.`;
+  let contrastCardHtml = '';
+  if (oppCar && oppSubObj) {
+    const diff = Number((subObj.score - oppSubObj.score).toFixed(1));
+    const catName = foundSub.label[currentLang] || foundSub.label.en;
+    let contrastSummary = '';
+    if (currentLang === 'de') {
+      if (diff > 0) {
+        contrastSummary = `<strong>+${diff} Punkte Vorteil</strong> gegenüber <em>${oppCar.shortTitle}</em> (${oppSubObj.score.toFixed(1)}) in der Kategorie <strong>${catName}</strong>.`;
+      } else if (diff < 0) {
+        contrastSummary = `<strong>${diff} Punkte im Vergleich</strong>: <em>${oppCar.shortTitle}</em> (${oppSubObj.score.toFixed(1)}) liegt bei <strong>${catName}</strong> vorn.`;
+      } else {
+        contrastSummary = `<strong>Gleichstand (${subObj.score.toFixed(1)})</strong>: Beide Fahrzeuge liegen bei <strong>${catName}</strong> gleichauf.`;
+      }
+    } else if (currentLang === 'ru') {
+      if (diff > 0) {
+        contrastSummary = `<strong>Преимущество на +${diff} балла</strong> над <em>${oppCar.shortTitle}</em> (${oppSubObj.score.toFixed(1)}) в категории <strong>${catName}</strong>.`;
+      } else if (diff < 0) {
+        contrastSummary = `<strong>Разница ${diff} балла</strong>: <em>${oppCar.shortTitle}</em> (${oppSubObj.score.toFixed(1)}) опережает в категории <strong>${catName}</strong>.`;
+      } else {
+        contrastSummary = `<strong>Паритет (${subObj.score.toFixed(1)})</strong>: Оба автомобиля равны в категории <strong>${catName}</strong>.`;
+      }
     } else {
-      contrastSummary = `<strong>Gleichstand (${subObj.score.toFixed(1)})</strong>: Beide Antriebe weisen in dieser Kategorie eine vergleichbare Haltbarkeit auf.`;
+      if (diff > 0) {
+        contrastSummary = `<strong>+${diff} Point Advantage</strong> over <em>${oppCar.shortTitle}</em> (${oppSubObj.score.toFixed(1)}) in <strong>${catName}</strong>.`;
+      } else if (diff < 0) {
+        contrastSummary = `<strong>${diff} Points vs Opponent</strong>: <em>${oppCar.shortTitle}</em> (${oppSubObj.score.toFixed(1)}) scores higher in <strong>${catName}</strong>.`;
+      } else {
+        contrastSummary = `<strong>Dead Heat (${subObj.score.toFixed(1)})</strong>: Both vehicles are evenly matched in <strong>${catName}</strong>.`;
+      }
     }
-  } else if (currentLang === 'ru') {
-    if (diff > 0) {
-      contrastSummary = `<strong>Преимущество на +${diff} балла</strong> над <em>${oppCar.shortTitle}</em> (${oppSubObj.score.toFixed(1)}). Выдающийся запас прочности агрегатов и минимальный риск отказов на больших пробегах.`;
-    } else if (diff < 0) {
-      contrastSummary = `<strong>Разница ${diff} балла</strong>: У <em>${oppCar.shortTitle}</em> (${oppSubObj.score.toFixed(1)}) конструкция проще или менее требовательна к обслуживанию.`;
-    } else {
-      contrastSummary = `<strong>Паритет (${subObj.score.toFixed(1)})</strong>: Оба силовых агрегата демонстрируют сопоставимую конструктивную надёжность.`;
-    }
-  } else {
-    if (diff > 0) {
-      contrastSummary = `<strong>+${diff} Point Advantage</strong> over <em>${oppCar.shortTitle}</em> (${oppSubObj.score.toFixed(1)}). Superior long-term component durability and significantly lower mechanical failure risk at high mileage.`;
-    } else if (diff < 0) {
-      contrastSummary = `<strong>${diff} Points vs Opponent</strong>: <em>${oppCar.shortTitle}</em> (${oppSubObj.score.toFixed(1)}) offers simpler architecture or less demanding service requirements.`;
-    } else {
-      contrastSummary = `<strong>Dead Heat (${subObj.score.toFixed(1)})</strong>: Both powertrains demonstrate comparable engineering durability in this category.`;
-    }
+
+    contrastCardHtml = `
+      <!-- Head-to-Head Contrast with Active Opponent -->
+      <div class="dossier-contrast-card">
+        <div class="dossier-contrast-header">
+          <div class="dossier-card-title contrast-title">
+            <span>⇄</span>
+            <span>${ui.dossierOpponentContrast}</span>
+          </div>
+          <div class="dossier-contrast-car-name">
+            vs ${oppCar.fullName} [${oppSubObj.score.toFixed(1)}/10]
+          </div>
+        </div>
+        <div class="dossier-contrast-body">
+          ${contrastSummary}
+        </div>
+      </div>
+    `;
   }
 
   body.innerHTML = `
@@ -1877,26 +2268,7 @@ function openStatDossier(statKey, side) {
 
     ${buyerGuideHtml}
 
-    <!-- Head-to-Head Contrast with Active Opponent -->
-    <div class="dossier-contrast-card">
-      <div class="dossier-contrast-header">
-        <div class="dossier-card-title contrast-title">
-          <span>⇄</span>
-          <span>${ui.dossierOpponentContrast}</span>
-        </div>
-        <div class="dossier-contrast-car-name">
-          vs ${oppCar.fullName} [${oppSubObj.score.toFixed(1)}/10]
-        </div>
-      </div>
-      <div class="dossier-contrast-body">
-        ${contrastSummary}
-        ${
-          oppDossier && oppDossier.headline
-            ? `<div class="dossier-contrast-note">"${oppDossier.headline}"</div>`
-            : ''
-        }
-      </div>
-    </div>
+    ${contrastCardHtml}
   `;
 
   const roadmapToggle = document.getElementById('dossier-roadmap-toggle');
@@ -2013,8 +2385,9 @@ function renderSmashPicker() {
   const gridEl = document.getElementById('smash-car-grid');
   if (!slotsBar || !gridEl) return;
 
-  if (!selectedLeftId) activeRosterTarget = 'p1';
-  else if (!selectedRightId) activeRosterTarget = 'p2';
+  if (activeRosterTarget !== 'p1' && activeRosterTarget !== 'p2') {
+    activeRosterTarget = 'p1';
+  }
 
   const bothSelected = Boolean(selectedLeftId && selectedRightId);
   if (titleEl) titleEl.textContent = ui.smashTitle;
@@ -2052,21 +2425,34 @@ function renderSmashPicker() {
     });
   });
 
+  const clearSlotSelection = (slot) => {
+    if (smashLockInTimer) {
+      clearTimeout(smashLockInTimer);
+      smashLockInTimer = null;
+    }
+    if (slot === 'p1') {
+      selectedLeftId = null;
+      selectedLeftEngineId = null;
+      activeRosterTarget = 'p1';
+    } else if (slot === 'p2') {
+      selectedRightId = null;
+      selectedRightEngineId = null;
+      activeRosterTarget = 'p2';
+    } else if (slot === 'both') {
+      selectedLeftId = null;
+      selectedLeftEngineId = null;
+      selectedRightId = null;
+      selectedRightEngineId = null;
+      activeRosterTarget = 'p1';
+    }
+    smashPickerForceOpen = false;
+    updateArena();
+  };
+
   slotsBar.querySelectorAll('[data-clear-slot]').forEach((clearBtn) => {
     clearBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      const slot = clearBtn.getAttribute('data-clear-slot');
-      if (slot === 'p1') {
-        selectedLeftId = null;
-        selectedLeftEngineId = null;
-        activeRosterTarget = 'p1';
-      } else {
-        selectedRightId = null;
-        selectedRightEngineId = null;
-        activeRosterTarget = 'p2';
-      }
-      smashPickerForceOpen = false;
-      updateArena();
+      clearSlotSelection(clearBtn.getAttribute('data-clear-slot'));
     });
   });
 
@@ -2082,28 +2468,38 @@ function renderSmashPicker() {
     else if (isP1) stateClass = 'selected-p1';
     else if (isP2) stateClass = 'selected-p2';
 
+    const clearTarget = isP1 && isP2 ? 'both' : isP1 ? 'p1' : isP2 ? 'p2' : '';
     const dotColor = CAR_TYPE_DOT_COLORS[getCarType(baseCar)] || '#38bdf8';
     const mirrorClass = (baseCar.imageFacing || 'right') === 'left' ? 'mirrored-car' : '';
 
     return `
-      <button type="button" class="smash-car-tile ${stateClass}" data-smash-car-id="${baseCar.id}">
+      <div role="button" tabindex="0" class="smash-car-tile ${stateClass}" data-smash-car-id="${baseCar.id}">
         <div class="smash-car-thumb-wrap">
           <img class="smash-car-thumb ${mirrorClass}" src="${baseCar.image}" alt="${getSmashGridLabel(baseCar)}" draggable="false" />
           <div class="smash-car-badges">
             ${isP1 ? '<span class="mini-p-badge p1-badge">C1</span>' : ''}
             ${isP2 ? '<span class="mini-p-badge p2-badge">C2</span>' : ''}
           </div>
+          ${clearTarget ? `<button type="button" class="smash-tile-clear" data-clear-slot="${clearTarget}" title="${ui.smashClearSlot}" aria-label="${ui.smashClearSlot}">✕</button>` : ''}
         </div>
         <div class="smash-car-nameplate">
           <span class="smash-car-name">${getSmashGridLabel(baseCar)}</span>
           <span class="smash-car-type-dot" style="background:${dotColor}"></span>
         </div>
-      </button>
+      </div>
     `;
   }).join('');
 
+  gridEl.querySelectorAll('[data-clear-slot]').forEach((clearBtn) => {
+    clearBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      clearSlotSelection(clearBtn.getAttribute('data-clear-slot'));
+    });
+  });
+
   gridEl.querySelectorAll('.smash-car-tile').forEach((tile) => {
-    tile.addEventListener('click', () => {
+    const selectTileCar = () => {
+      const wasBothSelected = Boolean(selectedLeftId && selectedRightId);
       const chosenId = tile.getAttribute('data-smash-car-id');
       const baseCar = getBaseCarById(chosenId);
 
@@ -2117,24 +2513,67 @@ function renderSmashPicker() {
         if (!selectedLeftId) activeRosterTarget = 'p1';
       }
 
+      if (smashLockInTimer) {
+        clearTimeout(smashLockInTimer);
+        smashLockInTimer = null;
+      }
+
       if (selectedLeftId && selectedRightId) {
+        if (!wasBothSelected) {
+          smashPickerForceOpen = true;
+          updateArena();
+          smashLockInTimer = setTimeout(() => {
+            smashLockInTimer = null;
+            if (!isHomeView && selectedLeftId && selectedRightId) {
+              smashPickerForceOpen = false;
+              updateArena();
+            }
+          }, 600);
+          return;
+        }
         smashPickerForceOpen = false;
       }
       updateArena();
+    };
+
+    tile.addEventListener('click', (e) => {
+      if (e.target.closest('[data-clear-slot]')) return;
+      selectTileCar();
+    });
+    tile.addEventListener('keydown', (e) => {
+      if (e.target.closest('[data-clear-slot]')) return;
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        selectTileCar();
+      }
     });
   });
 }
 
 function updateArena() {
   const bothSelected = Boolean(selectedLeftId && selectedRightId);
-  const showSmashGrid = !bothSelected || smashPickerForceOpen;
+  const showHome = Boolean(isHomeView);
+  const showSmashGrid = !showHome && (!bothSelected || smashPickerForceOpen);
 
   const duelStage = document.querySelector('.duel-stage');
   const versusArena = document.getElementById('versus-arena');
+  const homeStage = document.getElementById('home-landing-stage');
   const smashStage = document.getElementById('smash-picker-stage');
 
-  if (duelStage) duelStage.classList.toggle('awaiting-selection', !bothSelected);
-  if (versusArena) versusArena.classList.toggle('awaiting-selection', showSmashGrid);
+  document.body.classList.toggle('is-home-view', showHome);
+  if (duelStage) {
+    duelStage.classList.toggle('no-left-car', showHome || showSmashGrid || !selectedLeftId);
+    duelStage.classList.toggle('no-right-car', showHome || showSmashGrid || !selectedRightId);
+  }
+  if (versusArena) {
+    versusArena.classList.toggle('awaiting-selection', showHome || showSmashGrid);
+    versusArena.classList.toggle('has-left-car', !showHome && Boolean(selectedLeftId));
+    versusArena.classList.toggle('has-right-car', !showHome && Boolean(selectedRightId));
+  }
+  if (homeStage) {
+    homeStage.classList.toggle('is-hidden', !showHome);
+    homeStage.setAttribute('aria-hidden', String(!showHome));
+  }
   if (smashStage) {
     smashStage.classList.toggle('is-hidden', !showSmashGrid);
     smashStage.setAttribute('aria-hidden', String(!showSmashGrid));
@@ -2144,7 +2583,7 @@ function updateArena() {
   renderDropdowns();
   renderSmashPicker();
 
-  if (!bothSelected) {
+  if (showHome || showSmashGrid || !bothSelected) {
     const statsLeft = document.getElementById('stats-left');
     const statsRight = document.getElementById('stats-right');
     if (statsLeft) statsLeft.innerHTML = '';
@@ -2620,13 +3059,110 @@ function initCarSelectorMenus() {
   });
 }
 
+function closeAllMenusAndModals() {
+  closeCarLightbox();
+  closeStatDossier();
+  document.querySelectorAll('.price-info-anchor.is-open').forEach((el) => el.classList.remove('is-open'));
+  [
+    ['car-btn-left', 'car-dropdown-left'],
+    ['car-btn-right', 'car-dropdown-right'],
+    ['engine-btn-left', 'engine-dropdown-left'],
+    ['engine-btn-right', 'engine-dropdown-right'],
+    ['theme-toggle-btn', 'theme-dropdown'],
+    ['lang-toggle-btn', 'lang-dropdown'],
+    ['class-menu-toggle-btn', 'class-menu-popover'],
+    ['weight-menu-toggle-btn', 'weight-menu-popover']
+  ].forEach(([btnId, menuId]) => {
+    const btn = document.getElementById(btnId);
+    const menu = document.getElementById(menuId);
+    if (btn && menu) setPopupOpen(btn, menu, false);
+  });
+}
+
+function initGarageDoorIntro() {
+  const door = document.getElementById('garage-door-intro');
+  if (!door) return;
+
+  const prefersReduced =
+    typeof window.matchMedia === 'function' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (prefersReduced) {
+    door.classList.add('is-complete');
+    return;
+  }
+
+  let finished = false;
+  const finishDoor = () => {
+    if (finished) return;
+    finished = true;
+    door.classList.add('is-complete');
+  };
+
+  requestAnimationFrame(() => {
+    door.classList.add('is-charging');
+    setTimeout(() => {
+      door.classList.add('is-opening');
+    }, 680);
+  });
+
+  const leftPanel = door.querySelector('.door-panel-left');
+  if (leftPanel) {
+    leftPanel.addEventListener('transitionend', (e) => {
+      if (e.propertyName === 'transform') finishDoor();
+    });
+  }
+  setTimeout(finishDoor, 2900);
+}
+
 // Initialize Event Listeners
 function initCarDuel() {
+  initGarageDoorIntro();
   initHudUtilityMenus();
   initCarSelectorMenus();
   initEngineSelectorMenus();
   initClassIndexMenu();
   initWeightEqualizerMenu();
+
+  // Homepage CTA button -> Choose Your Contenders picker
+  const homeStartBtn = document.getElementById('home-start-btn');
+  if (homeStartBtn) {
+    homeStartBtn.addEventListener('click', () => {
+      isHomeView = false;
+      smashPickerForceOpen = false;
+      updateArena();
+    });
+  }
+
+  // Center CAR DUEL brand logo -> Return to Homepage (and reset contender selection)
+  const brandHomeBtn = document.getElementById('hud-brand-home-btn');
+  if (brandHomeBtn) {
+    const goHome = () => {
+      if (isHomeView) return;
+      if (smashLockInTimer) {
+        clearTimeout(smashLockInTimer);
+        smashLockInTimer = null;
+      }
+      isHomeView = true;
+      selectedLeftId = null;
+      selectedRightId = null;
+      selectedLeftEngineId = null;
+      selectedRightEngineId = null;
+      smashPickerForceOpen = false;
+      activeRosterTarget = 'p1';
+      const smashStage = document.getElementById('smash-picker-stage');
+      if (smashStage) smashStage.scrollTop = 0;
+      closeAllMenusAndModals();
+      updateArena();
+    };
+    brandHomeBtn.addEventListener('click', goHome);
+    brandHomeBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        goHome();
+      }
+    });
+  }
 
   // Close open market price popovers on outside click
   document.addEventListener('click', (e) => {
@@ -2688,49 +3224,7 @@ function initCarDuel() {
       }
     }
     if (e.key === 'Escape') {
-      closeCarLightbox();
-      closeStatDossier();
-      document.querySelectorAll('.price-info-anchor.is-open').forEach((el) => el.classList.remove('is-open'));
-      setPopupOpen(
-        document.getElementById('car-btn-left'),
-        document.getElementById('car-dropdown-left'),
-        false
-      );
-      setPopupOpen(
-        document.getElementById('car-btn-right'),
-        document.getElementById('car-dropdown-right'),
-        false
-      );
-      setPopupOpen(
-        document.getElementById('engine-btn-left'),
-        document.getElementById('engine-dropdown-left'),
-        false
-      );
-      setPopupOpen(
-        document.getElementById('engine-btn-right'),
-        document.getElementById('engine-dropdown-right'),
-        false
-      );
-      setPopupOpen(
-        document.getElementById('theme-toggle-btn'),
-        document.getElementById('theme-dropdown'),
-        false
-      );
-      setPopupOpen(
-        document.getElementById('lang-toggle-btn'),
-        document.getElementById('lang-dropdown'),
-        false
-      );
-      setPopupOpen(
-        document.getElementById('class-menu-toggle-btn'),
-        document.getElementById('class-menu-popover'),
-        false
-      );
-      setPopupOpen(
-        document.getElementById('weight-menu-toggle-btn'),
-        document.getElementById('weight-menu-popover'),
-        false
-      );
+      closeAllMenusAndModals();
     }
   });
 

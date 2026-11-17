@@ -17,9 +17,1003 @@ const CAR_ROSTER = [
     drivetrain: 'FWD',
     image: 'assets/toyota-auris-2014.png',
     defaultEngineId: '1.8-hybrid',
+    sharedBuyerFit: {
+      cards: {
+        // Shared Chassis & Auris-Wide Cards
+        naProvenReliability: {
+          en: 'You hate surprise repair bills: Proven Japanese naturally aspirated reliability with timing-chain simplicity and low workshop costs.',
+          de: 'Du hasst unerwartete Werkstattrechnungen: Bewährte japanische Sauger-Zuverlässigkeit mit robuster Steuerkette und günstigen Werkstattkosten.',
+          ru: 'Ты не любишь внезапные траты на сервис: Проверенная японская надёжность атмосферника с цепным ГРМ и недорогим обслуживанием.'
+        },
+        toyotaEverydayComfort: {
+          en: 'You want an easy, refined daily driver: Comfortable ride, light controls, and solid Toyota build quality for everyday commuting.',
+          de: 'Du willst ein entspanntes, kultiviertes Alltagsauto: Komfortables Fahrwerk, leichte Bedienung und solide Toyota-Verarbeitungsqualität.',
+          ru: 'Тебе нужен спокойный и удобный авто на каждый день: Комфортная подвеска, лёгкое управление и добротная сборка Toyota.'
+        },
+        bmwDieselWatchout: {
+          en: 'You want classic Toyota diesel durability: This 1.6 is BMW-sourced (not a Toyota block) — budget carefully for cooling-system and timing-chain upkeep.',
+          de: 'Du willst klassische Toyota-Diesel-Robustheit: Dieser 1.6 stammt von BMW (kein Toyota-Block) — plane Kühlungs- und Steuerketten-Pflege ein.',
+          ru: 'Ты ждёшь классической неубиваемости Toyota: Этот 1.6 разработан BMW (не блок Toyota) — следи за системой охлаждения и цепью ГРМ.'
+        },
+        simpleNoTurbo: {
+          en: 'You want simple mechanics: No turbocharger, no high-pressure diesel pump, and no costly dual-mass flywheel to fail on you.',
+          de: 'Du willst simple Technik: Kein Turbolader, keine Hochdruck-Dieselpumpe und kein teures Zweimassenschwungrad, das kaputtgehen kann.',
+          ru: 'Тебе нужна простая конструкция: Без турбины, дорогого ТНВД и двухмассового маховика, которым нечему ломаться.'
+        },
+        petrolCityZones: {
+          en: 'You drive in urban low-emission zones: Clean Euro 5/6 petrol status means zero diesel-ban headaches and cheap road tax.',
+          de: 'Du fährst in Umweltzonen: Sauberer Euro-5/6-Benziner ohne Fahrverbots-Sorgen und mit günstiger Kfz-Steuer.',
+          ru: 'Ты ездишь по крупным городам: Чистый бензиновый класс Euro 5/6 избавляет от дизельных ограничений и лишних налогов.'
+        },
+        cityHatchback: {
+          en: 'You want an easy daily driver: Light controls, good visibility, and compact dimensions make tight parking effortless for you.',
+          de: 'Du willst ein entspanntes Alltagsauto: Leichtgängige Bedienung, gute Übersicht und kompakte Maße machen dir das Parken leicht.',
+          ru: 'Тебе нужна удобная машина на каждый день: Лёгкое управление, хороший обзор и компактные габариты упрощают парковку.'
+        },
+        compactBoot: {
+          en: 'You regularly pack bulky family luggage: The compact 360 L boot handles groceries and weekend bags fine, but you\'ll feel tight on space with big strollers or heavy holiday loads.',
+          de: 'Du packst oft sperriges Familiengepäck ein: Der kompakte 360-L-Kofferraum reicht für Einkäufe und Wochenendtaschen, wird mit großem Kinderwagen oder Urlaubsgepäck aber eng.',
+          ru: 'Ты часто возишь крупный семейный багаж: Компактного 360-литрового багажника хватит для покупок и сумок на выходные, но с большой коляской и чемоданами будет тесновато.'
+        },
+        plainPlastics: {
+          en: 'You crave sporty feedback or plush luxury: The steering feels light and the lower cabin plastics are plain — it\'s built to be sensible for you, not exciting.',
+          de: 'Du suchst sportliches Feedback oder Luxus-Flair: Die Lenkung wirkt leichtgängig und unten im Innenraum dominiert schlichtes Plastik — vernünftig für dich gebaut, nicht aufregend.',
+          ru: 'Ты ждёшь острого руля и премиум-салона: Руль здесь лёгкий, а внизу салона простой пластик — машину делали практичной для тебя, а не азартной.'
+        },
+
+        // 1.8 Hybrid Cards
+        hybridCity: {
+          en: 'You commute in city traffic: You\'ll glide through stop-and-go streets in near-silent EV mode at around 4.1 L/100 km — and you never have to plug it in.',
+          de: 'Du pendelst im Stadtverkehr: Du gleitest im Stop-and-Go fast lautlos im EV-Modus mit rund 4,1 L/100 km — ganz ohne jemals ein Ladekabel einzustecken.',
+          ru: 'Ты ездишь по городским пробкам: Ты плавно катишься в тихом EV-режиме с расходом около 4,1 л/100 км — и при этом никаких проводов и розеток.'
+        },
+        hybridNoWearParts: {
+          en: 'You hate surprise repair bills: With TÜV Top 3% reliability and no clutch, turbo, starter motor, or alternator, there are simply fewer parts that can break on you.',
+          de: 'Du hasst unerwartete Werkstattrechnungen: Mit TÜV-Top-3%-Zuverlässigkeit und ohne Kupplung, Turbo, Anlasser oder Lichtmaschine geht bei dir einfach weniger kaputt.',
+          ru: 'Ты не любишь внезапные траты на ремонт: Надёжность в топ-3% TÜV и отсутствие сцепления, турбины, стартера и генератора означают, что у тебя просто меньшему ломаться.'
+        },
+        hybridLowTax: {
+          en: 'You want low everyday running costs: Minimal road tax, clean city-zone access, and gentle brake wear mean more money stays in your pocket every month.',
+          de: 'Du willst niedrige laufende Kosten: Minimale Kfz-Steuer, freie Fahrt in Umweltzonen und geringer Bremsenverschleiß lassen dir jeden Monat mehr Geld in der Tasche.',
+          ru: 'Тебе важны низкие расходы каждый день: Минимальный налог, свободный въезд в эко-зоны и щадящий износ тормозов оставляют больше денег в твоём бюджете.'
+        },
+        hybridKeepLong: {
+          en: 'You plan to keep the car for years: Easygoing automatic-style driving and a proven hybrid setup make it a stress-free companion well past 200,000 km.',
+          de: 'Du willst dein Auto viele Jahre fahren: Entspanntes Automatik-Feeling und die bewährte Hybridtechnik machen ihn auch jenseits von 200.000 km zum treuen Begleiter.',
+          ru: 'Ты берёшь машину на долгие годы: Лёгкая езда как на автомате и проверенный гибрид делают её спокойным спутником далеко за 200 000 км.'
+        },
+        hybridTowingCap: {
+          en: 'You need to tow a trailer: With a strict 385 kg towing limit, this isn\'t for you if you haul a caravan or utility trailer (a bike rack is fine, though).',
+          de: 'Du musst einen Anhänger ziehen: Mit strikten 385 kg Anhängelast ist er nichts für dich, wenn du Wohnwagen oder Lastenanhänger ziehst (ein Fahrradträger passt aber).',
+          ru: 'Тебе нужно таскать прицеп: При строгом лимите в 385 кг машина не для тебя, если нужен прицеп или дом на колёсах (а вот велокрепление подойдёт).'
+        },
+        hybridHillDrone: {
+          en: 'You push hard on hills or the motorway: Floor it to overtake or climb steep inclines and you\'ll notice the 10.9 s pace and the engine drone under load.',
+          de: 'Du fährst gern zügig bergauf oder auf der Autobahn: Gibst du beim Überholen oder am Berg Vollgas, merkst du die 10,9 s Tempo und das Aufheulen des Motors unter Last.',
+          ru: 'Ты любишь активно ехать в гору и по трассе: При резком обгоне или на затяжном подъёме сразу чувствуются 10,9 с разгона и заметный гул мотора под нагрузкой.'
+        },
+
+        // 1.33 Dual VVT-i Cards
+        na133Budget: {
+          en: 'You\'re buying on a tight budget: Much cheaper to buy and insure than the Hybrid, while still keeping servicing bills remarkably low.',
+          de: 'Du achtest aufs Budget: Deutlich günstiger in der Anschaffung und Versicherung als der Hybrid, bei ähnlich niedrigen Wartungskosten.',
+          ru: 'У тебя ограниченный бюджет: Заметно дешевле гибрида при покупке и в страховке, при этом обслуживание остаётся копеечным.'
+        },
+        na133SlowOvertake: {
+          en: 'You overtake often or drive loaded: With 99 HP and a 12.6 s 0–100 km/h sprint, you\'ll need to downshift early and plan every pass.',
+          de: 'Du überholst oft oder fährst voll beladen: Mit 99 PS und 12,6 s auf 100 km/h musst du früh herunterschalten und jeden Überholvorgang planen.',
+          ru: 'Ты часто обгоняешь или ездишь с полной загрузкой: Со 99 л.с. и 12,6 с до 100 км/ч придётся заранее понижать передачу и рассчитывать каждый обгон.'
+        },
+        na133HighRevs: {
+          en: 'You cruise fast on the motorway: Above 120 km/h the 1.33 revs high, gets noticeably louder, and loses its fuel-economy edge.',
+          de: 'Du fährst oft schnell Autobahn: Über 120 km/h dreht der 1.33 hoch, wird spürbar lauter und verliert seinen Verbrauchsvorteil.',
+          ru: 'Ты много ездишь по быстрой трассе: После 120 км/ч мотор крутится высоко, заметно шумит и теряет свою экономичность.'
+        },
+
+        // 1.6 Valvematic Cards
+        na16BalancedPace: {
+          en: 'You want lively petrol power without a turbo: With 132 HP and a crisp 6-speed manual, you get confident overtakes without turbo complexity.',
+          de: 'Du willst flotte Benziner-Leistung ohne Turbo: Mit 132 PS und knackigem 6-Gang-Getriebe überholst du souverän, ohne Turbo-Risiko.',
+          ru: 'Ты хочешь бодрый бензин без турбины: 132 л.с. и чёткая 6-ступенчатая механика дают уверенный разгон без турбо-рисков.'
+        },
+        na16HigherFuel: {
+          en: 'You drive mostly stop-and-go city miles: Unlike the Hybrid, city traffic pushes real-world consumption up to around 7.5–8.5 L/100 km.',
+          de: 'Du fährst fast nur Stadtverkehr: Anders als beim Hybrid steigt dein realer Verbrauch im Stop-and-Go auf etwa 7,5–8,5 L/100 km.',
+          ru: 'Ты в основном стоишь в городских пробках: В отличие от гибрида, реальный расход в городе поднимается до 7,5–8,5 л/100 км.'
+        },
+        na16RevOnMotorway: {
+          en: 'You want effortless low-rev pull: Without a turbo, you\'ll need to rev past 4,000 rpm for brisk hills or motorway passes.',
+          de: 'Du willst mühelosen Durchzug aus dem Drehzahlkeller: Ohne Turbo musst du am Berg oder beim Überholen über 4.000/min drehen.',
+          ru: 'Тебе нужна лёгкая тяга с низов: Без турбины для бодрого обгона или подъёма мотор придётся крутить выше 4000 об/мин.'
+        },
+
+        // 1.2 Turbo Cards
+        turboLowEndTorque: {
+          en: 'You prefer effortless low-rev pull: Turbo torque from 1,500 rpm lets you accelerate smoothly without constantly revving the engine.',
+          de: 'Du magst mühelosen Durchzug ab Drehzahlkeller: Turbo-Drehmoment ab 1.500/min lässt dich entspannt beschleunigen, ohne hochzudrehen.',
+          ru: 'Тебе нравится тяга с низов: Турбо-момент уже с 1500 об/мин позволяет ускоряться плавно, не выкручивая мотор.'
+        },
+        turboQuietCruise: {
+          en: 'You want a quieter motorway petrol: Taller gearing and smooth 4-cylinder refinement keep cabin noise lower at 130 km/h than the 1.33.',
+          de: 'Du willst einen leiseren Autobahn-Benziner: Länger übersetzt und kultivierter als der 1.33 bleibt er bei 130 km/h deutlich ruhiger.',
+          ru: 'Ты хочешь тихий бензин для трассы: Длинные передачи и мягкая работа делают его заметно тише на 130 км/ч, чем 1.33.'
+        },
+        turboShortTripPenalty: {
+          en: 'You only do 5-minute cold-engine hops: Direct-injection turbos dislike constant short trips, raising carbon buildup and fuel use.',
+          de: 'Du fährst fast nur 5-Minuten-Kurzstrecken: Direkteinspritzer-Turbos mögen ständigen Kaltbetrieb nicht — das erhöht Verbrauch und Verkokung.',
+          ru: 'У тебя одни короткие поездки по 5 минут: Турбомотор с прямым впрыском не любит вечный недогрев — растёт расход и нагар.'
+        },
+        turboHighSpeedFuel: {
+          en: 'You drive hard at high speeds: Push the small 1.2T fast on the Autobahn and real-world consumption climbs quickly past 7.5 L/100 km.',
+          de: 'Du fährst gern Vollgas auf der Autobahn: Forderst du den kleinen 1.2T dauerhaft, klettert der Verbrauch schnell über 7,5 L/100 km.',
+          ru: 'Ты любишь быстро ехать по трассе: Если активно давить на газ, маленький 1.2T быстро выходит за 7,5 л/100 км.'
+        },
+
+        // Diesel Cards (1.4 / 1.6 / 2.0 D-4D)
+        diesel90Economy: {
+          en: 'You rack up steady commuter miles on a budget: Simple 90 HP diesel sips ~4.2–4.8 L/100 km on country roads and costs far less to buy than the Hybrid.',
+          de: 'Du fährst viele Pendel-Kilometer zum Sparpreis: Der simple 90-PS-Diesel begnügt sich mit ca. 4,2–4,8 L/100 km und kostet deutlich weniger als der Hybrid.',
+          ru: 'Ты много ездишь за городом и экономишь бюджет: Простой 90-сильный дизель тратит ~4,2–4,8 л/100 км и стоит заметно дешевле гибрида.'
+        },
+        diesel90SlowHighway: {
+          en: 'You expect punchy highway passing: With 90 HP and 12.5 s to 100 km/h, brisk motorway merges and steep climbs take patience.',
+          de: 'Du erwartest kraftvolle Autobahn-Reserven: Mit 90 PS und 12,5 s auf 100 km/h brauchst du bei schnellen Überholmanövern Geduld.',
+          ru: 'Ты ждёшь бодрых обгонов на трассе: Со 90 л.с. и 12,5 с до 100 км/ч обгоны и затяжные подъёмы требуют терпения.'
+        },
+        dieselHighwayTorque: {
+          en: 'You cover long motorway distances: Strong mid-range torque and relaxed 6-speed gearing let you cruise 130 km/h effortlessly at ~5 L/100 km.',
+          de: 'Du fährst regelmäßig lange Autobahnstrecken: Kräftiger Durchzug und das lange 6-Gang-Getriebe lassen dich mühelos mit ca. 5 L/100 km reisen.',
+          ru: 'Ты регулярно ездишь на дальние расстояния: Уверенная тяга в середине и 6-я передача позволяют легко держать 130 км/ч при ~5 л/100 км.'
+        },
+        dieselTowing: {
+          en: 'You occasionally pull a trailer: Unlike the Hybrid (385 kg), the stronger diesel hauls up to 1,300–1,500 kg braked without breaking a sweat.',
+          de: 'Du ziehst gelegentlich einen Anhänger: Anders als der Hybrid (385 kg) zieht der kräftigere Diesel problemlos 1.300–1.500 kg gebremst.',
+          ru: 'Ты иногда таскаешь прицеп: В отличие от гибрида (385 кг), тяговитый дизель уверенно берёт прицеп до 1300–1500 кг.'
+        },
+        dieselDpfShortTrips: {
+          en: 'You mainly do short city errands: The particulate filter needs regular warm highway runs — constant short trips will trigger DPF warning lights.',
+          de: 'Du fährst fast nur kurze Stadtwege: Der Partikelfilter braucht regelmäßige Warmfahrten — reine Kurzstrecke führt früher oder später zu DPF-Problemen.',
+          ru: 'Ты ездишь только по коротким городским делам: Сажевому фильтру (DPF) нужны регулярные прогревы на трассе, иначе в городе он быстро забьётся.'
+        },
+        dieselUrbanBan: {
+          en: 'You live inside strict diesel-ban cities: Pre-2015 Euro 5 diesels face tightening urban restrictions and slower city resale demand.',
+          de: 'Du wohnst in Städten mit strengen Diesel-Regeln: Euro-5-Diesel vor 2015 unterliegen teils Fahrverboten und verkaufen sich in Großstädten zäher.',
+          ru: 'Ты живёшь в зоне строгих эко-ограничений: Дизели Euro 5 до 2015 года сталкиваются с запретами в ряде городов и ниже спросом на вторичке.'
+        }
+      }
+    },
+    buyerFitGroups: {
+      hybrid: {
+        summary: {
+          en: 'A stress-free, ultra-reliable city & commuter hybrid — built for low running costs, not speed or towing.',
+          de: 'Ein stressfreier, extrem zuverlässiger Stadt- und Pendler-Hybrid — gebaut für niedrige Kosten, nicht für Tempo oder Anhänger.',
+          ru: 'Спокойный и сверхнадёжный городской гибрид — создан для минимальных расходов, а не для гонок или прицепов.'
+        },
+        ideal: ['hybridCity', 'hybridNoWearParts', 'hybridLowTax', 'hybridKeepLong'],
+        skip: ['hybridTowingCap', 'hybridHillDrone', 'compactBoot', 'plainPlastics']
+      },
+      'na-petrol-133': {
+        summary: {
+          en: 'An honest, low-budget city & short-trip hatchback — ultra-simple mechanics, modest highway pace.',
+          de: 'Ein ehrlicher, günstiger Stadt- und Kurzstrecken-Kompakter — extrem simple Technik, gemächliches Autobahntempo.',
+          ru: 'Честный и недорогой городской хэтчбек — максимально простая техника, но без запаса мощности на трассе.'
+        },
+        ideal: ['na133Budget', 'simpleNoTurbo', 'naProvenReliability', 'petrolCityZones'],
+        skip: ['na133SlowOvertake', 'na133HighRevs', 'compactBoot', 'plainPlastics']
+      },
+      'na-petrol-16': {
+        summary: {
+          en: 'A dependable all-rounder with honest 132 HP non-turbo punch — ideal if you want brisk simplicity over hybrid tech.',
+          de: 'Ein zuverlässiger Allrounder mit ehrlichen 132 Sauger-PS — ideal, wenn du flotte Einfachheit statt Hybridtechnik willst.',
+          ru: 'Надёжный универсал со 132 атмосферными силами — отличный выбор, если хочется простой тяги без гибрида и турбины.'
+        },
+        ideal: ['na16BalancedPace', 'simpleNoTurbo', 'naProvenReliability', 'petrolCityZones'],
+        skip: ['na16HigherFuel', 'na16RevOnMotorway', 'compactBoot', 'plainPlastics']
+      },
+      'turbo-petrol': {
+        summary: {
+          en: 'A smooth, quiet modern petrol hatchback — great low-end pull for mixed driving, best kept warm on longer runs.',
+          de: 'Ein ruhiger, moderner Turbo-Benziner — kräftiger Durchzug im Alltag, fühlt sich auf längeren Strecken am wohlsten.',
+          ru: 'Тихий и современный турбо-хэтчбек — приятная тяга с низов на каждый день, но не любит вечно холодных коротких поездок.'
+        },
+        ideal: ['turboLowEndTorque', 'turboQuietCruise', 'toyotaEverydayComfort', 'petrolCityZones'],
+        skip: ['turboShortTripPenalty', 'turboHighSpeedFuel', 'compactBoot', 'plainPlastics']
+      },
+      'small-diesel': {
+        summary: {
+          en: 'A thrifty, simple 90 HP commuter diesel for steady country-road miles — skip it if you stay in city traffic.',
+          de: 'Ein sparsamer, simpler 90-PS-Pendlerdiesel für Überlandstrecken — nichts für reine Stadtfahrer.',
+          ru: 'Экономичный и простой 90-сильный дизель для загородных поездок — не лучший выбор, если не выезжаешь из города.'
+        },
+        ideal: ['diesel90Economy', 'toyotaEverydayComfort', 'cityHatchback', 'dieselTowing'],
+        skip: ['dieselDpfShortTrips', 'diesel90SlowHighway', 'dieselUrbanBan', 'compactBoot']
+      },
+      'highway-diesel': {
+        summary: {
+          en: 'A torquey, long-legged motorway cruiser that sips fuel and pulls trailers — wasted on short city hops.',
+          de: 'Ein durchzugsstarker Langstrecken-Gleiter mit Anhänger-Reserve — auf kurzen Stadtwegen fehl am Platz.',
+          ru: 'Тяговитый трассовый дизель для дальних дорог и прицепа — бессмысленный вариант для коротких городских поездок.'
+        },
+        ideal: ['dieselHighwayTorque', 'dieselTowing', 'toyotaEverydayComfort', 'cityHatchback'],
+        skip: ['dieselDpfShortTrips', 'dieselUrbanBan', 'compactBoot', 'plainPlastics']
+      }
+    },
+    sharedDossiers: {
+      buildQualityRust: {
+        en: {
+          headline: 'Solid Underbody Protection & Long-Lived Suspension',
+          strengths: [
+            'Factory underbody coating and wheel-arch liners protect key sills and floorpans well against winter salt.',
+            'Front MacPherson struts, ball joints, and bushings routinely reach 150,000+ km without premature play.'
+          ],
+          watchouts: [
+            'Surface rust can form on rear subframe welds and exhaust hangers in heavy-salt regions.',
+            'Thin Toyota clearcoat on front bumper and bonnet chips easily on motorway commutes.'
+          ],
+          beforeYouBuy: [
+            'Check rear subframe, sills, and jacking points on a lift for flaking rust.',
+            'Inspect door lower seams and tailgate edge for stone chips.'
+          ]
+        },
+        de: {
+          headline: 'Solider Unterbodenschutz & langlebiges Fahrwerk',
+          strengths: [
+            'Werksseitiger Unterbodenschutz und Radhausschalen schützen Schweller und Bodenblech gut vor Streusalz.',
+            'Vorderachse, Traggelenke und Querlenkerlager erreichen oft problemlos über 150.000 km.'
+          ],
+          watchouts: [
+            'Oberflächenrost kann an hinteren Achsträger-Schweißnähten und Auspuffhaltern auftreten.',
+            'Dünner Klarlack an Frontschürze und Motorhaube neigt zu Steinschlägen.'
+          ],
+          beforeYouBuy: [
+            'Hinteren Achsträger, Schweller und Wagenheberaufnahmen auf Rost prüfen.',
+            'Türkanten und Heckklappe auf Steinschläge kontrollieren.'
+          ]
+        },
+        ru: {
+          headline: 'Хороший антикор днища и выносливая подвеска',
+          strengths: [
+            'Заводская обработка днища и подкрылки надёжно защищают пороги от зимних реагентов.',
+            'Шаровые опоры и сайлентблоки передней подвески спокойно служат 150 000+ км.'
+          ],
+          watchouts: [
+            'Поверхностная ржавчина возможна на сварных швах заднего подрамника и креплениях глушителя.',
+            'Тонкий слой лака на капоте и переднем бампере легко собирает сколы.'
+          ],
+          beforeYouBuy: [
+            'Осмотреть задний подрамник и пороги на подъёмнике.',
+            'Проверить кромки дверей и крышки багажника на наличие сколов.'
+          ]
+        }
+      },
+      interiorQualityFeatures: {
+        en: {
+          headline: 'Ergonomic Physical Controls with Modest Lower Plastics',
+          strengths: [
+            'Separate physical dials and buttons for climate control make adjustments effortless without taking eyes off the road.',
+            'Touch 2 infotainment supports Bluetooth, rear camera, and optional navigation with reliable touch response.'
+          ],
+          watchouts: [
+            'Hard, scratch-prone plastics on lower door cards and centre console; pre-2015 models feel utilitarian.',
+            'Piano-black trim and fabric seat bolsters show wear around 120,000+ km.'
+          ],
+          beforeYouBuy: [
+            'Test all Touch 2 screen zones, Bluetooth pairing, and dual-zone climate flaps.'
+          ]
+        },
+        de: {
+          headline: 'Ergonomische Tastenbedienung bei schlichter Materialwahl',
+          strengths: [
+            'Klare physische Drehregler und Tasten für die Klimaanlage erlauben blinde Bedienung während der Fahrt.',
+            'Toyota Touch 2 bietet solide Bluetooth-Anbindung, Rückfahrkamera und intuitive Grundfunktionen.'
+          ],
+          watchouts: [
+            'Harte, kratzempfindliche Kunststoffe im unteren Türbereich; Vor-Facelift wirkt recht nüchtern.',
+            'Klavierlack-Blenden und Sitzwangen zeigen ab ca. 120.000 km sichtbare Gebrauchsspuren.'
+          ],
+          beforeYouBuy: [
+            'Touch-2-Display, Bluetooth-Verbindung und Klimastellmotoren testen.'
+          ]
+        },
+        ru: {
+          headline: 'Удобная эргономика кнопок при простом пластике',
+          strengths: [
+            'Отдельный блок физических кнопок и ручек климата позволяет управлять им не отвлекаясь от дороги.',
+            'Мультимедиа Touch 2 стабильно работает с Bluetooth и камерой заднего вида.'
+          ],
+          watchouts: [
+            'Жёсткий пластик в нижней части дверей и консоли легко царапается; дорестайлинг выглядит скромно.',
+            'Глянцевые вставки и боковины сидений изнашиваются к 120 000+ км.'
+          ],
+          beforeYouBuy: [
+            'Проверить отклик сенсора Touch 2, Bluetooth и заслонки климат-контроля.'
+          ]
+        }
+      },
+      visibilityManeuverability: {
+        en: {
+          headline: 'Nimble 10.4 m Turning Circle Offset by Thick Rear Pillars',
+          strengths: [
+            'Compact 4.28 m length and tight 10.4 m turning circle make tight city streets and parallel parking easy.',
+            'Standard reverse camera on most mid/high trims compensates well for the high rear window line.'
+          ],
+          watchouts: [
+            'Wide C-pillars and a narrow rear screen create noticeable over-the-shoulder blind spots.',
+            'Rear camera lens sits exposed above the plate and easily collects road grime in wet weather.'
+          ],
+          beforeYouBuy: [
+            'Check that the reverse camera image is crisp and not fogged by moisture.'
+          ]
+        },
+        de: {
+          headline: 'Wendiger 10,4-m-Wendekreis, breite C-Säulen',
+          strengths: [
+            'Kompakte 4,28 m Außenlänge und 10,4 m Wendekreis erleichtern das Rangieren in engen Innenstädten.',
+            'Serienmäßige Rückfahrkamera (ab mittlerer Ausstattung) gleicht die hohe Hecklinie gut aus.'
+          ],
+          watchouts: [
+            'Breite C-Säulen und eine schmale Heckscheibe erzeugen spürbare tote Winkel beim Schulterblick.',
+            'Die Kameralinse verschmutzt bei Regenwetter schnell.'
+          ],
+          beforeYouBuy: [
+            'Prüfen, ob die Rückfahrkamera ein klares Bild liefert und nicht beschlagen ist.'
+          ]
+        },
+        ru: {
+          headline: 'Маневренность в городе при широких задних стойках',
+          strengths: [
+            'Длина 4,28 м и радиус разворота 10,4 м делают парковку и развороты в узких дворах лёгкими.',
+            'Камера заднего вида (в большинстве комплектаций) компенсирует высокую линию багажника.'
+          ],
+          watchouts: [
+            'Широкие задние стойки и узкое стекло ограничивают обзор назад при перестроениях.',
+            'Объектив камеры быстро пачкается в слякоть.'
+          ],
+          beforeYouBuy: [
+            'Проверить чистоту и чёткость изображения камеры заднего вида.'
+          ]
+        }
+      },
+      safetyProtection: {
+        en: {
+          headline: 'Euro NCAP 5-Star Structure with 7 Airbags',
+          strengths: [
+            'Scored 5 stars in Euro NCAP (2013) with 92% adult occupant protection and 7 airbags including driver knee bag.',
+            'Standard VSC stability control, hill-start assist, and ISOFIX anchors; 2015+ facelift added optional Toyota Safety Sense.'
+          ],
+          watchouts: [
+            'Pre-2015 models lack autonomous emergency braking (AEB) and lane-departure warning.',
+            'Blind-spot monitoring was not widely fitted even on mid-level trims.'
+          ],
+          beforeYouBuy: [
+            'Verify no airbag or VSC warning lights stay illuminated on startup.'
+          ]
+        },
+        de: {
+          headline: 'Euro NCAP 5-Sterne-Karosserie mit 7 Airbags',
+          strengths: [
+            '5 Sterne im Euro-NCAP-Crashtest (2013) mit 92 % Insassenschutz und 7 Airbags inkl. Knieairbag.',
+            'Serie mit VSC-ESP und Berganfahrhilfe; ab Facelift 2015 optional mit Toyota Safety Sense (Notbremsassistent).'
+          ],
+          watchouts: [
+            'Vor-Facelift-Modelle vor 2015 besitzen noch keinen automatischen Notbremsassistenten.',
+            'Totwinkel-Assistent ist selbst bei mittleren Ausstattungen selten.'
+          ],
+          beforeYouBuy: [
+            'Kontrollieren, dass beim Start keine Airbag- oder VSC-Warnleuchten anbleiben.'
+          ]
+        },
+        ru: {
+          headline: '5 звёзд Euro NCAP и 7 подушек безопасности',
+          strengths: [
+            '5 звёзд Euro NCAP (2013): 92% защиты взрослых пассажиров и 7 подушек, включая коленную для водителя.',
+            'Система курсовой устойчивости VSC и помощь на подъёме в базе; с 2015 года доступен пакет Safety Sense.'
+          ],
+          watchouts: [
+            'На дорестайлинговых авто (до 2015 г.) нет автоматического экстренного торможения.',
+            'Контроль слепых зон встречается редко даже в средних комплектациях.'
+          ],
+          beforeYouBuy: [
+            'Убедиться, что контрольные лампы подушек и VSC гаснут после запуска.'
+          ]
+        }
+      },
+      passengerSpaceErgonomics: {
+        en: {
+          headline: 'Supportive Front Seats with Average Compact Rear Legroom',
+          strengths: [
+            'Well-bolstered front seats with generous headroom and tilt/telescopic steering adjustment for tall drivers.',
+            'Nearly flat rear floor makes the middle seat usable for short trips.'
+          ],
+          watchouts: [
+            'Rear knee room is tighter than class leaders like Honda Civic or Skoda Octavia behind tall front passengers.',
+            'Sloping roofline slightly reduces rear headroom for adults over 1.85 m.'
+          ],
+          beforeYouBuy: [
+            'Sit in the back behind your own driving position if you regularly carry adult passengers.'
+          ]
+        },
+        de: {
+          headline: 'Bequeme Vordersitze, durchschnittlicher Fond-Platz',
+          strengths: [
+            'Gut geformte Vordersitze mit viel Kopffreiheit und großem Verstellbereich für Lenkrad und Sitz.',
+            'Flacher Mitteltunnel hinten erleichtert das Sitzen auf dem mittleren Platz.'
+          ],
+          watchouts: [
+            'Kniefreiheit im Fond fällt knapper aus als bei Honda Civic oder VW Golf.',
+            'Abgeschwächte Dachlinie begrenzt die Kopffreiheit hinten für Personen über 1,85 m.'
+          ],
+          beforeYouBuy: [
+            'Bei häufiger Nutzung des Fonds die Beinfreiheit hinter der eigenen Sitzposition testen.'
+          ]
+        },
+        ru: {
+          headline: 'Удобная посадка спереди и средний запас сзади',
+          strengths: [
+            'Комфортные передние кресла с хорошей боковой поддержкой и широким диапазоном регулировок руля.',
+            'Практически ровный пол сзади упрощает посадку третьего пассажира.'
+          ],
+          watchouts: [
+            'Запас места для коленей сзади скромнее, чем у Honda Civic или Skoda Octavia.',
+            'Покатая крыша слегка ограничивает запас над головой для пассажиров выше 1,85 м.'
+          ],
+          beforeYouBuy: [
+            'Примериться на заднем ряду «сам за собой», если планируются поездки с взрослыми пассажирами.'
+          ]
+        }
+      },
+      interiorBootSpace: {
+        en: {
+          headline: 'Practical 360 L Dual-Floor Boot (Uncompromised in Hybrid)',
+          strengths: [
+            '360 L boot (1,200 L folded) with a two-level adjustable floor that creates a flat load bay when seats fold.',
+            'Hybrid battery sits under the rear seats, so the Hybrid keeps the exact same 360 L luggage capacity as petrol/diesel.'
+          ],
+          watchouts: [
+            'Smaller overall volume than Honda Civic (477 L) or Touring Sports estate if carrying bulky strollers.',
+            'High load lip requires lifting heavy suitcases slightly over the bumper.'
+          ],
+          beforeYouBuy: [
+            'Check that the removable dual-level boot floor panel is present and unbroken.'
+          ]
+        },
+        de: {
+          headline: 'Praktischer 360-L-Kofferraum (auch im Hybrid voll nutzbar)',
+          strengths: [
+            '360 Liter Volumen (1.200 L umgeklappt) mit doppeltem Ladeboden für eine nahezu ebene Ladefläche.',
+            'Da der Hybrid-Akku unter der Rückbank liegt, verliert der Hybrid keinen Liter Kofferraumvolumen.'
+          ],
+          watchouts: [
+            'Insgesamt kleiner als beim Honda Civic (477 L) — für große Kinderwagen ggf. Kombi (Touring Sports) wählen.',
+            'Deutliche Ladekante erfordert Anheben schwerer Koffer.'
+          ],
+          beforeYouBuy: [
+            'Prüfen, ob der doppelte Ladeboden vollständig und unbeschädigt vorhanden ist.'
+          ]
+        },
+        ru: {
+          headline: 'Практичный багажник 360 л с двухуровневым полом',
+          strengths: [
+            '360 л объёма (1 200 л при сложенных сиденьях) и регулируемый пол, дающий ровную площадку.',
+            'Батарея гибрида размещена под задним сиденьем, поэтому объём багажника такой же, как у бензина/дизеля.'
+          ],
+          watchouts: [
+            'Общий объём меньше, чем у Honda Civic (477 л) — для крупных колясок лучше версия универсал.',
+            'Высокий порог проёма требует приподнимать тяжёлые грузы.'
+          ],
+          beforeYouBuy: [
+            'Проверить наличие и целостность съёмного двухуровневого пола багажника.'
+          ]
+        }
+      },
+      brakingPerformance: {
+        en: {
+          headline: 'All-Round Discs with Natural Pedal Modulation',
+          strengths: [
+            'Linear hydraulic brake pedal without hybrid regenerative blending.',
+            'Good fade resistance and inexpensive pad/disc replacements.'
+          ],
+          watchouts: [
+            'Lacks regenerative braking assist, so pads wear at normal rates in heavy city use.',
+            'Rear caliper slide pins can seize if uncleaned during service.'
+          ]
+        },
+        de: {
+          headline: 'Scheibenbremsen rundum mit direktem Druckpunkt',
+          strengths: [
+            'Natürliches Bremsgefühl und solide Standfestigkeit.',
+            'Günstige Ersatzteilpreise für Scheiben und Beläge.'
+          ],
+          watchouts: [
+            'Ohne Rekuperation normaler Belagverschleiß im Stadtverkehr.',
+            'Hintere Bremssattel-Führungen bei Wartung regelmäßig reinigen.'
+          ]
+        },
+        ru: {
+          headline: 'Дисковые тормоза с понятной обратной связью',
+          strengths: [
+            'Естественное усилие на педали и стабильное торможение.',
+            'Доступная стоимость расходников.'
+          ],
+          watchouts: [
+            'Без рекуперации колодки изнашиваются быстрее, чем у гибрида.',
+            'Важно обслуживать направляющие задних суппортов.'
+          ]
+        }
+      },
+      handlingAgility: {
+        en: {
+          headline: 'Multi-Link Rear Suspension & Balanced Petrol Weight',
+          strengths: [
+            'Pairs the multi-link rear axle with a lighter front end than diesel models.',
+            'Composed cornering and predictable wet-weather balance.'
+          ],
+          watchouts: [
+            'Light electric steering prioritizes comfort over sharp sport-hatch feedback.',
+            'Soft suspension allows moderate body roll in fast corners.'
+          ]
+        },
+        de: {
+          headline: 'Mehrlenker-Hinterachse & ausgewogene Gewichtsverteilung',
+          strengths: [
+            'Nutzt die hochwertigere Mehrlenker-Hinterachse bei leichterem Vorderwagen als beim Diesel.',
+            'Sehr ausgewogenes, sicheres Fahrverhalten.'
+          ],
+          watchouts: [
+            'Leichtgängige Lenkung bietet wenig sportliche Rückmeldung.',
+            'Komfortables Fahrwerk neigt in schnellen Kurven leicht zur Seitenneigung.'
+          ]
+        },
+        ru: {
+          headline: 'Многорычажная подвеска и лёгкий перед',
+          strengths: [
+            'Получает более продвинутую многорычажную заднюю подвеску и лёгкий бензиновый мотор.',
+            'Сбалансированная и предсказуемая управляемость.'
+          ],
+          watchouts: [
+            'Лёгкий руль не даёт спортивной информативности.',
+            'Мягкая подвеска допускает умеренные крены в быстрых виражах.'
+          ]
+        }
+      },
+      payloadTowing: {
+        en: {
+          headline: '440 kg Payload & Strong 1,300 kg Braked Towing',
+          strengths: [
+            '1,300 kg braked towing capacity easily handles utility trailers and small caravans.',
+            '440 kg cabin payload suits family holidays well.'
+          ],
+          watchouts: [
+            'Naturally aspirated torque means hills with a heavy trailer require lower gears and higher RPM.',
+            'Fuel consumption climbs sharply when towing near the 1,300 kg limit.'
+          ]
+        },
+        de: {
+          headline: '440 kg Zuladung & starke 1.300 kg Anhängelast',
+          strengths: [
+            '1.300 kg Anhängelast (gebremst) machen ihn deutlich vielseitiger als den Hybrid.',
+            '440 kg Zuladung bieten gute Reserven für Urlaubsgepäck.'
+          ],
+          watchouts: [
+            'Am Berg mit schwerem Anhänger erfordert der Saugmotor hohe Drehzahlen.',
+            'Verbrauch steigt im Anhängerbetrieb spürbar an.'
+          ]
+        },
+        ru: {
+          headline: 'Нагрузка 440 кг и прицеп до 1300 кг',
+          strengths: [
+            'Разрешена буксировка прицепа с тормозами до 1300 кг — серьёзное преимущество перед гибридом.',
+            'Запас грузоподъёмности 440 кг подходит для семейных поездок.'
+          ],
+          watchouts: [
+            'С тяжёлым прицепом на подъёмах требуется крутить мотор на пониженных передачах.',
+            'Расход топлива заметно возрастает при буксировке.'
+          ]
+        }
+      },
+      depreciationResale: {
+        en: {
+          headline: 'Solid Petrol Resale for Buyers Avoiding Hybrids or Diesels',
+          strengths: [
+            'Appeals to traditional buyers wanting simple petrol power with Toyota reliability.',
+            'Manual models remain popular in regions with low hybrid adoption.'
+          ],
+          watchouts: [
+            'Depreciates slightly faster than the high-demand 1.8 Hybrid.',
+            'Higher fuel use makes buyers favour the 1.8 Hybrid or 1.2T in cities.'
+          ]
+        },
+        de: {
+          headline: 'Solider Wiederverkauf bei Fans klassischer Benziner',
+          strengths: [
+            'Gefragt bei Käufern, die bewusst keinen Diesel und keinen Hybrid möchten.',
+            'Handschalter bleiben auf dem Gebrauchtmarkt beliebt.'
+          ],
+          watchouts: [
+            'Wertverlust etwas höher als beim stark gefragten 1.8 Hybrid.',
+            'Höherer Verbrauch bremst die Nachfrage bei Stadtpendlern.'
+          ]
+        },
+        ru: {
+          headline: 'Хороший спрос среди любителей простых бензиновых авто',
+          strengths: [
+            'Ценится покупателями, ищущими надёжный атмосферник без гибрида и дизеля.',
+            'Версии на механике стабильно востребованы.'
+          ],
+          watchouts: [
+            'Дешевеет быстрее гибрида из-за более высокого расхода топлива.',
+            'В крупных городах уступает по спросу гибриду и 1.2 Turbo.'
+          ]
+        }
+      }
+    },
+    dossierGroups: {
+      'na-petrol': {
+        transmissionDriveline: {
+          en: {
+            headline: 'Simple, Durable 6-Speed Manual Gearbox',
+            strengths: [
+              'Light clutch action and mechanical 6-speed shift linkage with low failure rates.',
+              'Conventional single-mass flywheel keeps clutch replacement inexpensive (~€550–750).'
+            ],
+            watchouts: [
+              'Short gearing helps the 99 hp engine in town but spins at ~3,400 rpm at 120 km/h.',
+              '1st-to-2nd shift can feel slightly notchy when transmission oil is cold.'
+            ],
+            beforeYouBuy: [
+              'Test smooth 1st-to-2nd engagement when cold and check clutch bite point.'
+            ]
+          },
+          de: {
+            headline: 'Einfaches, haltbares 6-Gang-Schaltgetriebe',
+            strengths: [
+              'Leichtgängige Kupplung und zuverlässiges mechanisches 6-Gang-Getriebe.',
+              'Einmassenschwungrad hält einen späteren Kupplungswechsel günstig (ca. 550–750 €).'
+            ],
+            watchouts: [
+              'Kurze Übersetzung hilft in der Stadt, sorgt bei 120 km/h aber für ca. 3.400 U/min.',
+              'Schaltvorgang vom 1. in den 2. Gang kalt mitunter etwas hakelig.'
+            ],
+            beforeYouBuy: [
+              'Sauberes Schalten vom 1. in den 2. Gang im kalten Zustand testen.'
+            ]
+          },
+          ru: {
+            headline: 'Простая и надёжная 6-ступенчатая МКПП',
+            strengths: [
+              'Лёгкое сцепление и выносливая механика без сложных узлов.',
+              'Обычный одномассовый маховик делает замену сцепления недорогой.'
+            ],
+            watchouts: [
+              'Короткие передачи удобны в городе, но на 120 км/ч обороты держатся около 3400 об/мин.',
+              'Переключение 1–2 на холодную может быть слегка тугим.'
+            ]
+          }
+        },
+        electronicsReliability: {
+          en: {
+            headline: 'Minimalist Petrol Electronics with Few Sensors',
+            strengths: [
+              'No high-voltage system, no turbo actuators, and no complex emissions sensors.',
+              'Standard 12V architecture keeps electrical troubleshooting straightforward.'
+            ],
+            watchouts: [
+              'Start-stop batteries (AGM/EFB) cost more when replaced every 5–6 years.',
+              'Weak 12V voltage disables the start-stop system first as an early warning.'
+            ]
+          },
+          de: {
+            headline: 'Schlichte, sehr zuverlässige Benziner-Elektrik',
+            strengths: [
+              'Weder Hochvolt-Technik noch Turbo-Stellmotoren oder komplexe Abgassensoren.',
+              'Klassische 12V-Technik lässt sich von jeder Werkstatt günstig warten.'
+            ],
+            watchouts: [
+              'Start-Stopp-Batterie (EFB/AGM) ist beim Tausch etwas teurer als eine Standardbatterie.',
+              'Schwächelnde Batterie deaktiviert zuerst die Start-Stopp-Funktion.'
+            ]
+          },
+          ru: {
+            headline: 'Простая и безотказная электрика без лишних датчиков',
+            strengths: [
+              'Нет высоковольтной части, актуаторов турбины и сложных датчиков выхлопа.',
+              'Стандартная 12В система легко обслуживается в любом сервисе.'
+            ],
+            watchouts: [
+              'Аккумулятор Start-Stop (EFB/AGM) стоит дороже обычного при замене раз в 5–6 лет.',
+              'При просадке заряда система Start-Stop отключается первой.'
+            ]
+          }
+        },
+        rideNoiseComfort: {
+          en: {
+            headline: 'Quiet City Idle, Busy Engine Note on Motorways',
+            strengths: [
+              'Smooth, vibration-free 4-cylinder idle at traffic lights.',
+              'Quiet and pleasant around town under 70 km/h.'
+            ],
+            watchouts: [
+              'Short 6th gear raises cabin engine noise above 110 km/h on long motorway runs.',
+              'Working the engine hard on hills brings noticeable 4-cylinder buzz.'
+            ]
+          },
+          de: {
+            headline: 'Ruhig im Stadtverkehr, hochtourig auf der Autobahn',
+            strengths: [
+              'Laufruhiger 4-Zylinder ohne Diesel-Nageln im Stadtverkehr.',
+              'Bis 70 km/h angenehm leise.'
+            ],
+            watchouts: [
+              'Durch die kurze Übersetzung ab 110 km/h auf der Autobahn deutlich hörbar.',
+              'Hohe Drehzahlen am Berg erhöhen den Geräuschpegel spürbar.'
+            ]
+          },
+          ru: {
+            headline: 'Тихая работа в городе, шумнее на трассе',
+            strengths: [
+              'Ровный 4-цилиндровый мотор без вибраций на холостом ходу.',
+              'Комфортно тихий в городе до 70 км/ч.'
+            ],
+            watchouts: [
+              'На скоростях выше 110 км/ч высокие обороты добавляют шума в салоне.',
+              'На подъёмах приходится крутить мотор, что слышно в салоне.'
+            ]
+          }
+        },
+        maintenanceRepairCosts: {
+          en: {
+            headline: 'Ultra-Cheap Routine Servicing & Simple Parts',
+            strengths: [
+              'Timing chain, port injection, and no turbo keep annual maintenance bills minimal.',
+              'Inexpensive tyres, brakes, and clutch replacements.'
+            ],
+            watchouts: [
+              'Watch for slight oil consumption on high-mileage 1NR-FE engines if oil intervals were stretched.',
+              'Check dipstick level and inspect service book for regular 15,000 km oil changes.'
+            ],
+            beforeYouBuy: [
+              'Confirm oil level is clean and full on the dipstick before buying.'
+            ]
+          },
+          de: {
+            headline: 'Extrem günstige Wartung ohne Turbo- oder ZMS-Risiken',
+            strengths: [
+              'Steuerkette, Saugrohreinspritzung und kein Turbo halten Werkstattkosten niedrig.',
+              'Günstige Verschleißteile für Bremsen, Reifen und Kupplung.'
+            ],
+            watchouts: [
+              'Bei vernachlässigten Ölwechseln ist leichter Ölverbrauch über 150.000 km möglich.',
+              'Regelmäßige 15.000-km-Ölwechsel sind entscheidend für die Kolbenringe.'
+            ],
+            beforeYouBuy: [
+              'Ölstand prüfen und auf regelmäßige 15.000-km-Ölwechsel achten.'
+            ]
+          },
+          ru: {
+            headline: 'Копеечное ТО без турбины, ТНВД и маховика',
+            strengths: [
+              'Цепь ГРМ и распределённый впрыск сводят регулярные траты к минимуму.',
+              'Недорогие расходники, шины и сцепление.'
+            ],
+            watchouts: [
+              'При затянутых интервалах замены масла возможен небольшой угар после 150 тыс. км.',
+              'Важно соблюдать интервал замены масла не реже 15 000 км.'
+            ],
+            beforeYouBuy: [
+              'Проверить уровень масла и частоту его замены в сервисной книжке.'
+            ]
+          }
+        }
+      },
+      'd4d-diesel': {
+        transmissionDriveline: {
+          en: {
+            headline: 'Robust 6-Speed Manual Built for 310 Nm Torque',
+            strengths: [
+              'Beefy 6-speed gearbox handles highway cruising at relaxed RPM.',
+              'Accurate shift gate and durable gearsets.'
+            ],
+            watchouts: [
+              'Dual-mass flywheel (DMF) and clutch typically wear between 160,000–220,000 km.',
+              'Heavy city stop-and-go accelerates DMF wear.'
+            ],
+            beforeYouBuy: [
+              'Listen for metallic chatter at idle or when depressing the clutch halfway.'
+            ]
+          },
+          de: {
+            headline: 'Kräftiges 6-Gang-Getriebe für 310 Nm Drehmoment',
+            strengths: [
+              'Stabiles Schaltgetriebe mit langer Autobahn-Übersetzung für niedriges Drehzahlniveau.',
+              'Präzise Schaltung und robuste Zahnräder.'
+            ],
+            watchouts: [
+              'Zweimassenschwungrad (ZMS) und Kupplung halten meist 160.000–220.000 km.',
+              'Viel Stadtverkehr verkürzt die Lebensdauer des ZMS.'
+            ],
+            beforeYouBuy: [
+              'Auf Klappern im Leerlauf oder beim leichten Treten des Kupplungspedals achten.'
+            ]
+          },
+          ru: {
+            headline: 'Усиленная 6-МКПП под 310 Н·м крутящего момента',
+            strengths: [
+              'Крепкая коробка передач с длинной 6-й передачей для тихого хода по трассе.',
+              'Чёткое включение передач.'
+            ],
+            watchouts: [
+              'Двухмассовый маховик и сцепление обычно служат 160–220 тыс. км.',
+              'Частые пробки ускоряют износ маховика.'
+            ],
+            beforeYouBuy: [
+              'Послушать, нет ли металлического стука на холостых или при полувыжатом сцеплении.'
+            ]
+          }
+        },
+        electronicsReliability: {
+          en: {
+            headline: 'Simple Diesel Electrics with Fewer Sensors Than 2.0/1.6',
+            strengths: [
+              'Fewer complex swirl-flap and NOx systems than larger Euro 6 diesels.',
+              'Main ECU and wiring harness are well sealed.'
+            ],
+            watchouts: [
+              'Glow plug relay and DPF differential pressure sensor can need attention past 150k km.',
+              'Short-trip DPF clogging can trigger warning lights.'
+            ],
+            beforeYouBuy: [
+              'Scan for stored DPF or glow-plug fault codes before buying.'
+            ]
+          },
+          de: {
+            headline: 'Überschaubare Diesel-Elektrik',
+            strengths: [
+              'Weniger komplexe Abgas-Sensorik als bei großen Euro-6-Dieseln.',
+              'Robuste Steuergeräte und Verkabelung.'
+            ],
+            watchouts: [
+              'Glühkerzen und Differenzdrucksensor können ab ca. 150.000 km fällig werden.',
+              'Kurzstrecken führen schneller zu DPF-Warnmeldungen.'
+            ],
+            beforeYouBuy: [
+              'Fehlerspeicher auf DPF- oder Glühkerzen-Einträge auslesen lassen.'
+            ]
+          },
+          ru: {
+            headline: 'Простая электрика с минимумом дизельных датчиков',
+            strengths: [
+              'Меньше сложных систем очистки выхлопа, чем у более крупных дизелей.',
+              'Надёжная проводка и блок управления.'
+            ],
+            watchouts: [
+              'Свечи накала и датчик давления DPF могут потребовать внимания после 150 тыс. км.',
+              'Короткие поездки провоцируют ошибки по сажевому фильтру.'
+            ],
+            beforeYouBuy: [
+              'Сделать компьютерную диагностику по DPF и свечам накала.'
+            ]
+          }
+        },
+        rideNoiseComfort: {
+          en: {
+            headline: 'Audible Cold Diesel Clatter, Quiet at Steady Cruise',
+            strengths: [
+              'Settles down nicely at 100–120 km/h motorway cruising speeds.',
+              'Compliant suspension handles rough rural roads well.'
+            ],
+            watchouts: [
+              'Distinct 4-cylinder diesel clatter when cold and under city acceleration.',
+              'Noticeable idle vibration compared to petrol and hybrid Auris models.'
+            ]
+          },
+          de: {
+            headline: 'Kalt deutlich als Diesel hörbar, ruhig auf Landstraße',
+            strengths: [
+              'Bei konstant 100–120 km/h angenehm unauffällig.',
+              'Komfortable Federung auf schlechten Landstraßen.'
+            ],
+            watchouts: [
+              'Typisches Diesel-Nageln beim Kaltstart und Beschleunigen in der Stadt.',
+              'Im Leerlauf spürbar mehr Vibrationen als bei Benzinern und Hybrid.'
+            ]
+          },
+          ru: {
+            headline: 'Дизельный рокот на холодную, спокойно на трассе',
+            strengths: [
+              'На ровных 100–120 км/ч двигатель практически не напрягает.',
+              'Комфортная подвеска для загородных дорог.'
+            ],
+            watchouts: [
+              'При холодном запуске и разгоне в городе отчётливо слышен дизельный звук.',
+              'На холостых заметнее вибрации по сравнению с бензином и гибридом.'
+            ]
+          }
+        },
+        maintenanceRepairCosts: {
+          en: {
+            headline: 'Most Affordable Toyota Diesel to Maintain',
+            strengths: [
+              '8-valve SOHC design with timing chain and simpler injectors than larger diesels.',
+              'Routine oil/filter bills are reasonable for a modern turbo-diesel.'
+            ],
+            watchouts: [
+              'Still requires DPF care on longer drives and eventual clutch/DMF checks past 180k km.',
+              'Neglected oil changes can clog the turbo oil feed or DPF.'
+            ],
+            beforeYouBuy: [
+              'Check for DPF warning history and confirm regular 5W-30 low-SAPS oil changes.'
+            ]
+          },
+          de: {
+            headline: 'Günstigster Toyota-Diesel im Unterhalt',
+            strengths: [
+              'Robuster 8-Ventiler mit Steuerkette und einfacherer Technik als größere Diesel.',
+              'Überschaubare Routine-Servicekosten.'
+            ],
+            watchouts: [
+              'Benötigt dennoch regelmäßige Überlandfahrten für den DPF.',
+              'Kupplung/ZMS können jenseits von 180.000 km fällig werden.'
+            ],
+            beforeYouBuy: [
+              'Auf lückenlose Ölwechsel mit aschearmem Öl (C2) und DPF-Status achten.'
+            ]
+          },
+          ru: {
+            headline: 'Самый доступный в обслуживании дизель Toyota',
+            strengths: [
+              'Простой 8-клапанный мотор с цепью ГРМ.',
+              'Умеренная стоимость планового ТО для современного дизеля.'
+            ],
+            watchouts: [
+              'Требует регулярных выездов на трассу для регенерации сажевого фильтра (DPF).',
+              'После 180 тыс. км возможен износ сцепления и маховика.'
+            ],
+            beforeYouBuy: [
+              'Проверить историю регенерации DPF и регулярность замены малозольного масла.'
+            ]
+          }
+        },
+        depreciationResale: {
+          en: {
+            headline: 'Budget Commuter Appeal, Modest Urban Resale',
+            strengths: [
+              'Strong value for high-mileage rural commuters.',
+              'Lower used purchase price than the Hybrid attracts budget diesel buyers.'
+            ],
+            watchouts: [
+              'Urban diesel sentiment softens city resale demand, especially for Euro 5 models.',
+              'Trails the 1.8 Hybrid significantly in resale speed.'
+            ]
+          },
+          de: {
+            headline: 'Günstig für Vielfahrer, schwächere Stadt-Nachfrage',
+            strengths: [
+              'Attraktiver Gebrauchtpreis für Langstrecken-Pendler.',
+              'Beliebt in ländlichen Regionen mit viel Autobahnanteil.'
+            ],
+            watchouts: [
+              'In Großstädten wegen Diesel-Debatte (besonders Euro 5) geringere Nachfrage.',
+              'Deutlich langsamerer Wiederverkauf als beim 1.8 Hybrid.'
+            ]
+          },
+          ru: {
+            headline: 'Выгоден для трассовых пробегов, сдержанный спрос в мегаполисах',
+            strengths: [
+              'Отличный бюджетный вариант для больших загородных пробегов.',
+              'Дешевле гибрида при покупке.'
+            ],
+            watchouts: [
+              'В крупных городах спрос на дизель (особенно Euro 5) снижен.',
+              'Продаётся медленнее, чем 1.8 Hybrid.'
+            ]
+          }
+        }
+      }
+    },
     engines: [
       {
         id: '1.8-hybrid',
+        buyerFitGroup: 'hybrid',
         isDefault: true,
         fuelType: 'hybrid',
         hp: 136,
@@ -107,7 +1101,6 @@ const CAR_ROSTER = [
                 headline: 'Bulletproof Atkinson Hybrid with Virtually Zero Mechanical Wear Parts',
                 strengths: [
                   'Port Fuel Injection (Multi-Point): Fuel continuously washes the back of intake valves, preventing intake carbon buildup common in modern direct-injection engines.',
-                  'Planetary Gear Power-Split Device (e-CVT): No friction clutches, no dual-mass flywheel, no torque converter, and no CVT belts. Two electric motor-generators (MG1/MG2) run in synthetic ATF with near-zero wear.',
                   'Ancillaries Eliminated: No starter motor (cranked by MG1) and no alternator (12V charged via high-voltage DC-DC converter). No serpentine belt tensioners to fail.',
                   'Empirical Reliability: Consistently ranked in TÜV Report top 3% lowest defect rate cohorts; extensively proven in European taxi fleets to comfortably exceed 400,000+ km.'
                 ],
@@ -133,7 +1126,6 @@ const CAR_ROSTER = [
                 headline: 'Unverwüstlicher Atkinson-Hybrid mit minimalem mechanischen Verschleiß',
                 strengths: [
                   'Saugrohreinspritzung (Multi-Point): Kraftstoff spült die Einlassventile kontinuierlich, daher keine Verkokung wie bei Direkteinspritzern.',
-                  'Planetengetriebe (e-CVT): Keine Reibungskupplung, kein Zweimassenschwungrad, kein Drehmomentwandler und keine Schubgliederbänder. Nahezu verschleißfrei in ATF laufend.',
                   'Wegfall anfälliger Anbauteile: Kein klassischer Anlasser (Start über MG1) und keine Lichtmaschine (12V-Ladung über DC-DC-Wandler). Kein Keilrippenriemen-Verschleiß.',
                   'Empirische Dauerhaltbarkeit: Regelmäßig in den Top 3% des TÜV-Reports mit geringster Mängelquote; im Taxibetrieb mit über 400.000 km bewährt.'
                 ],
@@ -159,7 +1151,6 @@ const CAR_ROSTER = [
                 headline: 'Неубиваемый гибрид Аткинсона с минимальным износом механических узлов',
                 strengths: [
                   'Распределённый впрыск (MPI): Бензин постоянно омывает впускные клапаны — полное отсутствие нагара, в отличие от моторов с прямым впрыском.',
-                  'Планетарный редуктор e-CVT: Нет сцепления, двухмассового маховика, гидротрансформатора и ремней вариатора. Износ сведён практически к нулю.',
                   'Нет традиционных узлов износа: Нет стартера (запуск через MG1) и генератора (заряд 12В через DC-DC конвертер от тяговой батареи).',
                   'Подтверждённый ресурс: Входит в топ 3% надёжности отчётов TÜV; проверен в европейских таксопарках с пробегами свыше 400 000–500 000 км.'
                 ],
@@ -189,6 +1180,53 @@ const CAR_ROSTER = [
               en: ['Planetary e-CVT', 'Zero Clutch / Zero DMF'],
               de: ['Planeten-e-CVT', 'Ohne Kupplung & ZMS'],
               ru: ['Планетарная e-CVT', 'Нет сцепления и маховика']
+            },
+            dossier: {
+              en: {
+                headline: 'Wear-Free Planetary e-CVT Power-Split Device',
+                strengths: [
+                  'Uses a single planetary gearset and two electric motor-generators (MG1/MG2) running in synthetic ATF.',
+                  'Zero friction clutches, zero dual-mass flywheel, zero torque converter, and zero push-belts to wear out.'
+                ],
+                watchouts: [
+                  'Under hard uphill throttle, engine RPM rises independently of road speed ("rubber-band" feel).',
+                  'Not designed for heavy towing; transaxle fluid refresh every 60,000–90,000 km keeps bearings pristine.'
+                ],
+                beforeYouBuy: [
+                  'Verify smooth, jerk-free creep in Drive and Reverse.',
+                  'Confirm ATF transaxle fluid has been refreshed if mileage exceeds 100,000 km.'
+                ]
+              },
+              de: {
+                headline: 'Verschleißfreies Planeten-e-CVT ohne Kupplung & ZMS',
+                strengths: [
+                  'Kombiniert ein einfaches Planetengetriebe mit zwei Elektromotoren (MG1/MG2) im synthetischen Ölbad.',
+                  'Keine Reibungskupplung, kein Zweimassenschwungrad, kein Wandler und kein Schubgliederband.'
+                ],
+                watchouts: [
+                  'Bei Vollgas am Berg dreht der Motor akustisch spürbar vor der Beschleunigung hoch ("Gummiband-Effekt").',
+                  'Getriebeölwechsel alle 60.000–90.000 km empfohlen, obwohl Toyota es oft als Lifetime führt.'
+                ],
+                beforeYouBuy: [
+                  'Auf ruckfreies Anrollen in D und R sowie saubere Schaltübergänge achten.',
+                  'Bei über 100.000 km nach erfolgtem e-CVT-Ölwechsel fragen.'
+                ]
+              },
+              ru: {
+                headline: 'Вечный планетарный редуктор e-CVT без сцепления',
+                strengths: [
+                  'Простой планетарный ряд и два электромотора (MG1/MG2) работают в масляной ванне практически без трения.',
+                  'Нет сцепления, двухмассового маховика, гидротрансформатора и ремней вариатора.'
+                ],
+                watchouts: [
+                  'При резком газе в гору обороты держатся высокими независимо от скорости (эффект вариатора).',
+                  'Замена масла в трансмиссии каждые 60–90 тыс. км продлевает ресурс подшипников.'
+                ],
+                beforeYouBuy: [
+                  'Проверить плавное трогание в D и R без толчков и постороннего гула.',
+                  'Уточнить историю замены масла e-CVT при пробеге свыше 100 000 км.'
+                ]
+              }
             }
           },
           buildQualityRust: {
@@ -205,6 +1243,50 @@ const CAR_ROSTER = [
               en: ['No Starter / No Alternator', 'Bulletproof Hybrid Inverter'],
               de: ['Kein Anlasser / Generator', 'Robuster Hybrid-Inverter'],
               ru: ['Нет стартера и генератора', 'Надёжный инвертор гибрида']
+            },
+            dossier: {
+              en: {
+                headline: 'Simplified High-Voltage Architecture Without Starter or Alternator',
+                strengths: [
+                  'Eliminates 12V starter motor and belt-driven alternator; MG1 cranks the engine and DC-DC converter charges 12V.',
+                  'Proven Toyota inverter and ECU modules rarely fail when cooling circuits are maintained.'
+                ],
+                watchouts: [
+                  'A weak small 12V auxiliary battery (every 5–7 years) prevents the hybrid computer from booting.',
+                  'Inverter coolant pump can age past 180,000 km if coolant is neglected.'
+                ],
+                beforeYouBuy: [
+                  'Check 12V battery age and ask for the official Toyota Hybrid Health Check printout.'
+                ]
+              },
+              de: {
+                headline: 'Robuste Hybrid-Elektronik ohne Anlasser & Lichtmaschine',
+                strengths: [
+                  'Kein klassischer 12V-Anlasser und keine Lichtmaschine — MG1 startet den Motor, der Inverter lädt die 12V-Batterie.',
+                  'Inverter und Steuergeräte gelten bei gewartetem Kühlkreislauf als extrem ausfallsicher.'
+                ],
+                watchouts: [
+                  'Eine schwache 12V-Hilfsbatterie (alle 5–7 Jahre) verhindert das Hochfahren des Hybridsystems.',
+                  'Inverter-Wasserpumpe sollte bei sehr hohen Laufleistungen (>180.000 km) geprüft werden.'
+                ],
+                beforeYouBuy: [
+                  'Alter der 12V-Batterie prüfen und Hybrid-Check-Protokoll zeigen lassen.'
+                ]
+              },
+              ru: {
+                headline: 'Надёжная электроника без стартера и генератора',
+                strengths: [
+                  'Отсутствуют обычный стартер и генератор — запуск идёт через MG1, а заряд 12В через DC-DC инвертор.',
+                  'Инвертор и блоки управления очень надёжны при своевременном обслуживании охлаждения.'
+                ],
+                watchouts: [
+                  'Севший 12В аккумулятор (раз в 5–7 лет) блокирует запуск гибридной системы.',
+                  'Помпа охлаждения инвертора требует внимания при пробегах свыше 180 000 км.'
+                ],
+                beforeYouBuy: [
+                  'Проверить возраст 12В АКБ и попросить отчёт диагностики гибридной системы.'
+                ]
+              }
             }
           },
           rideNoiseComfort: {
@@ -213,6 +1295,41 @@ const CAR_ROSTER = [
               en: ['Silent EV City Gliding', 'CVT Rev Drone Under Hard Gas'],
               de: ['Lautlos im EV-Stadtbetrieb', 'Aufheulen unter Volllast'],
               ru: ['Тихая езда в городе на EV', 'Гул мотора при резком газе']
+            },
+            dossier: {
+              en: {
+                headline: 'Whisper-Quiet City EV Gliding, Audible Drone Under Load',
+                strengths: [
+                  'Near-silent electric crawling and smooth start-stop transitions in urban traffic.',
+                  'Supple suspension tuning absorbs broken city tarmac comfortably.'
+                ],
+                watchouts: [
+                  'Engine revs stay high and audible during motorway merges or steep mountain climbs.',
+                  'Wind and tyre roar become noticeable above 120 km/h on coarse asphalt.'
+                ]
+              },
+              de: {
+                headline: 'Flüsterleise in der Stadt, hörbar unter Volllast',
+                strengths: [
+                  'Nahezu lautloses elektrisches Gleiten im Stadtverkehr mit unmerklichen Motorstarts.',
+                  'Komfortabel abgestimmtes Fahrwerk bügelt schlechte Stadtstraßen sauber weg.'
+                ],
+                watchouts: [
+                  'Beim starken Beschleunigen oder am Berg bleibt die Motordrehzahl hörbar hoch.',
+                  'Wind- und Abrollgeräusche nehmen ab 120 km/h spürbar zu.'
+                ]
+              },
+              ru: {
+                headline: 'Тишина электротяги в городе и гул под нагрузкой',
+                strengths: [
+                  'Бесшумное движение на электротяге в пробках и незаметный запуск ДВС.',
+                  'Мягкая энергоёмкая подвеска комфортно отрабатывает неровности города.'
+                ],
+                watchouts: [
+                  'При резком обгоне или подъёме мотор громко держит высокие обороты.',
+                  'После 120 км/ч усиливается шум шин и ветра.'
+                ]
+              }
             }
           },
           interiorQualityFeatures: {
@@ -261,6 +1378,41 @@ const CAR_ROSTER = [
               en: ['425 kg Payload', '385 / 385 kg Towing'],
               de: ['425 kg Zuladung', '385 / 385 kg Zuglast'],
               ru: ['Нагрузка 425 кг', 'Прицеп: 385 / 385 кг']
+            },
+            dossier: {
+              en: {
+                headline: '425 kg Cabin Payload, Strictly Limited to 385 kg Towing',
+                strengths: [
+                  '425 kg payload handles four adults and weekend luggage comfortably.',
+                  'Towbar can still mount a 2-bike carrier for recreational use.'
+                ],
+                watchouts: [
+                  '385 kg max braked/unbraked towing limit rules out caravans and heavy utility trailers.',
+                  'Confirm towbar nose-weight rating if fitting a bike rack.'
+                ]
+              },
+              de: {
+                headline: '425 kg Zuladung, aber nur 385 kg Anhängelast',
+                strengths: [
+                  '425 kg Zuladung reichen problemlos für vier Erwachsene plus Gepäck.',
+                  'Anhängerkupplung eignet sich gut als Träger für bis zu zwei Fahrräder.'
+                ],
+                watchouts: [
+                  'Maximal 385 kg Anhängelast (gebremst/ungebremst) schließen Wohnwagen und schwere Anhänger aus.',
+                  'Stützlast prüfen, falls ein Fahrradträger montiert werden soll.'
+                ]
+              },
+              ru: {
+                headline: 'Запас нагрузки 425 кг при лимите прицепа 385 кг',
+                strengths: [
+                  'Грузоподъёмности 425 кг хватает для четырёх взрослых с багажом.',
+                  'Фаркоп отлично подходит для установки велобагажника.'
+                ],
+                watchouts: [
+                  'Ограничение буксировки 385 кг исключает перевозку тяжёлых прицепов и автодомов.',
+                  'Уточнить допустимую вертикальную нагрузку при установке велокрепления.'
+                ]
+              }
             }
           },
           accelerationOvertaking: {
@@ -285,6 +1437,41 @@ const CAR_ROSTER = [
               en: ['Multi-Link Rear + Low Battery CG', 'Comfort Tune • Safe Wet Grip'],
               de: ['Mehrlenkerachse + tiefer Schwerpunkt', 'Sichere Nässe-Traktion'],
               ru: ['Многорычажка + низкий центр тяжести', 'Предсказуемая курсовая тяга']
+            },
+            dossier: {
+              en: {
+                headline: 'Multi-Link Rear Suspension & Low Battery Centre of Gravity',
+                strengths: [
+                  'Hybrid uses a sophisticated multi-link rear axle plus low-mounted battery weight.',
+                  'Very composed, predictable wet-weather grip and stable motorway tracking.'
+                ],
+                watchouts: [
+                  'Light, numb electric steering prioritizes ease of parking over sporty feedback.',
+                  'Eco-focused tyres trade ultimate cornering grip for lower rolling resistance.'
+                ]
+              },
+              de: {
+                headline: 'Mehrlenker-Hinterachse & tiefer Akku-Schwerpunkt',
+                strengths: [
+                  'Der Hybrid besitzt eine aufwendige Mehrlenker-Hinterachse und einen tiefen Schwerpunkt durch den Akku.',
+                  'Sehr ruhiges, sicheres Fahrverhalten bei Nässe und hohem Autobahntempo.'
+                ],
+                watchouts: [
+                  'Leichtgängige Lenkung bietet wenig sportliche Rückmeldung.',
+                  'Spritsparreifen begrenzen den maximalen Kurvengrip.'
+                ]
+              },
+              ru: {
+                headline: 'Многорычажка сзади и низкий центр тяжести',
+                strengths: [
+                  'Гибрид оснащён многорычажной задней подвеской, а батарея снижает центр тяжести.',
+                  'Устойчивое и предсказуемое поведение на мокрой дороге и трассе.'
+                ],
+                watchouts: [
+                  'Лёгкий руль настроен на городской комфорт, а не на острую обратную связь.',
+                  'Экономичные шины ограничивают предел сцепления в быстрых поворотах.'
+                ]
+              }
             }
           },
           brakingPerformance: {
@@ -293,6 +1480,50 @@ const CAR_ROSTER = [
               en: ['100–0 km/h: 36.2 m', 'All-Round Discs • Regen Assist'],
               de: ['100–0 km/h: 36,2 m', 'Scheibenbremsen • Rekuperation'],
               ru: ['100–0 км/ч: 36,2 м', 'Дисковые тормоза • Рекуперация']
+            },
+            dossier: {
+              en: {
+                headline: '36.2 m Stopping Power with Regenerative Pad Preservation',
+                strengths: [
+                  'All-round disc brakes deliver solid 36.2 m (100–0 km/h) stops.',
+                  'Regenerative braking handles most gentle slowing, allowing pads to last 100,000+ km.'
+                ],
+                watchouts: [
+                  'Rear brake discs frequently develop surface rust from light mechanical use.',
+                  'Brake pedal feel transitions slightly as regen hands over to friction pads.'
+                ],
+                beforeYouBuy: [
+                  'Inspect rear disc faces for deep pitting or rust ridges before buying.'
+                ]
+              },
+              de: {
+                headline: '36,2 m Bremsweg — Rekuperation schont Beläge extrem',
+                strengths: [
+                  'Rundherum Scheibenbremsen mit soliden 36,2 m Bremsweg aus 100 km/h.',
+                  'Rekuperation übernimmt den Großteil leichter Bremsungen — Beläge halten oft über 100.000 km.'
+                ],
+                watchouts: [
+                  'Hintere Bremsscheiben setzen durch geringe Beanspruchung häufig Rost an.',
+                  'Leicht synthetisches Pedalgefühl am Übergang zur Reibungsbremse.'
+                ],
+                beforeYouBuy: [
+                  'Hintere Bremsscheiben auf Rostränder und Riefen prüfen.'
+                ]
+              },
+              ru: {
+                headline: 'Тормозной путь 36,2 м и огромный ресурс колодок',
+                strengths: [
+                  'Дисковые тормоза по кругу обеспечивают уверенную остановку (36,2 м со 100 км/ч).',
+                  'Рекуперация берёт на себя большую часть замедлений — колодки ходят 100 000+ км.'
+                ],
+                watchouts: [
+                  'Задние тормозные диски часто ржавеют из-за редкого механического износа.',
+                  'Лёгкая искусственность педали при переходе от рекуперации к колодкам.'
+                ],
+                beforeYouBuy: [
+                  'Осмотреть задние диски на наличие глубокой коррозии перед покупкой.'
+                ]
+              }
             }
           },
           efficiencyFuel: {
@@ -317,6 +1548,50 @@ const CAR_ROSTER = [
               en: ['Regen Saves Brake Discs/Pads', 'Zero Clutch, Starter Or Belt'],
               de: ['Rekuperation schont Bremsen', 'Keine Kupplung, Anlasser, ZMS'],
               ru: ['Рекуперация бережёт колодки', 'Нет сцепления и стартера']
+            },
+            dossier: {
+              en: {
+                headline: 'Low Routine Bills — Zero Clutch, Belts, or Turbo Repairs',
+                strengths: [
+                  'Annual oil and filter service is simple and affordable; brakes and tyres last unusually long.',
+                  'No dual-mass flywheel, clutch, turbocharger, DPF, or starter motor bills over 250,000 km.'
+                ],
+                watchouts: [
+                  'Main mid/long-term preventative costs are 150k km EGR cleaning and eventual 12V or HV battery refresh.',
+                  'Hybrid battery fan duct cleaning is essential to prevent premature cell heat wear.'
+                ],
+                beforeYouBuy: [
+                  'Verify yearly Toyota service stamps to keep 15-year Relax warranty eligibility (where offered).'
+                ]
+              },
+              de: {
+                headline: 'Günstiger Unterhalt ohne Kupplungs-, Turbo- oder DPF-Kosten',
+                strengths: [
+                  'Jährliche Ölwechsel sind günstig; Bremsen und Reifen verschleißen extrem langsam.',
+                  'Keine teuren Reparaturen an Kupplung, ZMS, Turbolader, Partikelfilter oder Anlasser.'
+                ],
+                watchouts: [
+                  'Größere Posten im Alter: AGR-Reinigung (~150 Tkm) und irgendwann 12V- oder Hybrid-Akku.',
+                  'Reinigung des Batterie-Lüftergitters verhindert vorzeitige Hitzealterung der Zellen.'
+                ],
+                beforeYouBuy: [
+                  'Lückenloses Toyota-Scheckheft sichert oft die bis zu 15-jährige Relax-Garantie.'
+                ]
+              },
+              ru: {
+                headline: 'Низкие затраты без сцепления, турбины и сажевого фильтра',
+                strengths: [
+                  'Простое и недорогое годовое ТО; тормоза и шины изнашиваются медленно.',
+                  'Исключены расходы на сцепление, маховик, турбину, DPF и стартер.'
+                ],
+                watchouts: [
+                  'Основные вложения с пробегом: чистка EGR (~150 тыс. км) и обслуживание батареи со временем.',
+                  'Необходима периодическая очистка канала охлаждения тяговой батареи.'
+                ],
+                beforeYouBuy: [
+                  'Проверить регулярность ТО у дилера для сохранения расширенной гарантии.'
+                ]
+              }
             }
           },
           depreciationResale: {
@@ -325,13 +1600,50 @@ const CAR_ROSTER = [
               en: ['High Hybrid Demand', '15-Yr Relax Warranty'],
               de: ['Hohe Hybrid-Nachfrage', '15 J. Relax-Garantie'],
               ru: ['Высокий спрос б/у', 'Гарантия Relax 15 лет']
+            },
+            dossier: {
+              en: {
+                headline: 'Top-Tier Hybrid Resale Demand & Slow Value Drop',
+                strengths: [
+                  'Strong used-market demand for proven Toyota hybrids keeps resale prices firm.',
+                  'Toyota Relax service-activated warranty (up to 15 years) boosts buyer confidence on older examples.'
+                ],
+                watchouts: [
+                  'Higher upfront used purchase price compared to petrol or diesel Auris equivalents.',
+                  'Cars lacking hybrid battery health history sell noticeably slower.'
+                ]
+              },
+              de: {
+                headline: 'Sehr hohe Gebrauchtwagen-Nachfrage & stabiler Restwert',
+                strengths: [
+                  'Große Beliebtheit als sparsamer, haltbarer Gebrauchtwagen hält den Wiederverkaufswert hoch.',
+                  'Service-aktivierte Toyota-Relax-Garantie (bis 15 Jahre) steigert das Käufervertrauen enorm.'
+                ],
+                watchouts: [
+                  'Höherer Gebrauchtwagen-Einstiegspreis als bei Benzin- oder Diesel-Varianten.',
+                  'Fahrzeuge ohne nachweisbaren Hybrid-Check erzielen deutlich schwächere Preise.'
+                ]
+              },
+              ru: {
+                headline: 'Высокая ликвидность и медленная потеря цены',
+                strengths: [
+                  'Надёжные гибриды Toyota пользуются стабильно высоким спросом на вторичном рынке.',
+                  'Продлеваемая гарантия Toyota Relax (до 15 лет) повышает цену и доверие покупателей.'
+                ],
+                watchouts: [
+                  'Более высокая цена покупки на вторичке по сравнению с бензином и дизелем.',
+                  'Автомобили без подтверждённого теста батареи продаются сложнее.'
+                ]
+              }
             }
           }
         }
       },
       {
         id: '1.33-dual-vvti',
+        buyerFitGroup: 'na-petrol-133',
         isDefault: false,
+        dossierGroup: 'na-petrol',
         fuelType: 'petrol',
         hp: 99,
         shortTitle: 'AURIS 1.33 DUAL VVT-i',
@@ -578,6 +1890,41 @@ const CAR_ROSTER = [
               en: ['485 kg Payload', '450 / 1,000 kg Towing'],
               de: ['485 kg Zuladung', '450 / 1.000 kg Zuglast'],
               ru: ['Нагрузка 485 кг', 'Прицеп: 450 / 1 000 кг']
+            },
+            dossier: {
+              en: {
+                headline: '440 kg Payload & 1,000 kg Braked Towing',
+                strengths: [
+                  'Lighter kerb weight frees up slightly more cabin payload than the Hybrid.',
+                  '1,000 kg braked towing capacity handles small utility or garden trailers.'
+                ],
+                watchouts: [
+                  '99 hp and 128 Nm struggle on steep hills when towing near the limit.',
+                  'Fully loaded family trips noticeably blunt acceleration.'
+                ]
+              },
+              de: {
+                headline: '440 kg Zuladung & 1.000 kg Anhängelast',
+                strengths: [
+                  'Geringeres Leergewicht ermöglicht 440 kg Zuladung.',
+                  '1.000 kg Anhängelast (gebremst) reichen für kleine Transport- oder Gartenanhänger.'
+                ],
+                watchouts: [
+                  'Mit 99 PS am Berg mit Anhänger spürbar gefordert.',
+                  'Voll beladen lässt der Durchzug deutlich nach.'
+                ]
+              },
+              ru: {
+                headline: 'Нагрузка 440 кг и прицеп до 1000 кг',
+                strengths: [
+                  'Меньшая снаряжённая масса даёт запас грузоподъёмности 440 кг.',
+                  'Разрешена буксировка прицепа с тормозами до 1000 кг для бытовых задач.'
+                ],
+                watchouts: [
+                  'При полной загрузке или с прицепом на подъёмах мощности 99 л.с. впритык.',
+                  'Обгоны с полной загрузкой требуют длинной прямой.'
+                ]
+              }
             }
           },
           accelerationOvertaking: {
@@ -602,6 +1949,41 @@ const CAR_ROSTER = [
               en: ['Predictable Body Control', 'Light Urban FWD Handling'],
               de: ['Vorhersehbares Fahrverhalten', 'Handlich im Stadtverkehr'],
               ru: ['Предсказуемое шасси', 'Лёгкая рулёжка в городе']
+            },
+            dossier: {
+              en: {
+                headline: 'Light Front Nose, Simpler Torsion-Beam Rear Axle',
+                strengths: [
+                  'Lighter 1.33 engine gives nimble front turn-in at city speeds.',
+                  'Safe, predictable understeer balance for everyday driving.'
+                ],
+                watchouts: [
+                  'Uses a torsion-beam rear axle rather than the multi-link setup on higher-power trims.',
+                  'Slightly firmer, bouncier rear ride over sharp mid-corner bumps.'
+                ]
+              },
+              de: {
+                headline: 'Leichte Front, einfache Verbundlenker-Hinterachse',
+                strengths: [
+                  'Geringes Motorgewicht macht die Vorderachse handlich in der Stadt.',
+                  'Sicheres, gutmütiges Fahrverhalten.'
+                ],
+                watchouts: [
+                  'Verbundlenkerachse hinten ist auf unebenen Kurven etwas straffer als die Mehrlenkerachse.',
+                  'Bei Querfugen spürbar unruhiger als der Hybrid.'
+                ]
+              },
+              ru: {
+                headline: 'Лёгкий передок и простая задняя балка',
+                strengths: [
+                  'Небольшой вес двигателя делает переднюю ось лёгкой в поворотах.',
+                  'Предсказуемая и безопасная настройка шасси.'
+                ],
+                watchouts: [
+                  'Сзади установлена полузависимая балка (в отличие от многорычажки у старших версий).',
+                  'На неровностях в повороте корма отрабатывает жёстче.'
+                ]
+              }
             }
           },
           brakingPerformance: {
@@ -648,7 +2030,9 @@ const CAR_ROSTER = [
       },
       {
         id: '1.6-valvematic',
+        buyerFitGroup: 'na-petrol-16',
         isDefault: false,
+        dossierGroup: 'na-petrol',
         fuelType: 'petrol',
         hp: 132,
         shortTitle: 'AURIS 1.6 VALVEMATIC',
@@ -817,6 +2201,47 @@ const CAR_ROSTER = [
               en: ['Smooth 6-Speed Manual', 'Low 160 Nm Gearbox Stress'],
               de: ['Sauberes 6-Gang-Getriebe', 'Geringe Last bei 160 Nm'],
               ru: ['Чёткая 6-ступ. МКПП', 'Низкая нагрузка (160 Н·м)']
+            },
+            dossier: {
+              en: {
+                headline: 'Crisp 6-Speed Manual (Optional Multidrive S CVT)',
+                strengths: [
+                  '6-speed manual offers positive throws and reliable synchros.',
+                  'Conventional flywheel keeps manual clutch service affordable.'
+                ],
+                watchouts: [
+                  'Optional Multidrive S CVT is smooth in town but needs fluid changes every 60,000 km to avoid belt wear.',
+                  'Manual is noticeably more durable past 180,000 km than the CVT.'
+                ],
+                beforeYouBuy: [
+                  'Prefer the 6-speed manual; if buying Multidrive S CVT, verify transmission fluid service records.'
+                ]
+              },
+              de: {
+                headline: 'Präzises 6-Gang-Schaltgetriebe (optional Multidrive S)',
+                strengths: [
+                  '6-Gang-Schaltgetriebe schaltet sauber und hält bei normaler Fahrweise extrem lange.',
+                  'Günstiger Kupplungstausch dank klassischem Schwungrad.'
+                ],
+                watchouts: [
+                  'Optionale Multidrive-S-Automatik erfordert regelmäßige Ölwechsel alle 60.000 km.',
+                  'Handschalter ist jenseits von 180.000 km klar langlebiger.'
+                ],
+                beforeYouBuy: [
+                  'Für maximale Haltbarkeit Handschalter bevorzugen; bei Multidrive S Ölwechselbelege prüfen.'
+                ]
+              },
+              ru: {
+                headline: 'Чёткая 6-МКПП (или опциональный вариатор Multidrive S)',
+                strengths: [
+                  'Механическая 6-ступенчатая коробка отличается чётким ходом и высоким ресурсом.',
+                  'Недорогое обслуживание сцепления.'
+                ],
+                watchouts: [
+                  'Вариатор Multidrive S требует замены масла каждые 60 000 км и дороже в ремонте.',
+                  'На больших пробегах механика заметно надёжнее.'
+                ]
+              }
             }
           },
           buildQualityRust: {
@@ -833,6 +2258,50 @@ const CAR_ROSTER = [
               en: ['Proven Denso Electronics', 'Reliable Valvematic ECU'],
               de: ['Bewährte Denso-Elektronik', 'Zuverlässiges Steuergerät'],
               ru: ['Надёжная электрика Denso', 'Стабильная работа ЭБУ']
+            },
+            dossier: {
+              en: {
+                headline: 'Proven Toyota Petrol Electrics (Watch Valvematic Actuator)',
+                strengths: [
+                  'Straightforward 12V architecture without high-voltage components.',
+                  'Standard sensors and coils are widely available and inexpensive.'
+                ],
+                watchouts: [
+                  'Valvematic variable-lift controller (1ZR-FAE) is generally reliable, though costly if it fails past 180k km.',
+                  'Faulty Valvematic unit triggers limp mode and check-engine light.'
+                ],
+                beforeYouBuy: [
+                  'Verify smooth idle and zero engine warning lights during a cold-to-warm test drive.'
+                ]
+              },
+              de: {
+                headline: 'Solide Elektrik (Valvematic-Stellmotor beachten)',
+                strengths: [
+                  'Unkomplizierte 12V-Bordelektrik ohne Hochvolt-Technik.',
+                  'Günstige und weit verbreitete Standard-Sensoren.'
+                ],
+                watchouts: [
+                  'Valvematic-Ventilhubsteuerung ist meist haltbar, bei Defekt im hohen Alter aber kostspielig.',
+                  'Ein Defekt führt sofort zu Notlauf und Motorkontrollleuchte.'
+                ],
+                beforeYouBuy: [
+                  'Auf ruhigen Leerlauf und fehlerfreien Warmfahrtest achten.'
+                ]
+              },
+              ru: {
+                headline: 'Надёжная электрика (проверять блок Valvematic)',
+                strengths: [
+                  'Классическая 12В электрика без сложных высоковольтных систем.',
+                  'Доступные датчики и катушки зажигания.'
+                ],
+                watchouts: [
+                  'Контроллер подъёма клапанов Valvematic обычно надёжен, но дорог при редких отказах после 180 тыс. км.',
+                  'При сбое блока мотор переходит в аварийный режим.'
+                ],
+                beforeYouBuy: [
+                  'Проверить ровный холостой ход и отсутствие ошибок на приборной панели.'
+                ]
+              }
             }
           },
           rideNoiseComfort: {
@@ -959,7 +2428,9 @@ const CAR_ROSTER = [
       },
       {
         id: '1.4-d4d',
+        buyerFitGroup: 'small-diesel',
         isDefault: false,
+        dossierGroup: 'd4d-diesel',
         fuelType: 'diesel',
         hp: 90,
         shortTitle: 'AURIS 1.4 D-4D',
@@ -1131,6 +2602,47 @@ const CAR_ROSTER = [
               en: ['Durable 6-Speed Manual', 'No Dual-Mass Flywheel'],
               de: ['Robustes 6-Gang-Getriebe', 'Kein ZMS-Verschleiß'],
               ru: ['Надёжная 6-МКПП', 'Без двухмассового маховика']
+            },
+            dossier: {
+              en: {
+                headline: 'Light 6-Speed Manual (Avoid Early MMT Automated Manual)',
+                strengths: [
+                  '6-speed manual shifts cleanly and handles the 1.4 diesel torque comfortably.',
+                  'Clutch and single/dual-mass components last well under normal highway use.'
+                ],
+                watchouts: [
+                  'Avoid the rare MultiMode (MMT) automated manual — jerky shifts and actuator wear.',
+                  'Test clutch bite and smooth gear engagement across all 6 ratios.'
+                ],
+                beforeYouBuy: [
+                  'Confirm it is a true 6-speed manual and check clutch release smoothness.'
+                ]
+              },
+              de: {
+                headline: 'Solides 6-Gang-Schaltgetriebe (MMT-Automatik meiden)',
+                strengths: [
+                  'Das 6-Gang-Schaltgetriebe passt sehr gut zum sparsamen 1.4 D-4D.',
+                  'Lange Haltbarkeit bei moderater Überlandnutzung.'
+                ],
+                watchouts: [
+                  'Seltenes MultiMode-(MMT-)Automatikgetriebe meiden — neigt zu Ruckeln und Aktuator-Verschleiß.',
+                  'Kupplung und alle 6 Gänge sauber durchschalten.'
+                ],
+                beforeYouBuy: [
+                  'Echten 6-Gang-Handschalter wählen und Druckpunkt der Kupplung prüfen.'
+                ]
+              },
+              ru: {
+                headline: 'Надёжная 6-МКПП (избегать робота MMT)',
+                strengths: [
+                  'Механическая 6-ступенчатая коробка работает чётко и без проблем переваривает тягу 1.4.',
+                  'Хороший ресурс при спокойной трассовой эксплуатации.'
+                ],
+                watchouts: [
+                  'Редкий робот MultiMode (MMT) лучше обходить стороной из-за рывков и износа актуатора.',
+                  'Проверить чёткость включения всех 6 передач и плавность сцепления.'
+                ]
+              }
             }
           },
           buildQualityRust: {
@@ -1203,6 +2715,41 @@ const CAR_ROSTER = [
               en: ['505 kg Payload', '450 / 1,000 kg Towing'],
               de: ['505 kg Zuladung', '450 / 1.000 kg Zuglast'],
               ru: ['Нагрузка 505 кг', 'Прицеп: 450 / 1 000 кг']
+            },
+            dossier: {
+              en: {
+                headline: '440 kg Payload & 1,000 kg Braked Towing',
+                strengths: [
+                  '205 Nm low-end torque pulls light trailers more easily than the 1.33 petrol.',
+                  '440 kg payload handles family trips well.'
+                ],
+                watchouts: [
+                  '1,000 kg braked towing limit is lower than the 1.6/2.0 Auris models.',
+                  '90 hp runs out of steam on long motorway climbs with a trailer.'
+                ]
+              },
+              de: {
+                headline: '440 kg Zuladung & 1.000 kg Anhängelast',
+                strengths: [
+                  '205 Nm Drehmoment ziehen kleine Anhänger entspannter als der 1.33 Benziner.',
+                  '440 kg Zuladung für den Familienalltag.'
+                ],
+                watchouts: [
+                  '1.000 kg Anhängelast liegen unter den stärkeren 1.6/2.0-Modellen.',
+                  'Mit 90 PS am langen Berg mit Anhänger spürbar gefordert.'
+                ]
+              },
+              ru: {
+                headline: 'Нагрузка 440 кг и прицеп до 1000 кг',
+                strengths: [
+                  'Крутящий момент 205 Н·м уверенно тянет лёгкий прицеп до 1000 кг.',
+                  'Грузоподъёмность 440 кг подходит для семьи.'
+                ],
+                watchouts: [
+                  'Лимит буксировки меньше, чем у версий 1.6 и 2.0 (1300–1500 кг).',
+                  'С грузом на затяжных подъёмах мощности 90 л.с. впритык.'
+                ]
+              }
             }
           },
           accelerationOvertaking: {
@@ -1227,6 +2774,41 @@ const CAR_ROSTER = [
               en: ['Predictable Body Control', 'Light Urban FWD Handling'],
               de: ['Vorhersehbares Fahrverhalten', 'Handlich im Stadtverkehr'],
               ru: ['Предсказуемое шасси', 'Лёгкая рулёжка в городе']
+            },
+            dossier: {
+              en: {
+                headline: 'Torsion-Beam Rear Axle & Predictable Commuter Setup',
+                strengths: [
+                  'Safe, neutral understeer balance with light steering.',
+                  'Lightweight diesel block keeps front-end response tidy.'
+                ],
+                watchouts: [
+                  'Torsion-beam rear axle is slightly firmer over sharp bumps than the Hybrid/2.0 multi-link.',
+                  'Comfort-biased tyres and suspension prioritize ride over agility.'
+                ]
+              },
+              de: {
+                headline: 'Verbundlenker-Hinterachse & sichere Abstimmung',
+                strengths: [
+                  'Gutmütiges, neutrales Fahrverhalten mit leichter Lenkung.',
+                  'Kompakter Motor hält das Gewicht auf der Vorderachse gering.'
+                ],
+                watchouts: [
+                  'Verbundlenkerachse hinten etwas straffer über Querfugen als bei Modellen mit Mehrlenkerachse.',
+                  'Auf Komfort ausgelegt statt auf Kurvensport.'
+                ]
+              },
+              ru: {
+                headline: 'Задняя балка и спокойная настройка шасси',
+                strengths: [
+                  'Безопасная и предсказуемая управляемость без сюрпризов.',
+                  'Компактный мотор не перегружает переднюю ось.'
+                ],
+                watchouts: [
+                  'Полузависимая балка сзади чуть жёстче отрабатывает стыки, чем многорычажка.',
+                  'Настройка ориентирована на комфорт, а не на резкие манёвры.'
+                ]
+              }
             }
           },
           brakingPerformance: {
@@ -1273,7 +2855,9 @@ const CAR_ROSTER = [
       },
       {
         id: '2.0-d4d',
+        buyerFitGroup: 'highway-diesel',
         isDefault: false,
+        dossierGroup: 'd4d-diesel',
         fuelType: 'diesel',
         hp: 124,
         shortTitle: 'AURIS 2.0 D-4D',
@@ -1517,6 +3101,41 @@ const CAR_ROSTER = [
               en: ['535 kg Payload', '450 / 1,500 kg Towing'],
               de: ['535 kg Zuladung', '450 / 1.500 kg Zuglast'],
               ru: ['Нагрузка 535 кг', 'Прицеп: 450 / 1 500 кг']
+            },
+            dossier: {
+              en: {
+                headline: 'Best Auris Tow Car — 1,500 kg Braked Capacity',
+                strengths: [
+                  '310 Nm and 1,500 kg braked towing rating handle caravans and boat trailers with ease.',
+                  '425–440 kg cabin payload supports touring gear.'
+                ],
+                watchouts: [
+                  'Heavy towing accelerates clutch and dual-mass flywheel wear.',
+                  'Monitor coolant temperature on long mountain climbs when towing near 1,500 kg.'
+                ]
+              },
+              de: {
+                headline: 'Bestes Auris-Zugfahrzeug mit 1.500 kg Anhängelast',
+                strengths: [
+                  '310 Nm und 1.500 kg Anhängelast (gebremst) ziehen Wohnwagen und Anhänger souverän.',
+                  'Gute Zuladungsreserven für Reisen.'
+                ],
+                watchouts: [
+                  'Häufiger Schwerlast-Anhängerbetrieb belastet Kupplung und ZMS stärker.',
+                  'Auf langen Passstraßen mit Anhänger Kühlmitteltemperatur im Blick behalten.'
+                ]
+              },
+              ru: {
+                headline: 'Лучший тягач в линейке — прицеп до 1500 кг',
+                strengths: [
+                  'Мощная тяга 310 Н·м уверенно справляется с прицепами массой до 1500 кг.',
+                  'Достойная грузоподъёмность для путешествий.'
+                ],
+                watchouts: [
+                  'Частая буксировка тяжёлых прицепов ускоряет износ сцепления и маховика.',
+                  'На затяжных подъёмах с грузом стоит следить за температурой ОЖ.'
+                ]
+              }
             }
           },
           accelerationOvertaking: {
@@ -1573,6 +3192,50 @@ const CAR_ROSTER = [
               en: ['Chain-Driven • Watch EGR', 'Costly DPF & DMF Service'],
               de: ['Steuerkette • AGR pflegen', 'Teurere ZMS- & DPF-Arbeiten'],
               ru: ['Цепь ГРМ • Чистка клапана EGR', 'Дорогой ремонт DPF и маховика']
+            },
+            dossier: {
+              en: {
+                headline: 'Long-Lived Timing Chain, Higher DMF & Injector Costs',
+                strengths: [
+                  'Timing chain architecture avoids periodic timing-belt replacement bills.',
+                  'Well-known Toyota diesel with strong independent workshop familiarity.'
+                ],
+                watchouts: [
+                  'DMF/clutch (~€1,100–1,500) and DPF/EGR cleaning apply past 160,000 km.',
+                  'Pre-2013 1AD-FTV units require verifying no head-gasket coolant consumption.'
+                ],
+                beforeYouBuy: [
+                  'Verify cold-start smoothness and check for white smoke or coolant loss.'
+                ]
+              },
+              de: {
+                headline: 'Robuste Steuerkette, aber höhere ZMS- & Diesel-Kosten',
+                strengths: [
+                  'Steuerkette spart regelmäßige Zahnriemenwechsel.',
+                  'Bewährte Technik, die freie Werkstätten gut kennen.'
+                ],
+                watchouts: [
+                  'ZMS/Kupplung (ca. 1.100–1.500 €) und AGR/DPF fallen ab ca. 160.000 km ins Gewicht.',
+                  'Bei frühen Baujahren bis 2013 auf möglichen Kühlwasserverlust (Kopfdichtung) achten.'
+                ],
+                beforeYouBuy: [
+                  'Kaltstart ohne weißen Rauch sowie Kühlwasserstand genau prüfen.'
+                ]
+              },
+              ru: {
+                headline: 'Надёжная цепь ГРМ, но дороже маховик и топливная',
+                strengths: [
+                  'Цепной привод ГРМ избавляет от плановой замены ремня.',
+                  'Хорошо изученный сервисами двигатель.'
+                ],
+                watchouts: [
+                  'К 160–200 тыс. км возможна замена двухмассового маховика и чистка EGR/DPF.',
+                  'На ранних экземплярах до 2013 г. проверять отсутствие ухода антифриза.'
+                ],
+                beforeYouBuy: [
+                  'Проверить ровный холодный запуск и отсутствие расхода антифриза.'
+                ]
+              }
             }
           },
           depreciationResale: {
@@ -1587,6 +3250,7 @@ const CAR_ROSTER = [
       },
       {
         id: '1.2-turbo',
+        buyerFitGroup: 'turbo-petrol',
         isDefault: false,
         fuelType: 'petrol',
         hp: 116,
@@ -1750,6 +3414,50 @@ const CAR_ROSTER = [
               en: ['Refined 6-Speed Manual', 'Light 185 Nm Load'],
               de: ['Präzises 6-Gang-Getriebe', 'Moderate 185-Nm-Last'],
               ru: ['Мягкая 6-МКПП', 'Умеренная нагрузка (185 Н·м)']
+            },
+            dossier: {
+              en: {
+                headline: 'Crisp 6-Speed Manual (Optional Multidrive S CVT)',
+                strengths: [
+                  '6-speed manual pairs smoothly with the 1.2T flat torque band.',
+                  'Light clutch and refined gearshift action for city commuting.'
+                ],
+                watchouts: [
+                  'Optional Multidrive S CVT needs transmission fluid changes every 60,000 km.',
+                  'Manual version is more durable and cheaper to repair long term.'
+                ],
+                beforeYouBuy: [
+                  'Test smooth clutch engagement and check CVT fluid history if automatic.'
+                ]
+              },
+              de: {
+                headline: 'Leichtes 6-Gang-Getriebe (optional Multidrive S)',
+                strengths: [
+                  '6-Gang-Handschalter harmoniert ideal mit dem drehmomentstarken Turbomotor.',
+                  'Leichtgängige Kupplung und präzise Schaltwege.'
+                ],
+                watchouts: [
+                  'Optionale Multidrive-S-Automatik alle 60.000 km mit Ölwechsel pflegen.',
+                  'Handschalter langfristig robuster und günstiger im Unterhalt.'
+                ],
+                beforeYouBuy: [
+                  'Bei Multidrive-S-Automatik auf belegte Getriebeölwechsel achten.'
+                ]
+              },
+              ru: {
+                headline: 'Чёткая 6-МКПП (или вариатор Multidrive S)',
+                strengths: [
+                  'Механика отлично сочетается с ровной тягой турбомотора.',
+                  'Лёгкое сцепление для комфортной езды по городу.'
+                ],
+                watchouts: [
+                  'Вариатору Multidrive S нужна замена масла раз в 60 тыс. км.',
+                  'Механика надёжнее и дешевле на больших пробегах.'
+                ],
+                beforeYouBuy: [
+                  'Проверить плавность сцепления или историю замены масла в вариаторе.'
+                ]
+              }
             }
           },
           buildQualityRust: {
@@ -1766,6 +3474,50 @@ const CAR_ROSTER = [
               en: ['Facelift Safety Sense ECU', 'More Turbo Sensors Than NA'],
               de: ['Facelift Safety-Sense', 'Mehr Sensorik als Saugmotor'],
               ru: ['Электрика Safety Sense', 'Больше датчиков турбины']
+            },
+            dossier: {
+              en: {
+                headline: 'Modern Facelift Electronics & Stop-Start System',
+                strengths: [
+                  'Updated 2015+ facelift wiring with available Toyota Safety Sense.',
+                  'Reliable ignition and direct-injection ECU controls.'
+                ],
+                watchouts: [
+                  'EFB/AGM start-stop battery is pricier to replace every 5–6 years.',
+                  'Electronic turbo wastegate actuator can need inspection at high mileage.'
+                ],
+                beforeYouBuy: [
+                  'Check start-stop operation and ensure no Safety Sense or engine warnings appear.'
+                ]
+              },
+              de: {
+                headline: 'Moderne Facelift-Elektronik mit Start-Stopp',
+                strengths: [
+                  'Zuverlässige 2015+-Elektronik inklusive optionalem Toyota Safety Sense.',
+                  'Stabile Motorsteuerung.'
+                ],
+                watchouts: [
+                  'EFB/AGM-Start-Stopp-Batterie beim Tausch teurer als Standardbatterien.',
+                  'Elektronischer Turbo-Stellmotor bei hohen Laufleistungen prüfenswert.'
+                ],
+                beforeYouBuy: [
+                  'Start-Stopp-Funktion und eventuelle Safety-Sense-Anzeigen testen.'
+                ]
+              },
+              ru: {
+                headline: 'Современная рестайлинговая электроника',
+                strengths: [
+                  'Обновлённая электрика 2015+ года с поддержкой пакета Safety Sense.',
+                  'Надёжные блоки управления.'
+                ],
+                watchouts: [
+                  'Аккумулятор Start-Stop (EFB/AGM) дороже при замене раз в 5–6 лет.',
+                  'Электронный актуатор турбины требует внимания на больших пробегах.'
+                ],
+                beforeYouBuy: [
+                  'Проверить работу Start-Stop и отсутствие ошибок систем безопасности.'
+                ]
+              }
             }
           },
           rideNoiseComfort: {
@@ -1774,6 +3526,41 @@ const CAR_ROSTER = [
               en: ['Multi-Link Rear Absorption', 'Moderate Wind Noise on Highway'],
               de: ['Mehrlenkerachse schluckt gut', 'Mäßige Windgeräusche AB'],
               ru: ['Многорычажка сглаживает ямы', 'Умеренный шум на высокой скорости']
+            },
+            dossier: {
+              en: {
+                headline: 'Quietest Non-Hybrid Auris Engine',
+                strengths: [
+                  'Smooth 4-cylinder turbo stays quiet in town and cruises at low RPM on the motorway.',
+                  'Improved 2015+ facelift cabin sound insulation over early models.'
+                ],
+                watchouts: [
+                  'Tyre and wind roar become audible above 120 km/h on coarse asphalt.',
+                  'Slightly firm ride if fitted with optional 17-inch alloy wheels.'
+                ]
+              },
+              de: {
+                headline: 'Laufruhigster Nicht-Hybrid-Auris',
+                strengths: [
+                  'Sehr leiser, vibrationsarmer 4-Zylinder-Turbo in Stadt und Autobahn.',
+                  'Verbesserte Facelift-Geräuschdämmung ab 2015.'
+                ],
+                watchouts: [
+                  'Ab 120 km/h nehmen Wind- und Abrollgeräusche auf rauem Belag zu.',
+                  'Mit 17-Zoll-Felgen etwas straffer abrollend.'
+                ]
+              },
+              ru: {
+                headline: 'Самый тихий негибридный двигатель Auris',
+                strengths: [
+                  'Плавный 4-цилиндровый турбомотор остаётся тихим и в городе, и на трассе.',
+                  'Улучшенная шумоизоляция рестайлинга 2015+ года.'
+                ],
+                watchouts: [
+                  'После 120 км/ч на шершавом покрытии слышен шум шин и ветра.',
+                  'Версии на 17-дюймовых дисках едут чуть жёстче.'
+                ]
+              }
             }
           },
           interiorQualityFeatures: {
@@ -1878,6 +3665,50 @@ const CAR_ROSTER = [
               en: ['Reasonable 1.2T Parts Cost', 'More Complex Than Old 1.6 NA'],
               de: ['Faire 1.2T-Teilepreise', 'Komplexer als der 1.6 Sauger'],
               ru: ['Доступные расходники 1,2T', 'Сложнее простого 1,6']
+            },
+            dossier: {
+              en: {
+                headline: 'Moderate Turbo Servicing — Watch Direct-Injection Carbon',
+                strengths: [
+                  'Timing chain design avoids periodic timing-belt replacement.',
+                  'Smaller oil capacity and simple filters keep routine services affordable.'
+                ],
+                watchouts: [
+                  'Direct injection (8NR-FTS) requires strict 10k–15k km synthetic oil changes to protect turbo and chain.',
+                  'Intake valves can accumulate carbon past 120,000 km if mostly driven short trips.'
+                ],
+                beforeYouBuy: [
+                  'Check service history for 10k–15k km oil changes rather than stretched 20k+ intervals.'
+                ]
+              },
+              de: {
+                headline: 'Regelmäßige Ölwechsel für Turbo & Direkteinspritzung',
+                strengths: [
+                  'Steuerkette spart teure Zahnriemenwechsel.',
+                  'Überschaubare Kosten für Öl und Filter.'
+                ],
+                watchouts: [
+                  'Strenge Ölwechsel alle 10–15 Tkm schützen Turbolader und Steuerkette.',
+                  'Bei über 120.000 km und viel Kurzstrecke ist Einlassverkokung möglich.'
+                ],
+                beforeYouBuy: [
+                  'Wartungsheft auf regelmäßige 10.000–15.000-km-Ölwechsel prüfen.'
+                ]
+              },
+              ru: {
+                headline: 'Требует частой замены масла для ресурса турбины',
+                strengths: [
+                  'Цепь ГРМ избавляет от плановой замены ремня.',
+                  'Недорогие фильтры и расходники для ТО.'
+                ],
+                watchouts: [
+                  'Прямой впрыск и турбина нуждаются в замене масла каждые 10–12 тыс. км.',
+                  'К 120 000+ км при коротких поездках возможен нагар на впускных клапанах.'
+                ],
+                beforeYouBuy: [
+                  'Проверить сервисную историю на предмет частых замен масла.'
+                ]
+              }
             }
           },
           depreciationResale: {
@@ -1886,13 +3717,50 @@ const CAR_ROSTER = [
               en: ['2015+ Facelift Value', '15-Yr Relax Eligible'],
               de: ['2015+ Facelift-Wert', '15-J.-Relax-fähig'],
               ru: ['Свежий рестайл 2015+', 'Высокая ликвидность']
+            },
+            dossier: {
+              en: {
+                headline: 'Strong Facelift (2015+) Resale Value',
+                strengths: [
+                  'Newer Euro 6 petrol turbo status holds value well for buyers wanting modern refinement.',
+                  'Facelift styling and Safety Sense trim options stay attractive.'
+                ],
+                watchouts: [
+                  'Faces stiff used-market competition from the ultra-popular 1.8 Hybrid.',
+                  'Higher-mileage turbo examples draw more buyer scrutiny than naturally aspirated models.'
+                ]
+              },
+              de: {
+                headline: 'Guter Restwert als modernes Facelift-Modell (2015+)',
+                strengths: [
+                  'Gefragt bei Käufern, die einen jungen, laufruhigen Euro-6-Benziner suchen.',
+                  'Modernere Facelift-Optik stützt den Preis.'
+                ],
+                watchouts: [
+                  'Starke Konkurrenz im eigenen Haus durch den sehr beliebten 1.8 Hybrid.',
+                  'Bei hohen Laufleistungen achten Käufer kritischer auf den Turbolader.'
+                ]
+              },
+              ru: {
+                headline: 'Хорошая ликвидность рестайлинга (2015+)',
+                strengths: [
+                  'Свежий год и класс Euro 6 поддерживают высокий спрос на вторичке.',
+                  'Обновлённый дизайн привлекателен для покупателей.'
+                ],
+                watchouts: [
+                  'Конкурирует со сверхпопулярным гибридом 1.8 в том же бюджете.',
+                  'При больших пробегах покупатели осторожнее относятся к турбомотору.'
+                ]
+              }
             }
           }
         }
       },
       {
         id: '1.6-d4d',
+        buyerFitGroup: 'highway-diesel',
         isDefault: false,
+        dossierGroup: 'd4d-diesel',
         fuelType: 'diesel',
         hp: 112,
         shortTitle: 'AURIS 1.6 D-4D',
@@ -1914,6 +3782,9 @@ const CAR_ROSTER = [
           ru: '€23 990 новый'
         },
         estUsedPrice: '€9,600',
+        buyerFitOverrides: {
+          skip: ['dieselDpfShortTrips', 'bmwDieselWatchout', 'compactBoot', 'plainPlastics']
+        },
         perkLabel: {
           en: '✦ Efficient 5.4 L/100km • 270 Nm Torque • Euro 6 Compliant',
           de: '✦ Sparsam (5,4 L/100km) • 270 Nm Drehmoment • Euro 6',
@@ -2055,6 +3926,50 @@ const CAR_ROSTER = [
               en: ['6-Speed Manual', 'Budget DMF Replacement'],
               de: ['6-Gang-Schaltgetriebe', 'ZMS-Wechsel einplanen'],
               ru: ['6-ступ. МКПП', 'Контроль маховика при 270 Н·м']
+            },
+            dossier: {
+              en: {
+                headline: 'Smooth 6-Speed Manual (Watch DMF Past 160k km)',
+                strengths: [
+                  'Long-geared 6-speed manual keeps motorway RPM low and shifts smoothly.',
+                  'Handles 270 Nm cleanly at highway speeds.'
+                ],
+                watchouts: [
+                  'Dual-mass flywheel (DMF) and clutch wear past 160,000 km with heavy urban use.',
+                  'Clutch/DMF replacement is noticeably pricier than on petrol Auris models.'
+                ],
+                beforeYouBuy: [
+                  'Listen for idle rattle and test smooth clutch take-up in 1st gear.'
+                ]
+              },
+              de: {
+                headline: 'Lang übersetztes 6-Gang-Schaltgetriebe',
+                strengths: [
+                  'Niedrige Drehzahlen auf der Autobahn durch lange 6.-Gang-Übersetzung.',
+                  'Sauberes Schaltgefühl.'
+                ],
+                watchouts: [
+                  'ZMS- und Kupplungsverschleiß ab ca. 160.000 km einkalkulieren.',
+                  'Tausch deutlich teurer als bei den Saugbenzinern.'
+                ],
+                beforeYouBuy: [
+                  'Auf ruhiges Anfahren und Geräuschfreiheit im Leerlauf achten.'
+                ]
+              },
+              ru: {
+                headline: 'Длинная 6-МКПП (контроль маховика после 160 тыс. км)',
+                strengths: [
+                  'Низкие обороты на трассе и чёткое переключение.',
+                  'Уверенно передаёт 270 Н·м момента.'
+                ],
+                watchouts: [
+                  'Маховик и сцепление могут потребовать внимания к 160–200 тыс. км.',
+                  'Замена комплекта сцепления и маховика обходится дороже бензиновых версий.'
+                ],
+                beforeYouBuy: [
+                  'Проверить плавность трогания и отсутствие стука маховика на холостых.'
+                ]
+              }
             }
           },
           buildQualityRust: {
@@ -2071,6 +3986,50 @@ const CAR_ROSTER = [
               en: ['Euro 6 NOx & DPF Sensors', 'Check Battery State Early'],
               de: ['Euro-6-NOx- & DPF-Sensoren', 'Batteriezustand prüfen'],
               ru: ['Датчики NOx и DPF Euro 6', 'Важен живой аккумулятор']
+            },
+            dossier: {
+              en: {
+                headline: 'Euro 6 Diesel Sensors & NOx/EGR Controls',
+                strengths: [
+                  'Modern 2015+ facelift electronics with clean Euro 6 calibration.',
+                  'Main cabin and infotainment systems remain reliable.'
+                ],
+                watchouts: [
+                  'BMW-sourced N47 (1WW) architecture adds more complex NOx/DPF/EGR sensors than older Toyota diesels.',
+                  'Sensor faults can trigger limp mode if ignored.'
+                ],
+                beforeYouBuy: [
+                  'Read out full engine fault memory before purchase.'
+                ]
+              },
+              de: {
+                headline: 'Komplexere Euro-6-Sensorik (N47-Basis)',
+                strengths: [
+                  'Moderne Facelift-Elektronik mit aktueller Euro-6-Steuerung.',
+                  'Zuverlässige Innenraum- und Infotainment-Technik.'
+                ],
+                watchouts: [
+                  'Mehr Abgas- und NOx-Sensoren als bei älteren Toyota-Dieseln.',
+                  'Sensorfehler führen schnell zum Notlauf.'
+                ],
+                beforeYouBuy: [
+                  'Fehlerspeicher vor dem Kauf unbedingt auslesen lassen.'
+                ]
+              },
+              ru: {
+                headline: 'Сложная электроника Euro 6 (база BMW N47)',
+                strengths: [
+                  'Современная электрика рестайлинга 2015+ года.',
+                  'Стабильная работа салонной электроники.'
+                ],
+                watchouts: [
+                  'Больше датчиков выхлопа, NOx и DPF, чем на старых дизелях Toyota.',
+                  'Неисправность датчиков быстро переводит мотор в аварийный режим.'
+                ],
+                beforeYouBuy: [
+                  'Перед покупкой обязательна компьютерная диагностика.'
+                ]
+              }
             }
           },
           rideNoiseComfort: {
@@ -2183,6 +4142,50 @@ const CAR_ROSTER = [
               en: ['Small Tyres & Brakes', 'Costly BMW-Spec Engine Parts'],
               de: ['Kleine günstige Bremsen', 'Teurere BMW-Motorteile'],
               ru: ['Недорогие тормоза и шины', 'Дорогие запчасти мотора BMW']
+            },
+            dossier: {
+              en: {
+                headline: 'Rear-Mounted Timing Chain Requires Strict Oil Intervals',
+                strengths: [
+                  'No scheduled timing-belt replacement interval.',
+                  'Routine oil and filter services are straightforward.'
+                ],
+                watchouts: [
+                  '1WW (BMW N47) timing chain sits at the rear of the block — expensive if stretched from 30k km oil intervals.',
+                  'DPF and EGR valves require regular highway runs to stay clean.'
+                ],
+                beforeYouBuy: [
+                  'Listen closely for chain rattle at cold start and insist on 10k–15k km oil change records.'
+                ]
+              },
+              de: {
+                headline: 'Hinten liegende Steuerkette — kurze Ölwechsel entscheidend',
+                strengths: [
+                  'Kein turnusmäßiger Zahnriemenwechsel nötig.',
+                  'Normale Inspektionen bleiben preislich im Rahmen.'
+                ],
+                watchouts: [
+                  'N47-Basis (1WW): Steuerkette sitzt getriebeseitig, daher ist ein Tausch teuer.',
+                  'DPF und AGR brauchen regelmäßige Langstrecken.'
+                ],
+                beforeYouBuy: [
+                  'Kaltstart auf Rasseln prüfen und auf 10.000–15.000-km-Ölwechsel achten.'
+                ]
+              },
+              ru: {
+                headline: 'Цепь ГРМ со стороны КПП — важна частая замена масла',
+                strengths: [
+                  'Не требует плановой замены ремня ГРМ.',
+                  'Обычное плановое ТО обходится умеренно.'
+                ],
+                watchouts: [
+                  'На моторе 1WW (BMW N47) цепь стоит сзади, поэтому её замена стоит дорого.',
+                  'Сажевый фильтр и EGR нуждаются в регулярных трассовых поездках.'
+                ],
+                beforeYouBuy: [
+                  'Слушать холодный запуск на звон цепи и требовать историю частых замен масла.'
+                ]
+              }
             }
           },
           depreciationResale: {
@@ -24989,6 +26992,7 @@ const CAR_ROSTER = [
     engines: [
       {
         id: '1.6-valvematic',
+        buyerFitGroup: 'na-petrol-16',
         isDefault: false,
         fuelType: 'petrol',
         hp: 132,
@@ -26369,6 +28373,7 @@ const CAR_ROSTER = [
       },
       {
         id: '1.6-d4d',
+        buyerFitGroup: 'highway-diesel',
         isDefault: false,
         fuelType: 'diesel',
         hp: 112,
