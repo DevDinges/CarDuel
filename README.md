@@ -1,6 +1,6 @@
 # CARDUEL — Head-to-Head Car Comparison
 
-An interactive head-to-head vehicle comparison web application built around a zero-build static architecture and an **AI-native engineering harness** (`AGENTS.md` & `GEMINI.md`).
+An interactive head-to-head vehicle comparison web application built with vanilla HTML, CSS, and JavaScript—developed iteratively using AI coding agents governed by structured rule files (`AGENTS.md` & `GEMINI.md`).
 
 **[Launch Live Demo](https://devdinges.github.io/CarDuel-Website/)**
 
@@ -14,22 +14,24 @@ An interactive head-to-head vehicle comparison web application built around a ze
    4. **Performance & Dynamics** (0–100 km/h Sprint, Mid-Range Torque, Handling, Braking)
    5. **Running Costs & Value** (Real-World Fuel Economy, Tax/Insurance, Maintenance, Resale)
 - **Priority Equalizer & Dealbreaker Logic:** Weight sliders (`0.25×` to `2.0×`) dynamically recalculate overall scores (`0.0–10.0`) and `F` to `S+` index tiers including an automatic dealbreaker penalty for critical mechanical/maintenance scores below `6.5`.
+- **Engineering Dossiers (`i`) & Buyer Fit:** Clickable inspection checklists (`Before You Buy`), `0–250,000 km` service roadmaps and personalized `Buyer Fit` recommendations.
 - **Market & Depreciation Breakdown (`€`):** Interactive popover calculating total depreciation (`€` and `%`), retained value, annual loss, and resale outlook from original MSRP vs. current used market estimates.
 - **5-Angle Showroom Lightbox:** Inspect Front, Front-Side, Side, Side-Rear, and Rear view for every car.
 - **Trilingual & Multi-Theme:** Switching between **English (`EN`)**, **German (`DE`)**, and **Russian (`RU`)**, with 4 UI themes (`Dark`, `Dark Soft`, `Light`, `Light Soft`).
 
-## Architecture & Engineering Highlights
+## How It Is Built
 
-* **Zero-Build Dependency-Free Stack:** Pure `index.html`, `styles.css`, `cars-data.js`, and `app.js` with relative asset paths—runs directly in any browser or static host without bundlers or runtime dependencies, **[see Live Demo](https://devdinges.github.io/CarDuel-Website/)**
-* **Strict Data / Logic Separation:** Vehicle rosters, engine specs, and showroom angle mappings live exclusively in `cars-data.js` (`CAR_ROSTER`), while scoring algorithms, UI state, and DOM rendering live in `app.js`.
-* **3-Tier DRY Data Schema:** Shared chassis engineering dossiers (`sharedDossiers`), powertrain-group templates (`dossierGroups`), and keyed buyer-fit cards (`sharedBuyerFit`) eliminate N×M data duplication across 15 vehicles, 50+ engine variants, and 3 languages.
+* **Pure HTML, CSS & JavaScript (No Build Tools):** Runs directly in any browser without frameworks, package managers, or build steps—hosted statically on GitHub Pages, **[see Live Demo](https://devdinges.github.io/CarDuel-Website/)**
+* **Separation of Data & Logic:** All vehicle specs, engine variants, and image angle mappings are stored separately in `cars-data.js`, while the rating calculations, UI state, and page rendering live in `app.js`.
+* **Reusable Data Structure (No Copy-Paste Bloat):** Instead of duplicating identical text across 15 cars, 50+ engines, and 3 languages, shared vehicle info (`sharedDossiers`), engine-group notes (`dossierGroups`), and buyer-fit points (`sharedBuyerFit`) are stored once and referenced by key.
 
-## AI-Native Workflow & Agent Harness
 
-This project is developed iteratively using **Antigravity** and **Gemini 4 (Hydrogen / Argon)** governed by explicit repository-level agent contracts:
+## Working with AI Agents (`AGENTS.md` & `GEMINI.md`)
 
-* **[`AGENTS.md`](./AGENTS.md) — Project Invariants & Schema Contract:** Enforces UI invariants (single-row HUD, `C1`/`C2` labeling, 4 CSS themes, trilingual terminology rules) and strict vehicle schema validation across all 19 `subStats` keys and 5-angle image assets.
-* **[`GEMINI.md`](./GEMINI.md) — Execution Protocol & Verification Gate:** Requires a pre-execution assumption & plan check before multi-file edits, enforces DRY data modeling, and defines a PowerShell bracket/brace integrity verification script (`cars-data.js` & `app.js`).
+I build and expand this project with **Antigravity** and **Gemini 4 (Hydrogen / Argon)** using two rule files inside the repository to keep the code clean and consistent:
+
+* **[`AGENTS.md`](./AGENTS.md) — Project Rules & Data Structure:** Defines fixed UI rules (layout structure, `C1`/`C2` labels, 4 color themes, English/German/Russian translations) and the exact fields required for every car (19 sub-ratings and 5 camera angles).
+* **[`GEMINI.md`](./GEMINI.md) — Step-by-Step Workflow & Checks:** Instructs the agent to outline its plan before editing multiple files, avoid duplicate data, and verify with a PowerShell script that all brackets and braces in `cars-data.js` and `app.js` match properly.
 
 ## Included Vehicle Roster (15 Models • 75 Assets)
 
@@ -56,7 +58,7 @@ This project is developed iteratively using **Antigravity** and **Gemini 4 (Hydr
 No build step or package manager required — open `index.html` directly in any modern browser or serve the folder with any static HTTP server.
 
 ## Changelog
-* **v4 (17.11.2026):** New Homepage, infinity scroll-design, various new animations, 'buyers-fit' for quick personalized guidance, extended "i"-dossier for all categories 
+* **v4 (17.11.2026):** New Homepage, animated background marquee, various new animations, 'Buyer Fit' for quick personalized guidance, extended "i"-dossier for all categories 
 * **v3 (15.11.2026):** Interactive Priority Equalizer sliders, high-mileage repair roadmaps (`0–250,000 km`), `Before You Buy` checklists, and expanded vehicle roster.
 * **v2 (14.11.2026):** Comprehensive homepage redesign, Smash-style contender selection grid, and additional models.
 * **v1 (13.11.2026):** Initial release and GitHub Pages deployment.
