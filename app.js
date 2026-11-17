@@ -625,8 +625,8 @@ const STAT_PILLARS = [
           ru: 'Налог, страховка и эко-класс'
         },
         unitHint: {
-          en: 'Annual road tax (CO2/displacement), insurance class (KH/TK/VK) & Euro emissions zone status',
-          de: 'Kfz-Steuer, Versicherungs-Typklassen (KH/TK/VK) & Euro-Abgasnorm / Umweltzone',
+          en: 'Annual road tax (CO2/displacement), insurance cost tier & Euro emissions zone status',
+          de: 'Steuer & Versicherung (CO2/Hubraum, Tarifniveau) & Euro-Abgasnorm / Umweltzone',
           ru: 'Ежегодный налог, стоимость страховки и экологический класс Euro'
         }
       },
