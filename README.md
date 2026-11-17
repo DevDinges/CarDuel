@@ -2,7 +2,7 @@
 
 An interactive head-to-head vehicle comparison web application built with vanilla HTML, CSS, and JavaScript—developed iteratively using AI coding agents governed by structured rule files (`AGENTS.md` & `GEMINI.md`).
 
-**[Launch Live Demo](https://devdinges.github.io/CarDuel-Website/)**
+**[Launch Live Demo](https://devdinges.github.io/CarDuel/)**
 
 ## Core Features
 
@@ -21,7 +21,7 @@ An interactive head-to-head vehicle comparison web application built with vanill
 
 ## How It Is Built
 
-* **Pure HTML, CSS & JavaScript (No Build Tools):** Runs directly in any browser without frameworks, package managers, or build steps—hosted statically on GitHub Pages, **[see Live Demo](https://devdinges.github.io/CarDuel-Website/)**
+* **Pure HTML, CSS & JavaScript (No Build Tools):** Runs directly in any browser without frameworks, package managers, or build steps—hosted statically on GitHub Pages, **[see Live Demo](https://devdinges.github.io/CarDuel/)**
 * **Separation of Data & Logic:** All vehicle specs, engine variants, and image angle mappings are stored separately in `cars-data.js`, while the rating calculations, UI state, and page rendering live in `app.js`.
 * **Reusable Data Structure (No Copy-Paste Bloat):** Instead of duplicating identical text across 15 cars, 50+ engines, and 3 languages, shared vehicle info (`sharedDossiers`), engine-group notes (`dossierGroups`), and buyer-fit points (`sharedBuyerFit`) are stored once and referenced by key.
 
