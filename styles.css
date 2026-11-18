@@ -5433,3 +5433,330 @@ html[data-theme="light-soft"] .hm-damage-pill {
 }
 
 
+
+/* =====================================================
+   ARCADE "VS" CLASH & DUEL ENTRANCE CHOREOGRAPHY
+   Timings driven by --duel-lockin-ms, --duel-clash-ms, --duel-reveal-ms
+   ===================================================== */
+:root {
+  --duel-lockin-ms: 260ms;
+  --duel-clash-ms: 520ms;
+  --duel-reveal-ms: 420ms;
+}
+
+/* Beat 1: Smash Grid Lock-In */
+.smash-picker-stage.is-locking-in .smash-car-tile {
+  transition:
+    opacity calc(var(--duel-lockin-ms) * 0.85) ease,
+    transform var(--duel-lockin-ms) cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow var(--duel-lockin-ms) ease;
+}
+
+.smash-picker-stage.is-locking-in .smash-car-tile:not(.selected-p1):not(.selected-p2):not(.selected-both) {
+  opacity: 0.22;
+  transform: scale(0.95);
+  filter: saturate(0.55);
+}
+
+.smash-picker-stage.is-locking-in .smash-car-tile.selected-p1,
+.smash-picker-stage.is-locking-in .smash-car-tile.selected-p2,
+.smash-picker-stage.is-locking-in .smash-car-tile.selected-both {
+  transform: scale(1.045);
+  z-index: 4;
+}
+
+/* Beat 2: Arcade "VS" Clash Overlay */
+.duel-clash-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.duel-clash-overlay.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.duel-clash-overlay.is-exiting {
+  opacity: 0;
+  transition: opacity calc(var(--duel-reveal-ms) * 0.28) cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.duel-clash-backdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 24% 50%, color-mix(in srgb, var(--p1-accent) 26%, transparent) 0%, transparent 52%),
+    radial-gradient(circle at 76% 50%, color-mix(in srgb, var(--p2-accent) 26%, transparent) 0%, transparent 52%),
+    color-mix(in srgb, var(--arena-bg, #0c1118) 88%, transparent);
+  backdrop-filter: blur(8px);
+}
+
+.duel-clash-slash {
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  left: 50%;
+  width: 4px;
+  background: linear-gradient(180deg, transparent 0%, var(--forza-lime) 50%, transparent 100%);
+  box-shadow: 0 0 28px color-mix(in srgb, var(--forza-lime) 80%, transparent);
+  transform: translateX(-50%) rotate(12deg) scaleY(0);
+  opacity: 0;
+}
+
+.duel-clash-overlay.is-active .duel-clash-slash {
+  animation: duelClashSlash var(--duel-clash-ms) cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.duel-clash-contenders {
+  position: relative;
+  width: min(1040px, 92%);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: clamp(12px, 2.5vw, 32px);
+  z-index: 2;
+}
+
+.duel-clash-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--header-card-bg, #151b24) 86%, transparent);
+  border: 1px solid var(--panel-border);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.45);
+  will-change: transform, opacity;
+}
+
+.duel-clash-card.clash-left {
+  border-color: color-mix(in srgb, var(--p1-accent) 65%, var(--panel-border));
+  box-shadow: 0 16px 40px color-mix(in srgb, var(--p1-accent) 24%, rgba(0, 0, 0, 0.5));
+}
+
+.duel-clash-card.clash-right {
+  border-color: color-mix(in srgb, var(--p2-accent) 65%, var(--panel-border));
+  box-shadow: 0 16px 40px color-mix(in srgb, var(--p2-accent) 24%, rgba(0, 0, 0, 0.5));
+}
+
+.duel-clash-overlay.is-active .duel-clash-card.clash-left {
+  animation: duelClashSlideLeft var(--duel-clash-ms) cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.duel-clash-overlay.is-active .duel-clash-card.clash-right {
+  animation: duelClashSlideRight var(--duel-clash-ms) cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.duel-clash-tag {
+  align-self: flex-start;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 2px 9px;
+  border-radius: 5px;
+  color: #0b0f14;
+}
+
+.duel-clash-tag.p1 {
+  background: var(--p1-accent);
+}
+
+.duel-clash-tag.p2 {
+  align-self: flex-end;
+  background: var(--p2-accent);
+}
+
+.duel-clash-img {
+  width: 100%;
+  aspect-ratio: 1.42 / 1;
+  max-height: 220px;
+  object-fit: cover;
+  object-position: 54% 62%;
+  border-radius: 6px;
+}
+
+.duel-clash-img.mirrored-car {
+  transform: scaleX(-1);
+}
+
+.duel-clash-name {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.8vw, 1.35rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-main);
+}
+
+.duel-clash-crest {
+  position: relative;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: var(--popover-bg);
+  border: 2.5px solid var(--forza-lime);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 32px color-mix(in srgb, var(--forza-lime) 50%, transparent);
+  will-change: transform, opacity;
+}
+
+.duel-clash-overlay.is-active .duel-clash-crest {
+  animation: duelClashVsPop var(--duel-clash-ms) cubic-bezier(0.22, 1.28, 0.36, 1) forwards;
+}
+
+.duel-clash-vs {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  color: var(--forza-lime);
+}
+
+.duel-clash-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid var(--forza-lime);
+  opacity: 0;
+}
+
+.duel-clash-overlay.is-active .duel-clash-ring {
+  animation: duelClashRing var(--duel-clash-ms) cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Beat 3: Staggered Duel Arena Reveal (FLIP cars + Top-Rollout Sidebars) */
+.duel-stage.is-duel-entering {
+  transition: none;
+}
+
+.versus-arena.is-duel-entering .car-image-wrapper {
+  z-index: 26;
+}
+
+.versus-arena.is-duel-entering .viewport-header,
+.versus-arena.is-duel-entering .car-watermark {
+  animation: duelFadeIn calc(var(--duel-reveal-ms) * 0.75) cubic-bezier(0.22, 1, 0.36, 1) 120ms both;
+}
+
+.versus-arena.is-duel-entering .vs-medallion {
+  animation: duelMedallionPop calc(var(--duel-reveal-ms) * 0.85) cubic-bezier(0.22, 1.24, 0.36, 1) 80ms both;
+}
+
+.duel-stage.is-duel-entering .stat-column-left,
+.duel-stage.is-duel-entering .stat-column-right {
+  transition: none;
+  transform-origin: top center;
+  animation: duelSidebarRollDown calc(var(--duel-reveal-ms) * 0.56) cubic-bezier(0.35, 0, 0.25, 1) both;
+}
+
+.duel-stage.is-duel-entering .stat-card {
+  animation: duelItemRise calc(var(--duel-reveal-ms) * 0.41) cubic-bezier(0.35, 0, 0.25, 1) both;
+}
+
+.duel-stage.is-duel-entering .stat-card:nth-child(1) { animation-delay: 45ms; }
+.duel-stage.is-duel-entering .stat-card:nth-child(2) { animation-delay: 70ms; }
+.duel-stage.is-duel-entering .stat-card:nth-child(3) { animation-delay: 95ms; }
+.duel-stage.is-duel-entering .stat-card:nth-child(4) { animation-delay: 120ms; }
+.duel-stage.is-duel-entering .stat-card:nth-child(5) { animation-delay: 145ms; }
+
+.versus-arena.is-duel-entering .trait-pill {
+  animation: duelItemRise calc(var(--duel-reveal-ms) * 0.68) cubic-bezier(0.22, 1, 0.36, 1) 160ms both;
+}
+
+.versus-arena.is-duel-entering .duel-verdict-bar {
+  animation: duelBottomBarRise calc(var(--duel-reveal-ms) * 0.8) cubic-bezier(0.22, 1, 0.36, 1) 180ms both;
+}
+
+@keyframes duelClashSlideLeft {
+  0%   { opacity: 0; transform: translateX(-48vw) scale(0.92); }
+  55%  { opacity: 1; transform: translateX(8px) scale(1.02); }
+  100% { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes duelClashSlideRight {
+  0%   { opacity: 0; transform: translateX(48vw) scale(0.92); }
+  55%  { opacity: 1; transform: translateX(-8px) scale(1.02); }
+  100% { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes duelClashVsPop {
+  0%   { opacity: 0; transform: scale(2.1) rotate(-14deg); }
+  45%  { opacity: 1; transform: scale(0.92) rotate(4deg); }
+  72%  { opacity: 1; transform: scale(1.08) rotate(0deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+@keyframes duelClashRing {
+  0%   { opacity: 0; transform: scale(0.6); }
+  35%  { opacity: 0.9; transform: scale(1.1); }
+  100% { opacity: 0; transform: scale(2.2); }
+}
+
+@keyframes duelClashSlash {
+  0%   { opacity: 0; transform: translateX(-50%) rotate(12deg) scaleY(0); }
+  35%  { opacity: 0.95; transform: translateX(-50%) rotate(12deg) scaleY(1); }
+  100% { opacity: 0; transform: translateX(-50%) rotate(12deg) scaleY(1.08); }
+}
+
+@keyframes duelFadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes duelMedallionPop {
+  0%   { opacity: 0; transform: scale(0.55); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes duelSidebarRollDown {
+  0%   { opacity: 0.15; transform: translateY(-16px); clip-path: inset(0 0 100% 0); }
+  100% { opacity: 1; transform: translateY(0); clip-path: inset(0 0 0% 0); }
+}
+
+@keyframes duelItemRise {
+  0%   { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes duelBottomBarRise {
+  0%   { opacity: 0; transform: translate(-50%, 16px); }
+  100% { opacity: 1; transform: translate(-50%, 0); }
+}
+
+@media (max-width: 760px) {
+  .duel-clash-contenders {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .duel-clash-img {
+    max-height: 120px;
+  }
+  .duel-clash-crest {
+    margin: 0 auto;
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .duel-clash-overlay,
+  .duel-clash-overlay *,
+  .versus-arena.is-duel-entering *,
+  .duel-stage.is-duel-entering * {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}

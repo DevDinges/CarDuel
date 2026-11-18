@@ -1,7 +1,45 @@
 // ============================================================================
 // CAR DUEL — Vehicle Roster Data (loaded before app.js in index.html)
-// CAR_ROSTER, CAR_AVAILABLE_ANGLES & CAR_MIRRORED_ANGLES
+// SHARED_BUYER_FIT_CARDS, CAR_ROSTER, CAR_AVAILABLE_ANGLES & CAR_MIRRORED_ANGLES
 // ============================================================================
+
+const SHARED_BUYER_FIT_CARDS = {
+  globalPetrolCityZones: {
+    en: 'You drive in urban low-emission zones: Clean Euro 5/6 petrol status means zero diesel-ban headaches and predictable road tax.',
+    de: 'Du fährst in Umweltzonen: Sauberer Euro-5/6-Benziner ohne Fahrverbots-Sorgen und mit überschaubarer Kfz-Steuer.',
+    ru: 'Ты ездишь по крупным городам: Чистый бензиновый класс Euro 5/6 избавляет от дизельных ограничений и лишних налогов.'
+  },
+  globalSimpleNoTurbo: {
+    en: 'You want simple mechanics: No turbocharger, no high-pressure diesel pump, and no costly dual-mass flywheel to fail on you.',
+    de: 'Du willst simple Technik: Kein Turbolader, keine Hochdruck-Dieselpumpe und kein teures Zweimassenschwungrad, das kaputtgehen kann.',
+    ru: 'Тебе нужна простая конструкция: Без турбины, дорогого ТНВД и двухмассового маховика, которым нечему ломаться.'
+  },
+  globalDieselShortTripRisk: {
+    en: 'You only drive short city hops: DPF, EGR valve, and dual-mass flywheel suffer badly if the diesel rarely reaches full motorway temperature.',
+    de: 'Du fährst meist nur Kurzstrecke in der Stadt: Partikelfilter, AGR-Ventil und Zweimassenschwungrad leiden stark, wenn der Diesel selten richtig warm wird.',
+    ru: 'Ты ездишь в основном на короткие дистанции: Сажевый фильтр, клапан EGR и двухмассовый маховик быстро страдают без регулярных прогревов на трассе.'
+  },
+  globalDieselLongRange: {
+    en: 'You cover regular motorway miles: Strong mid-range torque and low cruising consumption make long commutes effortless for you.',
+    de: 'Du spulst regelmäßig Autobahn-Kilometer ab: Kräftiger Durchzug bei mittleren Drehzahlen und niedriger Verbrauch machen lange Strecken entspannt.',
+    ru: 'Ты часто ездишь по трассе: Уверенная тяга в среднем диапазоне и скромный расход делают дальние поездки лёгкими.'
+  },
+  globalHotHatchStiff: {
+    en: 'You want a soft daily commuter: Firm track-tuned suspension and low-profile tyres pass sharp bumps straight into the cabin.',
+    de: 'Du suchst ein weiches Alltagsauto: Das straffe Sportfahrwerk und flache Reifen reichen Querfugen und Schlaglöcher direkt an dich weiter.',
+    ru: 'Тебе нужна мягкая машина на каждый день: Жёсткая спортивная подвеска и низкопрофильные шины передают неровности прямо в салон.'
+  },
+  globalHotHatchRunningCosts: {
+    en: 'You shop on a tight running-cost budget: Performance tyres, large brakes, and higher tax & insurance cost noticeably more than a standard hatch.',
+    de: 'Du achtest streng aufs Budget: Sportreifen, große Bremsen sowie höhere Steuer & Versicherung kosten spürbar mehr als beim Standard-Kompakten.',
+    ru: 'Ты строго считаешь расходы на содержание: Спортивная резина, крупные тормоза и повышенные налоги со страховкой обходятся заметно дороже обычного хэтчбека.'
+  },
+  globalNoTowingHotHatch: {
+    en: 'You need to pull a trailer: Hot-hatch cooling and center-exit exhaust packaging leave zero approved towing capacity.',
+    de: 'Du musst einen Anhänger ziehen: Kühlung und Sportauspuff-Führung lassen null kg Anhängelast zu.',
+    ru: 'Тебе нужно таскать прицеп: Компоновка охлаждения и выхлопа горячего хэтча не допускает буксировку прицепа.'
+  }
+};
 
 const CAR_ROSTER = [
   {
@@ -230,8 +268,8 @@ const CAR_ROSTER = [
       },
       'highway-diesel': {
         summary: {
-          en: 'A torquey, long-legged motorway cruiser that sips fuel and pulls trailers — wasted on short city hops.',
-          de: 'Ein durchzugsstarker Langstrecken-Gleiter mit Anhänger-Reserve — auf kurzen Stadtwegen fehl am Platz.',
+          en: 'A torquey, fuel-efficient motorway commuter with solid towing reserve — wasted on short city hops.',
+          de: 'Ein durchzugsstarker, sparsamer Langstrecken-Diesel mit Anhänger-Reserve — auf kurzen Stadtwegen fehl am Platz.',
           ru: 'Тяговитый трассовый дизель для дальних дорог и прицепа — бессмысленный вариант для коротких городских поездок.'
         },
         ideal: ['dieselHighwayTorque', 'dieselTowing', 'toyotaEverydayComfort', 'cityHatchback'],
@@ -4204,6 +4242,60 @@ const CAR_ROSTER = [
     drivetrain: 'FWD',
     image: 'assets/honda-civic-2014.png',
     defaultEngineId: '1.8-ivtec',
+    sharedBuyerFit: {
+      cards: {
+        civicSpaceUtility: {
+          en: 'You haul bulky items in a compact footprint: Honda Magic Seats and the 477 L boot swallow bikes, boxes, and strollers with ease.',
+          de: 'Du transportierst oft sperrige Dinge im Kompaktformat: Hondas Magic Seats und der 477-L-Kofferraum schlucken Fahrräder, Kartons und Kinderwagen mühelos.',
+          ru: 'Ты часто возишь объёмные грузы в компактном кузове: Сиденья Magic Seats и багажник 477 л легко вмещают велосипеды, коробки и коляски.'
+        },
+        civicReliableVtec: {
+          en: 'You want bulletproof Japanese mechanics: Proven timing-chain i-VTEC engineering with minimal workshop surprises.',
+          de: 'Du willst extrem standfeste japanische Technik: Bewährte i-VTEC-Steuerketten-Motoren mit minimalen Werkstatt-Überraschungen.',
+          ru: 'Тебе нужна максимально надёжная японская техника: Проверенные атмосферники i-VTEC с цепным приводом без лишних сюрпризов.'
+        },
+        civicRearVisibility: {
+          en: 'You rely on mirrors without sensors: The split rear spoiler and thick C-pillars limit rearward visibility when parking.',
+          de: 'Du parkst viel nach Augenmaß: Der geteilte Heckspoiler und breite C-Säulen schränken die Sicht nach hinten spürbar ein.',
+          ru: 'Ты паркуешься без камеры и датчиков: Разделённый спойлером задний обзор и широкие стойки ухудшают видимость назад.'
+        },
+        civicFirmRide: {
+          en: 'You prioritize plush suspension comfort: The firm chassis feels planted on bends, but transmits sharp urban potholes.',
+          de: 'Du suchst maximale Sänften-Federung: Das straffe Fahrwerk liegt satt in Kurven, gibt harte Schlaglöcher aber spürbar weiter.',
+          ru: 'Ты ценишь мягкую плавность хода: Упругая подвеска отлично держит повороты, но жёстко отрабатывает острые ямы.'
+        },
+        civic14ModestPace: {
+          en: 'You overtake often on fast highways: With 100 HP, the 1.4 i-VTEC needs high revs and downshifts when loaded.',
+          de: 'Du überholst oft auf der Autobahn: Mit 100 PS braucht der 1.4 i-VTEC bei voller Beladung hohe Drehzahlen und fleißiges Schalten.',
+          ru: 'Ты часто обгоняешь на трассе: Со 100 л.с. мотор 1.4 i-VTEC при полной загрузке требует раскрутки и пониженных передач.'
+        },
+        civicDieselTorque: {
+          en: 'You want effortless motorway punch: The i-DTEC diesel pulls strongly from low revs while keeping fuel bills low.',
+          de: 'Du willst souveränen Autobahn-Durchzug: Der i-DTEC-Diesel schiebt schon aus niedrigen Drehzahlen kräftig und sparsam an.',
+          ru: 'Тебе нужна уверенная тяга на трассе: Дизель i-DTEC бодро тянет с низов и радует скромным расходом.'
+        }
+      }
+    },
+    buyerFitGroups: {
+      'na-petrol': {
+        summary: {
+          en: 'A remarkably practical, ultra-reliable compact hatchback — ideal if you value boot space and simple mechanics over soft luxury.',
+          de: 'Ein enorm praktischer, extrem zuverlässiger Kompaktwagen — ideal, wenn dir Kofferraum und simple Technik wichtiger sind als weicher Luxus.',
+          ru: 'Очень практичный и сверхустойчивый компактный хэтчбек — идеален, если тебе важнее багажник и простота конструкции, чем мягкий люкс.'
+        },
+        ideal: ['civicSpaceUtility', 'civicReliableVtec', 'globalSimpleNoTurbo', 'globalPetrolCityZones'],
+        skip: ['civicRearVisibility', 'civicFirmRide']
+      },
+      'diesel': {
+        summary: {
+          en: 'A spacious, frugal motorway commuter with strong mid-range pull — wasted on short urban errands.',
+          de: 'Ein geräumiger, sparsamer Autobahn-Pendler mit kräftigem Durchzug — auf kurzen Stadtwegen fehl am Platz.',
+          ru: 'Вместительный и экономичный дизельный хэтчбек для трассы — не лучший выбор для коротких городских поездок.'
+        },
+        ideal: ['civicSpaceUtility', 'civicDieselTorque', 'globalDieselLongRange'],
+        skip: ['globalDieselShortTripRisk', 'civicRearVisibility', 'civicFirmRide']
+      }
+    },
     sharedDossiers: {
       buildQualityRust: {
         en: {
@@ -4921,6 +5013,7 @@ const CAR_ROSTER = [
       {
         id: '1.8-ivtec',
         dossierGroup: 'petrol-6mt',
+        buyerFitGroup: 'na-petrol',
         isDefault: true,
         fuelType: 'petrol',
         hp: 142,
@@ -5349,6 +5442,10 @@ const CAR_ROSTER = [
       {
         id: '1.4-ivtec',
         dossierGroup: 'petrol-6mt',
+        buyerFitGroup: 'na-petrol',
+        buyerFitOverrides: {
+          skip: ['civic14ModestPace', 'civicRearVisibility', 'civicFirmRide']
+        },
         isDefault: false,
         fuelType: 'petrol',
         hp: 100,
@@ -5787,6 +5884,7 @@ const CAR_ROSTER = [
       {
         id: '1.6-idtec',
         dossierGroup: 'diesel-6mt',
+        buyerFitGroup: 'diesel',
         isDefault: false,
         fuelType: 'diesel',
         hp: 120,
@@ -6225,6 +6323,7 @@ const CAR_ROSTER = [
       {
         id: '2.2-idtec',
         dossierGroup: 'diesel-6mt',
+        buyerFitGroup: 'diesel',
         isDefault: false,
         fuelType: 'diesel',
         hp: 150,
@@ -6678,6 +6777,70 @@ const CAR_ROSTER = [
     drivetrain: 'AWD',
     image: 'assets/honda-crv-2010.png',
     defaultEngineId: '2.0-ivtec',
+    sharedBuyerFit: {
+      cards: {
+        crvFamilySpace: {
+          en: 'You need an easy-loading family SUV: Flat cabin floor, upright seating, and a wide 524 L boot handle strollers and holiday gear effortlessly.',
+          de: 'Du brauchst ein praktisches Familien-SUV: Ebener Innenboden, hohe Sitzposition und der breite 524-L-Kofferraum schlucken Kinderwagen und Urlaubsgepäck mühelos.',
+          ru: 'Тебе нужен удобный семейный кроссовер: Ровный пол салона, высокая посадка и широкий багажник 524 л легко вмещают коляску и багаж для отпуска.'
+        },
+        crvAwdAllWeather: {
+          en: 'You drive in snow, rain, or gravel: Automatic Real Time AWD adds reassuring winter traction without heavy off-road bulk.',
+          de: 'Du fährst bei Schnee, Regen oder auf Schotter: Der automatische Real-Time-Allrad gibt sichere Winter-Traktion ohne schweren Geländewagen-Ballast.',
+          ru: 'Ты ездишь по снегу, дождю или грунтовке: Подключаемый полный привод Real Time AWD даёт уверенную тягу зимой без лишней тяжести рамника.'
+        },
+        crvVtecDurability: {
+          en: 'You want low-stress petrol ownership: Timing-chain i-VTEC engines run reliably for high mileages with basic servicing.',
+          de: 'Du willst stressfreien Benziner-Unterhalt: Die i-VTEC-Motoren mit Steuerkette laufen bei normaler Wartung extrem langlebig.',
+          ru: 'Тебе нужен неприхотливый бензиновый мотор: Цепные двигатели i-VTEC при базовом обслуживании спокойно ходят большие пробеги.'
+        },
+        crvFuelWeight: {
+          en: 'You expect compact-car fuel bills: Tall SUV aerodynamics and AWD weight push real-world petrol consumption noticeably higher.',
+          de: 'Du erwartest Kleinwagen-Verbrauch: Hohe SUV-Karosserie und Allrad-Gewicht treiben den realen Benzinverbrauch spürbar nach oben.',
+          ru: 'Ты рассчитываешь на расход как у легковушки: Высокий кузов кроссовера и полный привод заметно повышают реальный расход бензина.'
+        },
+        crv24Thirst: {
+          en: 'You watch every euro at the pump: The 2.4-liter automatic is smooth, but drinks 9–11 L/100 km in mixed driving.',
+          de: 'Du schaust an der Zapfsäule auf jeden Euro: Der 2.4-Liter-Automat läuft samtig, genehmigt sich im Schnitt aber 9–11 L/100 km.',
+          ru: 'Ты считаешь каждый литр на заправке: 2.4-литровый автомат едет плавно, но в смешанном цикле расходует 9–11 л/100 км.'
+        },
+        crvDieselTowing: {
+          en: 'You tow trailers or cruise long distances: Strong 340–350 Nm diesel torque makes 1,500–2,000 kg towing and motorway climbs effortless.',
+          de: 'Du ziehst Anhänger oder fährst Langstrecke: Kräftige 340–350 Nm Diesel-Drehmoment meistern Anhängerlasten und Autobahnsteigungen souverän.',
+          ru: 'Ты таскаешь прицеп или ездишь на дальние расстояния: Тяговитый дизель (340–350 Н·м) уверенно тянет прицеп и подъёмы на трассе.'
+        },
+        crvEuro4CityNote: {
+          en: 'You commute into strict Euro 5/6 diesel-ban zones: The early 2.2 i-CTDi is Euro 4 — check local emission-zone rules before buying.',
+          de: 'Du pendelst in strenge Umweltzonen: Der frühe 2.2 i-CTDi erfüllt nur Euro 4 — prüfe vor dem Kauf lokale Zufahrtsregeln.',
+          ru: 'Ты ездишь в зоны жёстких эко-ограничений: Ранний 2.2 i-CTDi соответствует только Euro 4 — заранее проверь местные правила въезда.'
+        },
+        crvNotSporty: {
+          en: 'You want sharp sports-sedan handling: High center of gravity and comfort-tuned steering favor relaxed cruising over fast corners.',
+          de: 'Du suchst zackiges Kurven-Handling: Hoher Schwerpunkt und komfortable Lenkung sind auf entspanntes Gleiten statt Sportlichkeit ausgelegt.',
+          ru: 'Ты ищешь острую управляемость: Высокий центр тяжести и мягкие настройки руля созданы для спокойной езды, а не быстрых поворотов.'
+        }
+      }
+    },
+    buyerFitGroups: {
+      'na-petrol-awd': {
+        summary: {
+          en: 'A dependable, family-friendly all-weather SUV — ideal for shorter trips and winter grip if you accept higher petrol consumption.',
+          de: 'Ein zuverlässiges, familienfreundliches Allwetter-SUV — ideal für kürzere Strecken und Wintertraktion, wenn höherer Verbrauch ok ist.',
+          ru: 'Надёжный семейный кроссовер на любую погоду — отличный выбор для коротких поездок и зимы, если готов к повышенному расходу.'
+        },
+        ideal: ['crvFamilySpace', 'crvAwdAllWeather', 'crvVtecDurability', 'globalSimpleNoTurbo', 'globalPetrolCityZones'],
+        skip: ['crvFuelWeight', 'crvNotSporty']
+      },
+      'diesel-awd': {
+        summary: {
+          en: 'A capable long-distance and towing SUV with winter AWD traction — wasted on short urban errands.',
+          de: 'Ein kräftiges Langstrecken- und Zug-SUV mit Winter-Allrad — für reine Kurzstrecken in der Stadt ungeeignet.',
+          ru: 'Выносливый кроссовер для трассы, прицепа и зимы — не лучший вариант для коротких городских поездок.'
+        },
+        ideal: ['crvFamilySpace', 'crvAwdAllWeather', 'crvDieselTowing', 'globalDieselLongRange'],
+        skip: ['globalDieselShortTripRisk', 'crvNotSporty']
+      }
+    },
     sharedDossiers: {
       buildQualityRust: {
         en: {
@@ -7548,6 +7711,7 @@ const CAR_ROSTER = [
       {
         id: '2.0-ivtec',
         dossierGroup: 'petrol-awd-mt',
+        buyerFitGroup: 'na-petrol-awd',
         isDefault: true,
         fuelType: 'petrol',
         hp: 150,
@@ -7985,6 +8149,10 @@ const CAR_ROSTER = [
       {
         id: '2.4-ivtec',
         dossierGroup: 'petrol-conv-auto',
+        buyerFitGroup: 'na-petrol-awd',
+        buyerFitOverrides: {
+          skip: ['crv24Thirst', 'crvNotSporty']
+        },
         isDefault: false,
         fuelType: 'petrol',
         hp: 166,
@@ -8420,6 +8588,7 @@ const CAR_ROSTER = [
       {
         id: '2.2-idtec',
         dossierGroup: 'diesel-awd-mt',
+        buyerFitGroup: 'diesel-awd',
         isDefault: false,
         fuelType: 'diesel',
         hp: 150,
@@ -8857,6 +9026,10 @@ const CAR_ROSTER = [
       {
         id: '2.2-ictdi',
         dossierGroup: 'diesel-awd-mt',
+        buyerFitGroup: 'diesel-awd',
+        buyerFitOverrides: {
+          skip: ['globalDieselShortTripRisk', 'crvEuro4CityNote', 'crvNotSporty']
+        },
         isDefault: false,
         fuelType: 'diesel',
         hp: 140,
@@ -9306,6 +9479,41 @@ const CAR_ROSTER = [
     image: 'assets/peugeot-308-gti-2019.png',
     imageFacing: 'left',
     defaultEngineId: '1.6-thp-263',
+    sharedBuyerFit: {
+      cards: {
+        gti308Featherweight: {
+          en: 'You love agile, lightweight handling: At just 1,205 kg with a mechanical Torsen LSD, it darts through corners like few modern hatches.',
+          de: 'Du liebst leichtfüßiges Handling: Mit nur 1.205 kg und mechanischem Torsen-Sperrdifferenzial giert er präziser in Kurven als fast alle Rivalen.',
+          ru: 'Ты любишь лёгкую и точную управляемость: При массе всего 1 205 кг и самоблоке Torsen он проходит повороты острее большинства конкурентов.'
+        },
+        gti308EverydayBoot: {
+          en: 'You still need real-world practicality: Despite track-ready 263 HP pace, the 420 L boot and 5 doors handle daily errands easily.',
+          de: 'Du brauchst trotzdem Alltagsnutzen: Trotz 263 PS bleibt der 420-L-Kofferraum samt fünf Türen voll alltagstauglich.',
+          ru: 'Тебе всё ещё нужна практичность на каждый день: Несмотря на 263 л.с., 5 дверей и багажник 420 л спокойно справляются с бытовыми задачами.'
+        },
+        gti308BrakeBill: {
+          en: 'You balk at four-figure brake jobs: The 380 mm two-piece front discs and Alcon calipers deliver huge stopping power, but replacements are pricey.',
+          de: 'Du scheust hohe Bremsen-Kosten: Die 380-mm-Verbundscheiben und Alcon-Sättel packen brutal zu, kosten beim Tausch aber spürbar Geld.',
+          ru: 'Тебя пугают дорогие расходники: Двухсоставные 380-мм диски и суппорты Alcon тормозят мощно, но стоят недешево при замене.'
+        },
+        gti308TouchscreenUi: {
+          en: 'You prefer physical climate dials: Heating and A/C adjustments run through the center touchscreen, which takes eyes off the road.',
+          de: 'Du magst echte Drehregler fürs Klima: Temperatur und Lüftung laufen über den Touchscreen und lenken während der Fahrt ab.',
+          ru: 'Ты предпочитаешь физические крутилки: Управление климатом зашито в сенсорный экран, что отвлекает в движении.'
+        }
+      }
+    },
+    buyerFitGroups: {
+      'hot-hatch': {
+        summary: {
+          en: 'A lightweight, mechanical-LSD hot hatch that doubles as a practical 5-door daily — if you budget for performance brake and tyre wear.',
+          de: 'Ein leichtgewichtiger Hot-Hatch mit Sperrdifferenzial und überraschend viel Alltagsnutzen — sofern du das Budget für Sportbremsen und Reifen einplanst.',
+          ru: 'Лёгкий горячий хэтчбек с самоблоком и практичным 5-дверным кузовом — отличный выбор, если ты готов к тратам на спорт-тормоза и резину.'
+        },
+        ideal: ['gti308Featherweight', 'gti308EverydayBoot', 'globalPetrolCityZones'],
+        skip: ['gti308BrakeBill', 'globalHotHatchStiff', 'globalHotHatchRunningCosts', 'globalNoTowingHotHatch', 'gti308TouchscreenUi']
+      }
+    },
     sharedDossiers: {
       buildQualityRust: {
         en: {
@@ -9858,6 +10066,7 @@ const CAR_ROSTER = [
       {
         id: '1.6-thp-263',
         dossierGroup: 'petrol-awd-mt',
+        buyerFitGroup: 'hot-hatch',
         isDefault: true,
         fuelType: 'petrol',
         hp: 263,
@@ -10314,6 +10523,94 @@ const CAR_ROSTER = [
     drivetrain: 'FWD',
     image: 'assets/ford-mondeo-2012.png',
     defaultEngineId: '1.6-ecoboost',
+    sharedBuyerFit: {
+      cards: {
+        mondeoCabinBoot: {
+          en: 'You want mid-size family space: Wide rear legroom and a huge 528–550 L boot handle road trips and family gear with ease.',
+          de: 'Du brauchst echtes Mittelklasse-Format: Großzügige Beinfreiheit im Fond und 528–550 L Kofferraum meistern Reisen und Familiengepäck locker.',
+          ru: 'Тебе нужен просторный салон D-класса: Много места сзади и огромный багажник 528–550 л легко вмещают семейный багаж.'
+        },
+        mondeoSharpChassis: {
+          en: 'You enjoy confident steering in a big car: Direct chassis tuning makes the Mondeo feel lighter and sharper than most rivals.',
+          de: 'Du magst präzises Handling trotz Größe: Das ausgewogene Fahrwerk lässt den Mondeo spürbar agiler einlenken als viele Konkurrenten.',
+          ru: 'Тебе нравится точная управляемость в большом кузове: Собранное шасси делает Mondeo живее и понятнее большинства конкурентов.'
+        },
+        mondeoLongParking: {
+          en: 'You squeeze into tight city bays daily: At 4.84 meters long, parallel parking in narrow urban streets takes patience.',
+          de: 'Du parkst täglich in engen Innenstädten: Mit 4,84 Metern Länge wird die Parklückensuche in schmalen Straßen schnell mühsam.',
+          ru: 'Ты каждый день паркуешься в тесном центре: Длина 4,84 метра усложняет поиск места на узких городских улицах.'
+        },
+        mondeoBaseUnderpowered: {
+          en: 'You drive loaded on fast hills: The 115–120 HP base engines feel sluggish when overtaking or climbing with passengers.',
+          de: 'Du fährst oft voll beladen bergauf: Die 115–120-PS-Basismotoren wirken beim Überholen oder mit Gepäck spürbar angestrengt.',
+          ru: 'Ты часто ездишь гружёным по трассе: Базовые 115–120 л.с. заметно теряют темп при обгонах и на затяжных подъёмах.'
+        },
+        mondeoPowerShiftRisk: {
+          en: 'You want worry-free automatic shifting: The wet PowerShift dual-clutch gearbox demands strict 60,000 km fluid changes to avoid costly repairs.',
+          de: 'Du willst eine sorglose Automatik: Das PowerShift-Doppelkupplungsgetriebe verlangt zwingend alle 60.000 km frisches Öl, sonst wird es teuer.',
+          ru: 'Ты хочешь беспроблемный автомат: Робот PowerShift строго требует замены масла каждые 60 000 км, иначе ремонт выйдет дорогим.'
+        },
+        mondeo25tEnthusiast: {
+          en: 'You want sleeper 5-cylinder punch: The 220 HP 2.5T pulls hard with a rich soundtrack, though fuel and insurance bills climb.',
+          de: 'Du suchst einen unauffälligen 5-Zylinder-Sleeper: Der 220-PS-2.5T schiebt mit tollem Klang kräftig an, kostet aber spürbar Sprit und Unterhalt.',
+          ru: 'Ты хочешь скрытый драйв 5 цилиндров: 220-сильный 2.5T отлично едет и звучит, но требует больше расходов на бензин и содержание.'
+        },
+        mondeoDieselTowing: {
+          en: 'You cover heavy motorway miles or tow: The 2.0 and 2.2 TDCi diesels combine relaxed highway cruising with strong towing torque.',
+          de: 'Du fährst viel Autobahn oder ziehst Anhänger: 2.0 und 2.2 TDCi verbinden entspanntes Reisetempo mit satter Zugkraft.',
+          ru: 'Ты много ездишь по трассе или с прицепом: Дизели 2.0 и 2.2 TDCi сочетают уверенную тягу с низким расходом на дальняке.'
+        },
+        mondeoInteriorAge: {
+          en: 'You want a modern, upscale cabin: Silver-painted center trim and older Ford infotainment feel dated next to newer rivals.',
+          de: 'Du erwartest ein modernes Premium-Cockpit: Silbernes Hartplastik in der Mittelkonsole und das ältere Infotainment wirken heute angestaubt.',
+          ru: 'Ты хочешь современный и дорогой интерьер: Серебристый пластик центральной консоли и старая мультимедиа выглядят устаревшими.'
+        },
+        mondeoEcoBoostCare: {
+          en: 'You skip strict cooling & oil checks: Early 1.6 EcoBoost units need verified cooling-hose updates and regular oil changes.',
+          de: 'Du nimmst Wartung auf die leichte Schulter: Frühe 1.6 EcoBoost brauchen geprüfte Kühlmittel-Leitungen und strikte Ölwechsel.',
+          ru: 'Ты не хочешь следить за охлаждением и маслом: Ранние 1.6 EcoBoost требуют проверки патрубков охлаждения и частой замены масла.'
+        },
+        mondeo25tCosts: {
+          en: 'You want low fuel and tax bills: The 5-cylinder 2.5T drinks 9–11 L/100 km and carries noticeably higher tax & insurance.',
+          de: 'Du willst niedrige Sprit- und Fixkosten: Der 5-Zylinder-2.5T verbraucht 9–11 L/100 km und liegt bei Steuer & Versicherung deutlich höher.',
+          ru: 'Ты ищешь минимальные расходы на бензин и налоги: 5-цилиндровый 2.5T расходует 9–11 л/100 км и дороже по налогам и страховке.'
+        },
+        mondeoNaThirst: {
+          en: 'You expect modern turbo economy: The 2.0/2.3 naturally aspirated petrols rev higher on the motorway and use more fuel.',
+          de: 'Du erwartest modernen Turbo-Sparsamkeit: Die 2.0/2.3-Sauger drehen auf der Autobahn höher und verbrauchen spürbar mehr.',
+          ru: 'Ты ждёшь экономичности современного турбомотора: Атмосферники 2.0/2.3 на трассе держат высокие обороты и расходуют больше.'
+        }
+      }
+    },
+    buyerFitGroups: {
+      'na-petrol': {
+        summary: {
+          en: 'A spacious, sharp-handling mid-size sedan with simple naturally aspirated mechanics — best if you skip heavy motorway overtaking.',
+          de: 'Eine geräumige, fahraktive Mittelklasse mit simpler Sauger-Technik — ideal, wenn du keine schnellen Autobahn-Überholmanöver brauchst.',
+          ru: 'Просторный и хорошо управляемый седан D-класса с простым атмосферником — хорош, если не гоняешь на трассе.'
+        },
+        ideal: ['mondeoCabinBoot', 'mondeoSharpChassis', 'globalSimpleNoTurbo', 'globalPetrolCityZones'],
+        skip: ['mondeoLongParking', 'mondeoBaseUnderpowered', 'mondeoInteriorAge']
+      },
+      'turbo-petrol': {
+        summary: {
+          en: 'A roomy, comfortable family cruiser with brisk turbocharged pace — watch dual-clutch service history on automatic versions.',
+          de: 'Ein geräumiger Reisewagen mit kräftigem Turbobenziner — prüfe bei Automatik-Versionen unbedingt die PowerShift-Wartung.',
+          ru: 'Просторный семейный седан с бодрым турбобензином — на версиях с автоматом обязательно проверяй обслуживание PowerShift.'
+        },
+        ideal: ['mondeoCabinBoot', 'mondeoSharpChassis', 'globalPetrolCityZones'],
+        skip: ['mondeoLongParking', 'mondeoPowerShiftRisk', 'mondeoInteriorAge']
+      },
+      'diesel': {
+        summary: {
+          en: 'A classic long-distance motorway and towing workhorse — wasted on short urban trips.',
+          de: 'Ein klassischer Langstrecken- und Zugwagen für die Autobahn — auf kurzen Stadtwegen fehl am Platz.',
+          ru: 'Классический трассовый и тягловый седан для дальних дорог — не подходит для коротких городских поездок.'
+        },
+        ideal: ['mondeoCabinBoot', 'mondeoSharpChassis', 'mondeoDieselTowing', 'globalDieselLongRange'],
+        skip: ['globalDieselShortTripRisk', 'mondeoLongParking', 'mondeoInteriorAge']
+      }
+    },
     sharedDossiers: {
       buildQualityRust: {
         en: {
@@ -11662,6 +11959,10 @@ const CAR_ROSTER = [
       {
         id: '1.6-ecoboost',
         dossierGroup: 'petrol-6mt',
+        buyerFitGroup: 'turbo-petrol',
+        buyerFitOverrides: {
+          skip: ['mondeoLongParking', 'mondeoEcoBoostCare', 'mondeoInteriorAge']
+        },
         isDefault: true,
         fuelType: 'petrol',
         hp: 160,
@@ -12109,6 +12410,7 @@ const CAR_ROSTER = [
       {
         id: '1.6-tivct',
         dossierGroup: 'petrol-5mt',
+        buyerFitGroup: 'na-petrol',
         isDefault: false,
         fuelType: 'petrol',
         hp: 120,
@@ -12544,6 +12846,10 @@ const CAR_ROSTER = [
       {
         id: '2.0-duratec',
         dossierGroup: 'petrol-5mt',
+        buyerFitGroup: 'na-petrol',
+        buyerFitOverrides: {
+          skip: ['mondeoLongParking', 'mondeoNaThirst', 'mondeoInteriorAge']
+        },
         isDefault: false,
         fuelType: 'petrol',
         hp: 145,
@@ -12979,6 +13285,7 @@ const CAR_ROSTER = [
       {
         id: '2.0-ecoboost',
         dossierGroup: 'petrol-powershift',
+        buyerFitGroup: 'turbo-petrol',
         isDefault: false,
         fuelType: 'petrol',
         hp: 203,
@@ -13426,6 +13733,10 @@ const CAR_ROSTER = [
       {
         id: '2.3-duratec',
         dossierGroup: 'petrol-conv-auto',
+        buyerFitGroup: 'na-petrol',
+        buyerFitOverrides: {
+          skip: ['mondeoLongParking', 'mondeoNaThirst', 'mondeoInteriorAge']
+        },
         isDefault: false,
         fuelType: 'petrol',
         hp: 161,
@@ -13858,6 +14169,11 @@ const CAR_ROSTER = [
       {
         id: '2.5t',
         dossierGroup: 'petrol-6mt',
+        buyerFitGroup: 'turbo-petrol',
+        buyerFitOverrides: {
+          ideal: ['mondeo25tEnthusiast', 'mondeoCabinBoot', 'mondeoSharpChassis', 'globalPetrolCityZones'],
+          skip: ['mondeoLongParking', 'mondeo25tCosts', 'mondeoInteriorAge']
+        },
         isDefault: false,
         fuelType: 'petrol',
         hp: 220,
@@ -14294,6 +14610,10 @@ const CAR_ROSTER = [
       {
         id: '1.6-tdci',
         dossierGroup: 'diesel-6mt',
+        buyerFitGroup: 'diesel',
+        buyerFitOverrides: {
+          skip: ['globalDieselShortTripRisk', 'mondeoBaseUnderpowered', 'mondeoLongParking', 'mondeoInteriorAge']
+        },
         isDefault: false,
         fuelType: 'diesel',
         hp: 115,
@@ -14729,6 +15049,7 @@ const CAR_ROSTER = [
       {
         id: '1.8-tdci',
         dossierGroup: 'diesel-6mt',
+        buyerFitGroup: 'diesel',
         isDefault: false,
         fuelType: 'diesel',
         hp: 100,
@@ -15166,6 +15487,7 @@ const CAR_ROSTER = [
       {
         id: '2.0-tdci',
         dossierGroup: 'diesel-6mt',
+        buyerFitGroup: 'diesel',
         isDefault: false,
         fuelType: 'diesel',
         hp: 115,
@@ -15602,6 +15924,7 @@ const CAR_ROSTER = [
       {
         id: '2.2-tdci',
         dossierGroup: 'diesel-conv-auto',
+        buyerFitGroup: 'diesel',
         isDefault: false,
         fuelType: 'diesel',
         hp: 175,
@@ -16050,6 +16373,41 @@ const CAR_ROSTER = [
     drivetrain: 'FWD',
     image: 'assets/honda-civic-type-r-2015.png',
     defaultEngineId: '2.0-vtec-turbo',
+    sharedBuyerFit: {
+      cards: {
+        typeRTrackPace: {
+          en: 'You want raw, front-drive track performance: The 310 HP K20C1 turbo, helical LSD, and Brembo brakes deliver relentless pace and precision.',
+          de: 'Du willst kompromisslose Fronttriebler-Performance: 310-PS-K20C1-Turbo, Sperrdifferenzial und Brembo-Bremsen liefern brutalen Vortrieb.',
+          ru: 'Тебе нужна бескомпромиссная динамика переднего привода: 310-сильный турбо-K20C1, самоблок и тормоза Brembo дарят мощнейший темп.'
+        },
+        typeRHugeBoot: {
+          en: 'You need a surprisingly big boot: Even with track hardware, the 498 L hatchback luggage bay beats many family crossovers.',
+          de: 'Du brauchst unerwartet viel Stauraum: Selbst mit Track-Technik übertrifft der 498-L-Kofferraum viele Familien-SUVs.',
+          ru: 'Тебе нужен неожиданно большой багажник: Даже со спортивной начинкой отсек на 498 л больше, чем у многих кроссоверов.'
+        },
+        typeRLowSplitter: {
+          en: 'You tackle steep ramps or rough curbs: The deep front aero splitter sits very low and scrapes easily on speed bumps.',
+          de: 'Du fährst oft steile Tiefgaragen oder hohe Bordsteine: Der tiefe Front-Splitter setzt an Rampen und Schwellen schnell auf.',
+          ru: 'Ты часто заезжаешь на крутые пандусы и бордюры: Низкий передний сплиттер легко цепляет лежачих полицейских.'
+        },
+        typeRVisibility: {
+          en: 'You want clean all-round visibility: The tall rear wing cuts straight across the rear glass in your mirror.',
+          de: 'Du willst freien Rundumblick: Der große Heckflügel teilt die Sicht durch die Heckscheibe genau auf Augenhöhe.',
+          ru: 'Тебе важен чистый обзор назад: Массивное антикрыло перекрывает значительную часть заднего стекла.'
+        }
+      }
+    },
+    buyerFitGroups: {
+      'hot-hatch': {
+        summary: {
+          en: 'A hardcore, track-bred 310 HP hot hatch with a huge boot — built for driving thrills, not soft urban commuting.',
+          de: 'Ein kompromissloser 310-PS-Rundstrecken-Sportler mit riesigem Kofferraum — gebaut für Fahrspaß, nicht für weiches Stadt-Pendeln.',
+          ru: 'Хардкорный 310-сильный хот-хэтч для трека с огромным багажником — создан ради драйва, а не мягкой езды по городу.'
+        },
+        ideal: ['typeRTrackPace', 'typeRHugeBoot', 'globalPetrolCityZones'],
+        skip: ['globalHotHatchStiff', 'globalHotHatchRunningCosts', 'typeRLowSplitter', 'typeRVisibility', 'globalNoTowingHotHatch']
+      }
+    },
     sharedDossiers: {
       buildQualityRust: {
         en: {
@@ -16602,6 +16960,7 @@ const CAR_ROSTER = [
       {
         id: '2.0-vtec-turbo',
         dossierGroup: 'petrol-awd-mt',
+        buyerFitGroup: 'hot-hatch',
         isDefault: true,
         fuelType: 'petrol',
         hp: 310,
@@ -17053,6 +17412,65 @@ const CAR_ROSTER = [
     drivetrain: 'FWD',
     image: 'assets/honda-accord-2011.png',
     defaultEngineId: '2.0-ivtec',
+    sharedBuyerFit: {
+      cards: {
+        accordRefinedDrive: {
+          en: 'You want a refined, engaging Japanese sedan: Crisp steering, double-wishbone front suspension, and quiet motorway manners.',
+          de: 'Du willst eine kultivierte, präzise Limousine: Direkte Lenkung, Doppelquerlenker-Vorderachse und ruhiger Lauf auf der Autobahn.',
+          ru: 'Тебе нужен собранный и комфортный японский седан: Точный руль, двухрычажка спереди и тишина на трассе.'
+        },
+        accordVtecDurability: {
+          en: 'You value long-term mechanical trust: Naturally aspirated i-VTEC engines with timing chains age gracefully with basic oil changes.',
+          de: 'Du setzt auf Langzeit-Zuverlässigkeit: Die i-VTEC-Sauger mit Steuerkette altern bei regelmäßigem Ölwechsel extrem souverän.',
+          ru: 'Ты ценишь долговечность техники: Цепные атмосферники i-VTEC при своевременной замене масла служат очень долго.'
+        },
+        accord24HighRev: {
+          en: 'You enjoy a sporty 201 HP rev-happy sedan: The 2.4 i-VTEC loves high revs while remaining smooth in daily traffic.',
+          de: 'Du magst drehfreudige 201 PS: Der 2.4 i-VTEC läuft im Alltag kultiviert und liefert obenrum echten Sport-Charakter.',
+          ru: 'Тебе нравится крутильный мотор 201 л.с.: 2.4 i-VTEC плавен в городе и радует бодрым подхватом на высоких оборотах.'
+        },
+        accordRearSpaceBoot: {
+          en: 'You need maximum rear legroom and hatchback loading: Rear knee space is tighter than a Mondeo and the saloon boot opening is narrower.',
+          de: 'Du brauchst maximale Beinfreiheit und Heckklappe: Hinten sitzt man knapper als im Mondeo, die Stufenheck-Luke ist schmaler.',
+          ru: 'Тебе нужен максимум места сзади и широкая крышка багажника: Сзади теснее, чем в Mondeo, а проём седана уже.'
+        },
+        accordDieselAutoNote: {
+          en: 'You prefer a traditional 5-speed auto or crisp 6-speed manual: Smooth torque-converter shifts or direct manual gearing pair effortlessly with the diesel torque.',
+          de: 'Du bevorzugst eine klassische 5-Stufen-Automatik oder 6-Gang-Schaltung: Sanfte Wandler-Schaltvorgänge oder knackige Gänge passen ideal zum Diesel-Durchzug.',
+          ru: 'Ты предпочитаешь классический 5-АКПП или чёткую 6-МКПП: Плавный гидротрансформатор или точная механика отлично сочетаются с тягой дизеля.'
+        },
+        accordFirmSuspension: {
+          en: 'You expect floating comfort-sedan isolation: Sporty damper tuning lets sharp road joints through more than softer rivals.',
+          de: 'Du erwartest weiche Sänften-Abstimmung: Das straffere Fahrwerk gibt kurze Querfugen deutlicher weiter als komfortbetonte Rivalen.',
+          ru: 'Ты ждёшь мягкой плавности хода: Упругая подвеска заметнее передаёт острые стыки, чем у более мягких конкурентов.'
+        },
+        accordPetrolConsumption: {
+          en: 'You want low motorway fuel bills: Naturally aspirated i-VTEC engines need revs for quick overtakes and burn more fuel.',
+          de: 'Du willst minimalen Autobahn-Verbrauch: Die i-VTEC-Sauger brauchen für zügige Überholmanöver Drehzahl und entsprechend mehr Sprit.',
+          ru: 'Ты хочешь минимальный расход на трассе: Атмосферным i-VTEC для бодрых обгонов нужны обороты, что повышает расход топлива.'
+        }
+      }
+    },
+    buyerFitGroups: {
+      'na-petrol': {
+        summary: {
+          en: 'A polished, driver-focused Japanese sedan with bulletproof petrol mechanics — ideal if you prefer build quality over huge rear legroom.',
+          de: 'Eine kultivierte, fahraktive Limousine mit extrem robuster Benziner-Technik — ideal, wenn Qualität vor maximalem Fond-Platz zählt.',
+          ru: 'Добротный и драйверский японский седан с неубиваемым бензиновым мотором — идеален, если качество важнее простора сзади.'
+        },
+        ideal: ['accordRefinedDrive', 'accordVtecDurability', 'globalSimpleNoTurbo', 'globalPetrolCityZones'],
+        skip: ['accordRearSpaceBoot', 'accordFirmSuspension', 'accordPetrolConsumption']
+      },
+      'diesel': {
+        summary: {
+          en: 'A quiet, enduring Japanese motorway sedan with strong diesel torque — wasted on short urban trips.',
+          de: 'Eine ruhige, langstreckentaugliche Reiselimousine mit kräftigem Diesel-Durchzug — für reine Stadt-Kurzstrecken ungeeignet.',
+          ru: 'Тихий и выносливый дизельный седан для трассы — не лучший выбор для коротких городских поездок.'
+        },
+        ideal: ['accordRefinedDrive', 'accordDieselAutoNote', 'globalDieselLongRange'],
+        skip: ['globalDieselShortTripRisk', 'accordRearSpaceBoot', 'accordFirmSuspension']
+      }
+    },
     sharedDossiers: {
       buildQualityRust: {
         en: {
@@ -17767,6 +18185,7 @@ const CAR_ROSTER = [
       {
         id: '2.0-ivtec',
         dossierGroup: 'petrol-conv-auto',
+        buyerFitGroup: 'na-petrol',
         isDefault: true,
         fuelType: 'petrol',
         hp: 156,
@@ -18200,6 +18619,10 @@ const CAR_ROSTER = [
       {
         id: '2.4-ivtec',
         dossierGroup: 'petrol-conv-auto',
+        buyerFitGroup: 'na-petrol',
+        buyerFitOverrides: {
+          ideal: ['accord24HighRev', 'accordRefinedDrive', 'accordVtecDurability', 'globalSimpleNoTurbo', 'globalPetrolCityZones']
+        },
         isDefault: false,
         fuelType: 'petrol',
         hp: 201,
@@ -18627,6 +19050,7 @@ const CAR_ROSTER = [
       {
         id: '2.2-idtec',
         dossierGroup: 'diesel-conv-auto',
+        buyerFitGroup: 'diesel',
         isDefault: false,
         fuelType: 'diesel',
         hp: 150,
@@ -19069,6 +19493,60 @@ const CAR_ROSTER = [
     drivetrain: 'FWD',
     image: 'assets/honda-jazz-2011.png',
     defaultEngineId: '1.3-ivtec',
+    sharedBuyerFit: {
+      cards: {
+        jazzMagicSpace: {
+          en: 'You want maximum space in a tiny footprint: Flip-up Magic Seats and a 399 L boot outclass cars a full size larger.',
+          de: 'Du willst ein Raumwunder auf Kleinwagen-Fläche: Die hochklappbaren Magic Seats und 399 L Kofferraum schlagen größere Autos.',
+          ru: 'Тебе нужен максимум места при минимуме габаритов: Складные сиденья Magic Seats и багажник 399 л превосходят машины классом выше.'
+        },
+        jazzCityReliability: {
+          en: 'You want near-zero breakdown stress: Simple i-VTEC engineering and top reliability records make city ownership effortless.',
+          de: 'Du willst maximale Pannen-Sicherheit: Simple i-VTEC-Technik und Top-Zuverlässigkeit machen den Stadt-Alltag völlig entspannt.',
+          ru: 'Тебе нужна максимальная безотказность: Простая техника i-VTEC и высокая надёжность делают городскую езду беззаботной.'
+        },
+        jazzMotorwayNoise: {
+          en: 'You cruise 130+ km/h daily: Cabin wind and tyre noise rise noticeably on fast motorways and steep climbs need downshifts.',
+          de: 'Du fährst täglich 130+ km/h Autobahn: Wind- und Abrollgeräusche nehmen bei hohem Tempo deutlich zu und Steigungen fordern Drehzahl.',
+          ru: 'Ты часто ездишь 130+ км/ч по трассе: На высокой скорости заметно шумнее от ветра и шин, а на обгонах нужно крутить мотор.'
+        },
+        jazzNoTowing: {
+          en: 'You need to haul trailers: Subcompact chassis and CVT/IMA variants have minimal or zero towing capability.',
+          de: 'Du willst Anhänger ziehen: Kleinwagen-Plattform sowie CVT- und IMA-Varianten bieten kaum bis gar keine Anhängelast.',
+          ru: 'Тебе нужно таскать прицеп: Субкомпактная платформа и версии с вариатором/IMA почти не рассчитаны на буксировку.'
+        },
+        jazzImaHybrid: {
+          en: 'You commute smoothly in stop-and-go traffic: The 1.3 IMA mild-hybrid + CVT glides effortlessly while saving fuel in town.',
+          de: 'Du pendelst entspannt im Stadtverkehr: Der 1.3-IMA-Hybrid samt CVT gleitet ruckfrei und spart im Stop-and-Go spürbar Sprit.',
+          ru: 'Ты спокойно ездишь по городским пробкам: Мягкий гибрид 1.3 IMA с вариатором едет плавно и экономит топливо в городе.'
+        },
+        jazzFirmLowSpeedRide: {
+          en: 'You want plush suspension over bad city streets: The short wheelbase and firm rear axle feel choppy on speed bumps and potholes.',
+          de: 'Du willst weichen Federungskomfort auf schlechten Straßen: Der kurze Radstand und die straffe Hinterachse hoppeln über Schwellen spürbar.',
+          ru: 'Ты ждёшь мягкой подвески на разбитых улицах: Короткая база и жёсткая задняя балка заметно трясут на лежачих полицейских и ямах.'
+        }
+      }
+    },
+    buyerFitGroups: {
+      'na-petrol': {
+        summary: {
+          en: 'The smartest urban space-saver in its class — unbeatable practicality and reliability, best suited to city and regional roads.',
+          de: 'Der cleverste Raumriese seiner Klasse — unschlagbar praktisch und zuverlässig, am wohlsten in Stadt und Umland.',
+          ru: 'Самый вместительный и надёжный субкомпакт в классе — идеален для города и пригорода.'
+        },
+        ideal: ['jazzMagicSpace', 'jazzCityReliability', 'globalSimpleNoTurbo', 'globalPetrolCityZones'],
+        skip: ['jazzMotorwayNoise', 'jazzFirmLowSpeedRide', 'jazzNoTowing']
+      },
+      'hybrid': {
+        summary: {
+          en: 'An easy-driving, frugal city hybrid with Magic Seat versatility — not built for fast autobahn cruising or towing.',
+          de: 'Ein leichtfüßiger, sparsamer Stadt-Hybrid mit Magic-Seat-Variabilität — nicht für hohes Autobahn-Tempo oder Anhänger gebaut.',
+          ru: 'Простой и экономичный городской гибрид с трансформируемым салоном — не рассчитан на быструю трассу и прицепы.'
+        },
+        ideal: ['jazzMagicSpace', 'jazzImaHybrid', 'jazzCityReliability', 'globalPetrolCityZones'],
+        skip: ['jazzMotorwayNoise', 'jazzFirmLowSpeedRide', 'jazzNoTowing']
+      }
+    },
     sharedDossiers: {
       buildQualityRust: {
         en: {
@@ -19945,6 +20423,7 @@ const CAR_ROSTER = [
       {
         id: '1.2-ivtec',
         dossierGroup: 'petrol-5mt',
+        buyerFitGroup: 'na-petrol',
         isDefault: false,
         fuelType: 'petrol',
         hp: 90,
@@ -20380,6 +20859,7 @@ const CAR_ROSTER = [
       {
         id: '1.3-ivtec',
         dossierGroup: 'petrol-cvt',
+        buyerFitGroup: 'na-petrol',
         isDefault: true,
         fuelType: 'petrol',
         hp: 99,
@@ -20811,6 +21291,7 @@ const CAR_ROSTER = [
       {
         id: '1.3-ima',
         dossierGroup: 'hybrid-cvt',
+        buyerFitGroup: 'hybrid',
         isDefault: false,
         fuelType: 'hybrid',
         hp: 98,

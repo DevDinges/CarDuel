@@ -191,11 +191,11 @@ const UI_TRANSLATIONS = {
     outlookStrong: 'Wertstabil • Hohe Nachfrage',
     outlookEnthusiast: 'Liebhaber-Status • Stabil bis steigend',
     outlookSteady: 'Solide • Planbarer Wertverlauf',
-    homeKicker: 'FAHRZEUG-SHOWDOWN',
-    homeTitle: 'FAHRZEUGE IM DIREKTEN DUELL',
-    homeIntro: 'Wähle zwei Kontrahenten, bestimme ihre Motoren und lass sie in {pillars} Kategorien und {ratings} Wertungen direkt gegeneinander antreten. Passe die Gewichtungen an das an, was dir am wichtigsten ist, und finde das Auto, das am besten zu dir passt.',
-    homeStartBtn: 'WÄHLE DEINE FAHRZEUGE',
-    homeRosterMeta: '{cars} Fahrzeuge • Mehrere Motorisierungen • Eigene Prioritäten-Gewichtung',
+    homeKicker: 'KOPF-AN-KOPF',
+    homeTitle: 'WELCHES AUTO PASST ZU DIR?',
+    homeIntro: 'Schicke zwei Autos ins direkte Duell über {pillars} Kategorien und {ratings} Einzelwertungen. Gewichte, was für dich zählt, und finde deinen persönlichen Sieger.',
+    homeStartBtn: 'MODELLE WÄHLEN',
+    homeRosterMeta: '{cars} FAHRZEUGE • MEHRERE MOTORISIERUNGEN • EIGENE GEWICHTUNG',
     homeBrandTooltip: 'Zurück zur Startseite',
     buyerFitBtn: 'FÜR WEN GEEIGNET? • FAZIT',
     buyerFitCategory: 'KAUFBERATUNG & ZIELGRUPPE',
@@ -677,11 +677,229 @@ let selectedRightEngineId = null;
 let smashPickerForceOpen = false;
 let smashAlignmentTimer = null;
 let smashLockInTimer = null;
+let duelClashTimer = null;
+let duelSettleTimer = null;
 let activeRosterTarget = 'p1'; // 'p1' (left) or 'p2' (right)
 let currentLang = 'en'; // 'en' | 'de' | 'ru'
 let currentTheme = 'dark'; // 'dark' | 'light' | 'dark-soft' | 'light-soft'
 const expandedPillars = new Set();
 let activeStatsScrollSide = 'left';
+
+// Easy-to-tweak timing constants (ms) for Selection -> Duel transition (3300ms total)
+const DUEL_TRANSITION_TIMING = {
+  lockInMs: 800,       // Beat 1: Selected C1/C2 grid tiles pulse & others dim
+  clashMs: 1600,       // Beat 2: Arcade "VS" clash beat (cars slam in + VS impact)
+  revealSettleMs: 1252 // Beat 3: Staggered sidebars, pillars & traits settle
+};
+
+function syncDuelTransitionCssVars() {
+  const root = document.documentElement;
+  if (!root) return;
+  root.style.setProperty('--duel-lockin-ms', `${DUEL_TRANSITION_TIMING.lockInMs}ms`);
+  root.style.setProperty('--duel-clash-ms', `${DUEL_TRANSITION_TIMING.clashMs}ms`);
+  root.style.setProperty('--duel-reveal-ms', `${DUEL_TRANSITION_TIMING.revealSettleMs}ms`);
+}
+
+function cancelDuelTransition() {
+  if (smashLockInTimer) {
+    clearTimeout(smashLockInTimer);
+    smashLockInTimer = null;
+  }
+  if (duelClashTimer) {
+    clearTimeout(duelClashTimer);
+    duelClashTimer = null;
+  }
+  if (duelSettleTimer) {
+    clearTimeout(duelSettleTimer);
+    duelSettleTimer = null;
+  }
+  const smashStage = document.getElementById('smash-picker-stage');
+  const versusArena = document.getElementById('versus-arena');
+  const duelStage = document.querySelector('.duel-stage');
+  const overlay = document.getElementById('duel-clash-overlay');
+  const wrapL = document.querySelector('#viewport-left .car-image-wrapper');
+  const wrapR = document.querySelector('#viewport-right .car-image-wrapper');
+  [wrapL, wrapR].forEach((w) => {
+    if (w) {
+      w.style.transition = '';
+      w.style.transform = '';
+      w.style.transformOrigin = '';
+    }
+  });
+  if (smashStage) smashStage.classList.remove('is-locking-in');
+  if (versusArena) versusArena.classList.remove('is-duel-entering');
+  if (duelStage) duelStage.classList.remove('is-duel-entering');
+  if (overlay) {
+    overlay.classList.remove('is-active', 'is-exiting');
+    overlay.setAttribute('aria-hidden', 'true');
+  }
+}
+
+function ensureDuelClashOverlay() {
+  let overlay = document.getElementById('duel-clash-overlay');
+  if (overlay) return overlay;
+  const versusArena = document.getElementById('versus-arena');
+  if (!versusArena) return null;
+
+  overlay = document.createElement('div');
+  overlay.id = 'duel-clash-overlay';
+  overlay.className = 'duel-clash-overlay';
+  overlay.setAttribute('aria-hidden', 'true');
+  overlay.innerHTML = `
+    <div class="duel-clash-backdrop"></div>
+    <div class="duel-clash-slash"></div>
+    <div class="duel-clash-contenders">
+      <div class="duel-clash-card clash-left">
+        <span class="duel-clash-tag p1">C1</span>
+        <img class="duel-clash-img" id="duel-clash-img-left" src="" alt="" draggable="false" />
+        <span class="duel-clash-name" id="duel-clash-name-left"></span>
+      </div>
+      <div class="duel-clash-crest">
+        <div class="duel-clash-ring"></div>
+        <span class="duel-clash-vs">VS</span>
+      </div>
+      <div class="duel-clash-card clash-right">
+        <span class="duel-clash-tag p2">C2</span>
+        <img class="duel-clash-img" id="duel-clash-img-right" src="" alt="" draggable="false" />
+        <span class="duel-clash-name" id="duel-clash-name-right"></span>
+      </div>
+    </div>
+  `;
+  versusArena.appendChild(overlay);
+  return overlay;
+}
+
+function runDuelEntranceSequence({ fromSmashPicker = true } = {}) {
+  cancelDuelTransition();
+  syncDuelTransitionCssVars();
+
+  const reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reducedMotion || !selectedLeftId || !selectedRightId) {
+    smashPickerForceOpen = false;
+    updateArena();
+    return;
+  }
+
+  const leftBase = getBaseCarById(selectedLeftId);
+  const rightBase = getBaseCarById(selectedRightId);
+  const smashStage = document.getElementById('smash-picker-stage');
+  const versusArena = document.getElementById('versus-arena');
+  const duelStage = document.querySelector('.duel-stage');
+
+  const startClashBeat = () => {
+    const overlay = ensureDuelClashOverlay();
+    if (!overlay || !leftBase || !rightBase) {
+      smashPickerForceOpen = false;
+      updateArena();
+      return;
+    }
+
+    const imgL = document.getElementById('duel-clash-img-left');
+    const imgR = document.getElementById('duel-clash-img-right');
+    const nameL = document.getElementById('duel-clash-name-left');
+    const nameR = document.getElementById('duel-clash-name-right');
+
+    if (imgL) {
+      imgL.src = leftBase.image;
+      imgL.alt = getSmashGridLabel(leftBase);
+      imgL.className = `duel-clash-img ${(leftBase.imageFacing || 'right') === 'left' ? 'mirrored-car' : ''}`;
+    }
+    if (imgR) {
+      imgR.src = rightBase.image;
+      imgR.alt = getSmashGridLabel(rightBase);
+      imgR.className = `duel-clash-img ${(rightBase.imageFacing || 'right') === 'right' ? 'mirrored-car' : ''}`;
+    }
+    if (nameL) nameL.textContent = getSmashGridLabel(leftBase);
+    if (nameR) nameR.textContent = getSmashGridLabel(rightBase);
+
+    if (smashStage) smashStage.classList.remove('is-locking-in');
+
+    // Restart overlay CSS animations cleanly while keeping sidebars hidden until reveal
+    overlay.classList.remove('is-active', 'is-exiting');
+    void overlay.offsetWidth;
+    overlay.classList.add('is-active');
+    overlay.setAttribute('aria-hidden', 'false');
+
+    const exitLeadMs = Math.max(140, Math.round(DUEL_TRANSITION_TIMING.clashMs * 0.78));
+    duelClashTimer = setTimeout(() => {
+      duelClashTimer = null;
+      if (isHomeView || !selectedLeftId || !selectedRightId) return;
+
+      // FLIP First: measure clash card images before switching to duel layout
+      const fromLeft = imgL ? imgL.getBoundingClientRect() : null;
+      const fromRight = imgR ? imgR.getBoundingClientRect() : null;
+
+      smashPickerForceOpen = false;
+      updateArena();
+
+      // Snap grid-template-columns immediately before measuring final FLIP rects
+      if (versusArena) versusArena.classList.add('is-duel-entering');
+      if (duelStage) duelStage.classList.add('is-duel-entering');
+
+      // FLIP Last & Invert: position real car-image-wrappers over the clash images
+      const wrapL = document.querySelector('#viewport-left .car-image-wrapper');
+      const wrapR = document.querySelector('#viewport-right .car-image-wrapper');
+      const invertWrap = (wrap, fromRect) => {
+        if (!wrap || !fromRect || !fromRect.width) return false;
+        const toRect = wrap.getBoundingClientRect();
+        if (!toRect.width) return false;
+        const dx = (fromRect.left + fromRect.width / 2) - (toRect.left + toRect.width / 2);
+        const dy = (fromRect.top + fromRect.height / 2) - (toRect.top + toRect.height / 2);
+        const s = fromRect.width / toRect.width;
+        wrap.style.transition = 'none';
+        wrap.style.transformOrigin = 'center center';
+        wrap.style.transform = `translate(${dx}px, ${dy}px) scale(${s})`;
+        return true;
+      };
+
+      const hasFlipL = invertWrap(wrapL, fromLeft);
+      const hasFlipR = invertWrap(wrapR, fromRight);
+      if (versusArena) void versusArena.offsetWidth;
+
+      overlay.classList.add('is-exiting');
+
+      // FLIP Play on next frame so the browser commits the inverted start state cleanly
+      requestAnimationFrame(() => {
+        const playFlip = (wrap) => {
+          if (!wrap) return;
+          wrap.style.transition = 'transform var(--duel-reveal-ms) cubic-bezier(0.25, 1, 0.35, 1)';
+          wrap.style.transform = 'translate(0, 0) scale(1)';
+        };
+        if (hasFlipL) playFlip(wrapL);
+        if (hasFlipR) playFlip(wrapR);
+      });
+
+      duelSettleTimer = setTimeout(() => {
+        duelSettleTimer = null;
+        overlay.classList.remove('is-active', 'is-exiting');
+        overlay.setAttribute('aria-hidden', 'true');
+        if (versusArena) versusArena.classList.remove('is-duel-entering');
+        if (duelStage) duelStage.classList.remove('is-duel-entering');
+        [wrapL, wrapR].forEach((w) => {
+          if (w) {
+            w.style.transition = '';
+            w.style.transform = '';
+            w.style.transformOrigin = '';
+          }
+        });
+      }, DUEL_TRANSITION_TIMING.revealSettleMs);
+    }, exitLeadMs);
+  };
+
+  if (fromSmashPicker && smashStage) {
+    smashPickerForceOpen = true;
+    updateArena();
+    smashStage.classList.add('is-locking-in');
+    smashLockInTimer = setTimeout(() => {
+      smashLockInTimer = null;
+      if (!isHomeView && selectedLeftId && selectedRightId) {
+        startClashBeat();
+      }
+    }, DUEL_TRANSITION_TIMING.lockInMs);
+  } else {
+    startClashBeat();
+  }
+}
 
 // Helper: Current language dictionary
 function t() {
@@ -1722,6 +1940,7 @@ function renderCarSelectorSide(side, selectedCarId, selectedEngineId) {
   dropdown.querySelectorAll('.engine-option-btn').forEach((optBtn) => {
     optBtn.addEventListener('click', (e) => {
       e.stopPropagation();
+      const wasBothSelected = Boolean(selectedLeftId && selectedRightId);
       const chosenId = optBtn.getAttribute('data-car-id');
       if (side === 'left') {
         selectedLeftId = chosenId;
@@ -1730,10 +1949,16 @@ function renderCarSelectorSide(side, selectedCarId, selectedEngineId) {
         selectedRightId = chosenId;
         selectedRightEngineId = getBaseCarById(chosenId).defaultEngineId;
       }
+      setPopupOpen(btn, dropdown, false);
+      if (!isHomeView && selectedLeftId && selectedRightId && (!wasBothSelected || smashPickerForceOpen)) {
+        const smashStage = document.getElementById('smash-picker-stage');
+        const fromPicker = Boolean(smashStage && !smashStage.classList.contains('is-hidden'));
+        runDuelEntranceSequence({ fromSmashPicker: fromPicker });
+        return;
+      }
       if (selectedLeftId && selectedRightId) {
         smashPickerForceOpen = false;
       }
-      setPopupOpen(btn, dropdown, false);
       updateArena();
     });
   });
@@ -1862,6 +2087,7 @@ function renderVerdictBanner() {
   const backToGridBtn = document.getElementById('back-to-grid-btn');
   if (backToGridBtn) {
     backToGridBtn.addEventListener('click', () => {
+      cancelDuelTransition();
       smashPickerForceOpen = true;
       updateArena();
     });
@@ -2081,9 +2307,10 @@ function getBuyerFit(car) {
     return car.buyerFit[currentLang];
   }
 
-  const cards = car.sharedBuyerFit && car.sharedBuyerFit.cards;
+  const cards = (car.sharedBuyerFit && car.sharedBuyerFit.cards) || {};
+  const globalCards = typeof SHARED_BUYER_FIT_CARDS !== 'undefined' ? SHARED_BUYER_FIT_CARDS : {};
   const group = car.buyerFitGroup && car.buyerFitGroups && car.buyerFitGroups[car.buyerFitGroup];
-  if (!cards || !group) return null;
+  if (!group) return null;
 
   const overrides = car.buyerFitOverrides || {};
   const summaryObj = overrides.summary || group.summary;
@@ -2092,7 +2319,10 @@ function getBuyerFit(car) {
 
   const resolveKeys = (keys) =>
     keys
-      .map((key) => (cards[key] && (cards[key][currentLang] || cards[key].en)) || null)
+      .map((key) => {
+        const entry = cards[key] || globalCards[key];
+        return entry ? (entry[currentLang] || entry.en) : null;
+      })
       .filter(Boolean);
 
   const summary = summaryObj ? (summaryObj[currentLang] || summaryObj.en || '') : '';
@@ -2661,10 +2891,7 @@ function renderSmashPicker() {
   });
 
   const clearSlotSelection = (slot) => {
-    if (smashLockInTimer) {
-      clearTimeout(smashLockInTimer);
-      smashLockInTimer = null;
-    }
+    cancelDuelTransition();
     if (slot === 'p1') {
       selectedLeftId = null;
       selectedLeftEngineId = null;
@@ -2748,22 +2975,11 @@ function renderSmashPicker() {
         if (!selectedLeftId) activeRosterTarget = 'p1';
       }
 
-      if (smashLockInTimer) {
-        clearTimeout(smashLockInTimer);
-        smashLockInTimer = null;
-      }
+      cancelDuelTransition();
 
       if (selectedLeftId && selectedRightId) {
         if (!wasBothSelected) {
-          smashPickerForceOpen = true;
-          updateArena();
-          smashLockInTimer = setTimeout(() => {
-            smashLockInTimer = null;
-            if (!isHomeView && selectedLeftId && selectedRightId) {
-              smashPickerForceOpen = false;
-              updateArena();
-            }
-          }, 600);
+          runDuelEntranceSequence({ fromSmashPicker: true });
           return;
         }
         smashPickerForceOpen = false;
@@ -3374,10 +3590,7 @@ function initCarDuel() {
   if (brandHomeBtn) {
     const goHome = () => {
       if (isHomeView) return;
-      if (smashLockInTimer) {
-        clearTimeout(smashLockInTimer);
-        smashLockInTimer = null;
-      }
+      cancelDuelTransition();
       isHomeView = true;
       selectedLeftId = null;
       selectedRightId = null;
