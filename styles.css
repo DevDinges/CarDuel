@@ -5760,3 +5760,17 @@ html[data-theme="light-soft"] .hm-damage-pill {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Homepage Marquee Smooth Load-In & Pause Until Priority Batch Ready */
+.home-marquee-track.is-loading {
+  animation-play-state: paused;
+}
+
+.home-marquee-thumb {
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.home-marquee-thumb.is-loaded {
+  opacity: 1;
+}

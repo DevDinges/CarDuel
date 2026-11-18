@@ -2239,13 +2239,15 @@ function renderHomeLanding() {
     const orderedCars = [...CAR_ROSTER].sort(
       (a, b) => (a.gridOrder ?? Number(a.number)) - (b.gridOrder ?? Number(b.number))
     );
-    const buildMarqueeTile = (baseCar) => {
+    const buildMarqueeTile = (baseCar, isPriority = false) => {
       const mirrorClass = (baseCar.imageFacing || 'right') === 'left' ? 'mirrored-car' : '';
       const label = getSmashGridLabel(baseCar);
+      const priorityAttr = isPriority ? ' fetchpriority="high"' : '';
+      const thumbSrc = getCarThumbSrc(baseCar.image);
       return `
         <div class="home-marquee-tile">
           <div class="home-marquee-thumb-wrap">
-            <img class="home-marquee-thumb ${mirrorClass}" src="${baseCar.image}" alt="" loading="lazy" draggable="false" />
+            <img class="home-marquee-thumb ${mirrorClass}" src="${thumbSrc}" onerror="if(!this.dataset.fb){this.dataset.fb='1';this.src='${baseCar.image}';}" alt="" decoding="async"${priorityAttr} draggable="false" />
           </div>
           <div class="home-marquee-nameplate">
             <span class="home-marquee-name">${label}</span>
@@ -2253,13 +2255,41 @@ function renderHomeLanding() {
         </div>
       `;
     };
-    const singleSetHtml = orderedCars.map(buildMarqueeTile).join('');
+    const firstSetHtml = orderedCars.map((car, idx) => buildMarqueeTile(car, idx < 6)).join('');
+    const repeatSetHtml = orderedCars.map((car) => buildMarqueeTile(car, false)).join('');
     marqueeEl.innerHTML = `
-      <div class="home-marquee-track">
-        <div class="home-marquee-set">${singleSetHtml}</div>
-        <div class="home-marquee-set">${singleSetHtml}</div>
+      <div class="home-marquee-track is-loading">
+        <div class="home-marquee-set">${firstSetHtml}</div>
+        <div class="home-marquee-set">${repeatSetHtml}</div>
       </div>
     `;
+    const trackEl = marqueeEl.querySelector('.home-marquee-track');
+    const imgs = Array.from(marqueeEl.querySelectorAll('.home-marquee-thumb'));
+    let settledCount = 0;
+    const targetInitial = Math.min(6, orderedCars.length);
+    const unlockTrack = () => {
+      if (trackEl) trackEl.classList.remove('is-loading');
+    };
+    const safetyTimer = setTimeout(unlockTrack, 900);
+
+    imgs.forEach((img, idx) => {
+      const markLoaded = () => {
+        img.classList.add('is-loaded');
+        if (idx < targetInitial) {
+          settledCount += 1;
+          if (settledCount >= targetInitial) {
+            clearTimeout(safetyTimer);
+            unlockTrack();
+          }
+        }
+      };
+      if (img.complete && img.naturalWidth > 0) {
+        markLoaded();
+      } else {
+        img.addEventListener('load', markLoaded, { once: true });
+        img.addEventListener('error', markLoaded, { once: true });
+      }
+    });
     marqueeEl.dataset.populated = 'true';
   }
 }
@@ -2970,6 +3000,10 @@ function getSmashGridLabel(baseCar) {
   return baseCar.gridLabel || baseCar.shortTitle || baseCar.fullName;
 }
 
+function getCarThumbSrc(imagePath) {
+  return imagePath ? imagePath.replace(/^assets\/([^/]+)\.(png|jpe?g|webp)$/i, 'assets/thumbs/$1.webp') : '';
+}
+
 function renderSmashPicker() {
   const ui = t();
   const titleEl = document.getElementById('smash-title');
@@ -3061,11 +3095,12 @@ function renderSmashPicker() {
     const clearTarget = isP1 && isP2 ? 'both' : isP1 ? 'p1' : isP2 ? 'p2' : '';
     const dotColor = CAR_TYPE_DOT_COLORS[getCarType(baseCar)] || '#38bdf8';
     const mirrorClass = (baseCar.imageFacing || 'right') === 'left' ? 'mirrored-car' : '';
+    const thumbSrc = getCarThumbSrc(baseCar.image);
 
     return `
       <div role="button" tabindex="0" class="smash-car-tile ${stateClass}" data-smash-car-id="${baseCar.id}">
         <div class="smash-car-thumb-wrap">
-          <img class="smash-car-thumb ${mirrorClass}" src="${baseCar.image}" alt="${getSmashGridLabel(baseCar)}" draggable="false" />
+          <img class="smash-car-thumb ${mirrorClass}" src="${thumbSrc}" onerror="if(!this.dataset.fb){this.dataset.fb='1';this.src='${baseCar.image}';}" alt="${getSmashGridLabel(baseCar)}" draggable="false" />
           <div class="smash-car-badges">
             ${isP1 ? '<span class="mini-p-badge p1-badge">C1</span>' : ''}
             ${isP2 ? '<span class="mini-p-badge p2-badge">C2</span>' : ''}
