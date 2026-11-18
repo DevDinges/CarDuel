@@ -1182,6 +1182,18 @@ function buildPriceBreakdownHtml(car, ui) {
   `;
 }
 
+const NEGATIVE_SUBSTAT_BADGE_RE =
+  /(thirsty|durstig|прожорлив|very high|mid-high|\bhigher\b|high .*insurance|\bhigh\b[^.;]*\b(?:tax|steuer|налог)|(?<!günstig\w*\s)teure|(?<![нН]е)дорог|costly|expensive|pricey|needs downshift|herunterschalten|пониженн|high-rev|drehzahl|крутить|sluggish|slow|modest|relaxed|calm|träg|gemächlich|медлен|спокойн|скромн|1[2-9][.,]\d\s*s\b|(?:^|\D)0\s*(?:\/\s*0\s*)?kg\b|no towing|keine anhäng|буксировка запрещ|choppy|hoppel|stiff|hartes|жёстк|loud|laut|громк|\bгул\w*|roar|wear|(?<!günstig\w*\s)(?<!günstige\s)verschleiß|износ|(?<!no\s)(?<!low\s)(?<!ohne\s)(?<!kein\s)risk|(?<!kein\s)(?<!ohne\s)risiko|(?<![нН]изкий\s)(?<![бБ]ез\s)(?<![нН]ет\s)риск|check |watch |inspect |prüfen|провер)/i;
+
+function isNegativeSubStatBadge(text) {
+  const s = String(text || '').trim();
+  if (!s) return false;
+  if (/^(no |zero |without |avoids?\s|cheap |low risk|kein\w* |ohne |günstig\w* |без |нет |недорог\w* |низк\w* риск)/i.test(s)) {
+    return false;
+  }
+  return NEGATIVE_SUBSTAT_BADGE_RE.test(s);
+}
+
 function buildAutoSubStatDossier(car, statKey) {
   const subObj = car && car.subStats && car.subStats[statKey];
   if (!subObj) return null;
@@ -1193,14 +1205,12 @@ function buildAutoSubStatDossier(car, statKey) {
   const score = Number(subObj.score || 0);
   const fuel = car.fuelType || 'petrol';
   const hp = car.hp ? `${car.hp} HP` : '';
+  const isTurbo =
+    /(turbo|tfsi|tsi|thp|ecoboost|kompressor|cdi|tdi|d-4d|d-cat|crdi|tdci|i-dtec|i-ctdi|mzr-cd|bi-turbo)/i.test(
+      `${car.id || ''} ${car.engineBadge || ''} ${car.shortTitle || ''}`
+    ) && !/\bNA\b/i.test(car.engineBadge || '');
 
-  const tierText = {
-    en: score >= 8.5 ? 'Strong Category Performer' : score >= 7.0 ? 'Solid Everyday Benchmark' : 'Modest Category Output',
-    de: score >= 8.5 ? 'Starke Kategorie-Wertung' : score >= 7.0 ? 'Solider Alltags-Standard' : 'Zurückhaltende Kategorie-Wertung',
-    ru: score >= 8.5 ? 'Сильный показатель в классе' : score >= 7.0 ? 'Крепкий повседневный уровень' : 'Сдержанный показатель в классе'
-  }[lang];
-
-  const headline = b0 ? `${b0} — ${tierText}` : `${car.engineBadge || car.shortTitle} — ${tierText}`;
+  const headline = [b0, b1].filter(Boolean).join(' • ') || car.engineBadge || car.shortTitle;
 
   const fuelNote = {
     en: {
@@ -1221,19 +1231,37 @@ function buildAutoSubStatDossier(car, statKey) {
   }[lang][fuel];
 
   const strengths = [];
-  if (b0) strengths.push(b0 + (hp && (statKey === 'accelerationOvertaking' || statKey === 'midRangeTorquePassing') ? ` (${hp})` : '') + '.');
-  if (b1 && score >= 7.5) strengths.push(`${b1}.`);
-  if (strengths.length === 0 || strengths.length === 1) strengths.push(fuelNote);
+  const taxPosB0 = statKey === 'taxInsuranceNorm' && b0 && !isNegativeSubStatBadge(b0) && isNegativeSubStatBadge(b1);
+  if (score >= 7.0) {
+    if (b0 && !isNegativeSubStatBadge(b0)) {
+      strengths.push(b0 + (hp && (statKey === 'accelerationOvertaking' || statKey === 'midRangeTorquePassing') ? ` (${hp})` : '') + '.');
+    }
+    if (b1 && score >= 7.5 && !isNegativeSubStatBadge(b1)) strengths.push(`${b1}.`);
+    if (strengths.length === 0 && (statKey === 'efficiencyFuel' || statKey === 'taxInsuranceNorm')) {
+      strengths.push(fuelNote);
+    }
+  } else if (taxPosB0) {
+    strengths.push({
+      en: `${b0} keeps fixed annual road-tax rules straightforward for this class.`,
+      de: `${b0} sorgt für eine klare, planbare jährliche Grundsteuer-Einstufung.`,
+      ru: `${b0} обеспечивает понятный и прозрачный базовый расчёт налога.`
+    }[lang]);
+  }
 
   const watchouts = [];
-  if (b1 && score < 7.5) watchouts.push(`${b1}.`);
+  if (score >= 7.0 && b1 && isNegativeSubStatBadge(b1)) {
+    watchouts.push(`${b1}.`);
+  }
+
+  const trBadgeEn = String(car?.subStats?.transmissionDriveline?.badges?.en?.[0] || '');
+  const isAutoTrans = /(e-cvt|cvt|dsg|powershift|7g-tronic|5g-tronic|tiptronic|auto|\bat\b)/i.test(`${trBadgeEn} ${car.id || ''}`);
 
   const statGuidance = {
     accelerationOvertaking: {
       w: {
-        en: score < 7.0 ? 'Requires planning or downshifts for brisk country-road overtakes.' : 'Peak acceleration builds cleanly in the engine’s mid-to-upper rev band.',
-        de: score < 7.0 ? 'Überholvorgänge auf der Landstraße erfordern rechtzeitiges Runterschalten.' : 'Volle Beschleunigung steht im mittleren bis oberen Drehzahlbereich bereit.',
-        ru: score < 7.0 ? 'Для уверенных обгонов на трассе нужен запас дистанции или пониженная передача.' : 'Наилучшая динамика раскрывается в среднем и высоком диапазоне оборотов.'
+        en: 'Peak acceleration builds cleanly in the engine’s mid-to-upper rev band.',
+        de: 'Volle Beschleunigung steht im mittleren bis oberen Drehzahlbereich bereit.',
+        ru: 'Наилучшая динамика раскрывается в среднем и высоком диапазоне оборотов.'
       },
       b: {
         en: ['Test full-throttle acceleration from 60 to 100 km/h on an open road with zero hesitation.', 'Confirm smooth throttle response without misfires or limp-mode warnings under load.'],
@@ -1243,21 +1271,48 @@ function buildAutoSubStatDossier(car, statKey) {
     },
     midRangeTorquePassing: {
       w: {
-        en: score < 7.0 ? 'Modest low-end pull means downshifting is needed on steep motorway climbs.' : 'Turbocharged or larger-displacement rivals feel punchier when fully loaded.',
-        de: score < 7.0 ? 'Begrenztes Drehmoment untenherum erfordert an Steigungen rechtzeitiges Herunterschalten.' : 'Bei voller Beladung spürt man mehr Elastizität vor allem bei hubraumstärkeren Motoren.',
-        ru: score < 7.0 ? 'Скромная тяга на низах требует пониженной передачи на затяжных подъёмах.' : 'При полной загрузке запас эластичности ниже, чем у более объёмных моторов.'
+        en: 'Turbocharged or larger-displacement rivals feel punchier when fully loaded.',
+        de: 'Bei voller Beladung spürt man mehr Elastizität vor allem bei hubraumstärkeren Motoren.',
+        ru: 'При полной загрузке запас эластичности ниже, чем у более объёмных моторов.'
       },
       b: {
-        en: ['Accelerate firmly in 4th gear from 50 km/h to verify smooth, rattle-free mid-range pull.', 'Check for any surging or boost drop-off during steady highway overtaking.'],
-        de: ['Im 4. Gang ab 50 km/h beschleunigen und auf ruckfreien Durchzug achten.', 'Auf gleichmäßigen Leistungsaufbau ohne Ladedruck-Schwankungen beim Überholen prüfen.'],
-        ru: ['Плавно нажать газ на 4-й передаче с 50 км/ч — тяга должна нарастать ровно.', 'Проверить отсутствие провалов и рывков при ускорении на трассе.']
+        en: [
+          isAutoTrans
+            ? 'Floor the accelerator smoothly from 50 km/h to verify instant, lag-free kickdown or electric-assist response.'
+            : 'Accelerate firmly in 4th gear from 50 km/h to verify smooth, rattle-free mid-range pull.',
+          isTurbo
+            ? 'Check for any surging or boost drop-off during steady highway overtaking.'
+            : 'Rev smoothly past 4,000 rpm once warm to confirm clean cam-phaser pull without flat spots.'
+        ],
+        de: [
+          isAutoTrans
+            ? 'Bei 50 km/h zügig durchtreten und auf spontanes Ansprechen ohne Ruckeln achten.'
+            : 'Im 4. Gang ab 50 km/h beschleunigen und auf ruckfreien Durchzug achten.',
+          isTurbo
+            ? 'Auf gleichmäßigen Leistungsaufbau ohne Ladedruck-Schwankungen beim Überholen prüfen.'
+            : 'Warmgefahren sauber über 4.000 U/min drehen, um gleichmäßigen Durchzug ohne Leistungsloch zu prüfen.'
+        ],
+        ru: [
+          isAutoTrans
+            ? 'Плавно нажать газ в пол с 50 км/ч — отклик должен быть быстрым и ровным без толчков.'
+            : 'Плавно нажать газ на 4-й передаче с 50 км/ч — тяга должна нарастать ровно.',
+          isTurbo
+            ? 'Проверить отсутствие провалов и скачков наддува при ускорении на трассе.'
+            : 'На прогретом моторе плавно раскрутить выше 4 000 об/мин — тяга должна быть ровной без провалов.'
+        ]
       }
     },
     efficiencyFuel: {
       w: {
-        en: fuel === 'hybrid' ? 'Sustained motorway speeds above 130 km/h and cold winter trips raise fuel use.' : 'Brisk motorway driving and stop-and-go city traffic increase real-world fuel use.',
-        de: fuel === 'hybrid' ? 'Dauertempo über 130 km/h und kurze Winterfahrten erhöhen den Praxisverbrauch.' : 'Zügiges Autobahntempo und dichter Stadtverkehr treiben den Verbrauch nach oben.',
-        ru: fuel === 'hybrid' ? 'Скорость выше 130 км/ч и короткие зимние поездки заметно повышают расход.' : 'Быстрая езда по трассе и пробки ощутимо увеличивают реальный расход топлива.'
+        en: fuel === 'hybrid'
+          ? 'Sustained motorway speeds above 130 km/h and cold winter trips raise fuel use.'
+          : 'Brisk motorway driving and stop-and-go city traffic increase real-world fuel use.',
+        de: fuel === 'hybrid'
+          ? 'Dauertempo über 130 km/h und kurze Winterfahrten erhöhen den Praxisverbrauch.'
+          : 'Zügiges Autobahntempo und dichter Stadtverkehr treiben den Verbrauch nach oben.',
+        ru: fuel === 'hybrid'
+          ? 'Скорость выше 130 км/ч и короткие зимние поездки заметно повышают расход.'
+          : 'Быстрая езда по трассе и пробки ощутимо увеличивают реальный расход топлива.'
       },
       b: {
         en: ['Check the trip computer’s long-term average fuel consumption to see how the car was driven.', 'Verify tire pressures, clean air filter, and smooth brake roll (dragging calipers hurt economy).'],
@@ -1267,9 +1322,15 @@ function buildAutoSubStatDossier(car, statKey) {
     },
     taxInsuranceNorm: {
       w: {
-        en: fuel === 'diesel' ? 'Verify local Euro 5 vs Euro 6 diesel low-emission zone rules and higher annual diesel tax.' : 'Annual road tax and insurance premiums vary by local emissions rules, trim, and driver profile.',
-        de: fuel === 'diesel' ? 'Euro-5-/Euro-6-Umweltzonenregeln und die höhere jährliche Diesel-Kfz-Steuer einplanen.' : 'Steuer & Versicherung variieren je nach CO2-Einstufung, Motorisierung und regionaler Tarifklasse.',
-        ru: fuel === 'diesel' ? 'Учитывайте экологический класс (Euro 5/6) и повышенные ставки налога на дизель.' : 'Итоговая стоимость налога и страховки зависит от мощности, возраста и региона.'
+        en: fuel === 'diesel'
+          ? 'Verify local Euro 5 vs Euro 6 diesel low-emission zone rules and higher annual diesel tax.'
+          : 'Annual road tax and insurance premiums vary by local emissions rules, trim, and driver profile.',
+        de: fuel === 'diesel'
+          ? 'Euro-5-/Euro-6-Umweltzonenregeln und die höhere jährliche Diesel-Kfz-Steuer einplanen.'
+          : 'Steuer & Versicherung variieren je nach CO2-Einstufung, Motorisierung und regionaler Tarifklasse.',
+        ru: fuel === 'diesel'
+          ? 'Учитывайте экологический класс (Euro 5/6) и повышенные ставки налога на дизель.'
+          : 'Итоговая стоимость налога и страховки зависит от мощности, возраста и региона.'
       },
       b: {
         en: ['Verify the exact emission standard (Euro 5 / Euro 6) and CO2 figure on the registration document.', 'Run an insurance quote using the exact engine HP and trim before finalizing purchase.'],
@@ -1280,23 +1341,11 @@ function buildAutoSubStatDossier(car, statKey) {
   };
 
   const entry = statGuidance[statKey];
-  if (entry) {
+  if (entry && score >= 7.0) {
     watchouts.push(entry.w[lang]);
-  } else {
-    watchouts.push({
-      en: score < 7.0 ? 'One of this variant’s more modest areas compared to top class rivals.' : 'Verify trim-specific equipment condition and service history before buying.',
-      de: score < 7.0 ? 'Im Klassenvergleich eine der zurückhaltenderen Kategorien dieser Variante.' : 'Ausstattungsdetails und Wartungsnachweise vor dem Kauf sorgfältig prüfen.',
-      ru: score < 7.0 ? 'Одна из более сдержанных характеристик этой версии на фоне лидеров класса.' : 'Перед покупкой проверьте фактическое состояние узла и историю обслуживания.'
-    }[lang]);
   }
 
-  const beforeYouBuy = entry
-    ? entry.b[lang]
-    : {
-        en: ['Inspect this area directly during the test drive and verify matching service records.'],
-        de: ['Diesen Bereich bei der Probefahrt gezielt testen und passende Wartungsbelege prüfen.'],
-        ru: ['Целенаправленно проверить этот узел на тест-драйве и сверить историю обслуживания.']
-      }[lang];
+  const beforeYouBuy = entry ? entry.b[lang] : [];
 
   return { headline, strengths, watchouts, beforeYouBuy };
 }
@@ -1308,6 +1357,8 @@ function buildAutoLowScoreReasons(car, statKey, subObj) {
   const b1 = badges[1] || '';
   const fuel = (car && car.fuelType) || 'petrol';
   const hp = car && car.hp ? `${car.hp} HP` : '';
+  const trBadgeEn = String(car?.subStats?.transmissionDriveline?.badges?.en?.[0] || '');
+  const isAutoTrans = /(e-cvt|cvt|dsg|powershift|7g-tronic|5g-tronic|tiptronic|auto|\bat\b)/i.test(`${trBadgeEn} ${car?.id || ''}`);
 
   const map = {
     transmissionDriveline: {
@@ -1369,29 +1420,41 @@ function buildAutoLowScoreReasons(car, statKey, subObj) {
     accelerationOvertaking: {
       en: [
         `Modest ${hp ? `${hp} ` : ''}power-to-weight ratio (${b0 || 'relaxed pace'}) holds back highway acceleration and quick overtakes.`,
-        'Requires downshifting and longer overtaking gaps when loaded or climbing grades.'
+        isAutoTrans
+          ? 'Needs sustained high engine revs and longer overtaking gaps when loaded or climbing grades.'
+          : 'Requires downshifting and longer overtaking gaps when loaded or climbing grades.'
       ],
       de: [
         `Zurückhaltendes Leistungsgewicht (${hp || b0 || 'gemächliches Tempo'}) begrenzt den Sprint und zügige Überholmanöver.`,
-        'Beladen oder bergauf sind rechtzeitiges Herunterschalten und mehr Überholweg nötig.'
+        isAutoTrans
+          ? 'Beladen oder bergauf sind hohe Drehzahlen und mehr Überholweg nötig.'
+          : 'Beladen oder bergauf sind rechtzeitiges Herunterschalten und mehr Überholweg nötig.'
       ],
       ru: [
         `Скромная энерговооружённость (${hp || b0 || 'спокойная динамика'}) ограничивает разгон и быстрые обгоны на трассе.`,
-        'При загрузке и на подъёмах требуются пониженная передача и больший запас дистанции.'
+        isAutoTrans
+          ? 'При загрузке и на подъёмах требуются высокие обороты и больший запас дистанции.'
+          : 'При загрузке и на подъёмах требуются пониженная передача и больший запас дистанции.'
       ]
     },
     midRangeTorquePassing: {
       en: [
         `Low torque reserves in higher gears (${b0 || 'modest mid-range'}) mean sluggish in-gear roll-on acceleration.`,
-        'Needs higher revs and frequent shifting to keep pace on steep hills or motorway merges.'
+        isAutoTrans
+          ? 'Needs sustained high revs to keep pace on steep hills or motorway merges.'
+          : 'Needs higher revs and frequent downshifting to keep pace on steep hills or motorway merges.'
       ],
       de: [
         `Geringes Drehmoment in hohen Gängen (${b0 || 'schmaler Durchzug'}) sorgt für zähe Elastizität.`,
-        'Steigungen und Auffahrten verlangen höhere Drehzahlen und häufiges Schalten.'
+        isAutoTrans
+          ? 'Steigungen und Auffahrten verlangen spürbar höhere Drehzahlen.'
+          : 'Steigungen und Auffahrten verlangen höhere Drehzahlen und häufiges Herunterschalten.'
       ],
       ru: [
         `Небольшой запас тяги на средних оборотах (${b0 || 'скромная эластичность'}) снижает отклик на высших передачах.`,
-        'На подъёмах и при обгонах мотор приходится активно крутить и переключаться вниз.'
+        isAutoTrans
+          ? 'На подъёмах и при обгонах силовой установке требуются высокие обороты.'
+          : 'На подъёмах и при обгонах мотор приходится активно крутить и переключаться вниз.'
       ]
     },
     efficiencyFuel: {
@@ -1408,20 +1471,35 @@ function buildAutoLowScoreReasons(car, statKey, subObj) {
         'Пробки и быстрая езда по трассе легко поднимают расход до 9–11+ л/100 км.'
       ]
     },
-    taxInsuranceNorm: {
-      en: [
-        `${b0 ? `${b0}: ` : ''}Higher annual road tax, ${fuel === 'diesel' ? 'older Euro emissions restrictions, ' : ''}or steeper insurance premiums than smaller base engines.`,
-        b1 ? `${b1}.` : 'Factor local CO2/displacement tax and insurance quotes into your budget.'
-      ],
-      de: [
-        `${b0 ? `${b0}: ` : ''}Höhere jährliche Kfz-Steuer${fuel === 'diesel' ? ', strengere Euro-Umweltzonenregeln' : ''} oder teurere Versicherung als bei kleineren Basis-Motoren.`,
-        b1 ? `${b1}.` : 'Steuer & Versicherung für diese Motorisierung vor dem Kauf konkret prüfen.'
-      ],
-      ru: [
-        `${b0 ? `${b0}: ` : ''}Повышенный транспортный налог${fuel === 'diesel' ? ', ограничения по эконормам Euro' : ''} или более дорогая страховка по сравнению с базовыми версиями.`,
-        b1 ? `${b1}.` : 'Заранее проверьте локальные ставки налога и страховки.'
-      ]
-    }
+    taxInsuranceNorm: (b0 && !isNegativeSubStatBadge(b0) && b1 && isNegativeSubStatBadge(b1))
+      ? {
+          en: [
+            `${b1}: Steep insurance risk class and performance premiums push annual fixed ownership costs well above standard hatchbacks.`,
+            'Younger drivers or urban postcodes face especially high annual comprehensive insurance quotes.'
+          ],
+          de: [
+            `${b1}: Hohe Versicherungseinstufung und sportliche Tarife treiben die jährlichen Fixkosten deutlich über klassenübliche Modelle.`,
+            'Besonders Fahranfänger oder Großstadt-Tarife führen zu spürbar höheren Jahresprämien.'
+          ],
+          ru: [
+            `${b1}: Высокий коэффициент риска и спортивные тарифы заметно увеличивают ежегодную стоимость страховки.`,
+            'Для молодых водителей и жителей крупных городов полисы обходятся особенно дорого.'
+          ]
+        }
+      : {
+          en: [
+            `${b0 ? `${b0}: ` : ''}Higher annual road tax, ${fuel === 'diesel' ? 'older Euro emissions restrictions, ' : ''}or steeper insurance premiums than smaller base engines.`,
+            b1 ? `${b1}.` : 'Factor local CO2/displacement tax and insurance quotes into your budget.'
+          ],
+          de: [
+            `${b0 ? `${b0}: ` : ''}Höhere jährliche Kfz-Steuer${fuel === 'diesel' ? ', strengere Euro-Umweltzonenregeln' : ''} oder teurere Versicherung als bei kleineren Basis-Motoren.`,
+            b1 ? `${b1}.` : 'Steuer & Versicherung für diese Motorisierung vor dem Kauf konkret prüfen.'
+          ],
+          ru: [
+            `${b0 ? `${b0}: ` : ''}Повышенный транспортный налог${fuel === 'diesel' ? ', ограничения по эконормам Euro' : ''} или более дорогая страховка по сравнению с базовыми версиями.`,
+            b1 ? `${b1}.` : 'Заранее проверьте локальные ставки налога и страховки.'
+          ]
+        }
   };
 
   const entry = map[statKey];
@@ -1443,6 +1521,17 @@ function buildAutoLowScoreReasons(car, statKey, subObj) {
   }[lang];
 }
 
+const BADGE_HEADLINE_STATS = new Set([
+  'maintenanceRepairCosts',
+  'transmissionDriveline',
+  'payloadTowing',
+  'depreciationResale',
+  'rideNoiseComfort',
+  'electronicsReliability',
+  'handlingAgility',
+  'brakingPerformance'
+]);
+
 function getSubStatDossier(car, statKey) {
   if (!car) return null;
   const hasFullDossiers = Boolean(car.sharedDossiers || car.dossierGroups);
@@ -1458,6 +1547,14 @@ function getSubStatDossier(car, statKey) {
     resolved = buildAutoSubStatDossier(car, statKey);
   }
   if (!resolved) return null;
+
+  if (!engDossier && BADGE_HEADLINE_STATS.has(statKey)) {
+    const badges = (subObj && subObj.badges && subObj.badges[currentLang]) || [];
+    const badgeHeadline = badges.filter(Boolean).join(' — ');
+    if (badgeHeadline) {
+      resolved = { ...resolved, headline: badgeHeadline };
+    }
+  }
 
   if (statKey === 'powertrainDurability' && resolved.highMileage) {
     return { ...resolved, highMileage: null };
@@ -2481,45 +2578,97 @@ function openStatDossier(statKey, side) {
     ? `<span class="stat-stock-val score-s-plus" title="S+ (9.6–10)">✦ ${subObj.score.toFixed(1)}</span>`
     : `<span class="stat-stock-val">${subObj.score.toFixed(1)}</span>`;
 
-  const strengthsListHtml =
-    dossier && dossier.strengths && dossier.strengths.length > 0
-      ? dossier.strengths
-          .map(
-            (str) => `
-        <li class="dossier-bullet-item strength">
-          <span class="bullet-icon">✔</span>
-          <span>${str}</span>
-        </li>
-      `
-          )
-          .join('')
-      : `<li class="dossier-bullet-item strength"><span class="bullet-icon">✔</span><span>${ui.dossierDefaultStrength}</span></li>`;
-
-  const watchoutsListHtml =
-    dossier && dossier.watchouts && dossier.watchouts.length > 0
-      ? dossier.watchouts
-          .map(
-            (w) => `
-        <li class="dossier-bullet-item watchout">
-          <span class="bullet-icon">⚠</span>
-          <span>${w}</span>
-        </li>
-      `
-          )
-          .join('')
-      : `<li class="dossier-bullet-item watchout"><span class="bullet-icon">⚠</span><span>${ui.dossierDefaultWatchout}</span></li>`;
-
-  const headlineHtml =
-    dossier && dossier.headline
-      ? `<div class="dossier-headline-box">${dossier.headline}</div>`
-      : '';
-
   const isLowScore = Number(subObj.score || 0) < 7.0;
   const lowReasons = isLowScore
     ? (dossier && Array.isArray(dossier.lowScoreReasons) && dossier.lowScoreReasons.length > 0
         ? dossier.lowScoreReasons
         : buildAutoLowScoreReasons(currentCar, statKey, subObj))
     : [];
+
+  const normOverlapText = (txt) => String(txt || '').toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+  const lowNorms = lowReasons.map(normOverlapText).filter(Boolean);
+  const badgesList = (subObj && subObj.badges && subObj.badges[currentLang]) || [];
+  const negBadgeNorms = isLowScore ? badgesList.filter(isNegativeSubStatBadge).map(normOverlapText).filter(Boolean) : [];
+  const overlapsLow = (txt) => {
+    const tn = normOverlapText(txt);
+    if (!tn) return true;
+    return lowNorms.some((ln) => ln.includes(tn) || tn.includes(ln)) || negBadgeNorms.some((bn) => tn.includes(bn) || bn.includes(tn));
+  };
+
+  const filteredStrengths =
+    dossier && Array.isArray(dossier.strengths)
+      ? dossier.strengths.filter((s) => (!isLowScore ? Boolean(s) : !overlapsLow(s)))
+      : [];
+
+  const strengthsCardHtml =
+    filteredStrengths.length > 0
+      ? `
+      <div class="dossier-card">
+        <div class="dossier-card-title strengths-title">
+          <span>⚙</span>
+          <span>${ui.dossierStrengths}</span>
+        </div>
+        <ul class="dossier-bullets-list">
+          ${filteredStrengths
+            .map(
+              (str) => `
+            <li class="dossier-bullet-item strength">
+              <span class="bullet-icon">✔</span>
+              <span>${str}</span>
+            </li>
+          `
+            )
+            .join('')}
+        </ul>
+      </div>
+    `
+      : '';
+
+  const filteredWatchouts =
+    dossier && Array.isArray(dossier.watchouts)
+      ? dossier.watchouts.filter((w) => (!isLowScore ? Boolean(w) : !overlapsLow(w)))
+      : [];
+
+  const watchoutsCardHtml =
+    filteredWatchouts.length > 0
+      ? `
+      <div class="dossier-card">
+        <div class="dossier-card-title watchouts-title">
+          <span>🔧</span>
+          <span>${ui.dossierWatchouts}</span>
+        </div>
+        <ul class="dossier-bullets-list">
+          ${filteredWatchouts
+            .map(
+              (w) => `
+            <li class="dossier-bullet-item watchout">
+              <span class="bullet-icon">⚠</span>
+              <span>${w}</span>
+            </li>
+          `
+            )
+            .join('')}
+        </ul>
+      </div>
+    `
+      : '';
+
+  const sectionsGridHtml =
+    strengthsCardHtml || watchoutsCardHtml
+      ? `
+    <!-- Core Strengths & Known Watchouts Grid -->
+    <div class="dossier-sections-grid"${strengthsCardHtml && watchoutsCardHtml ? '' : ' style="grid-template-columns: 1fr;"'}>
+      ${strengthsCardHtml}
+      ${watchoutsCardHtml}
+    </div>
+  `
+      : '';
+
+  const headlineHtml =
+    dossier && dossier.headline
+      ? `<div class="dossier-headline-box">${dossier.headline}</div>`
+      : '';
+
   const criticalFlawsHtml =
     isLowScore && lowReasons.length > 0
       ? `
@@ -2708,28 +2857,7 @@ function openStatDossier(statKey, side) {
 
     ${criticalFlawsHtml}
 
-    <!-- Core Strengths & Known Watchouts Grid -->
-    <div class="dossier-sections-grid">
-      <div class="dossier-card">
-        <div class="dossier-card-title strengths-title">
-          <span>⚙</span>
-          <span>${ui.dossierStrengths}</span>
-        </div>
-        <ul class="dossier-bullets-list">
-          ${strengthsListHtml}
-        </ul>
-      </div>
-
-      <div class="dossier-card">
-        <div class="dossier-card-title watchouts-title">
-          <span>🔧</span>
-          <span>${ui.dossierWatchouts}</span>
-        </div>
-        <ul class="dossier-bullets-list">
-          ${watchoutsListHtml}
-        </ul>
-      </div>
-    </div>
+    ${sectionsGridHtml}
 
     ${buyerGuideHtml}
 

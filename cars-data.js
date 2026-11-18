@@ -84,9 +84,9 @@ const CAR_ROSTER = [
           ru: 'Ты ездишь по крупным городам: Чистый бензиновый класс Euro 5/6 избавляет от дизельных ограничений и лишних налогов.'
         },
         cityHatchback: {
-          en: 'You want an easy daily driver: Light controls, good visibility, and compact dimensions make tight parking effortless for you.',
-          de: 'Du willst ein entspanntes Alltagsauto: Leichtgängige Bedienung, gute Übersicht und kompakte Maße machen dir das Parken leicht.',
-          ru: 'Тебе нужна удобная машина на каждый день: Лёгкое управление, хороший обзор и компактные габариты упрощают парковку.'
+          en: 'You park in tight city spots: Light controls, good visibility, and compact dimensions make tight parking effortless for you.',
+          de: 'Du parkst oft in engen Stadtlücken: Leichtgängige Bedienung, gute Übersicht und kompakte Maße machen dir das Parken leicht.',
+          ru: 'Ты часто паркуешься в тесном городе: Лёгкое управление, хороший обзор и компактные габариты упрощают парковку.'
         },
         compactBoot: {
           en: 'You regularly pack bulky family luggage: The compact 360 L boot handles groceries and weekend bags fine, but you\'ll feel tight on space with big strollers or heavy holiday loads.',
@@ -1988,34 +1988,43 @@ const CAR_ROSTER = [
             dossier: {
               en: {
                 headline: 'Light Front Nose, Simpler Torsion-Beam Rear Axle',
+                lowScoreReasons: [
+                  'Torsion-beam rear suspension lacks the composure of the multi-link axle fitted to Hybrid and 2.0L trims.',
+                  'Light, comfort-tuned steering prioritizes easy urban parking over sharp cornering feedback.'
+                ],
                 strengths: [
                   'Lighter 1.33 engine gives nimble front turn-in at city speeds.',
                   'Safe, predictable understeer balance for everyday driving.'
                 ],
                 watchouts: [
-                  'Uses a torsion-beam rear axle rather than the multi-link setup on higher-power trims.',
                   'Slightly firmer, bouncier rear ride over sharp mid-corner bumps.'
                 ]
               },
               de: {
                 headline: 'Leichte Front, einfache Verbundlenker-Hinterachse',
+                lowScoreReasons: [
+                  'Die einfache Verbundlenker-Hinterachse erreicht nicht die Ruhe der Mehrlenkerachse von Hybrid und 2.0 Diesel.',
+                  'Leichtgängige, komfortbetonte Lenkung bietet bei zügiger Kurvenfahrt wenig Rückmeldung.'
+                ],
                 strengths: [
                   'Geringes Motorgewicht macht die Vorderachse handlich in der Stadt.',
                   'Sicheres, gutmütiges Fahrverhalten.'
                 ],
                 watchouts: [
-                  'Verbundlenkerachse hinten ist auf unebenen Kurven etwas straffer als die Mehrlenkerachse.',
                   'Bei Querfugen spürbar unruhiger als der Hybrid.'
                 ]
               },
               ru: {
                 headline: 'Лёгкий передок и простая задняя балка',
+                lowScoreReasons: [
+                  'Задняя полузависимая балка уступает по плавности и устойчивости многорычажке у версий Hybrid и 2.0.',
+                  'Лёгкий городской руль настроен на комфорт при парковке, а не на острую обратную связь.'
+                ],
                 strengths: [
                   'Небольшой вес двигателя делает переднюю ось лёгкой в поворотах.',
                   'Предсказуемая и безопасная настройка шасси.'
                 ],
                 watchouts: [
-                  'Сзади установлена полузависимая балка (в отличие от многорычажки у старших версий).',
                   'На неровностях в повороте корма отрабатывает жёстче.'
                 ]
               }
@@ -2807,35 +2816,44 @@ const CAR_ROSTER = [
             dossier: {
               en: {
                 headline: 'Torsion-Beam Rear Axle & Predictable Commuter Setup',
+                lowScoreReasons: [
+                  'Torsion-beam rear axle feels noticeably busier over mid-corner bumps than the Hybrid/2.0 multi-link.',
+                  'Comfort-biased suspension and tall-sidewall tyres prioritize soft daily ride over cornering agility.'
+                ],
                 strengths: [
                   'Safe, neutral understeer balance with light steering.',
                   'Lightweight diesel block keeps front-end response tidy.'
                 ],
                 watchouts: [
-                  'Torsion-beam rear axle is slightly firmer over sharp bumps than the Hybrid/2.0 multi-link.',
-                  'Comfort-biased tyres and suspension prioritize ride over agility.'
+                  'Body roll builds earlier than sharper European hatchbacks in fast motorway sweepers.'
                 ]
               },
               de: {
                 headline: 'Verbundlenker-Hinterachse & sichere Abstimmung',
+                lowScoreReasons: [
+                  'Die Verbundlenker-Hinterachse reagiert auf Querfugen spürbar unruhiger als die Mehrlenkerachse.',
+                  'Komfortbetonte Abstimmung und Serienbereifung setzen klar auf Alltagskomfort statt Kurvendynamik.'
+                ],
                 strengths: [
                   'Gutmütiges, neutrales Fahrverhalten mit leichter Lenkung.',
                   'Kompakter Motor hält das Gewicht auf der Vorderachse gering.'
                 ],
                 watchouts: [
-                  'Verbundlenkerachse hinten etwas straffer über Querfugen als bei Modellen mit Mehrlenkerachse.',
-                  'Auf Komfort ausgelegt statt auf Kurvensport.'
+                  'In schnellen Autobahnkurven neigt sich der Aufbau früher als bei sportlicheren Rivalen.'
                 ]
               },
               ru: {
                 headline: 'Задняя балка и спокойная настройка шасси',
+                lowScoreReasons: [
+                  'Полузависимая балка сзади жёстче отрабатывает стыки в повороте по сравнению с многорычажкой.',
+                  'Настройка подвески и шин ориентирована на мягкий ход, а не на активную рулёжку.'
+                ],
                 strengths: [
                   'Безопасная и предсказуемая управляемость без сюрпризов.',
                   'Компактный мотор не перегружает переднюю ось.'
                 ],
                 watchouts: [
-                  'Полузависимая балка сзади чуть жёстче отрабатывает стыки, чем многорычажка.',
-                  'Настройка ориентирована на комфорт, а не на резкие манёвры.'
+                  'Крены кузова в быстрых поворотах заметнее, чем у более жёстких хэтчбеков.'
                 ]
               }
             }
@@ -4273,6 +4291,21 @@ const CAR_ROSTER = [
           en: 'You want effortless motorway punch: The i-DTEC diesel pulls strongly from low revs while keeping fuel bills low.',
           de: 'Du willst souveränen Autobahn-Durchzug: Der i-DTEC-Diesel schiebt schon aus niedrigen Drehzahlen kräftig und sparsam an.',
           ru: 'Тебе нужна уверенная тяга на трассе: Дизель i-DTEC бодро тянет с низов и радует скромным расходом.'
+        },
+        civicCabinPlastics: {
+          en: 'You want plush cabin materials: Hard lower door and dash plastics plus pre-2015 infotainment feel dated next to newer rivals.',
+          de: 'Du erwartest edle Innenraum-Materialien: Hartplastik im unteren Bereich und das Vor-Facelift-Infotainment wirken schlicht.',
+          ru: 'Тебе нужен мягкий дорогой салон: Жёсткий пластик внизу дверей и старая мультимедиа уступают более свежим конкурентам.'
+        },
+        civicHighRevPull: {
+          en: 'You want effortless low-rev pull: Naturally aspirated i-VTEC engines need revs past 4,000 rpm for brisk hills or overtakes.',
+          de: 'Du willst mühelosen Durchzug ab Leerlauf: Die Saugmotoren brauchen über 4.000/min, wenn es bergauf oder beim Überholen flott gehen soll.',
+          ru: 'Тебе нужна тяга с самых низов: Атмосферный i-VTEC нужно крутить выше 4 000 об/мин для бодрого обгона и подъёмов.'
+        },
+        civicSmoothManual: {
+          en: 'You enjoy a crisp manual gearbox: Honda’s short-throw 6-speed shifter makes long motorway commutes genuinely engaging.',
+          de: 'Du schätzt knackiges Schalten: Das präzise Honda-6-Gang-Getriebe macht auch lange Pendelstrecken angenehm direkt.',
+          ru: 'Ты ценишь чёткую механику: Короткоходная 6-ступенчатая коробка Honda делает дальние поездки приятными.'
         }
       }
     },
@@ -4283,17 +4316,27 @@ const CAR_ROSTER = [
           de: 'Ein enorm praktischer, extrem zuverlässiger Kompaktwagen — ideal, wenn dir Kofferraum und simple Technik wichtiger sind als weicher Luxus.',
           ru: 'Очень практичный и сверхустойчивый компактный хэтчбек — идеален, если тебе важнее багажник и простота конструкции, чем мягкий люкс.'
         },
-        ideal: ['civicSpaceUtility', 'civicReliableVtec', 'globalSimpleNoTurbo', 'globalPetrolCityZones'],
-        skip: ['civicRearVisibility', 'civicFirmRide']
+        ideal: [
+          'civicSpaceUtility',
+          'civicReliableVtec',
+          'globalSimpleNoTurbo',
+          'globalPetrolCityZones'
+        ],
+        skip: ['civicRearVisibility', 'civicFirmRide', 'civicHighRevPull', 'civicCabinPlastics']
       },
-      'diesel': {
+      diesel: {
         summary: {
           en: 'A spacious, frugal motorway commuter with strong mid-range pull — wasted on short urban errands.',
           de: 'Ein geräumiger, sparsamer Autobahn-Pendler mit kräftigem Durchzug — auf kurzen Stadtwegen fehl am Platz.',
           ru: 'Вместительный и экономичный дизельный хэтчбек для трассы — не лучший выбор для коротких городских поездок.'
         },
-        ideal: ['civicSpaceUtility', 'civicDieselTorque', 'globalDieselLongRange'],
-        skip: ['globalDieselShortTripRisk', 'civicRearVisibility', 'civicFirmRide']
+        ideal: ['civicSpaceUtility', 'civicDieselTorque', 'globalDieselLongRange', 'civicSmoothManual'],
+        skip: [
+          'globalDieselShortTripRisk',
+          'civicRearVisibility',
+          'civicFirmRide',
+          'civicCabinPlastics'
+        ]
       }
     },
     sharedDossiers: {
@@ -4318,7 +4361,7 @@ const CAR_ROSTER = [
           ],
           watchouts: [
             'Hinterachslager und vordere Querlenkerbuchsen auf Spiel prüfen.',
-            'Langlebige Achslager.'
+            'Hintere Radlaufkanten, Achsträger-Aufnahmen und Bremsleitungen am Unterboden auf Winter-Korrosion prüfen.'
           ],
           beforeYouBuy: [
             'Schweller, Radlaufkanten und hinteren Achsträger auf der Bühne oder mit Lampe prüfen.',
@@ -4333,7 +4376,7 @@ const CAR_ROSTER = [
           ],
           watchouts: [
             'Проверьте сайлентблоки задней балки и передних рычагов.',
-            'Износостойкие сайлентблоки.'
+            'Проверьте кромки задних арок, крепления подрамника и тормозные трубки снизу на зимнюю коррозию.'
           ],
           beforeYouBuy: [
             'Осмотрите пороги, кромки арок и задний подрамник с фонариком или на подъёмнике.',
@@ -4691,8 +4734,8 @@ const CAR_ROSTER = [
               'Long-Life Clutch & Synchros.'
             ],
             watchouts: [
-              'Modest 127 Nm means frequent high-rpm downshifts on steep hills, increasing clutch wear in hilly towns.',
-              'Check clutch bite height and dual-mass flywheel noise at idle on high-mileage manuals.'
+              'Check clutch bite height and listen for dual-mass flywheel rattle at idle on high-mileage cars.',
+              'Cold shifts into 2nd and 3rd should stay crunch-free; grinding points to worn synchros.'
             ],
             beforeYouBuy: [
               'Shift quickly into 1st, 2nd, and 3rd gear cold and warm to verify crisp, crunch-free synchros.',
@@ -4706,8 +4749,8 @@ const CAR_ROSTER = [
               'Langlebige Kupplung & Gänge.'
             ],
             watchouts: [
-              'Bei höheren Laufleistungen Kupplungsspiel und Zweimassenschwungrad im Leerlauf prüfen.',
-              'Im Leerlauf auf Getriebelager-Geräusche und bei Allrad-Modellen auf Kurven-Verspannung achten.'
+              'Bei hoher Laufleistung Kupplungs-Greifpunkt prüfen und im Leerlauf auf ZMS-Klappern achten.',
+              'Kalte Schaltvorgänge in den 2. und 3. Gang müssen kratzfrei sein — Kratzen deutet auf verschlissene Synchronringe.'
             ],
             beforeYouBuy: [
               'Im kalten wie warmen Zustand zügig vom 1. in den 2. und 3. Gang schalten — ohne Kratzen.',
@@ -4721,8 +4764,8 @@ const CAR_ROSTER = [
               'Ресурсное сцепление.'
             ],
             watchouts: [
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.',
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.'
+              'На больших пробегах проверяйте точку схватывания сцепления и стук двухмассового маховика на холостых.',
+              'Переключения на 2-ю и 3-ю на холодную должны идти без хруста — хруст говорит об износе синхронизаторов.'
             ],
             beforeYouBuy: [
               'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
@@ -4772,10 +4815,11 @@ const CAR_ROSTER = [
             headline: 'Supportive Front Seats',
             strengths: [
               'Supportive Front Seats delivers pleasant everyday composure.',
-              'Firm Torsion-Beam Bump Feel.'
+              'Balanced chassis damping keeps cruising settled and predictable on smooth roads.'
             ],
             watchouts: [
-              'Wind and tyre roar increase at 130+ km/h; large 18–19" wheels make city bumps firmer.'
+              'Wind and tyre roar increase at 130+ km/h; large 18–19" wheels make city bumps firmer.',
+              'Firm Torsion-Beam Bump Feel.'
             ],
             beforeYouBuy: [
               'Take the car up to 110–120 km/h to judge real wind noise, tyre hum, and suspension smoothness.'
@@ -4785,10 +4829,11 @@ const CAR_ROSTER = [
             headline: 'Bequeme Vordersitze',
             strengths: [
               'Bequeme Vordersitze sorgt für ein angenehmes Fahrgefühl im Alltag.',
-              'Straffe Hinterachse auf Gullideckeln.'
+              'Auf gutem Asphalt liegt das Fahrwerk ruhig und berechenbar.'
             ],
             watchouts: [
-              'Ab 130 km/h nehmen Wind- und Abrollgeräusche zu; große Felgen machen den Stadtkomfort straffer.'
+              'Ab 130 km/h nehmen Wind- und Abrollgeräusche zu; große Felgen machen den Stadtkomfort straffer.',
+              'Straffe Hinterachse auf Gullideckeln.'
             ],
             beforeYouBuy: [
               'Bei der Probefahrt kurz 110–120 km/h fahren, um Wind-, Reifen- und Abrollgeräusche real zu prüfen.'
@@ -4798,9 +4843,12 @@ const CAR_ROSTER = [
             headline: 'Хорошие передние кресла',
             strengths: [
               'Хорошие передние кресла обеспечивает комфортную езду в повседневных поездках.',
+              'На ровном покрытии подвеска работает собранно и предсказуемо.'
+            ],
+            watchouts: [
+              'После 130 км/ч растут шумы ветра и шин, а большие диски делают ход жёстче.',
               'Жёсткая задняя балка на ямах.'
             ],
-            watchouts: ['После 130 км/ч растут шумы ветра и шин, а большие диски делают ход жёстче.'],
             beforeYouBuy: [
               'Прокатитесь 110–120 км/ч, чтобы оценить реальный уровень шума ветра, шин и мягкость хода.'
             ]
@@ -4810,11 +4858,12 @@ const CAR_ROSTER = [
           en: {
             headline: 'Cheap OEM Service & Pads — No Turbo / DPF / Injector Risk',
             strengths: [
-              'Cheap OEM Service & Pads helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'No Turbo / DPF / Injector Risk.'
             ],
             watchouts: [
-              'Aging 10+ year rubber hoses, suspension bushings, and brake/tyre wear still add routine upkeep.'
+              'Aging 10+ year rubber hoses, suspension bushings, and brake/tyre wear still add routine upkeep.',
+              'Age-related wear on suspension bushings, exhaust flex-pipes, and brake discs/calipers still requires steady annual upkeep.'
             ],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
@@ -4852,11 +4901,11 @@ const CAR_ROSTER = [
             headline: 'Crisp 6-Speed Manual — Watch 300 Nm Clutch & DMF',
             strengths: [
               'Crisp 6-Speed Manual matches this powertrain well for everyday driving.',
-              'Watch 300 Nm Clutch & DMF.'
+              'Crisp shift feel and well-matched ratios keep everyday driving composed and predictable.'
             ],
             watchouts: [
-              'High low-end diesel torque fatigues DMF springs over high mileage; check for idle vibration.',
-              '350 Nm torque wears the DMF and clutch pressure plate earlier if driven hard in high gears at low rpm.'
+              'Check clutch bite height and listen for dual-mass flywheel rattle at idle on high-mileage cars.',
+              'Cold shifts into 2nd and 3rd should stay crunch-free; grinding points to worn synchros.'
             ],
             beforeYouBuy: [
               'Shift quickly into 1st, 2nd, and 3rd gear cold and warm to verify crisp, crunch-free synchros.',
@@ -4867,11 +4916,11 @@ const CAR_ROSTER = [
             headline: 'Knackiges 6-Gang-Getriebe — Kupplung/ZMS bei 300 Nm prüfen',
             strengths: [
               'Knackiges 6-Gang-Getriebe passt gut zur Motorcharakteristik im Alltag.',
-              'Kupplung/ZMS bei 300 Nm prüfen.'
+              'Saubere Schaltführung und stimmige Übersetzung sorgen für ein ruhiges, berechenbares Fahrgefühl.'
             ],
             watchouts: [
-              'Hohes Drehmoment aus tiefen Drehzahlen beansprucht Kupplung und ZMS bei hohem Kilometerstand.',
-              'Kräftige 350 Nm belasten Kupplung und ZMS beim untertourigen Beschleunigen deutlich.'
+              'Bei hoher Laufleistung Kupplungs-Greifpunkt prüfen und im Leerlauf auf ZMS-Klappern achten.',
+              'Kalte Schaltvorgänge in den 2. und 3. Gang müssen kratzfrei sein — Kratzen deutet auf verschlissene Synchronringe.'
             ],
             beforeYouBuy: [
               'Im kalten wie warmen Zustand zügig vom 1. in den 2. und 3. Gang schalten — ohne Kratzen.',
@@ -4882,11 +4931,11 @@ const CAR_ROSTER = [
             headline: 'Чёткая 6-МКПП — Контроль маховика (300 Н·м)',
             strengths: [
               'Чёткая 6-МКПП хорошо сочетается с данным двигателем в повседневной езде.',
-              'Контроль маховика (300 Н·м).'
+              'Чёткое переключение и удачные передаточные числа делают езду комфортной и предсказуемой.'
             ],
             watchouts: [
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.',
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.'
+              'На больших пробегах проверяйте точку схватывания сцепления и стук двухмассового маховика на холостых.',
+              'Переключения на 2-ю и 3-ю на холодную должны идти без хруста — хруст говорит об износе синхронизаторов.'
             ],
             beforeYouBuy: [
               'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
@@ -4899,10 +4948,11 @@ const CAR_ROSTER = [
             headline: 'Proven Bosch Diesel ECU',
             strengths: [
               'Proven Bosch Diesel ECU keeps electrical diagnostics straightforward.',
-              'Watch DPF Pressure Sensor.'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.'
+              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.',
+              'Watch DPF Pressure Sensor.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -4912,10 +4962,11 @@ const CAR_ROSTER = [
             headline: 'Solide Bosch-Diesel-ECU',
             strengths: [
               'Solide Bosch-Diesel-ECU sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
-              'DPF-Drucksensor prüfen.'
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
             ],
             watchouts: [
-              'Abgassensoren (DPF-Differenzdruck, Glühkerzen, AGR) melden sich häufiger ab 140.000 km.'
+              'Abgassensoren (DPF-Differenzdruck, Glühkerzen, AGR) melden sich häufiger ab 140.000 km.',
+              'DPF-Drucksensor prüfen.'
             ],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
@@ -4925,10 +4976,11 @@ const CAR_ROSTER = [
             headline: 'Стабильная электрика Bosch',
             strengths: [
               'Стабильная электрика Bosch упрощает диагностику и обслуживание электрооборудования.',
-              'Контроль датчика сажевого.'
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
             ],
             watchouts: [
-              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.'
+              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.',
+              'Контроль датчика сажевого.'
             ],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
@@ -4940,10 +4992,11 @@ const CAR_ROSTER = [
             headline: 'Supportive Front Seats',
             strengths: [
               'Supportive Front Seats delivers pleasant everyday composure.',
-              'Firm Torsion-Beam Bump Feel.'
+              'Balanced chassis damping keeps cruising settled and predictable on smooth roads.'
             ],
             watchouts: [
-              'Cold diesel clatter, high motorway revs, or oversized alloy wheels raise cabin noise noticeably.'
+              'Cold diesel clatter, high motorway revs, or oversized alloy wheels raise cabin noise noticeably.',
+              'Firm Torsion-Beam Bump Feel.'
             ],
             beforeYouBuy: [
               'Take the car up to 110–120 km/h to judge real wind noise, tyre hum, and suspension smoothness.'
@@ -4953,10 +5006,11 @@ const CAR_ROSTER = [
             headline: 'Bequeme Vordersitze',
             strengths: [
               'Bequeme Vordersitze sorgt für ein angenehmes Fahrgefühl im Alltag.',
-              'Straffe Hinterachse auf Gullideckeln.'
+              'Auf gutem Asphalt liegt das Fahrwerk ruhig und berechenbar.'
             ],
             watchouts: [
-              'Kaltes Diesel-Nageln oder große 18–19"-Felgen erhöhen den Geräuschpegel im Innenraum spürbar.'
+              'Kaltes Diesel-Nageln oder große 18–19"-Felgen erhöhen den Geräuschpegel im Innenraum spürbar.',
+              'Straffe Hinterachse auf Gullideckeln.'
             ],
             beforeYouBuy: [
               'Bei der Probefahrt kurz 110–120 km/h fahren, um Wind-, Reifen- und Abrollgeräusche real zu prüfen.'
@@ -4966,9 +5020,12 @@ const CAR_ROSTER = [
             headline: 'Хорошие передние кресла',
             strengths: [
               'Хорошие передние кресла обеспечивает комфортную езду в повседневных поездках.',
+              'На ровном покрытии подвеска работает собранно и предсказуемо.'
+            ],
+            watchouts: [
+              'Холодный дизельный рокот и крупные диски заметно усиливают шум в салоне.',
               'Жёсткая задняя балка на ямах.'
             ],
-            watchouts: ['Холодный дизельный рокот и крупные диски заметно усиливают шум в салоне.'],
             beforeYouBuy: [
               'Прокатитесь 110–120 км/ч, чтобы оценить реальный уровень шума ветра, шин и мягкость хода.'
             ]
@@ -4978,10 +5035,13 @@ const CAR_ROSTER = [
           en: {
             headline: 'Chain-Driven (No Timing Belt) — 15k km Oil • Watch DPF Trips',
             strengths: [
-              'Chain-Driven (No Timing Belt) helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['15k km Oil • Watch DPF Trips.'],
+            watchouts: [
+              '15k km Oil • Watch DPF Trips.',
+              'Plan a reserve for higher-mileage diesel wear parts such as dual-mass flywheel, clutch, injectors, or DPF cleaning.'
+            ],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -5444,7 +5504,7 @@ const CAR_ROSTER = [
         dossierGroup: 'petrol-6mt',
         buyerFitGroup: 'na-petrol',
         buyerFitOverrides: {
-          skip: ['civic14ModestPace', 'civicRearVisibility', 'civicFirmRide']
+          skip: ['civic14ModestPace', 'civicRearVisibility', 'civicFirmRide', 'civicCabinPlastics']
         },
         isDefault: false,
         fuelType: 'petrol',
@@ -6818,6 +6878,16 @@ const CAR_ROSTER = [
           en: 'You want sharp sports-sedan handling: High center of gravity and comfort-tuned steering favor relaxed cruising over fast corners.',
           de: 'Du suchst zackiges Kurven-Handling: Hoher Schwerpunkt und komfortable Lenkung sind auf entspanntes Gleiten statt Sportlichkeit ausgelegt.',
           ru: 'Ты ищешь острую управляемость: Высокий центр тяжести и мягкие настройки руля созданы для спокойной езды, а не быстрых поворотов.'
+        },
+        crvSubframeRustCheck: {
+          en: 'You want zero underbody rust checks: 2007–2012 rear subframes and rear wheel arches need careful inspection on salted winter roads.',
+          de: 'Du willst dich nicht um Unterbodenrost kümmern: Hintere Achsträger und Radläufe der Baujahre 2007–2012 verlangen auf Salzstraßen genaue Kontrolle.',
+          ru: 'Ты не хочешь проверять днище на ржавчину: Задний подрамник и кромки арок 2007–2012 годов требуют осмотра после зимних реагентов.'
+        },
+        crvDatedInterior: {
+          en: 'You want modern screens & soft luxury: Hard utilitarian plastics and older navigation units show the car’s 2007 design era.',
+          de: 'Du suchst moderne Displays & Soft-Touch-Luxus: Nüchternes Hartplastik und alte Navis zeigen das Designjahr 2007.',
+          ru: 'Тебе нужен современный экран и мягкий пластик: Утилитарный жёсткий салон выдаёт архитектуру 2007 года.'
         }
       }
     },
@@ -6828,8 +6898,8 @@ const CAR_ROSTER = [
           de: 'Ein zuverlässiges, familienfreundliches Allwetter-SUV — ideal für kürzere Strecken und Wintertraktion, wenn höherer Verbrauch ok ist.',
           ru: 'Надёжный семейный кроссовер на любую погоду — отличный выбор для коротких поездок и зимы, если готов к повышенному расходу.'
         },
-        ideal: ['crvFamilySpace', 'crvAwdAllWeather', 'crvVtecDurability', 'globalSimpleNoTurbo', 'globalPetrolCityZones'],
-        skip: ['crvFuelWeight', 'crvNotSporty']
+        ideal: ['crvFamilySpace', 'crvAwdAllWeather', 'crvVtecDurability', 'globalPetrolCityZones'],
+        skip: ['crvFuelWeight', 'crvNotSporty', 'crvSubframeRustCheck', 'crvDatedInterior']
       },
       'diesel-awd': {
         summary: {
@@ -6838,7 +6908,12 @@ const CAR_ROSTER = [
           ru: 'Выносливый кроссовер для трассы, прицепа и зимы — не лучший вариант для коротких городских поездок.'
         },
         ideal: ['crvFamilySpace', 'crvAwdAllWeather', 'crvDieselTowing', 'globalDieselLongRange'],
-        skip: ['globalDieselShortTripRisk', 'crvNotSporty']
+        skip: [
+          'globalDieselShortTripRisk',
+          'crvNotSporty',
+          'crvSubframeRustCheck',
+          'crvDatedInterior'
+        ]
       }
     },
     sharedDossiers: {
@@ -7016,7 +7091,9 @@ const CAR_ROSTER = [
             'Flat Floor + Sliding Rear Bench keeps daily passengers comfortable.',
             'Supportive front driving position with good steering/seat adjustability.'
           ],
-          watchouts: ['Easy Upright SUV Door Entry.'],
+          watchouts: [
+            'Narrower center rear seating position limits three-across adult comfort on long highway journeys.'
+          ],
           beforeYouBuy: [
             'Sit in the driver seat and then directly behind it to verify real knee room and ISOFIX access.'
           ]
@@ -7027,7 +7104,9 @@ const CAR_ROSTER = [
             'Ebener Boden + verschiebbarer Fond sorgt für guten Reisekomfort auf den Sitzplätzen.',
             'Gute Sitzposition vorn mit großem Verstellbereich für Lenkrad und Sitz.'
           ],
-          watchouts: ['Bequemer hoher Einstieg.'],
+          watchouts: [
+            'Der mittlere Rücksitzplatz fällt schmaler aus und schränkt den Komfort für drei Erwachsene hinten ein.'
+          ],
           beforeYouBuy: [
             'Erst vorn einstellen, dann dahinter Platz nehmen und Beinfreiheit sowie ISOFIX testen.'
           ]
@@ -7038,7 +7117,9 @@ const CAR_ROSTER = [
             'Ровный пол + сдвижной диван обеспечивает достойный комфорт для водителя и пассажиров.',
             'Удобная посадка с широкими диапазонами регулировки кресла и руля.'
           ],
-          watchouts: ['Лёгкая высокая посадка.'],
+          watchouts: [
+            'Узкое центральное место сзади снижает комфорт при посадке троих взрослых в дальней дороге.'
+          ],
           beforeYouBuy: [
             'Настройте водительское кресло под себя и сядьте сзади, чтобы оценить реальный запас места.'
           ]
@@ -7239,8 +7320,8 @@ const CAR_ROSTER = [
               'Cheap Rear Diff Fluid Service.'
             ],
             watchouts: [
-              'Listen for bearing whine in neutral or shudder on tight turns on AWD models.',
-              'Check clutch bite height and dual-mass flywheel noise at idle on high-mileage manuals.'
+              'Check clutch bite height and listen for dual-mass flywheel rattle at idle on high-mileage cars.',
+              'Listen for bearing whine or driveline shudder from the AWD system on tight full-lock turns.'
             ],
             beforeYouBuy: [
               'Shift quickly into 1st, 2nd, and 3rd gear cold and warm to verify crisp, crunch-free synchros.',
@@ -7254,8 +7335,8 @@ const CAR_ROSTER = [
               'Günstiges Hinterachsöl.'
             ],
             watchouts: [
-              'Bei höheren Laufleistungen Kupplungsspiel und Zweimassenschwungrad im Leerlauf prüfen.',
-              'Im Leerlauf auf Getriebelager-Geräusche und bei Allrad-Modellen auf Kurven-Verspannung achten.'
+              'Bei hoher Laufleistung Kupplungs-Greifpunkt prüfen und im Leerlauf auf ZMS-Klappern achten.',
+              'Auf Lagerheulen oder Verspannen des Allradantriebs bei voll eingeschlagener Lenkung achten.'
             ],
             beforeYouBuy: [
               'Im kalten wie warmen Zustand zügig vom 1. in den 2. und 3. Gang schalten — ohne Kratzen.',
@@ -7269,8 +7350,8 @@ const CAR_ROSTER = [
               'Недорогое масло редуктора.'
             ],
             watchouts: [
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.',
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.'
+              'На больших пробегах проверяйте точку схватывания сцепления и стук двухмассового маховика на холостых.',
+              'Прислушайтесь к вою подшипников или подклиниванию полного привода при полностью вывернутом руле.'
             ],
             beforeYouBuy: [
               'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
@@ -7283,10 +7364,11 @@ const CAR_ROSTER = [
             headline: 'Mechanical AWD (No ECU)',
             strengths: [
               'Mechanical AWD (No ECU) keeps electrical diagnostics straightforward.',
-              'Watch AC Clutch Relay.'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.'
+              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.',
+              'Watch AC Clutch Relay.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -7296,9 +7378,12 @@ const CAR_ROSTER = [
             headline: 'Allrad ohne Elektronik',
             strengths: [
               'Allrad ohne Elektronik sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
+            ],
+            watchouts: [
+              'Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.',
               'Klimarelais gelegentlich.'
             ],
-            watchouts: ['Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.'],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
             ]
@@ -7358,11 +7443,12 @@ const CAR_ROSTER = [
           en: {
             headline: 'Simple Rear Diff Oil Changes — No Turbo / No DPF Bills',
             strengths: [
-              'Simple Rear Diff Oil Changes helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'No Turbo / No DPF Bills.'
             ],
             watchouts: [
-              'Aging 10+ year rubber hoses, suspension bushings, and brake/tyre wear still add routine upkeep.'
+              'Aging 10+ year rubber hoses, suspension bushings, and brake/tyre wear still add routine upkeep.',
+              'Age-related wear on suspension bushings, exhaust flex-pipes, and brake discs/calipers still requires steady annual upkeep.'
             ],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
@@ -7387,7 +7473,9 @@ const CAR_ROSTER = [
               'Недорогое ТО заднего редуктора помогает держать ежегодные затраты на ТО под контролем.',
               'Машина хорошо знакома любому сервису, а качественные запчасти широко доступны.'
             ],
-            watchouts: ['Нет турбины и сажевого.'],
+            watchouts: [
+              'Возрастной износ сайлентблоков подвески, тормозов и выхлопной системы требует плановых ежегодных трат.'
+            ],
             beforeYouBuy: ['Откройте план обслуживания ниже и сверьте предстоящие работы с имеющимися чеками.']
           }
         }
@@ -7401,11 +7489,11 @@ const CAR_ROSTER = [
               'Proven Dual-Pump AWD.'
             ],
             watchouts: [
-              'Regular drain-and-fill every 50,000–60,000 km prevents torque-converter lockup shudder.',
-              'Automatic, DSG, and CVT gearboxes depend on documented 40,000–60,000 km fluid and filter changes.'
+              'Torque-converter automatics need documented 50,000–60,000 km fluid changes to avoid lockup shudder.',
+              'Listen for bearing whine or driveline shudder from the AWD system on tight full-lock turns.'
             ],
             beforeYouBuy: [
-              'Demand service receipts for automatic, DSG, or CVT transmission fluid changes every 40,000–60,000 km.',
+              'Demand service receipts for transmission fluid changes every 40,000–60,000 km.',
               'Test Reverse-to-Drive engagement when warm and creep gently uphill to confirm zero jerk or slip.'
             ]
           },
@@ -7416,11 +7504,11 @@ const CAR_ROSTER = [
               'Bewährter Dual-Pump-Allrad.'
             ],
             watchouts: [
-              'Alle 50.000–60.000 km erneuern, um Wandler-Ruckeln und Allrad-Brummen zu vermeiden.',
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.'
+              'Wandlerautomatiken brauchen nachgewiesene Ölwechsel alle 50.000–60.000 km, sonst droht Wandler-Ruckeln.',
+              'Auf Lagerheulen oder Verspannen des Allradantriebs bei voll eingeschlagener Lenkung achten.'
             ],
             beforeYouBuy: [
-              'Nachweise für Automatik-, DSG- oder CVT-Getriebeölwechsel alle 40.000–60.000 km prüfen.',
+              'Nachweise für Getriebeölwechsel alle 40.000–60.000 km prüfen.',
               'Im warmen Zustand von R auf D schalten und am Hang sanft anrollen — ohne Ruckeln oder Verzögerung.'
             ]
           },
@@ -7431,12 +7519,12 @@ const CAR_ROSTER = [
               'Надёжный полный привод.'
             ],
             watchouts: [
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.',
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.'
+              'Гидротрансформаторным АКПП нужна подтверждённая замена масла каждые 50 000–60 000 км, иначе появляются рывки блокировки.',
+              'Прислушайтесь к вою подшипников или подклиниванию полного привода при полностью вывернутом руле.'
             ],
             beforeYouBuy: [
-              'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
-              'Нажать сцепление наполовину на холостых (проверка маховика) и ускориться на 4-й передаче.'
+              'Запросить чеки о замене масла в коробке каждые 40 000–60 000 км.',
+              'На прогретой машине проверить плавность переключения R–D и ровное трогание в горку без рывков.'
             ]
           }
         },
@@ -7520,10 +7608,12 @@ const CAR_ROSTER = [
           en: {
             headline: 'Zero Turbo / Zero DPF Bills — Routine ATF & Diff Oil Only',
             strengths: [
-              'Zero Turbo / Zero DPF Bills helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['Routine ATF & Diff Oil Only.'],
+            watchouts: [
+              'Age-related wear on suspension bushings, exhaust flex-pipes, and brake discs/calipers still requires steady annual upkeep.'
+            ],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -7534,7 +7624,9 @@ const CAR_ROSTER = [
               'Kein Turbo- oder DPF-Risiko hält die planbaren jährlichen Wartungskosten im Rahmen.',
               'Hohe Werkstatt-Kompetenz und breite Auswahl günstiger Marken-Ersatzteile.'
             ],
-            watchouts: ['Nur reguläre Flüssigkeiten.'],
+            watchouts: [
+              'Altersbedingter Verschleiß an Fahrwerksbuchsen, Bremsen und Abgasanlage erfordert weiterhin planbare Rücklagen.'
+            ],
             beforeYouBuy: [
               'Untenstehenden Kosten-Fahrplan öffnen und fällige Meilensteine mit vorhandenen Rechnungen abgleichen.'
             ]
@@ -7545,7 +7637,9 @@ const CAR_ROSTER = [
               'Нет риска турбины и DPF помогает держать ежегодные затраты на ТО под контролем.',
               'Машина хорошо знакома любому сервису, а качественные запчасти широко доступны.'
             ],
-            watchouts: ['Только замена масел по регламенту.'],
+            watchouts: [
+              'Возрастной износ сайлентблоков подвески, тормозов и выхлопной системы требует плановых ежегодных трат.'
+            ],
             beforeYouBuy: ['Откройте план обслуживания ниже и сверьте предстоящие работы с имеющимися чеками.']
           }
         }
@@ -7558,7 +7652,10 @@ const CAR_ROSTER = [
               '6-MT + Dual-Pump AWD matches this powertrain well for everyday driving.',
               'Proven 6-MT gearbox and reliable hydraulic Real Time AWD handle winter roads effortlessly.'
             ],
-            watchouts: ['350 Nm Clutch & DMF Load.', '350 Nm Clutch & DMF Load.'],
+            watchouts: [
+              'Check clutch bite height and listen for dual-mass flywheel rattle at idle on high-mileage cars.',
+              'Listen for bearing whine or driveline shudder from the AWD system on tight full-lock turns.'
+            ],
             beforeYouBuy: [
               'Shift quickly into 1st, 2nd, and 3rd gear cold and warm to verify crisp, crunch-free synchros.',
               'Hold the clutch halfway at idle and accelerate in 4th gear to rule out flywheel chatter or clutch slip.'
@@ -7570,7 +7667,10 @@ const CAR_ROSTER = [
               '6-Gang + Dual-Pump-Allrad passt gut zur Motorcharakteristik im Alltag.',
               'Solide Kraftübertragung mit wartungsfreundlichem Real-Time-AWD für Winter und Anhängerbetrieb.'
             ],
-            watchouts: ['ZMS- & Kupplungslast (350 Nm).', 'ZMS- & Kupplungslast (350 Nm).'],
+            watchouts: [
+              'Bei hoher Laufleistung Kupplungs-Greifpunkt prüfen und im Leerlauf auf ZMS-Klappern achten.',
+              'Auf Lagerheulen oder Verspannen des Allradantriebs bei voll eingeschlagener Lenkung achten.'
+            ],
             beforeYouBuy: [
               'Im kalten wie warmen Zustand zügig vom 1. in den 2. und 3. Gang schalten — ohne Kratzen.',
               'Kupplung im Leerlauf halb treten (ZMS-Test) und im 4. Gang stark beschleunigen (Rutschtest).'
@@ -7583,8 +7683,8 @@ const CAR_ROSTER = [
               'Механическая коробка и гидравлическая муфта AWD отлично справляются с зимой и грунтовками.'
             ],
             watchouts: [
-              'Нагрузка 350 Н·м на маховик.',
-              'Затянутая замена масла ведёт к растяжению цепи, а буксировка— к износу ZMS.'
+              'На больших пробегах проверяйте точку схватывания сцепления и стук двухмассового маховика на холостых.',
+              'Прислушайтесь к вою подшипников или подклиниванию полного привода при полностью вывернутом руле.'
             ],
             beforeYouBuy: [
               'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
@@ -7597,10 +7697,11 @@ const CAR_ROSTER = [
             headline: 'Mechanical AWD • Euro 5 ECU',
             strengths: [
               'Mechanical AWD • Euro 5 ECU keeps electrical diagnostics straightforward.',
-              'DPF Pressure Sensors.'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.'
+              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.',
+              'DPF Pressure Sensors.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -7610,10 +7711,11 @@ const CAR_ROSTER = [
             headline: 'Mechanischer AWD • Euro 5',
             strengths: [
               'Mechanischer AWD • Euro 5 sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
-              'DPF-Sensoren beachten.'
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
             ],
             watchouts: [
-              'Abgassensoren (DPF-Differenzdruck, Glühkerzen, AGR) melden sich häufiger ab 140.000 km.'
+              'Abgassensoren (DPF-Differenzdruck, Glühkerzen, AGR) melden sich häufiger ab 140.000 km.',
+              'DPF-Sensoren beachten.'
             ],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
@@ -7623,10 +7725,11 @@ const CAR_ROSTER = [
             headline: 'Механический AWD • Euro 5',
             strengths: [
               'Механический AWD • Euro 5 упрощает диагностику и обслуживание электрооборудования.',
-              'Контроль датчиков DPF.'
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
             ],
             watchouts: [
-              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.'
+              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.',
+              'Контроль датчиков DPF.'
             ],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
@@ -7676,10 +7779,13 @@ const CAR_ROSTER = [
           en: {
             headline: 'Chain-Driven Block — High Clutch, DMF & DPF Costs',
             strengths: [
-              'Chain-Driven Block helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['High Clutch, DMF & DPF Costs.'],
+            watchouts: [
+              'High Clutch, DMF & DPF Costs.',
+              'Plan a reserve for higher-mileage diesel wear parts such as dual-mass flywheel, clutch, injectors, or DPF cleaning.'
+            ],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -8151,7 +8257,7 @@ const CAR_ROSTER = [
         dossierGroup: 'petrol-conv-auto',
         buyerFitGroup: 'na-petrol-awd',
         buyerFitOverrides: {
-          skip: ['crv24Thirst', 'crvNotSporty']
+          skip: ['crv24Thirst', 'crvNotSporty', 'crvSubframeRustCheck', 'crvDatedInterior']
         },
         isDefault: false,
         fuelType: 'petrol',
@@ -9028,7 +9134,12 @@ const CAR_ROSTER = [
         dossierGroup: 'diesel-awd-mt',
         buyerFitGroup: 'diesel-awd',
         buyerFitOverrides: {
-          skip: ['globalDieselShortTripRisk', 'crvEuro4CityNote', 'crvNotSporty']
+          skip: [
+            'globalDieselShortTripRisk',
+            'crvEuro4CityNote',
+            'crvNotSporty',
+            'crvSubframeRustCheck'
+          ]
         },
         isDefault: false,
         fuelType: 'diesel',
@@ -9252,7 +9363,6 @@ const CAR_ROSTER = [
                 headline: 'Первый собственный дизель Honda (N22A2): ресурс 300+ тыс. км с двумя нюансами',
                 strengths: [
                   'Мощная тяга 340 Н·м с 2 000 об/мин и цепной привод ГРМ.',
-                  'Способен пройти 240 000–280 000+ км при замене масла каждые 10 000–15 000 км.',
                   'Способен пройти 240 000–280 000+ км при замене масла каждые 10 000–15 000 км.'
                 ],
                 watchouts: [
@@ -9482,9 +9592,9 @@ const CAR_ROSTER = [
     sharedBuyerFit: {
       cards: {
         gti308Featherweight: {
-          en: 'You love agile, lightweight handling: At just 1,205 kg with a mechanical Torsen LSD, it darts through corners like few modern hatches.',
-          de: 'Du liebst leichtfüßiges Handling: Mit nur 1.205 kg und mechanischem Torsen-Sperrdifferenzial giert er präziser in Kurven als fast alle Rivalen.',
-          ru: 'Ты любишь лёгкую и точную управляемость: При массе всего 1 205 кг и самоблоке Torsen он проходит повороты острее большинства конкурентов.'
+          en: 'You love agile, lightweight handling: At just 1,205 kg with a tiny steering wheel and taut chassis, it darts through corners effortlessly.',
+          de: 'Du liebst leichtfüßiges Handling: Mit nur 1.205 kg Leergewicht und straffem Fahrwerk giert er präziser in Kurven als fast alle Rivalen.',
+          ru: 'Ты любишь лёгкую и точную управляемость: При массе всего 1 205 кг и собранном шасси он проходит повороты острее большинства конкурентов.'
         },
         gti308EverydayBoot: {
           en: 'You still need real-world practicality: Despite track-ready 263 HP pace, the 420 L boot and 5 doors handle daily errands easily.',
@@ -9500,6 +9610,11 @@ const CAR_ROSTER = [
           en: 'You prefer physical climate dials: Heating and A/C adjustments run through the center touchscreen, which takes eyes off the road.',
           de: 'Du magst echte Drehregler fürs Klima: Temperatur und Lüftung laufen über den Touchscreen und lenken während der Fahrt ab.',
           ru: 'Ты предпочитаешь физические крутилки: Управление климатом зашито в сенсорный экран, что отвлекает в движении.'
+        },
+        gti308LsdCornering: {
+          en: 'You love carving B-roads: The mechanical Torsen differential pulls you cleanly out of tight wet corners without understeer.',
+          de: 'Du liebst kurvige Landstraßen: Das mechanische Torsen-Sperrdifferenzial zieht dich selbst auf nasser Fahrbahn sauber aus engen Kehren.',
+          ru: 'Ты любишь извилистые дороги: Механический самоблок Torsen уверенно вытягивает машину из скользких поворотов без сноса.'
         }
       }
     },
@@ -9510,8 +9625,18 @@ const CAR_ROSTER = [
           de: 'Ein leichtgewichtiger Hot-Hatch mit Sperrdifferenzial und überraschend viel Alltagsnutzen — sofern du das Budget für Sportbremsen und Reifen einplanst.',
           ru: 'Лёгкий горячий хэтчбек с самоблоком и практичным 5-дверным кузовом — отличный выбор, если ты готов к тратам на спорт-тормоза и резину.'
         },
-        ideal: ['gti308Featherweight', 'gti308EverydayBoot', 'globalPetrolCityZones'],
-        skip: ['gti308BrakeBill', 'globalHotHatchStiff', 'globalHotHatchRunningCosts', 'globalNoTowingHotHatch', 'gti308TouchscreenUi']
+        ideal: [
+          'gti308Featherweight',
+          'gti308LsdCornering',
+          'gti308EverydayBoot',
+          'globalPetrolCityZones'
+        ],
+        skip: [
+          'gti308BrakeBill',
+          'globalHotHatchStiff',
+          'globalHotHatchRunningCosts',
+          'gti308TouchscreenUi'
+        ]
       }
     },
     sharedDossiers: {
@@ -9833,35 +9958,41 @@ const CAR_ROSTER = [
       payloadTowing: {
         en: {
           headline: '470 kg Payload • 0 / 0 kg Towing',
-          strengths: ['470 kg Payload and 0 / 0 kg Towing handle typical cargo and trailer needs.'],
+          lowScoreReasons: [
+            'Zero factory towing approval (0 kg braked/unbraked) due to the GTi rear diffuser and twin exhaust layout.',
+            'Sport-tuned rear beam and lowered stance are not engineered for trailer towing.'
+          ],
+          strengths: ['470 kg payload easily accommodates four adults and weekend luggage.'],
           watchouts: [
-            'Verify exact braked towing limits on the registration card if fitting or using a tow bar.'
+            'Lowered GTi stance and rear diffuser require care on steep garage ramps when fully loaded.'
           ],
           beforeYouBuy: [
-            'If a tow hitch is already fitted, inspect rear springs for sagging and check clutch/auto smoothness.'
+            'Check rear bump stops, springs, and lower diffuser tabs for scrapes or heavy load wear.'
           ]
         },
         de: {
           headline: '470 kg Zuladung • 0 / 0 kg Anhängelast',
-          strengths: [
-            '470 kg Zuladung und 0 / 0 kg Anhängelast bieten praxisgerechte Zuladung und Zugkraft.'
+          lowScoreReasons: [
+            'Keine Anhängelast-Freigabe ab Werk (0 kg) wegen GTi-Heckdiffusor und Doppelrohr-Abgasanlage.',
+            'Tiefergelegtes Sportfahrwerk und Heckschürze sind nicht für Anhängerbetrieb homologiert.'
           ],
+          strengths: ['470 kg Zuladung reichen problemlos für vier Erwachsene und Wochenendgepäck.'],
           watchouts: [
-            'Bei Anhängerbetrieb die exakte gebremste Anhängelast im Fahrzeugschein für den konkreten Motor prüfen.'
+            'Tiefe Karosserie und Heckdiffusor verlangen bei voller Besetzung Vorsicht an steilen Rampen.'
           ],
-          beforeYouBuy: [
-            'Ist eine Anhängerkupplung montiert, Hinterfedern auf Durchhängen und Getriebe/Kupplung genau testen.'
-          ]
+          beforeYouBuy: ['Hintere Federn, Anschlagpuffer und Heckdiffusor auf Aufsetzer prüfen.']
         },
         ru: {
           headline: 'Нагрузка 470 кг • Прицеп: 0 / 0 кг',
-          strengths: ['Нагрузка 470 кг и Прицеп: 0 / 0 кг закрывают повседневные задачи по загрузке.'],
-          watchouts: [
-            'При планировании буксировки сверьте точную допустимую массу прицепа в документах авто.'
+          lowScoreReasons: [
+            'Заводская буксировка запрещена (0 кг) из-за заднего диффузора GTi и раздвоенного выхлопа.',
+            'Заниженная спортивная подвеска не рассчитана на буксировку прицепов.'
           ],
-          beforeYouBuy: [
-            'Если установлен фаркоп, проверьте просадку задних пружин и отсутствие следов тяжёлой эксплуатации.'
-          ]
+          strengths: ['Полезной нагрузки 470 кг хватает для четырёх взрослых и багажа на уик-энд.'],
+          watchouts: [
+            'При полной загрузке салона заниженный задний бампер требует аккуратности на крутых съездах.'
+          ],
+          beforeYouBuy: ['Проверьте задние пружины и нижний диффузор на предмет следов задевания.']
         }
       },
       depreciationResale: {
@@ -9903,17 +10034,17 @@ const CAR_ROSTER = [
       }
     },
     dossierGroups: {
-      'petrol-awd-mt': {
+      'petrol-6mt-lsd': {
         transmissionDriveline: {
           en: {
             headline: '6-MT + Torsen Helical LSD — Notchy Throw • Sport Clutch',
             strengths: [
               '6-MT + Torsen Helical LSD matches this powertrain well for everyday driving.',
-              'Notchy Throw • Sport Clutch.'
+              'Mechanical helical LSD puts high front-wheel torque down cleanly out of tight corners.'
             ],
             watchouts: [
-              'Listen for bearing whine in neutral or shudder on tight turns on AWD models.',
-              'Check clutch bite height and dual-mass flywheel noise at idle on high-mileage manuals.'
+              'Check clutch bite height and listen for dual-mass flywheel rattle at idle on high-mileage cars.',
+              'Verify crisp 2nd-gear engagement when cold and smooth helical LSD pull under hard acceleration.'
             ],
             beforeYouBuy: [
               'Shift quickly into 1st, 2nd, and 3rd gear cold and warm to verify crisp, crunch-free synchros.',
@@ -9924,11 +10055,11 @@ const CAR_ROSTER = [
             headline: '6-Gang + Torsen-Sperrdiff. — Hakelig • Sport-Kupplungslast',
             strengths: [
               '6-Gang + Torsen-Sperrdiff. passt gut zur Motorcharakteristik im Alltag.',
-              'Hakelig • Sport-Kupplungslast.'
+              'Die mechanische Differenzialsperre bringt das hohe Drehmoment sauber auf die Straße.'
             ],
             watchouts: [
-              'Bei höheren Laufleistungen Kupplungsspiel und Zweimassenschwungrad im Leerlauf prüfen.',
-              'Im Leerlauf auf Getriebelager-Geräusche und bei Allrad-Modellen auf Kurven-Verspannung achten.'
+              'Bei hoher Laufleistung Kupplungs-Greifpunkt prüfen und im Leerlauf auf ZMS-Klappern achten.',
+              'Sauberes Einlegen des 2. Gangs im kalten Zustand und ruckfreie Sperrwirkung unter Last prüfen.'
             ],
             beforeYouBuy: [
               'Im kalten wie warmen Zustand zügig vom 1. in den 2. und 3. Gang schalten — ohne Kratzen.',
@@ -9942,8 +10073,8 @@ const CAR_ROSTER = [
               'Длинный ход • Нагрузка на диск.'
             ],
             watchouts: [
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.',
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.'
+              'На больших пробегах проверяйте точку схватывания сцепления и стук двухмассового маховика на холостых.',
+              'Проверьте чёткое включение 2-й передачи на холодную и плавную работу самоблока под нагрузкой.'
             ],
             beforeYouBuy: [
               'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
@@ -9955,11 +10086,12 @@ const CAR_ROSTER = [
           en: {
             headline: 'Watch Battery & BSI Health',
             strengths: [
-              'Watch Battery & BSI Health keeps electrical diagnostics straightforward.',
-              'French Loom & Screen Quirks.'
+              'Well-documented electrical architecture keeps independent diagnostics straightforward.',
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.'
+              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.',
+              'Watch Battery & BSI Health.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -9968,10 +10100,13 @@ const CAR_ROSTER = [
           de: {
             headline: 'BSI & Batteriespannung',
             strengths: [
-              'BSI & Batteriespannung sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
-              'Touchscreen teils träge.'
+              'Gut dokumentierte Bordelektronik ermöglicht eine unkomplizierte Diagnose in freien Werkstätten.',
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
             ],
-            watchouts: ['Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.'],
+            watchouts: [
+              'Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.',
+              'BSI & Batteriespannung.'
+            ],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
             ]
@@ -9979,10 +10114,13 @@ const CAR_ROSTER = [
           ru: {
             headline: 'Контроль BSI и АКБ',
             strengths: [
-              'Контроль BSI и АКБ упрощает диагностику и обслуживание электрооборудования.',
-              'Возможны глюки мультимедиа.'
+              'Хорошо изученная бортовая электроника упрощает диагностику и обслуживание в сервисе.',
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
             ],
-            watchouts: ['Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.'],
+            watchouts: [
+              'Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.',
+              'Контроль BSI и АКБ.'
+            ],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
             ]
@@ -9992,38 +10130,50 @@ const CAR_ROSTER = [
           en: {
             headline: 'Firm Lowered Sport Chassis',
             strengths: [
-              'Firm Lowered Sport Chassis delivers pleasant everyday composure.',
-              'Supportive Massage Bucket Seats.'
+              'Supportive GTi bucket seats and calm cruise control keep long motorway runs manageable.',
+              'Composed damping over smooth asphalt without excessive bounce.'
             ],
             watchouts: [
               'Wind and tyre roar increase at 130+ km/h; large 18–19" wheels make city bumps firmer.'
             ],
             beforeYouBuy: [
               'Take the car up to 110–120 km/h to judge real wind noise, tyre hum, and suspension smoothness.'
+            ],
+            lowScoreReasons: [
+              'Lowered firm sport suspension transmits sharp urban potholes into the cabin.',
+              'Low-profile 19-inch tyres create noticeable road noise on coarse tarmac.'
             ]
           },
           de: {
             headline: 'Straffes Sportfahrwerk (-11 mm)',
             strengths: [
-              'Straffes Sportfahrwerk (-11 mm) sorgt für ein angenehmes Fahrgefühl im Alltag.',
-              'Bequeme Schalen mit Massage.'
+              'Gut konturierte GTi-Sportsitze halten auch auf längeren Etappen angenehm bequem.',
+              'Auf gutem Asphalt liegt das Sportfahrwerk ruhig ohne Nachschwingen.'
             ],
             watchouts: [
               'Ab 130 km/h nehmen Wind- und Abrollgeräusche zu; große Felgen machen den Stadtkomfort straffer.'
             ],
             beforeYouBuy: [
               'Bei der Probefahrt kurz 110–120 km/h fahren, um Wind-, Reifen- und Abrollgeräusche real zu prüfen.'
+            ],
+            lowScoreReasons: [
+              'Das tiefergelegte, straffe Sportfahrwerk gibt harte Stadtschlaglöcher direkt weiter.',
+              'Flache 19-Zoll-Sportreifen erzeugen auf rauem Asphalt deutliche Abrollgeräusche.'
             ]
           },
           ru: {
             headline: 'Жёсткое заниженное шасси',
             strengths: [
-              'Жёсткое заниженное шасси обеспечивает комфортную езду в повседневных поездках.',
-              'Удобные ковши с массажем.'
+              'Удобные спортивные кресла GTi хорошо поддерживают спину в дальних поездках.',
+              'На ровном асфальте подвеска собрана и не допускает раскачки.'
             ],
             watchouts: ['После 130 км/ч растут шумы ветра и шин, а большие диски делают ход жёстче.'],
             beforeYouBuy: [
               'Прокатитесь 110–120 км/ч, чтобы оценить реальный уровень шума ветра, шин и мягкость хода.'
+            ],
+            lowScoreReasons: [
+              'Заниженная жёсткая подвеска заметно передаёт городские ямы и стыки в салон.',
+              'Низкопрофильные 19-дюймовые шины ощутимо гудят на шершавом асфальте.'
             ]
           }
         },
@@ -10031,10 +10181,10 @@ const CAR_ROSTER = [
           en: {
             headline: '€1,000+ 380 mm Front Discs — 19" Performance Tyres & 10k Oil',
             strengths: [
-              '€1,000+ 380 mm Front Discs helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['19" Performance Tyres & 10k Oil.'],
+            watchouts: ['19" Performance Tyres & 10k Oil.', '€1,000+ 380 mm Front Discs.'],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -10065,7 +10215,7 @@ const CAR_ROSTER = [
     engines: [
       {
         id: '1.6-thp-263',
-        dossierGroup: 'petrol-awd-mt',
+        dossierGroup: 'petrol-6mt-lsd',
         buyerFitGroup: 'hot-hatch',
         isDefault: true,
         fuelType: 'petrol',
@@ -10160,7 +10310,7 @@ const CAR_ROSTER = [
                 headline: 'Reinforced Peugeot Sport Turbo Engine with High Service Demands',
                 strengths: [
                   'High-strength Mahle lightweight forged pistons with dedicated cooling galleries and polymer-coated main bearings withstand high cylinder pressures.',
-                  'Sodium-filled exhaust valves and reinforced cylinder head engineered specifically for the 263/270 HP GTi.',
+                  'Sodium-filled exhaust valves and reinforced cylinder head engineered specifically for the 263 HP GTi.',
                   'Reaches 200,000–250,000 km when oil, cooling, and timing care stay strictly on schedule.'
                 ],
                 watchouts: [
@@ -10228,7 +10378,7 @@ const CAR_ROSTER = [
                 headline: 'Verstärkter Peugeot-Sport-Turbomotor mit hohem Wartungsanspruch',
                 strengths: [
                   'Hochfeste Leichtbau-Schmiedekolben mit integrierten Kühlkanälen und polymerbeschichteten Lagern für extreme Zylinderdrücke.',
-                  'Natrium-gefüllte Auslassventile und verstärkter Zylinderkopf speziell für den 263/270-PS-GTi.',
+                  'Natrium-gefüllte Auslassventile und verstärkter Zylinderkopf speziell für den 263-PS-GTi.',
                   'Hält 200.000–250.000 km bei strikter Öl-, Kühlungs- und Steuerzeiten-Pflege.'
                 ],
                 watchouts: [
@@ -10296,7 +10446,7 @@ const CAR_ROSTER = [
                 headline: 'Усиленный турбомотор Peugeot Sport с высокими требованиями к сервису',
                 strengths: [
                   'Лёгкие и сверхпрочные поршни с масляными каналами охлаждения и полимерным напылением коренных вкладышей.',
-                  'Выпускные клапаны с натриевым наполнением и усиленная ГБЦ, разработанная специально под 263/270 л.с.',
+                  'Выпускные клапаны с натриевым наполнением и усиленная ГБЦ, разработанная специально под 263 л.с.',
                   'Проходит 200 000–250 000 км при строгом контроле масла, охлаждения и ГРМ.'
                 ],
                 watchouts: [
@@ -10543,7 +10693,7 @@ const CAR_ROSTER = [
         mondeoBaseUnderpowered: {
           en: 'You drive loaded on fast hills: The 115–120 HP base engines feel sluggish when overtaking or climbing with passengers.',
           de: 'Du fährst oft voll beladen bergauf: Die 115–120-PS-Basismotoren wirken beim Überholen oder mit Gepäck spürbar angestrengt.',
-          ru: 'Ты часто ездишь гружёным по трассе: Базовые 115–120 л.с. заметно теряют темп при обгонах и на затяжных подъёмах.'
+          ru: 'Ты часто ездишь гружёным по холмам: Базовые 115–120 л.с. заметно теряют темп при обгонах и на затяжных подъёмах.'
         },
         mondeoPowerShiftRisk: {
           en: 'You want worry-free automatic shifting: The wet PowerShift dual-clutch gearbox demands strict 60,000 km fluid changes to avoid costly repairs.',
@@ -10579,6 +10729,16 @@ const CAR_ROSTER = [
           en: 'You expect modern turbo economy: The 2.0/2.3 naturally aspirated petrols rev higher on the motorway and use more fuel.',
           de: 'Du erwartest modernen Turbo-Sparsamkeit: Die 2.0/2.3-Sauger drehen auf der Autobahn höher und verbrauchen spürbar mehr.',
           ru: 'Ты ждёшь экономичности современного турбомотора: Атмосферники 2.0/2.3 на трассе держат высокие обороты и расходуют больше.'
+        },
+        mondeoTurboPull: {
+          en: 'You want effortless mid-range punch: Turbocharged torque moves this large D-segment sedan briskly without constant downshifting.',
+          de: 'Du willst souveränen Durchzug: Das Turbo-Drehmoment schiebt den großen Mondeo mühelos voran, ohne dass du ständig schalten musst.',
+          ru: 'Тебе нужна лёгкая тяга в середине: Турбомотор уверенно тянет крупный седан без постоянных переключений вниз.'
+        },
+        mondeoRearArchCheck: {
+          en: 'You want zero underbody wear checks: High-mileage rear trailing-arm bushes and wheel-arch stone-chip edges need inspection.',
+          de: 'Du willst keinerlei Fahrwerks-/Rost-Checks: Hintere Längslenkerbuchsen und Steinschlag-Radläufe brauchen bei hoher Laufleistung Kontrolle.',
+          ru: 'Ты не хочешь следить за подвеской и кромками: Задние сайлентблоки и арки со сколами требуют осмотра на большом пробеге.'
         }
       }
     },
@@ -10589,8 +10749,13 @@ const CAR_ROSTER = [
           de: 'Eine geräumige, fahraktive Mittelklasse mit simpler Sauger-Technik — ideal, wenn du keine schnellen Autobahn-Überholmanöver brauchst.',
           ru: 'Просторный и хорошо управляемый седан D-класса с простым атмосферником — хорош, если не гоняешь на трассе.'
         },
-        ideal: ['mondeoCabinBoot', 'mondeoSharpChassis', 'globalSimpleNoTurbo', 'globalPetrolCityZones'],
-        skip: ['mondeoLongParking', 'mondeoBaseUnderpowered', 'mondeoInteriorAge']
+        ideal: [
+          'mondeoCabinBoot',
+          'mondeoSharpChassis',
+          'globalSimpleNoTurbo',
+          'globalPetrolCityZones'
+        ],
+        skip: ['mondeoLongParking', 'mondeoNaThirst', 'mondeoInteriorAge', 'mondeoRearArchCheck']
       },
       'turbo-petrol': {
         summary: {
@@ -10598,17 +10763,27 @@ const CAR_ROSTER = [
           de: 'Ein geräumiger Reisewagen mit kräftigem Turbobenziner — prüfe bei Automatik-Versionen unbedingt die PowerShift-Wartung.',
           ru: 'Просторный семейный седан с бодрым турбобензином — на версиях с автоматом обязательно проверяй обслуживание PowerShift.'
         },
-        ideal: ['mondeoCabinBoot', 'mondeoSharpChassis', 'globalPetrolCityZones'],
-        skip: ['mondeoLongParking', 'mondeoPowerShiftRisk', 'mondeoInteriorAge']
+        ideal: ['mondeoCabinBoot', 'mondeoSharpChassis', 'mondeoTurboPull', 'globalPetrolCityZones'],
+        skip: [
+          'mondeoLongParking',
+          'mondeoPowerShiftRisk',
+          'mondeoInteriorAge',
+          'mondeoRearArchCheck'
+        ]
       },
-      'diesel': {
+      diesel: {
         summary: {
           en: 'A classic long-distance motorway and towing workhorse — wasted on short urban trips.',
           de: 'Ein klassischer Langstrecken- und Zugwagen für die Autobahn — auf kurzen Stadtwegen fehl am Platz.',
           ru: 'Классический трассовый и тягловый седан для дальних дорог — не подходит для коротких городских поездок.'
         },
         ideal: ['mondeoCabinBoot', 'mondeoSharpChassis', 'mondeoDieselTowing', 'globalDieselLongRange'],
-        skip: ['globalDieselShortTripRisk', 'mondeoLongParking', 'mondeoInteriorAge']
+        skip: [
+          'globalDieselShortTripRisk',
+          'mondeoLongParking',
+          'mondeoInteriorAge',
+          'mondeoRearArchCheck'
+        ]
       }
     },
     sharedDossiers: {
@@ -11006,11 +11181,11 @@ const CAR_ROSTER = [
             headline: 'Smooth 6-Speed Manual — Moderate DMF Wear',
             strengths: [
               'Smooth 6-Speed Manual matches this powertrain well for everyday driving.',
-              'Moderate DMF Wear.'
+              'Crisp shift feel and well-matched ratios keep everyday driving composed and predictable.'
             ],
             watchouts: [
-              'Listen for bearing whine in neutral or shudder on tight turns on AWD models.',
-              'Check clutch bite height and dual-mass flywheel noise at idle on high-mileage manuals.'
+              'Check clutch bite height and listen for dual-mass flywheel rattle at idle on high-mileage cars.',
+              'Cold shifts into 2nd and 3rd should stay crunch-free; grinding points to worn synchros.'
             ],
             beforeYouBuy: [
               'Shift quickly into 1st, 2nd, and 3rd gear cold and warm to verify crisp, crunch-free synchros.',
@@ -11021,11 +11196,11 @@ const CAR_ROSTER = [
             headline: 'Leichtgängiges 6-Gang — Normaler ZMS-Verschleiß',
             strengths: [
               'Leichtgängiges 6-Gang passt gut zur Motorcharakteristik im Alltag.',
-              'Normaler ZMS-Verschleiß.'
+              'Saubere Schaltführung und stimmige Übersetzung sorgen für ein ruhiges, berechenbares Fahrgefühl.'
             ],
             watchouts: [
-              'Bei höheren Laufleistungen Kupplungsspiel und Zweimassenschwungrad im Leerlauf prüfen.',
-              'Im Leerlauf auf Getriebelager-Geräusche und bei Allrad-Modellen auf Kurven-Verspannung achten.'
+              'Bei hoher Laufleistung Kupplungs-Greifpunkt prüfen und im Leerlauf auf ZMS-Klappern achten.',
+              'Kalte Schaltvorgänge in den 2. und 3. Gang müssen kratzfrei sein — Kratzen deutet auf verschlissene Synchronringe.'
             ],
             beforeYouBuy: [
               'Im kalten wie warmen Zustand zügig vom 1. in den 2. und 3. Gang schalten — ohne Kratzen.',
@@ -11036,11 +11211,11 @@ const CAR_ROSTER = [
             headline: 'Чёткая 6-МКПП — Умеренный износ маховика',
             strengths: [
               'Чёткая 6-МКПП хорошо сочетается с данным двигателем в повседневной езде.',
-              'Умеренный износ маховика.'
+              'Чёткое переключение и удачные передаточные числа делают езду комфортной и предсказуемой.'
             ],
             watchouts: [
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.',
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.'
+              'На больших пробегах проверяйте точку схватывания сцепления и стук двухмассового маховика на холостых.',
+              'Переключения на 2-ю и 3-ю на холодную должны идти без хруста — хруст говорит об износе синхронизаторов.'
             ],
             beforeYouBuy: [
               'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
@@ -11052,11 +11227,12 @@ const CAR_ROSTER = [
           en: {
             headline: 'Convers+ Cluster Joints',
             strengths: [
-              'Convers+ Cluster Joints keeps electrical diagnostics straightforward.',
-              'Check Tailgate Wiring Loom.'
+              'Well-documented electrical architecture keeps independent diagnostics straightforward.',
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.'
+              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.',
+              'Check Tailgate Wiring Loom.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -11065,10 +11241,13 @@ const CAR_ROSTER = [
           de: {
             headline: 'Convers+-Lötstellen prüfen',
             strengths: [
-              'Convers+-Lötstellen prüfen sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
-              'Kabelbaum Heckklappe.'
+              'Gut dokumentierte Bordelektronik ermöglicht eine unkomplizierte Diagnose in freien Werkstätten.',
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
             ],
-            watchouts: ['Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.'],
+            watchouts: [
+              'Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.',
+              'Convers+-Lötstellen prüfen.'
+            ],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
             ]
@@ -11076,10 +11255,13 @@ const CAR_ROSTER = [
           ru: {
             headline: 'Пайка приборки Convers+',
             strengths: [
-              'Пайка приборки Convers+ упрощает диагностику и обслуживание электрооборудования.',
-              'Жгут крышки багажника.'
+              'Хорошо изученная бортовая электроника упрощает диагностику и обслуживание в сервисе.',
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
             ],
-            watchouts: ['Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.'],
+            watchouts: [
+              'Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.',
+              'Пайка приборки Convers+.'
+            ],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
             ]
@@ -11128,10 +11310,13 @@ const CAR_ROSTER = [
           en: {
             headline: 'Cheap Chassis Wear Parts — Watch Cooling & Turbo Plumbing',
             strengths: [
-              'Cheap Chassis Wear Parts helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['Watch Cooling & Turbo Plumbing.'],
+            watchouts: [
+              'Watch Cooling & Turbo Plumbing.',
+              'Age-related wear on suspension bushings, exhaust flex-pipes, and brake discs/calipers still requires steady annual upkeep.'
+            ],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -11167,8 +11352,8 @@ const CAR_ROSTER = [
               'Cheap Clutch Kit.'
             ],
             watchouts: [
-              'Simple, stout gearbox without PowerShift mechatronic risks.',
-              'Check clutch bite height and dual-mass flywheel noise at idle on high-mileage manuals.'
+              'Check clutch bite height and listen for dual-mass flywheel rattle at idle on high-mileage cars.',
+              'Cold shifts into 2nd and 3rd should stay crunch-free; grinding points to worn synchros.'
             ],
             beforeYouBuy: [
               'Shift quickly into 1st, 2nd, and 3rd gear cold and warm to verify crisp, crunch-free synchros.',
@@ -11182,8 +11367,8 @@ const CAR_ROSTER = [
               'Günstiger Kupplungssatz.'
             ],
             watchouts: [
-              'Bei höheren Laufleistungen Kupplungsspiel und Zweimassenschwungrad im Leerlauf prüfen.',
-              'Im Leerlauf auf Getriebelager-Geräusche und bei Allrad-Modellen auf Kurven-Verspannung achten.'
+              'Bei hoher Laufleistung Kupplungs-Greifpunkt prüfen und im Leerlauf auf ZMS-Klappern achten.',
+              'Kalte Schaltvorgänge in den 2. und 3. Gang müssen kratzfrei sein — Kratzen deutet auf verschlissene Synchronringe.'
             ],
             beforeYouBuy: [
               'Im kalten wie warmen Zustand zügig vom 1. in den 2. und 3. Gang schalten — ohne Kratzen.',
@@ -11197,8 +11382,8 @@ const CAR_ROSTER = [
               'Дешёвый комплект сцепления.'
             ],
             watchouts: [
-              'Никаких рисков с роботом PowerShift.',
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.'
+              'На больших пробегах проверяйте точку схватывания сцепления и стук двухмассового маховика на холостых.',
+              'Переключения на 2-ю и 3-ю на холодную должны идти без хруста — хруст говорит об износе синхронизаторов.'
             ],
             beforeYouBuy: [
               'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
@@ -11210,11 +11395,12 @@ const CAR_ROSTER = [
           en: {
             headline: 'Convers+ Cluster Joints',
             strengths: [
-              'Convers+ Cluster Joints keeps electrical diagnostics straightforward.',
-              'Check Tailgate Wiring Loom.'
+              'Well-documented electrical architecture keeps independent diagnostics straightforward.',
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.'
+              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.',
+              'Check Tailgate Wiring Loom.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -11223,10 +11409,13 @@ const CAR_ROSTER = [
           de: {
             headline: 'Convers+-Lötstellen prüfen',
             strengths: [
-              'Convers+-Lötstellen prüfen sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
-              'Kabelbaum Heckklappe.'
+              'Gut dokumentierte Bordelektronik ermöglicht eine unkomplizierte Diagnose in freien Werkstätten.',
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
             ],
-            watchouts: ['Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.'],
+            watchouts: [
+              'Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.',
+              'Convers+-Lötstellen prüfen.'
+            ],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
             ]
@@ -11234,10 +11423,13 @@ const CAR_ROSTER = [
           ru: {
             headline: 'Пайка приборки Convers+',
             strengths: [
-              'Пайка приборки Convers+ упрощает диагностику и обслуживание электрооборудования.',
-              'Жгут крышки багажника.'
+              'Хорошо изученная бортовая электроника упрощает диагностику и обслуживание в сервисе.',
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
             ],
-            watchouts: ['Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.'],
+            watchouts: [
+              'Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.',
+              'Пайка приборки Convers+.'
+            ],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
             ]
@@ -11286,11 +11478,12 @@ const CAR_ROSTER = [
           en: {
             headline: 'Very Cheap Ford Parts — Simple Belt & NA Maintenance',
             strengths: [
-              'Very Cheap Ford Parts helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Simple Belt & NA Maintenance.'
             ],
             watchouts: [
-              'Aging 10+ year rubber hoses, suspension bushings, and brake/tyre wear still add routine upkeep.'
+              'Aging 10+ year rubber hoses, suspension bushings, and brake/tyre wear still add routine upkeep.',
+              'Very Cheap Ford Parts.'
             ],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
@@ -11323,40 +11516,53 @@ const CAR_ROSTER = [
           en: {
             headline: '6-Speed PowerShift Wet-DCT — Strict 60k km Oil Change Req.',
             strengths: [
-              '6-Speed PowerShift Wet-DCT matches this powertrain well for everyday driving.',
-              'PowerShift (MPS6) Wet-Clutch DCT: Requires strict oil + filter changes every 60,000 km.'
+              'Fast, seamless dual-clutch upshifts make highway merging smooth when fluid is fresh.',
+              'Eliminates manual clutch-pedal fatigue in heavy commuter traffic.'
             ],
             watchouts: [
-              'Strict 60k km Oil Change Req.',
-              'Automatic, DSG, and CVT gearboxes depend on documented 40,000–60,000 km fluid and filter changes.'
+              'Check all reverse-to-drive engagements when warm for shudder or delay before committing.'
             ],
             beforeYouBuy: [
-              'Demand service receipts for automatic, DSG, or CVT transmission fluid changes every 40,000–60,000 km.',
+              'Demand service receipts for transmission fluid changes every 40,000–60,000 km.',
               'Test Reverse-to-Drive engagement when warm and creep gently uphill to confirm zero jerk or slip.'
+            ],
+            lowScoreReasons: [
+              'PowerShift (MPS6) wet-clutch dual-clutch gearbox suffers costly clutch-damper and mechatronic failures if 60,000 km fluid intervals were missed.',
+              'Repairing a worn PowerShift unit or control module often costs €2,000–€3,500+.'
             ]
           },
           de: {
             headline: '6-Gang PowerShift (DKG) — Alle 60.000 km Ölwechsel Pflicht',
             strengths: [
-              '6-Gang PowerShift (DKG) passt gut zur Motorcharakteristik im Alltag.',
-              'Zwingend alle 60.000 km Öl- und Filterwechsel nötig; sonst drohen teure Kupplungs- oder Mechatronikschäden.'
+              'Schnelle, nahtlose Doppelkupplungs-Schaltvorgänge bei frischem Getriebeöl.',
+              'Erspart ständiges Kuppeln im dichten Berufsverkehr.'
             ],
-            watchouts: ['Alle 60.000 km Ölwechsel Pflicht.', 'Alle 60.000 km Ölwechsel Pflicht.'],
+            watchouts: [
+              'Im warmen Zustand mehrfach von R auf D schalten und auf Verzögerung oder Rucken achten.'
+            ],
             beforeYouBuy: [
-              'Nachweise für Automatik-, DSG- oder CVT-Getriebeölwechsel alle 40.000–60.000 km prüfen.',
+              'Nachweise für Getriebeölwechsel alle 40.000–60.000 km prüfen.',
               'Im warmen Zustand von R auf D schalten und am Hang sanft anrollen — ohne Ruckeln oder Verzögerung.'
+            ],
+            lowScoreReasons: [
+              'Das nasse PowerShift-Doppelkupplungsgetriebe (MPS6) reagiert empfindlich auf überzogene 60.000-km-Ölwechsel mit teuren Kupplungs- und Mechatronikschäden.',
+              'Instandsetzungen an Kupplungspaket oder Mechatronik erreichen schnell 2.000–3.500 €.'
             ]
           },
           ru: {
             headline: 'Робот PowerShift (6 ст.) — Замена масла строго раз в 60 тыс.',
             strengths: [
-              'Робот PowerShift (6 ст.) хорошо сочетается с данным двигателем в повседневной езде.',
-              'Робот PowerShift (MPS6): Требует строгой замены масла и фильтра каждые 60 000 км; без этого изнашиваются демпфер сцепления и мехатроник.'
+              'Быстрые и плавные переключения преселектива при свежем масле в коробке.',
+              'Избавляет от необходимости выжимать сцепление в плотных городских пробках.'
             ],
-            watchouts: ['Замена масла строго раз в 60 тыс.', 'Замена масла строго раз в 60 тыс.'],
+            watchouts: ['На прогретой коробке проверьте переключение R–D без толчков и задержек.'],
             beforeYouBuy: [
-              'Запросить чеки о замене масла в АКПП, DSG или вариаторе каждые 40 000–60 000 км.',
+              'Запросить чеки о замене масла в коробке каждые 40 000–60 000 км.',
               'На прогретой машине проверить плавность переключения R–D и ровное трогание в горку без рывков.'
+            ],
+            lowScoreReasons: [
+              'Мокрый робот PowerShift (MPS6) при пропуске замены масла каждые 60 000 км страдает износом демпфера сцепления и мехатроника.',
+              'Ремонт сцепления или блока управления часто обходится в €2 000–3 500+.'
             ]
           }
         },
@@ -11364,11 +11570,12 @@ const CAR_ROSTER = [
           en: {
             headline: 'Convers+ Cluster Joints',
             strengths: [
-              'Convers+ Cluster Joints keeps electrical diagnostics straightforward.',
-              'Check Tailgate Wiring Loom.'
+              'Well-documented electrical architecture keeps independent diagnostics straightforward.',
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.'
+              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.',
+              'Check Tailgate Wiring Loom.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -11377,10 +11584,13 @@ const CAR_ROSTER = [
           de: {
             headline: 'Convers+-Lötstellen prüfen',
             strengths: [
-              'Convers+-Lötstellen prüfen sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
-              'Kabelbaum Heckklappe.'
+              'Gut dokumentierte Bordelektronik ermöglicht eine unkomplizierte Diagnose in freien Werkstätten.',
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
             ],
-            watchouts: ['Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.'],
+            watchouts: [
+              'Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.',
+              'Convers+-Lötstellen prüfen.'
+            ],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
             ]
@@ -11388,10 +11598,13 @@ const CAR_ROSTER = [
           ru: {
             headline: 'Пайка приборки Convers+',
             strengths: [
-              'Пайка приборки Convers+ упрощает диагностику и обслуживание электрооборудования.',
-              'Жгут крышки багажника.'
+              'Хорошо изученная бортовая электроника упрощает диагностику и обслуживание в сервисе.',
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
             ],
-            watchouts: ['Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.'],
+            watchouts: [
+              'Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.',
+              'Пайка приборки Convers+.'
+            ],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
             ]
@@ -11440,10 +11653,10 @@ const CAR_ROSTER = [
           en: {
             headline: 'Costly PowerShift Oil & Clutches — Expensive DI Turbo & Manifold',
             strengths: [
-              'Costly PowerShift Oil & Clutches helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['Expensive DI Turbo & Manifold.'],
+            watchouts: ['Expensive DI Turbo & Manifold.', 'Costly PowerShift Oil & Clutches.'],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -11479,11 +11692,11 @@ const CAR_ROSTER = [
               'Avoids PowerShift DCT Risk.'
             ],
             watchouts: [
-              'Even the tough Aisin 6-speed benefits from ATF drain-and-fill every 60,000–80,000 km.',
-              'Automatic, DSG, and CVT gearboxes depend on documented 40,000–60,000 km fluid and filter changes.'
+              'Torque-converter automatics need documented 50,000–60,000 km fluid changes to avoid lockup shudder.',
+              'Harsh or delayed 2–3 upshifts when warm signal worn valve-body or solenoid parts.'
             ],
             beforeYouBuy: [
-              'Demand service receipts for automatic, DSG, or CVT transmission fluid changes every 40,000–60,000 km.',
+              'Demand service receipts for transmission fluid changes every 40,000–60,000 km.',
               'Test Reverse-to-Drive engagement when warm and creep gently uphill to confirm zero jerk or slip.'
             ]
           },
@@ -11494,11 +11707,11 @@ const CAR_ROSTER = [
               'Kein PowerShift-Risiko.'
             ],
             watchouts: [
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.',
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.'
+              'Wandlerautomatiken brauchen nachgewiesene Ölwechsel alle 50.000–60.000 km, sonst droht Wandler-Ruckeln.',
+              'Harte oder verzögerte 2–3-Schaltungen im warmen Zustand deuten auf verschlissenen Ventilkörper oder Magnetventile.'
             ],
             beforeYouBuy: [
-              'Nachweise für Automatik-, DSG- oder CVT-Getriebeölwechsel alle 40.000–60.000 km prüfen.',
+              'Nachweise für Getriebeölwechsel alle 40.000–60.000 km prüfen.',
               'Im warmen Zustand von R auf D schalten und am Hang sanft anrollen — ohne Ruckeln oder Verzögerung.'
             ]
           },
@@ -11509,11 +11722,11 @@ const CAR_ROSTER = [
               'Классический гидротрансформатор.'
             ],
             watchouts: [
-              'Желательно обновлять ATF каждые 60–80 тыс. км.',
-              'АКПП, DSG и вариаторы требуют подтверждённой замены масла каждые 40 000–60 000 км.'
+              'Гидротрансформаторным АКПП нужна подтверждённая замена масла каждые 50 000–60 000 км, иначе появляются рывки блокировки.',
+              'Жёсткие или запоздалые переключения 2–3 на горячую указывают на износ гидроблока или соленоидов.'
             ],
             beforeYouBuy: [
-              'Запросить чеки о замене масла в АКПП, DSG или вариаторе каждые 40 000–60 000 км.',
+              'Запросить чеки о замене масла в коробке каждые 40 000–60 000 км.',
               'На прогретой машине проверить плавность переключения R–D и ровное трогание в горку без рывков.'
             ]
           }
@@ -11522,11 +11735,12 @@ const CAR_ROSTER = [
           en: {
             headline: 'Convers+ Cluster Joints',
             strengths: [
-              'Convers+ Cluster Joints keeps electrical diagnostics straightforward.',
-              'Check Tailgate Wiring Loom.'
+              'Well-documented electrical architecture keeps independent diagnostics straightforward.',
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.'
+              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.',
+              'Check Tailgate Wiring Loom.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -11535,10 +11749,13 @@ const CAR_ROSTER = [
           de: {
             headline: 'Convers+-Lötstellen prüfen',
             strengths: [
-              'Convers+-Lötstellen prüfen sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
-              'Kabelbaum Heckklappe.'
+              'Gut dokumentierte Bordelektronik ermöglicht eine unkomplizierte Diagnose in freien Werkstätten.',
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
             ],
-            watchouts: ['Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.'],
+            watchouts: [
+              'Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.',
+              'Convers+-Lötstellen prüfen.'
+            ],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
             ]
@@ -11546,10 +11763,13 @@ const CAR_ROSTER = [
           ru: {
             headline: 'Пайка приборки Convers+',
             strengths: [
-              'Пайка приборки Convers+ упрощает диагностику и обслуживание электрооборудования.',
-              'Жгут крышки багажника.'
+              'Хорошо изученная бортовая электроника упрощает диагностику и обслуживание в сервисе.',
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
             ],
-            watchouts: ['Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.'],
+            watchouts: [
+              'Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.',
+              'Пайка приборки Convers+.'
+            ],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
             ]
@@ -11598,11 +11818,12 @@ const CAR_ROSTER = [
           en: {
             headline: 'Low Unscheduled Repair Risk — Cheap Parts + Routine 6-AT Oil',
             strengths: [
-              'Low Unscheduled Repair Risk helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Cheap Parts + Routine 6-AT Oil.'
             ],
             watchouts: [
-              'Aging 10+ year rubber hoses, suspension bushings, and brake/tyre wear still add routine upkeep.'
+              'Aging 10+ year rubber hoses, suspension bushings, and brake/tyre wear still add routine upkeep.',
+              'Low Unscheduled Repair Risk.'
             ],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
@@ -11611,10 +11832,13 @@ const CAR_ROSTER = [
           de: {
             headline: 'Kaum teure Überraschungen — Günstige Teile + ATF-Wechsel',
             strengths: [
-              'Kaum teure Überraschungen hält die planbaren jährlichen Wartungskosten im Rahmen.',
+              'Planbare Wartungsintervalle mit klaren Vorgaben halten die laufenden Servicekosten kalkulierbar.',
               'Hohe Werkstatt-Kompetenz und breite Auswahl günstiger Marken-Ersatzteile.'
             ],
-            watchouts: ['Günstige Teile + ATF-Wechsel.'],
+            watchouts: [
+              'Altersbedingter Verschleiß an Fahrwerksbuchsen, Bremsen und Abgasanlage erfordert weiterhin planbare Rücklagen.',
+              'Kaum teure Überraschungen.'
+            ],
             beforeYouBuy: [
               'Untenstehenden Kosten-Fahrplan öffnen und fällige Meilensteine mit vorhandenen Rechnungen abgleichen.'
             ]
@@ -11636,11 +11860,11 @@ const CAR_ROSTER = [
             headline: '6-Speed Manual — Watch 270 Nm DMF',
             strengths: [
               '6-Speed Manual matches this powertrain well for everyday driving.',
-              'Watch 270 Nm DMF.'
+              'Crisp shift feel and well-matched ratios keep everyday driving composed and predictable.'
             ],
             watchouts: [
-              'Noisier than PSA 2.0 TDCi and hard on DMFs.',
-              '6-speed manual (and pre-2010 Aisin 6-AT on 130/140 HP) are tough; post-2010 PowerShift DCT requires strict 60,000 km fluid changes.'
+              'Check clutch bite height and listen for dual-mass flywheel rattle at idle on high-mileage cars.',
+              'Cold shifts into 2nd and 3rd should stay crunch-free; grinding points to worn synchros.'
             ],
             beforeYouBuy: [
               'Shift quickly into 1st, 2nd, and 3rd gear cold and warm to verify crisp, crunch-free synchros.',
@@ -11651,11 +11875,11 @@ const CAR_ROSTER = [
             headline: '6-Gang-Schaltgetriebe — ZMS bei 270 Nm beachten',
             strengths: [
               '6-Gang-Schaltgetriebe passt gut zur Motorcharakteristik im Alltag.',
-              'ZMS bei 270 Nm beachten.'
+              'Saubere Schaltführung und stimmige Übersetzung sorgen für ein ruhiges, berechenbares Fahrgefühl.'
             ],
             watchouts: [
-              '6-Gang-Schalter (und alte Aisin-Wandler bis 2010) sind top; PowerShift ab 2010 braucht zwingend alle 60.000 km Ölwechsel.',
-              'Bei höheren Laufleistungen Kupplungsspiel und Zweimassenschwungrad im Leerlauf prüfen.'
+              'Bei hoher Laufleistung Kupplungs-Greifpunkt prüfen und im Leerlauf auf ZMS-Klappern achten.',
+              'Kalte Schaltvorgänge in den 2. und 3. Gang müssen kratzfrei sein — Kratzen deutet auf verschlissene Synchronringe.'
             ],
             beforeYouBuy: [
               'Im kalten wie warmen Zustand zügig vom 1. in den 2. und 3. Gang schalten — ohne Kratzen.',
@@ -11666,11 +11890,11 @@ const CAR_ROSTER = [
             headline: '6-ступ. МКПП — Контроль маховика',
             strengths: [
               '6-ступ. МКПП хорошо сочетается с данным двигателем в повседневной езде.',
-              'Контроль маховика.'
+              'Чёткое переключение и удачные передаточные числа делают езду комфортной и предсказуемой.'
             ],
             watchouts: [
-              '6-ст. МКПП (и классический автомат Aisin до 2010 года) надёжны; робот PowerShift с 2010 года требует замены масла каждые 60 тыс. км.',
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.'
+              'На больших пробегах проверяйте точку схватывания сцепления и стук двухмассового маховика на холостых.',
+              'Переключения на 2-ю и 3-ю на холодную должны идти без хруста — хруст говорит об износе синхронизаторов.'
             ],
             beforeYouBuy: [
               'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
@@ -11682,11 +11906,12 @@ const CAR_ROSTER = [
           en: {
             headline: 'Convers+ Cluster Joints',
             strengths: [
-              'Convers+ Cluster Joints keeps electrical diagnostics straightforward.',
-              'Check Tailgate Wiring Loom.'
+              'Well-documented electrical architecture keeps independent diagnostics straightforward.',
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.'
+              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.',
+              'Check Tailgate Wiring Loom.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -11695,11 +11920,12 @@ const CAR_ROSTER = [
           de: {
             headline: 'Convers+-Lötstellen prüfen',
             strengths: [
-              'Convers+-Lötstellen prüfen sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
-              'Kabelbaum Heckklappe.'
+              'Gut dokumentierte Bordelektronik ermöglicht eine unkomplizierte Diagnose in freien Werkstätten.',
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
             ],
             watchouts: [
-              'Abgassensoren (DPF-Differenzdruck, Glühkerzen, AGR) melden sich häufiger ab 140.000 km.'
+              'Abgassensoren (DPF-Differenzdruck, Glühkerzen, AGR) melden sich häufiger ab 140.000 km.',
+              'Convers+-Lötstellen prüfen.'
             ],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
@@ -11708,11 +11934,12 @@ const CAR_ROSTER = [
           ru: {
             headline: 'Пайка приборки Convers+',
             strengths: [
-              'Пайка приборки Convers+ упрощает диагностику и обслуживание электрооборудования.',
-              'Жгут крышки багажника.'
+              'Хорошо изученная бортовая электроника упрощает диагностику и обслуживание в сервисе.',
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
             ],
             watchouts: [
-              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.'
+              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.',
+              'Пайка приборки Convers+.'
             ],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
@@ -11762,10 +11989,13 @@ const CAR_ROSTER = [
           en: {
             headline: 'Cheap Filters & Chassis Parts — Budget Piezo Injectors & DPF',
             strengths: [
-              'Cheap Filters & Chassis Parts helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['Budget Piezo Injectors & DPF.'],
+            watchouts: [
+              'Budget Piezo Injectors & DPF.',
+              'Plan a reserve for higher-mileage diesel wear parts such as dual-mass flywheel, clutch, injectors, or DPF cleaning.'
+            ],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -11801,11 +12031,11 @@ const CAR_ROSTER = [
               '420 Nm DMF • No PowerShift.'
             ],
             watchouts: [
-              'Massive 420–450 Nm torque wears manual clutches and DMFs faster if driven hard or towing heavy trailers.',
-              'Automatic, DSG, and CVT gearboxes depend on documented 40,000–60,000 km fluid and filter changes.'
+              'Torque-converter automatics need documented 50,000–60,000 km fluid changes to avoid lockup shudder.',
+              'Harsh or delayed 2–3 upshifts when warm signal worn valve-body or solenoid parts.'
             ],
             beforeYouBuy: [
-              'Demand service receipts for automatic, DSG, or CVT transmission fluid changes every 40,000–60,000 km.',
+              'Demand service receipts for transmission fluid changes every 40,000–60,000 km.',
               'Test Reverse-to-Drive engagement when warm and creep gently uphill to confirm zero jerk or slip.'
             ]
           },
@@ -11816,11 +12046,11 @@ const CAR_ROSTER = [
               'Kein PowerShift • 420 Nm Last.'
             ],
             watchouts: [
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.',
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.'
+              'Wandlerautomatiken brauchen nachgewiesene Ölwechsel alle 50.000–60.000 km, sonst droht Wandler-Ruckeln.',
+              'Harte oder verzögerte 2–3-Schaltungen im warmen Zustand deuten auf verschlissenen Ventilkörper oder Magnetventile.'
             ],
             beforeYouBuy: [
-              'Nachweise für Automatik-, DSG- oder CVT-Getriebeölwechsel alle 40.000–60.000 km prüfen.',
+              'Nachweise für Getriebeölwechsel alle 40.000–60.000 km prüfen.',
               'Im warmen Zustand von R auf D schalten und am Hang sanft anrollen — ohne Ruckeln oder Verzögerung.'
             ]
           },
@@ -11831,11 +12061,11 @@ const CAR_ROSTER = [
               'Без робота DCT • Момент 420 Н·м.'
             ],
             watchouts: [
-              'АКПП, DSG и вариаторы требуют подтверждённой замены масла каждые 40 000–60 000 км.',
-              'АКПП, DSG и вариаторы требуют подтверждённой замены масла каждые 40 000–60 000 км.'
+              'Гидротрансформаторным АКПП нужна подтверждённая замена масла каждые 50 000–60 000 км, иначе появляются рывки блокировки.',
+              'Жёсткие или запоздалые переключения 2–3 на горячую указывают на износ гидроблока или соленоидов.'
             ],
             beforeYouBuy: [
-              'Запросить чеки о замене масла в АКПП, DSG или вариаторе каждые 40 000–60 000 км.',
+              'Запросить чеки о замене масла в коробке каждые 40 000–60 000 км.',
               'На прогретой машине проверить плавность переключения R–D и ровное трогание в горку без рывков.'
             ]
           }
@@ -11844,11 +12074,12 @@ const CAR_ROSTER = [
           en: {
             headline: 'Convers+ Cluster Joints',
             strengths: [
-              'Convers+ Cluster Joints keeps electrical diagnostics straightforward.',
-              'Check Tailgate Wiring Loom.'
+              'Well-documented electrical architecture keeps independent diagnostics straightforward.',
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.'
+              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.',
+              'Check Tailgate Wiring Loom.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -11857,11 +12088,12 @@ const CAR_ROSTER = [
           de: {
             headline: 'Convers+-Lötstellen prüfen',
             strengths: [
-              'Convers+-Lötstellen prüfen sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
-              'Kabelbaum Heckklappe.'
+              'Gut dokumentierte Bordelektronik ermöglicht eine unkomplizierte Diagnose in freien Werkstätten.',
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
             ],
             watchouts: [
-              'Abgassensoren (DPF-Differenzdruck, Glühkerzen, AGR) melden sich häufiger ab 140.000 km.'
+              'Abgassensoren (DPF-Differenzdruck, Glühkerzen, AGR) melden sich häufiger ab 140.000 km.',
+              'Convers+-Lötstellen prüfen.'
             ],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
@@ -11870,11 +12102,12 @@ const CAR_ROSTER = [
           ru: {
             headline: 'Пайка приборки Convers+',
             strengths: [
-              'Пайка приборки Convers+ упрощает диагностику и обслуживание электрооборудования.',
-              'Жгут крышки багажника.'
+              'Хорошо изученная бортовая электроника упрощает диагностику и обслуживание в сервисе.',
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
             ],
             watchouts: [
-              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.'
+              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.',
+              'Пайка приборки Convers+.'
             ],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
@@ -11886,10 +12119,11 @@ const CAR_ROSTER = [
             headline: 'Balanced Highway Poise',
             strengths: [
               'Balanced Highway Poise delivers pleasant everyday composure.',
-              'Often Paired With Sport Ride.'
+              'Balanced chassis damping keeps cruising settled and predictable on smooth roads.'
             ],
             watchouts: [
-              'Cold diesel clatter, high motorway revs, or oversized alloy wheels raise cabin noise noticeably.'
+              'Cold diesel clatter, high motorway revs, or oversized alloy wheels raise cabin noise noticeably.',
+              'Often Paired With Sport Ride.'
             ],
             beforeYouBuy: [
               'Take the car up to 110–120 km/h to judge real wind noise, tyre hum, and suspension smoothness.'
@@ -11899,10 +12133,11 @@ const CAR_ROSTER = [
             headline: 'Satter Autobahn-Komfort',
             strengths: [
               'Satter Autobahn-Komfort sorgt für ein angenehmes Fahrgefühl im Alltag.',
-              'Oft straffere Titanium-S-Feder.'
+              'Auf gutem Asphalt liegt das Fahrwerk ruhig und berechenbar.'
             ],
             watchouts: [
-              'Kaltes Diesel-Nageln oder große 18–19"-Felgen erhöhen den Geräuschpegel im Innenraum spürbar.'
+              'Kaltes Diesel-Nageln oder große 18–19"-Felgen erhöhen den Geräuschpegel im Innenraum spürbar.',
+              'Oft straffere Titanium-S-Feder.'
             ],
             beforeYouBuy: [
               'Bei der Probefahrt kurz 110–120 km/h fahren, um Wind-, Reifen- und Abrollgeräusche real zu prüfen.'
@@ -11912,9 +12147,12 @@ const CAR_ROSTER = [
             headline: 'Уверенный ход по трассе',
             strengths: [
               'Уверенный ход по трассе обеспечивает комфортную езду в повседневных поездках.',
+              'На ровном покрытии подвеска работает собранно и предсказуемо.'
+            ],
+            watchouts: [
+              'Холодный дизельный рокот и крупные диски заметно усиливают шум в салоне.',
               'Часто жёсткая спорт-подвеска.'
             ],
-            watchouts: ['Холодный дизельный рокот и крупные диски заметно усиливают шум в салоне.'],
             beforeYouBuy: [
               'Прокатитесь 110–120 км/ч, чтобы оценить реальный уровень шума ветра, шин и мягкость хода.'
             ]
@@ -11924,10 +12162,13 @@ const CAR_ROSTER = [
           en: {
             headline: 'Aisin Auto Avoids PowerShift — High 420 Nm Clutch/DMF & Tyres',
             strengths: [
-              'Aisin Auto Avoids PowerShift helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['High 420 Nm Clutch/DMF & Tyres.'],
+            watchouts: [
+              'High 420 Nm Clutch/DMF & Tyres.',
+              'Plan a reserve for higher-mileage diesel wear parts such as dual-mass flywheel, clutch, injectors, or DPF cleaning.'
+            ],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -11961,7 +12202,7 @@ const CAR_ROSTER = [
         dossierGroup: 'petrol-6mt',
         buyerFitGroup: 'turbo-petrol',
         buyerFitOverrides: {
-          skip: ['mondeoLongParking', 'mondeoEcoBoostCare', 'mondeoInteriorAge']
+          skip: ['mondeoLongParking', 'mondeoEcoBoostCare', 'mondeoInteriorAge', 'mondeoRearArchCheck']
         },
         isDefault: true,
         fuelType: 'petrol',
@@ -12848,7 +13089,7 @@ const CAR_ROSTER = [
         dossierGroup: 'petrol-5mt',
         buyerFitGroup: 'na-petrol',
         buyerFitOverrides: {
-          skip: ['mondeoLongParking', 'mondeoNaThirst', 'mondeoInteriorAge']
+          skip: ['mondeoLongParking', 'mondeoNaThirst', 'mondeoInteriorAge', 'mondeoRearArchCheck']
         },
         isDefault: false,
         fuelType: 'petrol',
@@ -13379,7 +13620,7 @@ const CAR_ROSTER = [
                   'Direct-Injection Carbon & Injector/Piston Stress: Extended oil intervals and low-octane fuel promote pre-ignition and carbon buildup, risking costly internal engine wear.'
                 ],
                 strengths: [
-                  'Effortless 203 HP / 240 HP highway acceleration without the 1.6 EcoBoost cylinder-head cracking flaw.',
+                  'Effortless 203 HP highway acceleration with a sturdy open-deck 2.0L aluminum block.',
                   'Can reach 180,000–220,000+ km with strict 10,000 km synthetic oil changes and documented turbo/manifold care.'
                 ],
                 watchouts: [
@@ -13449,7 +13690,7 @@ const CAR_ROSTER = [
                   'Verkokung & Kolbenbelastung bei Wartungsstau: Überzogene Ölwechsel und schlechter Sprit begünstigen Verkokung sowie Frühzündungen unter Volllast.'
                 ],
                 strengths: [
-                  'Souveräne 203- bzw. 240-PS-Leistung ohne die Überhitzungs-Kopfrisse des 1.6 EcoBoost.',
+                  'Souveräne 203-PS-Autobahnleistung mit robustem 2.0-Liter-Aluminiumblock.',
                   'Erreicht 180.000–220.000+ km bei strengen Ölwechseln alle 10.000 km und intaktem Turbolader.'
                 ],
                 watchouts: [
@@ -13519,7 +13760,7 @@ const CAR_ROSTER = [
                   'Риск детонации и нагара на прямом впрыске: Затянутые интервалы масла и низкий октан провоцируют закоксовку и разрушение перегородок поршней.'
                 ],
                 strengths: [
-                  'Уверенная динамика (203 и 240 л.с.) без склонности 1.6 EcoBoost к массовому перегреву ГБЦ.',
+                  'Уверенная трассовая динамика (203 л.с.) и крепкий 2,0-литровый алюминиевый блок.',
                   'Проходит 180 000–220 000+ км при замене масла каждые 10 000 км и исправном наддуве.'
                 ],
                 watchouts: [
@@ -13735,7 +13976,7 @@ const CAR_ROSTER = [
         dossierGroup: 'petrol-conv-auto',
         buyerFitGroup: 'na-petrol',
         buyerFitOverrides: {
-          skip: ['mondeoLongParking', 'mondeoNaThirst', 'mondeoInteriorAge']
+          skip: ['mondeoLongParking', 'mondeoNaThirst', 'mondeoInteriorAge', 'mondeoRearArchCheck']
         },
         isDefault: false,
         fuelType: 'petrol',
@@ -13826,7 +14067,7 @@ const CAR_ROSTER = [
               en: {
                 headline: 'The Safest Automatic Mondeo Mk4: Mazda 2.3L Chain',
                 strengths: [
-                  'No turbo, no direct injection, and a durable timing chain (produced 03/2007–04/2010 before 2.0 EcoBoost replaced it).',
+                  'No turbo, no direct injection, and a durable timing chain (produced 03/2007–04/2010).',
                   'Expected to run 280,000–300,000+ km with basic scheduled maintenance.'
                 ],
                 watchouts: [
@@ -14171,8 +14412,13 @@ const CAR_ROSTER = [
         dossierGroup: 'petrol-6mt',
         buyerFitGroup: 'turbo-petrol',
         buyerFitOverrides: {
-          ideal: ['mondeo25tEnthusiast', 'mondeoCabinBoot', 'mondeoSharpChassis', 'globalPetrolCityZones'],
-          skip: ['mondeoLongParking', 'mondeo25tCosts', 'mondeoInteriorAge']
+          ideal: [
+            'mondeo25tEnthusiast',
+            'mondeoCabinBoot',
+            'mondeoSharpChassis',
+            'globalPetrolCityZones'
+          ],
+          skip: ['mondeoLongParking', 'mondeo25tCosts', 'mondeoInteriorAge', 'mondeoRearArchCheck']
         },
         isDefault: false,
         fuelType: 'petrol',
@@ -14396,7 +14642,6 @@ const CAR_ROSTER = [
                 headline: 'Ресурсный 5-цилиндровый турбомотор Volvo с культовым статусом',
                 strengths: [
                   'Ровная полка момента с 1 500 до 4 800 об/мин.',
-                  'Способен пройти 240 000–280 000+ км при замене масла каждые 10 000–15 000 км.',
                   'Способен пройти 240 000–280 000+ км при замене масла каждые 10 000–15 000 км.'
                 ],
                 watchouts: [
@@ -14612,7 +14857,12 @@ const CAR_ROSTER = [
         dossierGroup: 'diesel-6mt',
         buyerFitGroup: 'diesel',
         buyerFitOverrides: {
-          skip: ['globalDieselShortTripRisk', 'mondeoBaseUnderpowered', 'mondeoLongParking', 'mondeoInteriorAge']
+          skip: [
+            'globalDieselShortTripRisk',
+            'mondeoBaseUnderpowered',
+            'mondeoLongParking',
+            'mondeoInteriorAge'
+          ]
         },
         isDefault: false,
         fuelType: 'diesel',
@@ -15137,7 +15387,7 @@ const CAR_ROSTER = [
             },
             dossier: {
               en: {
-                headline: 'Ford Lynx 1.8 TDCi (100 & 125 HP): Tough Cast-Iron Block with One Big Catch',
+                headline: 'Ford Lynx 1.8 TDCi (100 HP): Tough Cast-Iron Block with One Big Catch',
                 strengths: [
                   'Built on Ford’s own cast-iron Lynx block, often sold in 2007 without a DPF.',
                   'Punchy torque and simple manual gearboxes.',
@@ -15204,7 +15454,7 @@ const CAR_ROSTER = [
                 ]
               },
               de: {
-                headline: 'Ford Lynx 1.8 TDCi (100 & 125 PS): Robuster Gussblock mit einer Schwachstelle',
+                headline: 'Ford Lynx 1.8 TDCi (100 PS): Robuster Gussblock mit einer Schwachstelle',
                 strengths: [
                   'Bewährter Ford-Gussblock, 2007 oft noch ab Werk ohne DPF.',
                   'Hält 200.000–250.000 km bei strikter Öl-, Kühlungs- und Steuerzeiten-Pflege.'
@@ -15270,7 +15520,7 @@ const CAR_ROSTER = [
                 ]
               },
               ru: {
-                headline: 'Ford Lynx 1.8 TDCi (100 и 125 л.с.): крепкий чугунный блок с нюансом по ГРМ',
+                headline: 'Ford Lynx 1.8 TDCi (100 л.с.): крепкий чугунный блок с нюансом по ГРМ',
                 strengths: [
                   'Чугунный блок собственной разработки Ford, в 2007 году часто шёл без DPF.',
                   'Хороший подхват с низов и простая механика.',
@@ -15575,10 +15825,10 @@ const CAR_ROSTER = [
             },
             dossier: {
               en: {
-                headline: 'PSA DW10 2.0 TDCi (115 / 130 / 140 / 163 HP): The Sweet Spot of the Mk4 Range',
+                headline: 'PSA DW10 2.0 TDCi (115 HP): The Sweet Spot of the Mk4 Range',
                 strengths: [
-                  'Taxi-Proven Longevity: Combines all 4 power tunes (115, 130, 140 & 163 HP, 300–340 Nm) on the ultra-tough PSA DW10 block—regularly reaches 400,000+ km.',
-                  'Far quieter and smoother than the older 1.8 TDCi.'
+                  'Taxi-Proven Longevity: Built on the ultra-tough 115 HP / 300 Nm PSA DW10 block—regularly reaches 400,000+ km.',
+                  'Quiet, well-isolated common-rail combustion at motorway cruising speeds.'
                 ],
                 watchouts: [
                   'Facelift 2.0 TDCi uses a DPF fuel vaporizer that can fail, plus standard EGR/crank-sensor wear at high mileage.',
@@ -15641,10 +15891,10 @@ const CAR_ROSTER = [
                 ]
               },
               de: {
-                headline: 'PSA DW10 2.0 TDCi (115 / 130 / 140 / 163 PS): Der beste Mondeo-Mk4-Diesel',
+                headline: 'PSA DW10 2.0 TDCi (115 PS): Der beste Mondeo-Mk4-Diesel',
                 strengths: [
-                  'Vereint alle Leistungsstufen (115, 130, 140 & 163 PS, 300–340 Nm) auf dem robusten PSA-DW10-Block– läuft oft über 400.000 km.',
-                  'Deutlich kultivierter als der alte 1.8 TDCi.'
+                  'Taxierprobte Langlebigkeit: Basiert auf dem extrem robusten 115-PS-/300-Nm-PSA-DW10-Block — läuft oft über 400.000 km.',
+                  'Ruhiger, kultivierter Common-Rail-Lauf bei Autobahntempo.'
                 ],
                 watchouts: [
                   'Bei Kurzstrecken drohen AGR- und DPF-Probleme.',
@@ -15707,10 +15957,10 @@ const CAR_ROSTER = [
                 ]
               },
               ru: {
-                headline: 'PSA DW10 2.0 TDCi (115 / 130 / 140 / 163 л.с.): лучший дизель Mondeo Mk4',
+                headline: 'PSA DW10 2.0 TDCi (115 л.с.): лучший дизель Mondeo Mk4',
                 strengths: [
-                  'Объединяет все версии (115, 130, 140 и 163 л.с., 300–340 Н·м) на ресурсом блоке PSA DW10— ходит 400+ тыс. км.',
-                  'Намного мягче и тише старого 1.8 TDCi.',
+                  'Проверенный в такси ресурс: построен на выносливом блоке PSA DW10 (115 л.с., 300 Н·м) и ходит 400 000+ км.',
+                  'Мягкая и тихая работа системы Common-Rail на крейсерской скорости.',
                   'При регулярном базовом обслуживании ресурс составляет 280 000–300 000+ км.'
                 ],
                 watchouts: [
@@ -16012,7 +16262,7 @@ const CAR_ROSTER = [
             },
             dossier: {
               en: {
-                headline: 'Flagship PSA DW12 2.2 TDCi (175 & 200 HP): Huge Torque & Aisin Auto',
+                headline: 'Flagship PSA DW12 2.2 TDCi (175 HP): Huge Torque & Aisin Auto',
                 strengths: [
                   'Torquey 175 HP diesel setup delivers effortless highway cruising when serviced on time.',
                   'Capable of 240,000–280,000+ km with timely 10,000–15,000 km oil changes.'
@@ -16078,7 +16328,7 @@ const CAR_ROSTER = [
                 ]
               },
               de: {
-                headline: 'Top-Diesel PSA DW12 2.2 TDCi (175 & 200 PS): Gewaltiger Schub & Aisin-Automatik',
+                headline: 'Top-Diesel PSA DW12 2.2 TDCi (175 PS): Gewaltiger Schub & Aisin-Automatik',
                 strengths: [
                   'Souveräne Autobahn-Performance.',
                   'Erreicht bei Ölwechseln alle 10.000–15.000 km rund 240.000–280.000+ km.'
@@ -16144,10 +16394,9 @@ const CAR_ROSTER = [
                 ]
               },
               ru: {
-                headline: 'Флагманский дизель PSA DW12 2.2 TDCi (175 и 200 л.с.): огромная тяга',
+                headline: 'Флагманский дизель PSA DW12 2.2 TDCi (175 л.с.): огромная тяга',
                 strengths: [
                   'Ураганная тяга на трассе.',
-                  'Способен пройти 240 000–280 000+ км при замене масла каждые 10 000–15 000 км.',
                   'Способен пройти 240 000–280 000+ км при замене масла каждые 10 000–15 000 км.'
                 ],
                 watchouts: [
@@ -16376,9 +16625,9 @@ const CAR_ROSTER = [
     sharedBuyerFit: {
       cards: {
         typeRTrackPace: {
-          en: 'You want raw, front-drive track performance: The 310 HP K20C1 turbo, helical LSD, and Brembo brakes deliver relentless pace and precision.',
-          de: 'Du willst kompromisslose Fronttriebler-Performance: 310-PS-K20C1-Turbo, Sperrdifferenzial und Brembo-Bremsen liefern brutalen Vortrieb.',
-          ru: 'Тебе нужна бескомпромиссная динамика переднего привода: 310-сильный турбо-K20C1, самоблок и тормоза Brembo дарят мощнейший темп.'
+          en: 'You want raw, front-drive track performance: The 310 HP K20C1 turbo, helical LSD, and dual-axis front suspension deliver relentless pace.',
+          de: 'Du willst kompromisslose Fronttriebler-Performance: 310-PS-K20C1-Turbo, Sperrdifferenzial und Dual-Axis-Aufhängung liefern brutalen Vortrieb.',
+          ru: 'Тебе нужна бескомпромиссная динамика переднего привода: 310-сильный турбо-K20C1, самоблок и подвеска Dual-Axis дарят мощнейший темп.'
         },
         typeRHugeBoot: {
           en: 'You need a surprisingly big boot: Even with track hardware, the 498 L hatchback luggage bay beats many family crossovers.',
@@ -16394,6 +16643,11 @@ const CAR_ROSTER = [
           en: 'You want clean all-round visibility: The tall rear wing cuts straight across the rear glass in your mirror.',
           de: 'Du willst freien Rundumblick: Der große Heckflügel teilt die Sicht durch die Heckscheibe genau auf Augenhöhe.',
           ru: 'Тебе важен чистый обзор назад: Массивное антикрыло перекрывает значительную часть заднего стекла.'
+        },
+        typeRBremboGearbox: {
+          en: 'You crave mechanical feedback: Crisp short-throw 6-speed shifts and 350 mm Brembo brakes feel built for track days.',
+          de: 'Du willst echtes Mechanik-Feedback: Ultrapräzise 6-Gang-Schaltung und 350-mm-Brembo-Bremsen sind direkt für Trackdays gemacht.',
+          ru: 'Ты ценишь чистую механику: Чёткая 6-МКПП с коротким ходом и 350-мм тормоза Brembo созданы для трек-дней.'
         }
       }
     },
@@ -16404,8 +16658,13 @@ const CAR_ROSTER = [
           de: 'Ein kompromissloser 310-PS-Rundstrecken-Sportler mit riesigem Kofferraum — gebaut für Fahrspaß, nicht für weiches Stadt-Pendeln.',
           ru: 'Хардкорный 310-сильный хот-хэтч для трека с огромным багажником — создан ради драйва, а не мягкой езды по городу.'
         },
-        ideal: ['typeRTrackPace', 'typeRHugeBoot', 'globalPetrolCityZones'],
-        skip: ['globalHotHatchStiff', 'globalHotHatchRunningCosts', 'typeRLowSplitter', 'typeRVisibility', 'globalNoTowingHotHatch']
+        ideal: ['typeRTrackPace', 'typeRBremboGearbox', 'typeRHugeBoot', 'globalPetrolCityZones'],
+        skip: [
+          'globalHotHatchStiff',
+          'globalHotHatchRunningCosts',
+          'typeRLowSplitter',
+          'typeRVisibility'
+        ]
       }
     },
     sharedDossiers: {
@@ -16418,7 +16677,7 @@ const CAR_ROSTER = [
           ],
           watchouts: [
             'Check dual-axis front knuckle joints, adaptive dampers, and Brembo caliper seals.',
-            'Inspect Front Pivot Joints.'
+            'Inspect front bumper/splitter and bonnet edge for stone chips and track-curb scrapes.'
           ],
           beforeYouBuy: [
             'Inspect sills, wheel-arch lips, and rear subframe on a lift or with a flashlight.',
@@ -16433,7 +16692,7 @@ const CAR_ROSTER = [
           ],
           watchouts: [
             'Vordere Dual-Axis-Achsschenkel, adaptive Dämpfer und Brembo-Sättel prüfen.',
-            'Vorderachslager (Rennstrecke).'
+            'Frontsplitter und Motorhaubenkante auf Steinschlag und Aufsetzer kontrollieren.'
           ],
           beforeYouBuy: [
             'Schweller, Radlaufkanten und hinteren Achsträger auf der Bühne oder mit Lampe prüfen.',
@@ -16448,7 +16707,7 @@ const CAR_ROSTER = [
           ],
           watchouts: [
             'Осмотрите шаровые передней подвески Dual-Axis, адаптивные стойки и суппорты Brembo.',
-            'Проверка передних шаровых.'
+            'Проверьте передний сплиттер и кромку капота на сколы и следы задевания бордюров.'
           ],
           beforeYouBuy: [
             'Осмотрите пороги, кромки арок и задний подрамник с фонариком или на подъёмнике.',
@@ -16500,7 +16759,7 @@ const CAR_ROSTER = [
         en: {
           headline: 'Wide 11.8 m Turning Circle (7.0/10)',
           strengths: [
-            'Wide 11.8 m Turning Circle makes city maneuvering predictable.',
+            'Standard reverse camera and parking sensors compensate well for the rear wing.',
             'Good side-mirror coverage and clear forward sightlines.'
           ],
           watchouts: [
@@ -16512,7 +16771,7 @@ const CAR_ROSTER = [
         de: {
           headline: 'Großer 11,8-m-Wendekreis (7.0/10)',
           strengths: [
-            'Großer 11,8-m-Wendekreis macht das Rangieren im Stadtverkehr gut einschätzbar.',
+            'Serienmäßige Rückfahrkamera und Parksensoren gleichen den hohen Heckflügel beim Rangieren gut aus.',
             'Gut dimensionierte Außenspiegel und klare Sicht nach vorn.'
           ],
           watchouts: [
@@ -16524,7 +16783,7 @@ const CAR_ROSTER = [
         ru: {
           headline: 'Большой разворот 11,8 м (7.0/10)',
           strengths: [
-            'Большой разворот 11,8 м делает маневрирование и парковку в городе предсказуемыми.',
+            'Штатная камера заднего вида и парктроники хорошо компенсируют перекрытый обзор.',
             'Хорошая обзорность вперёд и информативные боковые зеркала.'
           ],
           watchouts: [
@@ -16653,7 +16912,7 @@ const CAR_ROSTER = [
           headline: 'Helical LSD + Dual-Axis Front',
           strengths: [
             'Dual-axis front strut, helical LSD, and 350 mm Brembo brakes eliminate torque steer.',
-            'Extreme Grip • Firm City Ride.'
+            'Direct 2.2-turn steering rack and flat body control inspire huge cornering confidence.'
           ],
           watchouts: [
             'Worn shocks, tired tyres, or misaligned rear geometry dull handling noticeably on 10+ year cars.'
@@ -16665,8 +16924,8 @@ const CAR_ROSTER = [
         de: {
           headline: 'Sperrdiff. + Dual-Axis-Achse',
           strengths: [
-            'Dual-Axis-Vorderachse, Sperrdifferenzial und 350-mm-Brembo-Anlage bieten Track-Präzision.',
-            'Extremer Grip • Straff im Alltag.'
+            'Dual-Axis-Aufhängung, Sperrdifferenzial und 350-mm-Brembo-Anlage bieten Track-Präzision.',
+            'Direkte Lenkung und minimale Seitenneigung sorgen für enormes Vertrauen in schnellen Kurven.'
           ],
           watchouts: [
             'Verschlissene Stoßdämpfer, alte Reifen oder verstellte Spur trüben das Fahrverhalten spürbar.'
@@ -16679,7 +16938,7 @@ const CAR_ROSTER = [
           headline: 'Самоблок + Dual-Axis спереди',
           strengths: [
             'Подвеска Dual-Axis, самоблок и 350-мм тормоза Brembo исключают силовое подруливание.',
-            'Предельный зацеп • Жёстко в городе.'
+            'Острый руль и минимальные крены кузова дарят максимальную точность в поворотах.'
           ],
           watchouts: [
             'Изношенные амортизаторы, старые шины или сбитый развал заметно ухудшают управляемость.'
@@ -16727,35 +16986,39 @@ const CAR_ROSTER = [
       payloadTowing: {
         en: {
           headline: '410 kg Payload • 0 / 0 kg Towing',
-          strengths: ['410 kg Payload and 0 / 0 kg Towing handle typical cargo and trailer needs.'],
-          watchouts: [
-            'Verify exact braked towing limits on the registration card if fitting or using a tow bar.'
+          lowScoreReasons: [
+            'Zero factory towing approval (0 kg braked/unbraked) due to the center triple exhaust and rear diffuser.',
+            'Track-oriented aero and stiff rear suspension are not built for trailer or heavy roof-rack duty.'
           ],
-          beforeYouBuy: [
-            'If a tow hitch is already fitted, inspect rear springs for sagging and check clutch/auto smoothness.'
-          ]
+          strengths: ['410 kg payload capacity easily handles four adults and weekend luggage.'],
+          watchouts: [
+            'Low rear diffuser and stiff rear springs sit closer to bump stops when carrying 4 adults plus full holiday luggage.'
+          ],
+          beforeYouBuy: ['Inspect rear springs and diffuser tabs for scrapes or heavy track-day cargo wear.']
         },
         de: {
           headline: '410 kg Zuladung • 0 / 0 kg Anhängelast',
-          strengths: [
-            '410 kg Zuladung und 0 / 0 kg Anhängelast bieten praxisgerechte Zuladung und Zugkraft.'
+          lowScoreReasons: [
+            'Keine Anhängelast-Freigabe ab Werk (0 kg gebremst/ungebremst) wegen mittiger Abgasanlage und Heckdiffusor.',
+            'Aerodynamik und straffes Track-Fahrwerk sind nicht für Anhänger- oder Dachlast-Einsätze ausgelegt.'
           ],
+          strengths: ['410 kg Zuladung reichen problemlos für vier Erwachsene samt Wochenendgepäck.'],
           watchouts: [
-            'Bei Anhängerbetrieb die exakte gebremste Anhängelast im Fahrzeugschein für den konkreten Motor prüfen.'
+            'Tiefer Heckdiffusor und straffe Hinterfedern haben bei voller Besetzung samt Urlaubsgepäck wenig Einfahrreserve an steilen Rampen.'
           ],
-          beforeYouBuy: [
-            'Ist eine Anhängerkupplung montiert, Hinterfedern auf Durchhängen und Getriebe/Kupplung genau testen.'
-          ]
+          beforeYouBuy: ['Hintere Federn und Heckdiffusor auf Aufsetzer oder Überlastungsspuren prüfen.']
         },
         ru: {
           headline: 'Нагрузка 410 кг • Прицеп: 0 / 0 кг',
-          strengths: ['Нагрузка 410 кг и Прицеп: 0 / 0 кг закрывают повседневные задачи по загрузке.'],
-          watchouts: [
-            'При планировании буксировки сверьте точную допустимую массу прицепа в документах авто.'
+          lowScoreReasons: [
+            'Заводская буксировка полностью запрещена (0 кг) из-за центрального тройного выхлопа и заднего диффузора.',
+            'Трековая аэродинамика и жёсткая задняя подвеска не рассчитаны на прицепы и тяжёлые багажники.'
           ],
-          beforeYouBuy: [
-            'Если установлен фаркоп, проверьте просадку задних пружин и отсутствие следов тяжёлой эксплуатации.'
-          ]
+          strengths: ['Полезной нагрузки 410 кг хватает для четырёх взрослых и багажа на уик-энд.'],
+          watchouts: [
+            'Низкий задний диффузор требует аккуратности на крутых съездах при полной загрузке салона и багажника.'
+          ],
+          beforeYouBuy: ['Осмотрите задние пружины и нижний диффузор на отсутствие просадки и повреждений.']
         }
       },
       depreciationResale: {
@@ -16797,17 +17060,17 @@ const CAR_ROSTER = [
       }
     },
     dossierGroups: {
-      'petrol-awd-mt': {
+      'petrol-6mt-lsd': {
         transmissionDriveline: {
           en: {
             headline: 'Crisp Short-Throw 6-MT + LSD — Check 2nd-Gear Synchro Cold',
             strengths: [
               'Crisp Short-Throw 6-MT + LSD matches this powertrain well for everyday driving.',
-              'Check 2nd-Gear Synchro Cold.'
+              'Mechanical helical LSD puts high front-wheel torque down cleanly out of tight corners.'
             ],
             watchouts: [
-              'Listen for bearing whine in neutral or shudder on tight turns on AWD models.',
-              'Check clutch bite height and dual-mass flywheel noise at idle on high-mileage manuals.'
+              'Check clutch bite height and listen for dual-mass flywheel rattle at idle on high-mileage cars.',
+              'Verify crisp 2nd-gear engagement when cold and smooth helical LSD pull under hard acceleration.'
             ],
             beforeYouBuy: [
               'Shift quickly into 1st, 2nd, and 3rd gear cold and warm to verify crisp, crunch-free synchros.',
@@ -16818,11 +17081,11 @@ const CAR_ROSTER = [
             headline: 'Knackiges Short-Throw + Sperre — 2.-Gang-Synchronring prüfen',
             strengths: [
               'Knackiges Short-Throw + Sperre passt gut zur Motorcharakteristik im Alltag.',
-              '2.-Gang-Synchronring prüfen.'
+              'Die mechanische Differenzialsperre bringt das hohe Drehmoment sauber auf die Straße.'
             ],
             watchouts: [
-              'Bei höheren Laufleistungen Kupplungsspiel und Zweimassenschwungrad im Leerlauf prüfen.',
-              'Im Leerlauf auf Getriebelager-Geräusche und bei Allrad-Modellen auf Kurven-Verspannung achten.'
+              'Bei hoher Laufleistung Kupplungs-Greifpunkt prüfen und im Leerlauf auf ZMS-Klappern achten.',
+              'Sauberes Einlegen des 2. Gangs im kalten Zustand und ruckfreie Sperrwirkung unter Last prüfen.'
             ],
             beforeYouBuy: [
               'Im kalten wie warmen Zustand zügig vom 1. in den 2. und 3. Gang schalten — ohne Kratzen.',
@@ -16833,11 +17096,11 @@ const CAR_ROSTER = [
             headline: 'Чёткая 6-МКПП + самоблок LSD — Проверка синхронизатора 2-й',
             strengths: [
               'Чёткая 6-МКПП + самоблок LSD хорошо сочетается с данным двигателем в повседневной езде.',
-              'Проверка синхронизатора 2-й.'
+              'Механический самоблок эффективно реализует высокий крутящий момент на передней оси.'
             ],
             watchouts: [
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.',
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.'
+              'На больших пробегах проверяйте точку схватывания сцепления и стук двухмассового маховика на холостых.',
+              'Проверьте чёткое включение 2-й передачи на холодную и плавную работу самоблока под нагрузкой.'
             ],
             beforeYouBuy: [
               'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
@@ -16850,10 +17113,11 @@ const CAR_ROSTER = [
             headline: 'Reliable K20C1 ECU & Loom',
             strengths: [
               'Reliable K20C1 ECU & Loom keeps electrical diagnostics straightforward.',
-              'Damper Sensor Checks.'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.'
+              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.',
+              'Check adaptive damper sensors and wheel-speed wiring for moisture damage.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -16863,9 +17127,12 @@ const CAR_ROSTER = [
             headline: 'Solide K20C1-Elektronik',
             strengths: [
               'Solide K20C1-Elektronik sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
+            ],
+            watchouts: [
+              'Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.',
               'Dämpfer-Sensorik prüfen.'
             ],
-            watchouts: ['Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.'],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
             ]
@@ -16874,9 +17141,12 @@ const CAR_ROSTER = [
             headline: 'Надёжная проводка K20C1',
             strengths: [
               'Надёжная проводка K20C1 упрощает диагностику и обслуживание электрооборудования.',
-              'Датчики адаптивных стоек.'
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
             ],
-            watchouts: ['Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.'],
+            watchouts: [
+              'Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.',
+              'Проверьте датчики адаптивных амортизаторов на предмет окисления контактов.'
+            ],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
             ]
@@ -16885,39 +17155,56 @@ const CAR_ROSTER = [
         rideNoiseComfort: {
           en: {
             headline: 'Very Stiff +R Track Dampers',
+            lowScoreReasons: [
+              'Track-calibrated adaptive dampers transmit sharp bumps and broken tarmac directly into the cabin.',
+              'Wide 19-inch performance tyres generate noticeable road roar above 110 km/h.'
+            ],
             strengths: [
-              'Very Stiff +R Track Dampers delivers pleasant everyday composure.',
-              'Loud 19" Tyre Roar On Rough Roads.'
+              'Supportive suede bucket seats hold you comfortably on long motorway journeys.',
+              'Standard Normal damper mode is noticeably more compliant than +R track mode.'
             ],
             watchouts: [
-              'Wind and tyre roar increase at 130+ km/h; large 18–19" wheels make city bumps firmer.'
+              'Very stiff suspension setup and low-profile 19" tyres make rough city streets tiring.',
+              'Wind and tyre noise rise noticeably at 130+ km/h motorway cruising speeds.'
             ],
             beforeYouBuy: [
-              'Take the car up to 110–120 km/h to judge real wind noise, tyre hum, and suspension smoothness.'
+              'Drive over rough tarmac in both Normal and +R modes and cruise at 110–120 km/h to judge real tyre roar.'
             ]
           },
           de: {
             headline: 'Sehr hartes +R-Sportfahrwerk',
+            lowScoreReasons: [
+              'Die rennstreckenorientierten Adaptivdämpfer geben Querfugen und Schlaglöcher hart an die Insassen weiter.',
+              'Breite 19-Zoll-Sportreifen erzeugen ab 110 km/h deutlich hörbares Abrollgeräusch.'
+            ],
             strengths: [
-              'Sehr hartes +R-Sportfahrwerk sorgt für ein angenehmes Fahrgefühl im Alltag.',
-              'Lautes 19-Zoll-Abrollgeräusch.'
+              'Die stark konturierten Wildleder-Sportsitze bieten auch auf langen Etappen guten Halt.',
+              'Im Standard-Fahrmodus arbeitet das Fahrwerk spürbar nachgiebiger als im harten +R-Modus.'
             ],
             watchouts: [
-              'Ab 130 km/h nehmen Wind- und Abrollgeräusche zu; große Felgen machen den Stadtkomfort straffer.'
+              'Sehr straffe Grundabstimmung und flache 19-Zoll-Reifen machen schlechte Stadtstraßen unkomfortabel.',
+              'Ab 130 km/h nehmen Wind- und Abrollgeräusche im Innenraum spürbar zu.'
             ],
             beforeYouBuy: [
-              'Bei der Probefahrt kurz 110–120 km/h fahren, um Wind-, Reifen- und Abrollgeräusche real zu prüfen.'
+              'Schlechte Straße sowohl im Normal- als auch im +R-Modus fahren und bei 110–120 km/h auf Abrollgeräusche achten.'
             ]
           },
           ru: {
             headline: 'Очень жёсткие стойки (+R)',
-            strengths: [
-              'Очень жёсткие стойки (+R) обеспечивает комфортную езду в повседневных поездках.',
-              'Громкий гул 19" шин на трассе.'
+            lowScoreReasons: [
+              'Адаптивные стойки с трековой калибровкой жёстко передают стыки и ямы в салон.',
+              'Широкие 19-дюймовые шины заметно шумят на шершавом асфальте уже со 110 км/ч.'
             ],
-            watchouts: ['После 130 км/ч растут шумы ветра и шин, а большие диски делают ход жёстче.'],
+            strengths: [
+              'Анатомические ковши из алькантары хорошо поддерживают спину на дальних перегонах.',
+              'В обычном режиме амортизаторы заметно мягче, чем в экстремальном режиме +R.'
+            ],
+            watchouts: [
+              'Очень плотная подвеска и низкопрофильные 19" шины утомляют на разбитых городских дорогах.',
+              'После 130 км/ч растут шумы ветра и гул широких покрышек.'
+            ],
             beforeYouBuy: [
-              'Прокатитесь 110–120 км/ч, чтобы оценить реальный уровень шума ветра, шин и мягкость хода.'
+              'Проедьте по неровностям в обычном режиме и в +R, а также разгонитесь до 110–120 км/h для оценки шума.'
             ]
           }
         },
@@ -16925,10 +17212,10 @@ const CAR_ROSTER = [
           en: {
             headline: 'Pricey 19" Tyres & Brembo Pads — Frequent Fluid & Spark Care',
             strengths: [
-              'Pricey 19" Tyres & Brembo Pads helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['Frequent Fluid & Spark Care.'],
+            watchouts: ['Frequent Fluid & Spark Care.', 'Pricey 19" Tyres & Brembo Pads.'],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -16936,10 +17223,10 @@ const CAR_ROSTER = [
           de: {
             headline: 'Teure 19-Zoll-Reifen & Brembo — Kurze Sport-Serviceintervalle',
             strengths: [
-              'Teure 19-Zoll-Reifen & Brembo hält die planbaren jährlichen Wartungskosten im Rahmen.',
+              'Planbare Wartungsintervalle mit klaren Vorgaben halten die laufenden Servicekosten kalkulierbar.',
               'Hohe Werkstatt-Kompetenz und breite Auswahl günstiger Marken-Ersatzteile.'
             ],
-            watchouts: ['Kurze Sport-Serviceintervalle.'],
+            watchouts: ['Kurze Sport-Serviceintervalle.', 'Teure 19-Zoll-Reifen & Brembo.'],
             beforeYouBuy: [
               'Untenstehenden Kosten-Fahrplan öffnen und fällige Meilensteine mit vorhandenen Rechnungen abgleichen.'
             ]
@@ -16947,10 +17234,10 @@ const CAR_ROSTER = [
           ru: {
             headline: 'Дорогие 19" шины и Brembo — Частое спортивное обслуживание',
             strengths: [
-              'Дорогие 19" шины и Brembo помогает держать ежегодные затраты на ТО под контролем.',
+              'Предсказуемый регламент обслуживания помогает держать ежегодные затраты на ТО под контролем.',
               'Машина хорошо знакома любому сервису, а качественные запчасти широко доступны.'
             ],
-            watchouts: ['Частое спортивное обслуживание.'],
+            watchouts: ['Частое спортивное обслуживание.', 'Дорогие 19" шины и Brembo.'],
             beforeYouBuy: ['Откройте план обслуживания ниже и сверьте предстоящие работы с имеющимися чеками.']
           }
         }
@@ -16959,7 +17246,7 @@ const CAR_ROSTER = [
     engines: [
       {
         id: '2.0-vtec-turbo',
-        dossierGroup: 'petrol-awd-mt',
+        dossierGroup: 'petrol-6mt-lsd',
         buyerFitGroup: 'hot-hatch',
         isDefault: true,
         fuelType: 'petrol',
@@ -17186,7 +17473,6 @@ const CAR_ROSTER = [
                 headline: 'Первый турбо-Type R (K20C1): огромный запас прочности для трека и дорог',
                 strengths: [
                   'Кованый коленвал и шатуны, клапаны с натрием и масляные форсунки спокойно держат 310 л.с.',
-                  'Короткие ходы кулисы и поворотные кулаки Dual-Axis убирают силовое подруливание.',
                   'При регулярном базовом обслуживании ресурс составляет 280 000–300 000+ км.'
                 ],
                 watchouts: [
@@ -17448,6 +17734,16 @@ const CAR_ROSTER = [
           en: 'You want low motorway fuel bills: Naturally aspirated i-VTEC engines need revs for quick overtakes and burn more fuel.',
           de: 'Du willst minimalen Autobahn-Verbrauch: Die i-VTEC-Sauger brauchen für zügige Überholmanöver Drehzahl und entsprechend mehr Sprit.',
           ru: 'Ты хочешь минимальный расход на трассе: Атмосферным i-VTEC для бодрых обгонов нужны обороты, что повышает расход топлива.'
+        },
+        accordArchRustCheck: {
+          en: 'You want zero rust or brake checks: Rear wheel-arch lips, windscreen top seams, and rear calipers need periodic care.',
+          de: 'Du willst keine Rost- oder Bremsen-Kontrollen: Hintere Radläufe, oberer Scheibenrahmen und hintere Bremssättel brauchen Pflege.',
+          ru: 'Ты не хочешь следить за арками и суппортами: Задние кромки арок, рамка лобового стекла и задние тормоза требуют внимания.'
+        },
+        accordHighwayCruiser: {
+          en: 'You cover long Autobahn distances: 350–380 Nm diesel pull and double-wishbone stability eat up motorway miles effortlessly.',
+          de: 'Du fährst weite Autobahnstrecken: 350–380 Nm Drehmoment und die Doppelquerlenker-Achse meistern lange Etappen souverän.',
+          ru: 'Ты ездишь на дальние расстояния по трассе: Тяга 350–380 Н·м и двухрычажная подвеска уверенно держат высокую скорость.'
         }
       }
     },
@@ -17458,17 +17754,37 @@ const CAR_ROSTER = [
           de: 'Eine kultivierte, fahraktive Limousine mit extrem robuster Benziner-Technik — ideal, wenn Qualität vor maximalem Fond-Platz zählt.',
           ru: 'Добротный и драйверский японский седан с неубиваемым бензиновым мотором — идеален, если качество важнее простора сзади.'
         },
-        ideal: ['accordRefinedDrive', 'accordVtecDurability', 'globalSimpleNoTurbo', 'globalPetrolCityZones'],
-        skip: ['accordRearSpaceBoot', 'accordFirmSuspension', 'accordPetrolConsumption']
+        ideal: [
+          'accordRefinedDrive',
+          'accordVtecDurability',
+          'globalSimpleNoTurbo',
+          'globalPetrolCityZones'
+        ],
+        skip: [
+          'accordRearSpaceBoot',
+          'accordFirmSuspension',
+          'accordPetrolConsumption',
+          'accordArchRustCheck'
+        ]
       },
-      'diesel': {
+      diesel: {
         summary: {
           en: 'A quiet, enduring Japanese motorway sedan with strong diesel torque — wasted on short urban trips.',
           de: 'Eine ruhige, langstreckentaugliche Reiselimousine mit kräftigem Diesel-Durchzug — für reine Stadt-Kurzstrecken ungeeignet.',
           ru: 'Тихий и выносливый дизельный седан для трассы — не лучший выбор для коротких городских поездок.'
         },
-        ideal: ['accordRefinedDrive', 'accordDieselAutoNote', 'globalDieselLongRange'],
-        skip: ['globalDieselShortTripRisk', 'accordRearSpaceBoot', 'accordFirmSuspension']
+        ideal: [
+          'accordRefinedDrive',
+          'accordHighwayCruiser',
+          'globalDieselLongRange',
+          'accordDieselAutoNote'
+        ],
+        skip: [
+          'globalDieselShortTripRisk',
+          'accordRearSpaceBoot',
+          'accordFirmSuspension',
+          'accordArchRustCheck'
+        ]
       }
     },
     sharedDossiers: {
@@ -17871,11 +18187,11 @@ const CAR_ROSTER = [
               'Long Clutch & ATF Life.'
             ],
             watchouts: [
-              'Automatic, DSG, and CVT gearboxes depend on documented 40,000–60,000 km fluid and filter changes.',
-              'Automatic, DSG, and CVT gearboxes depend on documented 40,000–60,000 km fluid and filter changes.'
+              'Torque-converter automatics need documented 50,000–60,000 km fluid changes to avoid lockup shudder.',
+              'Harsh or delayed 2–3 upshifts when warm signal worn valve-body or solenoid parts.'
             ],
             beforeYouBuy: [
-              'Demand service receipts for automatic, DSG, or CVT transmission fluid changes every 40,000–60,000 km.',
+              'Demand service receipts for transmission fluid changes every 40,000–60,000 km.',
               'Test Reverse-to-Drive engagement when warm and creep gently uphill to confirm zero jerk or slip.'
             ]
           },
@@ -17886,11 +18202,11 @@ const CAR_ROSTER = [
               'Langlebige Kupplung & Öl.'
             ],
             watchouts: [
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.',
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.'
+              'Wandlerautomatiken brauchen nachgewiesene Ölwechsel alle 50.000–60.000 km, sonst droht Wandler-Ruckeln.',
+              'Harte oder verzögerte 2–3-Schaltungen im warmen Zustand deuten auf verschlissenen Ventilkörper oder Magnetventile.'
             ],
             beforeYouBuy: [
-              'Nachweise für Automatik-, DSG- oder CVT-Getriebeölwechsel alle 40.000–60.000 km prüfen.',
+              'Nachweise für Getriebeölwechsel alle 40.000–60.000 km prüfen.',
               'Im warmen Zustand von R auf D schalten und am Hang sanft anrollen — ohne Ruckeln oder Verzögerung.'
             ]
           },
@@ -17901,12 +18217,12 @@ const CAR_ROSTER = [
               'Большой ресурс узлов.'
             ],
             watchouts: [
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.',
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.'
+              'Гидротрансформаторным АКПП нужна подтверждённая замена масла каждые 50 000–60 000 км, иначе появляются рывки блокировки.',
+              'Жёсткие или запоздалые переключения 2–3 на горячую указывают на износ гидроблока или соленоидов.'
             ],
             beforeYouBuy: [
-              'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
-              'Нажать сцепление наполовину на холостых (проверка маховика) и ускориться на 4-й передаче.'
+              'Запросить чеки о замене масла в коробке каждые 40 000–60 000 км.',
+              'На прогретой машине проверить плавность переключения R–D и ровное трогание в горку без рывков.'
             ]
           }
         },
@@ -17915,10 +18231,11 @@ const CAR_ROSTER = [
             headline: 'Rock-Solid Denso Electrics',
             strengths: [
               'Rock-Solid Denso Electrics keeps electrical diagnostics straightforward.',
-              'Watch Bluetooth Battery Drain.'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.'
+              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.',
+              'Watch Bluetooth Battery Drain.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -17990,11 +18307,12 @@ const CAR_ROSTER = [
           en: {
             headline: 'Simple NA Routine Servicing — Very Few Unexpected Repairs',
             strengths: [
-              'Simple NA Routine Servicing helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Very Few Unexpected Repairs.'
             ],
             watchouts: [
-              'Aging 10+ year rubber hoses, suspension bushings, and brake/tyre wear still add routine upkeep.'
+              'Aging 10+ year rubber hoses, suspension bushings, and brake/tyre wear still add routine upkeep.',
+              'Simple NA Routine Servicing.'
             ],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
@@ -18032,9 +18350,12 @@ const CAR_ROSTER = [
               '6-MT / Proven 5-AT matches this powertrain well for everyday driving.',
               'Paired safely without brittle dry dual-clutch gearboxes; highway examples exceed 300,000+ km.'
             ],
-            watchouts: ['350–380 Nm Clutch & DMF Wear.', '350–380 Nm Clutch & DMF Wear.'],
+            watchouts: [
+              'Torque-converter automatics need documented 50,000–60,000 km fluid changes to avoid lockup shudder.',
+              'Harsh or delayed 2–3 upshifts when warm signal worn valve-body or solenoid parts.'
+            ],
             beforeYouBuy: [
-              'Demand service receipts for automatic, DSG, or CVT transmission fluid changes every 40,000–60,000 km.',
+              'Demand service receipts for transmission fluid changes every 40,000–60,000 km.',
               'Test Reverse-to-Drive engagement when warm and creep gently uphill to confirm zero jerk or slip.'
             ]
           },
@@ -18044,9 +18365,12 @@ const CAR_ROSTER = [
               '6-Gang / Robuste 5-Automatik passt gut zur Motorcharakteristik im Alltag.',
               'Keine anfälligen Doppelkuppler; gepflegte Langstreckenwagen schaffen über 300.000 km.'
             ],
-            watchouts: ['Kupplungs- & ZMS-Verschleiß.', 'Kupplungs- & ZMS-Verschleiß.'],
+            watchouts: [
+              'Wandlerautomatiken brauchen nachgewiesene Ölwechsel alle 50.000–60.000 km, sonst droht Wandler-Ruckeln.',
+              'Harte oder verzögerte 2–3-Schaltungen im warmen Zustand deuten auf verschlissenen Ventilkörper oder Magnetventile.'
+            ],
             beforeYouBuy: [
-              'Nachweise für Automatik-, DSG- oder CVT-Getriebeölwechsel alle 40.000–60.000 km prüfen.',
+              'Nachweise für Getriebeölwechsel alle 40.000–60.000 km prüfen.',
               'Im warmen Zustand von R auf D schalten und am Hang sanft anrollen — ohne Ruckeln oder Verzögerung.'
             ]
           },
@@ -18057,12 +18381,12 @@ const CAR_ROSTER = [
               'Отсутствуют капризные роботы; на трассах моторы ходят более 300 000 км.'
             ],
             watchouts: [
-              'Нагрузка на маховик (до 380 Н·м).',
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.'
+              'Гидротрансформаторным АКПП нужна подтверждённая замена масла каждые 50 000–60 000 км, иначе появляются рывки блокировки.',
+              'Жёсткие или запоздалые переключения 2–3 на горячую указывают на износ гидроблока или соленоидов.'
             ],
             beforeYouBuy: [
-              'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
-              'Нажать сцепление наполовину на холостых (проверка маховика) и ускориться на 4-й передаче.'
+              'Запросить чеки о замене масла в коробке каждые 40 000–60 000 км.',
+              'На прогретой машине проверить плавность переключения R–D и ровное трогание в горку без рывков.'
             ]
           }
         },
@@ -18071,10 +18395,11 @@ const CAR_ROSTER = [
             headline: 'Solid Denso Electronics',
             strengths: [
               'Solid Denso Electronics keeps electrical diagnostics straightforward.',
-              'DPF & Exhaust Temp Sensors.'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.'
+              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.',
+              'DPF & Exhaust Temp Sensors.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -18084,10 +18409,11 @@ const CAR_ROSTER = [
             headline: 'Solide Denso-Elektronik',
             strengths: [
               'Solide Denso-Elektronik sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
-              'DPF- & Abgastemp.-Sensoren.'
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
             ],
             watchouts: [
-              'Abgassensoren (DPF-Differenzdruck, Glühkerzen, AGR) melden sich häufiger ab 140.000 km.'
+              'Abgassensoren (DPF-Differenzdruck, Glühkerzen, AGR) melden sich häufiger ab 140.000 km.',
+              'DPF- & Abgastemp.-Sensoren.'
             ],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
@@ -18097,10 +18423,11 @@ const CAR_ROSTER = [
             headline: 'Крепкая электрика Denso',
             strengths: [
               'Крепкая электрика Denso упрощает диагностику и обслуживание электрооборудования.',
-              'Датчики сажевого фильтра.'
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
             ],
             watchouts: [
-              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.'
+              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.',
+              'Датчики сажевого фильтра.'
             ],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
@@ -18150,10 +18477,10 @@ const CAR_ROSTER = [
           en: {
             headline: 'Tough Closed-Deck Diesel — Costly DPF, Clutch & DMF',
             strengths: [
-              'Tough Closed-Deck Diesel helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['Costly DPF, Clutch & DMF.'],
+            watchouts: ['Costly DPF, Clutch & DMF.', 'Tough Closed-Deck Diesel.'],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -18413,9 +18740,9 @@ const CAR_ROSTER = [
                   'Стандартный износ навесного без проблем с самим блоком.'
                 ],
                 beforeYouBuy: [
-                  'Осмотреть верхнюю кромку лобового стекла, люк и задние арки на очаги ржавчины.',
-                  'Послушать запуск на холодную— холостой ход должен быть ровным без металлического звона цепи.',
-                  'Послушать запуск на холодную— холостой ход должен быть ровным без металлического звона цепи.'
+                  'Пощупайте задние диски после короткой поездки — прикипевшие суппорты стояночного тормоза перегреваются и подклинивают.',
+                  'Проверьте по истории регулярную регулировку клапанов и плавность переключений.',
+                  'Осмотреть верхнюю кромку лобового стекла, люк и задние арки на очаги ржавчины.'
                 ],
                 highMileage: [
                   {
@@ -18621,7 +18948,12 @@ const CAR_ROSTER = [
         dossierGroup: 'petrol-conv-auto',
         buyerFitGroup: 'na-petrol',
         buyerFitOverrides: {
-          ideal: ['accord24HighRev', 'accordRefinedDrive', 'accordVtecDurability', 'globalSimpleNoTurbo', 'globalPetrolCityZones']
+          ideal: [
+            'accordRefinedDrive',
+            'accord24HighRev',
+            'accordVtecDurability',
+            'globalPetrolCityZones'
+          ]
         },
         isDefault: false,
         fuelType: 'petrol',
@@ -19524,6 +19856,11 @@ const CAR_ROSTER = [
           en: 'You want plush suspension over bad city streets: The short wheelbase and firm rear axle feel choppy on speed bumps and potholes.',
           de: 'Du willst weichen Federungskomfort auf schlechten Straßen: Der kurze Radstand und die straffe Hinterachse hoppeln über Schwellen spürbar.',
           ru: 'Ты ждёшь мягкой подвески на разбитых улицах: Короткая база и жёсткая задняя балка заметно трясут на лежачих полицейских и ямах.'
+        },
+        jazzHardPlastics: {
+          en: 'You want soft-touch cabin luxury: Hard scratch-resistant plastics prioritize family durability over plushness.',
+          de: 'Du wünschst dir weiche Soft-Touch-Materialien: Kratzfestes Hartplastik setzt klar auf Haltbarkeit statt Wohnzimmer-Flair.',
+          ru: 'Тебе важна мягкая дорогая отделка: Жёсткий износостойкий пластик рассчитан на практичность, а не на премиум-ощущения.'
         }
       }
     },
@@ -19534,17 +19871,22 @@ const CAR_ROSTER = [
           de: 'Der cleverste Raumriese seiner Klasse — unschlagbar praktisch und zuverlässig, am wohlsten in Stadt und Umland.',
           ru: 'Самый вместительный и надёжный субкомпакт в классе — идеален для города и пригорода.'
         },
-        ideal: ['jazzMagicSpace', 'jazzCityReliability', 'globalSimpleNoTurbo', 'globalPetrolCityZones'],
-        skip: ['jazzMotorwayNoise', 'jazzFirmLowSpeedRide', 'jazzNoTowing']
+        ideal: [
+          'jazzMagicSpace',
+          'jazzCityReliability',
+          'globalSimpleNoTurbo',
+          'globalPetrolCityZones'
+        ],
+        skip: ['jazzMotorwayNoise', 'jazzFirmLowSpeedRide', 'jazzNoTowing', 'jazzHardPlastics']
       },
-      'hybrid': {
+      hybrid: {
         summary: {
           en: 'An easy-driving, frugal city hybrid with Magic Seat versatility — not built for fast autobahn cruising or towing.',
           de: 'Ein leichtfüßiger, sparsamer Stadt-Hybrid mit Magic-Seat-Variabilität — nicht für hohes Autobahn-Tempo oder Anhänger gebaut.',
           ru: 'Простой и экономичный городской гибрид с трансформируемым салоном — не рассчитан на быструю трассу и прицепы.'
         },
         ideal: ['jazzMagicSpace', 'jazzImaHybrid', 'jazzCityReliability', 'globalPetrolCityZones'],
-        skip: ['jazzMotorwayNoise', 'jazzFirmLowSpeedRide', 'jazzNoTowing']
+        skip: ['jazzMotorwayNoise', 'jazzFirmLowSpeedRide', 'jazzNoTowing', 'jazzHardPlastics']
       }
     },
     sharedDossiers: {
@@ -19946,11 +20288,11 @@ const CAR_ROSTER = [
             headline: 'Light 5-Speed Manual — Watch Input Shaft Bearings',
             strengths: [
               'Light 5-Speed Manual matches this powertrain well for everyday driving.',
-              'Watch Input Shaft Bearings.'
+              'Crisp shift feel and well-matched ratios keep everyday driving composed and predictable.'
             ],
             watchouts: [
-              'Listen for bearing whine in neutral or shudder on tight turns on AWD models.',
-              'Check clutch bite height and dual-mass flywheel noise at idle on high-mileage manuals.'
+              'Check clutch bite height and listen for dual-mass flywheel rattle at idle on high-mileage cars.',
+              'Cold shifts into 2nd and 3rd should stay crunch-free; grinding points to worn synchros.'
             ],
             beforeYouBuy: [
               'Shift quickly into 1st, 2nd, and 3rd gear cold and warm to verify crisp, crunch-free synchros.',
@@ -19964,8 +20306,8 @@ const CAR_ROSTER = [
               'Eingangslager auf Geräusche.'
             ],
             watchouts: [
-              'Bei höheren Laufleistungen Kupplungsspiel und Zweimassenschwungrad im Leerlauf prüfen.',
-              'Im Leerlauf auf Getriebelager-Geräusche und bei Allrad-Modellen auf Kurven-Verspannung achten.'
+              'Bei hoher Laufleistung Kupplungs-Greifpunkt prüfen und im Leerlauf auf ZMS-Klappern achten.',
+              'Kalte Schaltvorgänge in den 2. und 3. Gang müssen kratzfrei sein — Kratzen deutet auf verschlissene Synchronringe.'
             ],
             beforeYouBuy: [
               'Im kalten wie warmen Zustand zügig vom 1. in den 2. und 3. Gang schalten — ohne Kratzen.',
@@ -19979,8 +20321,8 @@ const CAR_ROSTER = [
               'Шум подшипника первичного вала.'
             ],
             watchouts: [
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.',
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.'
+              'На больших пробегах проверяйте точку схватывания сцепления и стук двухмассового маховика на холостых.',
+              'Переключения на 2-ю и 3-ю на холодную должны идти без хруста — хруст говорит об износе синхронизаторов.'
             ],
             beforeYouBuy: [
               'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
@@ -20029,38 +20371,55 @@ const CAR_ROSTER = [
           en: {
             headline: 'Choppy Short-Wheelbase Ride',
             strengths: [
-              'Choppy Short-Wheelbase Ride delivers pleasant everyday composure.',
-              'Audible Wind & Tyre Above 120.'
+              'Upright, airy seating position reduces fatigue in city stop-and-go traffic.',
+              'Predictable, supple damping over gentle everyday road surfaces.'
             ],
             watchouts: [
-              'Wind and tyre roar increase at 130+ km/h; large 18–19" wheels make city bumps firmer.'
+              'Short wheelbase feels choppy over consecutive speed bumps and motorway expansion joints.',
+              'Wind and tyre roar become noticeable above 120 km/h.'
             ],
             beforeYouBuy: [
               'Take the car up to 110–120 km/h to judge real wind noise, tyre hum, and suspension smoothness.'
+            ],
+            lowScoreReasons: [
+              'Short wheelbase transmits choppy vertical motion over broken city tarmac.',
+              'Limited sound insulation lets wind and tyre noise build above 120 km/h.'
             ]
           },
           de: {
             headline: 'Kurzer Radstand hoppelt etwas',
             strengths: [
-              'Kurzer Radstand hoppelt etwas sorgt für ein angenehmes Fahrgefühl im Alltag.',
-              'Lauter ab 120 km/h Autobahn.'
+              'Aufrechte, übersichtliche Sitzposition macht Stadtverkehr und Einparken entspannt.',
+              'Auf normalem Stadt- und Landstraßen-Asphalt gutmütig abgestimmt.'
             ],
             watchouts: [
-              'Ab 130 km/h nehmen Wind- und Abrollgeräusche zu; große Felgen machen den Stadtkomfort straffer.'
+              'Durch den kurzen Radstand neigt das Fahrwerk auf Querfugen zum Hoppeln.',
+              'Ab 120 km/h nehmen Wind- und Abrollgeräusche im Innenraum spürbar zu.'
             ],
             beforeYouBuy: [
               'Bei der Probefahrt kurz 110–120 km/h fahren, um Wind-, Reifen- und Abrollgeräusche real zu prüfen.'
+            ],
+            lowScoreReasons: [
+              'Der kurze Radstand sorgt auf schlechten Straßen für ein unruhiges, hoppeliges Abrollen.',
+              'Zurückhaltende Dämmung lässt Wind- und Abrollgeräusche ab 120 km/h deutlich hörbar werden.'
             ]
           },
           ru: {
             headline: 'Короткая база потряхивает',
             strengths: [
-              'Короткая база потряхивает обеспечивает комфортную езду в повседневных поездках.',
-              'Шумно выше 120 км/ч на трассе.'
+              'Высокая удобная посадка снижает усталость в городских пробках.',
+              'На ровном покрытии подвеска работает предсказуемо и мягко.'
             ],
-            watchouts: ['После 130 км/ч растут шумы ветра и шин, а большие диски делают ход жёстче.'],
+            watchouts: [
+              'Из-за короткой базы машина заметно подпрыгивает на стыках и лежачих полицейских.',
+              'После 120 км/ч на трассе ощутимо растут шумы ветра и колёсных арок.'
+            ],
             beforeYouBuy: [
               'Прокатитесь 110–120 км/ч, чтобы оценить реальный уровень шума ветра, шин и мягкость хода.'
+            ],
+            lowScoreReasons: [
+              'Короткая колёсная база передаёт мелкую тряску на неровном асфальте.',
+              'Скромная шумоизоляция даёт о себе знать гулом ветра и шин после 120 км/ч.'
             ]
           }
         },
@@ -20068,11 +20427,12 @@ const CAR_ROSTER = [
           en: {
             headline: 'Tiny 15" Tyres & Cheap Brakes — Zero Turbo / DPF / DMF Bills',
             strengths: [
-              'Tiny 15" Tyres & Cheap Brakes helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Zero Turbo / DPF / DMF Bills.'
             ],
             watchouts: [
-              'Aging 10+ year rubber hoses, suspension bushings, and brake/tyre wear still add routine upkeep.'
+              'Aging 10+ year rubber hoses, suspension bushings, and brake/tyre wear still add routine upkeep.',
+              'Tiny 15" Tyres & Cheap Brakes.'
             ],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
@@ -20097,7 +20457,9 @@ const CAR_ROSTER = [
               'Дешёвые шины 15" и колодки помогает держать ежегодные затраты на ТО под контролем.',
               'Машина хорошо знакома любому сервису, а качественные запчасти широко доступны.'
             ],
-            watchouts: ['Нет турбины, DPF и маховика.'],
+            watchouts: [
+              'Возрастной износ сайлентблоков подвески, тормозов и выхлопной системы требует плановых ежегодных трат.'
+            ],
             beforeYouBuy: ['Откройте план обслуживания ниже и сверьте предстоящие работы с имеющимися чеками.']
           }
         }
@@ -20111,11 +20473,11 @@ const CAR_ROSTER = [
               '40k km CVT Fluid Interval.'
             ],
             watchouts: [
-              'If equipped with CVT, change Honda HMMF/CVT fluid strictly every 40,000 km for smooth take-offs.',
-              'Automatic, DSG, and CVT gearboxes depend on documented 40,000–60,000 km fluid and filter changes.'
+              'CVT fluid must be changed every 40,000–60,000 km; old fluid causes belt slip and whine.',
+              'Listen for a rising whine under light throttle and feel for judder when pulling away.'
             ],
             beforeYouBuy: [
-              'Demand service receipts for automatic, DSG, or CVT transmission fluid changes every 40,000–60,000 km.',
+              'Demand service receipts for transmission fluid changes every 40,000–60,000 km.',
               'Test Reverse-to-Drive engagement when warm and creep gently uphill to confirm zero jerk or slip.'
             ]
           },
@@ -20126,11 +20488,11 @@ const CAR_ROSTER = [
               'CVT-Öl alle 40.000 km.'
             ],
             watchouts: [
-              'Facelift-CVT-Upgrade (ab 2011): Ersetzt das ruckelige frühe i-SHIFT-Getriebe durch eine sanfte Wandler-CVT.',
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.'
+              'CVT-Öl alle 40.000–60.000 km wechseln — altes Öl führt zu Schubgliederband-Rutschen und Heulen.',
+              'Auf ansteigendes Heulen bei leichtem Gas und Ruckeln beim Anfahren achten.'
             ],
             beforeYouBuy: [
-              'Nachweise für Automatik-, DSG- oder CVT-Getriebeölwechsel alle 40.000–60.000 km prüfen.',
+              'Nachweise für Getriebeölwechsel alle 40.000–60.000 km prüfen.',
               'Im warmen Zustand von R auf D schalten und am Hang sanft anrollen — ohne Ruckeln oder Verzögerung.'
             ]
           },
@@ -20138,14 +20500,14 @@ const CAR_ROSTER = [
             headline: '5-МКПП / Вариатор Honda — Замена масла CVT раз в 40 тыс.',
             strengths: [
               '5-МКПП / Вариатор Honda хорошо сочетается с данным двигателем в повседневной езде.',
-              'Замена масла CVT раз в 40 тыс.'
+              'Чёткое переключение и удачные передаточные числа делают езду комфортной и предсказуемой.'
             ],
             watchouts: [
-              'АКПП, DSG и вариаторы требуют подтверждённой замены масла каждые 40 000–60 000 км.',
-              'АКПП, DSG и вариаторы требуют подтверждённой замены масла каждые 40 000–60 000 км.'
+              'Масло в вариаторе менять каждые 40 000–60 000 км — старое масло ведёт к проскальзыванию ремня и вою.',
+              'Прислушайтесь к нарастающему вою при лёгком газе и проверьте отсутствие рывков при трогании.'
             ],
             beforeYouBuy: [
-              'Запросить чеки о замене масла в АКПП, DSG или вариаторе каждые 40 000–60 000 км.',
+              'Запросить чеки о замене масла в коробке каждые 40 000–60 000 км.',
               'На прогретой машине проверить плавность переключения R–D и ровное трогание в горку без рывков.'
             ]
           }
@@ -20191,38 +20553,55 @@ const CAR_ROSTER = [
           en: {
             headline: 'Choppy Short-Wheelbase Ride',
             strengths: [
-              'Choppy Short-Wheelbase Ride delivers pleasant everyday composure.',
-              'Audible Wind & Tyre Above 120.'
+              'Upright, airy seating position reduces fatigue in city stop-and-go traffic.',
+              'Predictable, supple damping over gentle everyday road surfaces.'
             ],
             watchouts: [
-              'Wind and tyre roar increase at 130+ km/h; large 18–19" wheels make city bumps firmer.'
+              'Short wheelbase feels choppy over consecutive speed bumps and motorway expansion joints.',
+              'Wind and tyre roar become noticeable above 120 km/h.'
             ],
             beforeYouBuy: [
               'Take the car up to 110–120 km/h to judge real wind noise, tyre hum, and suspension smoothness.'
+            ],
+            lowScoreReasons: [
+              'Short wheelbase transmits choppy vertical motion over broken city tarmac.',
+              'Limited sound insulation lets wind and tyre noise build above 120 km/h.'
             ]
           },
           de: {
             headline: 'Kurzer Radstand hoppelt etwas',
             strengths: [
-              'Kurzer Radstand hoppelt etwas sorgt für ein angenehmes Fahrgefühl im Alltag.',
-              'Lauter ab 120 km/h Autobahn.'
+              'Aufrechte, übersichtliche Sitzposition macht Stadtverkehr und Einparken entspannt.',
+              'Auf normalem Stadt- und Landstraßen-Asphalt gutmütig abgestimmt.'
             ],
             watchouts: [
-              'Ab 130 km/h nehmen Wind- und Abrollgeräusche zu; große Felgen machen den Stadtkomfort straffer.'
+              'Durch den kurzen Radstand neigt das Fahrwerk auf Querfugen zum Hoppeln.',
+              'Ab 120 km/h nehmen Wind- und Abrollgeräusche im Innenraum spürbar zu.'
             ],
             beforeYouBuy: [
               'Bei der Probefahrt kurz 110–120 km/h fahren, um Wind-, Reifen- und Abrollgeräusche real zu prüfen.'
+            ],
+            lowScoreReasons: [
+              'Der kurze Radstand sorgt auf schlechten Straßen für ein unruhiges, hoppeliges Abrollen.',
+              'Zurückhaltende Dämmung lässt Wind- und Abrollgeräusche ab 120 km/h deutlich hörbar werden.'
             ]
           },
           ru: {
             headline: 'Короткая база потряхивает',
             strengths: [
-              'Короткая база потряхивает обеспечивает комфортную езду в повседневных поездках.',
-              'Шумно выше 120 км/ч на трассе.'
+              'Высокая удобная посадка снижает усталость в городских пробках.',
+              'На ровном покрытии подвеска работает предсказуемо и мягко.'
             ],
-            watchouts: ['После 130 км/ч растут шумы ветра и шин, а большие диски делают ход жёстче.'],
+            watchouts: [
+              'Из-за короткой базы машина заметно подпрыгивает на стыках и лежачих полицейских.',
+              'После 120 км/ч на трассе ощутимо растут шумы ветра и колёсных арок.'
+            ],
             beforeYouBuy: [
               'Прокатитесь 110–120 км/ч, чтобы оценить реальный уровень шума ветра, шин и мягкость хода.'
+            ],
+            lowScoreReasons: [
+              'Короткая колёсная база передаёт мелкую тряску на неровном асфальте.',
+              'Скромная шумоизоляция даёт о себе знать гулом ветра и шин после 120 км/ч.'
             ]
           }
         },
@@ -20230,10 +20609,10 @@ const CAR_ROSTER = [
           en: {
             headline: 'Tiny 15" Tyres & Cheap Parts — 40k km Fluid On CVT Trims',
             strengths: [
-              'Tiny 15" Tyres & Cheap Parts helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['40k km Fluid On CVT Trims.'],
+            watchouts: ['40k km Fluid On CVT Trims.', 'Tiny 15" Tyres & Cheap Parts.'],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -20252,10 +20631,10 @@ const CAR_ROSTER = [
           ru: {
             headline: 'Дешёвые расходники — Масло в вариаторе каждые 40 тыс.',
             strengths: [
-              'Дешёвые расходники помогает держать ежегодные затраты на ТО под контролем.',
+              'Предсказуемый регламент обслуживания помогает держать ежегодные затраты на ТО под контролем.',
               'Машина хорошо знакома любому сервису, а качественные запчасти широко доступны.'
             ],
-            watchouts: ['Масло в вариаторе каждые 40 тыс.'],
+            watchouts: ['Масло в вариаторе каждые 40 тыс.', 'Дешёвые расходники.'],
             beforeYouBuy: ['Откройте план обслуживания ниже и сверьте предстоящие работы с имеющимися чеками.']
           }
         }
@@ -20266,14 +20645,14 @@ const CAR_ROSTER = [
             headline: 'Torque-Converter Honda CVT — Strict 40k km CVT Oil Change',
             strengths: [
               'Torque-Converter Honda CVT matches this powertrain well for everyday driving.',
-              'Strict 40k km CVT Oil Change.'
+              'Crisp shift feel and well-matched ratios keep everyday driving composed and predictable.'
             ],
             watchouts: [
-              'Change CVT transmission fluid every 40,000 km and keep the rear trunk battery cooling vent unobstructed.',
-              'Automatic, DSG, and CVT gearboxes depend on documented 40,000–60,000 km fluid and filter changes.'
+              'CVT fluid must be changed every 40,000–60,000 km; old fluid causes belt slip and whine.',
+              'Listen for a rising whine under light throttle and feel for judder when pulling away.'
             ],
             beforeYouBuy: [
-              'Demand service receipts for automatic, DSG, or CVT transmission fluid changes every 40,000–60,000 km.',
+              'Demand service receipts for transmission fluid changes every 40,000–60,000 km.',
               'Test Reverse-to-Drive engagement when warm and creep gently uphill to confirm zero jerk or slip.'
             ]
           },
@@ -20284,11 +20663,11 @@ const CAR_ROSTER = [
               'CVT-Öl alle 40.000 km Pflicht.'
             ],
             watchouts: [
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.',
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.'
+              'CVT-Öl alle 40.000–60.000 km wechseln — altes Öl führt zu Schubgliederband-Rutschen und Heulen.',
+              'Auf ansteigendes Heulen bei leichtem Gas und Ruckeln beim Anfahren achten.'
             ],
             beforeYouBuy: [
-              'Nachweise für Automatik-, DSG- oder CVT-Getriebeölwechsel alle 40.000–60.000 km prüfen.',
+              'Nachweise für Getriebeölwechsel alle 40.000–60.000 km prüfen.',
               'Im warmen Zustand von R auf D schalten und am Hang sanft anrollen — ohne Ruckeln oder Verzögerung.'
             ]
           },
@@ -20299,11 +20678,11 @@ const CAR_ROSTER = [
               'Масло CVT строго раз в 40 тыс.'
             ],
             watchouts: [
-              'Менять масло в CVT каждые 40 000 км и не перекрывать вентиляцию батареи в багажнике.',
-              'АКПП, DSG и вариаторы требуют подтверждённой замены масла каждые 40 000–60 000 км.'
+              'Масло в вариаторе менять каждые 40 000–60 000 км — старое масло ведёт к проскальзыванию ремня и вою.',
+              'Прислушайтесь к нарастающему вою при лёгком газе и проверьте отсутствие рывков при трогании.'
             ],
             beforeYouBuy: [
-              'Запросить чеки о замене масла в АКПП, DSG или вариаторе каждые 40 000–60 000 км.',
+              'Запросить чеки о замене масла в коробке каждые 40 000–60 000 км.',
               'На прогретой машине проверить плавность переключения R–D и ровное трогание в горку без рывков.'
             ]
           }
@@ -20349,38 +20728,55 @@ const CAR_ROSTER = [
           en: {
             headline: 'Choppy Short-Wheelbase Ride',
             strengths: [
-              'Choppy Short-Wheelbase Ride delivers pleasant everyday composure.',
-              'Audible Wind & Tyre Above 120.'
+              'Upright, airy seating position reduces fatigue in city stop-and-go traffic.',
+              'Predictable, supple damping over gentle everyday road surfaces.'
             ],
             watchouts: [
-              'Wind and tyre roar increase at 130+ km/h; large 18–19" wheels make city bumps firmer.'
+              'Short wheelbase feels choppy over consecutive speed bumps and motorway expansion joints.',
+              'Wind and tyre roar become noticeable above 120 km/h.'
             ],
             beforeYouBuy: [
               'Take the car up to 110–120 km/h to judge real wind noise, tyre hum, and suspension smoothness.'
+            ],
+            lowScoreReasons: [
+              'Short wheelbase transmits choppy vertical motion over broken city tarmac.',
+              'Limited sound insulation lets wind and tyre noise build above 120 km/h.'
             ]
           },
           de: {
             headline: 'Kurzer Radstand hoppelt etwas',
             strengths: [
-              'Kurzer Radstand hoppelt etwas sorgt für ein angenehmes Fahrgefühl im Alltag.',
-              'Lauter ab 120 km/h Autobahn.'
+              'Aufrechte, übersichtliche Sitzposition macht Stadtverkehr und Einparken entspannt.',
+              'Auf normalem Stadt- und Landstraßen-Asphalt gutmütig abgestimmt.'
             ],
             watchouts: [
-              'Ab 130 km/h nehmen Wind- und Abrollgeräusche zu; große Felgen machen den Stadtkomfort straffer.'
+              'Durch den kurzen Radstand neigt das Fahrwerk auf Querfugen zum Hoppeln.',
+              'Ab 120 km/h nehmen Wind- und Abrollgeräusche im Innenraum spürbar zu.'
             ],
             beforeYouBuy: [
               'Bei der Probefahrt kurz 110–120 km/h fahren, um Wind-, Reifen- und Abrollgeräusche real zu prüfen.'
+            ],
+            lowScoreReasons: [
+              'Der kurze Radstand sorgt auf schlechten Straßen für ein unruhiges, hoppeliges Abrollen.',
+              'Zurückhaltende Dämmung lässt Wind- und Abrollgeräusche ab 120 km/h deutlich hörbar werden.'
             ]
           },
           ru: {
             headline: 'Короткая база потряхивает',
             strengths: [
-              'Короткая база потряхивает обеспечивает комфортную езду в повседневных поездках.',
-              'Шумно выше 120 км/ч на трассе.'
+              'Высокая удобная посадка снижает усталость в городских пробках.',
+              'На ровном покрытии подвеска работает предсказуемо и мягко.'
             ],
-            watchouts: ['После 130 км/ч растут шумы ветра и шин, а большие диски делают ход жёстче.'],
+            watchouts: [
+              'Из-за короткой базы машина заметно подпрыгивает на стыках и лежачих полицейских.',
+              'После 120 км/ч на трассе ощутимо растут шумы ветра и колёсных арок.'
+            ],
             beforeYouBuy: [
               'Прокатитесь 110–120 км/ч, чтобы оценить реальный уровень шума ветра, шин и мягкость хода.'
+            ],
+            lowScoreReasons: [
+              'Короткая колёсная база передаёт мелкую тряску на неровном асфальте.',
+              'Скромная шумоизоляция даёт о себе знать гулом ветра и шин после 120 км/ч.'
             ]
           }
         },
@@ -20388,10 +20784,10 @@ const CAR_ROSTER = [
           en: {
             headline: 'Regen Saves Brake Wear — 40k CVT Oil • Ageing NiMH Pack',
             strengths: [
-              'Regen Saves Brake Wear helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['40k CVT Oil • Ageing NiMH Pack.'],
+            watchouts: ['40k CVT Oil • Ageing NiMH Pack.', 'Regen Saves Brake Wear.'],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -21653,6 +22049,48 @@ const CAR_ROSTER = [
               en: ['0 kg Towing Limit', '370 kg Payload'],
               de: ['0 kg Anhängelast', '370 kg Zuladung'],
               ru: ['Без буксировки прицепа', 'Грузоподъёмность 370 кг']
+            },
+            dossier: {
+              en: {
+                headline: '0 kg Towing Limit • 370 kg Payload',
+                lowScoreReasons: [
+                  'Zero factory towing rating (0 kg) due to the rear IMA hybrid battery packaging and CVT drivetrain.',
+                  'Hybrid battery pack cuts available payload to 370 kg, tightening margins with four adults and heavy luggage.'
+                ],
+                strengths: [
+                  'Rear IMA battery sits neatly below the boot floor without spoiling everyday grocery capacity.'
+                ],
+                watchouts: ['Check load distribution when carrying 4 adults plus luggage over rough speed bumps.'],
+                beforeYouBuy: ['Confirm rear springs are level and not sagging under age or past heavy loads.']
+              },
+              de: {
+                headline: '0 kg Anhängelast • 370 kg Zuladung',
+                lowScoreReasons: [
+                  'Keine Anhänger-Freigabe ab Werk (0 kg) wegen der hinten verbauten IMA-Hybridbatterie und des CVT-Getriebes.',
+                  'Durch das Hybrid-Batteriepaket sinkt die Nutzlast auf 370 kg, was bei voller Besetzung knapp wird.'
+                ],
+                strengths: [
+                  'Der kompakte IMA-Akku liegt platzsparend unter dem Kofferraumboden ohne große Alltagseinbußen.'
+                ],
+                watchouts: [
+                  'Bei vier Erwachsenen samt Gepäck die begrenzte Zuladung an steilen Einfahrten im Blick behalten.'
+                ],
+                beforeYouBuy: [
+                  'Prüfen, ob die Hinterachse unbeladen sauber waagerecht steht und die Federn nicht durchhängen.'
+                ]
+              },
+              ru: {
+                headline: 'Без буксировки прицепа • Грузоподъёмность 370 кг',
+                lowScoreReasons: [
+                  'Буксировка прицепов запрещена заводом (0 кг) из-за задней гибридной батареи IMA и вариатора CVT.',
+                  'Масса гибридного блока снижает полезную нагрузку до 370 кг — запас при полной посадке невелик.'
+                ],
+                strengths: [
+                  'Батарея IMA компактно размещена под полом багажника и почти не мешает повседневным перевозкам.'
+                ],
+                watchouts: ['При посадке четырёх взрослых с багажом следите за просветом на неровностях.'],
+                beforeYouBuy: ['Осмотрите задние пружины и корму без груза на предмет просадки.']
+              }
             }
           },
           accelerationOvertaking: {
@@ -21736,6 +22174,206 @@ const CAR_ROSTER = [
     drivetrain: 'RWD',
     image: 'assets/mercedes-c-class-2011.png',
     defaultEngineId: 'c220-cdi-om651',
+    sharedBuyerFit: {
+      cards: {
+        w204CabinQuality: {
+          en: 'You appreciate solid German build quality: Firm switchgear, planted doors, and timeless Mercedes cabin materials make daily drives feel special.',
+          de: 'Du schätzt solide deutsche Wertigkeit: Schwere Türen, satte Schalterhaptik und zeitlose Materialien geben dir echtes Mercedes-Gefühl.',
+          ru: 'Ты ценишь добротное немецкое качество: Плотные двери, чёткие кнопки и качественная отделка создают настоящее ощущение Mercedes.'
+        },
+        w204RwdTurn: {
+          en: 'You want a surprisingly nimble sedan: Rear-wheel drive gives a tight 10.8 m turning circle and effortless Autobahn stability.',
+          de: 'Du willst eine handliche Limousine: Der Heckantrieb sorgt für einen kleinen 10,8-m-Wendekreis und ruhigen Geradeauslauf auf der Autobahn.',
+          ru: 'Тебе нужен манёвренный седан: Задний привод даёт малый разворот (10,8 м) и отличную устойчивость на трассе.'
+        },
+        w204AutoSmooth: {
+          en: 'You want a proven torque-converter automatic: The 5G-Tronic or 7G-Tronic Plus shifts smoothly without dry dual-clutch jerkiness.',
+          de: 'Du willst eine bewährte Wandlerautomatik: Die 5G- oder 7G-Tronic Plus schaltet sanft und hält bei 60.000-km-Ölwechseln sehr lange.',
+          ru: 'Тебе нужен надёжный классический автомат: 5G-Tronic или 7G-Tronic Plus переключаются плавно и служат долго при смене масла.'
+        },
+        w204PowerfulCruiser: {
+          en: 'You want strong power in a relaxed cruiser: Effortless acceleration and passing muscle without the stiff suspension of a hot hatch.',
+          de: 'Du willst kräftige Leistung im entspannten Cruiser: Souveräner Durchzug und Überholreserven ohne die harte Federung eines Sportwagens.',
+          ru: 'Тебе нужна мощь в спокойном комфортном кузове: Уверенный разгон и запас тяги на обгонах без жёсткой спортивной подвески.'
+        },
+        w204KompressorCare: {
+          en: 'You want zero timing-chain vigilance: Even with simpler port injection, the supercharged M271 simplex chain needs cold-start checks.',
+          de: 'Du willst keinerlei Steuerketten-Kontrolle: Trotz Saugrohreinspritzung verlangt die dünne M271-Steuerkette beim Kaltstart Aufmerksamkeit.',
+          ru: 'Ты не хочешь следить за цепью ГРМ: Даже при простом впрыске тонкая цепь компрессорного M271 требует проверки на холодную.'
+        },
+        w204FourCylThirst: {
+          en: 'You want sub-7 L/100km city fuel bills: Supercharged or turbo 4-cylinder petrols average 8–9.5 L/100km in mixed urban driving.',
+          de: 'Du erwartest unter 7 L/100km im Alltag: Die 4-Zylinder-Benziner verbrauchen im Stadt- und Mischverkehr real meist 8–9,5 L/100km.',
+          ru: 'Ты ждёшь расхода до 7 л/100 км: Бензиновые 4-цилиндровые версии в городе и смешанном цикле берут 8–9,5 л/100 км.'
+        },
+        w204CgiChainRisk: {
+          en: 'You want zero timing-chain surprises: Early M271 CGI turbo engines can need a €1,800–€2,600 timing chain and cam-gear job around 100k–140k km.',
+          de: 'Du willst keine teuren Steuerketten-Risiken: Frühe M271-CGI-Turbos brauchen oft zwischen 100.000 und 140.000 km Kette und Versteller (1.800–2.600 €).',
+          ru: 'Ты не хочешь рисковать дорогой заменой цепи: На ранних турбо M271 CGI цепь и звёзды часто просят €1 800–2 600 к 100–140 тыс. км.'
+        },
+        w204M274Updated: {
+          en: 'You want a late facelift petrol without M271 chain woes: The 2012+ 1.6L M274 turbo fixes the earlier chain issues with crisp low-end torque.',
+          de: 'Du willst einen späten Facelift-Benziner ohne M271-Kettenangst: Der 2012+ 1.6L M274 behebt die früheren Kettenprobleme souverän.',
+          ru: 'Ты ищешь свежий рестайлинг без проблем цепи M271: Мотор 1.6 M274 (с 2012 г.) избавился от прежней слабости ГРМ.'
+        },
+        w204M274CoolantWatch: {
+          en: 'You want zero cooling-system seepage: The M274 plastic thermostat housing and water pump can weep coolant past 100,000 km.',
+          de: 'Du willst keinerlei Kühlmittel-Undichtigkeiten: Kunststoff-Thermostat und Wasserpumpe am M274 schwitzen ab 100.000 km gelegentlich.',
+          ru: 'Ты не хочешь следить за охлаждением: Пластиковый термостат и помпа M274 иногда подтекают после 100 000 км.'
+        },
+        w204V6Refinement: {
+          en: 'You love silky six-cylinder refinement: Smooth V6 delivery and effortless cruising suit long-distance drivers who value quietness.',
+          de: 'Du liebst laufruhige Sechszylinder-Kultur: Seidiger V6-Lauf und souveräner Durchzug machen lange Etappen extrem entspannt.',
+          ru: 'Ты любишь бархатную тягу V6: Плавный 6-цилиндровый мотор дарит комфорт и тишину на любой скорости.'
+        },
+        w204EarlyV6Sprocket: {
+          en: 'You want to skip serial-number checks on early cars: 2007 M272 V6 builds need verification that the balance-shaft sprocket was updated.',
+          de: 'Du willst bei frühen Baujahren nichts prüfen müssen: Bei 2007er M272-V6 muss das Ausgleichswellen-Kettenrad auf Aktualisierung geprüft werden.',
+          ru: 'Ты не хочешь проверять ранние выпуски: На V6 M272 2007 года важно убедиться в обновлённой шестерне балансирного вала.'
+        },
+        w204CgiPiezoCost: {
+          en: 'You want cheap direct-injection parts: Stratified-charge C 350 CGI piezo injectors and NOx sensors are pricey if they fail.',
+          de: 'Du willst günstige Einspritzteile: Piezo-Injektoren und NOx-Sensoren des C 350 CGI gehen im Defektfall spürbar ins Geld.',
+          ru: 'Ты не хочешь дорогих форсунок: Пьезофорсунки и датчики NOx на C 350 CGI стоят недёшево при замене.'
+        },
+        w204M276Tensioner: {
+          en: 'You want zero cold-start checks: 2011–2012 M276 V6 builds may need updated chain tensioner check-valves if a brief startup rattle occurs.',
+          de: 'Du willst keinerlei Kaltstart-Checks: Frühe M276-V6 (2011–2012) brauchen bei kurzem Startrasseln die nachgerüsteten Rückschlagventile.',
+          ru: 'Ты не хочешь проверок на холодную: Ранним M276 (2011–2012) при коротком стуке на пуске нужны обратные клапаны натяжителей.'
+        },
+        w204Om646Legend: {
+          en: 'You want 400,000+ km taxi-proven diesel durability: The iron-block OM646 with front duplex chain outlasts most modern rivals.',
+          de: 'Du willst echte 400.000+ km Taxi-Haltbarkeit: Der Grauguss-OM646 mit vorderer Duplex-Kette gehört zu den langlebigsten Dieseln seiner Zeit.',
+          ru: 'Тебе нужна выносливость уровня 400 000+ км: Чугунный OM646 с передней двухрядной цепью переживает большинство конкурентов.'
+        },
+        w204C180CdiGentle: {
+          en: 'You want thrifty fleet-proven economy: The detuned 120 HP 2.1L OM651 runs under minimal thermal stress for huge highway mileage.',
+          de: 'Du willst extrem sparsame Dauerhaltbarkeit: Der gedrosselte 120-PS-OM651 läuft thermisch sehr entspannt für hohe Laufleistungen.',
+          ru: 'Тебе нужна максимальная экономичность: Дефорсированный 120-сильный OM651 работает с минимальной нагрузкой на ресурс.'
+        },
+        w204Om651Torque: {
+          en: 'You cover fast Autobahn miles: Twin-stage OM651 torque (360–400 Nm) pairs low fuel burn with effortless 7G-Tronic cruising.',
+          de: 'Du fährst viel Autobahn: Der durchzugsstarke OM651 (360–400 Nm) verbindet niedrigen Verbrauch mit souveränem 7G-Tronic-Komfort.',
+          ru: 'Ты часто ездишь по трассе: Тяговитый OM651 (360–400 Н·м) сочетает скромный расход с плавностью автомата 7G-Tronic.'
+        },
+        w204C250CdiTorque: {
+          en: 'You want 500 Nm pull with 4-cylinder economy: Twin-turbo 204 HP torque overtakes effortlessly while sipping under 6 L/100km.',
+          de: 'Du willst 500 Nm Durchzug bei 4-Zylinder-Verbrauch: Der 204-PS-Bi-Turbo überholt souverän und bleibt unter 6 L/100km.',
+          ru: 'Ты хочешь тягу 500 Н·м при расходе 4 цилиндров: Би-турбо на 204 л.с. обгоняет уверенно и укладывается в ~6 л/100 км.'
+        },
+        w204Om651RearChain: {
+          en: 'You want simple timing-chain access: OM651 uses a rear-mounted simplex chain, and 2009–2011 builds need proof of the injector recall.',
+          de: 'Du willst einfache Kettenwartung: Beim OM651 sitzt die Steuerkette hinten und 2009–2011er Modelle brauchen den Injektor-Rückruf-Beleg.',
+          ru: 'Ты хочешь простого доступа к ГРМ: У OM651 цепь стоит сзади, а на машинах 2009–2011 гг. нужна проверка отзыва по форсункам.'
+        },
+        w204DieselClatter: {
+          en: 'You want whisper-quiet urban idle: 4-cylinder diesel clatter is noticeable when cold compared to V6 or petrol C-Class models.',
+          de: 'Du erwartest flüsterleisen Leerlauf: Das 4-Zylinder-Dieselnageln ist kalt deutlich hörbarer als beim V6 oder Benziner.',
+          ru: 'Ты ждёшь тишины на холостых: 4-цилиндровый дизель на холодную работает заметно громче бензиновых версий и V6.'
+        },
+        w204RearSubframeRust: {
+          en: 'You never want to inspect underbody rust: W204 rear axle subframes are notorious for hidden salt corrosion and must be checked on a lift.',
+          de: 'Du willst dich nie mit Unterbodenrost befassen: Der hintere W204-Achsträger rostet oft unbemerkt und muss auf der Bühne geprüft werden.',
+          ru: 'Ты не хочешь проверять днище на ржавчину: Задний подрамник W204 склонен к скрытой коррозии и требует осмотра на подъёмнике.'
+        },
+        w204TightRearSpace: {
+          en: 'You carry tall adults or bulky strollers daily: Rear knee room is snugger than a Mondeo and split-folding seats were often optional.',
+          de: 'Du brauchst viel Fond- und Familienplatz: Knieraum hinten ist knapper als im Mondeo und umklappbare Lehnen waren oft aufpreispflichtig.',
+          ru: 'Ты часто возишь взрослых сзади или коляски: Места для ног меньше, чем в Mondeo, а складная спинка была опцией.'
+        },
+        w204V6RunningCosts: {
+          en: 'You want low fuel and tax bills: Six-cylinder fuel burn (8–11 L/100km), 8.5L oil fills, and higher V6/insurance costs add up.',
+          de: 'Du achtest streng auf Verbrauch und Steuern: V6-Durst, 8,5 L Ölvolumen und höhere Steuern sowie Werkstattkosten summieren sich.',
+          ru: 'Ты строго экономишь на топливе и налогах: Расход V6, 8,5 л масла на ТО и повышенные налоги заметно дороже 4-цилиндровых версий.'
+        },
+        w204Euro4DieselZones: {
+          en: 'You drive into strict Euro 5/6 diesel city zones: Older pre-2009 Euro 4 OM646 diesels face urban access restrictions.',
+          de: 'Du fährst in strenge Umweltzonen: Ältere Euro-4-OM646-Diesel (vor 2009) stoßen in manchen Innenstädten an Einfahrtsgrenzen.',
+          ru: 'Ты часто въезжаешь в строгие эко-зоны городов: Дизели OM646 стандарта Евро-4 могут иметь ограничения на въезд.'
+        }
+      }
+    },
+    buyerFitGroups: {
+      kompressor: {
+        summary: {
+          en: 'A solid, refined rear-drive Mercedes cruiser with simple port injection — inspect the M271 timing chain and rear subframe.',
+          de: 'Ein solider, kultivierter Hecktriebler mit Saugrohreinspritzung — Steuerkette und hinteren Achsträger genau prüfen.',
+          ru: 'Добротный заднеприводный Mercedes с простым впрыском — проверьте цепь ГРМ M271 и задний подрамник.'
+        },
+        ideal: ['w204CabinQuality', 'w204RwdTurn', 'w204AutoSmooth', 'globalPetrolCityZones'],
+        skip: [
+          'w204KompressorCare',
+          'w204FourCylThirst',
+          'w204RearSubframeRust',
+          'w204TightRearSpace'
+        ]
+      },
+      'cgi-4': {
+        summary: {
+          en: 'A punchy, comfortable executive sedan — great once M271 timing chain history and rear subframe health are verified.',
+          de: 'Eine durchzugsstarke, komfortable Business-Limousine — stark, sofern Steuerkette und Achsträger belegt bzw. rostfrei sind.',
+          ru: 'Динамичный и комфортный бизнес-седан — хорош при подтверждённой замене цепи M271 и живом подрамнике.'
+        },
+        ideal: ['w204CabinQuality', 'w204RwdTurn', 'w204AutoSmooth', 'globalPetrolCityZones'],
+        skip: ['w204CgiChainRisk', 'w204FourCylThirst', 'w204RearSubframeRust', 'w204TightRearSpace']
+      },
+      'v6-petrol': {
+        summary: {
+          en: 'A silky, effortless six-cylinder highway cruiser — ideal if you value refinement and relaxed power over fuel and tax budgets.',
+          de: 'Ein seidiger Sechszylinder-Gleiter — ideal, wenn dir Laufkultur und entspannte Kraft wichtiger sind als Sprit- und Steuerkosten.',
+          ru: 'Плавный 6-цилиндровый седан для трассы — отличный выбор, если тишина и мощь важнее расходов на топливо и налог.'
+        },
+        ideal: ['w204V6Refinement', 'w204PowerfulCruiser', 'w204CabinQuality', 'globalPetrolCityZones'],
+        skip: [
+          'w204V6RunningCosts',
+          'w204EarlyV6Sprocket',
+          'w204RearSubframeRust',
+          'w204TightRearSpace'
+        ]
+      },
+      'om646-diesel': {
+        summary: {
+          en: 'One of Mercedes’ toughest high-mileage diesels — built for 400,000+ km distance runs if city diesel bans don’t affect you.',
+          de: 'Einer der robustesten Mercedes-Langläufer überhaupt — gebaut für 400.000+ km, sofern Euro 4 für dich passt.',
+          ru: 'Один из самых неубиваемых дизелей Mercedes — создан для пробегов 400 000+ км, если не мешает Евро-4.'
+        },
+        ideal: ['w204Om646Legend', 'w204AutoSmooth', 'w204CabinQuality', 'globalDieselLongRange'],
+        skip: [
+          'globalDieselShortTripRisk',
+          'w204Euro4DieselZones',
+          'w204RearSubframeRust',
+          'w204TightRearSpace'
+        ]
+      },
+      'om651-diesel': {
+        summary: {
+          en: 'A frugal, high-torque Autobahn mile-eater — ideal for long commutes once recall injectors and rear-chain health are checked.',
+          de: 'Ein sparsamer, drehmomentstarker Autobahn-Kilometerfresser — stark auf Langstrecke mit geprüften Injektoren und Achsträger.',
+          ru: 'Экономичный и тяговитый трассовый лайнер — идеален для дальних поездок при проверенных форсунках и цепи.'
+        },
+        ideal: ['w204Om651Torque', 'w204AutoSmooth', 'w204CabinQuality', 'w204RwdTurn'],
+        skip: [
+          'globalDieselShortTripRisk',
+          'w204Om651RearChain',
+          'w204DieselClatter',
+          'w204RearSubframeRust'
+        ]
+      },
+      'v6-diesel': {
+        summary: {
+          en: 'Effortless V6 diesel muscle in a relaxed luxury cruiser — built for fast highway touring if you budget for V6 upkeep.',
+          de: 'Souveräne V6-Dieselkraft im entspannten Cruiser — ideal für schnelle Langstrecken bei entsprechendem Wartungsbudget.',
+          ru: 'Мощный дизельный V6 в комфортном кузове — создан для быстрой трассы при готовности к обслуживанию V6.'
+        },
+        ideal: ['w204V6Refinement', 'w204PowerfulCruiser', 'w204CabinQuality', 'globalDieselLongRange'],
+        skip: [
+          'w204V6RunningCosts',
+          'globalDieselShortTripRisk',
+          'w204RearSubframeRust',
+          'w204TightRearSpace'
+        ]
+      }
+    },
     sharedDossiers: {
       buildQualityRust: {
         en: {
@@ -22136,11 +22774,11 @@ const CAR_ROSTER = [
               'Simple 722.6 Converter Box.'
             ],
             watchouts: [
-              'One of Mercedes-Benz’s toughest transmissions; regular 60,000 km ATF changes keep it going past 350,000 km.',
-              'Easily handles 250 Nm for 300,000+ km when ATF is refreshed.'
+              'Torque-converter automatics need documented 50,000–60,000 km fluid changes to avoid lockup shudder.',
+              'Harsh or delayed 2–3 upshifts when warm signal worn valve-body or solenoid parts.'
             ],
             beforeYouBuy: [
-              'Demand service receipts for automatic, DSG, or CVT transmission fluid changes every 40,000–60,000 km.',
+              'Demand service receipts for transmission fluid changes every 40,000–60,000 km.',
               'Test Reverse-to-Drive engagement when warm and creep gently uphill to confirm zero jerk or slip.'
             ]
           },
@@ -22151,11 +22789,11 @@ const CAR_ROSTER = [
               'Robuster Wandlerautomat.'
             ],
             watchouts: [
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.',
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.'
+              'Wandlerautomatiken brauchen nachgewiesene Ölwechsel alle 50.000–60.000 km, sonst droht Wandler-Ruckeln.',
+              'Harte oder verzögerte 2–3-Schaltungen im warmen Zustand deuten auf verschlissenen Ventilkörper oder Magnetventile.'
             ],
             beforeYouBuy: [
-              'Nachweise für Automatik-, DSG- oder CVT-Getriebeölwechsel alle 40.000–60.000 km prüfen.',
+              'Nachweise für Getriebeölwechsel alle 40.000–60.000 km prüfen.',
               'Im warmen Zustand von R auf D schalten und am Hang sanft anrollen — ohne Ruckeln oder Verzögerung.'
             ]
           },
@@ -22166,12 +22804,12 @@ const CAR_ROSTER = [
               'Простой гидротрансформатор.'
             ],
             watchouts: [
-              'Один из самых выносливых «автоматов» Mercedes, при замене масла каждые 60 тыс. км служит свыше 350 тыс. км.',
-              'Легко выдерживает момент мотора при своевременной замене масла.'
+              'Гидротрансформаторным АКПП нужна подтверждённая замена масла каждые 50 000–60 000 км, иначе появляются рывки блокировки.',
+              'Жёсткие или запоздалые переключения 2–3 на горячую указывают на износ гидроблока или соленоидов.'
             ],
             beforeYouBuy: [
-              'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
-              'Нажать сцепление наполовину на холостых (проверка маховика) и ускориться на 4-й передаче.'
+              'Запросить чеки о замене масла в коробке каждые 40 000–60 000 км.',
+              'На прогретой машине проверить плавность переключения R–D и ровное трогание в горку без рывков.'
             ]
           }
         },
@@ -22180,10 +22818,11 @@ const CAR_ROSTER = [
             headline: 'Solid CAN-Bus & Alternator',
             strengths: [
               'Solid CAN-Bus & Alternator keeps electrical diagnostics straightforward.',
-              'Watch Steering Lock (ELV).'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.'
+              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.',
+              'Watch Steering Lock (ELV).'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -22193,9 +22832,12 @@ const CAR_ROSTER = [
             headline: 'Stabiles CAN-Bordnetz',
             strengths: [
               'Stabiles CAN-Bordnetz sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
+            ],
+            watchouts: [
+              'Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.',
               'Lenkradschloss (ELV) bekannt.'
             ],
-            watchouts: ['Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.'],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
             ]
@@ -22204,9 +22846,12 @@ const CAR_ROSTER = [
             headline: 'Надёжная шина CAN',
             strengths: [
               'Надёжная шина CAN упрощает диагностику и обслуживание электрооборудования.',
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
+            ],
+            watchouts: [
+              'Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.',
               'Риск блокиратора руля (ELV).'
             ],
-            watchouts: ['Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.'],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
             ]
@@ -22255,10 +22900,13 @@ const CAR_ROSTER = [
           en: {
             headline: 'Cheap Aftermarket W204 Parts — Budget ~€800 Chain Refresh',
             strengths: [
-              'Cheap Aftermarket W204 Parts helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['Budget ~€800 Chain Refresh.'],
+            watchouts: [
+              'Budget ~€800 Chain Refresh.',
+              'Age-related wear on suspension bushings, exhaust flex-pipes, and brake discs/calipers still requires steady annual upkeep.'
+            ],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -22294,11 +22942,11 @@ const CAR_ROSTER = [
               'Proven RWD / Opt. 4Matic.'
             ],
             watchouts: [
-              'Revised torque converter and low-friction ATF run reliably with 75,000–100,000 km fluid services.',
-              'Keep intake valves clean on high mileage and change 7G-Tronic fluid every 60,000 km.'
+              '7G-Tronic needs fluid and filter changes every 60,000 km; old fluid causes harsh downshifts.',
+              'Limp mode or a stuck gear usually points to a failed conductor-plate speed sensor.'
             ],
             beforeYouBuy: [
-              'Demand service receipts for automatic, DSG, or CVT transmission fluid changes every 40,000–60,000 km.',
+              'Demand service receipts for transmission fluid changes every 40,000–60,000 km.',
               'Test Reverse-to-Drive engagement when warm and creep gently uphill to confirm zero jerk or slip.'
             ]
           },
@@ -22309,11 +22957,11 @@ const CAR_ROSTER = [
               'Bewährter Heck-/Allradantrieb.'
             ],
             watchouts: [
-              'Sparsamer Wandler mit langem 7. Gang, bei Ölwechsel alle 75–100 tkm sehr standfest.',
-              'Bei 140–180 tkm brechen oft die Kunststoffhebel der Saugrohr-Drallklappen; 7G-Tronic Ölwechsel alle 60 tkm einhalten.'
+              '7G-Tronic braucht alle 60.000 km Öl- und Filterwechsel — altes Öl führt zu harten Rückschaltungen.',
+              'Notlauf oder ein hängender Gang deuten meist auf einen defekten Drehzahlsensor der Leiterplatte.'
             ],
             beforeYouBuy: [
-              'Nachweise für Automatik-, DSG- oder CVT-Getriebeölwechsel alle 40.000–60.000 km prüfen.',
+              'Nachweise für Getriebeölwechsel alle 40.000–60.000 km prüfen.',
               'Im warmen Zustand von R auf D schalten und am Hang sanft anrollen — ohne Ruckeln oder Verzögerung.'
             ]
           },
@@ -22324,11 +22972,11 @@ const CAR_ROSTER = [
               'Надёжный задний и полный привод.'
             ],
             watchouts: [
-              'Обновлённый гидротрансформатор и плавное переключение при замене масла каждые 75–100 тыс. км.',
-              'При замене масла АКПП 7G-Tronic каждые 60 тыс. км служит сотни тысяч километров.'
+              'В 7G-Tronic менять масло и фильтр каждые 60 000 км — старое масло вызывает жёсткие понижения.',
+              'Аварийный режим или зависание передачи обычно указывают на отказ датчика скорости на плате управления.'
             ],
             beforeYouBuy: [
-              'Запросить чеки о замене масла в АКПП, DSG или вариаторе каждые 40 000–60 000 км.',
+              'Запросить чеки о замене масла в коробке каждые 40 000–60 000 км.',
               'На прогретой машине проверить плавность переключения R–D и ровное трогание в горку без рывков.'
             ]
           }
@@ -22338,10 +22986,11 @@ const CAR_ROSTER = [
             headline: 'Facelift Electrics Improved',
             strengths: [
               'Facelift Electrics Improved keeps electrical diagnostics straightforward.',
-              'Check ELV Lock & Taillights.'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.'
+              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.',
+              'Check ELV Lock & Taillights.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -22351,9 +23000,12 @@ const CAR_ROSTER = [
             headline: 'Facelift-Elektrik verbessert',
             strengths: [
               'Facelift-Elektrik verbessert sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
+            ],
+            watchouts: [
+              'Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.',
               'ELV & Rückleuchten-Masse prüfen.'
             ],
-            watchouts: ['Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.'],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
             ]
@@ -22362,9 +23014,12 @@ const CAR_ROSTER = [
             headline: 'Улучшенная электрика рест.',
             strengths: [
               'Улучшенная электрика рест. упрощает диагностику и обслуживание электрооборудования.',
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
+            ],
+            watchouts: [
+              'Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.',
               'Замок руля ELV и масса фонарей.'
             ],
-            watchouts: ['Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.'],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
             ]
@@ -22413,10 +23068,13 @@ const CAR_ROSTER = [
           en: {
             headline: 'Affordable Routine Oils & Pads — Expensive Chain & Cam Gears',
             strengths: [
-              'Affordable Routine Oils & Pads helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['Expensive Chain & Cam Gears.'],
+            watchouts: [
+              'Expensive Chain & Cam Gears.',
+              'Age-related wear on suspension bushings, exhaust flex-pipes, and brake discs/calipers still requires steady annual upkeep.'
+            ],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -22452,11 +23110,11 @@ const CAR_ROSTER = [
               'Proven RWD / Opt. 4Matic.'
             ],
             watchouts: [
-              'Turbo inlet seal oil drips can kill the swirl-flap actuator (EKAS) beneath it; refresh 7G-Tronic fluid every 60,000 km.',
-              'Keep 60,000 km 7G-Tronic Plus ATF changes and inspect rear subframe & differential bushings given the huge 620 Nm torque.'
+              '7G-Tronic needs fluid and filter changes every 60,000 km; old fluid causes harsh downshifts.',
+              'Limp mode or a stuck gear usually points to a failed conductor-plate speed sensor.'
             ],
             beforeYouBuy: [
-              'Demand service receipts for automatic, DSG, or CVT transmission fluid changes every 40,000–60,000 km.',
+              'Demand service receipts for transmission fluid changes every 40,000–60,000 km.',
               'Test Reverse-to-Drive engagement when warm and creep gently uphill to confirm zero jerk or slip.'
             ]
           },
@@ -22467,11 +23125,11 @@ const CAR_ROSTER = [
               'Bewährter Heck-/Allradantrieb.'
             ],
             watchouts: [
-              '500 Nm belasten hintere Steuerkette, ZMS (beim Schalter) und Ladeluftschläuche stark— Ölwechsel auf 12 tkm verkürzen.',
-              'Regelmäßiger 7G-Tronic-Ölservice (60 tkm) sowie Kontrolle von Hinterachslagern und Reifenverschleiß durch 620 Nm.'
+              '7G-Tronic braucht alle 60.000 km Öl- und Filterwechsel — altes Öl führt zu harten Rückschaltungen.',
+              'Notlauf oder ein hängender Gang deuten meist auf einen defekten Drehzahlsensor der Leiterplatte.'
             ],
             beforeYouBuy: [
-              'Nachweise für Automatik-, DSG- oder CVT-Getriebeölwechsel alle 40.000–60.000 km prüfen.',
+              'Nachweise für Getriebeölwechsel alle 40.000–60.000 km prüfen.',
               'Im warmen Zustand von R auf D schalten und am Hang sanft anrollen — ohne Ruckeln oder Verzögerung.'
             ]
           },
@@ -22482,11 +23140,11 @@ const CAR_ROSTER = [
               'Надёжный задний и полный привод.'
             ],
             watchouts: [
-              'Огромный момент нагружает заднюю цепь ГРМ, патрубки наддува и двухмассовый маховик МКПП— меняйте масло каждые 12 тыс. км.',
-              'Строго менять масло в 7G-Tronic каждые 60 тыс. км и следить за сайлентблоками заднего редуктора из-за 620 Н·м.'
+              'В 7G-Tronic менять масло и фильтр каждые 60 000 км — старое масло вызывает жёсткие понижения.',
+              'Аварийный режим или зависание передачи обычно указывают на отказ датчика скорости на плате управления.'
             ],
             beforeYouBuy: [
-              'Запросить чеки о замене масла в АКПП, DSG или вариаторе каждые 40 000–60 000 км.',
+              'Запросить чеки о замене масла в коробке каждые 40 000–60 000 км.',
               'На прогретой машине проверить плавность переключения R–D и ровное трогание в горку без рывков.'
             ]
           }
@@ -22496,10 +23154,11 @@ const CAR_ROSTER = [
             headline: 'Facelift Electrics Improved',
             strengths: [
               'Facelift Electrics Improved keeps electrical diagnostics straightforward.',
-              'Check ELV Lock & Taillights.'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.'
+              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.',
+              'Check ELV Lock & Taillights.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -22509,10 +23168,11 @@ const CAR_ROSTER = [
             headline: 'Facelift-Elektrik verbessert',
             strengths: [
               'Facelift-Elektrik verbessert sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
-              'ELV & Rückleuchten-Masse prüfen.'
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
             ],
             watchouts: [
-              'Abgassensoren (DPF-Differenzdruck, Glühkerzen, AGR) melden sich häufiger ab 140.000 km.'
+              'Abgassensoren (DPF-Differenzdruck, Glühkerzen, AGR) melden sich häufiger ab 140.000 km.',
+              'ELV & Rückleuchten-Masse prüfen.'
             ],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
@@ -22522,10 +23182,11 @@ const CAR_ROSTER = [
             headline: 'Улучшенная электрика рест.',
             strengths: [
               'Улучшенная электрика рест. упрощает диагностику и обслуживание электрооборудования.',
-              'Замок руля ELV и масса фонарей.'
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
             ],
             watchouts: [
-              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.'
+              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.',
+              'Замок руля ELV и масса фонарей.'
             ],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
@@ -22575,10 +23236,13 @@ const CAR_ROSTER = [
           en: {
             headline: 'Shared 2.1L OM651 Parts — 16" Tyres • Standard DPF Care',
             strengths: [
-              'Shared 2.1L OM651 Parts helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['16" Tyres • Standard DPF Care.'],
+            watchouts: [
+              '16" Tyres • Standard DPF Care.',
+              'Plan a reserve for higher-mileage diesel wear parts such as dual-mass flywheel, clutch, injectors, or DPF cleaning.'
+            ],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -22597,10 +23261,13 @@ const CAR_ROSTER = [
           ru: {
             headline: 'Доступные шины 16" и расходники — Штатный сервис OM651',
             strengths: [
-              'Доступные шины 16" и расходники помогает держать ежегодные затраты на ТО под контролем.',
+              'Предсказуемый регламент обслуживания помогает держать ежегодные затраты на ТО под контролем.',
               'Машина хорошо знакома любому сервису, а качественные запчасти широко доступны.'
             ],
-            watchouts: ['Штатный сервис OM651.'],
+            watchouts: [
+              'Штатный сервис OM651.',
+              'На больших пробегах закладывайте бюджет на дизельные расходники: маховик, сцепление, форсунки или чистку DPF.'
+            ],
             beforeYouBuy: ['Откройте план обслуживания ниже и сверьте предстоящие работы с имеющимися чеками.']
           }
         }
@@ -22614,11 +23281,11 @@ const CAR_ROSTER = [
               'Simple 722.6 Converter Box.'
             ],
             watchouts: [
-              'Tough 5G-Tronic Transmission: Handles 400 Nm effortlessly past 350,000+ km with regular ATF changes.',
-              'Automatic, DSG, and CVT gearboxes depend on documented 40,000–60,000 km fluid and filter changes.'
+              'Torque-converter automatics need documented 50,000–60,000 km fluid changes to avoid lockup shudder.',
+              'Harsh or delayed 2–3 upshifts when warm signal worn valve-body or solenoid parts.'
             ],
             beforeYouBuy: [
-              'Demand service receipts for automatic, DSG, or CVT transmission fluid changes every 40,000–60,000 km.',
+              'Demand service receipts for transmission fluid changes every 40,000–60,000 km.',
               'Test Reverse-to-Drive engagement when warm and creep gently uphill to confirm zero jerk or slip.'
             ]
           },
@@ -22629,11 +23296,11 @@ const CAR_ROSTER = [
               'Robuster Wandlerautomat.'
             ],
             watchouts: [
-              'Mit regelmäßigen Getriebeölwechseln für 400.000+ km ausgelegt.',
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.'
+              'Wandlerautomatiken brauchen nachgewiesene Ölwechsel alle 50.000–60.000 km, sonst droht Wandler-Ruckeln.',
+              'Harte oder verzögerte 2–3-Schaltungen im warmen Zustand deuten auf verschlissenen Ventilkörper oder Magnetventile.'
             ],
             beforeYouBuy: [
-              'Nachweise für Automatik-, DSG- oder CVT-Getriebeölwechsel alle 40.000–60.000 km prüfen.',
+              'Nachweise für Getriebeölwechsel alle 40.000–60.000 km prüfen.',
               'Im warmen Zustand von R auf D schalten und am Hang sanft anrollen — ohne Ruckeln oder Verzögerung.'
             ]
           },
@@ -22644,12 +23311,12 @@ const CAR_ROSTER = [
               'Простой гидротрансформатор.'
             ],
             watchouts: [
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.',
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.'
+              'Гидротрансформаторным АКПП нужна подтверждённая замена масла каждые 50 000–60 000 км, иначе появляются рывки блокировки.',
+              'Жёсткие или запоздалые переключения 2–3 на горячую указывают на износ гидроблока или соленоидов.'
             ],
             beforeYouBuy: [
-              'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
-              'Нажать сцепление наполовину на холостых (проверка маховика) и ускориться на 4-й передаче.'
+              'Запросить чеки о замене масла в коробке каждые 40 000–60 000 км.',
+              'На прогретой машине проверить плавность переключения R–D и ровное трогание в горку без рывков.'
             ]
           }
         },
@@ -22658,10 +23325,11 @@ const CAR_ROSTER = [
             headline: 'Solid CAN-Bus & Alternator',
             strengths: [
               'Solid CAN-Bus & Alternator keeps electrical diagnostics straightforward.',
-              'Watch Steering Lock (ELV).'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.'
+              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.',
+              'Watch Steering Lock (ELV).'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -22671,10 +23339,11 @@ const CAR_ROSTER = [
             headline: 'Stabiles CAN-Bordnetz',
             strengths: [
               'Stabiles CAN-Bordnetz sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
-              'Lenkradschloss (ELV) bekannt.'
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
             ],
             watchouts: [
-              'Abgassensoren (DPF-Differenzdruck, Glühkerzen, AGR) melden sich häufiger ab 140.000 km.'
+              'Abgassensoren (DPF-Differenzdruck, Glühkerzen, AGR) melden sich häufiger ab 140.000 km.',
+              'Lenkradschloss (ELV) bekannt.'
             ],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
@@ -22684,10 +23353,11 @@ const CAR_ROSTER = [
             headline: 'Надёжная шина CAN',
             strengths: [
               'Надёжная шина CAN упрощает диагностику и обслуживание электрооборудования.',
-              'Риск блокиратора руля (ELV).'
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
             ],
             watchouts: [
-              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.'
+              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.',
+              'Риск блокиратора руля (ELV).'
             ],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
@@ -22699,10 +23369,11 @@ const CAR_ROSTER = [
             headline: 'Supple W204 Suspension',
             strengths: [
               'Supple W204 Suspension delivers pleasant everyday composure.',
-              'Audible Pre-FL Diesel Clatter.'
+              'Balanced chassis damping keeps cruising settled and predictable on smooth roads.'
             ],
             watchouts: [
-              'Cold diesel clatter, high motorway revs, or oversized alloy wheels raise cabin noise noticeably.'
+              'Cold diesel clatter, high motorway revs, or oversized alloy wheels raise cabin noise noticeably.',
+              'Audible Pre-FL Diesel Clatter.'
             ],
             beforeYouBuy: [
               'Take the car up to 110–120 km/h to judge real wind noise, tyre hum, and suspension smoothness.'
@@ -22712,10 +23383,11 @@ const CAR_ROSTER = [
             headline: 'Komfortables W204-Fahrwerk',
             strengths: [
               'Komfortables W204-Fahrwerk sorgt für ein angenehmes Fahrgefühl im Alltag.',
-              'Hörbares OM646-Nageln kalt.'
+              'Auf gutem Asphalt liegt das Fahrwerk ruhig und berechenbar.'
             ],
             watchouts: [
-              'Kaltes Diesel-Nageln oder große 18–19"-Felgen erhöhen den Geräuschpegel im Innenraum spürbar.'
+              'Kaltes Diesel-Nageln oder große 18–19"-Felgen erhöhen den Geräuschpegel im Innenraum spürbar.',
+              'Hörbares OM646-Nageln kalt.'
             ],
             beforeYouBuy: [
               'Bei der Probefahrt kurz 110–120 km/h fahren, um Wind-, Reifen- und Abrollgeräusche real zu prüfen.'
@@ -22725,9 +23397,12 @@ const CAR_ROSTER = [
             headline: 'Комфортная подвеска W204',
             strengths: [
               'Комфортная подвеска W204 обеспечивает комфортную езду в повседневных поездках.',
+              'На ровном покрытии подвеска работает собранно и предсказуемо.'
+            ],
+            watchouts: [
+              'Холодный дизельный рокот и крупные диски заметно усиливают шум в салоне.',
               'Дизель OM646 шумнее на холодную.'
             ],
-            watchouts: ['Холодный дизельный рокот и крупные диски заметно усиливают шум в салоне.'],
             beforeYouBuy: [
               'Прокатитесь 110–120 км/ч, чтобы оценить реальный уровень шума ветра, шин и мягкость хода.'
             ]
@@ -22737,11 +23412,12 @@ const CAR_ROSTER = [
           en: {
             headline: 'Very Cheap Taxi-Hero Parts — Solenoid Injectors Easy To Fix',
             strengths: [
-              'Very Cheap Taxi-Hero Parts helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Solenoid Injectors Easy To Fix.'
             ],
             watchouts: [
-              'Budget for higher diesel wear items past 160,000 km (DPF cleaning, injectors, clutch/flywheel).'
+              'Budget for higher diesel wear items past 160,000 km (DPF cleaning, injectors, clutch/flywheel).',
+              'Very Cheap Taxi-Hero Parts.'
             ],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
@@ -22773,6 +23449,7 @@ const CAR_ROSTER = [
     engines: [
       {
         id: 'c180-kompressor-1.8',
+        buyerFitGroup: 'kompressor',
         dossierGroup: 'petrol-conv-auto',
         isDefault: false,
         fuelType: 'petrol',
@@ -23208,6 +23885,7 @@ const CAR_ROSTER = [
       },
       {
         id: 'c180-kompressor-1.6-be',
+        buyerFitGroup: 'kompressor',
         dossierGroup: 'petrol-conv-auto',
         isDefault: false,
         fuelType: 'petrol',
@@ -23639,6 +24317,7 @@ const CAR_ROSTER = [
       },
       {
         id: 'c180-cgi-1.8',
+        buyerFitGroup: 'cgi-4',
         dossierGroup: 'petrol-7g',
         isDefault: false,
         fuelType: 'petrol',
@@ -24083,6 +24762,16 @@ const CAR_ROSTER = [
       },
       {
         id: 'c180-1.6-turbo',
+        buyerFitGroup: 'cgi-4',
+        buyerFitOverrides: {
+          ideal: ['w204M274Updated', 'w204CabinQuality', 'w204AutoSmooth', 'globalPetrolCityZones'],
+          skip: [
+            'w204M274CoolantWatch',
+            'w204FourCylThirst',
+            'w204RearSubframeRust',
+            'w204TightRearSpace'
+          ]
+        },
         dossierGroup: 'petrol-7g',
         isDefault: false,
         fuelType: 'petrol',
@@ -24518,6 +25207,7 @@ const CAR_ROSTER = [
       },
       {
         id: 'c200-kompressor',
+        buyerFitGroup: 'kompressor',
         dossierGroup: 'petrol-conv-auto',
         isDefault: false,
         fuelType: 'petrol',
@@ -24953,6 +25643,7 @@ const CAR_ROSTER = [
       },
       {
         id: 'c200-cgi',
+        buyerFitGroup: 'cgi-4',
         dossierGroup: 'petrol-7g',
         isDefault: false,
         fuelType: 'petrol',
@@ -25044,7 +25735,7 @@ const CAR_ROSTER = [
                   'Short-Trip Petrol Dilution & Filter Housing Leaks: Fuel thinning the oil speeds up chain wear, while plastic oil-filter housings seep oil or coolant.'
                 ],
                 strengths: [
-                  'Strong 270 Nm low-end torque outperforms the older 2.5L V6 in everyday passing.',
+                  'Strong 270 Nm low-end turbo torque makes everyday passing effortless.',
                   'Can reach 200,000–250,000+ km once updated timing chain and cam gears are fitted and oil is changed every 10,000 km.'
                 ],
                 watchouts: [
@@ -25114,7 +25805,7 @@ const CAR_ROSTER = [
                   'Ölverdünnung durch Kurzstrecken & Ölfiltergehäuse: Benzin im Öl beschleunigt den Kettenverschleiß; das Kunststoff-Ölfiltergehäuse wird oft undicht.'
                 ],
                 strengths: [
-                  'Kräftige 270 Nm Drehmoment übertreffen den älteren 2.5-V6 im Alltagsdurchzug spürbar.',
+                  'Kräftige 270 Nm Drehmoment ab niedrigster Drehzahl sorgen für souveränen Alltagsdurchzug.',
                   'Erreicht 200.000–250.000+ km, sobald Kette & Versteller erneuert sind und Öl alle 10.000 km gewechselt wird.'
                 ],
                 watchouts: [
@@ -25184,7 +25875,7 @@ const CAR_ROSTER = [
                   'Разжижение масла бензином и течи корпуса фильтра: Короткие поездки ускоряют износ цепи, а пластиковый стакан фильтра часто подтекает.'
                 ],
                 strengths: [
-                  'Уверенные 270 Н·м тяги с низов обгоняют старый атмосферный 2.5 V6 в городе и на трассе.',
+                  'Уверенные 270 Н·м тяги с низов делают обгоны в городе и на трассе лёгкими.',
                   'Проходит 200 000–250 000+ км после обновления цепи со звёздами и при замене масла каждые 10 000 км.'
                 ],
                 watchouts: [
@@ -25397,6 +26088,10 @@ const CAR_ROSTER = [
       },
       {
         id: 'c250-cgi',
+        buyerFitGroup: 'cgi-4',
+        buyerFitOverrides: {
+          ideal: ['w204PowerfulCruiser', 'w204CabinQuality', 'w204AutoSmooth', 'globalPetrolCityZones']
+        },
         dossierGroup: 'petrol-7g',
         isDefault: false,
         fuelType: 'petrol',
@@ -25488,7 +26183,7 @@ const CAR_ROSTER = [
                   'Short-Trip Fuel Dilution & Oil Filter Housing Leaks: Petrol diluting the engine oil speeds up chain and turbo bearing wear, while plastic oil-filter/coolant housings leak.'
                 ],
                 strengths: [
-                  'Strong 310 Nm turbo punch outperforms the 2.5L V6 while carrying less weight over the front axle.',
+                  'Strong 310 Nm turbo punch with a light 4-cylinder front-axle balance.',
                   'Can reach 200,000–240,000+ km once updated timing chain/cam gears are fitted and oil is changed every 10,000 km.'
                 ],
                 watchouts: [
@@ -25558,7 +26253,7 @@ const CAR_ROSTER = [
                   'Ölverdünnung durch Kurzstrecken & Ölfiltergehäuse: Kraftstoff im Öl beschleunigt Ketten- und Turboverschleiß; zudem werden Kunststoff-Ölfiltergehäuse häufig undicht.'
                 ],
                 strengths: [
-                  'Kräftige 310 Nm Drehmoment übertreffen den 2.5-V6 spürbar bei geringerem Gewicht auf der Vorderachse.',
+                  'Kräftige 310 Nm Drehmoment bei angenehm geringem Gewicht auf der Vorderachse.',
                   'Erreicht 200.000–240.000+ km, sobald Kette & Versteller erneuert sind und Öl alle 10.000 km gewechselt wird.'
                 ],
                 watchouts: [
@@ -25628,7 +26323,7 @@ const CAR_ROSTER = [
                   'Разжижение масла бензином и течи корпуса фильтра: Попадание топлива в масло в городе губит цепь и турбину, а пластиковый стакан фильтра часто подтекает.'
                 ],
                 strengths: [
-                  'Мощная тяга 310 Н·м уверенно опережает атмосферный V6 при более лёгком передке.',
+                  'Мощная тяга 310 Н·м в сочетании с лёгкой 4-цилиндровой передней осью.',
                   'Проходит 200 000–240 000+ км после замены цепи со звёздами и при замене масла каждые 10 000 км.'
                 ],
                 watchouts: [
@@ -25841,6 +26536,7 @@ const CAR_ROSTER = [
       },
       {
         id: 'c230-v6',
+        buyerFitGroup: 'v6-petrol',
         dossierGroup: 'petrol-7g',
         isDefault: false,
         fuelType: 'petrol',
@@ -26276,6 +26972,7 @@ const CAR_ROSTER = [
       },
       {
         id: 'c280-c300-v6',
+        buyerFitGroup: 'v6-petrol',
         dossierGroup: 'petrol-7g',
         isDefault: false,
         fuelType: 'petrol',
@@ -26711,6 +27408,7 @@ const CAR_ROSTER = [
       },
       {
         id: 'c350-m272',
+        buyerFitGroup: 'v6-petrol',
         dossierGroup: 'petrol-7g',
         isDefault: false,
         fuelType: 'petrol',
@@ -27146,6 +27844,10 @@ const CAR_ROSTER = [
       },
       {
         id: 'c350-cgi',
+        buyerFitGroup: 'v6-petrol',
+        buyerFitOverrides: {
+          skip: ['w204V6RunningCosts', 'w204CgiPiezoCost', 'w204RearSubframeRust', 'w204TightRearSpace']
+        },
         dossierGroup: 'petrol-7g',
         isDefault: false,
         fuelType: 'petrol',
@@ -27581,6 +28283,15 @@ const CAR_ROSTER = [
       },
       {
         id: 'c350-m276',
+        buyerFitGroup: 'v6-petrol',
+        buyerFitOverrides: {
+          skip: [
+            'w204V6RunningCosts',
+            'w204M276Tensioner',
+            'w204RearSubframeRust',
+            'w204TightRearSpace'
+          ]
+        },
         dossierGroup: 'petrol-7g',
         isDefault: false,
         fuelType: 'petrol',
@@ -28016,6 +28727,10 @@ const CAR_ROSTER = [
       },
       {
         id: 'c180-cdi',
+        buyerFitGroup: 'om651-diesel',
+        buyerFitOverrides: {
+          ideal: ['w204C180CdiGentle', 'w204AutoSmooth', 'w204CabinQuality', 'globalDieselLongRange']
+        },
         dossierGroup: 'diesel-7g',
         isDefault: false,
         fuelType: 'diesel',
@@ -28451,6 +29166,7 @@ const CAR_ROSTER = [
       },
       {
         id: 'c200-cdi-om646',
+        buyerFitGroup: 'om646-diesel',
         dossierGroup: 'diesel-conv-auto',
         isDefault: false,
         fuelType: 'diesel',
@@ -28886,6 +29602,7 @@ const CAR_ROSTER = [
       },
       {
         id: 'c200-cdi-om651',
+        buyerFitGroup: 'om651-diesel',
         dossierGroup: 'diesel-7g',
         isDefault: false,
         fuelType: 'diesel',
@@ -29317,6 +30034,7 @@ const CAR_ROSTER = [
       },
       {
         id: 'c220-cdi-om646',
+        buyerFitGroup: 'om646-diesel',
         dossierGroup: 'diesel-conv-auto',
         isDefault: false,
         fuelType: 'diesel',
@@ -29752,6 +30470,7 @@ const CAR_ROSTER = [
       },
       {
         id: 'c220-cdi-om651',
+        buyerFitGroup: 'om651-diesel',
         dossierGroup: 'diesel-7g',
         isDefault: true,
         fuelType: 'diesel',
@@ -30187,6 +30906,15 @@ const CAR_ROSTER = [
       },
       {
         id: 'c250-cdi',
+        buyerFitGroup: 'om651-diesel',
+        buyerFitOverrides: {
+          ideal: [
+            'w204C250CdiTorque',
+            'w204PowerfulCruiser',
+            'w204CabinQuality',
+            'globalDieselLongRange'
+          ]
+        },
         dossierGroup: 'diesel-7g',
         isDefault: false,
         fuelType: 'diesel',
@@ -30272,10 +31000,10 @@ const CAR_ROSTER = [
             },
             dossier: {
               en: {
-                headline: '500 Nm From 2.1 Liters— V6-Level Thrust at 4-Cylinder Fuel Economy (Choose 2012+ Facelift)',
+                headline: '500 Nm From 2.1 Liters — Effortless Bi-Turbo Thrust With Frugal Economy (Choose 2012+ Facelift)',
                 strengths: [
-                  '500 Nm Sequential Bi-Turbo: Delivers huge mid-range overtaking thrust comparable to 3.0L V6 diesels while sipping under 6.0 L/100km.',
-                  'Lower 2.1L Tax & Weight: Saves significantly on German diesel displacement tax and carries less weight over the front wheels than the OM642 V6.',
+                  '500 Nm Sequential Bi-Turbo: Delivers huge mid-range overtaking thrust while sipping under 6.0 L/100km.',
+                  'Lower 2.1L Tax & Weight: Keeps displacement-based road tax reasonable and reduces weight over the front wheels.',
                   'Reaches 200,000–250,000 km when oil, cooling, and timing care stay strictly on schedule.'
                 ],
                 watchouts: [
@@ -30339,10 +31067,10 @@ const CAR_ROSTER = [
                 ]
               },
               de: {
-                headline: '500 Nm aus 2,1 Litern— V6-Durchzug bei 4-Zylinder-Verbrauch (Mopf ab 2012 empfohlen)',
+                headline: '500 Nm aus 2,1 Litern — Bi-Turbo-Durchzug bei niedrigem Verbrauch (Mopf ab 2012 empfohlen)',
                 strengths: [
                   '204 PS / 500 Nm sprinten in 7,0 Sekunden bei unter 6 L/100km Realverbrauch.',
-                  'Spürbar weniger Steuer und geringeres Vorderachsgewicht als der C 350 CDI V6.',
+                  'Moderater 2,1-Liter-Steuersatz und angenehm geringes Gewicht auf der Vorderachse.',
                   'Hält 200.000–250.000 km bei strikter Öl-, Kühlungs- und Steuerzeiten-Pflege.'
                 ],
                 watchouts: [
@@ -30406,10 +31134,10 @@ const CAR_ROSTER = [
                 ]
               },
               ru: {
-                headline: '500 Н·м с 2.1 литра— динамика на уровне V6 при скромном расходе (рекомендуется с 2012 г.)',
+                headline: '500 Н·м с 2,1 литра — мощная би-турбо тяга при скромном расходе (рекомендуется с 2012 г.)',
                 strengths: [
-                  'На обгонах не уступает трёхлитровым дизелям V6 при реальном расходе ~5,9 л/100 км.',
-                  'Рулится азартнее тяжёлого C 350 CDI и дешевле на содержании в Европе.',
+                  'Мощный подхват 500 Н·м на обгонах при реальном расходе ~5,9 л/100 км.',
+                  'Легче на переднюю ось и заметно дешевле в содержании и налоге в Европе.',
                   'Проходит 200 000–250 000 км при строгом контроле масла, охлаждения и ГРМ.'
                 ],
                 watchouts: [
@@ -30622,6 +31350,7 @@ const CAR_ROSTER = [
       },
       {
         id: 'c320-cdi',
+        buyerFitGroup: 'v6-diesel',
         dossierGroup: 'diesel-7g',
         isDefault: false,
         fuelType: 'diesel',
@@ -31060,6 +31789,7 @@ const CAR_ROSTER = [
       },
       {
         id: 'c300-cdi-4matic',
+        buyerFitGroup: 'v6-diesel',
         dossierGroup: 'diesel-7g',
         isDefault: false,
         fuelType: 'diesel',
@@ -31281,7 +32011,6 @@ const CAR_ROSTER = [
                 headline: 'Обновлённый V6 231 л.с. (идентичен C 350 CDI 231 л.с.) с постоянным полным приводом 4Matic',
                 strengths: [
                   'Поздние версии с завода получили более стойкие фиолетовые прокладки теплообменника.',
-                  'Способен пройти 240 000–280 000+ км при замене масла каждые 10 000–15 000 км.',
                   'Способен пройти 240 000–280 000+ км при замене масла каждые 10 000–15 000 км.'
                 ],
                 watchouts: [
@@ -31494,6 +32223,7 @@ const CAR_ROSTER = [
       },
       {
         id: 'c350-cdi-265',
+        buyerFitGroup: 'v6-diesel',
         dossierGroup: 'diesel-7g',
         isDefault: false,
         fuelType: 'diesel',
@@ -31724,9 +32454,9 @@ const CAR_ROSTER = [
                   'Меняйте масло чаще 15 000 км и регулярно выезжайте на трассу для защиты DPF и турбины.'
                 ],
                 beforeYouBuy: [
+                  'Убедитесь, что V6 с 620 Н·м плавно переключает все 7 передач при мягком и резком газе без вибраций.',
                   'Осмотрите входной патрубок турбины, работу свечей накала и отсутствие ошибок по сажевому фильтру.',
-                  'Запустить дизель на холодную— работа должна быть ровной без стука форсунок и дыма.',
-                  'Запустить дизель на холодную— работа должна быть ровной без стука форсунок и дыма.'
+                  'Запустить дизель на холодную — работа должна быть ровной без стука форсунок и сизого дыма.'
                 ],
                 highMileage: [
                   {
@@ -31942,6 +32672,85 @@ const CAR_ROSTER = [
     drivetrain: 'AWD',
     image: 'assets/toyota-rav4-2010.png',
     defaultEngineId: '2.0-valvematic',
+    sharedBuyerFit: {
+      cards: {
+        rav4CargoSpace: {
+          en: 'You haul family gear & winter luggage: The 586 L boot (1,752 L folded), sliding rear bench, and deep underfloor bin swallow bulky loads easily.',
+          de: 'Du transportierst viel Familiengepäck: 586 L Kofferraum (max. 1.752 L), Schieberückbank und tiefes Unterbodenfach schlucken enorm viel.',
+          ru: 'Ты возишь много багажа: Отсек на 586 л (до 1 752 л), сдвижной диван и глубокое подполье вмещают всё нужное.'
+        },
+        rav4WinterAwd: {
+          en: 'You drive in snow, mud, or steep winter hills: 4WD Lock up to 40 km/h and high ground clearance keep traction confident.',
+          de: 'Du fährst bei Schnee, Matsch oder Steigungen: 4WD-Lock bis 40 km/h und Bodenfreiheit bieten sichere Winter-Traktion.',
+          ru: 'Ты ездишь по снегу и просёлкам: Блокировка 4WD Lock до 40 km/ч и клиренс дают уверенность зимой.'
+        },
+        rav4ValvematicReliable: {
+          en: 'You want bulletproof simple reliability: Port injection, timing chain, and zero turbo/DPF make short winter trips stress-free.',
+          de: 'Du willst unverwüstliche Technik: Saugrohreinspritzung, Steuerkette und kein Turbo/DPF verzeihen auch kalte Kurzstrecken.',
+          ru: 'Тебе нужна неубиваемая простая техника: Распределённый впрыск и цепь ГРМ не боятся зимних коротких поездок.'
+        },
+        rav4TowingMuscle: {
+          en: 'You tow trailers or caravans: Up to 2,000 kg braked towing capacity and strong torque handle heavy loads cleanly.',
+          de: 'Du ziehst Anhänger oder Wohnwagen: Bis zu 2.000 kg Anhängelast und kräftiges Drehmoment meistern schwere Lasten souverän.',
+          ru: 'Ты таскаешь прицепы: Допустимая тяга до 2 000 кг и уверенный момент справляются с нагрузкой.'
+        },
+        rav4SideTailgate: {
+          en: 'You parallel park in tight city spaces: The side-hinged rear tailgate swings wide toward the curb and needs clear room behind.',
+          de: 'Du parkst oft eng längs zur Straße: Die seitlich öffnende Hecktür braucht beim Ausladen viel Platz nach hinten.',
+          ru: 'Ты часто паркуешься впритык: Распашная пятая дверь требует свободного места сзади для открытия.'
+        },
+        rav4HardPlastics: {
+          en: 'You want plush soft-touch luxury: Utilitarian hard plastics and firm SUV ride prioritize ruggedness over refinement.',
+          de: 'Du erwartest edlen Soft-Touch-Innenraum: Nüchternes Hartplastik und straffe SUV-Federung setzen auf Robustheit statt Luxus.',
+          ru: 'Тебе нужен мягкий премиальный салон: Утилитарный жёсткий пластик рассчитан на практичность, а не на лоск.'
+        },
+        rav4PetrolThirst: {
+          en: 'You want sub-7 L/100km fuel bills: Pushing an AWD SUV at motorway speeds brings 8.5–10 L/100km real consumption.',
+          de: 'Du erwartest unter 7 L/100km Verbrauch: Allrad und SUV-Stirnfläche sorgen bei Autobahntempo für 8,5–10 L/100km.',
+          ru: 'Ты ждёшь низкого расхода топлива: Полный привод и высокий кузов дают 8,5–10 л/100 км в реальной езде.'
+        },
+        rav4ModestHighwayPull: {
+          en: 'You want effortless low-rev overtaking: Non-turbo 2.0L torque needs higher revs on steep climbs or when towing.',
+          de: 'Du willst mühelosen Durchzug am Berg: Ohne Turbo brauchen die 2.0L-Saugmotoren bei Steigungen spürbar mehr Drehzahl.',
+          ru: 'Тебе нужна лёгкая тяга на подъёмах: Без турбины 2,0-литровый мотор приходится крутить при обгонах и загрузке.'
+        },
+        rav4DieselUpkeep: {
+          en: 'You want minimal SUV wear-part bills: Heavy AWD clutch/flywheel, 4WD tyres, and diesel servicing cost noticeably more than the 2.0L.',
+          de: 'Du willst minimale SUV-Unterhaltskosten: Kräftige Kupplung/ZMS, Allrad-Reifen und Diesel-Wartung kosten mehr als beim 2.0L.',
+          ru: 'Ты хочешь минимальных трат на содержание: Тяжёлое сцепление/маховик, полный привод и ТО дизеля дороже версии 2.0 л.'
+        },
+        rav4136HeadRisk: {
+          en: 'You want zero head-gasket worries: Early 2006–2008 136 HP 2.2 diesels can suffer head-gasket coolant leaks and carbon-clogged EGR.',
+          de: 'Du willst keinerlei Kopfdichtungs-Risiko: Frühe 136-PS-2.2-Diesel (2006–2008) neigen zu Kopfdichtungs-Schäden und verkokten AGR-Ventilen.',
+          ru: 'Ты не хочешь рисковать прокладкой ГБЦ: Ранний 2.2 (136 л.с., 2006–2008) склонен к пробою прокладки и нагару в ЕГР.'
+        },
+        rav4DcatRisk: {
+          en: 'You want simple diesel emissions tech: The 177 HP D-CAT adds a complex 5th-injector DPNR catalyst alongside head-gasket sensitivity.',
+          de: 'Du willst unkomplizierte Abgastechnik: Der 177-PS-D-CAT hat einen empfindlichen 5.-Injektor-DPNR-Kat plus Kopfdichtungs-Risiko.',
+          ru: 'Тебе нужна простая топливная система: Версия D-CAT (177 л.с.) оснащена капризной 5-й форсункой DPNR и требует контроля ГБЦ.'
+        }
+      }
+    },
+    buyerFitGroups: {
+      'na-petrol-awd': {
+        summary: {
+          en: 'One of the most dependable compact family SUVs — ideal for winter traction and short trips if you accept 8.5–10 L/100km fuel use.',
+          de: 'Eines der zuverlässigsten Kompakt-SUVs — ideal für Winter und Kurzstrecken, wenn 8,5–10 L/100km Verbrauch für dich passen.',
+          ru: 'Один из самых надёжных семейных кроссоверов — идеален для зимы и города, если устраивает расход 8,5–10 л/100 км.'
+        },
+        ideal: ['rav4ValvematicReliable', 'rav4CargoSpace', 'rav4WinterAwd', 'globalPetrolCityZones'],
+        skip: ['rav4PetrolThirst', 'rav4ModestHighwayPull', 'rav4SideTailgate', 'rav4HardPlastics']
+      },
+      'diesel-awd': {
+        summary: {
+          en: 'A spacious, high-towing winter SUV for highway miles — pick the updated 2009+ 150 HP model over early 136/177 HP units.',
+          de: 'Ein geräumiges Zug- und Winter-SUV für Langstrecken — greife klar zum überarbeiteten 150-PS-Facelift ab 2009.',
+          ru: 'Вместительный тяговитый кроссовер для трассы и зимы — лучше выбирать обновлённую версию 150 л.с. (с 2009 г.).'
+        },
+        ideal: ['rav4TowingMuscle', 'rav4CargoSpace', 'rav4WinterAwd', 'globalDieselLongRange'],
+        skip: ['globalDieselShortTripRisk', 'rav4136HeadRisk', 'rav4SideTailgate', 'rav4HardPlastics']
+      }
+    },
     sharedDossiers: {
       buildQualityRust: {
         en: {
@@ -32128,7 +32937,9 @@ const CAR_ROSTER = [
             'Verschieb- & neigbarer Fond sorgt für guten Reisekomfort auf den Sitzplätzen.',
             'Gute Sitzposition vorn mit großem Verstellbereich für Lenkrad und Sitz.'
           ],
-          watchouts: ['Bequemer hoher SUV-Einstieg.'],
+          watchouts: [
+            'Der mittlere Rücksitzplatz fällt schmaler aus und schränkt den Komfort für drei Erwachsene hinten ein.'
+          ],
           beforeYouBuy: [
             'Erst vorn einstellen, dann dahinter Platz nehmen und Beinfreiheit sowie ISOFIX testen.'
           ]
@@ -32337,14 +33148,14 @@ const CAR_ROSTER = [
             headline: '6-MT / Multidrive S CVT + AWD — Service CVT Fluid & AWD Lock',
             strengths: [
               '6-MT / Multidrive S CVT + AWD matches this powertrain well for everyday driving.',
-              'Service CVT Fluid & AWD Lock.'
+              'Crisp shift feel and well-matched ratios keep everyday driving composed and predictable.'
             ],
             watchouts: [
-              'Automatic, DSG, and CVT gearboxes depend on documented 40,000–60,000 km fluid and filter changes.',
-              'Listen for bearing whine in neutral or shudder on tight turns on AWD models.'
+              'CVT fluid must be changed every 40,000–60,000 km; old fluid causes belt slip and whine.',
+              'Listen for bearing whine or driveline shudder from the AWD system on tight full-lock turns.'
             ],
             beforeYouBuy: [
-              'Demand service receipts for automatic, DSG, or CVT transmission fluid changes every 40,000–60,000 km.',
+              'Demand service receipts for transmission fluid changes every 40,000–60,000 km.',
               'Test Reverse-to-Drive engagement when warm and creep gently uphill to confirm zero jerk or slip.'
             ]
           },
@@ -32355,11 +33166,11 @@ const CAR_ROSTER = [
               'CVT-Öl & Hinterachskupplung.'
             ],
             watchouts: [
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.',
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.'
+              'CVT-Öl alle 40.000–60.000 km wechseln — altes Öl führt zu Schubgliederband-Rutschen und Heulen.',
+              'Auf Lagerheulen oder Verspannen des Allradantriebs bei voll eingeschlagener Lenkung achten.'
             ],
             beforeYouBuy: [
-              'Nachweise für Automatik-, DSG- oder CVT-Getriebeölwechsel alle 40.000–60.000 km prüfen.',
+              'Nachweise für Getriebeölwechsel alle 40.000–60.000 km prüfen.',
               'Im warmen Zustand von R auf D schalten und am Hang sanft anrollen — ohne Ruckeln oder Verzögerung.'
             ]
           },
@@ -32370,12 +33181,12 @@ const CAR_ROSTER = [
               'ТО вариатора и муфты AWD.'
             ],
             watchouts: [
-              'Проверяйте отсутствие гула на 60–80 км/ч и меняйте масло в раздатке/редукторе раз в 60 000 км.',
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.'
+              'Масло в вариаторе менять каждые 40 000–60 000 км — старое масло ведёт к проскальзыванию ремня и вою.',
+              'Прислушайтесь к вою подшипников или подклиниванию полного привода при полностью вывернутом руле.'
             ],
             beforeYouBuy: [
-              'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
-              'Нажать сцепление наполовину на холостых (проверка маховика) и ускориться на 4-й передаче.'
+              'Запросить чеки о замене масла в коробке каждые 40 000–60 000 км.',
+              'На прогретой машине проверить плавность переключения R–D и ровное трогание в горку без рывков.'
             ]
           }
         },
@@ -32421,10 +33232,11 @@ const CAR_ROSTER = [
             headline: 'Comfortable Upright Posture',
             strengths: [
               'Comfortable Upright Posture delivers pleasant everyday composure.',
-              'Firm Short-Bump SUV Bounce.'
+              'Balanced chassis damping keeps cruising settled and predictable on smooth roads.'
             ],
             watchouts: [
-              'Wind and tyre roar increase at 130+ km/h; large 18–19" wheels make city bumps firmer.'
+              'Wind and tyre roar increase at 130+ km/h; large 18–19" wheels make city bumps firmer.',
+              'Firm Short-Bump SUV Bounce.'
             ],
             beforeYouBuy: [
               'Take the car up to 110–120 km/h to judge real wind noise, tyre hum, and suspension smoothness.'
@@ -32434,10 +33246,11 @@ const CAR_ROSTER = [
             headline: 'Bequeme hohe Sitzposition',
             strengths: [
               'Bequeme hohe Sitzposition sorgt für ein angenehmes Fahrgefühl im Alltag.',
-              'Poltrig auf kurzen Stößen.'
+              'Auf gutem Asphalt liegt das Fahrwerk ruhig und berechenbar.'
             ],
             watchouts: [
-              'Ab 130 km/h nehmen Wind- und Abrollgeräusche zu; große Felgen machen den Stadtkomfort straffer.'
+              'Ab 130 km/h nehmen Wind- und Abrollgeräusche zu; große Felgen machen den Stadtkomfort straffer.',
+              'Poltrig auf kurzen Stößen.'
             ],
             beforeYouBuy: [
               'Bei der Probefahrt kurz 110–120 km/h fahren, um Wind-, Reifen- und Abrollgeräusche real zu prüfen.'
@@ -32447,9 +33260,12 @@ const CAR_ROSTER = [
             headline: 'Удобная высокая посадка',
             strengths: [
               'Удобная высокая посадка обеспечивает комфортную езду в повседневных поездках.',
+              'На ровном покрытии подвеска работает собранно и предсказуемо.'
+            ],
+            watchouts: [
+              'После 130 км/ч растут шумы ветра и шин, а большие диски делают ход жёстче.',
               'Жёстче на мелких неровностях.'
             ],
-            watchouts: ['После 130 км/ч растут шумы ветра и шин, а большие диски делают ход жёстче.'],
             beforeYouBuy: [
               'Прокатитесь 110–120 км/ч, чтобы оценить реальный уровень шума ветра, шин и мягкость хода.'
             ]
@@ -32459,10 +33275,10 @@ const CAR_ROSTER = [
           en: {
             headline: 'No Turbo / DPF Bills — 4WD Tyres & Routine Oils',
             strengths: [
-              'No Turbo / DPF Bills helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['4WD Tyres & Routine Oils.'],
+            watchouts: ['4WD Tyres & Routine Oils.', 'No Turbo / DPF Bills.'],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -32498,11 +33314,11 @@ const CAR_ROSTER = [
               'Simple Electromagnetic AWD.'
             ],
             watchouts: [
-              'Automatic, DSG, and CVT gearboxes depend on documented 40,000–60,000 km fluid and filter changes.',
-              'Listen for bearing whine in neutral or shudder on tight turns on AWD models.'
+              'Torque-converter automatics need documented 50,000–60,000 km fluid changes to avoid lockup shudder.',
+              'Listen for bearing whine or driveline shudder from the AWD system on tight full-lock turns.'
             ],
             beforeYouBuy: [
-              'Demand service receipts for automatic, DSG, or CVT transmission fluid changes every 40,000–60,000 km.',
+              'Demand service receipts for transmission fluid changes every 40,000–60,000 km.',
               'Test Reverse-to-Drive engagement when warm and creep gently uphill to confirm zero jerk or slip.'
             ]
           },
@@ -32513,11 +33329,11 @@ const CAR_ROSTER = [
               'Einfache Allrad-Magnetkupplung.'
             ],
             watchouts: [
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.',
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.'
+              'Wandlerautomatiken brauchen nachgewiesene Ölwechsel alle 50.000–60.000 km, sonst droht Wandler-Ruckeln.',
+              'Auf Lagerheulen oder Verspannen des Allradantriebs bei voll eingeschlagener Lenkung achten.'
             ],
             beforeYouBuy: [
-              'Nachweise für Automatik-, DSG- oder CVT-Getriebeölwechsel alle 40.000–60.000 km prüfen.',
+              'Nachweise für Getriebeölwechsel alle 40.000–60.000 km prüfen.',
               'Im warmen Zustand von R auf D schalten und am Hang sanft anrollen — ohne Ruckeln oder Verzögerung.'
             ]
           },
@@ -32528,12 +33344,12 @@ const CAR_ROSTER = [
               'Простая электромуфта привода.'
             ],
             watchouts: [
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.',
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.'
+              'Гидротрансформаторным АКПП нужна подтверждённая замена масла каждые 50 000–60 000 км, иначе появляются рывки блокировки.',
+              'Прислушайтесь к вою подшипников или подклиниванию полного привода при полностью вывернутом руле.'
             ],
             beforeYouBuy: [
-              'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
-              'Нажать сцепление наполовину на холостых (проверка маховика) и ускориться на 4-й передаче.'
+              'Запросить чеки о замене масла в коробке каждые 40 000–60 000 км.',
+              'На прогретой машине проверить плавность переключения R–D и ровное трогание в горку без рывков.'
             ]
           }
         },
@@ -32579,10 +33395,11 @@ const CAR_ROSTER = [
             headline: 'Comfortable Upright Posture',
             strengths: [
               'Comfortable Upright Posture delivers pleasant everyday composure.',
-              'Firm Short-Bump SUV Bounce.'
+              'Balanced chassis damping keeps cruising settled and predictable on smooth roads.'
             ],
             watchouts: [
-              'Wind and tyre roar increase at 130+ km/h; large 18–19" wheels make city bumps firmer.'
+              'Wind and tyre roar increase at 130+ km/h; large 18–19" wheels make city bumps firmer.',
+              'Firm Short-Bump SUV Bounce.'
             ],
             beforeYouBuy: [
               'Take the car up to 110–120 km/h to judge real wind noise, tyre hum, and suspension smoothness.'
@@ -32592,10 +33409,11 @@ const CAR_ROSTER = [
             headline: 'Bequeme hohe Sitzposition',
             strengths: [
               'Bequeme hohe Sitzposition sorgt für ein angenehmes Fahrgefühl im Alltag.',
-              'Poltrig auf kurzen Stößen.'
+              'Auf gutem Asphalt liegt das Fahrwerk ruhig und berechenbar.'
             ],
             watchouts: [
-              'Ab 130 km/h nehmen Wind- und Abrollgeräusche zu; große Felgen machen den Stadtkomfort straffer.'
+              'Ab 130 km/h nehmen Wind- und Abrollgeräusche zu; große Felgen machen den Stadtkomfort straffer.',
+              'Poltrig auf kurzen Stößen.'
             ],
             beforeYouBuy: [
               'Bei der Probefahrt kurz 110–120 km/h fahren, um Wind-, Reifen- und Abrollgeräusche real zu prüfen.'
@@ -32605,9 +33423,12 @@ const CAR_ROSTER = [
             headline: 'Удобная высокая посадка',
             strengths: [
               'Удобная высокая посадка обеспечивает комфортную езду в повседневных поездках.',
+              'На ровном покрытии подвеска работает собранно и предсказуемо.'
+            ],
+            watchouts: [
+              'После 130 км/ч растут шумы ветра и шин, а большие диски делают ход жёстче.',
               'Жёстче на мелких неровностях.'
             ],
-            watchouts: ['После 130 км/ч растут шумы ветра и шин, а большие диски делают ход жёстче.'],
             beforeYouBuy: [
               'Прокатитесь 110–120 км/ч, чтобы оценить реальный уровень шума ветра, шин и мягкость хода.'
             ]
@@ -32617,11 +33438,12 @@ const CAR_ROSTER = [
           en: {
             headline: 'Very Simple 4-AT / 5-MT Upkeep — Affordable Japanese Parts',
             strengths: [
-              'Very Simple 4-AT / 5-MT Upkeep helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Affordable Japanese Parts.'
             ],
             watchouts: [
-              'Aging 10+ year rubber hoses, suspension bushings, and brake/tyre wear still add routine upkeep.'
+              'Aging 10+ year rubber hoses, suspension bushings, and brake/tyre wear still add routine upkeep.',
+              'Very Simple 4-AT / 5-MT Upkeep.'
             ],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
@@ -32633,7 +33455,9 @@ const CAR_ROSTER = [
               'Simpler 4-AT-/5-MT-Service hält die planbaren jährlichen Wartungskosten im Rahmen.',
               'Hohe Werkstatt-Kompetenz und breite Auswahl günstiger Marken-Ersatzteile.'
             ],
-            watchouts: ['Günstige Japan-Ersatzteile.'],
+            watchouts: [
+              'Altersbedingter Verschleiß an Fahrwerksbuchsen, Bremsen und Abgasanlage erfordert weiterhin planbare Rücklagen.'
+            ],
             beforeYouBuy: [
               'Untenstehenden Kosten-Fahrplan öffnen und fällige Meilensteine mit vorhandenen Rechnungen abgleichen.'
             ]
@@ -32644,7 +33468,9 @@ const CAR_ROSTER = [
               'Простое ТО коробки и мотора помогает держать ежегодные затраты на ТО под контролем.',
               'Машина хорошо знакома любому сервису, а качественные запчасти широко доступны.'
             ],
-            watchouts: ['Доступные запчасти Toyota.'],
+            watchouts: [
+              'Возрастной износ сайлентблоков подвески, тормозов и выхлопной системы требует плановых ежегодных трат.'
+            ],
             beforeYouBuy: ['Откройте план обслуживания ниже и сверьте предстоящие работы с имеющимися чеками.']
           }
         }
@@ -32655,11 +33481,11 @@ const CAR_ROSTER = [
             headline: 'Sturdy 6-MT + AWD Lock — 310 Nm Clutch & DMF Watch',
             strengths: [
               'Sturdy 6-MT + AWD Lock matches this powertrain well for everyday driving.',
-              '310 Nm Clutch & DMF Watch.'
+              'Crisp shift feel and well-matched ratios keep everyday driving composed and predictable.'
             ],
             watchouts: [
-              'High low-end diesel torque stresses the clutch DMF on towing rigs.',
-              'High-pressure Denso piezo injectors are costly/unrebuildable, and 400 Nm accelerates DMF wear.'
+              'Check clutch bite height and listen for dual-mass flywheel rattle at idle on high-mileage cars.',
+              'Listen for bearing whine or driveline shudder from the AWD system on tight full-lock turns.'
             ],
             beforeYouBuy: [
               'Shift quickly into 1st, 2nd, and 3rd gear cold and warm to verify crisp, crunch-free synchros.',
@@ -32670,11 +33496,11 @@ const CAR_ROSTER = [
             headline: 'Robustes 6-Gang + Allrad — Kupplung & ZMS beachten',
             strengths: [
               'Robustes 6-Gang + Allrad passt gut zur Motorcharakteristik im Alltag.',
-              'Kupplung & ZMS beachten.'
+              'Saubere Schaltführung und stimmige Übersetzung sorgen für ein ruhiges, berechenbares Fahrgefühl.'
             ],
             watchouts: [
-              'Hohes Drehmoment und Anhängerbetrieb belasten Kupplung und ZMS.',
-              'Bei höheren Laufleistungen Kupplungsspiel und Zweimassenschwungrad im Leerlauf prüfen.'
+              'Bei hoher Laufleistung Kupplungs-Greifpunkt prüfen und im Leerlauf auf ZMS-Klappern achten.',
+              'Auf Lagerheulen oder Verspannen des Allradantriebs bei voll eingeschlagener Lenkung achten.'
             ],
             beforeYouBuy: [
               'Im kalten wie warmen Zustand zügig vom 1. in den 2. und 3. Gang schalten — ohne Kratzen.',
@@ -32685,11 +33511,11 @@ const CAR_ROSTER = [
             headline: 'Прочная 6-МКПП + AWD — Контроль сцепления и маховика',
             strengths: [
               'Прочная 6-МКПП + AWD хорошо сочетается с данным двигателем в повседневной езде.',
-              'Контроль сцепления и маховика.'
+              'Чёткое переключение и удачные передаточные числа делают езду комфортной и предсказуемой.'
             ],
             watchouts: [
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.',
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.'
+              'На больших пробегах проверяйте точку схватывания сцепления и стук двухмассового маховика на холостых.',
+              'Прислушайтесь к вою подшипников или подклиниванию полного привода при полностью вывернутом руле.'
             ],
             beforeYouBuy: [
               'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
@@ -32702,10 +33528,11 @@ const CAR_ROSTER = [
             headline: 'Simpler Solenoid Controls',
             strengths: [
               'Simpler Solenoid Controls keeps electrical diagnostics straightforward.',
-              'Watch Alternator At High Km.'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.'
+              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.',
+              'Watch Alternator At High Km.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -32743,10 +33570,11 @@ const CAR_ROSTER = [
             headline: 'Comfortable Upright Posture',
             strengths: [
               'Comfortable Upright Posture delivers pleasant everyday composure.',
-              'Firm Short-Bump SUV Bounce.'
+              'Balanced chassis damping keeps cruising settled and predictable on smooth roads.'
             ],
             watchouts: [
-              'Cold diesel clatter, high motorway revs, or oversized alloy wheels raise cabin noise noticeably.'
+              'Cold diesel clatter, high motorway revs, or oversized alloy wheels raise cabin noise noticeably.',
+              'Firm Short-Bump SUV Bounce.'
             ],
             beforeYouBuy: [
               'Take the car up to 110–120 km/h to judge real wind noise, tyre hum, and suspension smoothness.'
@@ -32756,10 +33584,11 @@ const CAR_ROSTER = [
             headline: 'Bequeme hohe Sitzposition',
             strengths: [
               'Bequeme hohe Sitzposition sorgt für ein angenehmes Fahrgefühl im Alltag.',
-              'Poltrig auf kurzen Stößen.'
+              'Auf gutem Asphalt liegt das Fahrwerk ruhig und berechenbar.'
             ],
             watchouts: [
-              'Kaltes Diesel-Nageln oder große 18–19"-Felgen erhöhen den Geräuschpegel im Innenraum spürbar.'
+              'Kaltes Diesel-Nageln oder große 18–19"-Felgen erhöhen den Geräuschpegel im Innenraum spürbar.',
+              'Poltrig auf kurzen Stößen.'
             ],
             beforeYouBuy: [
               'Bei der Probefahrt kurz 110–120 km/h fahren, um Wind-, Reifen- und Abrollgeräusche real zu prüfen.'
@@ -32769,9 +33598,12 @@ const CAR_ROSTER = [
             headline: 'Удобная высокая посадка',
             strengths: [
               'Удобная высокая посадка обеспечивает комфортную езду в повседневных поездках.',
+              'На ровном покрытии подвеска работает собранно и предсказуемо.'
+            ],
+            watchouts: [
+              'Холодный дизельный рокот и крупные диски заметно усиливают шум в салоне.',
               'Жёстче на мелких неровностях.'
             ],
-            watchouts: ['Холодный дизельный рокот и крупные диски заметно усиливают шум в салоне.'],
             beforeYouBuy: [
               'Прокатитесь 110–120 км/ч, чтобы оценить реальный уровень шума ветра, шин и мягкость хода.'
             ]
@@ -32781,10 +33613,13 @@ const CAR_ROSTER = [
           en: {
             headline: 'Cheaper Solenoid Injectors — Watch Head Gasket & DMF Cost',
             strengths: [
-              'Cheaper Solenoid Injectors helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['Watch Head Gasket & DMF Cost.'],
+            watchouts: [
+              'Watch Head Gasket & DMF Cost.',
+              'Plan a reserve for higher-mileage diesel wear parts such as dual-mass flywheel, clutch, injectors, or DPF cleaning.'
+            ],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -32820,11 +33655,11 @@ const CAR_ROSTER = [
               '6-AT Spares Dual-Mass Clutch.'
             ],
             watchouts: [
-              '340 Nm torque and heavy trailers test the DMF around 160k–200k km.',
-              'Automatic, DSG, and CVT gearboxes depend on documented 40,000–60,000 km fluid and filter changes.'
+              'Torque-converter automatics need documented 50,000–60,000 km fluid changes to avoid lockup shudder.',
+              'Listen for bearing whine or driveline shudder from the AWD system on tight full-lock turns.'
             ],
             beforeYouBuy: [
-              'Demand service receipts for automatic, DSG, or CVT transmission fluid changes every 40,000–60,000 km.',
+              'Demand service receipts for transmission fluid changes every 40,000–60,000 km.',
               'Test Reverse-to-Drive engagement when warm and creep gently uphill to confirm zero jerk or slip.'
             ]
           },
@@ -32835,11 +33670,11 @@ const CAR_ROSTER = [
               '6-AT schont ZMS & Kupplung.'
             ],
             watchouts: [
-              'Zugbetrieb mit 340 Nm verschleißt Kupplung und ZMS ab ca. 160–200 Tkm.',
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.'
+              'Wandlerautomatiken brauchen nachgewiesene Ölwechsel alle 50.000–60.000 km, sonst droht Wandler-Ruckeln.',
+              'Auf Lagerheulen oder Verspannen des Allradantriebs bei voll eingeschlagener Lenkung achten.'
             ],
             beforeYouBuy: [
-              'Nachweise für Automatik-, DSG- oder CVT-Getriebeölwechsel alle 40.000–60.000 km prüfen.',
+              'Nachweise für Getriebeölwechsel alle 40.000–60.000 km prüfen.',
               'Im warmen Zustand von R auf D schalten und am Hang sanft anrollen — ohne Ruckeln oder Verzögerung.'
             ]
           },
@@ -32850,11 +33685,11 @@ const CAR_ROSTER = [
               'Автомат бережёт сцепление и маховик.'
             ],
             watchouts: [
-              'АКПП, DSG и вариаторы требуют подтверждённой замены масла каждые 40 000–60 000 км.',
-              'АКПП, DSG и вариаторы требуют подтверждённой замены масла каждые 40 000–60 000 км.'
+              'Гидротрансформаторным АКПП нужна подтверждённая замена масла каждые 50 000–60 000 км, иначе появляются рывки блокировки.',
+              'Прислушайтесь к вою подшипников или подклиниванию полного привода при полностью вывернутом руле.'
             ],
             beforeYouBuy: [
-              'Запросить чеки о замене масла в АКПП, DSG или вариаторе каждые 40 000–60 000 км.',
+              'Запросить чеки о замене масла в коробке каждые 40 000–60 000 км.',
               'На прогретой машине проверить плавность переключения R–D и ровное трогание в горку без рывков.'
             ]
           }
@@ -32864,10 +33699,11 @@ const CAR_ROSTER = [
             headline: 'Updated Euro 5 Diesel ECU',
             strengths: [
               'Updated Euro 5 Diesel ECU keeps electrical diagnostics straightforward.',
-              'Check DPF Pressure Sensors.'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.'
+              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.',
+              'Check DPF Pressure Sensors.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -32877,10 +33713,11 @@ const CAR_ROSTER = [
             headline: 'Aktualisierte Euro-5-ECU',
             strengths: [
               'Aktualisierte Euro-5-ECU sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
-              'DPF-Sensoren beachten.'
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
             ],
             watchouts: [
-              'Abgassensoren (DPF-Differenzdruck, Glühkerzen, AGR) melden sich häufiger ab 140.000 km.'
+              'Abgassensoren (DPF-Differenzdruck, Glühkerzen, AGR) melden sich häufiger ab 140.000 km.',
+              'DPF-Sensoren beachten.'
             ],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
@@ -32890,10 +33727,11 @@ const CAR_ROSTER = [
             headline: 'Обновлённый ЭБУ Euro 5',
             strengths: [
               'Обновлённый ЭБУ Euro 5 упрощает диагностику и обслуживание электрооборудования.',
-              'Датчики давления сажевого.'
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
             ],
             watchouts: [
-              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.'
+              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.',
+              'Датчики давления сажевого.'
             ],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
@@ -32905,10 +33743,11 @@ const CAR_ROSTER = [
             headline: 'Comfortable Upright Posture',
             strengths: [
               'Comfortable Upright Posture delivers pleasant everyday composure.',
-              'Firm Short-Bump SUV Bounce.'
+              'Balanced chassis damping keeps cruising settled and predictable on smooth roads.'
             ],
             watchouts: [
-              'Cold diesel clatter, high motorway revs, or oversized alloy wheels raise cabin noise noticeably.'
+              'Cold diesel clatter, high motorway revs, or oversized alloy wheels raise cabin noise noticeably.',
+              'Firm Short-Bump SUV Bounce.'
             ],
             beforeYouBuy: [
               'Take the car up to 110–120 km/h to judge real wind noise, tyre hum, and suspension smoothness.'
@@ -32918,10 +33757,11 @@ const CAR_ROSTER = [
             headline: 'Bequeme hohe Sitzposition',
             strengths: [
               'Bequeme hohe Sitzposition sorgt für ein angenehmes Fahrgefühl im Alltag.',
-              'Poltrig auf kurzen Stößen.'
+              'Auf gutem Asphalt liegt das Fahrwerk ruhig und berechenbar.'
             ],
             watchouts: [
-              'Kaltes Diesel-Nageln oder große 18–19"-Felgen erhöhen den Geräuschpegel im Innenraum spürbar.'
+              'Kaltes Diesel-Nageln oder große 18–19"-Felgen erhöhen den Geräuschpegel im Innenraum spürbar.',
+              'Poltrig auf kurzen Stößen.'
             ],
             beforeYouBuy: [
               'Bei der Probefahrt kurz 110–120 km/h fahren, um Wind-, Reifen- und Abrollgeräusche real zu prüfen.'
@@ -32931,9 +33771,12 @@ const CAR_ROSTER = [
             headline: 'Удобная высокая посадка',
             strengths: [
               'Удобная высокая посадка обеспечивает комфортную езду в повседневных поездках.',
+              'На ровном покрытии подвеска работает собранно и предсказуемо.'
+            ],
+            watchouts: [
+              'Холодный дизельный рокот и крупные диски заметно усиливают шум в салоне.',
               'Жёстче на мелких неровностях.'
             ],
-            watchouts: ['Холодный дизельный рокот и крупные диски заметно усиливают шум в салоне.'],
             beforeYouBuy: [
               'Прокатитесь 110–120 км/ч, чтобы оценить реальный уровень шума ветра, шин и мягкость хода.'
             ]
@@ -32943,10 +33786,10 @@ const CAR_ROSTER = [
           en: {
             headline: 'Revised Facelift Block — High DPF, Clutch & SUV Tyre Cost',
             strengths: [
-              'Revised Facelift Block helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['High DPF, Clutch & SUV Tyre Cost.'],
+            watchouts: ['High DPF, Clutch & SUV Tyre Cost.', 'Revised Facelift Block.'],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -32977,6 +33820,7 @@ const CAR_ROSTER = [
     engines: [
       {
         id: '2.0-valvematic',
+        buyerFitGroup: 'na-petrol-awd',
         dossierGroup: 'petrol-cvt',
         isDefault: true,
         fuelType: 'petrol',
@@ -33419,6 +34263,7 @@ const CAR_ROSTER = [
       },
       {
         id: '2.0-vvti',
+        buyerFitGroup: 'na-petrol-awd',
         dossierGroup: 'petrol-conv-auto',
         isDefault: false,
         fuelType: 'petrol',
@@ -33858,6 +34703,7 @@ const CAR_ROSTER = [
       },
       {
         id: '2.2-d4d-136',
+        buyerFitGroup: 'diesel-awd',
         dossierGroup: 'diesel-awd-mt',
         isDefault: false,
         fuelType: 'diesel',
@@ -33946,9 +34792,9 @@ const CAR_ROSTER = [
             },
             dossier: {
               en: {
-                headline: 'Simpler Non-D-CAT 2AD-FTV Diesel, Marked by Pre-2009 Head Gasket Sensitivity',
+                headline: 'Simple 136 HP 2AD-FTV Diesel, Marked by Pre-2009 Head Gasket Sensitivity',
                 strengths: [
-                  'No D-CAT DPNR Catalyst or 5th Injector: Avoids the clogged exhaust catalysts and white smoke problems of early 177 HP D-CAT models.',
+                  'Simple Exhaust System: Uses durable solenoid injectors without a complex 5th-injector catalyst.',
                   'Serviceable Solenoid Injectors: Uses durable Denso solenoid injectors rather than costly unrepairable piezo injectors.',
                   'Reaches 200,000–250,000 km when oil, cooling, and timing care stay strictly on schedule.'
                 ],
@@ -34013,9 +34859,9 @@ const CAR_ROSTER = [
                 ]
               },
               de: {
-                headline: 'Unkomplizierterer 2AD-FTV ohne D-CAT— Kopfdichtungs-Risiko vor 2009 beachten',
+                headline: 'Unkomplizierter 136-PS-2AD-FTV-Diesel — Kopfdichtungs-Risiko vor 2009 beachten',
                 strengths: [
-                  'Deutlich unempfindlicher im Abgastrakt als der frühe 177-PS-D-CAT.',
+                  'Robuste Magnetventil-Injektoren ohne empfindlichen 5.-Injektor-Abgaskatalysator.',
                   'Reparaturfreundlicher und haltbarer als die teuren Piezo-Injektoren des Topmodells.',
                   'Hält 200.000–250.000 km bei strikter Öl-, Kühlungs- und Steuerzeiten-Pflege.'
                 ],
@@ -34080,10 +34926,10 @@ const CAR_ROSTER = [
                 ]
               },
               ru: {
-                headline: 'Упрощённый дизель 2AD-FTV без D-CAT, но с риском прокладки ГБЦ до 2009 года',
+                headline: 'Простой дизель 2AD-FTV (136 л.с.), но с риском прокладки ГБЦ до 2009 года',
                 strengths: [
-                  'Отсутствуют катализатор DPNR и 5-я форсунка прожига, частые на версиях 177 л.с.',
-                  'Надёжнее и заметно дешевле в обслуживании по сравнению с пьезофорсунками D-CAT.',
+                  'Простая выпускная система без капризного катализатора DPNR и 5-й форсунки прожига.',
+                  'Надёжные электромагнитные форсунки дешевле и проще в обслуживании.',
                   'Проходит 200 000–250 000 км при строгом контроле масла, охлаждения и ГРМ.'
                 ],
                 watchouts: [
@@ -34296,6 +35142,15 @@ const CAR_ROSTER = [
       },
       {
         id: '2.2-d4d-150',
+        buyerFitGroup: 'diesel-awd',
+        buyerFitOverrides: {
+          skip: [
+            'globalDieselShortTripRisk',
+            'rav4DieselUpkeep',
+            'rav4SideTailgate',
+            'rav4HardPlastics'
+          ]
+        },
         dossierGroup: 'diesel-conv-auto',
         isDefault: false,
         fuelType: 'diesel',
@@ -34521,7 +35376,7 @@ const CAR_ROSTER = [
                 headline: 'Модернизированный дизель Евро-5 (с 2009 г.)— без ранних проблем ГБЦ',
                 strengths: [
                   'Исправлена главная слабость ранних моторов 2AD-FTV.',
-                  'Способен пройти 240 000–280 000+ км при замене масла каждые 10 000–15 000 км.',
+                  'Уверенно тянет с низов прицепы до 2 000 кг и спокойно держит 130 км/ч на автобане.',
                   'Способен пройти 240 000–280 000+ км при замене масла каждые 10 000–15 000 км.'
                 ],
                 watchouts: [
@@ -34734,6 +35589,10 @@ const CAR_ROSTER = [
       },
       {
         id: '2.2-dcat-177',
+        buyerFitGroup: 'diesel-awd',
+        buyerFitOverrides: {
+          skip: ['globalDieselShortTripRisk', 'rav4DcatRisk', 'rav4SideTailgate', 'rav4HardPlastics']
+        },
         dossierGroup: 'diesel-awd-mt',
         isDefault: false,
         fuelType: 'diesel',
@@ -35185,6 +36044,148 @@ const CAR_ROSTER = [
     drivetrain: 'FWD',
     image: 'assets/kia-sportage-2014.png',
     defaultEngineId: '1.6-gdi',
+    sharedBuyerFit: {
+      cards: {
+        sportageStyleSpace: {
+          en: 'You want sharp SUV looks with family room: Flat rear floor, generous legroom, and a 465–564 L boot fit daily family life effortlessly.',
+          de: 'Du suchst schickes SUV-Design mit Familienplatz: Flacher Boden hinten, viel Beinfreiheit und 465–564 L Kofferraum passen perfekt.',
+          ru: 'Тебе нужен стильный семейный кроссовер: Ровный пол сзади, простор в ногах и багажник 465–564 л удобны каждый день.'
+        },
+        sportageEasyValue: {
+          en: 'You want strong equipment for the money: Facelift models often come loaded with heated seats, cameras, and comfortable ride.',
+          de: 'Du willst viel Ausstattung fürs Geld: Facelift-Modelle bieten oft Sitzheizung, Kamera und spürbar ruhigeren Federungskomfort.',
+          ru: 'Ты ценишь богатое оснащение за свои деньги: Рестайлинг часто радует подогревами, камерой и мягкой подвеской.'
+        },
+        sportageSimple16Gdi: {
+          en: 'You drive mostly in the city: Simple FWD 1.6 setup avoids DPF headaches and AWD transfer-spline rust.',
+          de: 'Du fährst überwiegend in der Stadt: Der schlichte 1.6-Fronttriebler umgeht DPF-Probleme sowie rostende Allrad-Verzahnung.',
+          ru: 'Ты ездишь в основном по городу: Простой переднеприводный 1.6 избавляет от DPF и проблем со шлицами полного привода.'
+        },
+        sportageDieselTorque: {
+          en: 'You cover long highway distances: Chain-driven CRDi diesels deliver relaxed torque and up to 2,000 kg towing on 2.0 AWD trims.',
+          de: 'Du fährst weite Strecken: Die Ketten-CRDi-Diesel bieten kräftigen Durchzug und bis zu 2.000 kg Anhängelast beim 2.0 AWD.',
+          ru: 'Ты часто ездишь по трассе: Цепные дизели CRDi дают уверенную тягу и до 2 000 кг буксировки на 2.0 AWD.'
+        },
+        sportageThickPillars: {
+          en: 'You rely on glass visibility without cameras: Thick angled C-pillars create big rear blind spots when reversing.',
+          de: 'Du verlässt dich beim Parken nur auf Spiegel: Breite, schräge C-Säulen schränken die Sicht nach schräg hinten stark ein.',
+          ru: 'Ты паркуешься без камеры и датчиков: Широкие задние стойки сильно закрывают обзор назад.'
+        },
+        sportageAwdSplines: {
+          en: 'You want maintenance-free AWD: Sportage transfer-case splines can silently rust and strip if not periodically greased.',
+          de: 'Du willst einen wartungsfreien Allrad: Die Allrad-Verzahnung am Verteilergetriebe rostet ohne Fettung oft unbemerkt weg.',
+          ru: 'Ты не хочешь обслуживать полный привод: Шлицы раздатки Sportage ржавеют и срезаются без профилактической смазки.'
+        },
+        sportage20CvvtRisk: {
+          en: 'You want zero engine-knock worries: Pre-2014 2.0 CVVT blocks carry known cylinder-wall scoring and piston-knock risks.',
+          de: 'Du willst kein Kolbenkipper-Risiko: Frühe 2.0-CVVT-Motoren (vor 2014) neigen zu Zylinderwand-Riefen und Kaltstart-Klopfen.',
+          ru: 'Ты не хочешь рисковать задирами: Ранние 2.0 CVVT (до 2014 г.) известны риском задиров цилиндров.'
+        },
+        sportageModest16Pace: {
+          en: 'You want brisk motorway overtaking: Modest 165 Nm non-turbo torque feels sluggish when loaded or climbing steep grades.',
+          de: 'Du willst zügige Autobahn-Überholmanöver: Ohne Turbo wirken 165 Nm beladen oder am Berg spürbar zäh.',
+          ru: 'Ты любишь быстрые обгоны на трассе: Скромных 165 Н·м без турбины не хватает при полной загрузке и на подъёмах.'
+        },
+        sportageHardPlastics: {
+          en: 'You want plush luxury soft-touch plastics: Lower door trims and base dashboards use durable hard plastics.',
+          de: 'Du erwartest edlen Soft-Touch-Luxus: Untere Türverkleidungen und Basis-Armaturen bestehen aus robustem Hartplastik.',
+          ru: 'Тебе нужен мягкий дорогой салон: Низ дверей и базовые панели выполнены из твёрдого практичного пластика.'
+        },
+        sportage17CrdiEconomy: {
+          en: 'You want frugal SUV commuting without AWD risk: The 115 HP / 260 Nm FWD diesel returns ~5.8 L/100km with zero transfer-spline wear.',
+          de: 'Du willst sparsam SUV fahren ohne Allrad-Risiko: Der 115-PS-/260-Nm-Fronttriebler braucht ~5,8 L/100km ohne Verzahnungsverschleiß.',
+          ru: 'Ты хочешь экономичный кроссовер без риска полного привода: Передний привод (115 л.с., 260 Н·м) тратит ~5,8 л/100 км без проблем со шлицами.'
+        },
+        sportage17ClutchSealWatch: {
+          en: 'You want brisk highway passing or heavy towing: Modest 115 HP FWD pace suits calm cruising, and 2010–2013 cars need a gearbox input-seal check.',
+          de: 'Du willst flinke Überholmanöver oder schwere Anhänger: 115 PS sind eher gemütlich; bei Baujahren 2010–2013 Getriebe-Simmerring prüfen.',
+          ru: 'Ты любишь быстрые обгоны или тяжёлые прицепы: 115 л.с. на переднем приводе едут спокойно, а на авто 2010–2013 гг. проверьте сальник КПП.'
+        },
+        sportage20PetrolThirst: {
+          en: 'You want low fuel bills with effortless low-rev pull: Expect 8.5–9.5 L/100km real consumption and higher revs on steep motorway climbs.',
+          de: 'Du erwartest niedrigen Verbrauch und mühelosen Durchzug: Rechne mit 8,5–9,5 L/100km und mehr Drehzahl an Autobahnsteigungen.',
+          ru: 'Ты ждёшь низкого расхода и лёгкой тяги с низов: Реальный расход составляет 8,5–9,5 л/100 км, а на подъёмах мотор нужно крутить.'
+        },
+        sportageWinterAwd: {
+          en: 'You want confident winter traction: On-demand AWD and 172 mm ground clearance handle snow, slush, and rough tracks with ease.',
+          de: 'Du willst sichere Winter-Traktion: Zuschaltbarer Allrad und 172 mm Bodenfreiheit meistern Schnee und Feldwege souverän.',
+          ru: 'Тебе нужна уверенная тяга зимой: Полный привод и клиренс 172 мм легко справляются со снегом и просёлком.'
+        }
+      }
+    },
+    buyerFitGroups: {
+      'na-petrol-fwd': {
+        summary: {
+          en: 'A practical, stylish city crossover — ideal for urban families if you accept relaxed non-turbo acceleration.',
+          de: 'Ein schicker, praktischer Stadt-Crossover — ideal für Familien im Alltag, wenn dir gelassene Fahrleistungen reichen.',
+          ru: 'Стильный и практичный городской кроссовер — идеален для семьи, если не нужна высокая динамика.'
+        },
+        ideal: [
+          'sportageStyleSpace',
+          'sportageEasyValue',
+          'sportageSimple16Gdi',
+          'globalPetrolCityZones'
+        ],
+        skip: [
+          'sportageModest16Pace',
+          'sportageThickPillars',
+          'sportageHardPlastics',
+          'sportageAwdSplines'
+        ]
+      },
+      'na-petrol-awd': {
+        summary: {
+          en: 'A roomy family SUV with AWD grip — choose the 2014+ 2.0 GDI over the earlier 2.0 CVVT and inspect the AWD splines.',
+          de: 'Ein geräumiges Familien-SUV mit Allrad — greife zum 2014+ 2.0 GDI statt dem älteren 2.0 CVVT und prüfe den Allrad.',
+          ru: 'Просторный семейный SUV с полным приводом — лучше выбрать рестайлинговый 2.0 GDI и проверить шлицы раздатки.'
+        },
+        ideal: [
+          'sportageStyleSpace',
+          'sportageEasyValue',
+          'globalSimpleNoTurbo',
+          'globalPetrolCityZones'
+        ],
+        skip: [
+          'sportageAwdSplines',
+          'sportageThickPillars',
+          'sportageHardPlastics',
+          'sportage20CvvtRisk'
+        ]
+      },
+      'diesel-fwd': {
+        summary: {
+          en: 'The fuel-saving sweet spot of the Sportage range — low running costs without AWD spline wear, best suited to regular commutes.',
+          de: 'Der Sparmeister der Baureihe — niedriger Verbrauch ohne Allrad-Verschleiß, ideal für regelmäßige Überlandfahrten.',
+          ru: 'Самая экономичная версия Sportage — скромный расход без риска по шлицам полного привода для трассы и пригорода.'
+        },
+        ideal: [
+          'sportageStyleSpace',
+          'sportageEasyValue',
+          'sportage17CrdiEconomy',
+          'globalDieselLongRange'
+        ],
+        skip: [
+          'globalDieselShortTripRisk',
+          'sportageThickPillars',
+          'sportage17ClutchSealWatch',
+          'sportageHardPlastics'
+        ]
+      },
+      'diesel-awd': {
+        summary: {
+          en: 'A capable, tough-engined AWD cruiser — just verify active AWD drive and periodic transfer-spline greasing.',
+          de: 'Ein kräftiges, solides Allrad-SUV — ideal auf Langstrecke, sofern der Allradantrieb aktiv prüfbar funktioniert.',
+          ru: 'Тяговитый полноприводный кроссовер с крепким мотором — проверьте работу полного привода и смазку шлицов.'
+        },
+        ideal: ['sportageStyleSpace', 'sportageEasyValue', 'sportageDieselTorque', 'sportageWinterAwd'],
+        skip: [
+          'globalDieselShortTripRisk',
+          'sportageAwdSplines',
+          'sportageThickPillars',
+          'sportageHardPlastics'
+        ]
+      }
+    },
     sharedDossiers: {
       buildQualityRust: {
         en: {
@@ -35583,8 +36584,8 @@ const CAR_ROSTER = [
               'No AWD Spline Maintenance.'
             ],
             watchouts: [
-              'Listen for bearing whine in neutral or shudder on tight turns on AWD models.',
-              'Check clutch bite height and dual-mass flywheel noise at idle on high-mileage manuals.'
+              'Check clutch bite height and listen for dual-mass flywheel rattle at idle on high-mileage cars.',
+              'Cold shifts into 2nd and 3rd should stay crunch-free; grinding points to worn synchros.'
             ],
             beforeYouBuy: [
               'Shift quickly into 1st, 2nd, and 3rd gear cold and warm to verify crisp, crunch-free synchros.',
@@ -35595,11 +36596,11 @@ const CAR_ROSTER = [
             headline: 'Präzises 6-Gang-Schaltgetriebe — Kein Allrad-Verschleiß',
             strengths: [
               'Präzises 6-Gang-Schaltgetriebe passt gut zur Motorcharakteristik im Alltag.',
-              'Kein Allrad-Verschleiß.'
+              'Saubere Schaltführung und stimmige Übersetzung sorgen für ein ruhiges, berechenbares Fahrgefühl.'
             ],
             watchouts: [
-              'Bei höheren Laufleistungen Kupplungsspiel und Zweimassenschwungrad im Leerlauf prüfen.',
-              'Im Leerlauf auf Getriebelager-Geräusche und bei Allrad-Modellen auf Kurven-Verspannung achten.'
+              'Bei hoher Laufleistung Kupplungs-Greifpunkt prüfen und im Leerlauf auf ZMS-Klappern achten.',
+              'Kalte Schaltvorgänge in den 2. und 3. Gang müssen kratzfrei sein — Kratzen deutet auf verschlissene Synchronringe.'
             ],
             beforeYouBuy: [
               'Im kalten wie warmen Zustand zügig vom 1. in den 2. und 3. Gang schalten — ohne Kratzen.',
@@ -35613,8 +36614,8 @@ const CAR_ROSTER = [
               'Нет затрат на узел полного привода.'
             ],
             watchouts: [
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.',
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.'
+              'На больших пробегах проверяйте точку схватывания сцепления и стук двухмассового маховика на холостых.',
+              'Переключения на 2-ю и 3-ю на холодную должны идти без хруста — хруст говорит об износе синхронизаторов.'
             ],
             beforeYouBuy: [
               'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
@@ -35627,10 +36628,11 @@ const CAR_ROSTER = [
             headline: 'Simple Facelift Electrics',
             strengths: [
               'Simple Facelift Electrics keeps electrical diagnostics straightforward.',
-              'Check Steering Column Click.'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.'
+              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.',
+              'Check Steering Column Click.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -35651,9 +36653,12 @@ const CAR_ROSTER = [
             headline: 'Простая электрика рестайлинга',
             strengths: [
               'Простая электрика рестайлинга упрощает диагностику и обслуживание электрооборудования.',
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
+            ],
+            watchouts: [
+              'Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.',
               'Проверить муфту руля ЭУР.'
             ],
-            watchouts: ['Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.'],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
             ]
@@ -35664,10 +36669,11 @@ const CAR_ROSTER = [
             headline: 'Firm Euro SUV Tuning',
             strengths: [
               'Firm Euro SUV Tuning delivers pleasant everyday composure.',
-              'Wind Noise Over 130 km/h.'
+              'Balanced chassis damping keeps cruising settled and predictable on smooth roads.'
             ],
             watchouts: [
-              'Wind and tyre roar increase at 130+ km/h; large 18–19" wheels make city bumps firmer.'
+              'Wind and tyre roar increase at 130+ km/h; large 18–19" wheels make city bumps firmer.',
+              'Wind Noise Over 130 km/h.'
             ],
             beforeYouBuy: [
               'Take the car up to 110–120 km/h to judge real wind noise, tyre hum, and suspension smoothness.'
@@ -35677,10 +36683,11 @@ const CAR_ROSTER = [
             headline: 'Straffes SUV-Fahrwerk',
             strengths: [
               'Straffes SUV-Fahrwerk sorgt für ein angenehmes Fahrgefühl im Alltag.',
-              'Windgeräusche ab 130 km/h.'
+              'Auf gutem Asphalt liegt das Fahrwerk ruhig und berechenbar.'
             ],
             watchouts: [
-              'Ab 130 km/h nehmen Wind- und Abrollgeräusche zu; große Felgen machen den Stadtkomfort straffer.'
+              'Ab 130 km/h nehmen Wind- und Abrollgeräusche zu; große Felgen machen den Stadtkomfort straffer.',
+              'Windgeräusche ab 130 km/h.'
             ],
             beforeYouBuy: [
               'Bei der Probefahrt kurz 110–120 km/h fahren, um Wind-, Reifen- und Abrollgeräusche real zu prüfen.'
@@ -35690,9 +36697,12 @@ const CAR_ROSTER = [
             headline: 'Упругая евро-подвеска',
             strengths: [
               'Упругая евро-подвеска обеспечивает комфортную езду в повседневных поездках.',
+              'На ровном покрытии подвеска работает собранно и предсказуемо.'
+            ],
+            watchouts: [
+              'После 130 км/ч растут шумы ветра и шин, а большие диски делают ход жёстче.',
               'Шум ветра выше 130 км/ч.'
             ],
-            watchouts: ['После 130 км/ч растут шумы ветра и шин, а большие диски делают ход жёстче.'],
             beforeYouBuy: [
               'Прокатитесь 110–120 км/ч, чтобы оценить реальный уровень шума ветра, шин и мягкость хода.'
             ]
@@ -35702,11 +36712,12 @@ const CAR_ROSTER = [
           en: {
             headline: 'No Turbo / DPF / AWD Parts — Cheap Routine Filters & Pads',
             strengths: [
-              'No Turbo / DPF / AWD Parts helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Cheap Routine Filters & Pads.'
             ],
             watchouts: [
-              'Aging 10+ year rubber hoses, suspension bushings, and brake/tyre wear still add routine upkeep.'
+              'Aging 10+ year rubber hoses, suspension bushings, and brake/tyre wear still add routine upkeep.',
+              'No Turbo / DPF / AWD Parts.'
             ],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
@@ -35718,7 +36729,9 @@ const CAR_ROSTER = [
               'Kein Turbo / DPF / Allrad hält die planbaren jährlichen Wartungskosten im Rahmen.',
               'Hohe Werkstatt-Kompetenz und breite Auswahl günstiger Marken-Ersatzteile.'
             ],
-            watchouts: ['Günstige Bremsen & Inspektion.'],
+            watchouts: [
+              'Altersbedingter Verschleiß an Fahrwerksbuchsen, Bremsen und Abgasanlage erfordert weiterhin planbare Rücklagen.'
+            ],
             beforeYouBuy: [
               'Untenstehenden Kosten-Fahrplan öffnen und fällige Meilensteine mit vorhandenen Rechnungen abgleichen.'
             ]
@@ -35729,7 +36742,9 @@ const CAR_ROSTER = [
               'Без трат на турбину, DPF и AWD помогает держать ежегодные затраты на ТО под контролем.',
               'Машина хорошо знакома любому сервису, а качественные запчасти широко доступны.'
             ],
-            watchouts: ['Недорогие фильтры и колодки.'],
+            watchouts: [
+              'Возрастной износ сайлентблоков подвески, тормозов и выхлопной системы требует плановых ежегодных трат.'
+            ],
             beforeYouBuy: ['Откройте план обслуживания ниже и сверьте предстоящие работы с имеющимися чеками.']
           }
         }
@@ -35743,11 +36758,11 @@ const CAR_ROSTER = [
               'Classic port fuel injection keeps intake valves clean and pairs smoothly with 5-speed manual or tough 6-speed torque-converter auto.'
             ],
             watchouts: [
-              'Grease AWD Splines Periodically.',
-              'Automatic, DSG, and CVT gearboxes depend on documented 40,000–60,000 km fluid and filter changes.'
+              'Torque-converter automatics need documented 50,000–60,000 km fluid changes to avoid lockup shudder.',
+              'Harsh or delayed 2–3 upshifts when warm signal worn valve-body or solenoid parts.'
             ],
             beforeYouBuy: [
-              'Demand service receipts for automatic, DSG, or CVT transmission fluid changes every 40,000–60,000 km.',
+              'Demand service receipts for transmission fluid changes every 40,000–60,000 km.',
               'Test Reverse-to-Drive engagement when warm and creep gently uphill to confirm zero jerk or slip.'
             ]
           },
@@ -35758,12 +36773,12 @@ const CAR_ROSTER = [
               'Verzahnung am Verteilergetriebe sollte alle paar Jahre gefettet werden, sonst frisst Rost sie rund.'
             ],
             watchouts: [
-              'Allrad-Steckwelle regelmäßig fetten.',
-              'Bei höheren Laufleistungen Kupplungsspiel und Zweimassenschwungrad im Leerlauf prüfen.'
+              'Wandlerautomatiken brauchen nachgewiesene Ölwechsel alle 50.000–60.000 km, sonst droht Wandler-Ruckeln.',
+              'Harte oder verzögerte 2–3-Schaltungen im warmen Zustand deuten auf verschlissenen Ventilkörper oder Magnetventile.'
             ],
             beforeYouBuy: [
-              'Im kalten wie warmen Zustand zügig vom 1. in den 2. und 3. Gang schalten — ohne Kratzen.',
-              'Kupplung im Leerlauf halb treten (ZMS-Test) und im 4. Gang stark beschleunigen (Rutschtest).'
+              'Nachweise für Getriebeölwechsel alle 40.000–60.000 km prüfen.',
+              'Im warmen Zustand von R auf D schalten und am Hang sanft anrollen — ohne Ruckeln oder Verzögerung.'
             ]
           },
           ru: {
@@ -35773,12 +36788,12 @@ const CAR_ROSTER = [
               'Заметно увереннее тянет прицеп и груз, чем младший мотор 1.6.'
             ],
             watchouts: [
-              'Смазка шлицов 4WD обязательна.',
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.'
+              'Гидротрансформаторным АКПП нужна подтверждённая замена масла каждые 50 000–60 000 км, иначе появляются рывки блокировки.',
+              'Жёсткие или запоздалые переключения 2–3 на горячую указывают на износ гидроблока или соленоидов.'
             ],
             beforeYouBuy: [
-              'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
-              'Нажать сцепление наполовину на холостых (проверка маховика) и ускориться на 4-й передаче.'
+              'Запросить чеки о замене масла в коробке каждые 40 000–60 000 км.',
+              'На прогретой машине проверить плавность переключения R–D и ровное трогание в горку без рывков.'
             ]
           }
         },
@@ -35787,10 +36802,11 @@ const CAR_ROSTER = [
             headline: 'Simple Facelift Electrics',
             strengths: [
               'Simple Facelift Electrics keeps electrical diagnostics straightforward.',
-              'Check Steering Column Click.'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.'
+              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.',
+              'Check Steering Column Click.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -35811,9 +36827,12 @@ const CAR_ROSTER = [
             headline: 'Простая электрика рестайлинга',
             strengths: [
               'Простая электрика рестайлинга упрощает диагностику и обслуживание электрооборудования.',
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
+            ],
+            watchouts: [
+              'Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.',
               'Проверить муфту руля ЭУР.'
             ],
-            watchouts: ['Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.'],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
             ]
@@ -35824,10 +36843,11 @@ const CAR_ROSTER = [
             headline: 'Firm Euro SUV Tuning',
             strengths: [
               'Firm Euro SUV Tuning delivers pleasant everyday composure.',
-              'Wind Noise Over 130 km/h.'
+              'Balanced chassis damping keeps cruising settled and predictable on smooth roads.'
             ],
             watchouts: [
-              'Wind and tyre roar increase at 130+ km/h; large 18–19" wheels make city bumps firmer.'
+              'Wind and tyre roar increase at 130+ km/h; large 18–19" wheels make city bumps firmer.',
+              'Wind Noise Over 130 km/h.'
             ],
             beforeYouBuy: [
               'Take the car up to 110–120 km/h to judge real wind noise, tyre hum, and suspension smoothness.'
@@ -35837,10 +36857,11 @@ const CAR_ROSTER = [
             headline: 'Straffes SUV-Fahrwerk',
             strengths: [
               'Straffes SUV-Fahrwerk sorgt für ein angenehmes Fahrgefühl im Alltag.',
-              'Windgeräusche ab 130 km/h.'
+              'Auf gutem Asphalt liegt das Fahrwerk ruhig und berechenbar.'
             ],
             watchouts: [
-              'Ab 130 km/h nehmen Wind- und Abrollgeräusche zu; große Felgen machen den Stadtkomfort straffer.'
+              'Ab 130 km/h nehmen Wind- und Abrollgeräusche zu; große Felgen machen den Stadtkomfort straffer.',
+              'Windgeräusche ab 130 km/h.'
             ],
             beforeYouBuy: [
               'Bei der Probefahrt kurz 110–120 km/h fahren, um Wind-, Reifen- und Abrollgeräusche real zu prüfen.'
@@ -35850,9 +36871,12 @@ const CAR_ROSTER = [
             headline: 'Упругая евро-подвеска',
             strengths: [
               'Упругая евро-подвеска обеспечивает комфортную езду в повседневных поездках.',
+              'На ровном покрытии подвеска работает собранно и предсказуемо.'
+            ],
+            watchouts: [
+              'После 130 км/ч растут шумы ветра и шин, а большие диски делают ход жёстче.',
               'Шум ветра выше 130 км/ч.'
             ],
-            watchouts: ['После 130 км/ч растут шумы ветра и шин, а большие диски делают ход жёстче.'],
             beforeYouBuy: [
               'Прокатитесь 110–120 км/ч, чтобы оценить реальный уровень шума ветра, шин и мягкость хода.'
             ]
@@ -35862,10 +36886,10 @@ const CAR_ROSTER = [
           en: {
             headline: 'AWD Spline & Auto Fluids — Keep Oil Changes Under 10k km',
             strengths: [
-              'AWD Spline & Auto Fluids helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['Keep Oil Changes Under 10k km.'],
+            watchouts: ['Keep Oil Changes Under 10k km.', 'AWD Spline & Auto Fluids.'],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -35897,12 +36921,12 @@ const CAR_ROSTER = [
           en: {
             headline: '6-MT FWD • Check Input Seal — No AWD Spline Risk',
             strengths: [
-              '6-MT FWD • Check Input Seal matches this powertrain well for everyday driving.',
+              'Crisp shift feel and well-matched ratios keep everyday driving composed and predictable.',
               'Some 2010–2013 cars developed a weeping gearbox shaft seal that oiled the clutch around 120k–160k km.'
             ],
             watchouts: [
-              'No AWD Spline Risk.',
-              'Check clutch bite height and dual-mass flywheel noise at idle on high-mileage manuals.'
+              '6-MT FWD • Check Input Seal matches this powertrain well for everyday driving.',
+              'Check clutch bite height and listen for dual-mass flywheel rattle at idle on high-mileage cars.'
             ],
             beforeYouBuy: [
               'Shift quickly into 1st, 2nd, and 3rd gear cold and warm to verify crisp, crunch-free synchros.',
@@ -35912,12 +36936,12 @@ const CAR_ROSTER = [
           de: {
             headline: '6-Gang FWD • Simmerring prüfen — Kein Allrad-Risiko',
             strengths: [
-              '6-Gang FWD • Simmerring prüfen passt gut zur Motorcharakteristik im Alltag.',
+              'Saubere Schaltführung und stimmige Übersetzung sorgen für ein ruhiges, berechenbares Fahrgefühl.',
               'Kann Öl auf die Kupplung tropfen lassen und ab 120–160 Tkm Rutschen auslösen.'
             ],
             watchouts: [
-              'Kein Allrad-Risiko.',
-              'Bei höheren Laufleistungen Kupplungsspiel und Zweimassenschwungrad im Leerlauf prüfen.'
+              '6-Gang FWD • Simmerring prüfen passt gut zur Motorcharakteristik im Alltag.',
+              'Bei hoher Laufleistung Kupplungs-Greifpunkt prüfen und im Leerlauf auf ZMS-Klappern achten.'
             ],
             beforeYouBuy: [
               'Im kalten wie warmen Zustand zügig vom 1. in den 2. und 3. Gang schalten — ohne Kratzen.',
@@ -35927,12 +36951,12 @@ const CAR_ROSTER = [
           ru: {
             headline: '6-МКПП FWD • Проверить сальник — Нет узла полного привода',
             strengths: [
-              '6-МКПП FWD • Проверить сальник хорошо сочетается с данным двигателем в повседневной езде.',
+              'Чёткое переключение и удачные передаточные числа делают езду комфортной и предсказуемой.',
               'Нет раздатки, кардана и затрат на обслуживание шлицов 4WD.'
             ],
             watchouts: [
-              'Нет узла полного привода.',
-              'Может подтекать маслом прямо на диск сцепления ближе к 120–160 тыс. км.'
+              '6-МКПП FWD • Проверить сальник хорошо сочетается с данным двигателем в повседневной езде.',
+              'На больших пробегах проверяйте точку схватывания сцепления и стук двухмассового маховика на холостых.'
             ],
             beforeYouBuy: [
               'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
@@ -35945,10 +36969,11 @@ const CAR_ROSTER = [
             headline: 'Simple Facelift Electrics',
             strengths: [
               'Simple Facelift Electrics keeps electrical diagnostics straightforward.',
-              'Check Steering Column Click.'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.'
+              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.',
+              'Check Steering Column Click.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -35971,10 +36996,11 @@ const CAR_ROSTER = [
             headline: 'Простая электрика рестайлинга',
             strengths: [
               'Простая электрика рестайлинга упрощает диагностику и обслуживание электрооборудования.',
-              'Проверить муфту руля ЭУР.'
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
             ],
             watchouts: [
-              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.'
+              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.',
+              'Проверить муфту руля ЭУР.'
             ],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
@@ -35986,10 +37012,11 @@ const CAR_ROSTER = [
             headline: 'Firm Euro SUV Tuning',
             strengths: [
               'Firm Euro SUV Tuning delivers pleasant everyday composure.',
-              'Wind Noise Over 130 km/h.'
+              'Balanced chassis damping keeps cruising settled and predictable on smooth roads.'
             ],
             watchouts: [
-              'Cold diesel clatter, high motorway revs, or oversized alloy wheels raise cabin noise noticeably.'
+              'Cold diesel clatter, high motorway revs, or oversized alloy wheels raise cabin noise noticeably.',
+              'Wind Noise Over 130 km/h.'
             ],
             beforeYouBuy: [
               'Take the car up to 110–120 km/h to judge real wind noise, tyre hum, and suspension smoothness.'
@@ -35999,10 +37026,11 @@ const CAR_ROSTER = [
             headline: 'Straffes SUV-Fahrwerk',
             strengths: [
               'Straffes SUV-Fahrwerk sorgt für ein angenehmes Fahrgefühl im Alltag.',
-              'Windgeräusche ab 130 km/h.'
+              'Auf gutem Asphalt liegt das Fahrwerk ruhig und berechenbar.'
             ],
             watchouts: [
-              'Kaltes Diesel-Nageln oder große 18–19"-Felgen erhöhen den Geräuschpegel im Innenraum spürbar.'
+              'Kaltes Diesel-Nageln oder große 18–19"-Felgen erhöhen den Geräuschpegel im Innenraum spürbar.',
+              'Windgeräusche ab 130 km/h.'
             ],
             beforeYouBuy: [
               'Bei der Probefahrt kurz 110–120 km/h fahren, um Wind-, Reifen- und Abrollgeräusche real zu prüfen.'
@@ -36012,9 +37040,12 @@ const CAR_ROSTER = [
             headline: 'Упругая евро-подвеска',
             strengths: [
               'Упругая евро-подвеска обеспечивает комфортную езду в повседневных поездках.',
+              'На ровном покрытии подвеска работает собранно и предсказуемо.'
+            ],
+            watchouts: [
+              'Холодный дизельный рокот и крупные диски заметно усиливают шум в салоне.',
               'Шум ветра выше 130 км/ч.'
             ],
-            watchouts: ['Холодный дизельный рокот и крупные диски заметно усиливают шум в салоне.'],
             beforeYouBuy: [
               'Прокатитесь 110–120 км/ч, чтобы оценить реальный уровень шума ветра, шин и мягкость хода.'
             ]
@@ -36024,10 +37055,10 @@ const CAR_ROSTER = [
           en: {
             headline: 'Lowest Fuel & Tyre Costs — Clutch Seal & Tank Mesh Care',
             strengths: [
-              'Lowest Fuel & Tyre Costs helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['Clutch Seal & Tank Mesh Care.'],
+            watchouts: ['Clutch Seal & Tank Mesh Care.', 'Lowest Fuel & Tyre Costs.'],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -36063,11 +37094,11 @@ const CAR_ROSTER = [
               'Must Grease AWD Transfer Splines.'
             ],
             watchouts: [
-              'Automatic, DSG, and CVT gearboxes depend on documented 40,000–60,000 km fluid and filter changes.',
-              'Listen for bearing whine in neutral or shudder on tight turns on AWD models.'
+              'Torque-converter automatics need documented 50,000–60,000 km fluid changes to avoid lockup shudder.',
+              'Harsh or delayed 2–3 upshifts when warm signal worn valve-body or solenoid parts.'
             ],
             beforeYouBuy: [
-              'Demand service receipts for automatic, DSG, or CVT transmission fluid changes every 40,000–60,000 km.',
+              'Demand service receipts for transmission fluid changes every 40,000–60,000 km.',
               'Test Reverse-to-Drive engagement when warm and creep gently uphill to confirm zero jerk or slip.'
             ]
           },
@@ -36078,11 +37109,11 @@ const CAR_ROSTER = [
               'Allrad-Welle regelmäßig fetten.'
             ],
             watchouts: [
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.',
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.'
+              'Wandlerautomatiken brauchen nachgewiesene Ölwechsel alle 50.000–60.000 km, sonst droht Wandler-Ruckeln.',
+              'Harte oder verzögerte 2–3-Schaltungen im warmen Zustand deuten auf verschlissenen Ventilkörper oder Magnetventile.'
             ],
             beforeYouBuy: [
-              'Nachweise für Automatik-, DSG- oder CVT-Getriebeölwechsel alle 40.000–60.000 km prüfen.',
+              'Nachweise für Getriebeölwechsel alle 40.000–60.000 km prüfen.',
               'Im warmen Zustand von R auf D schalten und am Hang sanft anrollen — ohne Ruckeln oder Verzögerung.'
             ]
           },
@@ -36093,12 +37124,12 @@ const CAR_ROSTER = [
               'Смазка шлицов 4WD обязательна.'
             ],
             watchouts: [
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.',
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.'
+              'Гидротрансформаторным АКПП нужна подтверждённая замена масла каждые 50 000–60 000 км, иначе появляются рывки блокировки.',
+              'Жёсткие или запоздалые переключения 2–3 на горячую указывают на износ гидроблока или соленоидов.'
             ],
             beforeYouBuy: [
-              'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
-              'Нажать сцепление наполовину на холостых (проверка маховика) и ускориться на 4-й передаче.'
+              'Запросить чеки о замене масла в коробке каждые 40 000–60 000 км.',
+              'На прогретой машине проверить плавность переключения R–D и ровное трогание в горку без рывков.'
             ]
           }
         },
@@ -36107,10 +37138,11 @@ const CAR_ROSTER = [
             headline: 'Simple Facelift Electrics',
             strengths: [
               'Simple Facelift Electrics keeps electrical diagnostics straightforward.',
-              'Check Steering Column Click.'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.'
+              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.',
+              'Check Steering Column Click.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -36133,10 +37165,11 @@ const CAR_ROSTER = [
             headline: 'Простая электрика рестайлинга',
             strengths: [
               'Простая электрика рестайлинга упрощает диагностику и обслуживание электрооборудования.',
-              'Проверить муфту руля ЭУР.'
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
             ],
             watchouts: [
-              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.'
+              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.',
+              'Проверить муфту руля ЭУР.'
             ],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
@@ -36148,10 +37181,11 @@ const CAR_ROSTER = [
             headline: 'Firm Euro SUV Tuning',
             strengths: [
               'Firm Euro SUV Tuning delivers pleasant everyday composure.',
-              'Wind Noise Over 130 km/h.'
+              'Balanced chassis damping keeps cruising settled and predictable on smooth roads.'
             ],
             watchouts: [
-              'Cold diesel clatter, high motorway revs, or oversized alloy wheels raise cabin noise noticeably.'
+              'Cold diesel clatter, high motorway revs, or oversized alloy wheels raise cabin noise noticeably.',
+              'Wind Noise Over 130 km/h.'
             ],
             beforeYouBuy: [
               'Take the car up to 110–120 km/h to judge real wind noise, tyre hum, and suspension smoothness.'
@@ -36161,10 +37195,11 @@ const CAR_ROSTER = [
             headline: 'Straffes SUV-Fahrwerk',
             strengths: [
               'Straffes SUV-Fahrwerk sorgt für ein angenehmes Fahrgefühl im Alltag.',
-              'Windgeräusche ab 130 km/h.'
+              'Auf gutem Asphalt liegt das Fahrwerk ruhig und berechenbar.'
             ],
             watchouts: [
-              'Kaltes Diesel-Nageln oder große 18–19"-Felgen erhöhen den Geräuschpegel im Innenraum spürbar.'
+              'Kaltes Diesel-Nageln oder große 18–19"-Felgen erhöhen den Geräuschpegel im Innenraum spürbar.',
+              'Windgeräusche ab 130 km/h.'
             ],
             beforeYouBuy: [
               'Bei der Probefahrt kurz 110–120 km/h fahren, um Wind-, Reifen- und Abrollgeräusche real zu prüfen.'
@@ -36174,9 +37209,12 @@ const CAR_ROSTER = [
             headline: 'Упругая евро-подвеска',
             strengths: [
               'Упругая евро-подвеска обеспечивает комфортную езду в повседневных поездках.',
+              'На ровном покрытии подвеска работает собранно и предсказуемо.'
+            ],
+            watchouts: [
+              'Холодный дизельный рокот и крупные диски заметно усиливают шум в салоне.',
               'Шум ветра выше 130 км/ч.'
             ],
-            watchouts: ['Холодный дизельный рокот и крупные диски заметно усиливают шум в салоне.'],
             beforeYouBuy: [
               'Прокатитесь 110–120 км/ч, чтобы оценить реальный уровень шума ветра, шин и мягкость хода.'
             ]
@@ -36186,10 +37224,13 @@ const CAR_ROSTER = [
           en: {
             headline: 'Tough Chain Motor — AWD Splines, Pulley & DPF Care',
             strengths: [
-              'Tough Chain Motor helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['AWD Splines, Pulley & DPF Care.'],
+            watchouts: [
+              'AWD Splines, Pulley & DPF Care.',
+              'Plan a reserve for higher-mileage diesel wear parts such as dual-mass flywheel, clutch, injectors, or DPF cleaning.'
+            ],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -36220,6 +37261,7 @@ const CAR_ROSTER = [
     engines: [
       {
         id: '1.6-gdi',
+        buyerFitGroup: 'na-petrol-fwd',
         dossierGroup: 'petrol-6mt',
         isDefault: true,
         fuelType: 'petrol',
@@ -36662,6 +37704,7 @@ const CAR_ROSTER = [
       },
       {
         id: '2.0-cvvt',
+        buyerFitGroup: 'na-petrol-awd',
         dossierGroup: 'petrol-conv-auto',
         isDefault: false,
         fuelType: 'petrol',
@@ -37110,6 +38153,15 @@ const CAR_ROSTER = [
       },
       {
         id: '2.0-gdi',
+        buyerFitGroup: 'na-petrol-awd',
+        buyerFitOverrides: {
+          skip: [
+            'sportageAwdSplines',
+            'sportageThickPillars',
+            'sportageHardPlastics',
+            'sportage20PetrolThirst'
+          ]
+        },
         dossierGroup: 'petrol-conv-auto',
         isDefault: false,
         fuelType: 'petrol',
@@ -37546,6 +38598,7 @@ const CAR_ROSTER = [
       },
       {
         id: '1.7-crdi',
+        buyerFitGroup: 'diesel-fwd',
         dossierGroup: 'diesel-6mt',
         isDefault: false,
         fuelType: 'diesel',
@@ -37984,6 +39037,7 @@ const CAR_ROSTER = [
       },
       {
         id: '2.0-crdi-136',
+        buyerFitGroup: 'diesel-awd',
         dossierGroup: 'diesel-conv-auto',
         isDefault: false,
         fuelType: 'diesel',
@@ -38305,9 +39359,9 @@ const CAR_ROSTER = [
                   'Меняйте масло чаще 15 000 км и регулярно выезжайте на трассу для защиты DPF и турбины.'
                 ],
                 beforeYouBuy: [
+                  'Проверьте полный привод на мокрой траве или гравии (или осмотрите снизу): ржавые шлицы могут незаметно превратить машину в переднеприводную.',
                   'На заведённом моторе посмотрите на нижний шкив приводного ремня— биение или рыжая пыль говорят о старой треснувшей резине демпфера.',
-                  'Запустить дизель на холодную— работа должна быть ровной без стука форсунок и дыма.',
-                  'Запустить дизель на холодную— работа должна быть ровной без стука форсунок и дыма.'
+                  'Проверьте плавность переключений автомата и убедитесь, что сажевый фильтр регулярно прожигается на трассе.'
                 ],
                 highMileage: [
                   {
@@ -38422,6 +39476,7 @@ const CAR_ROSTER = [
       },
       {
         id: '2.0-crdi-184',
+        buyerFitGroup: 'diesel-awd',
         dossierGroup: 'diesel-conv-auto',
         isDefault: false,
         fuelType: 'diesel',
@@ -38735,7 +39790,6 @@ const CAR_ROSTER = [
                 headline: 'Флагманский дизель 2.0 CRDi (184 л.с.)— отличная динамика, но высокая нагрузка на 4WD',
                 strengths: [
                   'Тяговитый дизель (184 л.с.) уверенно везёт на трассе при своевременном ТО.',
-                  'Способен пройти 240 000–280 000+ км при замене масла каждые 10 000–15 000 км.',
                   'Способен пройти 240 000–280 000+ км при замене масла каждые 10 000–15 000 км.'
                 ],
                 watchouts: [
@@ -38873,6 +39927,75 @@ const CAR_ROSTER = [
     drivetrain: 'FWD',
     image: 'assets/mazda-6-2010.png',
     defaultEngineId: '2.0-mzr-disi',
+    sharedBuyerFit: {
+      cards: {
+        m6SharpHandling: {
+          en: 'You enjoy crisp, engaging steering: Double-wishbone front geometry makes this one of the sharpest-handling midsize sedans of its era.',
+          de: 'Du magst präzises Lenkgefühl: Die Doppelquerlenker-Vorderachse macht den Mazda 6 zu einer der agilsten Limousinen seiner Klasse.',
+          ru: 'Ты любишь острый и точный руль: Двухрычажная передняя подвеска делает управляемость одной из лучших в классе.'
+        },
+        m6SpaciousBoot: {
+          en: 'You need generous passenger & trunk space: Long 2,725 mm wheelbase and a 519 L boot fit family trips comfortably.',
+          de: 'Du brauchst viel Platz für Familie und Gepäck: 2.725 mm Radstand und 519 L Kofferraum bieten reichlich Raum.',
+          ru: 'Тебе нужен просторный салон и багажник: Колёсная база 2 725 мм и отсек 519 л удобны для дальних поездок.'
+        },
+        m6PetrolReliability: {
+          en: 'You want simple chain-driven longevity: Naturally aspirated MZR engines avoid turbochargers and DPF bills.',
+          de: 'Du willst solide Ketten-Technik: Die MZR-Saugmotoren ersparen dir Turbolader- und DPF-Rechnungen.',
+          ru: 'Ты хочешь простой цепной мотор: Атмосферники MZR избавляют от трат на турбину и сажевый фильтр.'
+        },
+        m6DieselTorque: {
+          en: 'You cover long highway commutes: Strong 330–400 Nm diesel torque makes motorway overtaking effortless.',
+          de: 'Du fährst lange Autobahnetappen: Kräftige 330–400 Nm Diesel-Drehmoment sorgen für souveränes Überholen.',
+          ru: 'Ты много ездишь по трассе: Момент 330–400 Н·м делает обгоны лёгкими и экономичными.'
+        },
+        m6RustInspection: {
+          en: 'You hate checking for underbody rust: Rear wheel arches, sills, and rear subframes are sensitive to winter road salt.',
+          de: 'Du willst keine Rostvorsorge betreiben: Hintere Radläufe, Schweller und Achsträger reagieren empfindlich auf Streusalz.',
+          ru: 'Ты не хочешь проверять кузов на ржавчину: Задние арки, пороги и подрамник чувствительны к зимним реагентам.'
+        },
+        m6CabinAge: {
+          en: 'You want modern screens & plush cabin tech: Monochrome top display and firm plastics feel dated inside.',
+          de: 'Du erwartest modernes Infotainment: Das schlichte Monochrom-Display und harte Kunststoffe wirken heute betagt.',
+          ru: 'Тебе нужна современная мультимедиа: Монохромный экранчик и жёсткий пластик выглядят скромно.'
+        },
+        m6SedanOpening: {
+          en: 'You load tall boxy cargo often: The 4-door sedan boot lid is narrower than a hatchback or estate.',
+          de: 'Du lädst oft sperrige Gegenstände ein: Die Stufenheck-Ladeluke ist schmaler als beim Fließheck oder Kombi.',
+          ru: 'Ты часто грузишь габаритные вещи: Проём седана заметно уже, чем у лифтбека или универсала.'
+        },
+        m6HighRevNa: {
+          en: 'You want effortless low-rev pull: Non-turbo MZR engines need downshifts and revs for quick highway overtakes.',
+          de: 'Du willst mühelosen Schub ab 1.800/min: Die Saugmotoren brauchen beim Überholen Drehzahl und Herunterschalten.',
+          ru: 'Тебе нужна тяга с самых низов: Атмосферные моторы требуют раскрутки при обгонах.'
+        },
+        m6DieselCare: {
+          en: 'You want low-maintenance diesel ownership: MZR-CD engines demand regular copper injector washer, oil-strainer, and chain/belt care.',
+          de: 'Du willst einen anspruchslosen Diesel: MZR-CD-Motoren verlangen zwingend Pflege von Injektor-Kupferscheiben, Ölsieb und Steuerkette/-riemen.',
+          ru: 'Ты хочешь неприхотливый дизель: Моторы MZR-CD требуют строгого контроля медных шайб форсунок, маслозаборника и ГРМ.'
+        }
+      }
+    },
+    buyerFitGroups: {
+      'na-petrol': {
+        summary: {
+          en: 'One of the sharpest-driving, most dependable midsize petrol sedans — just inspect the rear arches and subframe for rust.',
+          de: 'Eine der agilsten und zuverlässigsten Mittelklasse-Limousinen — einfach Radläufe und Unterboden sauber auf Rost prüfen.',
+          ru: 'Один из самых драйверских и надёжных седанов D-класса — главное проверить задние арки и подрамник на коррозию.'
+        },
+        ideal: ['m6SharpHandling', 'm6SpaciousBoot', 'm6PetrolReliability', 'globalPetrolCityZones'],
+        skip: ['m6RustInspection', 'm6CabinAge', 'm6SedanOpening', 'm6HighRevNa']
+      },
+      diesel: {
+        summary: {
+          en: 'A sharp-handling, torquey highway cruiser — only buy with documented copper-washer, sump-strainer, and timing service.',
+          de: 'Ein agiler, durchzugsstarker Langstrecken-Gleiter — nur mit belegtem Injektor-Dichtungs-, Ölsieb- und Steuerzeiten-Service kaufen.',
+          ru: 'Управляемый и тяговитый дизельный седан — покупать только с чеками на замену шайб форсунок, чистку маслозаборника и ГРМ.'
+        },
+        ideal: ['m6SharpHandling', 'm6SpaciousBoot', 'm6DieselTorque', 'globalDieselLongRange'],
+        skip: ['globalDieselShortTripRisk', 'm6DieselCare', 'm6RustInspection', 'm6CabinAge']
+      }
+    },
     sharedDossiers: {
       buildQualityRust: {
         en: {
@@ -39271,11 +40394,11 @@ const CAR_ROSTER = [
               'Durable Driveshafts & Clutch.'
             ],
             watchouts: [
-              'Automatic, DSG, and CVT gearboxes depend on documented 40,000–60,000 km fluid and filter changes.',
-              'Listen for bearing whine in neutral or shudder on tight turns on AWD models.'
+              'Torque-converter automatics need documented 50,000–60,000 km fluid changes to avoid lockup shudder.',
+              'Harsh or delayed 2–3 upshifts when warm signal worn valve-body or solenoid parts.'
             ],
             beforeYouBuy: [
-              'Demand service receipts for automatic, DSG, or CVT transmission fluid changes every 40,000–60,000 km.',
+              'Demand service receipts for transmission fluid changes every 40,000–60,000 km.',
               'Test Reverse-to-Drive engagement when warm and creep gently uphill to confirm zero jerk or slip.'
             ]
           },
@@ -39286,11 +40409,11 @@ const CAR_ROSTER = [
               'Haltbare Wellen & Kupplung.'
             ],
             watchouts: [
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.',
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.'
+              'Wandlerautomatiken brauchen nachgewiesene Ölwechsel alle 50.000–60.000 km, sonst droht Wandler-Ruckeln.',
+              'Harte oder verzögerte 2–3-Schaltungen im warmen Zustand deuten auf verschlissenen Ventilkörper oder Magnetventile.'
             ],
             beforeYouBuy: [
-              'Nachweise für Automatik-, DSG- oder CVT-Getriebeölwechsel alle 40.000–60.000 km prüfen.',
+              'Nachweise für Getriebeölwechsel alle 40.000–60.000 km prüfen.',
               'Im warmen Zustand von R auf D schalten und am Hang sanft anrollen — ohne Ruckeln oder Verzögerung.'
             ]
           },
@@ -39301,12 +40424,12 @@ const CAR_ROSTER = [
               'Выносливые приводы и сцепление.'
             ],
             watchouts: [
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.',
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.'
+              'Гидротрансформаторным АКПП нужна подтверждённая замена масла каждые 50 000–60 000 км, иначе появляются рывки блокировки.',
+              'Жёсткие или запоздалые переключения 2–3 на горячую указывают на износ гидроблока или соленоидов.'
             ],
             beforeYouBuy: [
-              'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
-              'Нажать сцепление наполовину на холостых (проверка маховика) и ускориться на 4-й передаче.'
+              'Запросить чеки о замене масла в коробке каждые 40 000–60 000 км.',
+              'На прогретой машине проверить плавность переключения R–D и ровное трогание в горку без рывков.'
             ]
           }
         },
@@ -39390,11 +40513,12 @@ const CAR_ROSTER = [
           en: {
             headline: 'No Turbo / DPF / DMF Bills — Affordable Routine Filters',
             strengths: [
-              'No Turbo / DPF / DMF Bills helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Affordable Routine Filters.'
             ],
             watchouts: [
-              'Aging 10+ year rubber hoses, suspension bushings, and brake/tyre wear still add routine upkeep.'
+              'Aging 10+ year rubber hoses, suspension bushings, and brake/tyre wear still add routine upkeep.',
+              'No Turbo / DPF / DMF Bills.'
             ],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
@@ -39406,7 +40530,9 @@ const CAR_ROSTER = [
               'Kein Turbo / DPF / ZMS hält die planbaren jährlichen Wartungskosten im Rahmen.',
               'Hohe Werkstatt-Kompetenz und breite Auswahl günstiger Marken-Ersatzteile.'
             ],
-            watchouts: ['Günstiger Verschleißteil-Unterhalt.'],
+            watchouts: [
+              'Altersbedingter Verschleiß an Fahrwerksbuchsen, Bremsen und Abgasanlage erfordert weiterhin planbare Rücklagen.'
+            ],
             beforeYouBuy: [
               'Untenstehenden Kosten-Fahrplan öffnen und fällige Meilensteine mit vorhandenen Rechnungen abgleichen.'
             ]
@@ -39417,7 +40543,9 @@ const CAR_ROSTER = [
               'Нет затрат на турбину и DPF помогает держать ежегодные затраты на ТО под контролем.',
               'Машина хорошо знакома любому сервису, а качественные запчасти широко доступны.'
             ],
-            watchouts: ['Недорогие расходники ТО.'],
+            watchouts: [
+              'Возрастной износ сайлентблоков подвески, тормозов и выхлопной системы требует плановых ежегодных трат.'
+            ],
             beforeYouBuy: ['Откройте план обслуживания ниже и сверьте предстоящие работы с имеющимися чеками.']
           }
         }
@@ -39431,8 +40559,8 @@ const CAR_ROSTER = [
               'Longer Highway Revs vs 6-MT.'
             ],
             watchouts: [
-              'Listen for bearing whine in neutral or shudder on tight turns on AWD models.',
-              'Check clutch bite height and dual-mass flywheel noise at idle on high-mileage manuals.'
+              'Check clutch bite height and listen for dual-mass flywheel rattle at idle on high-mileage cars.',
+              'Cold shifts into 2nd and 3rd should stay crunch-free; grinding points to worn synchros.'
             ],
             beforeYouBuy: [
               'Shift quickly into 1st, 2nd, and 3rd gear cold and warm to verify crisp, crunch-free synchros.',
@@ -39446,8 +40574,8 @@ const CAR_ROSTER = [
               'Etwas kürzer übersetzt ab 130.'
             ],
             watchouts: [
-              'Bei höheren Laufleistungen Kupplungsspiel und Zweimassenschwungrad im Leerlauf prüfen.',
-              'Im Leerlauf auf Getriebelager-Geräusche und bei Allrad-Modellen auf Kurven-Verspannung achten.'
+              'Bei hoher Laufleistung Kupplungs-Greifpunkt prüfen und im Leerlauf auf ZMS-Klappern achten.',
+              'Kalte Schaltvorgänge in den 2. und 3. Gang müssen kratzfrei sein — Kratzen deutet auf verschlissene Synchronringe.'
             ],
             beforeYouBuy: [
               'Im kalten wie warmen Zustand zügig vom 1. in den 2. und 3. Gang schalten — ohne Kratzen.',
@@ -39461,8 +40589,8 @@ const CAR_ROSTER = [
               'Выше обороты на трассе без 6-й.'
             ],
             watchouts: [
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.',
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.'
+              'На больших пробегах проверяйте точку схватывания сцепления и стук двухмассового маховика на холостых.',
+              'Переключения на 2-ю и 3-ю на холодную должны идти без хруста — хруст говорит об износе синхронизаторов.'
             ],
             beforeYouBuy: [
               'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
@@ -39475,10 +40603,11 @@ const CAR_ROSTER = [
             headline: 'Proven Relays & Modules',
             strengths: [
               'Proven Relays & Modules keeps electrical diagnostics straightforward.',
-              'Check Early Torque Steering Pull.'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.'
+              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.',
+              'Check Early Torque Steering Pull.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -39488,9 +40617,12 @@ const CAR_ROSTER = [
             headline: 'Solide Relais & Schalter',
             strengths: [
               'Solide Relais & Schalter sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
+            ],
+            watchouts: [
+              'Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.',
               'Frühe Lenkhilfe auf Spiel prüfen.'
             ],
-            watchouts: ['Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.'],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
             ]
@@ -39499,9 +40631,12 @@ const CAR_ROSTER = [
             headline: 'Надёжная базовая электрика',
             strengths: [
               'Надёжная базовая электрика упрощает диагностику и обслуживание электрооборудования.',
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
+            ],
+            watchouts: [
+              'Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.',
               'Проверить ранний датчик ЭУР.'
             ],
-            watchouts: ['Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.'],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
             ]
@@ -39512,10 +40647,11 @@ const CAR_ROSTER = [
             headline: 'Crisp Euro-Tuned Damping',
             strengths: [
               'Crisp Euro-Tuned Damping delivers pleasant everyday composure.',
-              'Thicker Tyre/Road Hum on Concrete.'
+              'Balanced chassis damping keeps cruising settled and predictable on smooth roads.'
             ],
             watchouts: [
-              'Wind and tyre roar increase at 130+ km/h; large 18–19" wheels make city bumps firmer.'
+              'Wind and tyre roar increase at 130+ km/h; large 18–19" wheels make city bumps firmer.',
+              'Thicker Tyre/Road Hum on Concrete.'
             ],
             beforeYouBuy: [
               'Take the car up to 110–120 km/h to judge real wind noise, tyre hum, and suspension smoothness.'
@@ -39525,10 +40661,11 @@ const CAR_ROSTER = [
             headline: 'Straff-dynamische Abstimmung',
             strengths: [
               'Straff-dynamische Abstimmung sorgt für ein angenehmes Fahrgefühl im Alltag.',
-              'Spürbare Abrollgeräusche.'
+              'Auf gutem Asphalt liegt das Fahrwerk ruhig und berechenbar.'
             ],
             watchouts: [
-              'Ab 130 km/h nehmen Wind- und Abrollgeräusche zu; große Felgen machen den Stadtkomfort straffer.'
+              'Ab 130 km/h nehmen Wind- und Abrollgeräusche zu; große Felgen machen den Stadtkomfort straffer.',
+              'Spürbare Abrollgeräusche.'
             ],
             beforeYouBuy: [
               'Bei der Probefahrt kurz 110–120 km/h fahren, um Wind-, Reifen- und Abrollgeräusche real zu prüfen.'
@@ -39538,9 +40675,12 @@ const CAR_ROSTER = [
             headline: 'Собранная упругая подвеска',
             strengths: [
               'Собранная упругая подвеска обеспечивает комфортную езду в повседневных поездках.',
+              'На ровном покрытии подвеска работает собранно и предсказуемо.'
+            ],
+            watchouts: [
+              'После 130 км/ч растут шумы ветра и шин, а большие диски делают ход жёстче.',
               'Заметный гул шин по трассе.'
             ],
-            watchouts: ['После 130 км/ч растут шумы ветра и шин, а большие диски делают ход жёстче.'],
             beforeYouBuy: [
               'Прокатитесь 110–120 км/ч, чтобы оценить реальный уровень шума ветра, шин и мягкость хода.'
             ]
@@ -39550,10 +40690,10 @@ const CAR_ROSTER = [
           en: {
             headline: 'Lowest Parts Complexity — Check Oil & Intake Flaps',
             strengths: [
-              'Lowest Parts Complexity helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['Check Oil & Intake Flaps.'],
+            watchouts: ['Check Oil & Intake Flaps.', 'Lowest Parts Complexity.'],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -39589,8 +40729,8 @@ const CAR_ROSTER = [
               'Stout 2.5 Clutch & Halfshafts.'
             ],
             watchouts: [
-              'Listen for bearing whine in neutral or shudder on tight turns on AWD models.',
-              'Check clutch bite height and dual-mass flywheel noise at idle on high-mileage manuals.'
+              'Check clutch bite height and listen for dual-mass flywheel rattle at idle on high-mileage cars.',
+              'Cold shifts into 2nd and 3rd should stay crunch-free; grinding points to worn synchros.'
             ],
             beforeYouBuy: [
               'Shift quickly into 1st, 2nd, and 3rd gear cold and warm to verify crisp, crunch-free synchros.',
@@ -39604,8 +40744,8 @@ const CAR_ROSTER = [
               'Kräftige 2.5-Kupplung & Wellen.'
             ],
             watchouts: [
-              'Bei höheren Laufleistungen Kupplungsspiel und Zweimassenschwungrad im Leerlauf prüfen.',
-              'Im Leerlauf auf Getriebelager-Geräusche und bei Allrad-Modellen auf Kurven-Verspannung achten.'
+              'Bei hoher Laufleistung Kupplungs-Greifpunkt prüfen und im Leerlauf auf ZMS-Klappern achten.',
+              'Kalte Schaltvorgänge in den 2. und 3. Gang müssen kratzfrei sein — Kratzen deutet auf verschlissene Synchronringe.'
             ],
             beforeYouBuy: [
               'Im kalten wie warmen Zustand zügig vom 1. in den 2. und 3. Gang schalten — ohne Kratzen.',
@@ -39619,8 +40759,8 @@ const CAR_ROSTER = [
               'Усиленное сцепление и приводы.'
             ],
             watchouts: [
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.',
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.'
+              'На больших пробегах проверяйте точку схватывания сцепления и стук двухмассового маховика на холостых.',
+              'Переключения на 2-ю и 3-ю на холодную должны идти без хруста — хруст говорит об износе синхронизаторов.'
             ],
             beforeYouBuy: [
               'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
@@ -39708,10 +40848,10 @@ const CAR_ROSTER = [
           en: {
             headline: 'No Turbo / DPF / Injector Bills — Hydro Mount & 18" Tyre Costs',
             strengths: [
-              'No Turbo / DPF / Injector Bills helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['Hydro Mount & 18" Tyre Costs.'],
+            watchouts: ['Hydro Mount & 18" Tyre Costs.', 'No Turbo / DPF / Injector Bills.'],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -39747,8 +40887,8 @@ const CAR_ROSTER = [
               'Identical strong 2.2 block de-tuned for efficiency, extending dual-mass flywheel and front tyre life.'
             ],
             watchouts: [
-              'Budget DMF At 150k+ km.',
-              'Check clutch bite height and dual-mass flywheel noise at idle on high-mileage manuals.'
+              'Check clutch bite height and listen for dual-mass flywheel rattle at idle on high-mileage cars.',
+              'Cold shifts into 2nd and 3rd should stay crunch-free; grinding points to worn synchros.'
             ],
             beforeYouBuy: [
               'Shift quickly into 1st, 2nd, and 3rd gear cold and warm to verify crisp, crunch-free synchros.',
@@ -39758,12 +40898,12 @@ const CAR_ROSTER = [
           de: {
             headline: '6-Gang • ZMS ab 150.000 km prüfen — Nur als Schaltgetriebe',
             strengths: [
-              '6-Gang • ZMS ab 150.000 km prüfen passt gut zur Motorcharakteristik im Alltag.',
+              'Saubere Schaltführung und stimmige Übersetzung sorgen für ein ruhiges, berechenbares Fahrgefühl.',
               'Identischer 2.2-Block mit gedrosselter Spitzenlast, was ZMS, Kupplung und Vorderreifen schont.'
             ],
             watchouts: [
-              'Nur als Schaltgetriebe.',
-              'Bei höheren Laufleistungen Kupplungsspiel und Zweimassenschwungrad im Leerlauf prüfen.'
+              '6-Gang • ZMS ab 150.000 km prüfen passt gut zur Motorcharakteristik im Alltag.',
+              'Bei hoher Laufleistung Kupplungs-Greifpunkt prüfen und im Leerlauf auf ZMS-Klappern achten.'
             ],
             beforeYouBuy: [
               'Im kalten wie warmen Zustand zügig vom 1. in den 2. und 3. Gang schalten — ohne Kratzen.',
@@ -39777,8 +40917,8 @@ const CAR_ROSTER = [
               'Дефорсированный блок 2.2 дольше бережёт маховик, сцепление и передние шины.'
             ],
             watchouts: [
-              'Замена маховика ближе к 160 тыс.',
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.'
+              'На больших пробегах проверяйте точку схватывания сцепления и стук двухмассового маховика на холостых.',
+              'Переключения на 2-ю и 3-ю на холодную должны идти без хруста — хруст говорит об износе синхронизаторов.'
             ],
             beforeYouBuy: [
               'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
@@ -39791,10 +40931,11 @@ const CAR_ROSTER = [
             headline: 'Proven Relays & Modules',
             strengths: [
               'Proven Relays & Modules keeps electrical diagnostics straightforward.',
-              'Check Early Torque Steering Pull.'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.'
+              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.',
+              'Check Early Torque Steering Pull.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -39804,10 +40945,11 @@ const CAR_ROSTER = [
             headline: 'Solide Relais & Schalter',
             strengths: [
               'Solide Relais & Schalter sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
-              'Frühe Lenkhilfe auf Spiel prüfen.'
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
             ],
             watchouts: [
-              'Abgassensoren (DPF-Differenzdruck, Glühkerzen, AGR) melden sich häufiger ab 140.000 km.'
+              'Abgassensoren (DPF-Differenzdruck, Glühkerzen, AGR) melden sich häufiger ab 140.000 km.',
+              'Frühe Lenkhilfe auf Spiel prüfen.'
             ],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
@@ -39817,10 +40959,11 @@ const CAR_ROSTER = [
             headline: 'Надёжная базовая электрика',
             strengths: [
               'Надёжная базовая электрика упрощает диагностику и обслуживание электрооборудования.',
-              'Проверить ранний датчик ЭУР.'
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
             ],
             watchouts: [
-              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.'
+              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.',
+              'Проверить ранний датчик ЭУР.'
             ],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
@@ -39832,10 +40975,11 @@ const CAR_ROSTER = [
             headline: 'Crisp Euro-Tuned Damping',
             strengths: [
               'Crisp Euro-Tuned Damping delivers pleasant everyday composure.',
-              'Thicker Tyre/Road Hum on Concrete.'
+              'Balanced chassis damping keeps cruising settled and predictable on smooth roads.'
             ],
             watchouts: [
-              'Cold diesel clatter, high motorway revs, or oversized alloy wheels raise cabin noise noticeably.'
+              'Cold diesel clatter, high motorway revs, or oversized alloy wheels raise cabin noise noticeably.',
+              'Thicker Tyre/Road Hum on Concrete.'
             ],
             beforeYouBuy: [
               'Take the car up to 110–120 km/h to judge real wind noise, tyre hum, and suspension smoothness.'
@@ -39845,10 +40989,11 @@ const CAR_ROSTER = [
             headline: 'Straff-dynamische Abstimmung',
             strengths: [
               'Straff-dynamische Abstimmung sorgt für ein angenehmes Fahrgefühl im Alltag.',
-              'Spürbare Abrollgeräusche.'
+              'Auf gutem Asphalt liegt das Fahrwerk ruhig und berechenbar.'
             ],
             watchouts: [
-              'Kaltes Diesel-Nageln oder große 18–19"-Felgen erhöhen den Geräuschpegel im Innenraum spürbar.'
+              'Kaltes Diesel-Nageln oder große 18–19"-Felgen erhöhen den Geräuschpegel im Innenraum spürbar.',
+              'Spürbare Abrollgeräusche.'
             ],
             beforeYouBuy: [
               'Bei der Probefahrt kurz 110–120 km/h fahren, um Wind-, Reifen- und Abrollgeräusche real zu prüfen.'
@@ -39858,9 +41003,12 @@ const CAR_ROSTER = [
             headline: 'Собранная упругая подвеска',
             strengths: [
               'Собранная упругая подвеска обеспечивает комфортную езду в повседневных поездках.',
+              'На ровном покрытии подвеска работает собранно и предсказуемо.'
+            ],
+            watchouts: [
+              'Холодный дизельный рокот и крупные диски заметно усиливают шум в салоне.',
               'Заметный гул шин по трассе.'
             ],
-            watchouts: ['Холодный дизельный рокот и крупные диски заметно усиливают шум в салоне.'],
             beforeYouBuy: [
               'Прокатитесь 110–120 км/ч, чтобы оценить реальный уровень шума ветра, шин и мягкость хода.'
             ]
@@ -39870,10 +41018,10 @@ const CAR_ROSTER = [
           en: {
             headline: 'Belt + Copper Washers + Sump — DMF & Early DPF Expenses',
             strengths: [
-              'Belt + Copper Washers + Sump helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['DMF & Early DPF Expenses.'],
+            watchouts: ['DMF & Early DPF Expenses.', 'Belt + Copper Washers + Sump.'],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -39904,6 +41052,7 @@ const CAR_ROSTER = [
     engines: [
       {
         id: '2.0-mzr-disi',
+        buyerFitGroup: 'na-petrol',
         dossierGroup: 'petrol-conv-auto',
         isDefault: true,
         fuelType: 'petrol',
@@ -40345,6 +41494,7 @@ const CAR_ROSTER = [
       },
       {
         id: '1.8-mzr',
+        buyerFitGroup: 'na-petrol',
         dossierGroup: 'petrol-5mt',
         isDefault: false,
         fuelType: 'petrol',
@@ -40784,6 +41934,7 @@ const CAR_ROSTER = [
       },
       {
         id: '2.0-mzr',
+        buyerFitGroup: 'na-petrol',
         dossierGroup: 'petrol-conv-auto',
         isDefault: false,
         fuelType: 'petrol',
@@ -40973,7 +42124,7 @@ const CAR_ROSTER = [
                 beforeYouBuy: [
                   'Listen to a stone-cold start for steady idle and zero metallic timing-chain rattle.',
                   'Check the oil dipstick and coolant expansion tank for clean fluids without milky residue.',
-                  'Verify documented 10,000–15,000 km oil changes and spark-plug / timing-belt receipts.'
+                  'Verify documented 10,000–15,000 km oil changes and spark-plug replacement receipts.'
                 ],
                 highMileage: [
                   {
@@ -41106,7 +42257,7 @@ const CAR_ROSTER = [
                 beforeYouBuy: [
                   'Послушать запуск на холодную— холостой ход должен быть ровным без металлического звона цепи.',
                   'Проверить щуп масла и расширительный бачок— жидкости должны быть чистыми без эмульсии.',
-                  'Послушать запуск на холодную— холостой ход должен быть ровным без металлического звона цепи.'
+                  'Проверьте подтверждённую замену масла каждые 10 000–15 000 км и чеки на замену свечей.'
                 ],
                 highMileage: [
                   {
@@ -41221,6 +42372,7 @@ const CAR_ROSTER = [
       },
       {
         id: '2.5-mzr',
+        buyerFitGroup: 'na-petrol',
         dossierGroup: 'petrol-6mt',
         isDefault: false,
         fuelType: 'petrol',
@@ -41659,6 +42811,7 @@ const CAR_ROSTER = [
       },
       {
         id: '2.0-mzr-cd',
+        buyerFitGroup: 'diesel',
         dossierGroup: 'diesel-6mt',
         isDefault: false,
         fuelType: 'diesel',
@@ -42107,6 +43260,7 @@ const CAR_ROSTER = [
       },
       {
         id: '2.2-mzr-cd-129',
+        buyerFitGroup: 'diesel',
         dossierGroup: 'diesel-6mt',
         isDefault: false,
         fuelType: 'diesel',
@@ -42352,7 +43506,7 @@ const CAR_ROSTER = [
               de: {
                 headline: '129-PS-Einstieg des 2.2L-Kettendiesels— niedrigster Verbrauch & geringere Kupplungslast',
                 strengths: [
-                  'Läuft kultivierter und sparsamer als der Vorgänger 2.0 MZR-CD und glänzt auf langen Autobahnetappen.',
+                  'Läuft kultiviert und sparsam und glänzt mit entspanntem Durchzug auf langen Autobahnetappen.',
                   'Hält 200.000–250.000 km bei strikter Öl-, Kühlungs- und Steuerzeiten-Pflege.'
                 ],
                 watchouts: [
@@ -42418,7 +43572,7 @@ const CAR_ROSTER = [
               ru: {
                 headline: 'Базовый 2.2 MZR-CD (129 л.с.)— минимальный расход топлива и щадящая нагрузка на трансмиссию',
                 strengths: [
-                  'Заметно тише, тяговитее и экономичнее раннего 2.0 MZR-CD на трассе.',
+                  'Тихий, тяговитый и экономичный 2,2-литровый дизель для дальних трассовых поездок.',
                   'Проходит 200 000–250 000 км при строгом контроле масла, охлаждения и ГРМ.'
                 ],
                 watchouts: [
@@ -42543,6 +43697,7 @@ const CAR_ROSTER = [
       },
       {
         id: '2.2-mzr-cd-163',
+        buyerFitGroup: 'diesel',
         dossierGroup: 'diesel-6mt',
         isDefault: false,
         fuelType: 'diesel',
@@ -42722,7 +43877,7 @@ const CAR_ROSTER = [
               en: {
                 headline: 'Balanced 163 HP 2.2L Chain Diesel— Best Blend of Fast Overtaking & 5.9 L/100km Cruising',
                 strengths: [
-                  'Significantly quicker than the 129 HP model for motorway gaps while staying nearly as frugal.',
+                  'Strong 360 Nm mid-range torque for motorway gaps while staying frugal.',
                   'Replaced the 2008 belt motor with a smooth, quiet 2.2-litre diesel built for long motorway commutes.',
                   'Reaches 200,000–250,000 km when oil, cooling, and timing care stay strictly on schedule.'
                 ],
@@ -42789,8 +43944,8 @@ const CAR_ROSTER = [
               de: {
                 headline: 'Ausgewogener 163-PS-Diesel— bester Kompromiss aus Überholkraft & 5,9 L/100km',
                 strengths: [
-                  'Spürbar spritziger als der 129-PS-Basisdiesel, verbraucht dabei im Alltag fast gleich wenig.',
-                  'Läuft kultivierter und sparsamer als der Vorgänger 2.0 MZR-CD und glänzt auf langen Autobahnetappen.',
+                  'Kräftige 360 Nm Drehmoment für souveräne Überholmanöver bei kaum höherem Alltagsverbrauch.',
+                  'Läuft kultiviert und sparsam und glänzt mit entspanntem Durchzug auf langen Autobahnetappen.',
                   'Hält 200.000–250.000 km bei strikter Öl-, Kühlungs- und Steuerzeiten-Pflege.'
                 ],
                 watchouts: [
@@ -42856,8 +44011,8 @@ const CAR_ROSTER = [
               ru: {
                 headline: 'Сбалансированный 2.2 MZR-CD (163 л.с.)— лучший баланс динамики и расхода 5,9 л/100 км',
                 strengths: [
-                  'Заметно живее версии 129 л.с. на обгонах, почти не прибавляя к расходу топлива.',
-                  'Заметно тише, тяговитее и экономичнее раннего 2.0 MZR-CD на трассе.',
+                  'Уверенный подхват 360 Н·м на обгонах при скромном расходе топлива.',
+                  'Тихая, мягкая и экономичная работа на крейсерской скорости по трассе.',
                   'Проходит 200 000–250 000 км при строгом контроле масла, охлаждения и ГРМ.'
                 ],
                 watchouts: [
@@ -42982,6 +44137,7 @@ const CAR_ROSTER = [
       },
       {
         id: '2.2-mzr-cd-180',
+        buyerFitGroup: 'diesel',
         dossierGroup: 'diesel-6mt',
         isDefault: false,
         fuelType: 'diesel',
@@ -43159,7 +44315,7 @@ const CAR_ROSTER = [
             },
             dossier: {
               en: {
-                headline: 'Flagship 180/185 HP 2.2L Chain Diesel— 400 Nm Autobahn Punch With Heavy Driveline Stress',
+                headline: 'Flagship 180 HP 2.2L Chain Diesel — 400 Nm Autobahn Punch With Heavy Driveline Stress',
                 strengths: [
                   'Effortlessly overtakes at motorway speeds while loaded, typically fitted in richly equipped Sport-grade sedans.',
                   'Replaced the 2008 belt motor with a smooth, quiet 2.2-litre diesel built for long motorway commutes.',
@@ -43226,10 +44382,10 @@ const CAR_ROSTER = [
                 ]
               },
               de: {
-                headline: 'Top-Diesel 2.2 MZR-CD (180/185 PS)— 400 Nm Schub',
+                headline: 'Top-Diesel 2.2 MZR-CD (180 PS) — 400 Nm Schub',
                 strengths: [
                   'Beschleunigt souverän bis in hohe Geschwindigkeiten und kommt oft als üppig ausgestattetes Topmodell.',
-                  'Läuft kultivierter und sparsamer als der Vorgänger 2.0 MZR-CD und glänzt auf langen Autobahnetappen.',
+                  'Läuft kultiviert und sparsam und glänzt auf langen Autobahnetappen.',
                   'Hält 200.000–250.000 km bei strikter Öl-, Kühlungs- und Steuerzeiten-Pflege.'
                 ],
                 watchouts: [
@@ -43293,10 +44449,10 @@ const CAR_ROSTER = [
                 ]
               },
               ru: {
-                headline: 'Флагманский 2.2 MZR-CD (180/185 л.с.)— ураганные 400 Н·м при повышенной нагрузке',
+                headline: 'Флагманский 2.2 MZR-CD (180 л.с.) — ураганные 400 Н·м при повышенной нагрузке',
                 strengths: [
                   'Мощнейший подхват на любых скоростях трассы, обычно в богатой комплектации Sport.',
-                  'Заметно тише, тяговитее и экономичнее раннего 2.0 MZR-CD на трассе.',
+                  'Тихая и экономичная работа на дальних трассовых перегонах.',
                   'Проходит 200 000–250 000 км при строгом контроле масла, охлаждения и ГРМ.'
                 ],
                 watchouts: [
@@ -43434,6 +44590,105 @@ const CAR_ROSTER = [
     drivetrain: 'FWD',
     image: 'assets/toyota-avensis-2012.png',
     defaultEngineId: '1.8-valvematic',
+    sharedBuyerFit: {
+      cards: {
+        avensisComfortRide: {
+          en: 'You want a calm, comfortable highway cruiser: Soft-tuned suspension and quiet cruising take the stress out of long journeys.',
+          de: 'Du suchst einen ruhigen Langstrecken-Gleiter: Komfortable Federung und gelassenes Fahrverhalten machen weite Fahrten entspannt.',
+          ru: 'Тебе нужен спокойный комфортный седан для трассы: Мягкая подвеска и тихий ход берегут силы в дальней дороге.'
+        },
+        avensisSpaceSafety: {
+          en: 'You want generous family space & 5-star safety: Roomy rear legroom, 509 L boot, and 7 airbags (with knee airbag) protect everyone.',
+          de: 'Du willst viel Platz und 5-Sterne-Sicherheit: Großer Knieraum hinten, 509 L Kofferraum und 7 Airbags überzeugen im Alltag.',
+          ru: 'Тебе важен простор и безопасность 5★: Много места сзади, багажник 509 л и 7 подушек безопасности.'
+        },
+        avensisValvematic: {
+          en: 'You want simple Toyota durability: Port injection and timing chain avoid turbo, DPF, and direct-injection headaches.',
+          de: 'Du willst bewährte Toyota-Zuverlässigkeit: Saugrohreinspritzung und Steuerkette umgehen Turbo- und DPF-Risiken.',
+          ru: 'Тебе нужна проверенная надёжность Toyota: Распределённый впрыск и цепь ГРМ без турбины и сажевого фильтра.'
+        },
+        avensisD4dTorque: {
+          en: 'You want effortless diesel motorway torque: Strong mid-range pull and tall gearing keep highway fuel bills low.',
+          de: 'Du spulst viele Autobahn-Kilometer ab: Kräftiger Diesel-Durchzug und lange Übersetzung halten den Verbrauch niedrig.',
+          ru: 'Ты много ездишь по трассе: Уверенная дизельная тяга и спокойные обороты обеспечивают низкий расход.'
+        },
+        avensisRefinedCabin: {
+          en: 'You want a quiet, supportive long-distance cabin: Low wind noise and ergonomic seats keep multi-hour trips fatigue-free.',
+          de: 'Du willst einen ruhigen, langstreckentauglichen Innenraum: Wenig Windgeräusche und bequeme Sitze machen weite Fahrten entspannt.',
+          ru: 'Тебе нужен тихий и удобный салон для дальних поездок: Хорошая шумоизоляция и эргономичные сиденья берегут спину.'
+        },
+        avensisCalmHandling: {
+          en: 'You crave sporty steering feedback: Soft comfort tuning prioritizes stability over sharp, engaging cornering.',
+          de: 'Du suchst sportliches Kurven-Feedback: Die weiche Komfort-Abstimmung stellt Gelassenheit klar vor Fahrdynamik.',
+          ru: 'Ты любишь азартную управляемость: Мягкое шасси настроено на плавность хода, а не на острые повороты.'
+        },
+        avensisDatedTech: {
+          en: 'You expect crisp modern infotainment: Older Toyota Touch graphics and styling feel conservative next to newer rivals.',
+          de: 'Du erwartest modernes Infotainment: Grafik und Cockpit-Optik wirken im Vergleich zu jüngeren Modellen konservativ.',
+          ru: 'Тебе нужна современная мультимедиа: Графика экрана и интерьер выглядят довольно консервативно.'
+        },
+        avensisModestPull: {
+          en: 'You want effortless low-rev punch: Naturally aspirated Valvematic units need higher revs when overtaking with a full load.',
+          de: 'Du willst mühelosen Schub aus dem Keller: Ohne Turbo verlangen die Valvematic-Motoren beim Überholen mehr Drehzahl.',
+          ru: 'Тебе нужна тяга с самых низов: Атмосферный Valvematic требует раскрутки при обгонах с полной загрузкой.'
+        },
+        avensisSedanOpening: {
+          en: 'You load tall boxy cargo often: The 4-door sedan boot lid has a narrower opening than a wagon.',
+          de: 'Du lädst oft sperrige Kartons ein: Die Limousinen-Heckklappe ist schmaler als beim Kombi.',
+          ru: 'Ты часто возишь габаритный груз: Проём багажника седана уже, чем у универсала.'
+        },
+        avensisBmwDieselChain: {
+          en: 'You want zero timing-chain worries: The 2015+ BMW-derived diesel places its timing chain at the rear and needs EGR-cooler recall proof.',
+          de: 'Du willst kein Steuerketten-Risiko: Der BMW-basierte Diesel ab 2015 hat die Steuerkette getriebeseitig und braucht den AGR-Kühler-Rückruf.',
+          ru: 'Ты не хочешь рисковать цепью ГРМ: Дизель от BMW (с 2015 г.) имеет цепь со стороны КПП и требует проверки отзыва по радиатору ЕГР.'
+        },
+        avensisToyota20HeadWatch: {
+          en: 'You want zero diesel-seal worries: Early 2008–2011 Toyota 2.0 D-4D units can seep coolant at the head gasket and soot up the EGR.',
+          de: 'Du willst keinerlei Dichtungs-Risiken: Frühe Toyota 2.0 D-4D (2008–2011) können an der Kopfdichtung schwitzen und das AGR verkoken.',
+          ru: 'Ты не хочешь рисков по прокладке ГБЦ: Ранние Toyota 2.0 D-4D (2008–2011) склонны к подтеканию антифриза и нагару в клапане ЕГР.'
+        },
+        avensis22HeadGasket: {
+          en: 'You want zero head-gasket or injector worries: The 2.2 D-4D 150 HP requires clean coolant history and carbon-free EGR maintenance.',
+          de: 'Du willst kein Kopfdichtungs-Risiko: Der 2.2 D-4D (150 PS) verlangt einwandfreie Kühlmittel-Historie und gepflegtes AGR-System.',
+          ru: 'Ты не хочешь проблем с ГБЦ: 2.2 D-4D (150 л.с.) требует чистой истории по системе охлаждения и обслуженного ЕГР.'
+        },
+        avensisDcatComplexity: {
+          en: 'You want simple emissions hardware: The 177 HP D-CAT adds a sensitive 5th-injector DPNR catalyst alongside head-gasket checks.',
+          de: 'Du willst schlichte Abgastechnik: Der 177-PS-D-CAT hat zusätzlich einen empfindlichen 5.-Injektor-DPNR-Kat und Kopfdichtungs-Checks.',
+          ru: 'Тебе нужна простая система очистки выхлопа: Версия D-CAT (177 л.с.) оснащена капризной 5-й форсункой DPNR и требует проверки ГБЦ.'
+        }
+      }
+    },
+    buyerFitGroups: {
+      'na-petrol': {
+        summary: {
+          en: 'A calm, roomy, low-risk family sedan — ideal if you prioritize comfort and Toyota reliability over sportiness.',
+          de: 'Eine ruhige, geräumige und risikoarme Familienlimousine — ideal, wenn Komfort und Toyota-Zuverlässigkeit vor Sportlichkeit stehen.',
+          ru: 'Спокойный, просторный и надёжный семейный седан — идеален, если комфорт и ресурс Toyota важнее азарта.'
+        },
+        ideal: [
+          'avensisComfortRide',
+          'avensisSpaceSafety',
+          'avensisValvematic',
+          'globalPetrolCityZones'
+        ],
+        skip: ['avensisCalmHandling', 'avensisModestPull', 'avensisDatedTech', 'avensisSedanOpening']
+      },
+      diesel: {
+        summary: {
+          en: 'A comfortable, frugal motorway cruiser — just match the right diesel year and verify highway service history.',
+          de: 'Ein komfortabler, sparsamer Autobahn-Gleiter — achte auf das passende Baujahr und eine saubere Langstrecken-Historie.',
+          ru: 'Комфортный и экономичный седан для трассы — важно выбрать удачный год выпуска и проверить историю обслуживания.'
+        },
+        ideal: ['avensisComfortRide', 'avensisSpaceSafety', 'avensisD4dTorque', 'avensisRefinedCabin'],
+        skip: [
+          'globalDieselShortTripRisk',
+          'avensisToyota20HeadWatch',
+          'avensisCalmHandling',
+          'avensisDatedTech'
+        ]
+      }
+    },
     sharedDossiers: {
       buildQualityRust: {
         en: {
@@ -43832,8 +45087,8 @@ const CAR_ROSTER = [
               'Light Clutch.'
             ],
             watchouts: [
-              'Listen for bearing whine in neutral or shudder on tight turns on AWD models.',
-              'Check clutch bite height and dual-mass flywheel noise at idle on high-mileage manuals.'
+              'Check clutch bite height and listen for dual-mass flywheel rattle at idle on high-mileage cars.',
+              'Cold shifts into 2nd and 3rd should stay crunch-free; grinding points to worn synchros.'
             ],
             beforeYouBuy: [
               'Shift quickly into 1st, 2nd, and 3rd gear cold and warm to verify crisp, crunch-free synchros.',
@@ -43847,8 +45102,8 @@ const CAR_ROSTER = [
               'Leichte Kupplung.'
             ],
             watchouts: [
-              'Bei höheren Laufleistungen Kupplungsspiel und Zweimassenschwungrad im Leerlauf prüfen.',
-              'Im Leerlauf auf Getriebelager-Geräusche und bei Allrad-Modellen auf Kurven-Verspannung achten.'
+              'Bei hoher Laufleistung Kupplungs-Greifpunkt prüfen und im Leerlauf auf ZMS-Klappern achten.',
+              'Kalte Schaltvorgänge in den 2. und 3. Gang müssen kratzfrei sein — Kratzen deutet auf verschlissene Synchronringe.'
             ],
             beforeYouBuy: [
               'Im kalten wie warmen Zustand zügig vom 1. in den 2. und 3. Gang schalten — ohne Kratzen.',
@@ -43862,8 +45117,8 @@ const CAR_ROSTER = [
               'Мягкое сцепление.'
             ],
             watchouts: [
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.',
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.'
+              'На больших пробегах проверяйте точку схватывания сцепления и стук двухмассового маховика на холостых.',
+              'Переключения на 2-ю и 3-ю на холодную должны идти без хруста — хруст говорит об износе синхронизаторов.'
             ],
             beforeYouBuy: [
               'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
@@ -43951,11 +45206,12 @@ const CAR_ROSTER = [
           en: {
             headline: 'No Turbo / DPF / Belt Bills — Affordable Routine Parts',
             strengths: [
-              'No Turbo / DPF / Belt Bills helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Affordable Routine Parts.'
             ],
             watchouts: [
-              'Aging 10+ year rubber hoses, suspension bushings, and brake/tyre wear still add routine upkeep.'
+              'Aging 10+ year rubber hoses, suspension bushings, and brake/tyre wear still add routine upkeep.',
+              'No Turbo / DPF / Belt Bills.'
             ],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
@@ -43967,7 +45223,9 @@ const CAR_ROSTER = [
               'Kein Turbo / DPF / Zahnriemen hält die planbaren jährlichen Wartungskosten im Rahmen.',
               'Hohe Werkstatt-Kompetenz und breite Auswahl günstiger Marken-Ersatzteile.'
             ],
-            watchouts: ['Günstige Verschleißteile.'],
+            watchouts: [
+              'Altersbedingter Verschleiß an Fahrwerksbuchsen, Bremsen und Abgasanlage erfordert weiterhin planbare Rücklagen.'
+            ],
             beforeYouBuy: [
               'Untenstehenden Kosten-Fahrplan öffnen und fällige Meilensteine mit vorhandenen Rechnungen abgleichen.'
             ]
@@ -43978,7 +45236,9 @@ const CAR_ROSTER = [
               'Нет трат на турбину, DPF и ремень помогает держать ежегодные затраты на ТО под контролем.',
               'Машина хорошо знакома любому сервису, а качественные запчасти широко доступны.'
             ],
-            watchouts: ['Недорогие расходники.'],
+            watchouts: [
+              'Возрастной износ сайлентблоков подвески, тормозов и выхлопной системы требует плановых ежегодных трат.'
+            ],
             beforeYouBuy: ['Откройте план обслуживания ниже и сверьте предстоящие работы с имеющимися чеками.']
           }
         }
@@ -43989,14 +45249,14 @@ const CAR_ROSTER = [
             headline: '6-MT Or Smooth CVT — CVT Needs Fluid Changes',
             strengths: [
               '6-MT Or Smooth CVT matches this powertrain well for everyday driving.',
-              'CVT Needs Fluid Changes.'
+              'Crisp shift feel and well-matched ratios keep everyday driving composed and predictable.'
             ],
             watchouts: [
-              'Automatic, DSG, and CVT gearboxes depend on documented 40,000–60,000 km fluid and filter changes.',
-              'Listen for bearing whine in neutral or shudder on tight turns on AWD models.'
+              'CVT fluid must be changed every 40,000–60,000 km; old fluid causes belt slip and whine.',
+              'Listen for a rising whine under light throttle and feel for judder when pulling away.'
             ],
             beforeYouBuy: [
-              'Demand service receipts for automatic, DSG, or CVT transmission fluid changes every 40,000–60,000 km.',
+              'Demand service receipts for transmission fluid changes every 40,000–60,000 km.',
               'Test Reverse-to-Drive engagement when warm and creep gently uphill to confirm zero jerk or slip.'
             ]
           },
@@ -44007,11 +45267,11 @@ const CAR_ROSTER = [
               'CVT braucht Ölwechsel.'
             ],
             watchouts: [
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.',
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.'
+              'CVT-Öl alle 40.000–60.000 km wechseln — altes Öl führt zu Schubgliederband-Rutschen und Heulen.',
+              'Auf ansteigendes Heulen bei leichtem Gas und Ruckeln beim Anfahren achten.'
             ],
             beforeYouBuy: [
-              'Nachweise für Automatik-, DSG- oder CVT-Getriebeölwechsel alle 40.000–60.000 km prüfen.',
+              'Nachweise für Getriebeölwechsel alle 40.000–60.000 km prüfen.',
               'Im warmen Zustand von R auf D schalten und am Hang sanft anrollen — ohne Ruckeln oder Verzögerung.'
             ]
           },
@@ -44019,15 +45279,15 @@ const CAR_ROSTER = [
             headline: '6-МКПП или плавный вариатор — Вариатору нужна замена масла',
             strengths: [
               '6-МКПП или плавный вариатор хорошо сочетается с данным двигателем в повседневной езде.',
-              'Вариатору нужна замена масла.'
+              'Чёткое переключение и удачные передаточные числа делают езду комфортной и предсказуемой.'
             ],
             watchouts: [
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.',
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.'
+              'Масло в вариаторе менять каждые 40 000–60 000 км — старое масло ведёт к проскальзыванию ремня и вою.',
+              'Прислушайтесь к нарастающему вою при лёгком газе и проверьте отсутствие рывков при трогании.'
             ],
             beforeYouBuy: [
-              'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
-              'Нажать сцепление наполовину на холостых (проверка маховика) и ускориться на 4-й передаче.'
+              'Запросить чеки о замене масла в коробке каждые 40 000–60 000 км.',
+              'На прогретой машине проверить плавность переключения R–D и ровное трогание в горку без рывков.'
             ]
           }
         },
@@ -44111,11 +45371,12 @@ const CAR_ROSTER = [
           en: {
             headline: 'No Turbo / DPF / Belt Bills — Affordable Routine Parts',
             strengths: [
-              'No Turbo / DPF / Belt Bills helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Affordable Routine Parts.'
             ],
             watchouts: [
-              'Aging 10+ year rubber hoses, suspension bushings, and brake/tyre wear still add routine upkeep.'
+              'Aging 10+ year rubber hoses, suspension bushings, and brake/tyre wear still add routine upkeep.',
+              'No Turbo / DPF / Belt Bills.'
             ],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
@@ -44127,7 +45388,9 @@ const CAR_ROSTER = [
               'Kein Turbo / DPF / Zahnriemen hält die planbaren jährlichen Wartungskosten im Rahmen.',
               'Hohe Werkstatt-Kompetenz und breite Auswahl günstiger Marken-Ersatzteile.'
             ],
-            watchouts: ['Günstige Verschleißteile.'],
+            watchouts: [
+              'Altersbedingter Verschleiß an Fahrwerksbuchsen, Bremsen und Abgasanlage erfordert weiterhin planbare Rücklagen.'
+            ],
             beforeYouBuy: [
               'Untenstehenden Kosten-Fahrplan öffnen und fällige Meilensteine mit vorhandenen Rechnungen abgleichen.'
             ]
@@ -44138,7 +45401,9 @@ const CAR_ROSTER = [
               'Нет трат на турбину, DPF и ремень помогает держать ежегодные затраты на ТО под контролем.',
               'Машина хорошо знакома любому сервису, а качественные запчасти широко доступны.'
             ],
-            watchouts: ['Недорогие расходники.'],
+            watchouts: [
+              'Возрастной износ сайлентблоков подвески, тормозов и выхлопной системы требует плановых ежегодных трат.'
+            ],
             beforeYouBuy: ['Откройте план обслуживания ниже и сверьте предстоящие работы с имеющимися чеками.']
           }
         }
@@ -44148,12 +45413,12 @@ const CAR_ROSTER = [
           en: {
             headline: '6-MT Only • Mind The Flywheel — Light Clutch Feel',
             strengths: [
-              '6-MT Only • Mind The Flywheel matches this powertrain well for everyday driving.',
+              'Proven 6-speed manual gearbox delivers positive shift feel and durable gearsets.',
               'Proven shift linkage and durable gearsets when transmission fluid is maintained.'
             ],
             watchouts: [
-              'Check clutch bite height and dual-mass flywheel noise at idle on high-mileage manuals.',
-              'Listen for bearing whine in neutral or shudder on tight turns on AWD models.'
+              'Check clutch bite height and listen for dual-mass flywheel rattle at idle on high-mileage cars.',
+              'Cold shifts into 2nd and 3rd should stay crunch-free; grinding points to worn synchros.'
             ],
             beforeYouBuy: [
               'Shift quickly into 1st, 2nd, and 3rd gear cold and warm to verify crisp, crunch-free synchros.',
@@ -44163,12 +45428,12 @@ const CAR_ROSTER = [
           de: {
             headline: 'Nur 6-Gang • Schwungrad beachten — Leichte Kupplung',
             strengths: [
-              'Nur 6-Gang • Schwungrad beachten passt gut zur Motorcharakteristik im Alltag.',
+              'Bewährtes 6-Gang-Schaltgetriebe mit sauberer Führung und langlebigen Radsätzen.',
               'Bewährte Schaltmechanik und haltbare Zahnräder bei rechtzeitigem Ölservice.'
             ],
             watchouts: [
-              'Bei höheren Laufleistungen Kupplungsspiel und Zweimassenschwungrad im Leerlauf prüfen.',
-              'Im Leerlauf auf Getriebelager-Geräusche und bei Allrad-Modellen auf Kurven-Verspannung achten.'
+              'Bei hoher Laufleistung Kupplungs-Greifpunkt prüfen und im Leerlauf auf ZMS-Klappern achten.',
+              'Kalte Schaltvorgänge in den 2. und 3. Gang müssen kratzfrei sein — Kratzen deutet auf verschlissene Synchronringe.'
             ],
             beforeYouBuy: [
               'Im kalten wie warmen Zustand zügig vom 1. in den 2. und 3. Gang schalten — ohne Kratzen.',
@@ -44178,12 +45443,12 @@ const CAR_ROSTER = [
           ru: {
             headline: 'Только 6-МКПП • Следить за маховиком — Лёгкое сцепление',
             strengths: [
-              'Только 6-МКПП • Следить за маховиком хорошо сочетается с данным двигателем в повседневной езде.',
-              'Проверенный механизм переключения и прочные шестерни при своевременной смене масла.'
+              'Проверенная 6-ступенчатая механика радует чётким переключением и ресурсом.',
+              'Чёткое переключение и удачные передаточные числа делают езду комфортной и предсказуемой.'
             ],
             watchouts: [
-              'Лёгкое сцепление.',
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.'
+              'На больших пробегах проверяйте точку схватывания сцепления и стук двухмассового маховика на холостых.',
+              'Переключения на 2-ю и 3-ю на холодную должны идти без хруста — хруст говорит об износе синхронизаторов.'
             ],
             beforeYouBuy: [
               'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
@@ -44275,10 +45540,10 @@ const CAR_ROSTER = [
           en: {
             headline: 'Rear Timing Chain = Costly If Neglected — Flywheel & Filter Care',
             strengths: [
-              'Rear Timing Chain = Costly If Neglected helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['Flywheel & Filter Care.'],
+            watchouts: ['Flywheel & Filter Care.', 'Rear Timing Chain = Costly If Neglected.'],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -44286,10 +45551,13 @@ const CAR_ROSTER = [
           de: {
             headline: 'Hintere Steuerkette teuer bei Vernachlässigung — Schwungrad & Filter pflegen',
             strengths: [
-              'Hintere Steuerkette teuer bei Vernachlässigung hält die planbaren jährlichen Wartungskosten im Rahmen.',
+              'Planbare Wartungsintervalle mit klaren Vorgaben halten die laufenden Servicekosten kalkulierbar.',
               'Hohe Werkstatt-Kompetenz und breite Auswahl günstiger Marken-Ersatzteile.'
             ],
-            watchouts: ['Schwungrad & Filter pflegen.'],
+            watchouts: [
+              'Schwungrad & Filter pflegen.',
+              'Hintere Steuerkette teuer bei Vernachlässigung.'
+            ],
             beforeYouBuy: [
               'Untenstehenden Kosten-Fahrplan öffnen und fällige Meilensteine mit vorhandenen Rechnungen abgleichen.'
             ]
@@ -44297,10 +45565,13 @@ const CAR_ROSTER = [
           ru: {
             headline: 'Цепь сзади дорога при запуске — Уход за маховиком и фильтром',
             strengths: [
-              'Цепь сзади дорога при запуске помогает держать ежегодные затраты на ТО под контролем.',
+              'Предсказуемый регламент обслуживания помогает держать ежегодные затраты на ТО под контролем.',
               'Машина хорошо знакома любому сервису, а качественные запчасти широко доступны.'
             ],
-            watchouts: ['Уход за маховиком и фильтром.'],
+            watchouts: [
+              'Уход за маховиком и фильтром.',
+              'Цепь сзади дорога при запуске.'
+            ],
             beforeYouBuy: ['Откройте план обслуживания ниже и сверьте предстоящие работы с имеющимися чеками.']
           }
         }
@@ -44313,9 +45584,12 @@ const CAR_ROSTER = [
               '6-MT Or 6-Speed Auto matches this powertrain well for everyday driving.',
               'Proven shift linkage and durable gearsets when transmission fluid is maintained.'
             ],
-            watchouts: ['Flywheel Wear Item.', 'Flywheel Wear Item.'],
+            watchouts: [
+              'Torque-converter automatics need documented 50,000–60,000 km fluid changes to avoid lockup shudder.',
+              'Harsh or delayed 2–3 upshifts when warm signal worn valve-body or solenoid parts.'
+            ],
             beforeYouBuy: [
-              'Demand service receipts for automatic, DSG, or CVT transmission fluid changes every 40,000–60,000 km.',
+              'Demand service receipts for transmission fluid changes every 40,000–60,000 km.',
               'Test Reverse-to-Drive engagement when warm and creep gently uphill to confirm zero jerk or slip.'
             ]
           },
@@ -44325,9 +45599,12 @@ const CAR_ROSTER = [
               '6-Gang oder 6-Stufen-Automatik passt gut zur Motorcharakteristik im Alltag.',
               'Bewährte Schaltmechanik und haltbare Zahnräder bei rechtzeitigem Ölservice.'
             ],
-            watchouts: ['Schwungrad Verschleißteil.', 'Schwungrad Verschleißteil.'],
+            watchouts: [
+              'Wandlerautomatiken brauchen nachgewiesene Ölwechsel alle 50.000–60.000 km, sonst droht Wandler-Ruckeln.',
+              'Harte oder verzögerte 2–3-Schaltungen im warmen Zustand deuten auf verschlissenen Ventilkörper oder Magnetventile.'
+            ],
             beforeYouBuy: [
-              'Nachweise für Automatik-, DSG- oder CVT-Getriebeölwechsel alle 40.000–60.000 km prüfen.',
+              'Nachweise für Getriebeölwechsel alle 40.000–60.000 km prüfen.',
               'Im warmen Zustand von R auf D schalten und am Hang sanft anrollen — ohne Ruckeln oder Verzögerung.'
             ]
           },
@@ -44335,15 +45612,15 @@ const CAR_ROSTER = [
             headline: '6-МКПП или 6-АКПП — Маховик расходник',
             strengths: [
               '6-МКПП или 6-АКПП хорошо сочетается с данным двигателем в повседневной езде.',
-              'Проверенный механизм переключения и прочные шестерни при своевременной смене масла.'
+              'Чёткое переключение и удачные передаточные числа делают езду комфортной и предсказуемой.'
             ],
             watchouts: [
-              'Маховик расходник.',
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.'
+              'Гидротрансформаторным АКПП нужна подтверждённая замена масла каждые 50 000–60 000 км, иначе появляются рывки блокировки.',
+              'Жёсткие или запоздалые переключения 2–3 на горячую указывают на износ гидроблока или соленоидов.'
             ],
             beforeYouBuy: [
-              'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
-              'Нажать сцепление наполовину на холостых (проверка маховика) и ускориться на 4-й передаче.'
+              'Запросить чеки о замене масла в коробке каждые 40 000–60 000 км.',
+              'На прогретой машине проверить плавность переключения R–D и ровное трогание в горку без рывков.'
             ]
           }
         },
@@ -44431,10 +45708,10 @@ const CAR_ROSTER = [
           en: {
             headline: 'Head Seal, Flywheel & Filter Costs — Heavier Diesel Wear Items',
             strengths: [
-              'Head Seal, Flywheel & Filter Costs helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['Heavier Diesel Wear Items.'],
+            watchouts: ['Heavier Diesel Wear Items.', 'Head Seal, Flywheel & Filter Costs.'],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -44465,8 +45742,8 @@ const CAR_ROSTER = [
     engines: [
       {
         id: '1.6-valvematic',
+        buyerFitGroup: 'na-petrol',
         dossierGroup: 'petrol-6mt',
-        buyerFitGroup: 'na-petrol-16',
         isDefault: false,
         fuelType: 'petrol',
         hp: 132,
@@ -44895,6 +46172,7 @@ const CAR_ROSTER = [
       },
       {
         id: '1.8-valvematic',
+        buyerFitGroup: 'na-petrol',
         dossierGroup: 'petrol-cvt',
         isDefault: true,
         fuelType: 'petrol',
@@ -45331,6 +46609,7 @@ const CAR_ROSTER = [
       },
       {
         id: '2.0-valvematic',
+        buyerFitGroup: 'na-petrol',
         dossierGroup: 'petrol-cvt',
         isDefault: false,
         fuelType: 'petrol',
@@ -45760,8 +47039,16 @@ const CAR_ROSTER = [
       },
       {
         id: '1.6-d4d',
+        buyerFitGroup: 'diesel',
+        buyerFitOverrides: {
+          skip: [
+            'globalDieselShortTripRisk',
+            'avensisBmwDieselChain',
+            'avensisCalmHandling',
+            'avensisDatedTech'
+          ]
+        },
         dossierGroup: 'diesel-6mt',
-        buyerFitGroup: 'highway-diesel',
         isDefault: false,
         fuelType: 'diesel',
         hp: 112,
@@ -46194,6 +47481,7 @@ const CAR_ROSTER = [
       },
       {
         id: '2.0-d4d-126',
+        buyerFitGroup: 'diesel',
         dossierGroup: 'diesel-6mt',
         isDefault: false,
         fuelType: 'diesel',
@@ -46627,6 +47915,7 @@ const CAR_ROSTER = [
       },
       {
         id: '2.0-d4d-124',
+        buyerFitGroup: 'diesel',
         dossierGroup: 'diesel-6mt',
         isDefault: false,
         fuelType: 'diesel',
@@ -47060,6 +48349,15 @@ const CAR_ROSTER = [
       },
       {
         id: '2.0-d4d-143',
+        buyerFitGroup: 'diesel',
+        buyerFitOverrides: {
+          skip: [
+            'globalDieselShortTripRisk',
+            'avensisBmwDieselChain',
+            'avensisCalmHandling',
+            'avensisDatedTech'
+          ]
+        },
         dossierGroup: 'diesel-6mt',
         isDefault: false,
         fuelType: 'diesel',
@@ -47493,6 +48791,15 @@ const CAR_ROSTER = [
       },
       {
         id: '2.2-d4d-150',
+        buyerFitGroup: 'diesel',
+        buyerFitOverrides: {
+          skip: [
+            'globalDieselShortTripRisk',
+            'avensis22HeadGasket',
+            'avensisCalmHandling',
+            'avensisDatedTech'
+          ]
+        },
         dossierGroup: 'diesel-conv-auto',
         isDefault: false,
         fuelType: 'diesel',
@@ -47935,6 +49242,15 @@ const CAR_ROSTER = [
       },
       {
         id: '2.2-d4d-dcat',
+        buyerFitGroup: 'diesel',
+        buyerFitOverrides: {
+          skip: [
+            'globalDieselShortTripRisk',
+            'avensisDcatComplexity',
+            'avensisCalmHandling',
+            'avensisDatedTech'
+          ]
+        },
         dossierGroup: 'diesel-conv-auto',
         isDefault: false,
         fuelType: 'diesel',
@@ -48029,7 +49345,7 @@ const CAR_ROSTER = [
                 ],
                 watchouts: [
                   'EGR cooler and 5th exhaust fuel nozzle clog quickly if driven in city traffic.',
-                  'Higher fuel consumption and running costs than the simpler 2.0 D-4D.'
+                  'Higher fuel consumption and running costs in mixed and urban driving.'
                 ],
                 beforeYouBuy: [
                   'Inspect the white coolant bottle and hoses for dried pink spray marks from head-gasket pressure.',
@@ -48099,7 +49415,7 @@ const CAR_ROSTER = [
                 ],
                 watchouts: [
                   'AGR-Kühler und 5. Einspritzdüse setzen sich im Stadtverkehr rasch zu.',
-                  'Spürbar höherer Verbrauch und Unterhalt als beim simpleren 2.0 D-4D.'
+                  'Spürbar höherer Verbrauch und Unterhalt im Stadt- und Mischbetrieb.'
                 ],
                 beforeYouBuy: [
                   'Kühlmittelbehälter und Schläuche auf getrocknete rosa Spritzspuren durch Überdruck prüfen.',
@@ -48169,7 +49485,7 @@ const CAR_ROSTER = [
                 ],
                 watchouts: [
                   'Теплообменник EGR и 5-я форсунка прожига быстро забиваются в городе.',
-                  'Выше расход топлива и стоимость ремонта, чем у обычного 2.0 D-4D.'
+                  'Повышенный расход топлива и стоимость обслуживания в смешанном цикле.'
                 ],
                 beforeYouBuy: [
                   'Осмотреть расширительный бачок и патрубки на розовые подтёки от прорыва газов в охлаждение.',
@@ -48390,6 +49706,138 @@ const CAR_ROSTER = [
     drivetrain: 'FWD',
     image: 'assets/audi-a3-8p-2010.png',
     defaultEngineId: '2.0-tdi-140',
+    sharedBuyerFit: {
+      cards: {
+        a38pCabinBenchmark: {
+          en: 'You want premium compact build quality: Soft-touch materials and solid Audi switchgear still feel upmarket for the price.',
+          de: 'Du willst Premium-Haptik im Kompaktformat: Soft-Touch-Cockpit und solide Schalter wirken bis heute hochwertig.',
+          ru: 'Ты ценишь премиальное качество в компакт-классе: Мягкий пластик и чёткие кнопки до сих пор ощущаются дорого.'
+        },
+        a38pCompactAgile: {
+          en: 'You want a compact footprint with multi-link poise: Easy 4.29 m parking paired with composed Autobahn stability.',
+          de: 'Du willst handliche Maße mit Mehrlenker-Stabilität: Kompakte 4,29 m Länge treffen auf ruhigen Geradeauslauf.',
+          ru: 'Тебе нужен компактный размер и устойчивость: Длина 4,29 м удобна в городе, а многорычажка стабильна на трассе.'
+        },
+        a38pMpiBulletproof: {
+          en: 'You want foolproof old-school simplicity: The 8-valve 1.6 MPI avoids turbochargers, direct injection, and timing chains.',
+          de: 'Du willst unverwüstliche Einfachheit: Der klassische 1.6 MPI verzichtet auf Turbo, Direkteinspritzung und Steuerkette.',
+          ru: 'Тебе нужна максимальная простота: Старый добрый 1.6 MPI обходится без турбины, прямого впрыска и цепи ГРМ.'
+        },
+        a38pFsiNoTurbo: {
+          en: 'You want naturally aspirated direct injection: Smooth linear throttle response with no turbocharger or boost hoses.',
+          de: 'Du willst einen Saugmotor ohne Turbo-Technik: Gleichmäßiges Ansprechverhalten ohne Turbolader oder Ladeluftschläuche.',
+          ru: 'Тебе нужен атмосферный мотор без турбины: Ровный отклик на газ без турбокомпрессора и патрубков наддува.'
+        },
+        a38pTfsiPunch: {
+          en: 'You want brisk turbo acceleration: Punchy low-end torque and refined delivery make highway merging effortless.',
+          de: 'Du willst spritzigen Turbo-Durchzug: Kräftiges Drehmoment aus dem Keller sorgt für souveräne Zwischensprints.',
+          ru: 'Тебе нужна бодрая турбо-тяга: Уверенный подхват с низов делает обгоны и перестроения лёгкими.'
+        },
+        a38pTdiDurability: {
+          en: 'You cover serious motorway miles: Strong low-end TDI torque eats up long distances with ~5 L/100km economy.',
+          de: 'Du fährst viele Autobahn-Kilometer: Kräftiges TDI-Drehmoment kombiniert langen Atem mit ~5 L/100km Verbrauch.',
+          ru: 'Ты много ездишь по трассе: Уверенный дизельный момент сочетается с расходом около 5 л/100 км на больших пробегах.'
+        },
+        a38pChainOilRisk: {
+          en: 'You want zero timing-chain drama: Pre-2012 chain-driven TFSI engines need documented tensioner and chain replacement proof.',
+          de: 'Du willst kein Steuerketten-Risiko: Frühe Ketten-TFSI (vor 2012) brauchen einen klaren Nachweis über erneuerte Kette und Spanner.',
+          ru: 'Ты не хочешь проблем с цепью ГРМ: Ранние цепные TFSI (до 2012 г.) требуют подтверждённой замены цепи и натяжителя.'
+        },
+        a38p18TfsiOilRisk: {
+          en: 'You want zero oil-burning or chain drama: Early 1.8 TFSI (EA888 Gen 2) engines carry costly piston-ring and tensioner risks unless rebuilt.',
+          de: 'Du willst keinen Ölverbrauch oder Kettenschaden: Frühe 1.8 TFSI (EA888 Gen 2) haben teure Kolbenring- und Spanner-Risiken ohne Umbau.',
+          ru: 'Ты не хочешь масложора и проблем с цепью: Ранние 1.8 TFSI (EA888 Gen 2) склонны к расходу масла и износу натяжителя без переборки.'
+        },
+        a38pDryDsgCare: {
+          en: 'You sit in heavy stop-and-go traffic with an automatic: The 7-speed dry-clutch DSG wears clutches and mechatronics faster in cities.',
+          de: 'Du stehst oft im Stadt-Stau mit Automatik: Das trockene 7-Gang-DSG verschleißt Kupplungen und Mechatronik im Stop-and-Go schneller.',
+          ru: 'Ты часто стоишь в пробках на автомате: Сухая 7-DSG быстрее изнашивает сцепления и мехатроник в плотном городе.'
+        },
+        a38pWetDsgFluid: {
+          en: 'You skip 60,000 km gearbox servicing: Optional 6-speed wet-clutch DSG units require strict fluid and filter changes to stay smooth.',
+          de: 'Du willst keinen DSG-Service alle 60.000 km: Das nasse 6-Gang-DSG verlangt pünktliche Öl- und Filterwechsel für saubere Schaltvorgänge.',
+          ru: 'Ты не хочешь тратиться на ТО коробки каждые 60 тыс. км: Мокрая 6-DSG требует регулярной замены масла и фильтра.'
+        },
+        a38pSlow90HpPace: {
+          en: 'You want brisk motorway overtaking or an automatic: The 90 HP tune is manual-only and feels modest on fast highway climbs.',
+          de: 'Du willst flinke Überholmanöver oder Automatik: Die 90-PS-Basis gibt es nur als 5-Gang-Schalter mit gemächlichem Durchzug.',
+          ru: 'Тебе нужна бодрая динамика или автомат: Версия 90 л.с. шла только с 5-ступенчатой механикой и едет весьма спокойно.'
+        },
+        a38pDatedInfotainment: {
+          en: 'You expect modern screen tech: Older RNS-E navigation and optional Bluetooth feel dated next to newer hatchbacks.',
+          de: 'Du erwartest moderne Infotainment-Technik: Altes RNS-E-Navi und damaliges Bluetooth wirken heute spürbar überholt.',
+          ru: 'Тебе нужна современная мультимедиа: Старая навигация RNS-E и опциональный Bluetooth сегодня выглядят устаревшими.'
+        },
+        a38pSmallBoot: {
+          en: 'You need big family luggage capacity: The 370 L boot (302 L on Quattro) and snug rear legroom fall behind larger hatchbacks.',
+          de: 'Du brauchst großen Familien-Kofferraum: 370 L (nur 302 L beim Quattro) und knapper Fond sind nichts für sperriges Gepäck.',
+          ru: 'Тебе нужен большой семейный багажник: Объём 370 л (и 302 л у Quattro) уступает более крупным хэтчбекам.'
+        },
+        a38pHighRevNa: {
+          en: 'You want brisk motorway overtaking: Modest non-turbo torque requires downshifts on steep hills and highway merges.',
+          de: 'Du willst souveräne Autobahn-Überholmanöver: Ohne Turbo verlangen die Saugmotoren am Berg rechtzeitiges Runterschalten.',
+          ru: 'Ты любишь быстрые обгоны на трассе: Без турбины атмосферным моторам не хватает запаса на подъёмах.'
+        },
+        a38pCabinWear: {
+          en: 'You want scratch-free switch trim: Soft-touch coatings on window switches and climate buttons peel with age.',
+          de: 'Du willst makellose Schalter ohne Abnutzung: Der Softlack an Fensterhebern und Klimatasten blättert im Alter gern ab.',
+          ru: 'Ты не хочешь потёртых кнопок: Покрытие софт-тач на кнопках стеклоподъёмников и климата со временем стирается.'
+        },
+        a38p140PdHeadRisk: {
+          en: 'You want hassle-free diesel reliability: Pre-2007 2.0 TDI PD 140 HP models risk porous cylinder heads and oil-pump hex-shaft wear.',
+          de: 'Du willst einen sorgenfreien Diesel: Frühe 2.0 TDI PD (140 PS, vor 2007) bergen Risiken bei Zylinderkopf-Rissen und Ölpumpen-Mitnehmer.',
+          ru: 'Ты хочешь беспроблемный дизель: Ранний 2.0 TDI PD (140 л.с., до 2007 г.) имеет риски трещин ГБЦ и износа шестигранника маслонасоса.'
+        },
+        a38p170PdPiezoRisk: {
+          en: 'You want hassle-free diesel reliability: Early 2.0 TDI PD 170 HP models use failure-prone Siemens piezo injectors unless recall-replaced.',
+          de: 'Du willst einen sorgenfreien Diesel: Frühe 2.0 TDI PD (170 PS) nutzen anfällige Siemens-Piezo-Injektoren ohne nachgewiesenen Rückruf.',
+          ru: 'Ты хочешь беспроблемный дизель: Ранний 2.0 TDI PD (170 л.с.) оснащён капризными пьезофорсунками Siemens без замены по отзыву.'
+        }
+      }
+    },
+    buyerFitGroups: {
+      'na-petrol': {
+        summary: {
+          en: 'A well-built compact Audi for shorter commutes — pick the simple 1.6 MPI for lowest risk if modest pace suits you.',
+          de: 'Ein hochwertig verarbeiteter Kompakt-Audi — der simple 1.6 MPI ist ideal für Kurzstrecken, wenn dir gemächliches Tempo reicht.',
+          ru: 'Добротный компактный Audi для города — простой 1.6 MPI идеален для коротких поездок при спокойном темпе.'
+        },
+        ideal: [
+          'a38pMpiBulletproof',
+          'a38pCabinBenchmark',
+          'a38pCompactAgile',
+          'globalPetrolCityZones'
+        ],
+        skip: ['a38pSmallBoot', 'a38pHighRevNa', 'a38pDatedInfotainment', 'a38pCabinWear']
+      },
+      'turbo-petrol': {
+        summary: {
+          en: 'A refined, punchy compact hatchback — only buy with documented timing chain, tensioner, or piston rebuild proof.',
+          de: 'Ein kultivierter, spritziger Kompakter — nur kaufen, wenn Steuerkette, Spanner bzw. Kolbenringe nachweislich gemacht sind.',
+          ru: 'Бодрый и качественный хэтчбек — покупать только при наличии чеков на замену цепи, натяжителя или поршневой.'
+        },
+        ideal: ['a38pTfsiPunch', 'a38pCabinBenchmark', 'a38pCompactAgile', 'globalPetrolCityZones'],
+        skip: ['a38pChainOilRisk', 'a38pDryDsgCare', 'a38pSmallBoot', 'a38pCabinWear']
+      },
+      'diesel-cr': {
+        summary: {
+          en: 'A frugal, refined premium commuter — choose 2008+ Common-Rail 2.0 TDI or legendary 1.9 TDI for strong highway endurance.',
+          de: 'Ein sparsamer, kultivierter Premium-Pendler — am besten als 2008+ Common-Rail 2.0 TDI oder unverwüstlicher 1.9 TDI.',
+          ru: 'Экономичный и тихий премиум-хэтчбек для трассы — лучше всего брать 2.0 TDI Common-Rail (с 2008 г.) или 1.9 TDI.'
+        },
+        ideal: ['a38pTdiDurability', 'a38pCabinBenchmark', 'a38pCompactAgile', 'globalDieselLongRange'],
+        skip: ['globalDieselShortTripRisk', 'a38pSmallBoot', 'a38pWetDsgFluid', 'a38pCabinWear']
+      },
+      'diesel-pd': {
+        summary: {
+          en: 'Punchy early Pumpe-Düse torque, but strictly inspect cylinder head or recall injector history — later Common-Rail models are safer.',
+          de: 'Kräftiger Pumpe-Düse-Durchzug, aber Zylinderkopf bzw. Injektor-Rückruf genau prüfen — spätere Common-Rail sind sicherer.',
+          ru: 'Резвый ранний дизель PD, но нужна строгая проверка ГБЦ или отзыва по форсункам — версии Common-Rail надёжнее.'
+        },
+        ideal: ['a38pTdiDurability', 'a38pCabinBenchmark', 'a38pCompactAgile', 'globalDieselLongRange'],
+        skip: ['a38p140PdHeadRisk', 'globalDieselShortTripRisk', 'a38pSmallBoot', 'a38pWetDsgFluid']
+      }
+    },
     sharedDossiers: {
       buildQualityRust: {
         en: {
@@ -48792,26 +50240,26 @@ const CAR_ROSTER = [
               'Single-turbo design avoids supercharger clutch & piston issues.'
             ],
             watchouts: [
-              '7-speed dry DSG mechatronic / clutch wear.',
-              'Automatic, DSG, and CVT gearboxes depend on documented 40,000–60,000 km fluid and filter changes.'
+              'The 7-speed dry-clutch DSG wears clutches and mechatronics faster in heavy stop-and-go traffic.',
+              'Juddering when creeping uphill or reversing signals a worn clutch pack.'
             ],
             beforeYouBuy: [
-              'Demand service receipts for automatic, DSG, or CVT transmission fluid changes every 40,000–60,000 km.',
+              'Demand service receipts for transmission fluid changes every 40,000–60,000 km.',
               'Test Reverse-to-Drive engagement when warm and creep gently uphill to confirm zero jerk or slip.'
             ]
           },
           de: {
             headline: '6-Gang solide • 7-DSG Kupplung prüfen — Leichte Schaltbarkeit',
             strengths: [
-              '6-Gang solide • 7-DSG Kupplung prüfen passt gut zur Motorcharakteristik im Alltag.',
+              'Saubere Schaltführung und stimmige Übersetzung sorgen für ein ruhiges, berechenbares Fahrgefühl.',
               'Bewährte Schaltmechanik und haltbare Zahnräder bei rechtzeitigem Ölservice.'
             ],
             watchouts: [
-              'Verschleiß der Trockenkupplung beim 7-Gang-DSG.',
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.'
+              '6-Gang solide • 7-DSG Kupplung prüfen passt gut zur Motorcharakteristik im Alltag.',
+              'Das trockene 7-Gang-DSG verschleißt Kupplungen und Mechatronik im Stop-and-Go schneller.'
             ],
             beforeYouBuy: [
-              'Nachweise für Automatik-, DSG- oder CVT-Getriebeölwechsel alle 40.000–60.000 km prüfen.',
+              'Nachweise für Getriebeölwechsel alle 40.000–60.000 km prüfen.',
               'Im warmen Zustand von R auf D schalten und am Hang sanft anrollen — ohne Ruckeln oder Verzögerung.'
             ]
           },
@@ -48819,14 +50267,14 @@ const CAR_ROSTER = [
             headline: '6-МКПП надёжна • 7-DSG с сухим сцеплением — Чёткие переключения',
             strengths: [
               '6-МКПП надёжна • 7-DSG с сухим сцеплением хорошо сочетается с данным двигателем в повседневной езде.',
-              'Проверенный механизм переключения и прочные шестерни при своевременной смене масла.'
+              'Чёткое переключение и удачные передаточные числа делают езду комфортной и предсказуемой.'
             ],
             watchouts: [
-              'Износ сцепления и мехатроника сухой 7-DSG.',
-              'АКПП, DSG и вариаторы требуют подтверждённой замены масла каждые 40 000–60 000 км.'
+              'Сухая 7-DSG быстрее изнашивает сцепления и мехатроник в плотных пробках.',
+              'Дёрганье при медленном трогании в горку или задним ходом говорит об износе пакета сцеплений.'
             ],
             beforeYouBuy: [
-              'Запросить чеки о замене масла в АКПП, DSG или вариаторе каждые 40 000–60 000 км.',
+              'Запросить чеки о замене масла в коробке каждые 40 000–60 000 км.',
               'На прогретой машине проверить плавность переключения R–D и ровное трогание в горку без рывков.'
             ]
           }
@@ -48836,10 +50284,11 @@ const CAR_ROSTER = [
             headline: 'Mature Electronics • Few ECU Glitches',
             strengths: [
               'Mature Electronics • Few ECU Glitches keeps electrical diagnostics straightforward.',
-              'Watch Door Wiring Loom & Window Motors.'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.'
+              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.',
+              'Watch Door Wiring Loom & Window Motors.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -48849,9 +50298,12 @@ const CAR_ROSTER = [
             headline: 'Ausgereifte Elektronik • Solide Steuergeräte',
             strengths: [
               'Ausgereifte Elektronik • Solide Steuergeräte sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
+            ],
+            watchouts: [
+              'Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.',
               'Türkabelbaum & Fensterheber prüfen.'
             ],
-            watchouts: ['Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.'],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
             ]
@@ -48860,9 +50312,12 @@ const CAR_ROSTER = [
             headline: 'Зрелая электрика • Стабильные блоки',
             strengths: [
               'Зрелая электрика • Стабильные блоки упрощает диагностику и обслуживание электрооборудования.',
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
+            ],
+            watchouts: [
+              'Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.',
               'Проверить жгуты дверей и стеклоподъёмники.'
             ],
-            watchouts: ['Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.'],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
             ]
@@ -48911,10 +50366,13 @@ const CAR_ROSTER = [
           en: {
             headline: 'Cheap Routine Parts — Chain Replacement ~€850',
             strengths: [
-              'Cheap Routine Parts helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['Chain Replacement ~€850.'],
+            watchouts: [
+              'Chain Replacement ~€850.',
+              'Age-related wear on suspension bushings, exhaust flex-pipes, and brake discs/calipers still requires steady annual upkeep.'
+            ],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -48933,10 +50391,13 @@ const CAR_ROSTER = [
           ru: {
             headline: 'Недорогие расходники — Замена цепи ~€850',
             strengths: [
-              'Недорогие расходники помогает держать ежегодные затраты на ТО под контролем.',
+              'Предсказуемый регламент обслуживания помогает держать ежегодные затраты на ТО под контролем.',
               'Машина хорошо знакома любому сервису, а качественные запчасти широко доступны.'
             ],
-            watchouts: ['Замена цепи ~€850.'],
+            watchouts: [
+              'Замена цепи ~€850.',
+              'Возрастной износ сайлентблоков подвески, тормозов и выхлопной системы требует плановых ежегодных трат.'
+            ],
             beforeYouBuy: ['Откройте план обслуживания ниже и сверьте предстоящие работы с имеющимися чеками.']
           }
         }
@@ -48950,8 +50411,8 @@ const CAR_ROSTER = [
               '5-speed gearbox bearing whine at high mileage.'
             ],
             watchouts: [
-              'Watch Early Pinion Bearing Whine.',
-              'Check clutch bite height and dual-mass flywheel noise at idle on high-mileage manuals.'
+              'Check clutch bite height and listen for dual-mass flywheel rattle at idle on high-mileage cars.',
+              'Cold shifts into 2nd and 3rd should stay crunch-free; grinding points to worn synchros.'
             ],
             beforeYouBuy: [
               'Shift quickly into 1st, 2nd, and 3rd gear cold and warm to verify crisp, crunch-free synchros.',
@@ -48965,8 +50426,8 @@ const CAR_ROSTER = [
               'Bewährte Schaltmechanik und haltbare Zahnräder bei rechtzeitigem Ölservice.'
             ],
             watchouts: [
-              'Auf Lagergeräusche im 5. Gang achten.',
-              'Bei höheren Laufleistungen Kupplungsspiel und Zweimassenschwungrad im Leerlauf prüfen.'
+              'Bei hoher Laufleistung Kupplungs-Greifpunkt prüfen und im Leerlauf auf ZMS-Klappern achten.',
+              'Kalte Schaltvorgänge in den 2. und 3. Gang müssen kratzfrei sein — Kratzen deutet auf verschlissene Synchronringe.'
             ],
             beforeYouBuy: [
               'Im kalten wie warmen Zustand zügig vom 1. in den 2. und 3. Gang schalten — ohne Kratzen.',
@@ -48980,8 +50441,8 @@ const CAR_ROSTER = [
               'Гул подшипников 5-МКПП на больших пробегах.'
             ],
             watchouts: [
-              'Проверить гул подшипников на 5-й.',
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.'
+              'На больших пробегах проверяйте точку схватывания сцепления и стук двухмассового маховика на холостых.',
+              'Переключения на 2-ю и 3-ю на холодную должны идти без хруста — хруст говорит об износе синхронизаторов.'
             ],
             beforeYouBuy: [
               'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
@@ -48994,10 +50455,11 @@ const CAR_ROSTER = [
             headline: 'Mature Electronics • Few ECU Glitches',
             strengths: [
               'Mature Electronics • Few ECU Glitches keeps electrical diagnostics straightforward.',
-              'Watch Door Wiring Loom & Window Motors.'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.'
+              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.',
+              'Watch Door Wiring Loom & Window Motors.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -49007,9 +50469,12 @@ const CAR_ROSTER = [
             headline: 'Ausgereifte Elektronik • Solide Steuergeräte',
             strengths: [
               'Ausgereifte Elektronik • Solide Steuergeräte sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
+            ],
+            watchouts: [
+              'Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.',
               'Türkabelbaum & Fensterheber prüfen.'
             ],
-            watchouts: ['Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.'],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
             ]
@@ -49018,9 +50483,12 @@ const CAR_ROSTER = [
             headline: 'Зрелая электрика • Стабильные блоки',
             strengths: [
               'Зрелая электрика • Стабильные блоки упрощает диагностику и обслуживание электрооборудования.',
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
+            ],
+            watchouts: [
+              'Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.',
               'Проверить жгуты дверей и стеклоподъёмники.'
             ],
-            watchouts: ['Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.'],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
             ]
@@ -49069,10 +50537,10 @@ const CAR_ROSTER = [
           en: {
             headline: 'Lowest Repair Bills in Class — Timing Belt ~€450',
             strengths: [
-              'Lowest Repair Bills in Class helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['Timing Belt ~€450.'],
+            watchouts: ['Timing Belt ~€450.', 'Lowest Repair Bills in Class.'],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -49108,8 +50576,8 @@ const CAR_ROSTER = [
               '6-speed gearbox keeps highway RPM down.'
             ],
             watchouts: [
-              'Check clutch bite height and dual-mass flywheel noise at idle on high-mileage manuals.',
-              'Listen for bearing whine in neutral or shudder on tight turns on AWD models.'
+              'Check clutch bite height and listen for dual-mass flywheel rattle at idle on high-mileage cars.',
+              'Cold shifts into 2nd and 3rd should stay crunch-free; grinding points to worn synchros.'
             ],
             beforeYouBuy: [
               'Shift quickly into 1st, 2nd, and 3rd gear cold and warm to verify crisp, crunch-free synchros.',
@@ -49123,8 +50591,8 @@ const CAR_ROSTER = [
               '6-Gang-Getriebe senkt Autobahndrehzahl.'
             ],
             watchouts: [
-              'Präzise Schaltung.',
-              'Bei höheren Laufleistungen Kupplungsspiel und Zweimassenschwungrad im Leerlauf prüfen.'
+              'Bei hoher Laufleistung Kupplungs-Greifpunkt prüfen und im Leerlauf auf ZMS-Klappern achten.',
+              'Kalte Schaltvorgänge in den 2. und 3. Gang müssen kratzfrei sein — Kratzen deutet auf verschlissene Synchronringe.'
             ],
             beforeYouBuy: [
               'Im kalten wie warmen Zustand zügig vom 1. in den 2. und 3. Gang schalten — ohne Kratzen.',
@@ -49138,8 +50606,8 @@ const CAR_ROSTER = [
               '6-ступенчатая коробка снижает обороты на трассе.'
             ],
             watchouts: [
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.',
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.'
+              'На больших пробегах проверяйте точку схватывания сцепления и стук двухмассового маховика на холостых.',
+              'Переключения на 2-ю и 3-ю на холодную должны идти без хруста — хруст говорит об износе синхронизаторов.'
             ],
             beforeYouBuy: [
               'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
@@ -49152,10 +50620,11 @@ const CAR_ROSTER = [
             headline: 'Mature Electronics • Few ECU Glitches',
             strengths: [
               'Mature Electronics • Few ECU Glitches keeps electrical diagnostics straightforward.',
-              'Watch Door Wiring Loom & Window Motors.'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.'
+              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.',
+              'Watch Door Wiring Loom & Window Motors.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -49165,9 +50634,12 @@ const CAR_ROSTER = [
             headline: 'Ausgereifte Elektronik • Solide Steuergeräte',
             strengths: [
               'Ausgereifte Elektronik • Solide Steuergeräte sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
+            ],
+            watchouts: [
+              'Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.',
               'Türkabelbaum & Fensterheber prüfen.'
             ],
-            watchouts: ['Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.'],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
             ]
@@ -49176,9 +50648,12 @@ const CAR_ROSTER = [
             headline: 'Зрелая электрика • Стабильные блоки',
             strengths: [
               'Зрелая электрика • Стабильные блоки упрощает диагностику и обслуживание электрооборудования.',
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
+            ],
+            watchouts: [
+              'Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.',
               'Проверить жгуты дверей и стеклоподъёмники.'
             ],
-            watchouts: ['Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.'],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
             ]
@@ -49227,10 +50702,10 @@ const CAR_ROSTER = [
           en: {
             headline: 'NOx Sensor ~€450 — Chain Kit ~€850',
             strengths: [
-              'NOx Sensor ~€450 helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['Chain Kit ~€850.'],
+            watchouts: ['Chain Kit ~€850.', 'NOx Sensor ~€450.'],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -49265,9 +50740,12 @@ const CAR_ROSTER = [
               '6-MT & 6-AT Aisin Both Solid matches this powertrain well for everyday driving.',
               'No turbocharger and available with tough Aisin 6-speed auto.'
             ],
-            watchouts: ['Change 6-AT Fluid Every 60k km.', 'Change 6-AT Fluid Every 60k km.'],
+            watchouts: [
+              'Torque-converter automatics need documented 50,000–60,000 km fluid changes to avoid lockup shudder.',
+              'Harsh or delayed 2–3 upshifts when warm signal worn valve-body or solenoid parts.'
+            ],
             beforeYouBuy: [
-              'Demand service receipts for automatic, DSG, or CVT transmission fluid changes every 40,000–60,000 km.',
+              'Demand service receipts for transmission fluid changes every 40,000–60,000 km.',
               'Test Reverse-to-Drive engagement when warm and creep gently uphill to confirm zero jerk or slip.'
             ]
           },
@@ -49278,11 +50756,11 @@ const CAR_ROSTER = [
               'Bewährte Schaltmechanik und haltbare Zahnräder bei rechtzeitigem Ölservice.'
             ],
             watchouts: [
-              'Automatiköl alle 60 Tkm wechseln.',
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.'
+              'Wandlerautomatiken brauchen nachgewiesene Ölwechsel alle 50.000–60.000 km, sonst droht Wandler-Ruckeln.',
+              'Harte oder verzögerte 2–3-Schaltungen im warmen Zustand deuten auf verschlissenen Ventilkörper oder Magnetventile.'
             ],
             beforeYouBuy: [
-              'Nachweise für Automatik-, DSG- oder CVT-Getriebeölwechsel alle 40.000–60.000 km prüfen.',
+              'Nachweise für Getriebeölwechsel alle 40.000–60.000 km prüfen.',
               'Im warmen Zustand von R auf D schalten und am Hang sanft anrollen — ohne Ruckeln oder Verzögerung.'
             ]
           },
@@ -49290,11 +50768,14 @@ const CAR_ROSTER = [
             headline: '6-МКПП и 6-АКПП Aisin надёжны — Менять масло в АКПП раз в 60 тыс.',
             strengths: [
               '6-МКПП и 6-АКПП Aisin надёжны хорошо сочетается с данным двигателем в повседневной езде.',
-              'Проверенный механизм переключения и прочные шестерни при своевременной смене масла.'
+              'Чёткое переключение и удачные передаточные числа делают езду комфортной и предсказуемой.'
             ],
-            watchouts: ['Менять масло в АКПП раз в 60 тыс.', 'Менять масло в АКПП раз в 60 тыс.'],
+            watchouts: [
+              'Гидротрансформаторным АКПП нужна подтверждённая замена масла каждые 50 000–60 000 км, иначе появляются рывки блокировки.',
+              'Жёсткие или запоздалые переключения 2–3 на горячую указывают на износ гидроблока или соленоидов.'
+            ],
             beforeYouBuy: [
-              'Запросить чеки о замене масла в АКПП, DSG или вариаторе каждые 40 000–60 000 км.',
+              'Запросить чеки о замене масла в коробке каждые 40 000–60 000 км.',
               'На прогретой машине проверить плавность переключения R–D и ровное трогание в горку без рывков.'
             ]
           }
@@ -49304,10 +50785,11 @@ const CAR_ROSTER = [
             headline: 'Mature Electronics • Few ECU Glitches',
             strengths: [
               'Mature Electronics • Few ECU Glitches keeps electrical diagnostics straightforward.',
-              'Watch Door Wiring Loom & Window Motors.'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.'
+              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.',
+              'Watch Door Wiring Loom & Window Motors.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -49317,9 +50799,12 @@ const CAR_ROSTER = [
             headline: 'Ausgereifte Elektronik • Solide Steuergeräte',
             strengths: [
               'Ausgereifte Elektronik • Solide Steuergeräte sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
+            ],
+            watchouts: [
+              'Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.',
               'Türkabelbaum & Fensterheber prüfen.'
             ],
-            watchouts: ['Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.'],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
             ]
@@ -49328,9 +50813,12 @@ const CAR_ROSTER = [
             headline: 'Зрелая электрика • Стабильные блоки',
             strengths: [
               'Зрелая электрика • Стабильные блоки упрощает диагностику и обслуживание электрооборудования.',
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
+            ],
+            watchouts: [
+              'Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.',
               'Проверить жгуты дверей и стеклоподъёмники.'
             ],
-            watchouts: ['Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.'],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
             ]
@@ -49379,11 +50867,12 @@ const CAR_ROSTER = [
           en: {
             headline: 'Belt + Chain Link Service — Cam Follower Cheap (€45)',
             strengths: [
-              'Belt + Chain Link Service helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Cam Follower Cheap (€45).'
             ],
             watchouts: [
-              'Aging 10+ year rubber hoses, suspension bushings, and brake/tyre wear still add routine upkeep.'
+              'Aging 10+ year rubber hoses, suspension bushings, and brake/tyre wear still add routine upkeep.',
+              'Belt + Chain Link Service.'
             ],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
@@ -49422,11 +50911,11 @@ const CAR_ROSTER = [
               '200 hp / 280 Nm with tough wet-clutch 6-DSG or 6-MT.'
             ],
             watchouts: [
-              'Service DSG Oil Every 60,000 km.',
-              'Automatic, DSG, and CVT gearboxes depend on documented 40,000–60,000 km fluid and filter changes.'
+              'The wet-clutch 6-speed DSG needs strict 60,000 km oil and filter changes to keep shifts smooth.',
+              'Mechatronic faults show up as jerky low-speed shifts or a flashing gear indicator.'
             ],
             beforeYouBuy: [
-              'Demand service receipts for automatic, DSG, or CVT transmission fluid changes every 40,000–60,000 km.',
+              'Demand service receipts for transmission fluid changes every 40,000–60,000 km.',
               'Test Reverse-to-Drive engagement when warm and creep gently uphill to confirm zero jerk or slip.'
             ]
           },
@@ -49436,9 +50925,12 @@ const CAR_ROSTER = [
               'Nasses 6-DSG & 6-Gang sehr robust passt gut zur Motorcharakteristik im Alltag.',
               '200 PS mit standfestem 6-Gang-Nass-DSG.'
             ],
-            watchouts: ['DSG-Ölwechsel alle 60.000 km.', 'DSG-Ölwechsel alle 60.000 km.'],
+            watchouts: [
+              'Das nasse 6-Gang-DSG braucht strikte Öl- und Filterwechsel alle 60.000 km für saubere Schaltvorgänge.',
+              'Mechatronik-Fehler zeigen sich durch ruckige Schaltungen bei niedrigem Tempo oder blinkende Ganganzeige.'
+            ],
             beforeYouBuy: [
-              'Nachweise für Automatik-, DSG- oder CVT-Getriebeölwechsel alle 40.000–60.000 km prüfen.',
+              'Nachweise für Getriebeölwechsel alle 40.000–60.000 km prüfen.',
               'Im warmen Zustand von R auf D schalten und am Hang sanft anrollen — ohne Ruckeln oder Verzögerung.'
             ]
           },
@@ -49448,9 +50940,12 @@ const CAR_ROSTER = [
               'Мокрая 6-DSG и 6-МКПП крепки хорошо сочетается с данным двигателем в повседневной езде.',
               '200 л.с. в паре с надёжной мокрой 6-DSG.'
             ],
-            watchouts: ['Масло в 6-DSG менять раз в 60 тыс.', 'Масло в 6-DSG менять раз в 60 тыс.'],
+            watchouts: [
+              'Мокрой 6-DSG нужна строгая замена масла и фильтра каждые 60 000 км для плавных переключений.',
+              'Неисправность мехатроника проявляется рывками на малой скорости или мигающим индикатором передачи.'
+            ],
             beforeYouBuy: [
-              'Запросить чеки о замене масла в АКПП, DSG или вариаторе каждые 40 000–60 000 км.',
+              'Запросить чеки о замене масла в коробке каждые 40 000–60 000 км.',
               'На прогретой машине проверить плавность переключения R–D и ровное трогание в горку без рывков.'
             ]
           }
@@ -49460,10 +50955,11 @@ const CAR_ROSTER = [
             headline: 'Mature Electronics • Few ECU Glitches',
             strengths: [
               'Mature Electronics • Few ECU Glitches keeps electrical diagnostics straightforward.',
-              'Watch Door Wiring Loom & Window Motors.'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.'
+              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.',
+              'Watch Door Wiring Loom & Window Motors.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -49473,9 +50969,12 @@ const CAR_ROSTER = [
             headline: 'Ausgereifte Elektronik • Solide Steuergeräte',
             strengths: [
               'Ausgereifte Elektronik • Solide Steuergeräte sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
+            ],
+            watchouts: [
+              'Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.',
               'Türkabelbaum & Fensterheber prüfen.'
             ],
-            watchouts: ['Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.'],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
             ]
@@ -49484,9 +50983,12 @@ const CAR_ROSTER = [
             headline: 'Зрелая электрика • Стабильные блоки',
             strengths: [
               'Зрелая электрика • Стабильные блоки упрощает диагностику и обслуживание электрооборудования.',
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
+            ],
+            watchouts: [
+              'Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.',
               'Проверить жгуты дверей и стеклоподъёмники.'
             ],
-            watchouts: ['Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.'],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
             ]
@@ -49535,10 +51037,10 @@ const CAR_ROSTER = [
           en: {
             headline: 'DSG Oil Service ~€280 — Chain/Oil Fix Can Be Costly',
             strengths: [
-              'DSG Oil Service ~€280 helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['Chain/Oil Fix Can Be Costly.'],
+            watchouts: ['Chain/Oil Fix Can Be Costly.', 'DSG Oil Service ~€280.'],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -49557,10 +51059,10 @@ const CAR_ROSTER = [
           ru: {
             headline: 'Замена масла DSG ~€280 — Ремонт цепи/поршневой дорог',
             strengths: [
-              'Замена масла DSG ~€280 помогает держать ежегодные затраты на ТО под контролем.',
+              'Предсказуемый регламент обслуживания помогает держать ежегодные затраты на ТО под контролем.',
               'Машина хорошо знакома любому сервису, а качественные запчасти широко доступны.'
             ],
-            watchouts: ['Ремонт цепи/поршневой дорог.'],
+            watchouts: ['Ремонт цепи/поршневой дорог.', 'Замена масла DSG ~€280.'],
             beforeYouBuy: ['Откройте план обслуживания ниже и сверьте предстоящие работы с имеющимися чеками.']
           }
         }
@@ -49574,8 +51076,8 @@ const CAR_ROSTER = [
               'Proven shift linkage and durable gearsets when transmission fluid is maintained.'
             ],
             watchouts: [
-              'Check clutch bite height and dual-mass flywheel noise at idle on high-mileage manuals.',
-              'Listen for bearing whine in neutral or shudder on tight turns on AWD models.'
+              'Check clutch bite height and listen for dual-mass flywheel rattle at idle on high-mileage cars.',
+              'Cold shifts into 2nd and 3rd should stay crunch-free; grinding points to worn synchros.'
             ],
             beforeYouBuy: [
               'Shift quickly into 1st, 2nd, and 3rd gear cold and warm to verify crisp, crunch-free synchros.',
@@ -49589,8 +51091,8 @@ const CAR_ROSTER = [
               'Bewährte Schaltmechanik und haltbare Zahnräder bei rechtzeitigem Ölservice.'
             ],
             watchouts: [
-              'Haltbare Kupplung.',
-              'Bei höheren Laufleistungen Kupplungsspiel und Zweimassenschwungrad im Leerlauf prüfen.'
+              'Bei hoher Laufleistung Kupplungs-Greifpunkt prüfen und im Leerlauf auf ZMS-Klappern achten.',
+              'Kalte Schaltvorgänge in den 2. und 3. Gang müssen kratzfrei sein — Kratzen deutet auf verschlissene Synchronringe.'
             ],
             beforeYouBuy: [
               'Im kalten wie warmen Zustand zügig vom 1. in den 2. und 3. Gang schalten — ohne Kratzen.',
@@ -49601,11 +51103,11 @@ const CAR_ROSTER = [
             headline: 'Надёжная 5-МКПП — Долговечное сцепление',
             strengths: [
               'Надёжная 5-МКПП хорошо сочетается с данным двигателем в повседневной езде.',
-              'Проверенный механизм переключения и прочные шестерни при своевременной смене масла.'
+              'Чёткое переключение и удачные передаточные числа делают езду комфортной и предсказуемой.'
             ],
             watchouts: [
-              'Долговечное сцепление.',
-              'На больших пробегах проверяйте момент схватывания сцепления и отсутствие стука маховика.'
+              'На больших пробегах проверяйте точку схватывания сцепления и стук двухмассового маховика на холостых.',
+              'Переключения на 2-ю и 3-ю на холодную должны идти без хруста — хруст говорит об износе синхронизаторов.'
             ],
             beforeYouBuy: [
               'Чётко переключить 1–2–3 передачи на холодную и на горячую — хруста синхронизаторов быть не должно.',
@@ -49618,10 +51120,11 @@ const CAR_ROSTER = [
             headline: 'Mature Electronics • Few ECU Glitches',
             strengths: [
               'Mature Electronics • Few ECU Glitches keeps electrical diagnostics straightforward.',
-              'Watch Door Wiring Loom & Window Motors.'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.'
+              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.',
+              'Watch Door Wiring Loom & Window Motors.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -49631,10 +51134,11 @@ const CAR_ROSTER = [
             headline: 'Ausgereifte Elektronik • Solide Steuergeräte',
             strengths: [
               'Ausgereifte Elektronik • Solide Steuergeräte sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
-              'Türkabelbaum & Fensterheber prüfen.'
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
             ],
             watchouts: [
-              'Abgassensoren (DPF-Differenzdruck, Glühkerzen, AGR) melden sich häufiger ab 140.000 km.'
+              'Abgassensoren (DPF-Differenzdruck, Glühkerzen, AGR) melden sich häufiger ab 140.000 km.',
+              'Türkabelbaum & Fensterheber prüfen.'
             ],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
@@ -49644,10 +51148,11 @@ const CAR_ROSTER = [
             headline: 'Зрелая электрика • Стабильные блоки',
             strengths: [
               'Зрелая электрика • Стабильные блоки упрощает диагностику и обслуживание электрооборудования.',
-              'Проверить жгуты дверей и стеклоподъёмники.'
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
             ],
             watchouts: [
-              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.'
+              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.',
+              'Проверить жгуты дверей и стеклоподъёмники.'
             ],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
@@ -49697,10 +51202,10 @@ const CAR_ROSTER = [
           en: {
             headline: 'Long 210k km Belt Interval — Injector Replacement ~€450 Each',
             strengths: [
-              'Long 210k km Belt Interval helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['Injector Replacement ~€450 Each.'],
+            watchouts: ['Injector Replacement ~€450 Each.', 'Long 210k km Belt Interval.'],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -49735,39 +51240,41 @@ const CAR_ROSTER = [
               '5-MT Solid • 7-DSG Dry-Clutch Care matches this powertrain well for everyday driving.',
               'Proven shift linkage and durable gearsets when transmission fluid is maintained.'
             ],
-            watchouts: ['250 Nm At 7-DSG Limit.', '7-speed dry DSG clutch shudder at 250 Nm limit.'],
+            watchouts: [
+              'The 7-speed dry-clutch DSG wears clutches and mechatronics faster in heavy stop-and-go traffic.',
+              'Juddering when creeping uphill or reversing signals a worn clutch pack.'
+            ],
             beforeYouBuy: [
-              'Demand service receipts for automatic, DSG, or CVT transmission fluid changes every 40,000–60,000 km.',
+              'Demand service receipts for transmission fluid changes every 40,000–60,000 km.',
               'Test Reverse-to-Drive engagement when warm and creep gently uphill to confirm zero jerk or slip.'
             ]
           },
           de: {
             headline: '5-Gang solide • 7-DSG prüfen — 250 Nm am 7-DSG-Limit',
             strengths: [
-              '5-Gang solide • 7-DSG prüfen passt gut zur Motorcharakteristik im Alltag.',
+              'Saubere Schaltführung und stimmige Übersetzung sorgen für ein ruhiges, berechenbares Fahrgefühl.',
               '7-Gang-Trocken-DSG am Drehmomentlimit.'
             ],
             watchouts: [
-              '250 Nm am 7-DSG-Limit.',
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.'
+              '5-Gang solide • 7-DSG prüfen passt gut zur Motorcharakteristik im Alltag.',
+              'Das trockene 7-Gang-DSG verschleißt Kupplungen und Mechatronik im Stop-and-Go schneller.'
             ],
             beforeYouBuy: [
-              'Nachweise für Automatik-, DSG- oder CVT-Getriebeölwechsel alle 40.000–60.000 km prüfen.',
+              'Nachweise für Getriebeölwechsel alle 40.000–60.000 km prüfen.',
               'Im warmen Zustand von R auf D schalten und am Hang sanft anrollen — ohne Ruckeln oder Verzögerung.'
             ]
           },
           ru: {
             headline: '5-МКПП надёжна • 7-DSG на пределе — 250 Н·м — предел сухой DSG',
             strengths: [
-              '5-МКПП надёжна • 7-DSG на пределе хорошо сочетается с данным двигателем в повседневной езде.',
-              'Сухая 7-DSG на пределе момента.'
+              'Чёткое переключение и удачные передаточные числа делают езду комфортной и предсказуемой.'
             ],
             watchouts: [
-              '250 Н·м — предел сухой DSG.',
-              'АКПП, DSG и вариаторы требуют подтверждённой замены масла каждые 40 000–60 000 км.'
+              '5-МКПП надёжна • 7-DSG на пределе хорошо сочетается с данным двигателем в повседневной езде.',
+              'Сухая 7-DSG быстрее изнашивает сцепления и мехатроник в плотных пробках.'
             ],
             beforeYouBuy: [
-              'Запросить чеки о замене масла в АКПП, DSG или вариаторе каждые 40 000–60 000 км.',
+              'Запросить чеки о замене масла в коробке каждые 40 000–60 000 км.',
               'На прогретой машине проверить плавность переключения R–D и ровное трогание в горку без рывков.'
             ]
           }
@@ -49777,10 +51284,11 @@ const CAR_ROSTER = [
             headline: 'Mature Electronics • Few ECU Glitches',
             strengths: [
               'Mature Electronics • Few ECU Glitches keeps electrical diagnostics straightforward.',
-              'Watch Door Wiring Loom & Window Motors.'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.'
+              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.',
+              'Watch Door Wiring Loom & Window Motors.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -49790,10 +51298,11 @@ const CAR_ROSTER = [
             headline: 'Ausgereifte Elektronik • Solide Steuergeräte',
             strengths: [
               'Ausgereifte Elektronik • Solide Steuergeräte sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
-              'Türkabelbaum & Fensterheber prüfen.'
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
             ],
             watchouts: [
-              'Abgassensoren (DPF-Differenzdruck, Glühkerzen, AGR) melden sich häufiger ab 140.000 km.'
+              'Abgassensoren (DPF-Differenzdruck, Glühkerzen, AGR) melden sich häufiger ab 140.000 km.',
+              'Türkabelbaum & Fensterheber prüfen.'
             ],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
@@ -49803,10 +51312,11 @@ const CAR_ROSTER = [
             headline: 'Зрелая электрика • Стабильные блоки',
             strengths: [
               'Зрелая электрика • Стабильные блоки упрощает диагностику и обслуживание электрооборудования.',
-              'Проверить жгуты дверей и стеклоподъёмники.'
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
             ],
             watchouts: [
-              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.'
+              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.',
+              'Проверить жгуты дверей и стеклоподъёмники.'
             ],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
@@ -49856,10 +51366,13 @@ const CAR_ROSTER = [
           en: {
             headline: '210k km Belt Interval — Injectors/EGR Main Cost',
             strengths: [
-              '210k km Belt Interval helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['Injectors/EGR Main Cost.'],
+            watchouts: [
+              'Injectors/EGR Main Cost.',
+              'Plan a reserve for higher-mileage diesel wear parts such as dual-mass flywheel, clutch, injectors, or DPF cleaning.'
+            ],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -49892,14 +51405,14 @@ const CAR_ROSTER = [
             headline: '5-MT & Wet 6-DSG Both Tough — Flywheel Wear After 180k km',
             strengths: [
               '5-MT & Wet 6-DSG Both Tough matches this powertrain well for everyday driving.',
-              'Flywheel Wear After 180k km.'
+              'Crisp shift feel and well-matched ratios keep everyday driving composed and predictable.'
             ],
             watchouts: [
-              'Dual-mass flywheel chatter and camshaft lobe wear on wrong oil.',
-              'Turbocharger vane sticking & dual-mass flywheel wear.'
+              'The wet-clutch 6-speed DSG needs strict 60,000 km oil and filter changes to keep shifts smooth.',
+              'Mechatronic faults show up as jerky low-speed shifts or a flashing gear indicator.'
             ],
             beforeYouBuy: [
-              'Demand service receipts for automatic, DSG, or CVT transmission fluid changes every 40,000–60,000 km.',
+              'Demand service receipts for transmission fluid changes every 40,000–60,000 km.',
               'Test Reverse-to-Drive engagement when warm and creep gently uphill to confirm zero jerk or slip.'
             ]
           },
@@ -49907,14 +51420,14 @@ const CAR_ROSTER = [
             headline: '5-Gang & nasses 6-DSG robust — ZMS-Verschleiß ab ca. 180 Tkm',
             strengths: [
               '5-Gang & nasses 6-DSG robust passt gut zur Motorcharakteristik im Alltag.',
-              'ZMS-Verschleiß ab ca. 180 Tkm.'
+              'Saubere Schaltführung und stimmige Übersetzung sorgen für ein ruhiges, berechenbares Fahrgefühl.'
             ],
             watchouts: [
-              'ZMS-Klackern & Nockenwellen-Verschleiß bei falschem Öl.',
-              'Turbolader-VTG & ZMS-Verschleiß.'
+              'Das nasse 6-Gang-DSG braucht strikte Öl- und Filterwechsel alle 60.000 km für saubere Schaltvorgänge.',
+              'Mechatronik-Fehler zeigen sich durch ruckige Schaltungen bei niedrigem Tempo oder blinkende Ganganzeige.'
             ],
             beforeYouBuy: [
-              'Nachweise für Automatik-, DSG- oder CVT-Getriebeölwechsel alle 40.000–60.000 km prüfen.',
+              'Nachweise für Getriebeölwechsel alle 40.000–60.000 km prüfen.',
               'Im warmen Zustand von R auf D schalten und am Hang sanft anrollen — ohne Ruckeln oder Verzögerung.'
             ]
           },
@@ -49925,11 +51438,11 @@ const CAR_ROSTER = [
               'Маховик к 180 тыс. км.'
             ],
             watchouts: [
-              'Стук маховика и износ распредвала при неверном масле.',
-              'Закисание геометрии турбины и износ маховика.'
+              'Мокрой 6-DSG нужна строгая замена масла и фильтра каждые 60 000 км для плавных переключений.',
+              'Неисправность мехатроника проявляется рывками на малой скорости или мигающим индикатором передачи.'
             ],
             beforeYouBuy: [
-              'Запросить чеки о замене масла в АКПП, DSG или вариаторе каждые 40 000–60 000 км.',
+              'Запросить чеки о замене масла в коробке каждые 40 000–60 000 км.',
               'На прогретой машине проверить плавность переключения R–D и ровное трогание в горку без рывков.'
             ]
           }
@@ -49939,10 +51452,11 @@ const CAR_ROSTER = [
             headline: 'Mature Electronics • Few ECU Glitches',
             strengths: [
               'Mature Electronics • Few ECU Glitches keeps electrical diagnostics straightforward.',
-              'Watch Door Wiring Loom & Window Motors.'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.'
+              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.',
+              'Watch Door Wiring Loom & Window Motors.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -49952,10 +51466,11 @@ const CAR_ROSTER = [
             headline: 'Ausgereifte Elektronik • Solide Steuergeräte',
             strengths: [
               'Ausgereifte Elektronik • Solide Steuergeräte sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
-              'Türkabelbaum & Fensterheber prüfen.'
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
             ],
             watchouts: [
-              'Abgassensoren (DPF-Differenzdruck, Glühkerzen, AGR) melden sich häufiger ab 140.000 km.'
+              'Abgassensoren (DPF-Differenzdruck, Glühkerzen, AGR) melden sich häufiger ab 140.000 km.',
+              'Türkabelbaum & Fensterheber prüfen.'
             ],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
@@ -49965,10 +51480,11 @@ const CAR_ROSTER = [
             headline: 'Зрелая электрика • Стабильные блоки',
             strengths: [
               'Зрелая электрика • Стабильные блоки упрощает диагностику и обслуживание электрооборудования.',
-              'Проверить жгуты дверей и стеклоподъёмники.'
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
             ],
             watchouts: [
-              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.'
+              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.',
+              'Проверить жгуты дверей и стеклоподъёмники.'
             ],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
@@ -50018,10 +51534,12 @@ const CAR_ROSTER = [
           en: {
             headline: 'Cheap Parts Everywhere — No Piezo Injectors to Fail',
             strengths: [
-              'Cheap Parts Everywhere helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['No Piezo Injectors to Fail.'],
+            watchouts: [
+              'Plan a reserve for higher-mileage diesel wear parts such as dual-mass flywheel, clutch, injectors, or DPF cleaning.'
+            ],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -50052,6 +51570,7 @@ const CAR_ROSTER = [
     engines: [
       {
         id: '1.2-tfsi',
+        buyerFitGroup: 'turbo-petrol',
         dossierGroup: 'petrol-dry-dsg',
         isDefault: false,
         fuelType: 'petrol',
@@ -50484,6 +52003,7 @@ const CAR_ROSTER = [
       },
       {
         id: '1.4-tfsi',
+        buyerFitGroup: 'turbo-petrol',
         dossierGroup: 'petrol-dry-dsg',
         isDefault: false,
         fuelType: 'petrol',
@@ -50563,7 +52083,7 @@ const CAR_ROSTER = [
                   'Turbo Wastegate Rod Rattle & Valve Carbon: Worn wastegate actuator linkages buzz on deceleration and direct injection coats intake valves past 100,000 km.'
                 ],
                 strengths: [
-                  'Single-turbo setup avoids the fragile magnetic supercharger coupler and piston failures of the 160 HP Twincharger.',
+                  'Single-turbo setup delivers 200 Nm from 1,500 rpm without complex supercharger hardware.',
                   'Can reach 200,000–240,000+ km once the updated timing chain is fitted and oil is changed every 10,000–15,000 km.'
                 ],
                 watchouts: [
@@ -50633,7 +52153,7 @@ const CAR_ROSTER = [
                   'Wastegate-Rasseln & Einlassverkokung: Ausgeschlagenes Turbolader-Gestänge klappert beim Gaswegnehmen; Direkteinspritzung verkokt die Ventile.'
                 ],
                 strengths: [
-                  'Reiner Single-Turbo ohne die anfällige Kompressor-Technik und Kolbenschäden des 160-PS-Twinchargers.',
+                  'Reiner Single-Turbo liefert 200 Nm ab 1.500 U/min ohne komplexe Kompressor-Zusatztechnik.',
                   'Erreicht 200.000–240.000+ km mit erneuerter Steuerkette und Ölwechseln alle 10.000–15.000 km.'
                 ],
                 watchouts: [
@@ -50703,7 +52223,7 @@ const CAR_ROSTER = [
                   'Звон тяги вестгейта и нагар на клапанах: Разбитый привод заслонки турбины дребезжит под сброс газа, а прямой впрыск даёт нагар после 100 тыс. км.'
                 ],
                 strengths: [
-                  'Одна турбина без капризного компрессора и разрушения поршней, как на 160-сильном Twincharger.',
+                  'Простая схема с одной турбиной выдаёт 200 Н·м с 1 500 об/мин без сложного механического нагнетателя.',
                   'Ходит 200 000–240 000+ км после замены цепи ГРМ и при смене масла каждые 10–15 тыс. км.'
                 ],
                 watchouts: [
@@ -50916,6 +52436,7 @@ const CAR_ROSTER = [
       },
       {
         id: '1.6-mpi',
+        buyerFitGroup: 'na-petrol',
         dossierGroup: 'petrol-5mt',
         isDefault: false,
         fuelType: 'petrol',
@@ -51339,6 +52860,10 @@ const CAR_ROSTER = [
       },
       {
         id: '1.6-fsi',
+        buyerFitGroup: 'na-petrol',
+        buyerFitOverrides: {
+          ideal: ['a38pFsiNoTurbo', 'a38pCabinBenchmark', 'a38pCompactAgile', 'globalPetrolCityZones']
+        },
         dossierGroup: 'petrol-6mt',
         isDefault: false,
         fuelType: 'petrol',
@@ -51408,7 +52933,7 @@ const CAR_ROSTER = [
             },
             dossier: {
               en: {
-                headline: 'Early Direct-Injection 1.6L — Far More Complex Than the Simple 1.6 MPI',
+                headline: 'Early Direct-Injection 1.6L FSI — Crisp Throttle Response With Sensitive NOx & Fuel Sensors',
                 lowScoreReasons: [
                   'Cold-Start Timing Chain Stretch & Tensioner Wear: Early FSI timing chains and hydraulic tensioners rattle on cold startup and can jump timing if neglected (€850–€1,200).',
                   'Expensive NOx Exhaust Sensor & Intake Carbon: Failing NOx sensors (€400–€550) and direct-injection carbon buildup on intake valves trigger recurring check-engine lights and rough idle.'
@@ -51418,7 +52943,7 @@ const CAR_ROSTER = [
                   'Can reach 200,000–240,000+ km once the timing chain kit is refreshed and oil is changed every 10,000–12,000 km.'
                 ],
                 watchouts: [
-                  'Ignition coil packs and high-pressure fuel sensor/pump issues appear more often than on the port-injected 1.6 MPI.',
+                  'Ignition coil packs and high-pressure fuel sensors require periodic attention as mileage climbs.',
                   'Requires 98-octane fuel for rated efficiency and smooth running on early stratified-charge setups.'
                 ],
                 beforeYouBuy: [
@@ -51478,7 +53003,7 @@ const CAR_ROSTER = [
                 ]
               },
               de: {
-                headline: 'Früher 1.6L Direkteinspritzer — deutlich anfälliger als der simple 1.6 MPI',
+                headline: 'Früher 1.6L FSI Direkteinspritzer — direktes Ansprechverhalten, aber empfindliche NOx- und Kraftstoffsensorik',
                 lowScoreReasons: [
                   'Steuerketten-Längung beim Kaltstart: Kette und Spanner neigen ab mittlerer Laufleistung zum Rasseln und kosten im Tausch ca. 850–1.200 €.',
                   'Teurer NOx-Sensor & Einlassverkokung: Defekte NOx-Abgassensoren (400–550 €) und verkokte Einlassventile sorgen häufig für Motorkontrollleuchte und unrunden Lauf.'
@@ -51488,7 +53013,7 @@ const CAR_ROSTER = [
                   'Erreicht 200.000–240.000+ km bei erneuertem Kettensatz und Ölwechseln alle 10.000–12.000 km.'
                 ],
                 watchouts: [
-                  'Stabzündspulen und Hochdruck-Kraftstoffsensorik fallen öfter aus als beim schlichten 1.6 MPI.',
+                  'Stabzündspulen und Hochdruck-Kraftstoffsensorik benötigen im Alter öfter Aufmerksamkeit.',
                   'Für volle Leistung und sauberen Lauf oft Super Plus (98 ROZ) empfohlen.'
                 ],
                 beforeYouBuy: [
@@ -51548,7 +53073,7 @@ const CAR_ROSTER = [
                 ]
               },
               ru: {
-                headline: 'Ранний 1.6 FSI с прямым впрыском — заметно капризнее простого 1.6 MPI',
+                headline: 'Ранний 1.6 FSI с прямым впрыском — живой отклик на газ, но капризные датчики NOx и давления топлива',
                 lowScoreReasons: [
                   'Растяжение цепи ГРМ на холодную: Цепь и гидронатяжитель часто гремят при пуске и требуют замены (€850–1 200).',
                   'Дорогой датчик NOx и нагар на клапанах: Поломка датчика NOx (€400–550) и отложения на впускных клапанах вызывают ошибки и неровную работу.'
@@ -51558,7 +53083,7 @@ const CAR_ROSTER = [
                   'Проходит 200 000–240 000+ км после обновления комплекта цепи и при смене масла каждые 10–12 тыс. км.'
                 ],
                 watchouts: [
-                  'Катушки зажигания и датчики давления топлива требуют внимания чаще, чем на простом 1.6 MPI.',
+                  'Катушки зажигания и датчики высокого давления топлива требуют внимания с возрастом.',
                   'Чувствителен к качеству бензина — лучше заправлять АИ-98/95 высокого качества.'
                 ],
                 beforeYouBuy: [
@@ -51767,6 +53292,10 @@ const CAR_ROSTER = [
       },
       {
         id: '1.8-tfsi',
+        buyerFitGroup: 'turbo-petrol',
+        buyerFitOverrides: {
+          skip: ['a38p18TfsiOilRisk', 'a38pDryDsgCare', 'a38pSmallBoot', 'a38pCabinWear']
+        },
         dossierGroup: 'petrol-dry-dsg',
         isDefault: false,
         fuelType: 'petrol',
@@ -52199,6 +53728,10 @@ const CAR_ROSTER = [
       },
       {
         id: '2.0-fsi',
+        buyerFitGroup: 'na-petrol',
+        buyerFitOverrides: {
+          ideal: ['a38pFsiNoTurbo', 'a38pCabinBenchmark', 'a38pCompactAgile', 'globalPetrolCityZones']
+        },
         dossierGroup: 'petrol-conv-auto',
         isDefault: false,
         fuelType: 'petrol',
@@ -52610,6 +54143,10 @@ const CAR_ROSTER = [
       },
       {
         id: '2.0-tfsi',
+        buyerFitGroup: 'turbo-petrol',
+        buyerFitOverrides: {
+          skip: ['a38pChainOilRisk', 'a38pWetDsgFluid', 'a38pSmallBoot', 'a38pCabinWear']
+        },
         dossierGroup: 'petrol-wet-dsg',
         isDefault: false,
         fuelType: 'petrol',
@@ -53042,6 +54579,10 @@ const CAR_ROSTER = [
       },
       {
         id: '1.6-tdi-90',
+        buyerFitGroup: 'diesel-cr',
+        buyerFitOverrides: {
+          skip: ['globalDieselShortTripRisk', 'a38pSlow90HpPace', 'a38pSmallBoot', 'a38pCabinWear']
+        },
         dossierGroup: 'diesel-5mt',
         isDefault: false,
         fuelType: 'diesel',
@@ -53459,6 +55000,10 @@ const CAR_ROSTER = [
       },
       {
         id: '1.6-tdi-105',
+        buyerFitGroup: 'diesel-cr',
+        buyerFitOverrides: {
+          skip: ['globalDieselShortTripRisk', 'a38pDryDsgCare', 'a38pSmallBoot', 'a38pCabinWear']
+        },
         dossierGroup: 'diesel-dry-dsg',
         isDefault: false,
         fuelType: 'diesel',
@@ -53532,7 +55077,7 @@ const CAR_ROSTER = [
             },
             dossier: {
               en: {
-                headline: 'Frugal 105 hp common-rail— great economy, but 2.0 TDI 140 CR is noticeably tougher.',
+                headline: 'Frugal 105 HP Common-Rail — Low Highway Fuel Burn With Sensitive Injectors & EGR',
                 strengths: [
                   'Low fuel bills and smooth common-rail torque.',
                   '210,000 km timing belt schedule.',
@@ -53599,7 +55144,7 @@ const CAR_ROSTER = [
                 ]
               },
               de: {
-                headline: 'Sparsamer 105-PS-Diesel— toller Verbrauch, aber der 2.0 TDI 140 CR ist robuster.',
+                headline: 'Sparsamer 105-PS-Diesel — niedriger Verbrauch, aber empfindliche Injektoren und AGR',
                 strengths: [
                   'Sehr niedriger Verbrauch und ruhiger Lauf.',
                   'Langes Zahnriemen-Intervall.',
@@ -53666,7 +55211,7 @@ const CAR_ROSTER = [
                 ]
               },
               ru: {
-                headline: 'Экономичный дизель 105 л.с.— но 2.0 TDI 140 CR ощутимо крепче и приятнее.',
+                headline: 'Экономичный дизель 105 л.с. — малый расход, но капризные форсунки и клапан ЕГР',
                 strengths: [
                   'Низкий расход топлива и тихая работа.',
                   'Большой интервал замены ремня ГРМ.',
@@ -53882,6 +55427,7 @@ const CAR_ROSTER = [
       },
       {
         id: '1.9-tdi',
+        buyerFitGroup: 'diesel-cr',
         dossierGroup: 'diesel-wet-dsg',
         isDefault: false,
         fuelType: 'diesel',
@@ -54296,6 +55842,7 @@ const CAR_ROSTER = [
       },
       {
         id: '2.0-tdi-140-pd',
+        buyerFitGroup: 'diesel-pd',
         dossierGroup: 'diesel-wet-dsg',
         isDefault: false,
         fuelType: 'diesel',
@@ -54724,6 +56271,7 @@ const CAR_ROSTER = [
       },
       {
         id: '2.0-tdi-140',
+        buyerFitGroup: 'diesel-cr',
         dossierGroup: 'diesel-wet-dsg',
         isDefault: true,
         fuelType: 'diesel',
@@ -54932,7 +56480,6 @@ const CAR_ROSTER = [
                 headline: 'Лучший мотор в линейке A3 8P— тихий, тяговитый и намного надёжнее старого PD.',
                 strengths: [
                   'Система Common-Rail решила проблему трещин ГБЦ.',
-                  'Способен пройти 240 000–280 000+ км при замене масла каждые 10 000–15 000 км.',
                   'Способен пройти 240 000–280 000+ км при замене масла каждые 10 000–15 000 км.'
                 ],
                 watchouts: [
@@ -55145,6 +56692,10 @@ const CAR_ROSTER = [
       },
       {
         id: '2.0-tdi-170-pd',
+        buyerFitGroup: 'diesel-pd',
+        buyerFitOverrides: {
+          skip: ['a38p170PdPiezoRisk', 'globalDieselShortTripRisk', 'a38pSmallBoot', 'a38pWetDsgFluid']
+        },
         dossierGroup: 'diesel-wet-dsg',
         isDefault: false,
         fuelType: 'diesel',
@@ -55569,6 +57120,7 @@ const CAR_ROSTER = [
       },
       {
         id: '2.0-tdi-170-cr',
+        buyerFitGroup: 'diesel-cr',
         dossierGroup: 'diesel-wet-dsg',
         isDefault: false,
         fuelType: 'diesel',
@@ -56005,6 +57557,132 @@ const CAR_ROSTER = [
     drivetrain: 'FWD',
     image: 'assets/audi-a3-8v-2016.png',
     defaultEngineId: '2.0-tdi-150',
+    sharedBuyerFit: {
+      cards: {
+        a38vInteriorClass: {
+          en: 'You value class-leading interior quality: Metal rotary knobs, tight panel gaps, and refined acoustics still feel genuinely premium.',
+          de: 'Du schätzt erstklassige Verarbeitung: Alu-Drehregler, exakte Spaltmaße und ruhige Dämmung setzen Maßstäbe in der Kompaktklasse.',
+          ru: 'Ты ценишь лучший интерьер в классе: Алюминиевые регуляторы, идеальные зазоры и тишина ощущаются по-настоящему дорого.'
+        },
+        a38vMqbSolved: {
+          en: 'You want the vastly improved MQB TFSI era: Belt-driven EA211 engines fix the older 8P timing-chain and oil-burning headaches.',
+          de: 'Du willst die deutlich ausgereifteren MQB-TFSI-Motoren: Die Zahnriemen-EA211 beheben die alten 8P-Ketten- und Ölprobleme.',
+          ru: 'Ты хочешь надёжное поколение MQB: Ременные моторы EA211 избавились от старых болезней цепи и масложора 8P.'
+        },
+        a38vEa288Diesel: {
+          en: 'You want a refined belt-driven commuter: Modern EA288 engines feature 210,000 km timing belt intervals and 4.5–5.3 L/100km highway economy.',
+          de: 'Du willst einen kultivierten Langstrecken-Motor: Moderne EA288 bieten 210.000 km Zahnriemenintervall und 4,5–5,3 L/100km Verbrauch.',
+          ru: 'Тебе нужен экономичный трассовый мотор: Современный EA288 с интервалом ремня 210 000 км тратит 4,5–5,3 л/100 км.'
+        },
+        a38vSafetyTech: {
+          en: 'You prioritize top crash safety: 5-star Euro NCAP (95% adult score), 7 airbags, and crisp chassis balance protect you well.',
+          de: 'Du legst Wert auf Top-Sicherheit: 5 Sterne im Euro NCAP (95 % Insassenschutz), 7 Airbags und sicheres MQB-Fahrwerk.',
+          ru: 'Тебе важна максимальная безопасность: 5 звёзд Euro NCAP (95% за взрослых), 7 подушек и отточенная управляемость.'
+        },
+        a38vBigEnginePoise: {
+          en: 'You want effortless wet-DSG & multi-link poise: Higher-output trims add multi-link rear suspension and tougher wet-clutch DSGs.',
+          de: 'Du willst souveräne Technik: Stärkere Motorisierungen bringen Mehrlenker-Hinterachse und das deutlich robustere Nasskupplungs-DSG.',
+          ru: 'Тебе нужен запас по шасси и коробке: Мощные версии получают заднюю многорычажку и выносливую мокрую DSG.'
+        },
+        a38vEtronCommute: {
+          en: 'You can charge daily at home or work: Silent ~35–42 km electric commuting plus 204 HP combined highway punch.',
+          de: 'Du kannst täglich laden: Leises elektrisches Pendeln (~35–42 km) kombiniert mit 204 PS Systemleistung auf der Autobahn.',
+          ru: 'У тебя есть ежедневная зарядка: Тихие поездки на электротяге (~35–42 км) и бодрые 204 л.с. на трассе.'
+        },
+        a38vGtronEconomy: {
+          en: 'You have CNG stations nearby: Ultra-low fuel cost per km on natural gas with clean emissions.',
+          de: 'Du hast Erdgas-Tankstellen in der Nähe: Extrem niedrige Kraftstoffkosten pro Kilometer im CNG-Betrieb.',
+          ru: 'Рядом есть метановые заправки: Сверхнизкая стоимость километра на природном газе и чистый выхлоп.'
+        },
+        a38vWaterPumpWatch: {
+          en: 'You want zero cooling-system leaks: MQB plastic water-pump and thermostat housings commonly seep coolant past 80k–120k km.',
+          de: 'Du willst keinerlei Kühlmittel-Undichtigkeiten: MQB-Kunststoff-Wasserpumpen und Thermostatgehäuse schwitzen ab 80–120 Tkm häufiger.',
+          ru: 'Ты не хочешь следить за системой охлаждения: Пластиковый корпус помпы и термостата на MQB нередко подтекает после 80–120 тыс. км.'
+        },
+        a38vDryDsgTraffic: {
+          en: 'You drive daily in dense traffic with an automatic: This variant uses the 7-speed dry DSG, which wears clutches faster in jams.',
+          de: 'Du stehst oft im Stadtstau mit Automatik: Diese Variante nutzt das trockene 7-Gang-DSG mit höherem Kupplungsverschleiß im Stop-and-Go.',
+          ru: 'Ты часто ездишь в пробках на автомате: Эта версия оснащается сухой 7-DSG, сцепления которой быстрее изнашиваются в заторах.'
+        },
+        a38vCompactBoot: {
+          en: 'You pack bulky family strollers often: The 380 L boot (and tall rear center tunnel) is tighter than a Civic or Octavia.',
+          de: 'Du transportierst oft sperriges Familiengepäck: 380 L Kofferraum und der hohe Mitteltunnel bieten weniger Platz als ein Octavia.',
+          ru: 'Тебе нужен просторный семейный багажник: Отсек 380 л и высокий центральный тоннель теснее, чем у Octavia или Civic.'
+        },
+        a38vSpecialBootShrink: {
+          en: 'You need full trunk depth: Batteries or CNG tanks shrink the e-tron/g-tron boot down to just 280 L.',
+          de: 'Du brauchst vollen Kofferraum: Akkus bzw. Gastanks verkleinern den Stauraum bei e-tron und g-tron auf nur 280 L.',
+          ru: 'Тебе важен полный объём багажника: Батарея или газовые баллоны урезают багажник e-tron/g-tron до 280 л.'
+        },
+        a38vPremiumPrice: {
+          en: 'You shop strictly on budget: Audi badge prestige keeps used purchase prices and dealer servicing higher than Golf/Leon siblings.',
+          de: 'Du schaust streng auf den Preis: Das Audi-Image hält Gebrauchtwagenpreise und Werkstattstundensätze höher als bei Golf oder Leon.',
+          ru: 'Ты строго ограничен в бюджете: Премиальный статус Audi делает покупку и обслуживание дороже соплатформенных Golf и Leon.'
+        },
+        a38vHigherFuel: {
+          en: 'You chase ultra-low fuel consumption: 180–190 HP petrol engines drink noticeably more in spirited city driving.',
+          de: 'Du jagst Minimalverbrauch: Die 180–190-PS-Benziner verbrauchen bei flotter Stadtfahrt spürbar mehr.',
+          ru: 'Ты гонишься за минимальным расходом: Мощные бензиновые 180–190 л.с. заметно прожорливее в городе.'
+        }
+      }
+    },
+    buyerFitGroups: {
+      'small-tfsi': {
+        summary: {
+          en: 'A refined, safe, upmarket compact hatch — much more reliable than the older 8P, best paired with the 6-speed manual for city jams.',
+          de: 'Ein hochwertiger, sparsamer Kompakter — deutlich zuverlässiger als der Vorgänger 8P, im Stadtstau am besten als 6-Gang-Schalter.',
+          ru: 'Качественный и тихий компактный хэтчбек — намного надёжнее прежнего 8P, в пробках лучше выбрать 6-МКПП.'
+        },
+        ideal: ['a38vMqbSolved', 'a38vInteriorClass', 'a38vSafetyTech', 'globalPetrolCityZones'],
+        skip: ['a38vWaterPumpWatch', 'a38vDryDsgTraffic', 'a38vCompactBoot', 'a38vPremiumPrice']
+      },
+      'big-tfsi': {
+        summary: {
+          en: 'Quick, composed, and plush — upgrades to multi-link rear suspension and tougher wet-clutch DSG for confident highway pace.',
+          de: 'Schnell, souverän und hochwertig — mit Mehrlenker-Hinterachse und robusterem Nasskupplungs-DSG für hohes Autobahntempo.',
+          ru: 'Быстрый и собранный премиум-хэтчбек — получает заднюю многорычажку и крепкую мокрую DSG для трассы.'
+        },
+        ideal: ['a38vBigEnginePoise', 'a38vInteriorClass', 'a38vSafetyTech', 'globalPetrolCityZones'],
+        skip: ['a38vWaterPumpWatch', 'a38vCompactBoot', 'a38vPremiumPrice', 'a38vHigherFuel']
+      },
+      phev: {
+        summary: {
+          en: 'A clever plug-in hybrid for daily chargers — silent EV commuting if a 280 L boot and HV battery checks work for you.',
+          de: 'Ein cleverer Plug-in-Hybrid für tägliches Laden — leises E-Pendeln, sofern 280 L Kofferraum und Akku-Check passen.',
+          ru: 'Умный подзаряжаемый гибрид для тех, у кого есть розетка — тихая езда на токе при багажнике 280 л.'
+        },
+        ideal: ['a38vEtronCommute', 'a38vInteriorClass', 'a38vSafetyTech', 'globalPetrolCityZones'],
+        skip: ['a38vSpecialBootShrink', 'a38vWaterPumpWatch', 'a38vPremiumPrice', 'a38vDryDsgTraffic']
+      },
+      'small-tdi': {
+        summary: {
+          en: 'Ultra-frugal highway commuter with refined MQB cabin — best with the 6-speed manual and regular motorway runs.',
+          de: 'Extrem sparsamer Langstrecken-Pendler im edlen Cockpit — am besten als 6-Gang-Schalter mit regelmäßigem Autobahnauslauf.',
+          ru: 'Сверхэкономичный трассовый вариант в премиальном салоне — оптимален на 6-МКПП и дальних маршрутах.'
+        },
+        ideal: ['a38vEa288Diesel', 'a38vInteriorClass', 'a38vSafetyTech', 'globalDieselLongRange'],
+        skip: [
+          'globalDieselShortTripRisk',
+          'a38vDryDsgTraffic',
+          'a38vWaterPumpWatch',
+          'a38vCompactBoot'
+        ]
+      },
+      'big-tdi': {
+        summary: {
+          en: 'One of the strongest all-round compact cruisers — pairs 150–184 HP EA288 diesel punch with multi-link handling and wet DSG.',
+          de: 'Einer der stärksten Kompakt-Tourer — kombiniert 150–184 PS EA288-Durchzug mit Mehrlenkerachse und Nasskupplungs-DSG.',
+          ru: 'Один из лучших компактных трассовых авто — сочетает тягу 150–184 л.с., многорычажку и выносливую мокрую DSG.'
+        },
+        ideal: ['a38vBigEnginePoise', 'a38vEa288Diesel', 'a38vInteriorClass', 'globalDieselLongRange'],
+        skip: [
+          'globalDieselShortTripRisk',
+          'a38vWaterPumpWatch',
+          'a38vCompactBoot',
+          'a38vPremiumPrice'
+        ]
+      }
+    },
     sharedDossiers: {
       buildQualityRust: {
         en: {
@@ -56029,7 +57707,7 @@ const CAR_ROSTER = [
           ],
           watchouts: [
             'Verzinkte MQB-Karosserie rostet kaum; Domlager und hintere Bremsscheiben prüfen.',
-            'Kaum Rostprobleme ab Facelift 2016.'
+            'Hintere Radlaufkanten, Achsträger-Aufnahmen und Bremsleitungen am Unterboden auf Winter-Korrosion prüfen.'
           ],
           beforeYouBuy: [
             'Schweller, Radlaufkanten und hinteren Achsträger auf der Bühne oder mit Lampe prüfen.',
@@ -56406,35 +58084,40 @@ const CAR_ROSTER = [
               'Proven shift linkage and durable gearsets when transmission fluid is maintained.'
             ],
             watchouts: [
-              '7-speed dry DSG clutch wear on heavy-traffic cars.',
-              'Automatic, DSG, and CVT gearboxes depend on documented 40,000–60,000 km fluid and filter changes.'
+              'The 7-speed dry-clutch DSG wears clutches and mechatronics faster in heavy stop-and-go traffic.',
+              'Juddering when creeping uphill or reversing signals a worn clutch pack.'
             ],
             beforeYouBuy: [
-              'Demand service receipts for automatic, DSG, or CVT transmission fluid changes every 40,000–60,000 km.',
+              'Demand service receipts for transmission fluid changes every 40,000–60,000 km.',
               'Test Reverse-to-Drive engagement when warm and creep gently uphill to confirm zero jerk or slip.'
             ]
           },
           de: {
             headline: '6-Gang solide • 7-DSG prüfen — Anfahren am Berg testen',
             strengths: [
-              '6-Gang solide • 7-DSG prüfen passt gut zur Motorcharakteristik im Alltag.',
+              'Saubere Schaltführung und stimmige Übersetzung sorgen für ein ruhiges, berechenbares Fahrgefühl.',
               'Bewährte Schaltmechanik und haltbare Zahnräder bei rechtzeitigem Ölservice.'
             ],
-            watchouts: ['Anfahren am Berg testen.', 'Verschleiß der 7-Gang-Trocken-DSG-Kupplung.'],
+            watchouts: [
+              '6-Gang solide • 7-DSG prüfen passt gut zur Motorcharakteristik im Alltag.',
+              'Das trockene 7-Gang-DSG verschleißt Kupplungen und Mechatronik im Stop-and-Go schneller.'
+            ],
             beforeYouBuy: [
-              'Nachweise für Automatik-, DSG- oder CVT-Getriebeölwechsel alle 40.000–60.000 km prüfen.',
+              'Nachweise für Getriebeölwechsel alle 40.000–60.000 km prüfen.',
               'Im warmen Zustand von R auf D schalten und am Hang sanft anrollen — ohne Ruckeln oder Verzögerung.'
             ]
           },
           ru: {
             headline: '6-МКПП надёжна • 7-DSG проверять — Проверить старт в горку',
             strengths: [
-              '6-МКПП надёжна • 7-DSG проверять хорошо сочетается с данным двигателем в повседневной езде.',
-              'Проверенный механизм переключения и прочные шестерни при своевременной смене масла.'
+              'Чёткое переключение и удачные передаточные числа делают езду комфортной и предсказуемой.'
             ],
-            watchouts: ['Проверить старт в горку.', 'Износ сцепления сухой 7-DSG в пробках.'],
+            watchouts: [
+              '6-МКПП надёжна • 7-DSG проверять хорошо сочетается с данным двигателем в повседневной езде.',
+              'Сухая 7-DSG быстрее изнашивает сцепления и мехатроник в плотных пробках.'
+            ],
             beforeYouBuy: [
-              'Запросить чеки о замене масла в АКПП, DSG или вариаторе каждые 40 000–60 000 км.',
+              'Запросить чеки о замене масла в коробке каждые 40 000–60 000 км.',
               'На прогретой машине проверить плавность переключения R–D и ровное трогание в горку без рывков.'
             ]
           }
@@ -56444,10 +58127,11 @@ const CAR_ROSTER = [
             headline: 'Solid MMI & Virtual Cockpit Hardware',
             strengths: [
               'Solid MMI & Virtual Cockpit Hardware keeps electrical diagnostics straightforward.',
-              'Check Infotainment Pop-Up Screen Motor.'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.'
+              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.',
+              'Check Infotainment Pop-Up Screen Motor.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -56457,9 +58141,12 @@ const CAR_ROSTER = [
             headline: 'Solides MMI & Virtual Cockpit',
             strengths: [
               'Solides MMI & Virtual Cockpit sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
+            ],
+            watchouts: [
+              'Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.',
               'Ausfahrmechanik des Displays prüfen.'
             ],
-            watchouts: ['Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.'],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
             ]
@@ -56468,9 +58155,12 @@ const CAR_ROSTER = [
             headline: 'Надёжная мультимедиа MMI и приборка',
             strengths: [
               'Надёжная мультимедиа MMI и приборка упрощает диагностику и обслуживание электрооборудования.',
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
+            ],
+            watchouts: [
+              'Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.',
               'Проверить привод выдвижного экрана.'
             ],
-            watchouts: ['Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.'],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
             ]
@@ -56481,10 +58171,11 @@ const CAR_ROSTER = [
             headline: 'Refined Highway Isolation (Acoustic Glass Opt.)',
             strengths: [
               'Refined Highway Isolation (Acoustic Glass Opt.) delivers pleasant everyday composure.',
-              '1.6/1.0 Versions Use Torsion Beam Rear.'
+              'Balanced chassis damping keeps cruising settled and predictable on smooth roads.'
             ],
             watchouts: [
-              'Wind and tyre roar increase at 130+ km/h; large 18–19" wheels make city bumps firmer.'
+              'Wind and tyre roar increase at 130+ km/h; large 18–19" wheels make city bumps firmer.',
+              '1.6/1.0 Versions Use Torsion Beam Rear.'
             ],
             beforeYouBuy: [
               'Take the car up to 110–120 km/h to judge real wind noise, tyre hum, and suspension smoothness.'
@@ -56494,10 +58185,11 @@ const CAR_ROSTER = [
             headline: 'Sehr ruhiges Autobahn-Niveau',
             strengths: [
               'Sehr ruhiges Autobahn-Niveau sorgt für ein angenehmes Fahrgefühl im Alltag.',
-              'Basis-Motoren mit Verbundlenkerachse.'
+              'Auf gutem Asphalt liegt das Fahrwerk ruhig und berechenbar.'
             ],
             watchouts: [
-              'Ab 130 km/h nehmen Wind- und Abrollgeräusche zu; große Felgen machen den Stadtkomfort straffer.'
+              'Ab 130 km/h nehmen Wind- und Abrollgeräusche zu; große Felgen machen den Stadtkomfort straffer.',
+              'Basis-Motoren mit Verbundlenkerachse.'
             ],
             beforeYouBuy: [
               'Bei der Probefahrt kurz 110–120 km/h fahren, um Wind-, Reifen- und Abrollgeräusche real zu prüfen.'
@@ -56507,9 +58199,12 @@ const CAR_ROSTER = [
             headline: 'Отличная шумоизоляция на трассе',
             strengths: [
               'Отличная шумоизоляция на трассе обеспечивает комфортную езду в повседневных поездках.',
+              'На ровном покрытии подвеска работает собранно и предсказуемо.'
+            ],
+            watchouts: [
+              'После 130 км/ч растут шумы ветра и шин, а большие диски делают ход жёстче.',
               'У младших моторов сзади балка.'
             ],
-            watchouts: ['После 130 км/ч растут шумы ветра и шин, а большие диски делают ход жёстче.'],
             beforeYouBuy: [
               'Прокатитесь 110–120 км/ч, чтобы оценить реальный уровень шума ветра, шин и мягкость хода.'
             ]
@@ -56519,10 +58214,13 @@ const CAR_ROSTER = [
           en: {
             headline: '180k–210k Belt • Affordable Parts — DSG Service if Fitted',
             strengths: [
-              '180k–210k Belt • Affordable Parts helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['DSG Service if Fitted.'],
+            watchouts: [
+              'DSG Service if Fitted.',
+              'Age-related wear on suspension bushings, exhaust flex-pipes, and brake discs/calipers still requires steady annual upkeep.'
+            ],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -56558,11 +58256,11 @@ const CAR_ROSTER = [
               'Proven 1.4 EA211 belt engine & wet 6-DSG.'
             ],
             watchouts: [
-              'Service DSG Oil Every 60k km.',
-              'Automatic, DSG, and CVT gearboxes depend on documented 40,000–60,000 km fluid and filter changes.'
+              'The wet-clutch 6-speed DSG needs strict 60,000 km oil and filter changes to keep shifts smooth.',
+              'Mechatronic faults show up as jerky low-speed shifts or a flashing gear indicator.'
             ],
             beforeYouBuy: [
-              'Demand service receipts for automatic, DSG, or CVT transmission fluid changes every 40,000–60,000 km.',
+              'Demand service receipts for transmission fluid changes every 40,000–60,000 km.',
               'Test Reverse-to-Drive engagement when warm and creep gently uphill to confirm zero jerk or slip.'
             ]
           },
@@ -56573,11 +58271,11 @@ const CAR_ROSTER = [
               'Bewährter 1.4 EA211 & nasses 6-DSG.'
             ],
             watchouts: [
-              'DSG-Öl alle 60 Tkm wechseln.',
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.'
+              'Das nasse 6-Gang-DSG braucht strikte Öl- und Filterwechsel alle 60.000 km für saubere Schaltvorgänge.',
+              'Mechatronik-Fehler zeigen sich durch ruckige Schaltungen bei niedrigem Tempo oder blinkende Ganganzeige.'
             ],
             beforeYouBuy: [
-              'Nachweise für Automatik-, DSG- oder CVT-Getriebeölwechsel alle 40.000–60.000 km prüfen.',
+              'Nachweise für Getriebeölwechsel alle 40.000–60.000 km prüfen.',
               'Im warmen Zustand von R auf D schalten und am Hang sanft anrollen — ohne Ruckeln oder Verzögerung.'
             ]
           },
@@ -56587,9 +58285,12 @@ const CAR_ROSTER = [
               'Мокрая 6-DSG надёжна хорошо сочетается с данным двигателем в повседневной езде.',
               'Надёжный 1.4 EA211 и мокрая 6-DSG.'
             ],
-            watchouts: ['Масло DSG менять раз в 60 тыс.', 'Масло DSG менять раз в 60 тыс.'],
+            watchouts: [
+              'Мокрой 6-DSG нужна строгая замена масла и фильтра каждые 60 000 км для плавных переключений.',
+              'Неисправность мехатроника проявляется рывками на малой скорости или мигающим индикатором передачи.'
+            ],
             beforeYouBuy: [
-              'Запросить чеки о замене масла в АКПП, DSG или вариаторе каждые 40 000–60 000 км.',
+              'Запросить чеки о замене масла в коробке каждые 40 000–60 000 км.',
               'На прогретой машине проверить плавность переключения R–D и ровное трогание в горку без рывков.'
             ]
           }
@@ -56599,10 +58300,11 @@ const CAR_ROSTER = [
             headline: 'Solid MMI & Virtual Cockpit Hardware',
             strengths: [
               'Solid MMI & Virtual Cockpit Hardware keeps electrical diagnostics straightforward.',
-              'Check Infotainment Pop-Up Screen Motor.'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.'
+              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.',
+              'Check Infotainment Pop-Up Screen Motor.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -56612,9 +58314,12 @@ const CAR_ROSTER = [
             headline: 'Solides MMI & Virtual Cockpit',
             strengths: [
               'Solides MMI & Virtual Cockpit sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
+            ],
+            watchouts: [
+              'Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.',
               'Ausfahrmechanik des Displays prüfen.'
             ],
-            watchouts: ['Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.'],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
             ]
@@ -56623,9 +58328,12 @@ const CAR_ROSTER = [
             headline: 'Надёжная мультимедиа MMI и приборка',
             strengths: [
               'Надёжная мультимедиа MMI и приборка упрощает диагностику и обслуживание электрооборудования.',
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
+            ],
+            watchouts: [
+              'Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.',
               'Проверить привод выдвижного экрана.'
             ],
-            watchouts: ['Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.'],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
             ]
@@ -56636,10 +58344,11 @@ const CAR_ROSTER = [
             headline: 'Refined Highway Isolation (Acoustic Glass Opt.)',
             strengths: [
               'Refined Highway Isolation (Acoustic Glass Opt.) delivers pleasant everyday composure.',
-              '1.6/1.0 Versions Use Torsion Beam Rear.'
+              'Balanced chassis damping keeps cruising settled and predictable on smooth roads.'
             ],
             watchouts: [
-              'Wind and tyre roar increase at 130+ km/h; large 18–19" wheels make city bumps firmer.'
+              'Wind and tyre roar increase at 130+ km/h; large 18–19" wheels make city bumps firmer.',
+              '1.6/1.0 Versions Use Torsion Beam Rear.'
             ],
             beforeYouBuy: [
               'Take the car up to 110–120 km/h to judge real wind noise, tyre hum, and suspension smoothness.'
@@ -56649,10 +58358,11 @@ const CAR_ROSTER = [
             headline: 'Sehr ruhiges Autobahn-Niveau',
             strengths: [
               'Sehr ruhiges Autobahn-Niveau sorgt für ein angenehmes Fahrgefühl im Alltag.',
-              'Basis-Motoren mit Verbundlenkerachse.'
+              'Auf gutem Asphalt liegt das Fahrwerk ruhig und berechenbar.'
             ],
             watchouts: [
-              'Ab 130 km/h nehmen Wind- und Abrollgeräusche zu; große Felgen machen den Stadtkomfort straffer.'
+              'Ab 130 km/h nehmen Wind- und Abrollgeräusche zu; große Felgen machen den Stadtkomfort straffer.',
+              'Basis-Motoren mit Verbundlenkerachse.'
             ],
             beforeYouBuy: [
               'Bei der Probefahrt kurz 110–120 km/h fahren, um Wind-, Reifen- und Abrollgeräusche real zu prüfen.'
@@ -56662,9 +58372,12 @@ const CAR_ROSTER = [
             headline: 'Отличная шумоизоляция на трассе',
             strengths: [
               'Отличная шумоизоляция на трассе обеспечивает комфортную езду в повседневных поездках.',
+              'На ровном покрытии подвеска работает собранно и предсказуемо.'
+            ],
+            watchouts: [
+              'После 130 км/ч растут шумы ветра и шин, а большие диски делают ход жёстче.',
               'У младших моторов сзади балка.'
             ],
-            watchouts: ['После 130 км/ч растут шумы ветра и шин, а большие диски делают ход жёстче.'],
             beforeYouBuy: [
               'Прокатитесь 110–120 км/ч, чтобы оценить реальный уровень шума ветра, шин и мягкость хода.'
             ]
@@ -56674,10 +58387,10 @@ const CAR_ROSTER = [
           en: {
             headline: '60k DSG Service + Brake Corrosion — HV Parts Pricier',
             strengths: [
-              '60k DSG Service + Brake Corrosion helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['HV Parts Pricier.'],
+            watchouts: ['HV Parts Pricier.', '60k DSG Service + Brake Corrosion.'],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -56685,10 +58398,10 @@ const CAR_ROSTER = [
           de: {
             headline: '60 Tkm DSG + Bremsen-Rost prüfen — HV-Teile teurer',
             strengths: [
-              '60 Tkm DSG + Bremsen-Rost prüfen hält die planbaren jährlichen Wartungskosten im Rahmen.',
+              'Planbare Wartungsintervalle mit klaren Vorgaben halten die laufenden Servicekosten kalkulierbar.',
               'Hohe Werkstatt-Kompetenz und breite Auswahl günstiger Marken-Ersatzteile.'
             ],
-            watchouts: ['HV-Teile teurer.'],
+            watchouts: ['HV-Teile teurer.', '60 Tkm DSG + Bremsen-Rost prüfen.'],
             beforeYouBuy: [
               'Untenstehenden Kosten-Fahrplan öffnen und fällige Meilensteine mit vorhandenen Rechnungen abgleichen.'
             ]
@@ -56710,14 +58423,14 @@ const CAR_ROSTER = [
             headline: 'Wet DSG & 6-MT Both Tough — Check Uphill Creep Smoothness',
             strengths: [
               'Wet DSG & 6-MT Both Tough matches this powertrain well for everyday driving.',
-              'Check Uphill Creep Smoothness.'
+              'Crisp shift feel and well-matched ratios keep everyday driving composed and predictable.'
             ],
             watchouts: [
-              '7-speed dry DSG clutch wear on heavy-traffic cars.',
-              'Automatic, DSG, and CVT gearboxes depend on documented 40,000–60,000 km fluid and filter changes.'
+              'The wet-clutch 6-speed DSG needs strict 60,000 km oil and filter changes to keep shifts smooth.',
+              'Mechatronic faults show up as jerky low-speed shifts or a flashing gear indicator.'
             ],
             beforeYouBuy: [
-              'Demand service receipts for automatic, DSG, or CVT transmission fluid changes every 40,000–60,000 km.',
+              'Demand service receipts for transmission fluid changes every 40,000–60,000 km.',
               'Test Reverse-to-Drive engagement when warm and creep gently uphill to confirm zero jerk or slip.'
             ]
           },
@@ -56728,11 +58441,11 @@ const CAR_ROSTER = [
               'Anfahren am Berg testen.'
             ],
             watchouts: [
-              'Verschleiß der 7-Gang-Trocken-DSG-Kupplung.',
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.'
+              'Das nasse 6-Gang-DSG braucht strikte Öl- und Filterwechsel alle 60.000 km für saubere Schaltvorgänge.',
+              'Mechatronik-Fehler zeigen sich durch ruckige Schaltungen bei niedrigem Tempo oder blinkende Ganganzeige.'
             ],
             beforeYouBuy: [
-              'Nachweise für Automatik-, DSG- oder CVT-Getriebeölwechsel alle 40.000–60.000 km prüfen.',
+              'Nachweise für Getriebeölwechsel alle 40.000–60.000 km prüfen.',
               'Im warmen Zustand von R auf D schalten und am Hang sanft anrollen — ohne Ruckeln oder Verzögerung.'
             ]
           },
@@ -56740,14 +58453,14 @@ const CAR_ROSTER = [
             headline: 'Мокрая DSG и 6-МКПП крепки — Проверить старт в горку',
             strengths: [
               'Мокрая DSG и 6-МКПП крепки хорошо сочетается с данным двигателем в повседневной езде.',
-              'Проверить старт в горку.'
+              'Чёткое переключение и удачные передаточные числа делают езду комфортной и предсказуемой.'
             ],
             watchouts: [
-              'Износ сцепления сухой 7-DSG в пробках.',
-              'АКПП, DSG и вариаторы требуют подтверждённой замены масла каждые 40 000–60 000 км.'
+              'Мокрой 6-DSG нужна строгая замена масла и фильтра каждые 60 000 км для плавных переключений.',
+              'Неисправность мехатроника проявляется рывками на малой скорости или мигающим индикатором передачи.'
             ],
             beforeYouBuy: [
-              'Запросить чеки о замене масла в АКПП, DSG или вариаторе каждые 40 000–60 000 км.',
+              'Запросить чеки о замене масла в коробке каждые 40 000–60 000 км.',
               'На прогретой машине проверить плавность переключения R–D и ровное трогание в горку без рывков.'
             ]
           }
@@ -56757,10 +58470,11 @@ const CAR_ROSTER = [
             headline: 'Solid MMI & Virtual Cockpit Hardware',
             strengths: [
               'Solid MMI & Virtual Cockpit Hardware keeps electrical diagnostics straightforward.',
-              'Check Infotainment Pop-Up Screen Motor.'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.'
+              'Aging 12V / Start-Stop AGM batteries cause false warning lights and sensor glitches first.',
+              'Check Infotainment Pop-Up Screen Motor.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -56770,9 +58484,12 @@ const CAR_ROSTER = [
             headline: 'Solides MMI & Virtual Cockpit',
             strengths: [
               'Solides MMI & Virtual Cockpit sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
+            ],
+            watchouts: [
+              'Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.',
               'Ausfahrmechanik des Displays prüfen.'
             ],
-            watchouts: ['Alternde 12V-/Start-Stopp-Batterien lösen oft als Erstes Fehlermeldungen aus.'],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
             ]
@@ -56781,9 +58498,12 @@ const CAR_ROSTER = [
             headline: 'Надёжная мультимедиа MMI и приборка',
             strengths: [
               'Надёжная мультимедиа MMI и приборка упрощает диагностику и обслуживание электрооборудования.',
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
+            ],
+            watchouts: [
+              'Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.',
               'Проверить привод выдвижного экрана.'
             ],
-            watchouts: ['Просадка старого аккумулятора часто вызывает первые ложные ошибки электроники.'],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
             ]
@@ -56794,10 +58514,11 @@ const CAR_ROSTER = [
             headline: 'Refined Highway Isolation (Acoustic Glass Opt.)',
             strengths: [
               'Refined Highway Isolation (Acoustic Glass Opt.) delivers pleasant everyday composure.',
-              '1.6/1.0 Versions Use Torsion Beam Rear.'
+              'Balanced chassis damping keeps cruising settled and predictable on smooth roads.'
             ],
             watchouts: [
-              'Wind and tyre roar increase at 130+ km/h; large 18–19" wheels make city bumps firmer.'
+              'Wind and tyre roar increase at 130+ km/h; large 18–19" wheels make city bumps firmer.',
+              '1.6/1.0 Versions Use Torsion Beam Rear.'
             ],
             beforeYouBuy: [
               'Take the car up to 110–120 km/h to judge real wind noise, tyre hum, and suspension smoothness.'
@@ -56807,10 +58528,11 @@ const CAR_ROSTER = [
             headline: 'Sehr ruhiges Autobahn-Niveau',
             strengths: [
               'Sehr ruhiges Autobahn-Niveau sorgt für ein angenehmes Fahrgefühl im Alltag.',
-              'Basis-Motoren mit Verbundlenkerachse.'
+              'Auf gutem Asphalt liegt das Fahrwerk ruhig und berechenbar.'
             ],
             watchouts: [
-              'Ab 130 km/h nehmen Wind- und Abrollgeräusche zu; große Felgen machen den Stadtkomfort straffer.'
+              'Ab 130 km/h nehmen Wind- und Abrollgeräusche zu; große Felgen machen den Stadtkomfort straffer.',
+              'Basis-Motoren mit Verbundlenkerachse.'
             ],
             beforeYouBuy: [
               'Bei der Probefahrt kurz 110–120 km/h fahren, um Wind-, Reifen- und Abrollgeräusche real zu prüfen.'
@@ -56820,9 +58542,12 @@ const CAR_ROSTER = [
             headline: 'Отличная шумоизоляция на трассе',
             strengths: [
               'Отличная шумоизоляция на трассе обеспечивает комфортную езду в повседневных поездках.',
+              'На ровном покрытии подвеска работает собранно и предсказуемо.'
+            ],
+            watchouts: [
+              'После 130 км/ч растут шумы ветра и шин, а большие диски делают ход жёстче.',
               'У младших моторов сзади балка.'
             ],
-            watchouts: ['После 130 км/ч растут шумы ветра и шин, а большие диски делают ход жёстче.'],
             beforeYouBuy: [
               'Прокатитесь 110–120 км/ч, чтобы оценить реальный уровень шума ветра, шин и мягкость хода.'
             ]
@@ -56832,10 +58557,10 @@ const CAR_ROSTER = [
           en: {
             headline: 'Updated Chain • Water Pump Watch — DSG Service if Fitted',
             strengths: [
-              'Updated Chain • Water Pump Watch helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['DSG Service if Fitted.'],
+            watchouts: ['DSG Service if Fitted.', 'Updated Chain • Water Pump Watch.'],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -56843,10 +58568,10 @@ const CAR_ROSTER = [
           de: {
             headline: 'Robuste Kette • Wasserpumpe prüfen — DSG-Wartung beachten',
             strengths: [
-              'Robuste Kette • Wasserpumpe prüfen hält die planbaren jährlichen Wartungskosten im Rahmen.',
+              'Planbare Wartungsintervalle mit klaren Vorgaben halten die laufenden Servicekosten kalkulierbar.',
               'Hohe Werkstatt-Kompetenz und breite Auswahl günstiger Marken-Ersatzteile.'
             ],
-            watchouts: ['DSG-Wartung beachten.'],
+            watchouts: ['DSG-Wartung beachten.', 'Robuste Kette • Wasserpumpe prüfen.'],
             beforeYouBuy: [
               'Untenstehenden Kosten-Fahrplan öffnen und fällige Meilensteine mit vorhandenen Rechnungen abgleichen.'
             ]
@@ -56854,10 +58579,10 @@ const CAR_ROSTER = [
           ru: {
             headline: 'Цепь крепка • Проверить помпу — Сервис DSG',
             strengths: [
-              'Цепь крепка • Проверить помпу помогает держать ежегодные затраты на ТО под контролем.',
+              'Предсказуемый регламент обслуживания помогает держать ежегодные затраты на ТО под контролем.',
               'Машина хорошо знакома любому сервису, а качественные запчасти широко доступны.'
             ],
-            watchouts: ['Сервис DSG.'],
+            watchouts: ['Сервис DSG.', 'Цепь крепка • Проверить помпу.'],
             beforeYouBuy: ['Откройте план обслуживания ниже и сверьте предстоящие работы с имеющимися чеками.']
           }
         }
@@ -56871,41 +58596,40 @@ const CAR_ROSTER = [
               'Proven shift linkage and durable gearsets when transmission fluid is maintained.'
             ],
             watchouts: [
-              '60k km Wet-DSG Oil Service.',
-              'Automatic, DSG, and CVT gearboxes depend on documented 40,000–60,000 km fluid and filter changes.'
+              'The 7-speed dry-clutch DSG wears clutches and mechatronics faster in heavy stop-and-go traffic.',
+              'Juddering when creeping uphill or reversing signals a worn clutch pack.'
             ],
             beforeYouBuy: [
-              'Demand service receipts for automatic, DSG, or CVT transmission fluid changes every 40,000–60,000 km.',
+              'Demand service receipts for transmission fluid changes every 40,000–60,000 km.',
               'Test Reverse-to-Drive engagement when warm and creep gently uphill to confirm zero jerk or slip.'
             ]
           },
           de: {
             headline: '6-Gang solide • 7-DSG prüfen — 60 Tkm DSG-Ölservice',
             strengths: [
-              '6-Gang solide • 7-DSG prüfen passt gut zur Motorcharakteristik im Alltag.',
+              'Saubere Schaltführung und stimmige Übersetzung sorgen für ein ruhiges, berechenbares Fahrgefühl.',
               'Bewährte Schaltmechanik und haltbare Zahnräder bei rechtzeitigem Ölservice.'
             ],
             watchouts: [
-              '60 Tkm DSG-Ölservice.',
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.'
+              '6-Gang solide • 7-DSG prüfen passt gut zur Motorcharakteristik im Alltag.',
+              'Das trockene 7-Gang-DSG verschleißt Kupplungen und Mechatronik im Stop-and-Go schneller.'
             ],
             beforeYouBuy: [
-              'Nachweise für Automatik-, DSG- oder CVT-Getriebeölwechsel alle 40.000–60.000 km prüfen.',
+              'Nachweise für Getriebeölwechsel alle 40.000–60.000 km prüfen.',
               'Im warmen Zustand von R auf D schalten und am Hang sanft anrollen — ohne Ruckeln oder Verzögerung.'
             ]
           },
           ru: {
             headline: '6-МКПП надёжна • 7-DSG проверять — Сервис мокрой DSG 60 тыс.',
             strengths: [
-              '6-МКПП надёжна • 7-DSG проверять хорошо сочетается с данным двигателем в повседневной езде.',
-              'Проверенный механизм переключения и прочные шестерни при своевременной смене масла.'
+              'Чёткое переключение и удачные передаточные числа делают езду комфортной и предсказуемой.'
             ],
             watchouts: [
-              'Сервис мокрой DSG 60 тыс.',
-              'АКПП, DSG и вариаторы требуют подтверждённой замены масла каждые 40 000–60 000 км.'
+              '6-МКПП надёжна • 7-DSG проверять хорошо сочетается с данным двигателем в повседневной езде.',
+              'Сухая 7-DSG быстрее изнашивает сцепления и мехатроник в плотных пробках.'
             ],
             beforeYouBuy: [
-              'Запросить чеки о замене масла в АКПП, DSG или вариаторе каждые 40 000–60 000 км.',
+              'Запросить чеки о замене масла в коробке каждые 40 000–60 000 км.',
               'На прогретой машине проверить плавность переключения R–D и ровное трогание в горку без рывков.'
             ]
           }
@@ -56915,10 +58639,11 @@ const CAR_ROSTER = [
             headline: 'Solid MMI & Virtual Cockpit Hardware',
             strengths: [
               'Solid MMI & Virtual Cockpit Hardware keeps electrical diagnostics straightforward.',
-              'Check Infotainment Pop-Up Screen Motor.'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.'
+              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.',
+              'Check Infotainment Pop-Up Screen Motor.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -56928,10 +58653,11 @@ const CAR_ROSTER = [
             headline: 'Solides MMI & Virtual Cockpit',
             strengths: [
               'Solides MMI & Virtual Cockpit sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
-              'Ausfahrmechanik des Displays prüfen.'
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
             ],
             watchouts: [
-              'Abgassensoren (DPF-Differenzdruck, Glühkerzen, AGR) melden sich häufiger ab 140.000 km.'
+              'Abgassensoren (DPF-Differenzdruck, Glühkerzen, AGR) melden sich häufiger ab 140.000 km.',
+              'Ausfahrmechanik des Displays prüfen.'
             ],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
@@ -56941,10 +58667,11 @@ const CAR_ROSTER = [
             headline: 'Надёжная мультимедиа MMI и приборка',
             strengths: [
               'Надёжная мультимедиа MMI и приборка упрощает диагностику и обслуживание электрооборудования.',
-              'Проверить привод выдвижного экрана.'
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
             ],
             watchouts: [
-              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.'
+              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.',
+              'Проверить привод выдвижного экрана.'
             ],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
@@ -56956,10 +58683,11 @@ const CAR_ROSTER = [
             headline: 'Refined Highway Isolation (Acoustic Glass Opt.)',
             strengths: [
               'Refined Highway Isolation (Acoustic Glass Opt.) delivers pleasant everyday composure.',
-              '1.6/1.0 Versions Use Torsion Beam Rear.'
+              'Balanced chassis damping keeps cruising settled and predictable on smooth roads.'
             ],
             watchouts: [
-              'Cold diesel clatter, high motorway revs, or oversized alloy wheels raise cabin noise noticeably.'
+              'Cold diesel clatter, high motorway revs, or oversized alloy wheels raise cabin noise noticeably.',
+              '1.6/1.0 Versions Use Torsion Beam Rear.'
             ],
             beforeYouBuy: [
               'Take the car up to 110–120 km/h to judge real wind noise, tyre hum, and suspension smoothness.'
@@ -56969,10 +58697,11 @@ const CAR_ROSTER = [
             headline: 'Sehr ruhiges Autobahn-Niveau',
             strengths: [
               'Sehr ruhiges Autobahn-Niveau sorgt für ein angenehmes Fahrgefühl im Alltag.',
-              'Basis-Motoren mit Verbundlenkerachse.'
+              'Auf gutem Asphalt liegt das Fahrwerk ruhig und berechenbar.'
             ],
             watchouts: [
-              'Kaltes Diesel-Nageln oder große 18–19"-Felgen erhöhen den Geräuschpegel im Innenraum spürbar.'
+              'Kaltes Diesel-Nageln oder große 18–19"-Felgen erhöhen den Geräuschpegel im Innenraum spürbar.',
+              'Basis-Motoren mit Verbundlenkerachse.'
             ],
             beforeYouBuy: [
               'Bei der Probefahrt kurz 110–120 km/h fahren, um Wind-, Reifen- und Abrollgeräusche real zu prüfen.'
@@ -56982,9 +58711,12 @@ const CAR_ROSTER = [
             headline: 'Отличная шумоизоляция на трассе',
             strengths: [
               'Отличная шумоизоляция на трассе обеспечивает комфортную езду в повседневных поездках.',
+              'На ровном покрытии подвеска работает собранно и предсказуемо.'
+            ],
+            watchouts: [
+              'Холодный дизельный рокот и крупные диски заметно усиливают шум в салоне.',
               'У младших моторов сзади балка.'
             ],
-            watchouts: ['Холодный дизельный рокот и крупные диски заметно усиливают шум в салоне.'],
             beforeYouBuy: [
               'Прокатитесь 110–120 км/ч, чтобы оценить реальный уровень шума ветра, шин и мягкость хода.'
             ]
@@ -56994,10 +58726,13 @@ const CAR_ROSTER = [
           en: {
             headline: '210k km Belt Interval — Water Pump & EGR Main Items',
             strengths: [
-              '210k km Belt Interval helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['Water Pump & EGR Main Items.'],
+            watchouts: [
+              'Water Pump & EGR Main Items.',
+              'Plan a reserve for higher-mileage diesel wear parts such as dual-mass flywheel, clutch, injectors, or DPF cleaning.'
+            ],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -57030,14 +58765,14 @@ const CAR_ROSTER = [
             headline: '6-MT & Wet DSG Very Tough — 60k km Wet-DSG Oil Service',
             strengths: [
               '6-MT & Wet DSG Very Tough matches this powertrain well for everyday driving.',
-              '60k km Wet-DSG Oil Service.'
+              'Crisp shift feel and well-matched ratios keep everyday driving composed and predictable.'
             ],
             watchouts: [
-              'Automatic, DSG, and CVT gearboxes depend on documented 40,000–60,000 km fluid and filter changes.',
-              'Listen for bearing whine in neutral or shudder on tight turns on AWD models.'
+              'The wet-clutch 6-speed DSG needs strict 60,000 km oil and filter changes to keep shifts smooth.',
+              'Mechatronic faults show up as jerky low-speed shifts or a flashing gear indicator.'
             ],
             beforeYouBuy: [
-              'Demand service receipts for automatic, DSG, or CVT transmission fluid changes every 40,000–60,000 km.',
+              'Demand service receipts for transmission fluid changes every 40,000–60,000 km.',
               'Test Reverse-to-Drive engagement when warm and creep gently uphill to confirm zero jerk or slip.'
             ]
           },
@@ -57048,11 +58783,11 @@ const CAR_ROSTER = [
               '60 Tkm DSG-Ölservice.'
             ],
             watchouts: [
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.',
-              'Automatik-, DSG- und CVT-Getriebe benötigen dokumentierte Ölwechsel alle 40.000–60.000 km.'
+              'Das nasse 6-Gang-DSG braucht strikte Öl- und Filterwechsel alle 60.000 km für saubere Schaltvorgänge.',
+              'Mechatronik-Fehler zeigen sich durch ruckige Schaltungen bei niedrigem Tempo oder blinkende Ganganzeige.'
             ],
             beforeYouBuy: [
-              'Nachweise für Automatik-, DSG- oder CVT-Getriebeölwechsel alle 40.000–60.000 km prüfen.',
+              'Nachweise für Getriebeölwechsel alle 40.000–60.000 km prüfen.',
               'Im warmen Zustand von R auf D schalten und am Hang sanft anrollen — ohne Ruckeln oder Verzögerung.'
             ]
           },
@@ -57063,11 +58798,11 @@ const CAR_ROSTER = [
               'Сервис мокрой DSG 60 тыс.'
             ],
             watchouts: [
-              'АКПП, DSG и вариаторы требуют подтверждённой замены масла каждые 40 000–60 000 км.',
-              'АКПП, DSG и вариаторы требуют подтверждённой замены масла каждые 40 000–60 000 км.'
+              'Мокрой 6-DSG нужна строгая замена масла и фильтра каждые 60 000 км для плавных переключений.',
+              'Неисправность мехатроника проявляется рывками на малой скорости или мигающим индикатором передачи.'
             ],
             beforeYouBuy: [
-              'Запросить чеки о замене масла в АКПП, DSG или вариаторе каждые 40 000–60 000 км.',
+              'Запросить чеки о замене масла в коробке каждые 40 000–60 000 км.',
               'На прогретой машине проверить плавность переключения R–D и ровное трогание в горку без рывков.'
             ]
           }
@@ -57077,10 +58812,11 @@ const CAR_ROSTER = [
             headline: 'Solid MMI & Virtual Cockpit Hardware',
             strengths: [
               'Solid MMI & Virtual Cockpit Hardware keeps electrical diagnostics straightforward.',
-              'Check Infotainment Pop-Up Screen Motor.'
+              'Core engine ECU and interior modules hold up cleanly when the 12V battery is healthy.'
             ],
             watchouts: [
-              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.'
+              'Diesel emissions sensors (DPF pressure, glow plugs, EGR) can trigger check lights past 140,000 km.',
+              'Check Infotainment Pop-Up Screen Motor.'
             ],
             beforeYouBuy: [
               'Test all electrical features (AC, windows, central locking, parking sensors) and check battery age.'
@@ -57090,10 +58826,11 @@ const CAR_ROSTER = [
             headline: 'Solides MMI & Virtual Cockpit',
             strengths: [
               'Solides MMI & Virtual Cockpit sorgt für eine überschaubare und gut wartbare Fahrzeugelektrik.',
-              'Ausfahrmechanik des Displays prüfen.'
+              'Steuergeräte und Komfortmodule arbeiten zuverlässig bei intakter 12V-Batterie.'
             ],
             watchouts: [
-              'Abgassensoren (DPF-Differenzdruck, Glühkerzen, AGR) melden sich häufiger ab 140.000 km.'
+              'Abgassensoren (DPF-Differenzdruck, Glühkerzen, AGR) melden sich häufiger ab 140.000 km.',
+              'Ausfahrmechanik des Displays prüfen.'
             ],
             beforeYouBuy: [
               'Alle elektrischen Verbraucher (Klima, Fensterheber, Zentralverriegelung, Sensoren) durchtesten.'
@@ -57103,10 +58840,11 @@ const CAR_ROSTER = [
             headline: 'Надёжная мультимедиа MMI и приборка',
             strengths: [
               'Надёжная мультимедиа MMI и приборка упрощает диагностику и обслуживание электрооборудования.',
-              'Проверить привод выдвижного экрана.'
+              'Блок управления и салонная электроника работают стабильно при живой АКБ.'
             ],
             watchouts: [
-              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.'
+              'Дизельные датчики (давления DPF, свечи накала, EGR) требуют внимания после 140 000 км.',
+              'Проверить привод выдвижного экрана.'
             ],
             beforeYouBuy: [
               'Проверьте все электроприборы (климат, стеклоподъёмники, замки, датчики) и состояние АКБ.'
@@ -57118,10 +58856,11 @@ const CAR_ROSTER = [
             headline: 'Refined Highway Isolation (Acoustic Glass Opt.)',
             strengths: [
               'Refined Highway Isolation (Acoustic Glass Opt.) delivers pleasant everyday composure.',
-              '1.6/1.0 Versions Use Torsion Beam Rear.'
+              'Balanced chassis damping keeps cruising settled and predictable on smooth roads.'
             ],
             watchouts: [
-              'Cold diesel clatter, high motorway revs, or oversized alloy wheels raise cabin noise noticeably.'
+              'Cold diesel clatter, high motorway revs, or oversized alloy wheels raise cabin noise noticeably.',
+              '1.6/1.0 Versions Use Torsion Beam Rear.'
             ],
             beforeYouBuy: [
               'Take the car up to 110–120 km/h to judge real wind noise, tyre hum, and suspension smoothness.'
@@ -57131,10 +58870,11 @@ const CAR_ROSTER = [
             headline: 'Sehr ruhiges Autobahn-Niveau',
             strengths: [
               'Sehr ruhiges Autobahn-Niveau sorgt für ein angenehmes Fahrgefühl im Alltag.',
-              'Basis-Motoren mit Verbundlenkerachse.'
+              'Auf gutem Asphalt liegt das Fahrwerk ruhig und berechenbar.'
             ],
             watchouts: [
-              'Kaltes Diesel-Nageln oder große 18–19"-Felgen erhöhen den Geräuschpegel im Innenraum spürbar.'
+              'Kaltes Diesel-Nageln oder große 18–19"-Felgen erhöhen den Geräuschpegel im Innenraum spürbar.',
+              'Basis-Motoren mit Verbundlenkerachse.'
             ],
             beforeYouBuy: [
               'Bei der Probefahrt kurz 110–120 km/h fahren, um Wind-, Reifen- und Abrollgeräusche real zu prüfen.'
@@ -57144,9 +58884,12 @@ const CAR_ROSTER = [
             headline: 'Отличная шумоизоляция на трассе',
             strengths: [
               'Отличная шумоизоляция на трассе обеспечивает комфортную езду в повседневных поездках.',
+              'На ровном покрытии подвеска работает собранно и предсказуемо.'
+            ],
+            watchouts: [
+              'Холодный дизельный рокот и крупные диски заметно усиливают шум в салоне.',
               'У младших моторов сзади балка.'
             ],
-            watchouts: ['Холодный дизельный рокот и крупные диски заметно усиливают шум в салоне.'],
             beforeYouBuy: [
               'Прокатитесь 110–120 км/ч, чтобы оценить реальный уровень шума ветра, шин и мягкость хода.'
             ]
@@ -57156,10 +58899,13 @@ const CAR_ROSTER = [
           en: {
             headline: '210k km Belt Interval — Water Pump & EGR Main Items',
             strengths: [
-              '210k km Belt Interval helps keep predictable annual running bills in check.',
+              'Predictable scheduled servicing with clear inspection intervals helps keep annual bills steady.',
               'Wide independent-garage familiarity and affordable aftermarket service parts.'
             ],
-            watchouts: ['Water Pump & EGR Main Items.'],
+            watchouts: [
+              'Water Pump & EGR Main Items.',
+              'Plan a reserve for higher-mileage diesel wear parts such as dual-mass flywheel, clutch, injectors, or DPF cleaning.'
+            ],
             beforeYouBuy: [
               'Open the Service, Repair & Cost Roadmap below and match upcoming milestones against existing receipts.'
             ]
@@ -57190,6 +58936,11 @@ const CAR_ROSTER = [
     engines: [
       {
         id: '1.4-g-tron',
+        buyerFitGroup: 'small-tfsi',
+        buyerFitOverrides: {
+          ideal: ['a38vGtronEconomy', 'a38vMqbSolved', 'a38vInteriorClass', 'globalPetrolCityZones'],
+          skip: ['a38vSpecialBootShrink', 'a38vWaterPumpWatch', 'a38vDryDsgTraffic', 'a38vPremiumPrice']
+        },
         dossierGroup: 'petrol-dry-dsg',
         isDefault: false,
         fuelType: 'petrol',
@@ -57616,6 +59367,7 @@ const CAR_ROSTER = [
       },
       {
         id: '1.0-tfsi',
+        buyerFitGroup: 'small-tfsi',
         dossierGroup: 'petrol-dry-dsg',
         isDefault: false,
         fuelType: 'petrol',
@@ -58042,6 +59794,7 @@ const CAR_ROSTER = [
       },
       {
         id: '1.2-tfsi-105',
+        buyerFitGroup: 'small-tfsi',
         dossierGroup: 'petrol-dry-dsg',
         isDefault: false,
         fuelType: 'petrol',
@@ -58468,6 +60221,7 @@ const CAR_ROSTER = [
       },
       {
         id: '1.2-tfsi-110',
+        buyerFitGroup: 'small-tfsi',
         dossierGroup: 'petrol-dry-dsg',
         isDefault: false,
         fuelType: 'petrol',
@@ -58894,6 +60648,7 @@ const CAR_ROSTER = [
       },
       {
         id: '1.4-tfsi-122',
+        buyerFitGroup: 'small-tfsi',
         dossierGroup: 'petrol-dry-dsg',
         isDefault: false,
         fuelType: 'petrol',
@@ -59320,6 +61075,7 @@ const CAR_ROSTER = [
       },
       {
         id: '1.4-tfsi-140',
+        buyerFitGroup: 'small-tfsi',
         dossierGroup: 'petrol-dry-dsg',
         isDefault: false,
         fuelType: 'petrol',
@@ -59746,6 +61502,7 @@ const CAR_ROSTER = [
       },
       {
         id: '1.4-tfsi-cod',
+        buyerFitGroup: 'small-tfsi',
         dossierGroup: 'petrol-dry-dsg',
         isDefault: false,
         fuelType: 'petrol',
@@ -60172,6 +61929,7 @@ const CAR_ROSTER = [
       },
       {
         id: '1.5-tfsi-cod',
+        buyerFitGroup: 'small-tfsi',
         dossierGroup: 'petrol-dry-dsg',
         isDefault: false,
         fuelType: 'petrol',
@@ -60598,6 +62356,7 @@ const CAR_ROSTER = [
       },
       {
         id: 'e-tron',
+        buyerFitGroup: 'phev',
         dossierGroup: 'hybrid-wet-dsg',
         isDefault: false,
         fuelType: 'hybrid',
@@ -61018,6 +62777,7 @@ const CAR_ROSTER = [
       },
       {
         id: '1.8-tfsi',
+        buyerFitGroup: 'big-tfsi',
         dossierGroup: 'petrol-wet-dsg',
         isDefault: false,
         fuelType: 'petrol',
@@ -61444,6 +63204,7 @@ const CAR_ROSTER = [
       },
       {
         id: '2.0-tfsi',
+        buyerFitGroup: 'big-tfsi',
         dossierGroup: 'petrol-wet-dsg',
         isDefault: false,
         fuelType: 'petrol',
@@ -61870,6 +63631,7 @@ const CAR_ROSTER = [
       },
       {
         id: '1.6-tdi-105',
+        buyerFitGroup: 'small-tdi',
         dossierGroup: 'diesel-dry-dsg',
         isDefault: false,
         fuelType: 'diesel',
@@ -62296,6 +64058,7 @@ const CAR_ROSTER = [
       },
       {
         id: '1.6-tdi-110',
+        buyerFitGroup: 'small-tdi',
         dossierGroup: 'diesel-dry-dsg',
         isDefault: false,
         fuelType: 'diesel',
@@ -62722,6 +64485,7 @@ const CAR_ROSTER = [
       },
       {
         id: '1.6-tdi-115',
+        buyerFitGroup: 'small-tdi',
         dossierGroup: 'diesel-dry-dsg',
         isDefault: false,
         fuelType: 'diesel',
@@ -63148,6 +64912,7 @@ const CAR_ROSTER = [
       },
       {
         id: '2.0-tdi-150',
+        buyerFitGroup: 'big-tdi',
         dossierGroup: 'diesel-wet-dsg',
         isDefault: true,
         fuelType: 'diesel',
@@ -63574,6 +65339,7 @@ const CAR_ROSTER = [
       },
       {
         id: '2.0-tdi-184',
+        buyerFitGroup: 'big-tdi',
         dossierGroup: 'diesel-wet-dsg',
         isDefault: false,
         fuelType: 'diesel',
@@ -64000,6 +65766,7 @@ const CAR_ROSTER = [
       },
       {
         id: '30-tfsi',
+        buyerFitGroup: 'small-tfsi',
         dossierGroup: 'petrol-dry-dsg',
         isDefault: false,
         fuelType: 'petrol',
@@ -64426,6 +66193,11 @@ const CAR_ROSTER = [
       },
       {
         id: '30-g-tron',
+        buyerFitGroup: 'small-tfsi',
+        buyerFitOverrides: {
+          ideal: ['a38vGtronEconomy', 'a38vMqbSolved', 'a38vInteriorClass', 'globalPetrolCityZones'],
+          skip: ['a38vSpecialBootShrink', 'a38vWaterPumpWatch', 'a38vDryDsgTraffic', 'a38vPremiumPrice']
+        },
         dossierGroup: 'petrol-dry-dsg',
         isDefault: false,
         fuelType: 'petrol',
@@ -64852,6 +66624,7 @@ const CAR_ROSTER = [
       },
       {
         id: '35-tfsi',
+        buyerFitGroup: 'small-tfsi',
         dossierGroup: 'petrol-dry-dsg',
         isDefault: false,
         fuelType: 'petrol',
@@ -65278,6 +67051,7 @@ const CAR_ROSTER = [
       },
       {
         id: '40-tfsi',
+        buyerFitGroup: 'big-tfsi',
         dossierGroup: 'petrol-wet-dsg',
         isDefault: false,
         fuelType: 'petrol',
@@ -65704,6 +67478,7 @@ const CAR_ROSTER = [
       },
       {
         id: '40-e-tron',
+        buyerFitGroup: 'phev',
         dossierGroup: 'hybrid-wet-dsg',
         isDefault: false,
         fuelType: 'hybrid',
@@ -66124,6 +67899,7 @@ const CAR_ROSTER = [
       },
       {
         id: '30-tdi',
+        buyerFitGroup: 'small-tdi',
         dossierGroup: 'diesel-dry-dsg',
         isDefault: false,
         fuelType: 'diesel',
@@ -66550,6 +68326,7 @@ const CAR_ROSTER = [
       },
       {
         id: '35-tdi',
+        buyerFitGroup: 'big-tdi',
         dossierGroup: 'diesel-wet-dsg',
         isDefault: false,
         fuelType: 'diesel',
@@ -66976,6 +68753,7 @@ const CAR_ROSTER = [
       },
       {
         id: '40-tdi',
+        buyerFitGroup: 'big-tdi',
         dossierGroup: 'diesel-wet-dsg',
         isDefault: false,
         fuelType: 'diesel',
