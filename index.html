@@ -255,12 +255,9 @@
     </div>
   </header>
 
-  <!-- Main 4-Column Duel Arena (Stats Left | Car 1 | Car 2 | Stats Right) -->
+  <!-- Main 4-Column Duel Arena (Car 1 | Stats Left | Stats Right | Car 2) -->
   <main class="duel-stage">
-    <!-- Far Left: Car 1 Stats Panel -->
-    <aside class="stat-column stat-column-left" id="stats-left"></aside>
-
-    <!-- Center Split Showdown: Car 1 Image vs Car 2 Image -->
+    <!-- Full-Width Stage: Car 1 | Stats Left | Stats Right | Car 2 -->
     <section class="versus-arena" id="versus-arena">
       <!-- Homepage Landing Stage (Shown on initial load) -->
       <div class="home-landing-stage" id="home-landing-stage" aria-hidden="false">
@@ -319,6 +316,10 @@
             <div class="engine-dropdown-menu" id="engine-dropdown-left" aria-hidden="true"></div>
           </div>
         </div>
+        <button type="button" class="change-car-pill change-car-p1" id="change-car-left-btn" title="Change Car 1">
+          <svg class="change-car-svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="4.8" height="4.8" rx="1"/><rect x="9.2" y="2" width="4.8" height="4.8" rx="1"/><rect x="2" y="9.2" width="4.8" height="4.8" rx="1"/><rect x="9.2" y="9.2" width="4.8" height="4.8" rx="1"/></svg>
+          <span class="change-car-label" id="change-car-label-left">CHANGE CAR 1</span>
+        </button>
         <div class="car-image-wrapper" data-side="left">
           <img id="img-left" alt="Left selected car" />
           <button type="button" class="expand-car-btn" id="expand-left-btn" title="View full car picture">
@@ -329,13 +330,10 @@
         <div class="car-traits-tray" id="traits-left"></div>
       </div>
 
-      <!-- Center Split Divider + VS Emblem -->
-      <div class="center-divider">
-        <div class="divider-line"></div>
-        <div class="vs-medallion" title="Swap Sides" id="swap-cars-btn">
-          <span class="vs-text">VS</span>
-          <span class="vs-swap-hint" id="vs-swap-label">⇄ SWAP</span>
-        </div>
+      <!-- Center Fused Stats Console -->
+      <div class="center-console-col">
+        <aside class="stat-column stat-column-center" id="stats-center"></aside>
+        <div class="duel-verdict-bar fused-verdict-bar is-parked-control" id="duel-verdict-bar"></div>
       </div>
 
       <!-- Right Car Visual (Mirrored toward center like Screenshot 2) -->
@@ -363,6 +361,10 @@
           </div>
           <span class="caption-tag p2-tag" id="tag-opponent">OPPONENT</span>
         </div>
+        <button type="button" class="change-car-pill change-car-p2" id="change-car-right-btn" title="Change Car 2">
+          <svg class="change-car-svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="4.8" height="4.8" rx="1"/><rect x="9.2" y="2" width="4.8" height="4.8" rx="1"/><rect x="2" y="9.2" width="4.8" height="4.8" rx="1"/><rect x="9.2" y="9.2" width="4.8" height="4.8" rx="1"/></svg>
+          <span class="change-car-label" id="change-car-label-right">CHANGE CAR 2</span>
+        </button>
         <div class="car-image-wrapper" data-side="right">
           <img id="img-right" class="mirrored-car" alt="Right opponent car" />
           <button type="button" class="expand-car-btn" id="expand-right-btn" title="View full car picture">
@@ -373,12 +375,7 @@
         <div class="car-traits-tray" id="traits-right"></div>
       </div>
 
-      <!-- Head-to-Head Verdict Banner floating at bottom of arena -->
-      <div class="duel-verdict-bar" id="duel-verdict-bar"></div>
     </section>
-
-    <!-- Far Right: Car 2 Stats Panel -->
-    <aside class="stat-column stat-column-right" id="stats-right"></aside>
   </main>
 
   <!-- Full-Picture Car Lightbox Modal -->
@@ -424,6 +421,10 @@
   <!-- Engineering Dossier Deep-Dive Modal (Option 1 Prototype) -->
   <div class="stat-dossier-modal" id="stat-dossier-modal" aria-hidden="true">
     <div class="stat-dossier-backdrop" id="stat-dossier-backdrop"></div>
+    <button type="button" class="dossier-nav-pill dossier-nav-prev is-hidden" id="dossier-nav-prev" aria-label="Previous rating dossier">
+      <span class="dossier-nav-arrow" aria-hidden="true">▲</span>
+      <span class="dossier-nav-text" id="dossier-nav-prev-text"></span>
+    </button>
     <div class="stat-dossier-dialog" role="dialog" aria-modal="true" aria-labelledby="dossier-stat-title">
       <div class="stat-dossier-header">
         <div class="stat-dossier-title-wrap">
@@ -439,6 +440,10 @@
         <!-- Rendered dynamically by app.js -->
       </div>
     </div>
+    <button type="button" class="dossier-nav-pill dossier-nav-next is-hidden" id="dossier-nav-next" aria-label="Next rating dossier">
+      <span class="dossier-nav-text" id="dossier-nav-next-text"></span>
+      <span class="dossier-nav-arrow" aria-hidden="true">▼</span>
+    </button>
   </div>
 
   <script src="cars-data.js?v=20261118g"></script>

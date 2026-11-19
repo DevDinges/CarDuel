@@ -872,28 +872,19 @@ body.is-home-view #hud-brand-home-btn {
 }
 
 /* =====================================================
-   MAIN 4-COLUMN DUEL STAGE (Screenshot 2 Layout)
+   MAIN 4-COLUMN DUEL STAGE (Car 1 | Stats 1 | Stats 2 | Car 2)
    ===================================================== */
 .duel-stage {
   flex: 1;
   min-height: 0; /* Critical so child flex columns can scroll internally */
   display: grid;
-  grid-template-columns: 340px minmax(0, 1fr) 340px;
+  grid-template-columns: minmax(0, 1fr);
   position: relative;
   overflow: hidden;
-  transition: grid-template-columns 0.42s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.duel-stage.no-left-car {
-  grid-template-columns: 0px minmax(0, 1fr) 340px;
-}
-
-.duel-stage.no-right-car {
-  grid-template-columns: 340px minmax(0, 1fr) 0px;
-}
-
-.duel-stage.no-left-car.no-right-car {
-  grid-template-columns: 0px minmax(0, 1fr) 0px;
+.is-parked-control {
+  display: none !important;
 }
 
 /* =====================================================
@@ -937,11 +928,12 @@ body.is-home-view #hud-brand-home-btn {
 }
 
 .stat-column-left {
+  border-left: 1px solid var(--panel-border);
   border-right: 1px solid var(--panel-border);
 }
 
 .stat-column-right {
-  border-left: 1px solid var(--panel-border);
+  border-right: 1px solid var(--panel-border);
 }
 
 /* Top Identity Card (Screenshot 1 Top Block) */
@@ -1263,6 +1255,30 @@ html[data-theme="light-soft"] .class-a { background: #a874c4; }
   overflow-y: auto;
   padding: 4px 5px 4px 0;
   overscroll-behavior: contain;
+}
+
+/* Mirror scrollbar & expanded stripe to outer-left edge of center-left stat column */
+.stat-column-left .forza-stats-card {
+  padding: 9px 12px 9px 10px;
+}
+
+.stat-column-left .stats-table-header {
+  padding-right: 0;
+  padding-left: 6px;
+}
+
+.stat-column-left .stats-rows-list {
+  direction: rtl;
+  padding: 4px 0 4px 5px;
+}
+
+.stat-column-left .stats-rows-list > * {
+  direction: ltr;
+}
+
+.stat-column-left .pillar-cluster.expanded::after {
+  right: auto;
+  left: 2px;
 }
 
 .stats-rows-list::-webkit-scrollbar {
@@ -2055,7 +2071,7 @@ html[data-theme="light-soft"] .detail-badge {
    ===================================================== */
 .versus-arena {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) 560px minmax(0, 1fr);
   position: relative;
   overflow: hidden;
   min-height: 0;
@@ -2064,6 +2080,8 @@ html[data-theme="light-soft"] .detail-badge {
 }
 
 .versus-arena.awaiting-selection .car-viewport,
+.versus-arena.awaiting-selection .center-console-col,
+.versus-arena.awaiting-selection .stat-column,
 .versus-arena.awaiting-selection .center-divider,
 .versus-arena.awaiting-selection .duel-verdict-bar {
   opacity: 0;
@@ -4850,20 +4868,8 @@ html[data-theme="light-soft"] .hm-damage-pill {
   }
 
   /* Duel Stage & Stat Columns */
-  .duel-stage {
-    grid-template-columns: 276px minmax(0, 1fr) 276px;
-  }
-
-  .duel-stage.no-left-car {
-    grid-template-columns: 0px minmax(0, 1fr) 276px;
-  }
-
-  .duel-stage.no-right-car {
-    grid-template-columns: 276px minmax(0, 1fr) 0px;
-  }
-
-  .duel-stage.no-left-car.no-right-car {
-    grid-template-columns: 0px minmax(0, 1fr) 0px;
+  .versus-arena {
+    grid-template-columns: minmax(0, 1fr) 500px minmax(0, 1fr);
   }
 
   .stat-column {
@@ -5773,4 +5779,1786 @@ html[data-theme="light-soft"] .hm-damage-pill {
 
 .home-marquee-thumb.is-loaded {
   opacity: 1;
+}
+
+/* =====================================================
+   FUSED CENTER STATS CONSOLE (C1 | 5 Pillars | C2)
+   ===================================================== */
+.duel-stage.is-duel-entering .stat-column-center {
+  transition: none;
+  transform-origin: top center;
+  animation: duelSidebarRollDown calc(var(--duel-reveal-ms) * 0.56) cubic-bezier(0.35, 0, 0.25, 1) both;
+}
+
+.stat-column-center {
+  border-left: 1px solid var(--panel-border);
+  border-right: 1px solid var(--panel-border);
+  padding: 10px 12px;
+  gap: 8px;
+}
+
+.fused-headers-row,
+.fused-footers-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.fused-header-card {
+  padding: 8px 11px;
+  min-width: 0;
+}
+
+.fused-header-card[data-side="left"] {
+  border-left: 3px solid var(--p1-accent);
+}
+
+.fused-header-card[data-side="right"] {
+  border-right: 3px solid var(--p2-accent);
+}
+
+.fused-header-card .car-model-title {
+  font-size: 1.48rem;
+}
+
+.fused-bottom-stack {
+  min-width: 0;
+}
+
+.fused-stats-card {
+  padding: 9px 10px;
+}
+
+.fused-stats-header {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) 56px;
+  align-items: center;
+  padding: 0 4px 6px;
+}
+
+.fused-header-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.fused-side-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 2px 9px;
+  border-radius: 3px;
+  line-height: 1.2;
+}
+
+.fused-side-c1 {
+  justify-self: start;
+  background: color-mix(in srgb, var(--p1-accent) 20%, transparent);
+  color: var(--p1-accent);
+  border: 1px solid color-mix(in srgb, var(--p1-accent) 55%, transparent);
+}
+
+.fused-side-c2 {
+  justify-self: end;
+  background: color-mix(in srgb, var(--p2-accent) 20%, transparent);
+  color: var(--p2-accent);
+  border: 1px solid color-mix(in srgb, var(--p2-accent) 55%, transparent);
+}
+
+.fused-stats-list {
+  padding: 4px 4px 4px 0;
+}
+
+/* Fused Pillar Cluster */
+.fused-pillar-cluster.expanded {
+  border-color: rgba(212, 255, 0, 0.45);
+}
+
+html[data-theme="light"] .fused-pillar-cluster.expanded,
+html[data-theme="light-soft"] .fused-pillar-cluster.expanded {
+  border-color: var(--forza-lime);
+}
+
+.fused-pillar-cluster.expanded::after {
+  display: none;
+}
+
+.fused-pillar-header {
+  padding: 10px 12px;
+}
+
+.fused-pillar-main {
+  display: grid;
+  grid-template-columns: 94px minmax(0, 1fr) 94px;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.fused-score-cell {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-variant-numeric: tabular-nums;
+}
+
+.fused-score-left {
+  justify-content: flex-start;
+}
+
+.fused-score-right {
+  justify-content: flex-end;
+}
+
+.fused-score-cell .score-win {
+  color: #2EE56B;
+}
+
+.fused-score-cell .score-loss {
+  color: #FF4D4D;
+}
+
+html[data-theme="light"] .fused-score-cell .score-win,
+html[data-theme="light-soft"] .fused-score-cell .score-win {
+  color: var(--win-green);
+}
+
+html[data-theme="light"] .fused-score-cell .score-loss,
+html[data-theme="light-soft"] .fused-score-cell .score-loss {
+  color: var(--loss-red);
+}
+
+.fused-pillar-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 0;
+}
+
+.fused-pillar-title-row {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  max-width: 100%;
+}
+
+.fused-pillar-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.fused-pillar-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.fused-pillar-subtags {
+  justify-content: center;
+  margin-top: 3px;
+}
+
+/* Twin Center-Outward 10-Segment Bars */
+.fused-twin-bars {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 2px minmax(0, 1fr);
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.fused-twin-bars .hud-seg-bar {
+  margin-top: 0;
+  height: 6px;
+  gap: 2px;
+}
+
+.fused-bar-left {
+  flex-direction: row-reverse;
+}
+
+.fused-bar-left .hud-seg {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.fused-bar-center-pin {
+  width: 2px;
+  height: 10px;
+  background: var(--text-muted);
+  opacity: 0.65;
+  border-radius: 1px;
+}
+
+/* Fused Expanded Sub-Ratings */
+.fused-sub-list {
+  padding: 8px 10px 10px;
+  gap: 8px;
+}
+
+.fused-sub-row {
+  padding: 7px 9px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+html[data-theme="light"] .fused-sub-row,
+html[data-theme="light-soft"] .fused-sub-row {
+  background: rgba(15, 23, 42, 0.025);
+  border-color: var(--row-divider);
+}
+
+.fused-sub-row::before,
+.fused-sub-row::after {
+  display: none;
+}
+
+.fused-sub-header {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr) 112px;
+  align-items: center;
+  gap: 8px;
+}
+
+.fused-sub-score {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-variant-numeric: tabular-nums;
+}
+
+.fused-sub-score.has-dossier {
+  cursor: pointer;
+}
+
+.fused-sub-score-left {
+  justify-content: flex-start;
+}
+
+.fused-sub-score-right {
+  justify-content: flex-end;
+}
+
+.fused-sub-score .score-win {
+  color: #2EE56B;
+}
+
+.fused-sub-score .score-loss {
+  color: #FF4D4D;
+}
+
+html[data-theme="light"] .fused-sub-score .score-win,
+html[data-theme="light-soft"] .fused-sub-score .score-win {
+  color: var(--win-green);
+}
+
+html[data-theme="light"] .fused-sub-score .score-loss,
+html[data-theme="light-soft"] .fused-sub-score .score-loss {
+  color: var(--loss-red);
+}
+
+.fused-sub-score .stat-info-btn {
+  margin-left: 0;
+}
+
+.fused-sub-title {
+  text-align: center;
+  min-width: 0;
+}
+
+.fused-sub-title .stat-name {
+  font-size: 0.84rem;
+}
+
+.fused-sub-badges-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 10px;
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid var(--row-divider);
+}
+
+.fused-badges-half {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-content: flex-start;
+  min-width: 0;
+}
+
+.fused-badges-half.has-dossier {
+  cursor: pointer;
+}
+
+.fused-badges-left {
+  padding-right: 8px;
+  border-right: 1px solid var(--row-divider);
+}
+
+.fused-badges-right {
+  padding-left: 2px;
+}
+
+@media (max-width: 1440px), (max-height: 820px) {
+  .stat-column-center {
+    padding: 8px 10px;
+    gap: 6px;
+  }
+
+  .fused-pillar-main {
+    grid-template-columns: 82px minmax(0, 1fr) 82px;
+  }
+
+  .fused-sub-header {
+    grid-template-columns: 98px minmax(0, 1fr) 98px;
+  }
+
+  .fused-header-card .car-model-title {
+    font-size: 1.32rem;
+  }
+}
+/* Structured 3-Column Spec Comparison Rows ([ C1 ] | Label | [ C2 ]) */
+.fused-spec-table {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid var(--row-divider);
+}
+
+.fused-spec-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 98px minmax(0, 1fr);
+  align-items: stretch;
+  gap: 6px;
+}
+
+.fused-spec-val {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0 3px;
+  background: var(--badge-pill-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 4px;
+  padding: 3px 7px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--text-main);
+  min-width: 0;
+  transition: border-color 0.14s ease, background 0.14s ease;
+}
+
+.fused-spec-val.has-dossier {
+  cursor: pointer;
+}
+
+.fused-spec-val.has-dossier:hover {
+  border-color: var(--forza-lime);
+}
+
+.fused-spec-left {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.fused-spec-right {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.fused-spec-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 0.69rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  line-height: 1.12;
+  padding: 2px;
+}
+
+.spec-mark {
+  font-weight: 800;
+  font-size: 0.76rem;
+  line-height: 1;
+}
+
+.spec-mark-yes {
+  color: var(--text-main);
+}
+
+.spec-mark-no {
+  color: var(--text-muted);
+  opacity: 0.85;
+}
+
+@media (max-width: 1440px), (max-height: 820px) {
+  .fused-spec-row {
+    grid-template-columns: minmax(0, 1fr) 86px minmax(0, 1fr);
+    gap: 5px;
+  }
+
+  .fused-spec-val {
+    padding: 2px 6px;
+    font-size: 0.68rem;
+  }
+
+  .fused-spec-label {
+    font-size: 0.64rem;
+  }
+}
+/* Floating Smart Spec Tooltip (Never clipped by scroll containers) */
+.fused-sub-title.has-tip,
+.fused-spec-label.has-tip {
+  cursor: help;
+}
+
+.fused-spec-label.has-tip:hover {
+  color: var(--text-main);
+}
+
+.spec-hover-tooltip {
+  position: fixed;
+  z-index: 260;
+  max-width: 280px;
+  padding: 9px 11px;
+  border-radius: 6px;
+  background: var(--popover-bg);
+  border: 1px solid var(--forza-lime);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.48);
+  backdrop-filter: blur(12px);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.14s ease, transform 0.14s ease;
+}
+
+.spec-hover-tooltip.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.spec-tip-title {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--forza-lime);
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.spec-tip-body {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  line-height: 1.42;
+  color: var(--text-main);
+}
+
+.spec-tip-hint {
+  margin-top: 6px;
+  padding-top: 5px;
+  border-top: 1px solid var(--row-divider);
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+/* Unified Mirrored Matchup Banner (Top of Fused Center Console) */
+.fused-matchup-banner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 34px minmax(0, 1fr);
+  align-items: stretch;
+  padding: 8px 11px;
+  border-left: 3px solid var(--p1-accent);
+  border-right: 3px solid var(--p2-accent);
+  flex-shrink: 0;
+}
+
+.fused-matchup-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  gap: 2px;
+}
+
+.fused-matchup-left {
+  align-items: flex-start;
+  text-align: left;
+  padding-right: 6px;
+}
+
+.fused-matchup-right {
+  align-items: flex-end;
+  text-align: right;
+  padding-left: 6px;
+}
+
+.fused-matchup-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  width: 100%;
+  min-width: 0;
+}
+
+.fused-matchup-title-row .car-model-title {
+  font-size: 1.38rem;
+  line-height: 1.05;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.fused-matchup-pi {
+  flex-shrink: 0;
+}
+
+.fused-matchup-year {
+  margin-bottom: 3px;
+  font-size: 0.82rem;
+  line-height: 1.1;
+}
+
+.fused-matchup-badges {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 5px;
+  max-width: 100%;
+}
+
+.fused-matchup-right .fused-matchup-badges {
+  justify-content: flex-end;
+}
+
+.fused-matchup-rarity {
+  font-size: 0.72rem;
+  padding: 2px 7px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.fused-matchup-drive {
+  font-size: 0.72rem;
+  padding: 2px 6px;
+  flex-shrink: 0;
+}
+
+.fused-matchup-vs {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fused-matchup-vs::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 50%;
+  width: 1px;
+  transform: translateX(-50%);
+  background: var(--row-divider);
+}
+
+.fused-matchup-vs-pill {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--bg-panel);
+  border: 1px solid var(--panel-border);
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: 0.03em;
+  color: var(--forza-lime);
+}
+
+@media (max-width: 1440px), (max-height: 820px) {
+  .fused-matchup-banner {
+    grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr);
+    padding: 7px 9px;
+  }
+
+  .fused-matchup-title-row .car-model-title {
+    font-size: 1.2rem;
+  }
+
+  .fused-matchup-vs-pill {
+    width: 22px;
+    height: 22px;
+    font-size: 0.65rem;
+  }
+}
+/* Center Console Wrapper (Fused Stats + Docked Car Selection Button) */
+.center-console-col {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  background: var(--stat-col-bg);
+  border-left: 1px solid var(--panel-border);
+  border-right: 1px solid var(--panel-border);
+  overflow: hidden;
+  z-index: 10;
+}
+
+.center-console-col .stat-column-center {
+  flex: 1;
+  height: auto;
+  min-height: 0;
+  border-left: none;
+  border-right: none;
+  background: transparent;
+  padding-bottom: 6px;
+}
+
+/* Unified 3-Column Bottom Price & Overall Summary (Native Forza Aesthetic) */
+.center-console-col .stat-column-center {
+  padding-bottom: 10px;
+}
+
+.fused-bottom-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.fused-summary-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 160px minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  border-radius: 0;
+}
+
+.fused-summary-msrp {
+  background: var(--market-strip-bg);
+  border: 1px solid var(--panel-border);
+  padding: 4px 12px;
+}
+
+.fused-summary-used {
+  background: var(--purchase-box-bg);
+  border: 2px solid var(--forza-lime);
+  padding: 6px 12px;
+  color: var(--purchase-box-text);
+}
+
+.fused-sum-val {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+  min-width: 0;
+}
+
+.fused-sum-left {
+  justify-content: flex-start;
+}
+
+.fused-sum-right {
+  justify-content: flex-end;
+}
+
+.fused-sum-label {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+}
+
+.fused-used-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--purchase-box-text);
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+/* Full-Bleed Split Forza Overall Rating Bar */
+.fused-overall-bar {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  font-family: var(--font-display);
+  font-size: 0.96rem;
+  font-weight: 700;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.fused-overall-half {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  color: #ffffff;
+  font-variant-numeric: tabular-nums;
+  min-width: 0;
+}
+
+.fused-overall-half-left {
+  justify-content: flex-start;
+}
+
+.fused-overall-half-right {
+  justify-content: flex-end;
+}
+
+.fused-overall-cls-txt {
+  font-size: 0.84rem;
+  font-weight: 600;
+  opacity: 0.92;
+}
+
+.fused-overall-center-label {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+@media (max-width: 1440px), (max-height: 820px) {
+  .fused-summary-row {
+    grid-template-columns: minmax(0, 1fr) 136px minmax(0, 1fr);
+    padding: 4px 10px;
+  }
+
+  .fused-sum-val,
+  .fused-used-label {
+    font-size: 0.9rem;
+  }
+
+  .fused-overall-half {
+    padding: 5px 10px;
+    font-size: 0.88rem;
+  }
+
+  .fused-overall-center-label {
+    font-size: 0.84rem;
+  }
+}
+/* Capstone 5-Pillar Unweighted Total Score Card (XX.X / 50) — Matches Pillar Cards */
+.fused-total-divider {
+  border: none;
+  height: 1px;
+  background: var(--panel-border);
+  margin: 2px 2px 4px;
+  flex-shrink: 0;
+}
+
+.fused-total-card {
+  margin-top: 0;
+}
+
+.fused-total-tip-trigger {
+  cursor: help;
+}
+
+.fused-total-inner {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.fused-total-main {
+  grid-template-columns: 118px minmax(0, 1fr) 118px;
+}
+
+.fused-total-num {
+  white-space: nowrap;
+}
+
+.fused-total-denom {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-left: 2px;
+}
+
+.fused-total-tally {
+  justify-content: center;
+  margin-top: 3px;
+}
+
+@media (max-width: 1440px), (max-height: 820px) {
+  .fused-total-inner {
+    padding: 8px 10px;
+  }
+
+  .fused-total-main {
+    grid-template-columns: 102px minmax(0, 1fr) 102px;
+  }
+
+  .fused-total-denom {
+    font-size: 0.7rem;
+  }
+}
+/* Mirrored C1 (Blue Left) & C2 (Orange Right) Scrollbars on Fused Stats List */
+.fused-scroll-shell {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: stretch;
+  gap: 5px;
+  overflow: hidden;
+}
+
+.fused-scroll-shell .fused-stats-list {
+  flex: 1;
+  min-width: 0;
+  padding: 4px 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.fused-scroll-shell .fused-stats-list::-webkit-scrollbar {
+  display: none;
+}
+
+.fused-scrollbar {
+  position: relative;
+  width: 5px;
+  flex-shrink: 0;
+  margin: 4px 0;
+  border-radius: 3px;
+  background: var(--bar-track);
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.15s ease, width 0.15s ease;
+}
+
+.fused-scrollbar:hover,
+.fused-scrollbar.is-dragging {
+  width: 7px;
+}
+
+.fused-scrollbar.is-inactive {
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  margin: 0;
+}
+
+.fused-scrollbar-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-radius: 3px;
+  will-change: transform;
+}
+
+.fused-scrollbar-left .fused-scrollbar-thumb {
+  background: var(--p1-accent);
+  box-shadow: 0 0 6px color-mix(in srgb, var(--p1-accent) 45%, transparent);
+}
+
+.fused-scrollbar-right .fused-scrollbar-thumb {
+  background: var(--p2-accent);
+  box-shadow: 0 0 6px color-mix(in srgb, var(--p2-accent) 45%, transparent);
+}
+/* Match Top Archetype Tag to C1 (Blue) / C2 (Orange) Side Colors */
+.fused-matchup-rarity {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 3px;
+}
+
+.fused-matchup-left .fused-matchup-rarity {
+  background: color-mix(in srgb, var(--p1-accent) 22%, transparent);
+  border: 1px solid color-mix(in srgb, var(--p1-accent) 62%, transparent);
+  color: var(--p1-accent);
+}
+
+.fused-matchup-right .fused-matchup-rarity {
+  background: color-mix(in srgb, var(--p2-accent) 22%, transparent);
+  border: 1px solid color-mix(in srgb, var(--p2-accent) 62%, transparent);
+  color: var(--p2-accent);
+}
+
+html[data-theme="light"] .fused-matchup-left .fused-matchup-rarity,
+html[data-theme="light-soft"] .fused-matchup-left .fused-matchup-rarity {
+  background: color-mix(in srgb, var(--p1-accent) 14%, var(--bg-panel));
+  border-color: color-mix(in srgb, var(--p1-accent) 65%, transparent);
+  color: var(--p1-accent);
+}
+
+html[data-theme="light"] .fused-matchup-right .fused-matchup-rarity,
+html[data-theme="light-soft"] .fused-matchup-right .fused-matchup-rarity {
+  background: color-mix(in srgb, var(--p2-accent) 14%, var(--bg-panel));
+  border-color: color-mix(in srgb, var(--p2-accent) 65%, transparent);
+  color: var(--p2-accent);
+}
+/* Inline Spec Text Fix (Prevents orphaned ✓ / ✕ line breaks) */
+.fused-spec-val {
+  flex-wrap: nowrap;
+}
+
+.fused-spec-text {
+  display: inline;
+  min-width: 0;
+  word-break: break-word;
+}
+
+.fused-spec-text .spec-mark {
+  display: inline;
+  margin-right: 3px;
+}
+
+/* Single Centered € Trigger & Full-Width Fused Market & Depreciation Popover */
+.fused-summary-used {
+  position: relative;
+}
+
+.fused-price-anchor {
+  position: static;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.fused-price-anchor .fused-price-popover {
+  left: -2px;
+  right: -2px;
+  width: auto;
+  min-width: 0;
+  max-width: none;
+  bottom: calc(100% + 8px);
+  transform: translateY(6px);
+  padding: 11px 13px;
+}
+
+.fused-price-anchor:hover .fused-price-popover,
+.fused-price-anchor.is-open .fused-price-popover,
+.fused-price-anchor:focus-within .fused-price-popover {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.fused-price-popover-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 7px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--row-divider);
+}
+
+.price-popover-header-title {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--forza-lime);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.fused-price-car-tag {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fused-price-car-c1 {
+  color: var(--p1-accent);
+  text-align: left;
+}
+
+.fused-price-car-c2 {
+  color: var(--p2-accent);
+  text-align: right;
+}
+
+.fused-price-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.fused-price-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 142px minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+}
+
+.fused-pm-left {
+  text-align: left;
+  justify-self: start;
+}
+
+.fused-pm-right {
+  text-align: right;
+  justify-self: end;
+}
+
+.fused-pm-label {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.fused-price-row .price-metric-val.is-win {
+  color: #2EE56B;
+}
+
+html[data-theme="light"] .fused-price-row .price-metric-val.is-win,
+html[data-theme="light-soft"] .fused-price-row .price-metric-val.is-win {
+  color: var(--win-green);
+}
+
+.fused-price-outlook {
+  margin-top: 9px;
+  padding-top: 8px;
+  border-top: 1px solid var(--row-divider);
+}
+
+.fused-outlook-title {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.fused-outlook-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 10px;
+}
+
+.fused-outlook-left {
+  text-align: left;
+  padding-right: 8px;
+  border-right: 1px solid var(--row-divider);
+}
+
+.fused-outlook-right {
+  text-align: right;
+  padding-left: 4px;
+}
+/* Overhauled Spec-Aligned Engineering Dossier (C1|C2 Switcher + Stacked Spec Cards) */
+.dossier-side-switcher {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.dossier-switch-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 11px;
+  border-radius: 5px;
+  background: var(--stats-card-bg);
+  border: 1px solid var(--panel-border);
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+
+.dossier-switch-btn:hover {
+  color: var(--text-main);
+  border-color: var(--control-border);
+}
+
+.dossier-switch-btn.is-active {
+  color: var(--text-main);
+  background: var(--header-card-bg);
+}
+
+.dossier-switch-btn.is-active.is-c1 {
+  border-color: var(--p1-accent);
+  box-shadow: inset 3px 0 0 var(--p1-accent);
+}
+
+.dossier-switch-btn.is-active.is-c2 {
+  border-color: var(--p2-accent);
+  box-shadow: inset 3px 0 0 var(--p2-accent);
+}
+
+.dossier-switch-name {
+  flex: 1;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dossier-switch-score {
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.dossier-spec-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dossier-spec-card {
+  background: var(--stats-card-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dossier-spec-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--row-divider);
+}
+
+.dossier-spec-card-label {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--forza-lime);
+}
+
+.dossier-spec-card-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: var(--badge-pill-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 4px;
+  padding: 3px 9px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.dossier-spec-card-summary {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  line-height: 1.48;
+  color: var(--text-main);
+}
+
+.dossier-spec-callouts {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 2px;
+}
+
+.dossier-spec-callout {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  line-height: 1.42;
+  color: var(--text-main);
+}
+
+.dossier-spec-callout.is-plus {
+  background: color-mix(in srgb, var(--win-green) 10%, transparent);
+  border-left: 2.5px solid var(--win-green);
+}
+
+.dossier-spec-callout.is-watch {
+  background: color-mix(in srgb, var(--p2-accent) 11%, transparent);
+  border-left: 2.5px solid var(--p2-accent);
+}
+
+.dossier-spec-callout-icon {
+  font-weight: 800;
+  flex-shrink: 0;
+  line-height: 1.35;
+}
+
+.dossier-spec-callout.is-plus .dossier-spec-callout-icon {
+  color: var(--win-green);
+}
+
+.dossier-spec-callout.is-watch .dossier-spec-callout-icon {
+  color: var(--p2-accent);
+}
+/* Unified Technical Datasheet Box inside Engineering Dossier */
+.dossier-datasheet-box {
+  background: var(--stats-card-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dossier-sheet-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dossier-sheet-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.dossier-sheet-divider {
+  border: none;
+  height: 1px;
+  background: var(--panel-border);
+  margin: 2px 0;
+}
+
+.dossier-tech-table {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dossier-tech-row {
+  display: grid;
+  grid-template-columns: 165px minmax(0, 1fr);
+  align-items: baseline;
+  gap: 12px;
+  padding: 4px 2px;
+  border-bottom: 1px solid color-mix(in srgb, var(--row-divider) 55%, transparent);
+}
+
+.dossier-tech-row:last-child {
+  border-bottom: none;
+}
+
+.dossier-tech-label {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.dossier-tech-val {
+  font-family: var(--font-sans);
+  font-size: 0.81rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.dossier-sheet-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  padding: 5px 9px;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--win-green) 8%, transparent);
+  border-left: 2px solid var(--win-green);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  line-height: 1.38;
+  color: var(--text-main);
+}
+
+.dossier-sheet-note-icon {
+  color: var(--win-green);
+  font-weight: 800;
+  flex-shrink: 0;
+}
+/* Floating Centered Up / Down Dossier Navigation Pills */
+.stat-dossier-modal {
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stat-dossier-modal:not(.buyer-fit-mode) .stat-dossier-dialog {
+  max-height: 80vh;
+}
+
+.dossier-nav-pill {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: var(--popover-bg);
+  border: 1.5px solid var(--panel-border);
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.55);
+  transition: border-color 0.16s ease, color 0.16s ease, transform 0.16s ease, box-shadow 0.16s ease;
+  flex-shrink: 0;
+}
+
+.dossier-nav-pill:hover {
+  border-color: var(--forza-lime);
+  color: var(--forza-lime);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.65), 0 0 12px color-mix(in srgb, var(--forza-lime) 28%, transparent);
+}
+
+.dossier-nav-prev:hover {
+  transform: translateY(-2px);
+}
+
+.dossier-nav-next:hover {
+  transform: translateY(2px);
+}
+
+.dossier-nav-arrow {
+  color: var(--forza-lime);
+  font-size: 0.74rem;
+  line-height: 1;
+}
+
+.dossier-nav-pill.is-hidden {
+  display: none;
+}
+/* Harmonize Service & Repair Roadmap Accordion with Unified Datasheet Box */
+.dossier-datasheet-box,
+.dossier-datasheet-roadmap {
+  flex-shrink: 0;
+}
+
+.dossier-datasheet-roadmap {
+  background: var(--stats-card-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.dossier-datasheet-roadmap .dossier-roadmap-toggle-btn {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 11px 14px;
+}
+
+.dossier-datasheet-roadmap .dossier-roadmap-toggle-btn.open {
+  border-bottom: 1px solid var(--row-divider);
+}
+
+.dossier-datasheet-roadmap .dossier-roadmap-drawer.open {
+  padding: 10px 14px 12px;
+}
+/* Redesigned 2-Section 15-Year / 250,000 km Service & Repair Guide */
+.rg-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.rg-toggle-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  min-width: 0;
+}
+
+.rg-toggle-title {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--forza-lime);
+}
+
+.rg-count-pills {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rg-count-pill {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 3px;
+}
+
+.rg-count-pill.is-routine {
+  background: color-mix(in srgb, var(--p1-accent) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--p1-accent) 45%, transparent);
+  color: var(--p1-accent);
+}
+
+.rg-count-pill.is-critical {
+  background: color-mix(in srgb, var(--loss-red) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--loss-red) 45%, transparent);
+  color: var(--loss-red-soft, #ff6b6b);
+}
+
+.dossier-repair-guide .rg-drawer.open {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px 16px 14px;
+}
+
+.rg-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rg-section-head {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.rg-section-head.is-routine {
+  color: var(--p1-accent);
+}
+
+.rg-section-head.is-critical {
+  color: var(--p2-accent);
+}
+
+.rg-rows-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rg-row-routine {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 10px;
+  border-radius: 4px;
+  background: var(--header-card-bg);
+  border: 1px solid var(--panel-border);
+  border-left: 2.5px solid var(--p1-accent);
+}
+
+.rg-row-critical {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  background: var(--header-card-bg);
+  border: 1px solid var(--panel-border);
+  border-left: 2.5px solid var(--loss-red);
+}
+
+.rg-row-critical .rg-row {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.rg-when {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.rg-when.is-crit {
+  color: var(--p2-accent);
+}
+
+.rg-action {
+  font-family: var(--font-sans);
+  font-size: 0.81rem;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.35;
+}
+
+.rg-cost {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 3px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  background: color-mix(in srgb, var(--win-green) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--win-green) 42%, transparent);
+  color: var(--win-green);
+}
+
+.rg-cost.is-crit {
+  background: color-mix(in srgb, var(--p2-accent) 16%, transparent);
+  border-color: color-mix(in srgb, var(--p2-accent) 45%, transparent);
+  color: var(--p2-accent);
+}
+
+.rg-risk-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 7px;
+  padding-top: 4px;
+  border-top: 1px solid color-mix(in srgb, var(--row-divider) 65%, transparent);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  line-height: 1.35;
+}
+
+.rg-risk-prefix {
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.rg-risk-text {
+  color: var(--text-muted);
+  flex: 1;
+  min-width: 180px;
+}
+
+.rg-damage-pill {
+  font-family: var(--font-display);
+  font-size: 0.76rem;
+  font-weight: 800;
+  padding: 1px 7px;
+  border-radius: 3px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  background: color-mix(in srgb, var(--loss-red) 18%, transparent);
+  border: 1px solid color-mix(in srgb, var(--loss-red) 48%, transparent);
+  color: var(--loss-red-soft, #ff6b6b);
+}
+
+.rg-empty-note {
+  font-size: 0.79rem;
+  color: var(--text-muted);
+  padding: 6px 8px;
+}
+/* Negative Red X Callout (e.g. 0 kg No Towing / Relaxed Economy Pace) */
+.dossier-sheet-note.is-negative {
+  background: color-mix(in srgb, var(--loss-red) 11%, transparent);
+  border-left-color: var(--loss-red);
+}
+
+.dossier-sheet-note.is-negative .dossier-sheet-note-icon {
+  color: var(--loss-red-soft, #ff6b6b);
+}
+
+/* Redesigned 5.4 Used Market & Depreciation Datasheet (€ Popover Styling) */
+.dossier-market-table .dossier-tech-val {
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.dossier-market-table .dossier-tech-val.is-accent {
+  color: var(--forza-lime);
+}
+
+.dossier-market-table .dossier-tech-val.is-loss {
+  color: var(--loss-red-soft, #ff7b7b);
+}
+
+.dossier-market-table .dossier-tech-val.is-win {
+  color: #2EE56B;
+}
+
+html[data-theme="light"] .dossier-market-table .dossier-tech-val.is-win,
+html[data-theme="light-soft"] .dossier-market-table .dossier-tech-val.is-win {
+  color: var(--win-green);
+}
+
+.dossier-market-outlook {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.dossier-market-outlook-label {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.dossier-market-outlook-val {
+  font-family: var(--font-display);
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+/* Side-Specific Change Car Pills (Native Forza Showroom Control Above Car Image) */
+.change-car-pill {
+  position: relative;
+  z-index: 20;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 5px 16px 6px;
+  margin-bottom: -2px;
+  border-radius: 3px;
+  border: 1px solid var(--control-border);
+  background: var(--control-bg);
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.32);
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
+}
+
+.change-car-pill::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 0 0 2px 2px;
+  opacity: 0.85;
+  transition: height 0.15s ease, opacity 0.15s ease;
+}
+
+.change-car-pill .change-car-svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+
+.change-car-pill.change-car-p1 .change-car-svg {
+  color: var(--p1-accent);
+}
+
+.change-car-pill.change-car-p1::after {
+  background: var(--p1-accent);
+}
+
+.change-car-pill.change-car-p1:hover {
+  border-color: var(--p1-accent);
+  background: color-mix(in srgb, var(--p1-accent) 16%, var(--control-bg));
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--p1-accent) 28%, rgba(0, 0, 0, 0.4));
+  transform: translateY(-1px);
+}
+
+.change-car-pill.change-car-p2 .change-car-svg {
+  color: var(--p2-accent);
+}
+
+.change-car-pill.change-car-p2::after {
+  background: var(--p2-accent);
+}
+
+.change-car-pill.change-car-p2:hover {
+  border-color: var(--p2-accent);
+  background: color-mix(in srgb, var(--p2-accent) 16%, var(--control-bg));
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--p2-accent) 28%, rgba(0, 0, 0, 0.4));
+  transform: translateY(-1px);
+}
+
+.change-car-pill:hover::after {
+  opacity: 1;
+}
+
+.change-car-pill:hover .change-car-svg {
+  transform: scale(1.08);
+}
+
+.versus-arena.awaiting-selection .change-car-pill {
+  display: none;
 }

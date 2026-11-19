@@ -33,6 +33,8 @@ When the gate triggers, output **only** this compact block before touching any f
 - **Package Manager / Bundler:** None. Do not introduce `npm`, `pnpm`, or external runtime dependencies unless explicitly requested.
 - **OS & Shell:** Windows PowerShell (portable across PC & laptop via GitHub Desktop / Git). Always use relative paths (`assets/...`) in source code—never hardcode `C:\`, `D:\`, or `file:///`.
 - **Domain & Styling Conventions:** Follow `AGENTS.md` for HUD layout, Smash-style selection grid, `C1`/`C2` labels, 4 CSS-variable themes (`dark`, `dark-soft`, `light`, `light-soft`), mandatory `en`/`de`/`ru` translations, all 19 `subStats` keys, and 5-angle showroom assets.
+- **CSS Variable Hygiene:** Always verify CSS custom properties against `:root` in `styles.css` (`--font-display`, `--control-bg`, `--text-main`, `--panel-border`, `--p1-accent`, `--p2-accent`); never invent aliases like `--font-heading`, `--bg-panel`, or `--text-primary`.
+- **Post-Batch Data Audit:** After any `cars-data.js` edit, always verify delimiter balance (`0/0/0`), all 40 `SUB_STAT_SPEC_ROWS` keys across all 120 engines, `0` unknown `@tokens`/`@presets`, `0` missing `DOSSIER_TECH_LABELS`, and `0` English `Sportfahrwerk` leaks.
 - **Standard Verification Command (PowerShell):**
   ```powershell
   foreach($f in './cars-data.js','./app.js'){ $c = Get-Content -Raw $f; $b=0; $sq=0; $p=0

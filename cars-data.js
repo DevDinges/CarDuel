@@ -55,6 +55,174 @@ const CAR_ROSTER = [
     drivetrain: 'FWD',
     image: 'assets/toyota-auris-2014.png',
     defaultEngineId: '1.8-hybrid',
+    sharedDossierBreakdowns: {
+      transmissionDriveline: { gearbox: '@gbManual6Toyota', clutchDmf: '@clutchSingle', driveline: '@driveFwd' },
+      buildQualityRust: { rustProtection: '@rustGalvanized12y', suspensionWear: '@suspMultiLink' },
+      electronicsReliability: { starterAlternator: '@starterStandard12v', electronicsRisk: '@elecSimpleEps' },
+      rideNoiseComfort: {
+        rideTuning: {
+          specs: [
+            { k: 'damperSetup', v: { en: 'Comfort-Biased Springs & Progressive Dampers', de: 'Komfortbetonte Federung & sanfte Dämpfer', ru: 'Мягкая комфортная подвеска' } },
+            { k: 'seatSupport', v: { en: 'Supportive Cushioning · Relaxed Upright Posture', de: 'Bequeme Polsterung · Entspannte Sitzposition', ru: 'Мягкие кресла · Удобная посадка' } }
+          ],
+          note: { en: 'Soaks up rough city streets and cobblestones with noticeably less jolt than sportier rivals.', de: 'Schluckt Schlaglöcher und Kopfsteinpflaster deutlich geschmeidiger als straffere Konkurrenten.', ru: 'Отлично сглаживает ямы и неровности города заметно мягче многих одноклассников.' }
+        },
+        highwayNoise: {
+          specs: [
+            { k: 'cabinNoise130', v: { en: '~69 dB(A) at 130 km/h (Quiet for Class)', de: '~69 dB(A) bei 130 km/h (Klassenleise)', ru: '~69 дБ(А) при 130 км/ч (тихо для класса)' } },
+            { k: 'acousticGlass', v: { en: 'Acoustic Windscreen + Firewall Insulation (2015+ FL)', de: 'Akustik-Frontscheibe + Stirnwanddämmung (ab 2015)', ru: 'Акустическое лобовое + доп. изоляция (с 2015)' } }
+          ],
+          note: { en: 'Calm tyre and wind isolation on steady highway cruises; hybrid stays near-silent in city traffic.', de: 'Ruhige Wind- und Abrollgeräusche auf der Autobahn; im Stadtverkehr als Hybrid fast lautlos.', ru: 'Тихая езда на трассе, а гибридная версия в городе почти бесшумна.' }
+        }
+      },
+      interiorQualityFeatures: {
+        cabinMaterials: {
+          specs: [
+            { k: 'dashTrim', v: { en: 'Soft-Touch Upper Dash + Stitched Leatherette Trim (FL)', de: 'Soft-Touch-Armaturenbrett + Lederoptik-Zierleiste (FL)', ru: 'Мягкий верх панели + вставка с прострочкой' } },
+            { k: 'buildFit', v: { en: 'Tight Panel Gaps · Low Squeak/Rattle Rate', de: 'Saubere Spaltmaße · Kaum Klappergeräusche', ru: 'Плотная подгонка · Минимум сверчков' } }
+          ],
+          note: { en: 'Post-2015 facelift cabins feel noticeably fresher and hold up cleanly past 200,000 km.', de: 'Besonders das Facelift ab 2015 wirkt hochwertig und altert auch jenseits von 200.000 km sauber.', ru: 'Салон после рестайлинга 2015 года выглядит солидно и достойно сохраняется после 200 тыс. км.' }
+        },
+        controls: '@controlsPhys'
+      },
+      visibilityManeuverability: {
+        turningCircle: {
+          specs: [
+            { k: 'turningDiam', v: '10.4 m' },
+            { k: 'bodyDimensions', v: '4,330 × 1,760 mm' }
+          ],
+          note: { en: 'Tight 10.4 m turning circle makes tight multi-storey garages and U-turns effortless.', de: 'Knapper 10,4 m Wendekreis macht enge Parkhäuser und Wendemanöver kinderleicht.', ru: 'Компактный разворот 10.4 м делает парковку в тесных дворах очень лёгкой.' }
+        },
+        visibility: {
+          specs: [
+            { k: 'sightlines', v: { en: 'Good Forward & Side · Medium C-Pillar', de: 'Gute Sicht vorn/seitlich · Mittlere C-Säule', ru: 'Хороший обзор спереди/сбоку · Средняя стойка C' } },
+            { k: 'parkingAids', v: { en: 'Rear Camera Common (Most Trims)', de: 'Rückfahrkamera häufig Serie', ru: 'Камера заднего вида в большинстве версий' } }
+          ],
+          note: { en: 'Clean, uncluttered rear window with widely fitted reversing cameras on most European trims.', de: 'Saubere Heckscheibe und bei den meisten Ausstattungen serienmäßige Rückfahrkamera.', ru: 'Чистое заднее стекло без перемычек плюс часто встречающаяся камера заднего вида.' }
+        }
+      },
+      safetyProtection: {
+        euroNcap: {
+          specs: [
+            { k: 'ncapOverall', v: '★★★★★ (2013)' },
+            { k: 'ncapBreakdown', v: { en: '92% Adult · 84% Child · 68% Pedestrian', de: '92 % Erwachsene · 84 % Kinder · 68 % Fußgänger', ru: '92% Взрослые · 84% Дети · 68% Пешеходы' } },
+            { k: 'airbagsCount', v: { en: '7 Airbags (incl. Driver Knee Airbag)', de: '7 Airbags (inkl. Fahrer-Knieairbag)', ru: '7 подушек (вкл. коленную водителя)' } }
+          ],
+          note: { en: 'Strong 5-star crash shell with standard knee airbag across all trims.', de: 'Stabile 5-Sterne-Sicherheitszelle inklusive Knieairbag in allen Ausstattungen.', ru: 'Крепкий 5-звёздочный кузов с коленной подушкой уже в базе.' }
+        },
+        safetyTech: {
+          specs: [
+            { k: 'activeAssists', v: { en: '✓ ESP/VSC · ✓ Toyota Safety Sense AEB (2015+ FL)', de: '✓ ESP/VSC · ✓ Toyota Safety Sense Notbrems (ab 2015)', ru: '✓ ESP/VSC · ✓ Safety Sense AEB (с 2015)' } }
+          ],
+          note: { en: 'Post-2015 facelift models add Pre-Collision AEB, Lane Departure Alert, and Road Sign Assist.', de: 'Facelift-Modelle ab 2015 bieten Notbrems-, Spurhalte- und Verkehrszeichenassistent.', ru: 'Рестайлинг с 2015 года добавил автоторможение AEB, контроль полосы и распознавание знаков.' }
+        }
+      },
+      passengerSpaceErgonomics: {
+        rearRoom: {
+          specs: [
+            { k: 'wheelbase', v: '2,600 mm' },
+            { k: 'rearLegHead', v: { en: 'Adequate for Adults up to ~1.82 m · Flat Center Floor', de: 'Solide bis ca. 1,82 m · Flacher Mitteltunnel', ru: 'Норма для взрослых до ~1.82 м · Ровный пол' } }
+          ],
+          note: { en: 'Flat rear floor makes middle-seat footroom better than most hatchbacks.', de: 'Der flache Boden im Fond schafft spürbar mehr Fußraum auf dem mittleren Platz.', ru: 'Ровный пол сзади делает посадку центрального пассажира заметно удобнее.' }
+        },
+        isofixEntry: {
+          specs: [
+            { k: 'isofixAccess', v: { en: '✓ 2× Outer ISOFIX · Wide-Opening Doors', de: '✓ 2× ISOFIX außen · Weit öffnende Türen', ru: '✓ 2× ISOFIX · Широкий проём дверей' } }
+          ],
+          note: { en: 'Easy child-seat mounting and comfortable sill height for everyday family use.', de: 'Gut zugängliche ISOFIX-Anker und angenehme Einstiegshöhe für den Alltag.', ru: 'Удобный доступ к креплениям ISOFIX и комфортная посадка.' }
+        }
+      },
+      interiorBootSpace: {
+        bootVolume: {
+          specs: [
+            { k: 'bootUpDown', v: '360 L / 1,200 L' },
+            { k: 'loadSill', v: { en: '~690 mm · Dual-Height Boot Floor', de: '~690 mm · Doppelter Ladeboden', ru: '~690 мм · Двухуровневый пол' } }
+          ],
+          note: { en: 'Hybrid battery sits under the rear seat so E180 Hybrid keeps the full 360 L boot.', de: 'Hybridakku sitzt unter der Rückbank — der E180 Hybrid behält volle 360 L Kofferraum.', ru: 'Батарея гибрида под задним диваном, поэтому багажник сохраняет все 360 литров.' }
+        },
+        seatUtility: {
+          specs: [
+            { k: 'foldingMech', v: { en: '60/40 Split-Fold · Flat Floor in Upper Position', de: '60/40 geteilt klappbar · Ebener Ladeboden', ru: 'Складывание 60/40 · Ровный пол' } }
+          ],
+          note: { en: 'Clean square load bay with adjustable floor board to eliminate the step when folded.', de: 'Quadratischer Zuschnitt und variabler Boden für eine ebene Ladefläche.', ru: 'Правильная форма отсека и ровная площадка при сложенных спинках.' }
+        }
+      },
+      payloadTowing: {
+        payloadRoof: {
+          specs: [
+            { k: 'maxPayload', v: '~430 kg' },
+            { k: 'roofLoad', v: '75 kg' }
+          ],
+          note: { en: 'Solid compact-hatch carry capacity for 4 adults plus holiday luggage or roof box.', de: 'Solide Kompaktklasse-Zuladung für 4 Personen samt Gepäck oder Dachbox.', ru: 'Хорошая грузоподъёмность для 4 человек с багажом или автобоксом.' }
+        },
+        towingBraked: '@towingDynamic'
+      },
+      accelerationOvertaking: {
+        sprint0100: '@sprintDynamic',
+        topSpeed: '@vmaxDynamic'
+      },
+      midRangeTorquePassing: {
+        peakTorque: '@torqueDynamic',
+        passingPunch: '@passingDynamic'
+      },
+      handlingAgility: {
+        chassisFeel: {
+          specs: [
+            { k: 'kerbWeight', v: '1,235–1,390 kg' },
+            { k: 'handlingChar', v: { en: 'Neutral, Composed & Safe · Light City Steering', de: 'Neutral, sicher & gutmütig · Leichte Stadtlenkung', ru: 'Нейтральное, безопасное · Лёгкий руль' } },
+            { k: 'tyreSizes', v: '205/55 R16 · 225/45 R17' }
+          ],
+          note: { en: 'Lower center of gravity on E180 improves stability over the older generation.', de: 'Tieferer Schwerpunkt beim E180 sorgt für spürbar ruhigere Kurvenlage.', ru: 'Сниженный центр тяжести E180 обеспечивает уверенную устойчивость в поворотах.' }
+        },
+        tractionDiff: '@tractionFwdOpen'
+      },
+      brakingPerformance: {
+        braking1000: '@brakingDistDynamic',
+        brakeSetup: '@brakeSetupDiscs4'
+      },
+      efficiencyFuel: {
+        realWorldFuel: '@fuelDynamic',
+        tankRange: '@tankDynamic'
+      },
+      taxInsuranceNorm: {
+        euroNorm: '@euroDynamic',
+        taxInsurance: '@taxInsDynamic'
+      },
+      maintenanceRepairCosts: {
+        timingDrive: '@timingDynamic',
+        serviceWear: '@serviceDynamic'
+      },
+      depreciationResale: {
+        valueRetention: '@retentionDynamic',
+        resaleDemand: '@demandDynamic'
+      }
+    },
+    sharedSpecs: {
+      rustProtection: { en: 'Good (Galvanized)', de: 'Gut (Verzinkt)', ru: 'Хорошая (оцинковка)' },
+      suspensionWear: { en: 'Multi-Link Rear', de: 'Mehrlenker-HA', ru: 'Многорычажка сзади' },
+      starterAlternator: { en: '✓ Standard 12V', de: '✓ Klassisch 12V', ru: '✓ Обычные 12В' },
+      electronicsRisk: { en: 'Low (Simple Bus)', de: 'Gering (Robust)', ru: 'Низкий риск' },
+      rideTuning: { en: 'Soft / Comfort', de: 'Weich / Komfort', ru: 'Мягкая / Комфорт' },
+      highwayNoise: { en: '~69 dB · Quiet', de: '~69 dB · Leise', ru: '~69 дБ · Тихо' },
+      cabinMaterials: { en: 'Soft-Touch Upper', de: 'Soft-Touch oben', ru: 'Мягкий верх панели' },
+      controls: { en: '✓ Physical Buttons', de: '✓ Echte Tasten', ru: '✓ Физ. кнопки' },
+      turningCircle: '10.4 m',
+      visibility: { en: 'Good All-Round', de: 'Gute Rundumsicht', ru: 'Хороший обзор' },
+      euroNcap: '★★★★★ (2013)',
+      safetyTech: { en: '✓ ESP · ✓ AEB (2015+)', de: '✓ ESP · ✓ Notbrems (ab 15)', ru: '✓ ESP · ✓ AEB (с 2015)' },
+      rearRoom: { en: 'Compact / Adequate', de: 'Kompakt / Solide', ru: 'Компактно / Норма' },
+      isofixEntry: { en: '✓ 2× ISOFIX · Low', de: '✓ 2× ISOFIX · Tief', ru: '✓ 2× ISOFIX · Низкий' },
+      bootVolume: '360 L / 1,200 L',
+      seatUtility: { en: '60/40 Flat Floor', de: '60/40 Ebener Boden', ru: '60/40 Ровный пол' },
+      payloadRoof: '430 kg · 75 kg',
+      driveline: 'FWD',
+      chassisFeel: { en: 'Neutral / Safe', de: 'Neutral / Sicher', ru: 'Нейтральное / Безоп.' },
+      tractionDiff: { en: 'FWD · Open Diff', de: 'FWD · Offen', ru: 'FWD · Своб. дифф.' },
+      braking1000: '~36.5 m',
+      brakeSetup: { en: '4× Disc Brakes', de: '4× Scheibenbremsen', ru: '4× Дисковые' },
+      valueRetention: { en: 'High', de: 'Hoch', ru: 'Высокий' },
+      resaleDemand: { en: 'Steady Demand', de: 'Stabile Nachfrage', ru: 'Стабильный спрос' }
+    },
     sharedBuyerFit: {
       cards: {
         // Shared Chassis & Auris-Wide Cards
@@ -1051,6 +1219,28 @@ const CAR_ROSTER = [
     engines: [
       {
         id: '1.8-hybrid',
+        specOverrides: {
+          engineName: { en: '1.8L NA Hybrid', de: '1.8L Sauger-Hybrid', ru: '1.8L Атм. гибрид' },
+          forcedInduction: { en: '✓ E-Motor · ✕ Turbo', de: '✓ E-Motor · ✕ Turbo', ru: '✓ Эл. мотор · ✕ Турбо' },
+          injection: { en: '✓ Port (Indirect)', de: '✓ Saugrohr (Indirekt)', ru: '✓ Распред. (непрямой)' },
+          gearbox: { en: 'Planetary e-CVT', de: 'Planeten-e-CVT', ru: 'Планетарный e-CVT' },
+          clutchDmf: { en: '✕ No Clutch / DMF', de: '✕ Ohne Kupplung/ZMS', ru: '✕ Без сцепл. и мах.' },
+          starterAlternator: { en: '✕ None (Hybrid MG)', de: '✕ Keine (Hybrid-MG)', ru: '✕ Нет (гибрид MG)' },
+          towingBraked: '385 kg',
+          sprint0100: '10.9 s',
+          topSpeed: '180 km/h',
+          peakTorque: { en: '142 Nm + E-Assist', de: '142 Nm + E-Boost', ru: '142 Н·м + Эл. тяга' },
+          passingPunch: { en: 'Instant City · Mild Hwy', de: 'Direkt Stadt · Ruhig AB', ru: 'Бодро в городе' },
+          brakeSetup: { en: '✓ Regen + 4× Discs', de: '✓ Rekup. + 4× Scheibe', ru: '✓ Рекуп. + 4× Диски' },
+          realWorldFuel: '4.5–5.2 L/100 km',
+          tankRange: '45 L · ~850 km',
+          euroNorm: 'Euro 5 / 6',
+          taxInsurance: { en: 'Very Low', de: 'Sehr niedrig', ru: 'Очень низкие' },
+          timingDrive: { en: '✓ Timing Chain', de: '✓ Steuerkette', ru: '✓ Цепь ГРМ' },
+          serviceWear: { en: 'Low (Long-Life Brakes)', de: 'Gering (Lange Bremsen)', ru: 'Низкие (долгие тормоза)' },
+          valueRetention: { en: 'Very High', de: 'Sehr hoch', ru: 'Очень высокий' },
+          resaleDemand: { en: 'Fast Seller', de: 'Sehr gefragt', ru: 'Быстрая продажа' }
+        },
         buyerFitGroup: 'hybrid',
         isDefault: true,
         fuelType: 'hybrid',
@@ -1128,6 +1318,24 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '1.8L VVT-i Atkinson Inline-4 Hybrid (2ZR-FXE)', de: '1.8L VVT-i Atkinson Reihenvierzylinder Hybrid (2ZR-FXE)', ru: '1.8L VVT-i Аткинсон рядный 4-цил. гибрид (2ZR-FXE)' } },
+                  { k: 'displacement', v: '1,798 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 16V DOHC', de: '4 Zylinder · 16V DOHC', ru: '4 цилиндра · 16V DOHC' } },
+                  { k: 'output', v: { en: '73 kW (99 HP) · System: 100 kW (136 HP)', de: '73 kW (99 PS) · System: 100 kW (136 PS)', ru: '73 кВт (99 л.с.) · Сист.: 100 кВт (136 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Petrol / Electric · Timing Chain', de: 'Benzin / Elektro · Steuerkette', ru: 'Бензин / Электро · Цепь ГРМ' } }
+                ],
+                note: {
+                  en: 'Taxi-fleet proven past 400,000+ km (TÜV top 3%) with electric water pump and zero drive belts.',
+                  de: 'Im Taxibetrieb über 400.000+ km bewährt (TÜV Top 3 %) mit elektrischer Wasserpumpe ohne Keilriemen.',
+                  ru: 'Проверен в такси на 400 000+ км (Топ-3% TÜV) — электропомпа и полное отсутствие приводных ремней.'
+                }
+              },
+              forcedInduction: '@hybridEMotor',
+              injection: '@portInj'
+            },
             score: 9.8,
             badges: {
               en: ['TÜV Top 3% Defects', 'No Turbo, Starter or Alternator'],
@@ -1213,6 +1421,7 @@ const CAR_ROSTER = [
             }
           },
           transmissionDriveline: {
+            specBreakdown: { gearbox: '@gbECvt', clutchDmf: '@clutchNone' },
             score: 9.8,
             badges: {
               en: ['Planetary e-CVT', 'Zero Clutch / Zero DMF'],
@@ -1276,6 +1485,7 @@ const CAR_ROSTER = [
             }
           },
           electronicsReliability: {
+            specBreakdown: { starterAlternator: '@starterHybridMg' },
             score: 9.4,
             badges: {
               en: ['No Starter / No Alternator', 'Bulletproof Hybrid Inverter'],
@@ -1513,6 +1723,7 @@ const CAR_ROSTER = [
             }
           },
           brakingPerformance: {
+            specBreakdown: { brakeSetup: '@brakeSetupRegen' },
             score: 7.8,
             badges: {
               en: ['100–0 km/h: 36.2 m', 'All-Round Discs • Regen Assist'],
@@ -1581,6 +1792,18 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '~90,000 km · 6 yrs', action: { en: 'e-CVT Transaxle Fluid Change (ATF-WS)', de: 'e-CVT Getriebeölwechsel (ATF-WS)', ru: 'Замена масла в e-CVT (ATF-WS)' }, cost: '€150–240' },
+                { when: '~100,000 km · 6 yrs', action: { en: 'Hybrid Battery Fan & Rear-Seat Filter Cleaning', de: 'Hybrid-Lüfter & Ansaugfilter unter Rückbank reinigen', ru: 'Чистка вентилятора и фильтра батареи под сиденьем' }, cost: '€80–150' },
+                { when: '~150,000 km · 10 yrs', action: { en: 'Engine & Hybrid Inverter Coolant Flush (SLLC)', de: 'Kühlmittelwechsel Motor & Hybrid-Inverter (SLLC)', ru: 'Замена антифриза ДВС и инвертора (SLLC)' }, cost: '€180–280' }
+              ],
+              critical: [
+                { when: '140–180k km · 9–12 yrs', action: { en: 'EGR Cooler & Intake Passage Deep-Clean', de: 'AGR-Kühler & Ansaugkanal gründlich reinigen', ru: 'Глубокая чистка охладителя EGR и впуска' }, cost: '€250–420', risk: { en: 'Clogged EGR causes cold-start rattle & head-gasket stress', de: 'Verstopftes AGR verursacht Kaltstart-Ruckeln & Kopfdichtungsschaden', ru: 'Забитый EGR вызывает стуки на холодную и риск пробоя ГБЦ' }, damage: '€1,800–2,800' },
+                { when: '180–220k km · 11–14 yrs', action: { en: 'Electric Engine Water Pump Replacement', de: 'Elektrische Motor-Wasserpumpe ersetzen', ru: 'Замена электрической помпы охлаждения ДВС' }, cost: '€300–480', risk: { en: 'Highway overheating & warped cylinder head', de: 'Überhitzung auf der Autobahn & verzogener Zylinderkopf', ru: 'Перегрев на трассе и деформация ГБЦ' }, damage: '€1,500–2,500' },
+                { when: '210–250k km · 12–15 yrs', action: { en: 'NiMH Hybrid Battery Cell Reconditioning / Replacement', de: 'NiMH-Hybridbatterie aufbereiten oder ersetzen', ru: 'Восстановление или замена элементов батареи NiMH' }, cost: '€900–1,800', risk: { en: 'Hybrid warning lights & sharp fuel-economy drop', de: 'Hybrid-Warnmeldung & deutlich steigender Verbrauch', ru: 'Ошибки гибридной системы и резкий рост расхода' }, damage: '€2,200–3,000' }
+              ]
+            },
             score: 9.3,
             badges: {
               en: ['Regen Saves Brake Discs/Pads', 'Zero Clutch, Starter Or Belt'],
@@ -1679,6 +1902,25 @@ const CAR_ROSTER = [
       },
       {
         id: '1.33-dual-vvti',
+        specOverrides: {
+          engineName: { en: '1.33L Dual VVT-i NA', de: '1.33L Dual-VVT-i Sauger', ru: '1.33L Dual VVT-i Атм.' },
+          forcedInduction: { en: '✕ Turbo / E-Motor', de: '✕ Turbo / E-Motor', ru: '✕ Турбо / Эл. мотор' },
+          injection: { en: '✓ Port (Indirect)', de: '✓ Saugrohr (Indirekt)', ru: '✓ Распред. (непрямой)' },
+          gearbox: { en: '6-Speed Manual', de: '6-Gang Schaltgetriebe', ru: '6-ст. Механика' },
+          clutchDmf: { en: '✓ Single Clutch (✕ DMF)', de: '✓ Kupplung (✕ ZMS)', ru: '✓ Сцепление (✕ ДММ)' },
+          suspensionWear: { en: 'Torsion Beam (Simple)', de: 'Verbundlenker (Simpel)', ru: 'Балка (простая)' },
+          towingBraked: '1,300 kg',
+          sprint0100: '12.6 s',
+          topSpeed: '175 km/h',
+          peakTorque: '128 Nm @ 3,800',
+          passingPunch: { en: 'Rev-Dependent', de: 'Drehzahlabhängig', ru: 'Нужны обороты' },
+          realWorldFuel: '5.9–6.5 L/100 km',
+          tankRange: '50 L · ~800 km',
+          euroNorm: 'Euro 5 / 6',
+          taxInsurance: { en: 'Very Low', de: 'Sehr niedrig', ru: 'Очень низкие' },
+          timingDrive: { en: '✓ Timing Chain', de: '✓ Steuerkette', ru: '✓ Цепь ГРМ' },
+          serviceWear: { en: 'Very Low', de: 'Sehr gering', ru: 'Очень низкие' }
+        },
         buyerFitGroup: 'na-petrol-133',
         isDefault: false,
         dossierGroup: 'na-petrol',
@@ -1763,6 +2005,24 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '1.33L Dual VVT-i Inline-4 NA (1NR-FE)', de: '1.33L Dual-VVT-i Reihenvierzylinder Sauger (1NR-FE)', ru: '1.33L Dual VVT-i рядный 4-цил. атмосферный (1NR-FE)' } },
+                  { k: 'displacement', v: '1,329 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 16V DOHC', de: '4 Zylinder · 16V DOHC', ru: '4 цилиндра · 16V DOHC' } },
+                  { k: 'output', v: { en: '73 kW (99 HP)', de: '73 kW (99 PS)', ru: '73 кВт (99 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Petrol · Timing Chain', de: 'Benzin · Steuerkette', ru: 'Бензин · Цепь ГРМ' } }
+                ],
+                note: {
+                  en: 'Lightweight, low-stress city engine with minimal wear components and inexpensive servicing.',
+                  de: 'Leichter, entspannter Stadtmotor mit minimalen Verschleißteilen und günstiger Wartung.',
+                  ru: 'Лёгкий и простой городской атмосферник с минимумом сложных узлов и недорогим ТО.'
+                }
+              },
+              forcedInduction: '@naNoTurbo',
+              injection: '@portInj'
+            },
             score: 8.4,
             badges: {
               en: ['Chain-Driven 1.33 NA', 'Watch Short-Trip Oil Use'],
@@ -1856,6 +2116,7 @@ const CAR_ROSTER = [
             }
           },
           buildQualityRust: {
+            specBreakdown: { suspensionWear: '@suspTorsionBeam' },
             score: 8.8,
             badges: {
               en: ['Good Underbody Sealing', 'Durable Suspension Joints'],
@@ -2055,6 +2316,15 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '~90,000 km · 6 yrs', action: { en: 'Iridium Spark Plugs & Coolant Inspection', de: 'Iridium-Zündkerzen & Kühlmittel-Check', ru: 'Иридиевые свечи и проверка антифриза' }, cost: '€140–220' },
+                { when: '~120,000 km · 8 yrs', action: { en: '6-Speed Manual Gearbox Oil (75W LV)', de: '6-Gang Schaltgetriebeöl wechseln (75W LV)', ru: 'Замена масла в 6-ст. МКПП (75W LV)' }, cost: '€120–190' }
+              ],
+              critical: [
+                { when: '120–180k km · 8–12 yrs', action: { en: 'Piston Oil-Control Ring Wear (Pre-2014 Units)', de: 'Ölabstreifringe prüfen (Baujahre vor 2014)', ru: 'Износ маслосъёмных колец (выпуск до 2014 г.)' }, cost: '€600–1,200', risk: { en: 'Rising oil burn & catalytic converter fouling', de: 'Steigender Ölverbrauch & Katalysator-Schäden', ru: 'Прогрессирующий масложор и выход из строя катализатора' }, damage: '€1,800–2,600' }
+              ]
+            },
             score: 9.0,
             badges: {
               en: ['Cheap Toyota Service Parts', 'No Turbo / DPF Repair Risk'],
@@ -2074,6 +2344,24 @@ const CAR_ROSTER = [
       },
       {
         id: '1.6-valvematic',
+        specOverrides: {
+          engineName: { en: '1.6L Valvematic NA', de: '1.6L Valvematic Sauger', ru: '1.6L Valvematic Атм.' },
+          forcedInduction: { en: '✕ Turbo / E-Motor', de: '✕ Turbo / E-Motor', ru: '✕ Турбо / Эл. мотор' },
+          injection: { en: '✓ Port (Indirect)', de: '✓ Saugrohr (Indirekt)', ru: '✓ Распред. (непрямой)' },
+          gearbox: { en: '6-Speed Manual', de: '6-Gang Schaltgetriebe', ru: '6-ст. Механика' },
+          clutchDmf: { en: '✓ Single Clutch (✕ DMF)', de: '✓ Kupplung (✕ ZMS)', ru: '✓ Сцепление (✕ ДММ)' },
+          towingBraked: '1,300 kg',
+          sprint0100: '10.0 s',
+          topSpeed: '200 km/h',
+          peakTorque: '160 Nm @ 4,400',
+          passingPunch: { en: 'Smooth · Needs Revs', de: 'Linear · Braucht Drehzahl', ru: 'Ровно · Нужны обороты' },
+          realWorldFuel: '6.4–7.1 L/100 km',
+          tankRange: '50 L · ~730 km',
+          euroNorm: 'Euro 5 / 6',
+          taxInsurance: { en: 'Low', de: 'Niedrig', ru: 'Низкие' },
+          timingDrive: { en: '✓ Timing Chain', de: '✓ Steuerkette', ru: '✓ Цепь ГРМ' },
+          serviceWear: { en: 'Low', de: 'Gering', ru: 'Низкие' }
+        },
         buyerFitGroup: 'na-petrol-16',
         isDefault: false,
         dossierGroup: 'na-petrol',
@@ -2152,6 +2440,24 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '1.6L Valvematic Inline-4 NA (1ZR-FAE)', de: '1.6L Valvematic Reihenvierzylinder Sauger (1ZR-FAE)', ru: '1.6L Valvematic рядный 4-цил. атмосферный (1ZR-FAE)' } },
+                  { k: 'displacement', v: '1,598 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 16V DOHC', de: '4 Zylinder · 16V DOHC', ru: '4 цилиндра · 16V DOHC' } },
+                  { k: 'output', v: { en: '97 kW (132 HP)', de: '97 kW (132 PS)', ru: '97 кВт (132 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Petrol · Timing Chain', de: 'Benzin · Steuerkette', ru: 'Бензин · Цепь ГРМ' } }
+                ],
+                note: {
+                  en: 'Proven 250,000–300,000+ km naturally aspirated block with simple annual oil servicing.',
+                  de: 'Bewährter Saugmotor für 250.000–300.000+ km bei regulärem jährlichem Ölwechsel.',
+                  ru: 'Проверенный атмосферный блок на 250–300+ тыс. км при простом ежегодном ТО.'
+                }
+              },
+              forcedInduction: '@naNoTurbo',
+              injection: '@portInj'
+            },
             score: 9.4,
             badges: {
               en: ['1.6 Timing Chain NA', '300,000+ km Lifespan'],
@@ -2450,6 +2756,15 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '~90,000 km · 6 yrs', action: { en: 'Iridium Spark Plugs & Coolant Flush', de: 'Iridium-Zündkerzen & Kühlmittelwechsel', ru: 'Иридиевые свечи и замена антифриза' }, cost: '€150–240' },
+                { when: '~120,000 km · 8 yrs', action: { en: '6-Speed Manual Gearbox Oil (75W LV)', de: '6-Gang Schaltgetriebeöl wechseln (75W LV)', ru: 'Замена масла в 6-ст. МКПП (75W LV)' }, cost: '€120–190' }
+              ],
+              critical: [
+                { when: '140–210k km · 9–14 yrs', action: { en: 'Valvematic Variable Valve-Lift Actuator Module', de: 'Valvematic-Stellmodul (Ventilhubsteuerung)', ru: 'Блок управления подъёмом клапанов Valvematic' }, cost: '€850–1,250', risk: { en: 'Limp-home mode, rough idle & loss of throttle response', de: 'Notlauf, unrunder Leerlauf & Leistungsverlust', ru: 'Аварийный режим, нестабильный холостой ход' }, damage: '€1,300–1,700' }
+              ]
+            },
             score: 8.9,
             badges: {
               en: ['Simple NA Routine Upkeep', 'No Turbo / High-Pressure Parts'],
@@ -2469,6 +2784,25 @@ const CAR_ROSTER = [
       },
       {
         id: '1.4-d4d',
+        specOverrides: {
+          engineName: { en: '1.4L D-4D Diesel', de: '1.4L D-4D Diesel', ru: '1.4L D-4D Дизель' },
+          forcedInduction: { en: '✓ Turbo · ✕ E-Motor', de: '✓ Turbo · ✕ E-Motor', ru: '✓ Турбо · ✕ Эл. мотор' },
+          injection: { en: '✓ Common-Rail DI', de: '✓ Common-Rail Direkt', ru: '✓ Common-Rail прямой' },
+          gearbox: { en: '6-Speed Manual', de: '6-Gang Schaltgetriebe', ru: '6-ст. Механика' },
+          clutchDmf: { en: '✓ Single Clutch (✕ DMF)', de: '✓ Kupplung (✕ ZMS)', ru: '✓ Сцепление (✕ ДММ)' },
+          suspensionWear: { en: 'Torsion Beam (Simple)', de: 'Verbundlenker (Simpel)', ru: 'Балка (простая)' },
+          towingBraked: '1,000 kg',
+          sprint0100: '12.5 s',
+          topSpeed: '180 km/h',
+          peakTorque: '205 Nm @ 1,800',
+          passingPunch: { en: 'Strong Low-End', de: 'Guter Antritt unten', ru: 'Хорошая тяга с низов' },
+          realWorldFuel: '4.6–5.2 L/100 km',
+          tankRange: '50 L · ~1,000 km',
+          euroNorm: 'Euro 5 / 6 (DPF)',
+          taxInsurance: { en: 'Low–Moderate', de: 'Niedrig–Mittel', ru: 'Низкие–Средние' },
+          timingDrive: { en: '✓ Timing Chain', de: '✓ Steuerkette', ru: '✓ Цепь ГРМ' },
+          serviceWear: { en: 'Low–Moderate', de: 'Gering–Mittel', ru: 'Низкие–Средние' }
+        },
         buyerFitGroup: 'small-diesel',
         isDefault: false,
         dossierGroup: 'd4d-diesel',
@@ -2550,6 +2884,24 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '1.4L D-4D Inline-4 Turbodiesel (1ND-TV)', de: '1.4L D-4D Reihenvierzylinder Turbodiesel (1ND-TV)', ru: '1.4L D-4D рядный 4-цил. турбодизель (1ND-TV)' } },
+                  { k: 'displacement', v: '1,364 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 8V SOHC', de: '4 Zylinder · 8V SOHC', ru: '4 цилиндра · 8V SOHC' } },
+                  { k: 'output', v: { en: '66 kW (90 HP)', de: '66 kW (90 PS)', ru: '66 кВт (90 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Diesel · Timing Chain', de: 'Diesel · Steuerkette', ru: 'Дизель · Цепь ГРМ' } }
+                ],
+                note: {
+                  en: 'One of the toughest small diesels of its era — routinely crosses 250,000+ km on highway commutes.',
+                  de: 'Einer der standfestesten Kleindiesel seiner Generation — auf Pendlerstrecken oft über 250.000+ km.',
+                  ru: 'Один из самых выносливых малых дизелей — на трассе уверенно проходит 250 000+ км.'
+                }
+              },
+              forcedInduction: '@turboDiesel',
+              injection: '@commonRailDi'
+            },
             score: 8.9,
             badges: {
               en: ['Simple 8v Chain Diesel', 'Proven Cast-Iron / SOHC Core'],
@@ -2684,6 +3036,7 @@ const CAR_ROSTER = [
             }
           },
           buildQualityRust: {
+            specBreakdown: { suspensionWear: '@suspTorsionBeam' },
             score: 8.8,
             badges: {
               en: ['Good Underbody Sealing', 'Durable Suspension Joints'],
@@ -2883,6 +3236,15 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '~60,000 km · 4 yrs', action: { en: 'Diesel Fuel Filter & EGR Valve Cleaning', de: 'Dieselfilter wechseln & AGR-Ventil reinigen', ru: 'Топливный фильтр и профилактика клапана EGR' }, cost: '€140–230' },
+                { when: '~120,000 km · 8 yrs', action: { en: '6-Speed Manual Gearbox Oil (75W LV)', de: '6-Gang Schaltgetriebeöl wechseln', ru: 'Замена масла в 6-ст. МКПП' }, cost: '€120–190' }
+              ],
+              critical: [
+                { when: '140–200k km · 9–13 yrs', action: { en: 'DPF Soot Cleaning & Pressure Sensor', de: 'DPF-Reinigung & Differenzdrucksensor', ru: 'Чистка сажевого фильтра (DPF) и датчик давления' }, cost: '€350–650', risk: { en: 'Blocked DPF raises turbo backpressure & dilutes oil', de: 'Voller DPF belastet Turbolader & verdünnt Motoröl', ru: 'Забитый DPF создаёт противодавление и вредит турбине' }, damage: '€1,400–2,200' }
+              ]
+            },
             score: 8.4,
             badges: {
               en: ['No Dual-Mass Flywheel Cost', 'Regular Diesel Filter & Oil'],
@@ -2902,6 +3264,24 @@ const CAR_ROSTER = [
       },
       {
         id: '2.0-d4d',
+        specOverrides: {
+          engineName: { en: '2.0L D-4D Diesel', de: '2.0L D-4D Diesel', ru: '2.0L D-4D Дизель' },
+          forcedInduction: { en: '✓ Turbo · ✕ E-Motor', de: '✓ Turbo · ✕ E-Motor', ru: '✓ Турбо · ✕ Эл. мотор' },
+          injection: { en: '✓ Common-Rail DI', de: '✓ Common-Rail Direkt', ru: '✓ Common-Rail прямой' },
+          gearbox: { en: '6-Speed Manual', de: '6-Gang Schaltgetriebe', ru: '6-ст. Механика' },
+          clutchDmf: { en: '✓ Clutch + DMF', de: '✓ Kupplung + ZMS', ru: '✓ Сцепление + ДММ' },
+          towingBraked: '1,500 kg',
+          sprint0100: '10.0 s',
+          topSpeed: '200 km/h',
+          peakTorque: '310 Nm @ 1,600',
+          passingPunch: { en: 'Effortless Highway', de: 'Souveräner Durchzug', ru: 'Уверенная тяга' },
+          realWorldFuel: '5.2–5.9 L/100 km',
+          tankRange: '50 L · ~900 km',
+          euroNorm: 'Euro 5 (DPF)',
+          taxInsurance: { en: 'Moderate', de: 'Mittel', ru: 'Средние' },
+          timingDrive: { en: '✓ Timing Chain', de: '✓ Steuerkette', ru: '✓ Цепь ГРМ' },
+          serviceWear: { en: 'Moderate', de: 'Mittel', ru: 'Средние' }
+        },
         buyerFitGroup: 'highway-diesel',
         isDefault: false,
         dossierGroup: 'd4d-diesel',
@@ -2983,6 +3363,24 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '2.0L D-4D Inline-4 Turbodiesel (1AD-FTV)', de: '2.0L D-4D Reihenvierzylinder Turbodiesel (1AD-FTV)', ru: '2.0L D-4D рядный 4-цил. турбодизель (1AD-FTV)' } },
+                  { k: 'displacement', v: '1,998 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 16V DOHC', de: '4 Zylinder · 16V DOHC', ru: '4 цилиндра · 16V DOHC' } },
+                  { k: 'output', v: { en: '91 kW (124 HP)', de: '91 kW (124 PS)', ru: '91 кВт (124 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Diesel · Timing Chain', de: 'Diesel · Steuerkette', ru: 'Дизель · Цепь ГРМ' } }
+                ],
+                note: {
+                  en: 'Strong timing-chain bottom end built for relaxed motorway cruising and long highway life.',
+                  de: 'Solide Steuerketten-Mechanik für entspannte Langstrecken-Etappen.',
+                  ru: 'Крепкая цепная механика, рассчитанная на спокойную и долгую трассовую езду.'
+                }
+              },
+              forcedInduction: '@turboDiesel',
+              injection: '@commonRailDi'
+            },
             score: 8.7,
             badges: {
               en: ['Revised 2.0 Chain Block', 'Periodic EGR Cleaning'],
@@ -3068,6 +3466,7 @@ const CAR_ROSTER = [
             }
           },
           transmissionDriveline: {
+            specBreakdown: { clutchDmf: '@clutchDmf' },
             score: 8.1,
             badges: {
               en: ['Sturdy 6-Speed Manual', '310 Nm DMF & Clutch Wear'],
@@ -3231,6 +3630,16 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '~60,000 km · 4 yrs', action: { en: 'Diesel Fuel Filter & EGR Valve Cleaning', de: 'Dieselfilter wechseln & AGR-Ventil reinigen', ru: 'Топливный фильтр и чистка клапана EGR' }, cost: '€160–260' },
+                { when: '~120,000 km · 8 yrs', action: { en: '6-Speed Manual Gearbox Oil', de: '6-Gang Schaltgetriebeöl wechseln', ru: 'Замена масла в 6-ст. МКПП' }, cost: '€130–200' }
+              ],
+              critical: [
+                { when: '140–190k km · 9–13 yrs', action: { en: 'Dual-Mass Flywheel (DMF) + Clutch Kit', de: 'Zweimassenschwungrad (ZMS) + Kupplungssatz', ru: 'Двухмассовый маховик (ДММ) + сцепление' }, cost: '€1,100–1,650', risk: { en: 'Idle rattling, harsh vibration & gearbox input-shaft stress', de: 'Leerlauf-Rasseln, starke Vibration & Getriebelager-Schaden', ru: 'Стуки на холостом ходу, вибрации и износ вала КПП' }, damage: '€2,000–2,800' },
+                { when: '160–220k km · 10–14 yrs', action: { en: 'EGR Cooler & Head-Gasket Seepage Check', de: 'AGR-Kühler & Zylinderkopfdichtung prüfen', ru: 'Проверка охладителя EGR и прокладки ГБЦ' }, cost: '€450–750', risk: { en: 'Coolant loss & cylinder-head overheating', de: 'Kühlmittelverlust & Zylinderkopf-Überhitzung', ru: 'Утечка антифриза и перегрев ГБЦ' }, damage: '€2,200–3,200' }
+              ]
+            },
             score: 7.6,
             badges: {
               en: ['Chain-Driven • Watch EGR', 'Costly DPF & DMF Service'],
@@ -3294,6 +3703,24 @@ const CAR_ROSTER = [
       },
       {
         id: '1.2-turbo',
+        specOverrides: {
+          engineName: { en: '1.2L VVT-iW Turbo', de: '1.2L VVT-iW Turbo', ru: '1.2L VVT-iW Турбо' },
+          forcedInduction: { en: '✓ Turbo · ✕ E-Motor', de: '✓ Turbo · ✕ E-Motor', ru: '✓ Турбо · ✕ Эл. мотор' },
+          injection: { en: '✓ Direct (D-4T)', de: '✓ Direkteinspr. (D-4T)', ru: '✓ Прямой (D-4T)' },
+          gearbox: { en: '6-Speed Manual', de: '6-Gang Schaltgetriebe', ru: '6-ст. Механика' },
+          clutchDmf: { en: '✓ Clutch + DMF', de: '✓ Kupplung + ZMS', ru: '✓ Сцепление + ДММ' },
+          towingBraked: '1,300 kg',
+          sprint0100: '10.1 s',
+          topSpeed: '200 km/h',
+          peakTorque: '185 Nm @ 1,500',
+          passingPunch: { en: 'Punchy Mid-Range', de: 'Kräftige Mitte', ru: 'Бодрая середина' },
+          realWorldFuel: '5.8–6.6 L/100 km',
+          tankRange: '50 L · ~800 km',
+          euroNorm: 'Euro 6',
+          taxInsurance: { en: 'Low', de: 'Niedrig', ru: 'Низкие' },
+          timingDrive: { en: '✓ Timing Chain', de: '✓ Steuerkette', ru: '✓ Цепь ГРМ' },
+          serviceWear: { en: 'Low–Moderate', de: 'Gering–Mittel', ru: 'Низкие–Средние' }
+        },
         buyerFitGroup: 'turbo-petrol',
         isDefault: false,
         fuelType: 'petrol',
@@ -3371,6 +3798,24 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '1.2L VVT-iW Inline-4 Turbo (8NR-FTS)', de: '1.2L VVT-iW Reihenvierzylinder Turbo (8NR-FTS)', ru: '1.2L VVT-iW рядный 4-цил. турбо (8NR-FTS)' } },
+                  { k: 'displacement', v: '1,197 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 16V DOHC', de: '4 Zylinder · 16V DOHC', ru: '4 цилиндра · 16V DOHC' } },
+                  { k: 'output', v: { en: '85 kW (116 HP)', de: '85 kW (116 PS)', ru: '85 кВт (116 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Petrol · Timing Chain', de: 'Benzin · Steuerkette', ru: 'Бензин · Цепь ГРМ' } }
+                ],
+                note: {
+                  en: 'Four-cylinder timing-chain design runs smoother and generally lasts longer than rival wet-belt 3-cylinders.',
+                  de: 'Vierzylinder mit Steuerkette läuft ruhiger und meist robuster als 3-Zylinder mit Ölbad-Zahnriemen.',
+                  ru: 'Четырёхцилиндровый мотор с цепью ГРМ тише и надёжнее многих 3-цилиндровых конкурентов с ремнём в масле.'
+                }
+              },
+              forcedInduction: '@turboPetrol',
+              injection: '@directInjPetrol'
+            },
             score: 8.3,
             badges: {
               en: ['8NR-FTS Chain Turbo', 'DI Carbon Watchout'],
@@ -3456,6 +3901,7 @@ const CAR_ROSTER = [
             }
           },
           transmissionDriveline: {
+            specBreakdown: { clutchDmf: '@clutchDmf' },
             score: 8.8,
             badges: {
               en: ['Refined 6-Speed Manual', 'Light 185 Nm Load'],
@@ -3707,6 +4153,16 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '~60,000 km · 4 yrs', action: { en: 'Direct-Injection Spark Plugs & Intercooler Coolant Check', de: 'DI-Zündkerzen & Ladeluft-Kühlkreislauf prüfen', ru: 'Свечи прямого впрыска и проверка контура интеркулера' }, cost: '€180–280' },
+                { when: '~120,000 km · 8 yrs', action: { en: '6-Speed Manual Gearbox Oil', de: '6-Gang Schaltgetriebeöl wechseln', ru: 'Замена масла в 6-ст. МКПП' }, cost: '€120–190' }
+              ],
+              critical: [
+                { when: '130–180k km · 8–12 yrs', action: { en: 'Intake Valve Carbon Walnut-Blasting', de: 'Einlassventile entkoken (Walnussstrahlen)', ru: 'Чистка впускных клапанов от нагара' }, cost: '€350–550', risk: { en: 'Cold-start misfires & sluggish turbo throttle response', de: 'Kaltstart-Aussetzer & träges Turbo-Ansprechen', ru: 'Пропуски зажигания на холодную и потеря тяги' }, damage: '€900–1,400' },
+                { when: '150–200k km · 10–14 yrs', action: { en: 'Dual-Mass Flywheel (DMF) + Clutch Kit', de: 'Zweimassenschwungrad (ZMS) + Kupplung', ru: 'Двухмассовый маховик + сцепление' }, cost: '€1,050–1,550', risk: { en: 'Juddering take-off & driveline vibration', de: 'Rupfendes Anfahren & Antriebsstrang-Vibration', ru: 'Рывки при старте и вибрации трансмиссии' }, damage: '€1,800–2,400' }
+              ]
+            },
             score: 8.2,
             badges: {
               en: ['Reasonable 1.2T Parts Cost', 'More Complex Than Old 1.6 NA'],
@@ -3805,6 +4261,24 @@ const CAR_ROSTER = [
       },
       {
         id: '1.6-d4d',
+        specOverrides: {
+          engineName: { en: '1.6L D-4D Diesel', de: '1.6L D-4D Diesel', ru: '1.6L D-4D Дизель' },
+          forcedInduction: { en: '✓ Turbo · ✕ E-Motor', de: '✓ Turbo · ✕ E-Motor', ru: '✓ Турбо · ✕ Эл. мотор' },
+          injection: { en: '✓ Common-Rail DI', de: '✓ Common-Rail Direkt', ru: '✓ Common-Rail прямой' },
+          gearbox: { en: '6-Speed Manual', de: '6-Gang Schaltgetriebe', ru: '6-ст. Механика' },
+          clutchDmf: { en: '✓ Clutch + DMF', de: '✓ Kupplung + ZMS', ru: '✓ Сцепление + ДММ' },
+          towingBraked: '1,300 kg',
+          sprint0100: '10.5 s',
+          topSpeed: '195 km/h',
+          peakTorque: '270 Nm @ 1,750',
+          passingPunch: { en: 'Strong Hwy Cruise', de: 'Starker Durchzug', ru: 'Хорошая тяга' },
+          realWorldFuel: '4.8–5.4 L/100 km',
+          tankRange: '50 L · ~960 km',
+          euroNorm: 'Euro 6 (DPF)',
+          taxInsurance: { en: 'Low–Moderate', de: 'Niedrig–Mittel', ru: 'Низкие–Средние' },
+          timingDrive: { en: '✓ Timing Chain', de: '✓ Steuerkette', ru: '✓ Цепь ГРМ' },
+          serviceWear: { en: 'Moderate', de: 'Mittel', ru: 'Средние' }
+        },
         buyerFitGroup: 'highway-diesel',
         isDefault: false,
         dossierGroup: 'd4d-diesel',
@@ -3886,6 +4360,24 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '1.6L D-4D Inline-4 Turbodiesel (1WW / N47)', de: '1.6L D-4D Reihenvierzylinder Turbodiesel (1WW / N47)', ru: '1.6L D-4D рядный 4-цил. турбодизель (1WW / N47)' } },
+                  { k: 'displacement', v: '1,598 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 16V DOHC', de: '4 Zylinder · 16V DOHC', ru: '4 цилиндра · 16V DOHC' } },
+                  { k: 'output', v: { en: '82 kW (112 HP)', de: '82 kW (112 PS)', ru: '82 кВт (112 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Diesel · Rear Timing Chain', de: 'Diesel · Steuerkette (hinten)', ru: 'Дизель · Цепь ГРМ (сзади)' } }
+                ],
+                note: {
+                  en: 'BMW-sourced aluminium diesel delivering strong motorway economy with regular oil care.',
+                  de: 'Von BMW zugelieferter Alu-Diesel mit starker Autobahneffizienz bei gepflegter Ölhistorie.',
+                  ru: 'Алюминиевый дизель разработки BMW с отличной трассовой экономичностью при регулярном ТО.'
+                }
+              },
+              forcedInduction: '@turboDiesel',
+              injection: '@commonRailDi'
+            },
             score: 7.4,
             badges: {
               en: ['BMW 1WW 1.6 Diesel', 'Check Coolant & DPF'],
@@ -3968,6 +4460,7 @@ const CAR_ROSTER = [
             }
           },
           transmissionDriveline: {
+            specBreakdown: { clutchDmf: '@clutchDmf' },
             score: 8.0,
             badges: {
               en: ['6-Speed Manual', 'Budget DMF Replacement'],
@@ -4184,6 +4677,16 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '~60,000 km · 4 yrs', action: { en: 'Diesel Fuel Filter & EGR Passage Check', de: 'Dieselfilter wechseln & AGR-Kanal prüfen', ru: 'Топливный фильтр и проверка EGR' }, cost: '€160–260' },
+                { when: '~120,000 km · 8 yrs', action: { en: '6-Speed Manual Gearbox Oil', de: '6-Gang Schaltgetriebeöl wechseln', ru: 'Замена масла в 6-ст. МКПП' }, cost: '€130–200' }
+              ],
+              critical: [
+                { when: '140–200k km · 9–13 yrs', action: { en: 'Rear-Mounted Timing Chain Kit (BMW N47 Architecture)', de: 'Getriebeseitige Steuerkette ersetzen (BMW-N47-Basis)', ru: 'Замена задней цепи ГРМ (архитектура BMW N47)' }, cost: '€1,400–2,100', risk: { en: 'Chain stretch or snap destroys valves & pistons', de: 'Kettenlängung oder -riss führt zum kapitalen Motorschaden', ru: 'Растяжение или обрыв цепи ведёт к капитальному ремонту ДВС' }, damage: '€4,000–6,500' },
+                { when: '150–200k km · 10–14 yrs', action: { en: 'Dual-Mass Flywheel (DMF) + Clutch Kit', de: 'Zweimassenschwungrad (ZMS) + Kupplung', ru: 'Двухмассовый маховик + сцепление' }, cost: '€1,100–1,650', risk: { en: 'Heavy idle rattle & transmission bearing wear', de: 'Starkes Leerlauf-Rasseln & Getriebelager-Verschleiß', ru: 'Сильный стук на холостых и износ подшипников КПП' }, damage: '€1,900–2,600' }
+              ]
+            },
             score: 7.2,
             badges: {
               en: ['Small Tyres & Brakes', 'Costly BMW-Spec Engine Parts'],
@@ -4260,6 +4763,174 @@ const CAR_ROSTER = [
     drivetrain: 'FWD',
     image: 'assets/honda-civic-2014.png',
     defaultEngineId: '1.8-ivtec',
+    sharedDossierBreakdowns: {
+      transmissionDriveline: { gearbox: '@gbManual6Honda', clutchDmf: '@clutchSingle', driveline: '@driveFwd' },
+      buildQualityRust: { rustProtection: '@rustGalvanized12y', suspensionWear: '@suspTorsionBeam' },
+      electronicsReliability: { starterAlternator: '@starterStandard12v', electronicsRisk: '@elecSimpleEps' },
+      rideNoiseComfort: {
+        rideTuning: {
+          specs: [
+            { k: 'damperSetup', v: { en: 'Firm, Composed Tuning · Fluid-Filled Rear Bushings', de: 'Straff-stabile Abstimmung · Hydro-Hinterachslager', ru: 'Упругая собранная подвеска · Гидроопоры сзади' } },
+            { k: 'seatSupport', v: { en: 'Contoured Bolstered Front Seats · Low Driving Position', de: 'Gut konturierte Sitze · Tiefe, sportliche Sitzposition', ru: 'Хорошая боковая поддержка · Низкая посадка' } }
+          ],
+          note: { en: 'Noticeably firmer than Toyota Auris over sharp city bumps, but very settled at motorway speeds.', de: 'Auf kurzen Kanten straffer als der Auris, dafür sehr ruhig und spurstabil auf der Autobahn.', ru: 'Жёстче Auris на мелких стыках, но отлично держит прямую на высоких скоростях.' }
+        },
+        highwayNoise: {
+          specs: [
+            { k: 'cabinNoise130', v: { en: '~71 dB(A) at 130 km/h (Average for Class)', de: '~71 dB(A) bei 130 km/h (Klassenschnitt)', ru: '~71 дБ(А) при 130 км/ч (средне для класса)' } },
+            { k: 'acousticGlass', v: { en: 'Standard Glass · Mild Rear Tyre Road Noise', de: 'Standardverglasung · Leichtes Abrollgeräusch hinten', ru: 'Обычные стёкла · Умеренный шум шин сзади' } }
+          ],
+          note: { en: 'Low aerodynamic drag keeps wind noise modest; quiet touring tyres noticeably improve cabin calm.', de: 'Gute Aerodynamik hält Windgeräusche im Rahmen; leise Reifen verbessern den Komfort spürbar.', ru: 'Низкое сопротивление воздуху снижает шум ветра; тихая резина делает салон ещё спокойнее.' }
+        }
+      },
+      interiorQualityFeatures: {
+        cabinMaterials: {
+          specs: [
+            { k: 'dashTrim', v: { en: 'Dual-Tier Cockpit · Soft Upper Dash + Tough Plastics', de: 'Zweistöckiges Cockpit · Soft-Touch oben + robuster Kunststoff', ru: 'Двухуровневая панель · Мягкий верх + прочный пластик' } },
+            { k: 'buildFit', v: { en: 'Solid Japanese Assembly · Durable Seat Fabrics', de: 'Solide Verarbeitung · Strapazierfähige Sitzbezüge', ru: 'Крепкая сборка · Износостойкая ткань сидений' } }
+          ],
+          note: { en: 'Futuristic split digital speedo puts speed right in your line of sight like a head-up display.', de: 'Der hochgesetzte Digitaltacho liegt fast wie ein Head-up-Display direkt im Sichtfeld.', ru: 'Высокий цифровой спидометр читается почти как проекционный дисплей.' }
+        },
+        controls: '@controlsPhys'
+      },
+      visibilityManeuverability: {
+        turningCircle: {
+          specs: [
+            { k: 'turningDiam', v: '11.3 m' },
+            { k: 'bodyDimensions', v: '4,300 × 1,770 mm' }
+          ],
+          note: { en: 'Slightly wider 11.3 m turning circle than Auris — needs an extra shunt in very tight garages.', de: 'Mit 11,3 m etwas größerer Wendekreis als der Auris — in engen Parkhäusern etwas weniger handlich.', ru: 'Радиус разворота чуть шире (11.3 м), чем у Auris — в тесных дворах требуется больше манёвров.' }
+        },
+        visibility: {
+          specs: [
+            { k: 'sightlines', v: { en: 'Good Forward · Split Rear Window Spoiler Obstructs View', de: 'Gute Sicht vorn · Geteilte Heckscheibe mit Spoilerbalken', ru: 'Хороший обзор спереди · Перемычка на заднем стекле' } },
+            { k: 'parkingAids', v: { en: 'Rear Camera / Sensors Highly Recommended', de: 'Rückfahrkamera / Parksensoren sehr empfehlenswert', ru: 'Камера / парктроники очень желательны' } }
+          ],
+          note: { en: 'The signature split rear glass cuts across rearview mirror sightlines; pick a trim with reversing camera.', de: 'Der Querträger in der Heckscheibe teilt die Rücksicht — Rückfahrkamera lohnt sich hier besonders.', ru: 'Фирменная перемычка делит обзор назад — лучше выбирать комплектацию с камерой.' }
+        }
+      },
+      safetyProtection: {
+        euroNcap: {
+          specs: [
+            { k: 'ncapOverall', v: '★★★★★ (2012)' },
+            { k: 'ncapBreakdown', v: { en: '94% Adult · 83% Child · 69% Pedestrian', de: '94 % Erwachsene · 83 % Kinder · 69 % Fußgänger', ru: '94% Взрослые · 83% Дети · 69% Пешеходы' } },
+            { k: 'airbagsCount', v: { en: '6 Airbags (Front, Side, Full Curtain)', de: '6 Airbags (Front-, Seiten-, Kopfairbags)', ru: '6 подушек (фронтальные, боковые, шторки)' } }
+          ],
+          note: { en: 'Very high 94% Adult Occupant Euro NCAP score with rigid ACE crash structure.', de: 'Sehr starke 94 % Erwachsenenschutz im Euro-NCAP-Crashtest dank ACE-Karosseriestruktur.', ru: 'Высочайший балл 94% за защиту взрослых по Euro NCAP благодаря силовой структуре ACE.' }
+        },
+        safetyTech: {
+          specs: [
+            { k: 'activeAssists', v: { en: '✓ ESP/VSA · ✓ City-Brake Active (CTBA from 2014+)', de: '✓ ESP/VSA · ✓ City-Notbremsassistent (CTBA ab 2014)', ru: '✓ ESP/VSA · ✓ Автоторможение CTBA (с 2014)' } }
+          ],
+          note: { en: '2014+ facelift models add low-speed City-Brake Active (CTBA) and optional blind-spot monitoring.', de: 'Ab Facelift 2014 mit City-Notbremsassistent (CTBA) und optionalem Totwinkelwarner.', ru: 'С 2014 года добавлено городское автоторможение CTBA и опциональный контроль слепых зон.' }
+        }
+      },
+      passengerSpaceErgonomics: {
+        rearRoom: {
+          specs: [
+            { k: 'wheelbase', v: '2,595 mm' },
+            { k: 'rearLegHead', v: { en: 'Generous Rear Legroom · Slight Sloping Roofline', de: 'Großzügige Beinfreiheit · Leicht abfallendes Dach', ru: 'Просторно для ног сзади · Слегка покатая крыша' } }
+          ],
+          note: { en: 'Clever under-front-seat fuel tank layout frees up class-leading rear cabin flexibility.', de: 'Der mittig unter den Vordersitzen platzierte Tank schafft außergewöhnlich viel nutzbaren Raum.', ru: 'Бак под передними сиденьями освобождает максимум полезного пространства в салоне.' }
+        },
+        isofixEntry: {
+          specs: [
+            { k: 'isofixAccess', v: { en: '✓ 2× Outer ISOFIX · Wide Rear Door Opening', de: '✓ 2× ISOFIX außen · Große hintere Türöffnung', ru: '✓ 2× ISOFIX · Широкое открытие задних дверей' } }
+          ],
+          note: { en: 'Easy child-seat access with hidden rear door handles in the C-pillar.', de: 'Bequemer Zugang für Kindersitze trotz versteckter Türgriffe in der C-Säule.', ru: 'Удобная установка детских кресел и широкий проём задних дверей.' }
+        }
+      },
+      interiorBootSpace: {
+        bootVolume: {
+          specs: [
+            { k: 'bootUpDown', v: '477 L / 1,378 L' },
+            { k: 'loadSill', v: { en: '~675 mm · Deep Underfloor Well', de: '~675 mm · Tiefes Unterbodenfach', ru: '~675 мм · Глубокая ниша под полом' } }
+          ],
+          note: { en: 'Class-leading 477 L boot rivals compact estates — swallows strollers and holiday suitcases easily.', de: 'Klassenbester 477-L-Kofferraum auf Kombi-Niveau — schluckt Kinderwagen und Koffer mühelos.', ru: 'Рекордный в классе багажник 477 л — по вместительности близок к универсалам.' }
+        },
+        seatUtility: {
+          specs: [
+            { k: 'foldingMech', v: { en: '✓ Honda Magic Seats (Cinema Fold-Up + Flat Fold)', de: '✓ Honda Magic Seats (Kinositz-Klappung + Ebener Boden)', ru: '✓ Honda Magic Seats (вертикальный подъём + ровный пол)' } }
+          ],
+          note: { en: 'Rear seat cushions flip up like cinema seats so you can stand tall bikes or plants right behind the front seats.', de: 'Sitzflächen klappen wie Kinositze hoch — perfekt für hohe Pflanzen, Fahrräder oder Kartons.', ru: 'Подушки заднего дивана поднимаются вертикально для перевозки высоких грузов и велосипедов.' }
+        }
+      },
+      payloadTowing: {
+        payloadRoof: {
+          specs: [
+            { k: 'maxPayload', v: '~475 kg' },
+            { k: 'roofLoad', v: '75 kg' }
+          ],
+          note: { en: 'Generous ~475 kg payload matches its oversized boot for heavy family road trips.', de: 'Großzügige ~475 kg Zuladung passen perfekt zum riesigen Kofferraum für Urlaubsfahrten.', ru: 'Отличная грузоподъёмность ~475 кг дополняет огромный багажник в дальних поездках.' }
+        },
+        towingBraked: '@towingDynamic'
+      },
+      accelerationOvertaking: {
+        sprint0100: '@sprintDynamic',
+        topSpeed: '@vmaxDynamic'
+      },
+      midRangeTorquePassing: {
+        peakTorque: '@torqueDynamic',
+        passingPunch: '@passingDynamic'
+      },
+      handlingAgility: {
+        chassisFeel: {
+          specs: [
+            { k: 'kerbWeight', v: '1,205–1,410 kg' },
+            { k: 'handlingChar', v: { en: 'Direct, Agile Turn-In · Flat Cornering Composure', de: 'Direktes Einlenken · Geringe Seitenneigung', ru: 'Острый вход в поворот · Малые крены' } },
+            { k: 'tyreSizes', v: '205/55 R16 · 225/45 R17' }
+          ],
+          note: { en: 'Feels sharper and more driver-focused than Auris while staying composed on fast highways.', de: 'Fährt sich spürbar direkter und agiler als der Auris, bleibt aber auf der Autobahn absolut stabil.', ru: 'Ощущается острее и азартнее Auris, сохраняя отличную стабильность на скорости.' }
+        },
+        tractionDiff: '@tractionFwdOpen'
+      },
+      brakingPerformance: {
+        braking1000: '@brakingDistDynamic',
+        brakeSetup: '@brakeSetupDiscs4'
+      },
+      efficiencyFuel: {
+        realWorldFuel: '@fuelDynamic',
+        tankRange: '@tankDynamic'
+      },
+      taxInsuranceNorm: {
+        euroNorm: '@euroDynamic',
+        taxInsurance: '@taxInsDynamic'
+      },
+      maintenanceRepairCosts: {
+        timingDrive: '@timingDynamic',
+        serviceWear: '@serviceDynamic'
+      },
+      depreciationResale: {
+        valueRetention: '@retentionDynamic',
+        resaleDemand: '@demandDynamic'
+      }
+    },
+    sharedSpecs: {
+      rustProtection: { en: 'Good (Galvanized)', de: 'Gut (Verzinkt)', ru: 'Хорошая (оцинковка)' },
+      suspensionWear: { en: 'Torsion Beam (Durable)', de: 'Verbundlenker (Robust)', ru: 'Балка (надёжная)' },
+      starterAlternator: { en: '✓ Standard 12V', de: '✓ Klassisch 12V', ru: '✓ Обычные 12В' },
+      electronicsRisk: { en: 'Low (Simple Bus)', de: 'Gering (Robust)', ru: 'Низкий риск' },
+      rideTuning: { en: 'Firm / Composed', de: 'Straff / Stabil', ru: 'Упругая / Собранная' },
+      highwayNoise: { en: '~71 dB · Average', de: '~71 dB · Mittel', ru: '~71 дБ · Средне' },
+      cabinMaterials: { en: 'Durable Soft/Hard', de: 'Solider Materialmix', ru: 'Практичный пластик' },
+      controls: { en: '✓ Physical Buttons', de: '✓ Echte Tasten', ru: '✓ Физ. кнопки' },
+      turningCircle: '11.3 m',
+      visibility: { en: 'Limited Rear (Split)', de: 'Eingeschränkt hinten', ru: 'Ограничен сзади' },
+      euroNcap: '★★★★★ (2012)',
+      safetyTech: { en: '✓ ESP · ✓ CTBA (2014+)', de: '✓ ESP · ✓ Notbrems (ab 14)', ru: '✓ ESP · ✓ AEB (с 2014)' },
+      rearRoom: { en: 'Generous', de: 'Großzügig', ru: 'Просторно' },
+      isofixEntry: { en: '✓ 2× ISOFIX · Wide', de: '✓ 2× ISOFIX · Breit', ru: '✓ 2× ISOFIX · Широкий' },
+      bootVolume: '477 L / 1,378 L',
+      seatUtility: { en: '✓ Magic Seats (Fold-Up)', de: '✓ Magic Seats (Hochklapp.)', ru: '✓ Magic Seats (складные)' },
+      payloadRoof: '475 kg · 75 kg',
+      driveline: 'FWD',
+      chassisFeel: { en: 'Direct / Agile', de: 'Direkt / Agil', ru: 'Острое / Азартное' },
+      tractionDiff: { en: 'FWD · Open Diff', de: 'FWD · Offen', ru: 'FWD · Своб. дифф.' },
+      braking1000: '~36.0 m',
+      brakeSetup: { en: '4× Disc Brakes', de: '4× Scheibenbremsen', ru: '4× Дисковые' },
+      valueRetention: { en: 'High', de: 'Hoch', ru: 'Высокий' },
+      resaleDemand: { en: 'Steady Demand', de: 'Stabile Nachfrage', ru: 'Стабильный спрос' }
+    },
     sharedBuyerFit: {
       cards: {
         civicSpaceUtility: {
@@ -5072,6 +5743,24 @@ const CAR_ROSTER = [
     engines: [
       {
         id: '1.8-ivtec',
+        specOverrides: {
+          engineName: { en: '1.8L i-VTEC NA', de: '1.8L i-VTEC Sauger', ru: '1.8L i-VTEC Атм.' },
+          forcedInduction: { en: '✕ Turbo / E-Motor', de: '✕ Turbo / E-Motor', ru: '✕ Турбо / Эл. мотор' },
+          injection: { en: '✓ Port (Indirect)', de: '✓ Saugrohr (Indirekt)', ru: '✓ Распред. (непрямой)' },
+          gearbox: { en: '6-Speed Manual', de: '6-Gang Schaltgetriebe', ru: '6-ст. Механика' },
+          clutchDmf: { en: '✓ Single Clutch (✕ DMF)', de: '✓ Kupplung (✕ ZMS)', ru: '✓ Сцепление (✕ ДММ)' },
+          towingBraked: '1,400 kg',
+          sprint0100: '9.4 s',
+          topSpeed: '215 km/h',
+          peakTorque: '174 Nm @ 4,300',
+          passingPunch: { en: 'Needs Downshift', de: 'Braucht Herunterschalten', ru: 'Нужно понижать передачу' },
+          realWorldFuel: '6.5–7.2 L/100 km',
+          tankRange: '50 L · ~720 km',
+          euroNorm: 'Euro 5 / 6',
+          taxInsurance: { en: 'Low–Moderate', de: 'Niedrig–Mittel', ru: 'Низкие–Средние' },
+          timingDrive: { en: '✓ Timing Chain', de: '✓ Steuerkette', ru: '✓ Цепь ГРМ' },
+          serviceWear: { en: 'Low', de: 'Gering', ru: 'Низкие' }
+        },
         dossierGroup: 'petrol-6mt',
         buyerFitGroup: 'na-petrol',
         isDefault: true,
@@ -5143,6 +5832,24 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '1.8L i-VTEC Inline-4 NA (R18Z4)', de: '1.8L i-VTEC Reihenvierzylinder Sauger (R18Z4)', ru: '1.8L i-VTEC рядный 4-цил. атмосферный (R18Z4)' } },
+                  { k: 'displacement', v: '1,798 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 16V SOHC', de: '4 Zylinder · 16V SOHC', ru: '4 цилиндра · 16V SOHC' } },
+                  { k: 'output', v: { en: '104 kW (142 HP)', de: '104 kW (142 PS)', ru: '104 кВт (142 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Petrol · Timing Chain', de: 'Benzin · Steuerkette', ru: 'Бензин · Цепь ГРМ' } }
+                ],
+                note: {
+                  en: 'Legendary R18 block routinely passes 300,000+ km on simple oil changes and ~100k km valve checks.',
+                  de: 'Legendärer R18-Block schafft mit simplen Ölwechseln und Ventilspiel-Kontrolle regelmäßig 300.000+ km.',
+                  ru: 'Легендарный блок R18 легко проходит 300 000+ км при регулярной замене масла и проверке зазоров клапанов.'
+                }
+              },
+              forcedInduction: '@naNoTurbo',
+              injection: '@portInj'
+            },
             score: 9.5,
             badges: {
               en: ['1.8 Chain-Driven NA', 'Bulletproof R18Z4 SOHC Block'],
@@ -5482,6 +6189,15 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '~100,000 km · 6 yrs', action: { en: 'Manual Valve-Clearance Check & Iridium Spark Plugs', de: 'Ventilspiel prüfen/einstellen & Iridium-Zündkerzen', ru: 'Регулировка зазоров клапанов и иридиевые свечи' }, cost: '€200–320' },
+                { when: '~110,000 km · 7 yrs', action: { en: 'Honda MTF-3 Manual Gearbox Fluid Change', de: 'Honda MTF-3 Schaltgetriebeöl wechseln', ru: 'Замена масла в МКПП (Honda MTF-3)' }, cost: '€110–180' }
+              ],
+              critical: [
+                { when: '160–220k km · 10–15 yrs', action: { en: 'A/C Compressor Clutch Relay & Drive Belt Tensioner', de: 'Klimakompressor-Magnetkupplung & Keilriemenspanner', ru: 'Муфта компрессора кондиционера и натяжитель ремня' }, cost: '€180–340', risk: { en: 'Sudden loss of A/C cooling or charging belt slip', de: 'Plötzlicher Ausfall der Klimaanlage oder rutschender Riemen', ru: 'Отказ кондиционера или проскальзывание приводного ремня' }, damage: '€700–1,100' }
+              ]
+            },
             score: 8.8,
             badges: {
               en: ['Cheap OEM Service & Pads', 'No Turbo / DPF / Injector Risk'],
@@ -5501,6 +6217,24 @@ const CAR_ROSTER = [
       },
       {
         id: '1.4-ivtec',
+        specOverrides: {
+          engineName: { en: '1.4L i-VTEC NA', de: '1.4L i-VTEC Sauger', ru: '1.4L i-VTEC Атм.' },
+          forcedInduction: { en: '✕ Turbo / E-Motor', de: '✕ Turbo / E-Motor', ru: '✕ Турбо / Эл. мотор' },
+          injection: { en: '✓ Port (Indirect)', de: '✓ Saugrohr (Indirekt)', ru: '✓ Распред. (непрямой)' },
+          gearbox: { en: '6-Speed Manual', de: '6-Gang Schaltgetriebe', ru: '6-ст. Механика' },
+          clutchDmf: { en: '✓ Single Clutch (✕ DMF)', de: '✓ Kupplung (✕ ZMS)', ru: '✓ Сцепление (✕ ДММ)' },
+          towingBraked: '1,000 kg',
+          sprint0100: '13.4 s',
+          topSpeed: '187 km/h',
+          peakTorque: '127 Nm @ 4,800',
+          passingPunch: { en: 'City-Focused', de: 'Stadt-orientiert', ru: 'Для города' },
+          realWorldFuel: '5.8–6.4 L/100 km',
+          tankRange: '50 L · ~800 km',
+          euroNorm: 'Euro 5 / 6',
+          taxInsurance: { en: 'Very Low', de: 'Sehr niedrig', ru: 'Очень низкие' },
+          timingDrive: { en: '✓ Timing Chain', de: '✓ Steuerkette', ru: '✓ Цепь ГРМ' },
+          serviceWear: { en: 'Very Low', de: 'Sehr gering', ru: 'Очень низкие' }
+        },
         dossierGroup: 'petrol-6mt',
         buyerFitGroup: 'na-petrol',
         buyerFitOverrides: {
@@ -5585,6 +6319,24 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '1.4L i-VTEC Inline-4 NA (L13Z4)', de: '1.4L i-VTEC Reihenvierzylinder Sauger (L13Z4)', ru: '1.4L i-VTEC рядный 4-цил. атмосферный (L13Z4)' } },
+                  { k: 'displacement', v: '1,339 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 16V SOHC', de: '4 Zylinder · 16V SOHC', ru: '4 цилиндра · 16V SOHC' } },
+                  { k: 'output', v: { en: '73 kW (100 HP)', de: '73 kW (100 PS)', ru: '73 кВт (100 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Petrol · Timing Chain', de: 'Benzin · Steuerkette', ru: 'Бензин · Цепь ГРМ' } }
+                ],
+                note: {
+                  en: 'Ultra-simple L-series four-cylinder built for stress-free urban durability with virtually no weak points.',
+                  de: 'Extrem schlichter Vierzylinder für stressfreie Stadt-Zuverlässigkeit nahezu ohne Schwachstellen.',
+                  ru: 'Максимально простой мотор серии L для беспроблемной городской езды почти без слабых мест.'
+                }
+              },
+              forcedInduction: '@naNoTurbo',
+              injection: '@portInj'
+            },
             score: 9.6,
             badges: {
               en: ['1.4 Chain-Driven NA', 'Indestructible Block'],
@@ -5924,6 +6676,15 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '~100,000 km · 6 yrs', action: { en: 'Manual Valve-Clearance Check & Iridium Spark Plugs', de: 'Ventilspiel prüfen/einstellen & Iridium-Zündkerzen', ru: 'Регулировка зазоров клапанов и иридиевые свечи' }, cost: '€200–320' },
+                { when: '~110,000 km · 7 yrs', action: { en: 'Honda MTF-3 Manual Gearbox Fluid Change', de: 'Honda MTF-3 Schaltgetriebeöl wechseln', ru: 'Замена масла в МКПП (Honda MTF-3)' }, cost: '€110–180' }
+              ],
+              critical: [
+                { when: '160–220k km · 10–15 yrs', action: { en: 'A/C Compressor Clutch Relay & Drive Belt Tensioner', de: 'Klimakompressor-Magnetkupplung & Keilriemenspanner', ru: 'Муфта компрессора кондиционера и натяжитель ремня' }, cost: '€180–340', risk: { en: 'Sudden loss of A/C cooling or charging belt slip', de: 'Plötzlicher Ausfall der Klimaanlage oder rutschender Riemen', ru: 'Отказ кондиционера или проскальзывание приводного ремня' }, damage: '€700–1,100' }
+              ]
+            },
             score: 9.2,
             badges: {
               en: ['Minimal Wear-Part Bills', 'Tiny Tyres & Simple NA Oil'],
@@ -5943,6 +6704,24 @@ const CAR_ROSTER = [
       },
       {
         id: '1.6-idtec',
+        specOverrides: {
+          engineName: { en: '1.6L i-DTEC Diesel', de: '1.6L i-DTEC Diesel', ru: '1.6L i-DTEC Дизель' },
+          forcedInduction: { en: '✓ Turbo · ✕ E-Motor', de: '✓ Turbo · ✕ E-Motor', ru: '✓ Турбо · ✕ Эл. мотор' },
+          injection: { en: '✓ Common-Rail DI', de: '✓ Common-Rail Direkt', ru: '✓ Common-Rail прямой' },
+          gearbox: { en: '6-Speed Manual', de: '6-Gang Schaltgetriebe', ru: '6-ст. Механика' },
+          clutchDmf: { en: '✓ Clutch + DMF', de: '✓ Kupplung + ZMS', ru: '✓ Сцепление + ДММ' },
+          towingBraked: '1,400 kg',
+          sprint0100: '10.5 s',
+          topSpeed: '207 km/h',
+          peakTorque: '300 Nm @ 2,000',
+          passingPunch: { en: 'Effortless Highway', de: 'Souveräner Durchzug', ru: 'Уверенная тяга' },
+          realWorldFuel: '4.2–4.9 L/100 km',
+          tankRange: '50 L · ~1,080 km',
+          euroNorm: 'Euro 5 / 6 (DPF)',
+          taxInsurance: { en: 'Low', de: 'Niedrig', ru: 'Низкие' },
+          timingDrive: { en: '✓ Timing Chain', de: '✓ Steuerkette', ru: '✓ Цепь ГРМ' },
+          serviceWear: { en: 'Low–Moderate', de: 'Gering–Mittel', ru: 'Низкие–Средние' }
+        },
         dossierGroup: 'diesel-6mt',
         buyerFitGroup: 'diesel',
         isDefault: false,
@@ -6024,6 +6803,24 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '1.6L i-DTEC Earth Dreams Turbodiesel (N16A1)', de: '1.6L i-DTEC Reihenvierzylinder Turbodiesel (N16A1)', ru: '1.6L i-DTEC рядный 4-цил. турбодизель (N16A1)' } },
+                  { k: 'displacement', v: '1,597 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 16V DOHC', de: '4 Zylinder · 16V DOHC', ru: '4 цилиндра · 16V DOHC' } },
+                  { k: 'output', v: { en: '88 kW (120 HP)', de: '88 kW (120 PS)', ru: '88 кВт (120 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Diesel · Timing Chain', de: 'Diesel · Steuerkette', ru: 'Дизель · Цепь ГРМ' } }
+                ],
+                note: {
+                  en: 'Lightweight low-friction aluminium diesel with solid timing-chain durability on regular highway runs.',
+                  de: 'Leichter, reibungsarmer Alu-Diesel mit robuster Steuerkette auf regelmäßigen Langstrecken.',
+                  ru: 'Лёгкий алюминиевый дизель с низким трением и надёжной цепью ГРМ при трассовой эксплуатации.'
+                }
+              },
+              forcedInduction: '@turboDiesel',
+              injection: '@commonRailDi'
+            },
             score: 9.2,
             badges: {
               en: ['Earth Dreams 1.6 Chain', 'Low-Friction Alu Block'],
@@ -6235,6 +7032,7 @@ const CAR_ROSTER = [
             }
           },
           transmissionDriveline: {
+            specBreakdown: { clutchDmf: '@clutchDmf' },
             score: 8.5,
             badges: {
               en: ['Crisp 6-Speed Manual', 'Watch 300 Nm Clutch & DMF'],
@@ -6363,6 +7161,16 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '~60,000 km · 4 yrs', action: { en: 'Diesel Fuel Filter & EGR System Inspection', de: 'Dieselfilter wechseln & AGR-System prüfen', ru: 'Топливный фильтр и проверка системы EGR' }, cost: '€150–240' },
+                { when: '~110,000 km · 7 yrs', action: { en: 'Honda MTF-3 Manual Gearbox Fluid Change', de: 'Honda MTF-3 Schaltgetriebeöl wechseln', ru: 'Замена масла в МКПП (Honda MTF-3)' }, cost: '€110–180' }
+              ],
+              critical: [
+                { when: '140–200k km · 9–13 yrs', action: { en: 'Dual-Mass Flywheel (DMF) + Clutch Kit', de: 'Zweimassenschwungrad (ZMS) + Kupplungssatz', ru: 'Двухмассовый маховик (ДММ) + сцепление' }, cost: '€1,150–1,750', risk: { en: 'Clutch slip under high diesel torque & idle knock', de: 'Rutschende Kupplung unter hohem Drehmoment & ZMS-Klopfen', ru: 'Пробуксовка сцепления под высоким моментом и стук ДММ' }, damage: '€2,100–2,900' },
+                { when: '140–210k km · 9–14 yrs', action: { en: 'DPF Soot Cleaning & Differential Pressure Sensor', de: 'DPF-Reinigung & Differenzdrucksensor', ru: 'Чистка DPF и замена датчика дифф. давления' }, cost: '€350–650', risk: { en: 'Limp mode & excessive turbocharger backpressure', de: 'Notlauf & erhöhter Abgasgegendruck am Turbolader', ru: 'Аварийный режим и перегрузка турбины противодавлением' }, damage: '€1,500–2,300' }
+              ]
+            },
             score: 8.1,
             badges: {
               en: ['Chain-Driven (No Timing Belt)', '15k km Oil • Watch DPF Trips'],
@@ -6382,6 +7190,24 @@ const CAR_ROSTER = [
       },
       {
         id: '2.2-idtec',
+        specOverrides: {
+          engineName: { en: '2.2L i-DTEC Diesel', de: '2.2L i-DTEC Diesel', ru: '2.2L i-DTEC Дизель' },
+          forcedInduction: { en: '✓ Turbo · ✕ E-Motor', de: '✓ Turbo · ✕ E-Motor', ru: '✓ Турбо · ✕ Эл. мотор' },
+          injection: { en: '✓ Common-Rail DI', de: '✓ Common-Rail Direkt', ru: '✓ Common-Rail прямой' },
+          gearbox: { en: '6-Speed Manual', de: '6-Gang Schaltgetriebe', ru: '6-ст. Механика' },
+          clutchDmf: { en: '✓ Clutch + DMF', de: '✓ Kupplung + ZMS', ru: '✓ Сцепление + ДММ' },
+          towingBraked: '1,500 kg',
+          sprint0100: '8.5 s',
+          topSpeed: '217 km/h',
+          peakTorque: '350 Nm @ 2,000',
+          passingPunch: { en: 'Very Strong Hwy', de: 'Sehr starker Durchzug', ru: 'Очень мощная тяга' },
+          realWorldFuel: '5.0–5.8 L/100 km',
+          tankRange: '50 L · ~920 km',
+          euroNorm: 'Euro 5 (DPF)',
+          taxInsurance: { en: 'Moderate', de: 'Mittel', ru: 'Средние' },
+          timingDrive: { en: '✓ Timing Chain', de: '✓ Steuerkette', ru: '✓ Цепь ГРМ' },
+          serviceWear: { en: 'Moderate', de: 'Mittel', ru: 'Средние' }
+        },
         dossierGroup: 'diesel-6mt',
         buyerFitGroup: 'diesel',
         isDefault: false,
@@ -6469,6 +7295,24 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '2.2L i-DTEC Inline-4 Turbodiesel (N22B4)', de: '2.2L i-DTEC Reihenvierzylinder Turbodiesel (N22B4)', ru: '2.2L i-DTEC рядный 4-цил. турбодизель (N22B4)' } },
+                  { k: 'displacement', v: '2,199 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 16V DOHC', de: '4 Zylinder · 16V DOHC', ru: '4 цилиндра · 16V DOHC' } },
+                  { k: 'output', v: { en: '110 kW (150 HP)', de: '110 kW (150 PS)', ru: '110 кВт (150 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Diesel · Timing Chain', de: 'Diesel · Steuerkette', ru: 'Дизель · Цепь ГРМ' } }
+                ],
+                note: {
+                  en: 'Heavy-duty motorway diesel with proven 300,000+ km mechanical endurance on long trips.',
+                  de: 'Kräftiger Langstrecken-Diesel mit bewährter Mechanik für über 300.000+ km.',
+                  ru: 'Выносливый трассовый дизель с проверенным механическим ресурсом 300 000+ км.'
+                }
+              },
+              forcedInduction: '@turboDiesel',
+              injection: '@commonRailDi'
+            },
             score: 9.1,
             badges: {
               en: ['Updated 2.2 Chain Block', 'Watch City DPF Regeneration'],
@@ -6677,6 +7521,7 @@ const CAR_ROSTER = [
             }
           },
           transmissionDriveline: {
+            specBreakdown: { clutchDmf: '@clutchDmf' },
             score: 8.0,
             badges: {
               en: ['Tough 6-Speed Manual', '350 Nm Dual-Mass Wear'],
@@ -6805,6 +7650,16 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '~60,000 km · 4 yrs', action: { en: 'Diesel Fuel Filter & EGR System Inspection', de: 'Dieselfilter wechseln & AGR-System prüfen', ru: 'Топливный фильтр и проверка системы EGR' }, cost: '€150–240' },
+                { when: '~110,000 km · 7 yrs', action: { en: 'Honda MTF-3 Manual Gearbox Fluid Change', de: 'Honda MTF-3 Schaltgetriebeöl wechseln', ru: 'Замена масла в МКПП (Honda MTF-3)' }, cost: '€110–180' }
+              ],
+              critical: [
+                { when: '140–200k km · 9–13 yrs', action: { en: 'Dual-Mass Flywheel (DMF) + Clutch Kit', de: 'Zweimassenschwungrad (ZMS) + Kupplungssatz', ru: 'Двухмассовый маховик (ДММ) + сцепление' }, cost: '€1,150–1,750', risk: { en: 'Clutch slip under high diesel torque & idle knock', de: 'Rutschende Kupplung unter hohem Drehmoment & ZMS-Klopfen', ru: 'Пробуксовка сцепления под высоким моментом и стук ДММ' }, damage: '€2,100–2,900' },
+                { when: '140–210k km · 9–14 yrs', action: { en: 'DPF Soot Cleaning & Differential Pressure Sensor', de: 'DPF-Reinigung & Differenzdrucksensor', ru: 'Чистка DPF и замена датчика дифф. давления' }, cost: '€350–650', risk: { en: 'Limp mode & excessive turbocharger backpressure', de: 'Notlauf & erhöhter Abgasgegendruck am Turbolader', ru: 'Аварийный режим и перегрузка турбины противодавлением' }, damage: '€1,500–2,300' }
+              ]
+            },
             score: 7.3,
             badges: {
               en: ['Durable Chain & Auxiliaries', 'Expensive DMF, Clutch & DPF'],
@@ -6837,7 +7692,153 @@ const CAR_ROSTER = [
     drivetrain: 'AWD',
     image: 'assets/honda-crv-2010.png',
     defaultEngineId: '2.0-ivtec',
-    sharedBuyerFit: {
+    sharedSpecs: {
+      rustProtection: '@rustGood',
+      suspensionWear: '@suspMultiLink',
+      starterAlternator: '@starter12v',
+      electronicsRisk: '@elecLow',
+      rideTuning: { en: 'Soft / Composed SUV', de: 'Komfortabel / Stabil', ru: 'Мягкая / Комфорт SUV' },
+      highwayNoise: { en: '~70 dB · Calm', de: '~70 dB · Ruhig', ru: '~70 дБ · Спокойно' },
+      cabinMaterials: { en: 'Durable Family Trim', de: 'Robuster Familien-Mix', ru: 'Практичный салон' },
+      controls: '@physButtons',
+      turningCircle: '11.4 m',
+      visibility: { en: 'Commanding · Large Glass', de: 'Hohe Sitzpos. · Sehr gut', ru: 'Высокая посадка · Отлично' },
+      euroNcap: '★★★★☆ (2007)',
+      safetyTech: { en: '✓ ESP/VSA · ✓ Trailer Assist', de: '✓ ESP/VSA · ✓ Gespann-Stab.', ru: '✓ ESP/VSA · ✓ Стаб. прицепа' },
+      rearRoom: { en: 'Very Generous · Flat Floor', de: 'Sehr großzügig · Flach', ru: 'Очень просторно · Ровный пол' },
+      isofixEntry: { en: '✓ 2× ISOFIX · High Entry', de: '✓ 2× ISOFIX · Hoher Einstieg', ru: '✓ 2× ISOFIX · Удобный вход' },
+      bootVolume: '556 L / 1,532 L',
+      seatUtility: { en: '✓ Sliding Bench + Dual-Deck', de: '✓ Verschiebbare Bank + Doppelb.', ru: '✓ Сдвижной ряд + полка' },
+      payloadRoof: '510 kg · 75 kg',
+      driveline: '@awdDualPump',
+      chassisFeel: { en: 'Car-Like · Mild Body Roll', de: 'PKW-nah · Etwas Neigung', ru: 'Легковое · Умер. крены' },
+      tractionDiff: { en: 'AWD (Dual-Pump) · ESP', de: 'Allrad (Dual-Pump) · ESP', ru: 'Полный (Dual-Pump) · ESP' },
+      braking1000: '~37.5 m',
+      brakeSetup: '@discs4',
+      valueRetention: '@retVeryHigh',
+      resaleDemand: '@demFast'
+    },
+    sharedDossierBreakdowns: {
+      transmissionDriveline: { gearbox: '@gbManual6Honda', clutchDmf: '@clutchSingle', driveline: '@driveAwdDualPump' },
+      buildQualityRust: { rustProtection: '@rustGalvanized12y', suspensionWear: '@suspMultiLink' },
+      electronicsReliability: { starterAlternator: '@starterStandard12v', electronicsRisk: '@elecSimpleEps' },
+      rideNoiseComfort: {
+        rideTuning: {
+          specs: [
+            { k: 'damperSetup', v: { en: 'Compliant SUV Springs · Independent Rear Multi-Link', de: 'Komfortable SUV-Federung · Einzelrad-Mehrlenker', ru: 'Мягкая подвеска SUV · Независимая сзади' } },
+            { k: 'seatSupport', v: { en: 'High Upright Armchair Seats · Relaxed Long Trips', de: 'Hohe aufrechte Sitze · Entspannt auf Langstrecke', ru: 'Высокие удобные кресла · Комфорт на дальняке' } }
+          ],
+          note: { en: 'Absorbs rough roads comfortably with none of the harshness of modern sport-trimmed crossovers.', de: 'Schluckt schlechte Straßen gelassen ohne die Härte moderner Sport-SUVs.', ru: 'Мягко отрабатывает разбитые дороги без жёсткости современных кроссоверов.' }
+        },
+        highwayNoise: {
+          specs: [
+            { k: 'cabinNoise130', v: { en: '~70 dB(A) at 130 km/h', de: '~70 dB(A) bei 130 km/h', ru: '~70 дБ(А) при 130 км/ч' } },
+            { k: 'acousticGlass', v: { en: 'Good Wind Sealing · Mild Upright SUV Drag', de: 'Gute Türdichtungen · Leichtes Windgeräusch', ru: 'Хорошие уплотнители · Умеренный шум ветра' } }
+          ],
+          note: { en: 'Refined cabin at 120–130 km/h; petrol versions stay notably quieter around town than older diesels.', de: 'Ruhiger Innenraum bei 120–130 km/h; Benziner in der Stadt deutlich leiser als frühe Diesel.', ru: 'Спокойный салон на 120–130 км/ч; бензиновые версии заметно тише в городе.' }
+        }
+      },
+      interiorQualityFeatures: {
+        cabinMaterials: {
+          specs: [
+            { k: 'dashTrim', v: { en: 'Hard-Wearing Family Plastics · Walk-Through Front Floor', de: 'Strapazierfähiger Kunststoff · Freier Durchgang vorn', ru: 'Износостойкий пластик · Свободный пол спереди' } },
+            { k: 'buildFit', v: { en: 'Proven Honda Assembly · High Durability with Kids/Pets', de: 'Solide Honda-Qualität · Alltagstauglich für Familie', ru: 'Крепкая сборка Honda · Устойчивость к износу' } }
+          ],
+          note: { en: 'Dash-mounted shifter frees up huge center storage and walk-through cabin space.', de: 'Der hochgesetzte Schalthebel schafft enorme Ablagen und Luftigkeit vorn.', ru: 'Высокий рычаг КПП освобождает много места и ниш между сиденьями.' }
+        },
+        controls: '@controlsPhys'
+      },
+      visibilityManeuverability: {
+        turningCircle: {
+          specs: [
+            { k: 'turningDiam', v: '11.4 m' },
+            { k: 'bodyDimensions', v: '4,574 × 1,820 mm' }
+          ],
+          note: { en: 'Compact footprint for a family SUV — fits European parking bays effortlessly.', de: 'Kompakte Außenmaße für ein Familien-SUV — passt mühelos in normale Parklücken.', ru: 'Компактные габариты для семейного SUV — легко паркуется в городе.' }
+        },
+        visibility: {
+          specs: [
+            { k: 'sightlines', v: { en: 'Tall Seating · Huge Mirrors & Uncluttered Glass', de: 'Hohe Sitzposition · Große Spiegel & Glasflächen', ru: 'Высокая посадка · Крупные зеркала и стёкла' } },
+            { k: 'parkingAids', v: { en: 'Front/Rear Sensors Common on Mid/High Trims', de: 'Parksensoren vorn/hinten häufig verbaut', ru: 'Парктроники часто в средних/верхних версиях' } }
+          ],
+          note: { en: 'One of the easiest-to-see-out-of SUVs of its era.', de: 'Eines der übersichtlichsten SUVs seiner Generation.', ru: 'Один из самых обзорных кроссоверов своего поколения.' }
+        }
+      },
+      safetyProtection: {
+        euroNcap: {
+          specs: [
+            { k: 'ncapOverall', v: '★★★★☆ (2007)' },
+            { k: 'ncapBreakdown', v: { en: '33/37 Adult · 4★ Child · 2★ Pedestrian', de: '33/37 Erwachsene · 4★ Kinder · 2★ Fußgänger', ru: '33/37 Взрослые · 4★ Дети · 2★ Пешеходы' } },
+            { k: 'airbagsCount', v: { en: '6 Airbags (Front, Side, Curtain)', de: '6 Airbags (Front, Seite, Kopf)', ru: '6 подушек безопасности' } }
+          ],
+          note: { en: 'Solid ACE crash structure with standard VSA stability control and Trailer Stability Assist.', de: 'Stabile ACE-Struktur mit serienmäßigem VSA-ESP und Gespann-Stabilisierung.', ru: 'Крепкий кузов ACE со стандартной ESP и стабилизацией прицепа.' }
+        },
+        safetyTech: {
+          specs: [
+            { k: 'activeAssists', v: { en: '✓ ESP/VSA · ✓ Trailer Stability Assist · ✕ Standard AEB', de: '✓ ESP/VSA · ✓ Gespann-Stab. · ✕ Kein Serien-Notbrems', ru: '✓ ESP/VSA · ✓ Стаб. прицепа · ✕ Без AEB в базе' } }
+          ],
+          note: { en: 'Predictable mechanical safety with optional adaptive cruise (ACC/CMBS) on rare Executive trims.', de: 'Sicheres Fahrverhalten; optionaler Abstandstempomat nur in seltenen Top-Versionen.', ru: 'Надёжная пассивная безопасность; редкие топ-версии оснащались ACC.' }
+        }
+      },
+      passengerSpaceErgonomics: {
+        rearRoom: {
+          specs: [
+            { k: 'wheelbase', v: '2,630 mm' },
+            { k: 'rearLegHead', v: { en: 'Generous Adult Space · Completely Flat Floor', de: 'Sehr viel Beinfreiheit · Komplett ebener Boden', ru: 'Огромный запас места · Полностью ровный пол' } }
+          ],
+          note: { en: 'Reclining & sliding rear bench seats 3 adults more comfortably than almost any rival.', de: 'Verschieb- und neigbare Rückbank bietet für 3 Personen außergewöhnlich viel Platz.', ru: 'Сдвижной и регулируемый диван сзади удобен даже для троих взрослых.' }
+        },
+        isofixEntry: {
+          specs: [
+            { k: 'isofixAccess', v: { en: '✓ 2× ISOFIX · Wide 80° Rear Doors · Easy Hip Height', de: '✓ 2× ISOFIX · Weit öffnende Türen · Bequeme Höhe', ru: '✓ 2× ISOFIX · Широкие двери · Удобная высота' } }
+          ],
+          note: { en: 'Ideal step-in height for parents buckling child seats or seniors getting in and out.', de: 'Perfekte Einstiegshöhe für Kindersitze und rückenschonendes Einsteigen.', ru: 'Идеальная высота посадки для семей с детьми и пожилых пассажиров.' }
+        }
+      },
+      interiorBootSpace: {
+        bootVolume: {
+          specs: [
+            { k: 'bootUpDown', v: '556 L / 1,532 L' },
+            { k: 'loadSill', v: { en: '~665 mm (Low for SUV) · Dual-Deck Shelf', de: '~665 mm (Niedrig für SUV) · Doppelboden-Ablage', ru: '~665 мм (низко для SUV) · Двойная полка' } }
+          ],
+          note: { en: 'Square 556 L boot with removable dual-deck shelf splits groceries cleanly from bulky luggage.', de: 'Quadratischer 556-L-Kofferraum mit praktischer Zweitebene für Einkäufe und Koffer.', ru: 'Огромный 556-литровый багажник с фирменной двухъярусной полкой.' }
+        },
+        seatUtility: {
+          specs: [
+            { k: 'foldingMech', v: { en: '✓ 40/20/40 Sliding & Tumble-Fold Rear Bench', de: '✓ 40/20/40 Verschieb- & Klappbank', ru: '✓ Сдвижной диван 40/20/40 с откидыванием' } }
+          ],
+          note: { en: 'Center pass-through handles skis while keeping 4 full seats usable.', de: 'Mittel-Durchlade für Ski bei 4 voll nutzbaren Sitzplätzen.', ru: 'Лючок 40/20/40 позволяет возить лыжи вчетвером.' }
+        }
+      },
+      payloadTowing: {
+        payloadRoof: {
+          specs: [
+            { k: 'maxPayload', v: '~510 kg' },
+            { k: 'roofLoad', v: '75 kg' }
+          ],
+          note: { en: 'Strong family SUV payload handles 5 passengers plus full holiday gear.', de: 'Kräftige Familien-SUV-Zuladung für 5 Personen plus volles Urlaubsgepäck.', ru: 'Высокая грузоподъёмность для 5 человек и полного багажа.' }
+        },
+        towingBraked: '@towingDynamic'
+      },
+      accelerationOvertaking: { sprint0100: '@sprintDynamic', topSpeed: '@vmaxDynamic' },
+      midRangeTorquePassing: { peakTorque: '@torqueDynamic', passingPunch: '@passingDynamic' },
+      handlingAgility: {
+        chassisFeel: {
+          specs: [
+            { k: 'kerbWeight', v: '1,530–1,680 kg' },
+            { k: 'handlingChar', v: { en: 'Car-Like Steering · Safe Predictable Balance', de: 'PKW-ähnliche Lenkung · Gutmütig & sicher', ru: 'Легковая управляемость · Предсказуемый баланс' } },
+            { k: 'tyreSizes', v: '225/65 R17 · 225/60 R18' }
+          ],
+          note: { en: 'Drives more like a tall estate than a heavy truck.', de: 'Fährt sich eher wie ein hoher Kombi als ein schwerer Geländewagen.', ru: 'Управляется скорее как высокий универсал, чем тяжёлый внедорожник.' }
+        },
+        tractionDiff: '@tractionAwd'
+      },
+      brakingPerformance: { braking1000: '@brakingDistDynamic', brakeSetup: '@brakeSetupDiscs4' },
+      efficiencyFuel: { realWorldFuel: '@fuelDynamic', tankRange: '@tankDynamic' },
+      taxInsuranceNorm: { euroNorm: '@euroDynamic', taxInsurance: '@taxInsDynamic' },
+      maintenanceRepairCosts: { timingDrive: '@timingDynamic', serviceWear: '@serviceDynamic' },
+      depreciationResale: { valueRetention: '@retentionDynamic', resaleDemand: '@demandDynamic' }
+    },    sharedBuyerFit: {
       cards: {
         crvFamilySpace: {
           en: 'You need an easy-loading family SUV: Flat cabin floor, upright seating, and a wide 524 L boot handle strollers and holiday gear effortlessly.',
@@ -7816,6 +8817,14 @@ const CAR_ROSTER = [
     engines: [
       {
         id: '2.0-ivtec',
+        specOverrides: {
+          engineName: { en: '2.0L i-VTEC NA', de: '2.0L i-VTEC Sauger', ru: '2.0L i-VTEC Атм.' },
+          forcedInduction: '@na', injection: '@port', gearbox: '@manual6', clutchDmf: '@singleClutch',
+          towingBraked: '1,600 kg', sprint0100: '10.2 s', topSpeed: '190 km/h', peakTorque: '192 Nm @ 4,200',
+          passingPunch: { en: 'Needs Downshift', de: 'Braucht Drehzahl', ru: 'Нужны обороты' },
+          realWorldFuel: '8.2–9.0 L/100 km', tankRange: '58 L · ~680 km', euroNorm: 'Euro 4 / 5',
+          taxInsurance: '@tierMod', timingDrive: '@chain', serviceWear: '@tierLow'
+        },
         dossierGroup: 'petrol-awd-mt',
         buyerFitGroup: 'na-petrol-awd',
         isDefault: true,
@@ -7897,6 +8906,19 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '2.0L i-VTEC Inline-4 NA (R20A2)', de: '2.0L i-VTEC Reihenvierzylinder Sauger (R20A2)', ru: '2.0L i-VTEC рядный 4-цил. атмосферный (R20A2)' } },
+                  { k: 'displacement', v: '1,997 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 16V SOHC', de: '4 Zylinder · 16V SOHC', ru: '4 цилиндра · 16V SOHC' } },
+                  { k: 'output', v: { en: '110 kW (150 HP)', de: '110 kW (150 PS)', ru: '110 кВт (150 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Petrol · Timing Chain', de: 'Benzin · Steuerkette', ru: 'Бензин · Цепь ГРМ' } }
+                ],
+                note: { en: 'Bulletproof R20 block routinely passes 350,000+ km with minimal repair surprises.', de: 'Extrem robuster R20-Sauger schafft problemlos 350.000+ km ohne teure Überraschungen.', ru: 'Сверхнадёжный атмосферник R20 спокойно ходит 350 000+ км.' }
+              },
+              forcedInduction: '@naNoTurbo', injection: '@portInj'
+            },
             score: 9.6,
             badges: {
               en: ['2.0 Chain-Driven NA', '350,000+ km Lifespan'],
@@ -8235,6 +9257,15 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '~60,000 km · 4 yrs', action: { en: 'Rear Differential Dual-Pump Fluid (Honda DPSF)', de: 'Hinterachs-Allradöl wechseln (Honda DPSF)', ru: 'Замена масла в заднем редукторе (Honda DPSF)' }, cost: '€80–140' },
+                { when: '~100,000 km · 6 yrs', action: { en: 'Valve-Clearance Check & MTF-3 Gearbox Oil', de: 'Ventilspiel prüfen & MTF-3 Getriebeöl wechseln', ru: 'Регулировка клапанов и масло MTF-3 в КПП' }, cost: '€240–380' }
+              ],
+              critical: [
+                { when: '150–210k km · 10–14 yrs', action: { en: 'A/C Compressor Magnetic Clutch & Rear Camber Arms', de: 'Klimakompressor-Kupplung & hintere Sturzstreben', ru: 'Муфта кондиционера и задние развальные рычаги' }, cost: '€280–520', risk: { en: 'Loss of A/C cooling & uneven inner rear tyre wear', de: 'Ausfall Klimaanlage & einseitiger Hinterreifen-Verschleiß', ru: 'Отказ кондиционера и неравномерный износ задних шин' }, damage: '€900–1,400' }
+              ]
+            },
             score: 8.7,
             badges: {
               en: ['Simple Rear Diff Oil Changes', 'No Turbo / No DPF Bills'],
@@ -8254,6 +9285,14 @@ const CAR_ROSTER = [
       },
       {
         id: '2.4-ivtec',
+        specOverrides: {
+          engineName: { en: '2.4L i-VTEC NA', de: '2.4L i-VTEC Sauger', ru: '2.4L i-VTEC Атм.' },
+          forcedInduction: '@na', injection: '@port', gearbox: '@auto5', clutchDmf: '@torqueConv',
+          towingBraked: '1,500 kg', sprint0100: '11.0 s', topSpeed: '190 km/h', peakTorque: '220 Nm @ 4,200',
+          passingPunch: { en: 'Smooth · Relaxed', de: 'Souverän · Ruhig', ru: 'Ровная · Спокойная' },
+          realWorldFuel: '9.5–10.5 L/100 km', tankRange: '58 L · ~580 km', euroNorm: 'Euro 4 / 5',
+          taxInsurance: '@tierModHigh', timingDrive: '@chain', serviceWear: '@tierLowMod'
+        },
         dossierGroup: 'petrol-conv-auto',
         buyerFitGroup: 'na-petrol-awd',
         buyerFitOverrides: {
@@ -8338,6 +9377,19 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '2.4L i-VTEC Inline-4 NA (K24Z4)', de: '2.4L i-VTEC Reihenvierzylinder Sauger (K24Z4)', ru: '2.4L i-VTEC рядный 4-цил. атмосферный (K24Z4)' } },
+                  { k: 'displacement', v: '2,354 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 16V DOHC', de: '4 Zylinder · 16V DOHC', ru: '4 цилиндра · 16V DOHC' } },
+                  { k: 'output', v: { en: '122 kW (166 HP)', de: '122 kW (166 PS)', ru: '122 кВт (166 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Petrol · Timing Chain', de: 'Benzin · Steuerkette', ru: 'Бензин · Цепь ГРМ' } }
+                ],
+                note: { en: 'Legendary Honda K24 engine — ultra-durable 350,000+ km longevity paired with a tough 5-speed torque auto.', de: 'Legendärer Honda-K24-Motor für 350.000+ km kombiniert mit robuster 5-Gang-Wandlerautomatik.', ru: 'Легендарный мотор K24 с ресурсом 350 000+ км и крепким 5-ст. автоматом.' }
+              },
+              forcedInduction: '@naNoTurbo', injection: '@portInj'
+            },
             score: 9.7,
             badges: {
               en: ['Legendary 2.4 Chain NA', 'Long-Life K24Z Timing Chain'],
@@ -8674,6 +9726,15 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '~60,000 km · 4 yrs', action: { en: 'Rear Differential Dual-Pump Fluid (Honda DPSF)', de: 'Hinterachs-Allradöl wechseln (Honda DPSF)', ru: 'Замена масла в заднем редукторе (Honda DPSF)' }, cost: '€80–140' },
+                { when: '~100,000 km · 6 yrs', action: { en: 'Valve-Clearance Check & MTF-3 Gearbox Oil', de: 'Ventilspiel prüfen & MTF-3 Getriebeöl wechseln', ru: 'Регулировка клапанов и масло MTF-3 в КПП' }, cost: '€240–380' }
+              ],
+              critical: [
+                { when: '150–210k km · 10–14 yrs', action: { en: 'A/C Compressor Magnetic Clutch & Rear Camber Arms', de: 'Klimakompressor-Kupplung & hintere Sturzstreben', ru: 'Муфта кондиционера и задние развальные рычаги' }, cost: '€280–520', risk: { en: 'Loss of A/C cooling & uneven inner rear tyre wear', de: 'Ausfall Klimaanlage & einseitiger Hinterreifen-Verschleiß', ru: 'Отказ кондиционера и неравномерный износ задних шин' }, damage: '€900–1,400' }
+              ]
+            },
             score: 8.6,
             badges: {
               en: ['Zero Turbo / Zero DPF Bills', 'Routine ATF & Diff Oil Only'],
@@ -8693,6 +9754,14 @@ const CAR_ROSTER = [
       },
       {
         id: '2.2-idtec',
+        specOverrides: {
+          engineName: { en: '2.2L i-DTEC Diesel', de: '2.2L i-DTEC Diesel', ru: '2.2L i-DTEC Дизель' },
+          forcedInduction: '@turbo', injection: '@commonRail', gearbox: '@manual6', clutchDmf: '@clutchDmf',
+          towingBraked: '2,000 kg', sprint0100: '9.6 s', topSpeed: '190 km/h', peakTorque: '350 Nm @ 2,000',
+          passingPunch: { en: 'Strong Towing Pull', de: 'Kräftiger Durchzug', ru: 'Мощная тяга' },
+          realWorldFuel: '6.6–7.4 L/100 km', tankRange: '58 L · ~830 km', euroNorm: 'Euro 5 (DPF)',
+          taxInsurance: '@tierModHigh', timingDrive: '@chain', serviceWear: '@tierMod'
+        },
         dossierGroup: 'diesel-awd-mt',
         buyerFitGroup: 'diesel-awd',
         isDefault: false,
@@ -8774,6 +9843,19 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '2.2L i-DTEC Inline-4 Turbodiesel (N22B3)', de: '2.2L i-DTEC Reihenvierzylinder Turbodiesel (N22B3)', ru: '2.2L i-DTEC рядный 4-цил. турбодизель (N22B3)' } },
+                  { k: 'displacement', v: '2,199 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 16V DOHC', de: '4 Zylinder · 16V DOHC', ru: '4 цилиндра · 16V DOHC' } },
+                  { k: 'output', v: { en: '110 kW (150 HP)', de: '110 kW (150 PS)', ru: '110 кВт (150 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Diesel · Timing Chain', de: 'Diesel · Steuerkette', ru: 'Дизель · Цепь ГРМ' } }
+                ],
+                note: { en: 'Refined Euro 5 Honda diesel with 2,000 kg towing muscle and 300,000+ km motorway endurance.', de: 'Kultivierter Euro-5-Diesel mit 2.000 kg Zuglast und hoher Langstrecken-Standfestigkeit.', ru: 'Тихий дизель Euro 5 с отличной тягой для прицепа (2 000 кг) и большим ресурсом.' }
+              },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi'
+            },
             score: 8.9,
             badges: {
               en: ['2.2 Chain-Driven Block', 'Watch City DPF Regeneration'],
@@ -9112,6 +10194,16 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '~60,000 km · 4 yrs', action: { en: 'Rear Dual-Pump Fluid (DPSF) + Diesel Fuel Filter', de: 'Hinterachsöl (DPSF) + Dieselfilter wechseln', ru: 'Масло DPSF в редукторе + топливный фильтр' }, cost: '€180–290' },
+                { when: '~110,000 km · 7 yrs', action: { en: 'Honda MTF-3 Gearbox Fluid Change', de: 'Honda MTF-3 Schaltgetriebeöl wechseln', ru: 'Замена масла в МКПП (Honda MTF-3)' }, cost: '€120–190' }
+              ],
+              critical: [
+                { when: '140–195k km · 9–13 yrs', action: { en: 'Dual-Mass Flywheel (DMF) + Clutch Kit', de: 'Zweimassenschwungrad (ZMS) + Kupplungssatz', ru: 'Двухмассовый маховик (ДММ) + сцепление' }, cost: '€1,250–1,850', risk: { en: 'Slipping clutch under 350 Nm torque & idle knock', de: 'Rutschende Kupplung unter 350 Nm & ZMS-Klopfen', ru: 'Пробуксовка сцепления под тягой 350 Н·м и стук ДММ' }, damage: '€2,200–3,000' },
+                { when: '140–210k km · 9–14 yrs', action: { en: 'DPF Soot Cleaning / Exhaust Manifold Crack Check (i-CTDi)', de: 'DPF-Reinigung / Abgaskrümmer-Prüfung (i-CTDi)', ru: 'Чистка DPF / проверка выпускного коллектора' }, cost: '€400–750', risk: { en: 'Exhaust smell in cabin or limp-home DPF blockage', de: 'Abgasgeruch im Innenraum oder DPF-Notlauf', ru: 'Запах выхлопа в салоне или аварийный режим DPF' }, damage: '€1,500–2,400' }
+              ]
+            },
             score: 7.2,
             badges: {
               en: ['Chain-Driven Block', 'High Clutch, DMF & DPF Costs'],
@@ -9131,6 +10223,14 @@ const CAR_ROSTER = [
       },
       {
         id: '2.2-ictdi',
+        specOverrides: {
+          engineName: { en: '2.2L i-CTDi Diesel', de: '2.2L i-CTDi Diesel', ru: '2.2L i-CTDi Дизель' },
+          forcedInduction: '@turbo', injection: '@commonRail', gearbox: '@manual6', clutchDmf: '@clutchDmf',
+          towingBraked: '2,000 kg', sprint0100: '10.3 s', topSpeed: '187 km/h', peakTorque: '340 Nm @ 2,000',
+          passingPunch: { en: 'Strong Low-End', de: 'Starker Antritt', ru: 'Хорошая тяга с низов' },
+          realWorldFuel: '6.8–7.6 L/100 km', tankRange: '58 L · ~810 km', euroNorm: 'Euro 4 (DPF)',
+          taxInsurance: '@tierModHigh', timingDrive: '@chain', serviceWear: '@tierMod'
+        },
         dossierGroup: 'diesel-awd-mt',
         buyerFitGroup: 'diesel-awd',
         buyerFitOverrides: {
@@ -9220,6 +10320,19 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '2.2L i-CTDi Inline-4 Turbodiesel (N22A2)', de: '2.2L i-CTDi Reihenvierzylinder Turbodiesel (N22A2)', ru: '2.2L i-CTDi рядный 4-цил. турбодизель (N22A2)' } },
+                  { k: 'displacement', v: '2,204 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 16V DOHC', de: '4 Zylinder · 16V DOHC', ru: '4 цилиндра · 16V DOHC' } },
+                  { k: 'output', v: { en: '103 kW (140 HP)', de: '103 kW (140 PS)', ru: '103 кВт (140 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Diesel · Timing Chain', de: 'Diesel · Steuerkette', ru: 'Дизель · Цепь ГРМ' } }
+                ],
+                note: { en: 'Tough earlier-generation Honda aluminium diesel with timing chain and strong 340 Nm pull.', de: 'Robuster Vorgänger-Alu-Diesel mit Steuerkette und kräftigen 340 Nm.', ru: 'Крепкий алюминиевый дизель ранней серии с цепью ГРМ и тягой 340 Н·м.' }
+              },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi'
+            },
             score: 8.2,
             badges: {
               en: ['Alu N22A2 2.2 Diesel', 'Check Manifold & Chain'],
@@ -9556,6 +10669,16 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '~60,000 km · 4 yrs', action: { en: 'Rear Dual-Pump Fluid (DPSF) + Diesel Fuel Filter', de: 'Hinterachsöl (DPSF) + Dieselfilter wechseln', ru: 'Масло DPSF в редукторе + топливный фильтр' }, cost: '€180–290' },
+                { when: '~110,000 km · 7 yrs', action: { en: 'Honda MTF-3 Gearbox Fluid Change', de: 'Honda MTF-3 Schaltgetriebeöl wechseln', ru: 'Замена масла в МКПП (Honda MTF-3)' }, cost: '€120–190' }
+              ],
+              critical: [
+                { when: '140–195k km · 9–13 yrs', action: { en: 'Dual-Mass Flywheel (DMF) + Clutch Kit', de: 'Zweimassenschwungrad (ZMS) + Kupplungssatz', ru: 'Двухмассовый маховик (ДММ) + сцепление' }, cost: '€1,250–1,850', risk: { en: 'Slipping clutch under 350 Nm torque & idle knock', de: 'Rutschende Kupplung unter 350 Nm & ZMS-Klopfen', ru: 'Пробуксовка сцепления под тягой 350 Н·м и стук ДММ' }, damage: '€2,200–3,000' },
+                { when: '140–210k km · 9–14 yrs', action: { en: 'DPF Soot Cleaning / Exhaust Manifold Crack Check (i-CTDi)', de: 'DPF-Reinigung / Abgaskrümmer-Prüfung (i-CTDi)', ru: 'Чистка DPF / проверка выпускного коллектора' }, cost: '€400–750', risk: { en: 'Exhaust smell in cabin or limp-home DPF blockage', de: 'Abgasgeruch im Innenraum oder DPF-Notlauf', ru: 'Запах выхлопа в салоне или аварийный режим DPF' }, damage: '€1,500–2,400' }
+              ]
+            },
             score: 7.0,
             badges: {
               en: ['Proven Chain Block', 'Watch Manifold, Clutch & DMF'],
@@ -9589,7 +10712,114 @@ const CAR_ROSTER = [
     image: 'assets/peugeot-308-gti-2019.png',
     imageFacing: 'left',
     defaultEngineId: '1.6-thp-263',
-    sharedBuyerFit: {
+    sharedSpecs: {
+      rustProtection: '@rustVeryGood',
+      suspensionWear: '@suspSport',
+      starterAlternator: '@starter12v',
+      electronicsRisk: '@elecLowMod',
+      rideTuning: { en: 'Firm / Compliant Sport', de: 'Straff / Alltagstauglich', ru: 'Упругая спортподвеска' },
+      highwayNoise: { en: '~70 dB · Refined', de: '~70 dB · Ruhig', ru: '~70 дБ · Достойно' },
+      cabinMaterials: { en: 'Alcantara Buckets · Upscale', de: 'Alcantara-Sitze · Wertig', ru: 'Алькантара · Солидно' },
+      controls: { en: 'Touchscreen Climate (i-Cockpit)', de: 'Klima über Touchscreen', ru: 'Климат через экран' },
+      turningCircle: '10.8 m',
+      visibility: { en: 'Good Forward · Thick C-Pillar', de: 'Gut vorn · Breite C-Säule', ru: 'Хорошо спереди · Широкая C' },
+      euroNcap: '★★★★★ (2013)',
+      safetyTech: { en: '✓ ESP · ✓ AEB & Lane Assist', de: '✓ ESP · ✓ Notbrems & Spur', ru: '✓ ESP · ✓ AEB и полоса' },
+      rearRoom: { en: 'Tight for Tall Adults', de: 'Knapp für Große', ru: 'Тесновато высоким' },
+      isofixEntry: { en: '✓ 2× ISOFIX · Low Sport', de: '✓ 2× ISOFIX · Tief', ru: '✓ 2× ISOFIX · Низкая' },
+      bootVolume: '420 L / 1,228 L',
+      seatUtility: { en: '60/40 Split-Fold', de: '60/40 Klappbank', ru: 'Складывание 60/40' },
+      payloadRoof: '440 kg · 70 kg',
+      driveline: 'FWD · Torsen LSD',
+      chassisFeel: { en: 'Razor-Sharp · Agile', de: 'Messerscharf · Agil', ru: 'Острое · Азартное' },
+      tractionDiff: { en: 'FWD · ✓ Mechanical Torsen LSD', de: 'FWD · ✓ Torsen-Sperre', ru: 'FWD · ✓ Блокировка Torsen' },
+      braking1000: '~33.8 m',
+      brakeSetup: { en: '380 mm Alcon 4-Piston', de: '380 mm Alcon 4-Kolben', ru: '380 мм Alcon 4-поршн.' },
+      valueRetention: '@retHigh',
+      resaleDemand: '@demNiche'
+    },
+    sharedDossierBreakdowns: {
+      transmissionDriveline: { gearbox: '@gbManual6Psa', clutchDmf: '@clutchDmf', driveline: '@driveFwdLsd' },
+      buildQualityRust: { rustProtection: '@rustGalvanized12y', suspensionWear: '@suspSportHotHatch' },
+      electronicsReliability: { starterAlternator: '@starterStandard12v', electronicsRisk: '@elecSimpleEps' },
+      rideNoiseComfort: {
+        rideTuning: {
+          specs: [
+            { k: 'damperSetup', v: { en: 'Peugeot Sport Lowered (-11 mm) Sport Suspension', de: 'Peugeot Sport Sportfahrwerk (-11 mm)', ru: 'Спортподвеска Peugeot Sport (-11 мм)' } },
+            { k: 'seatSupport', v: { en: 'Peugeot Sport Alcantara Bucket Seats (Massage/Heated)', de: 'Alcantara-Schalensitze mit Massage & Sitzheizung', ru: 'Ковши Alcantara с массажем и подогревом' } }
+          ],
+          note: { en: 'Surprisingly supple for a hardcore hot hatch — far easier to daily than harsher track rivals.', de: 'Überraschend alltagstauglich abgestimmt — deutlich komfortabler als kompromisslose Track-Gegner.', ru: 'Удивительно комфортный для хот-хэтча — легко подходит на каждый день.' }
+        },
+        highwayNoise: {
+          specs: [
+            { k: 'cabinNoise130', v: { en: '~70 dB(A) at 130 km/h', de: '~70 dB(A) bei 130 km/h', ru: '~70 дБ(А) при 130 км/ч' } },
+            { k: 'acousticGlass', v: { en: 'Calm Cruise · Sport Button Adds Cabin Sound', de: 'Ruhig im Normalmodus · Sport-Taste schärft Klang', ru: 'Тихий круиз · Кнопка Sport усиливает звук' } }
+          ],
+          note: { en: 'Genuinely civilised motorway cruiser when Sport mode is switched off.', de: 'Im Normalmodus ein sehr entspannter Autobahngleiter.', ru: 'Спокойный и тихий на трассе в обычном режиме.' }
+        }
+      },
+      interiorQualityFeatures: {
+        cabinMaterials: {
+          specs: [
+            { k: 'dashTrim', v: { en: 'Minimalist Soft-Touch Dash + Red Contrast Stitching', de: 'Aufgeräumtes Soft-Touch-Cockpit mit roten Nähten', ru: 'Минималистичная мягкая панель с красной строчкой' } },
+            { k: 'buildFit', v: { en: 'Clean Modern Feel · Tiny Sport Steering Wheel', de: 'Hochwertige Haptik · Sehr kleines Sportlenkrad', ru: 'Приятные материалы · Компактный спорт-руль' } }
+          ],
+          note: { en: 'Test the Peugeot i-Cockpit driving position first — the tiny wheel can clip the dials for some heights.', de: 'Sitzposition im i-Cockpit unbedingt testen — das kleine Lenkrad verdeckt je nach Größe Teile des Tachos.', ru: 'Обязательно примерьте посадку i-Cockpit — маленький руль может перекрывать приборы.' }
+        },
+        controls: {
+          specs: [
+            { k: 'climateUi', v: { en: 'Touchscreen-Integrated Climate Control', de: 'Klima-Bedienung im zentralen Touchscreen', ru: 'Управление климатом через сенсорный экран' } }
+          ],
+          note: { en: 'Clean minimalist look, though adjusting cabin temperature takes an extra screen tap.', de: 'Schick und aufgeräumt, aber Temperatur-Änderungen erfordern einen Klick im Menü.', ru: 'Стильный минимализм, но регулировка климата требует касания экрана.' }
+        }
+      },
+      visibilityManeuverability: {
+        turningCircle: { specs: [{ k: 'turningDiam', v: '10.8 m' }, { k: 'bodyDimensions', v: '4,253 × 1,804 mm' }], note: { en: 'Compact and easy to thread through tight city streets.', de: 'Kompakt und handlich im engen Stadtverkehr.', ru: 'Компактный и юркий в тесных городских условиях.' } },
+        visibility: { specs: [{ k: 'sightlines', v: { en: 'Good Forward · Thick Rear Pillars', de: 'Gut nach vorn · Breite C-Säulen hinten', ru: 'Хорошо спереди · Широкие задние стойки' } }, { k: 'parkingAids', v: { en: 'Standard Front/Rear Sensors + Reversing Camera', de: 'Parksensoren vorn/hinten + Kamera Serie', ru: 'Парктроники спереди/сзади и камера в базе' } }], note: { en: 'Standard parking sensors and camera offset the wide rear pillars.', de: 'Serienmäßige Kamera und Sensoren gleichen die breite C-Säule gut aus.', ru: 'Штатная камера и парктроники компенсируют широкие стойки.' } }
+      },
+      safetyProtection: {
+        euroNcap: { specs: [{ k: 'ncapOverall', v: '★★★★★ (2013)' }, { k: 'ncapBreakdown', v: { en: '92% Adult · 79% Child · 64% Pedestrian', de: '92 % Erwachsene · 79 % Kinder · 64 % Fußgänger', ru: '92% Взрослые · 79% Дети · 64% Пешеходы' } }, { k: 'airbagsCount', v: { en: '6 Airbags', de: '6 Airbags', ru: '6 подушек безопасности' } }], note: { en: 'Strong EMP2 5-star crash structure with low kerb weight.', de: 'Moderne 5-Sterne-EMP2-Sicherheitsstruktur trotz niedrigem Gewicht.', ru: 'Крепкая 5-звёздочная платформа EMP2 при малом весе.' } },
+        safetyTech: { specs: [{ k: 'activeAssists', v: { en: '✓ ESP (Fully Defeatable) · ✓ AEB & Lane Assist (2018+)', de: '✓ ESP (Abschaltbar) · ✓ Notbrems & Spurhalteassistent', ru: '✓ ESP (отключаемая) · ✓ AEB и контроль полосы' } }], note: { en: '2018+ facelift GTi models include modern active safety assists as standard.', de: 'Facelift-Modelle ab 2018 bieten moderne Assistenzsysteme ab Werk.', ru: 'Рестайлинговые версии с 2018 года оснащены современными ассистентами.' } }
+      },
+      passengerSpaceErgonomics: {
+        rearRoom: { specs: [{ k: 'wheelbase', v: '2,620 mm' }, { k: 'rearLegHead', v: { en: 'Compact Rear Kneeroom (Best for Kids/Short Trips)', de: 'Knappe Kniefreiheit im Fond (Eher für Kinder)', ru: 'Тесновато в коленях сзади' } }], note: { en: 'Prioritizes front bucket comfort and boot volume over rear legroom.', de: 'Fokus liegt klar auf vorderen Sportsitzen und großem Kofferraum statt Fondplatz.', ru: 'Приоритет отдан передним креслам и багажнику, а не заднему ряду.' } },
+        isofixEntry: { specs: [{ k: 'isofixAccess', v: { en: '✓ 2× Outer ISOFIX · Low Sport Roofline', de: '✓ 2× ISOFIX außen · Flache Sport-Dachlinie', ru: '✓ 2× ISOFIX · Низкая линия крыши' } }], note: { en: 'Usable 5-door practicality in a discreet sleeper body.', de: 'Alltagstaugliche 5-Türer-Karosserie im dezenten Sleeper-Look.', ru: 'Удобный 5-дверный кузов в сдержанном стиле.' } }
+      },
+      interiorBootSpace: {
+        bootVolume: { specs: [{ k: 'bootUpDown', v: '420 L / 1,228 L' }, { k: 'loadSill', v: { en: '~690 mm · Deep Square Bay', de: '~690 mm · Tiefer, gut nutzbarer Raum', ru: '~690 мм · Глубокий прямоугольный отсек' } }], note: { en: 'Generous 420 L boot makes it one of the most practical hot hatches.', de: 'Großzügige 420 L Kofferraum machen ihn zu einem extrem praktischen Hot-Hatch.', ru: 'Вместительный багажник 420 л — один из лучших среди хот-хэтчей.' } },
+        seatUtility: { specs: [{ k: 'foldingMech', v: { en: '60/40 Split-Fold Rear Seat', de: '60/40 geteilt umklappbare Rückbank', ru: 'Складывание спинки 60/40' } }], note: { en: 'Easily fits weekend luggage or track-day spare wheels.', de: 'Genug Platz für Urlaubsgepäck oder einen Satz Trackday-Räder.', ru: 'Легко вмещает багаж для путешествий или комплект колёс.' } }
+      },
+      payloadTowing: {
+        payloadRoof: { specs: [{ k: 'maxPayload', v: '~440 kg' }, { k: 'roofLoad', v: '70 kg' }], note: { en: 'Standard 5-door hatchback payload.', de: 'Normale Kompaktwagen-Zuladung.', ru: 'Стандартная грузоподъёмность хэтчбека.' } },
+        towingBraked: '@towingDynamic'
+      },
+      accelerationOvertaking: { sprint0100: '@sprintDynamic', topSpeed: '@vmaxDynamic' },
+      midRangeTorquePassing: { peakTorque: '@torqueDynamic', passingPunch: '@passingDynamic' },
+      handlingAgility: {
+        chassisFeel: {
+          specs: [
+            { k: 'kerbWeight', v: '1,280 kg (Featherweight)' },
+            { k: 'handlingChar', v: { en: 'Playful, Super-Light Turn-In · Neutral Balance', de: 'Extrem leichtfüßiges Einlenken · Spielerische Balance', ru: 'Сверхлёгкий вход в поворот · Игривый баланс' } },
+            { k: 'tyreSizes', v: '235/35 R19 (Michelin Pilot Super Sport)' }
+          ],
+          note: { en: 'At just 1,280 kg, it feels 150 kg lighter than most modern AWD hot hatches.', de: 'Mit nur 1.280 kg spürbar leichtfüßiger als die meisten modernen Allrad-Hot-Hatches.', ru: 'При массе всего 1280 кг ощущается намного легче полноприводных конкурентов.' }
+        },
+        tractionDiff: '@tractionFwdLsd'
+      },
+      brakingPerformance: {
+        braking1000: '@brakingDistDynamic',
+        brakeSetup: {
+          specs: [
+            { k: 'discHardware', v: { en: '380 mm Alcon Two-Piece Floating Front Discs + 4-Piston Fixed Calipers', de: '380 mm Alcon-Zweiteiler vorn (schwimmend) + 4-Kolben-Festsättel', ru: '380 мм составные диски Alcon спереди + 4-поршневые суппорты' } }
+          ],
+          note: { en: 'Supercar-sized 380 mm Alcon brakes deliver immense fade-free stopping power — budget €1,100–€1,650 when front discs eventually wear out.', de: '380-mm-Alcon-Anlage auf Sportwagen-Niveau mit enormer Standfestigkeit — Ersatzscheiben vorn kosten jedoch ca. 1.100–1.650 €.', ru: 'Огромные 380-мм тормоза Alcon уровня суперкаров — невероятная эффективность, но замена передних дисков стоит €1 100–1 650.' }
+        }
+      },
+      efficiencyFuel: { realWorldFuel: '@fuelDynamic', tankRange: '@tankDynamic' },
+      taxInsuranceNorm: { euroNorm: '@euroDynamic', taxInsurance: '@taxInsDynamic' },
+      maintenanceRepairCosts: { timingDrive: '@timingDynamic', serviceWear: '@serviceDynamic' },
+      depreciationResale: { valueRetention: '@retentionDynamic', resaleDemand: '@demandDynamic' }
+    },    sharedBuyerFit: {
       cards: {
         gti308Featherweight: {
           en: 'You love agile, lightweight handling: At just 1,205 kg with a tiny steering wheel and taut chassis, it darts through corners effortlessly.',
@@ -10215,6 +11445,14 @@ const CAR_ROSTER = [
     engines: [
       {
         id: '1.6-thp-263',
+        specOverrides: {
+          engineName: { en: '1.6L THP 263 Turbo', de: '1.6L THP 263 Turbo', ru: '1.6L THP 263 Турбо' },
+          forcedInduction: '@turbo', injection: '@direct', gearbox: '@manual6', clutchDmf: '@clutchDmf',
+          towingBraked: '0 kg (No Tow)', sprint0100: '6.0 s', topSpeed: '250 km/h', peakTorque: '340 Nm @ 2,100',
+          passingPunch: { en: 'Explosive Mid-Range', de: 'Brachialer Durchzug', ru: 'Взрывная середина' },
+          realWorldFuel: '7.5–9.2 L/100 km', tankRange: '53 L · ~630 km', euroNorm: 'Euro 6d-TEMP (OPF)',
+          taxInsurance: '@tierModHigh', timingDrive: '@chain', serviceWear: '@tierHigh'
+        },
         dossierGroup: 'petrol-6mt-lsd',
         buyerFitGroup: 'hot-hatch',
         isDefault: true,
@@ -10299,6 +11537,19 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '1.6L THP Forged-Piston Inline-4 Turbo (EP6FADTXR)', de: '1.6L THP Schmiedekolben Reihenvierzylinder Turbo (EP6FADTXR)', ru: '1.6L THP кованый рядный 4-цил. турбо (EP6FADTXR)' } },
+                  { k: 'displacement', v: '1,598 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 16V DOHC', de: '4 Zylinder · 16V DOHC', ru: '4 цилиндра · 16V DOHC' } },
+                  { k: 'output', v: { en: '193 kW (263 HP)', de: '193 kW (263 PS)', ru: '193 кВт (263 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Petrol (98 RON) · Reinforced Timing Chain', de: 'Super Plus · Verstärkte Steuerkette', ru: 'Бензин (АИ-98) · Усиленная цепь ГРМ' } }
+                ],
+                note: { en: 'Heavily upgraded Mahle forged-piston GTi block — far more robust than early 2007–2012 Prince engines.', de: 'Stark überarbeiteter Block mit Mahle-Schmiedekolben — deutlich haltbarer als frühe THP-Motoren.', ru: 'Серьёзно доработанный мотор с коваными поршнями Mahle — намного крепче ранних THP.' }
+              },
+              forcedInduction: '@turboHotHatch', injection: '@directInjPetrol'
+            },
             score: 7.7,
             badges: {
               en: ['Forged Mahle Pistons', '8–10k km Oil Service'],
@@ -10641,6 +11892,16 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '~40,000 km · 3 yrs', action: { en: 'Iridium Performance Spark Plugs & Ignition Coils Check', de: 'Sport-Zündkerzen wechseln & Zündspulen prüfen', ru: 'Спортивные свечи зажигания и проверка катушек' }, cost: '€180–280' },
+                { when: '~60,000 km · 4 yrs', action: { en: 'MCM 6-Speed + Torsen LSD Gearbox Oil Change', de: 'Getriebe- & Torsen-Sperren-Öl wechseln', ru: 'Замена масла в КПП с блокировкой Torsen' }, cost: '€150–240' }
+              ],
+              critical: [
+                { when: '60–100k km · Wear', action: { en: '380 mm Alcon Two-Piece Front Brake Discs & Caliper Pistons', de: '380 mm Alcon-Sportbremsscheiben vorn & Bremssattelkolben', ru: 'Передние составные диски Alcon 380 мм и поршни суппортов' }, cost: '€1,100–1,650', risk: { en: 'Seized aluminium caliper pistons & warped discs', de: 'Festgehende Bremssattelkolben & rubbelnde Scheiben', ru: 'Заклинивание поршней суппорта и биение дисков' }, damage: '€2,000–2,800' },
+                { when: '90–140k km · 6–10 yrs', action: { en: 'Intake Valve Carbon Cleaning & High-Pressure Fuel Pump (HPFP)', de: 'Einlassventile entkoken & Hochdruckpumpe (HDP) prüfen', ru: 'Чистка клапанов от нагара и проверка ТНВД' }, cost: '€450–900', risk: { en: 'Boost cuts, misfires & cold-start hesitation', de: 'Zündaussetzer, Ladedruck-Abbruch & Kaltstartprobleme', ru: 'Пропуски зажигания и падение давления наддува' }, damage: '€1,200–1,800' }
+              ]
+            },
             score: 5.6,
             badges: {
               en: ['€1,000+ 380 mm Front Discs', '19" Performance Tyres & 10k Oil'],
@@ -10673,7 +11934,76 @@ const CAR_ROSTER = [
     drivetrain: 'FWD',
     image: 'assets/ford-mondeo-2012.png',
     defaultEngineId: '1.6-ecoboost',
-    sharedBuyerFit: {
+    sharedSpecs: {
+      rustProtection: '@rustGood',
+      suspensionWear: '@suspMultiLink',
+      starterAlternator: '@starter12v',
+      electronicsRisk: '@elecLowMod',
+      rideTuning: { en: 'Supple / Autobahn-Ready', de: 'Komfortabel / Autobahn', ru: 'Мягкая / Трассовая' },
+      highwayNoise: { en: '~68 dB · Quiet', de: '~68 dB · Sehr leise', ru: '~68 дБ · Тихо' },
+      cabinMaterials: { en: 'Solid Mid-Size Trim', de: 'Solide Mittelklasse', ru: 'Добротный D-класс' },
+      controls: '@physButtons',
+      turningCircle: '11.6 m',
+      visibility: { en: 'Good Forward · Long Rear', de: 'Gut vorn · Langes Heck', ru: 'Хорошо спереди · Длинный кузов' },
+      euroNcap: '★★★★★ (2007)',
+      safetyTech: { en: '✓ ESP · ✓ 7 Airbags (Knee)', de: '✓ ESP · ✓ 7 Airbags (Knie)', ru: '✓ ESP · ✓ 7 подушек' },
+      rearRoom: { en: 'Huge Limousine Space', de: 'Riesig (Oberklasse-Niveau)', ru: 'Огромный простор сзади' },
+      isofixEntry: { en: '✓ 2× ISOFIX · Wide Doors', de: '✓ 2× ISOFIX · Breite Türen', ru: '✓ 2× ISOFIX · Широкие двери' },
+      bootVolume: '540 L / 1,460 L',
+      seatUtility: { en: '60/40 Huge Hatchback Lid', de: '60/40 Große Heckklappe', ru: '60/40 Огромный лифтбек' },
+      payloadRoof: '540 kg · 75 kg',
+      driveline: 'FWD',
+      chassisFeel: { en: 'Class-Best Steering', de: 'Klassenbeste Lenkung', ru: 'Эталонная управляемость' },
+      tractionDiff: { en: 'FWD · Open Diff', de: 'FWD · Offen', ru: 'FWD · Своб. дифф.' },
+      braking1000: '~36.0 m',
+      brakeSetup: '@discs4',
+      valueRetention: '@retMod',
+      resaleDemand: '@demSteady'
+    },
+    sharedDossierBreakdowns: {
+      transmissionDriveline: { gearbox: '@gbManual6Ford', clutchDmf: '@clutchDmf', driveline: '@driveFwd' },
+      buildQualityRust: { rustProtection: '@rustGalvanized12y', suspensionWear: '@suspMultiLink' },
+      electronicsReliability: { starterAlternator: '@starterStandard12v', electronicsRisk: '@elecSimpleEps' },
+      rideNoiseComfort: {
+        rideTuning: { specs: [{ k: 'damperSetup', v: { en: 'Long-Wheelbase Control-Blade Multi-Link Rear', de: 'Langer Radstand · Control-Blade-Mehrlenker-HA', ru: 'Длинная база · Задняя многорычажка Control Blade' } }, { k: 'seatSupport', v: { en: 'Wide Long-Distance Seats (Heated/Ventilated Opt.)', de: 'Breite Langstrecken-Sitze (Optional belüftet)', ru: 'Широкие кресла для дальних поездок' } }], note: { en: 'Soaks up motorway miles with executive-class composure.', de: 'Fährt sich auf langen Autobahnetappen ausgesprochen ruhig und erwachsen.', ru: 'Поглощает трассовые километры с комфортом бизнес-класса.' } },
+        highwayNoise: { specs: [{ k: 'cabinNoise130', v: { en: '~68 dB(A) at 130 km/h (Quiet Cruiser)', de: '~68 dB(A) bei 130 km/h (Sehr ruhig)', ru: '~68 дБ(А) при 130 км/ч (тихий круизер)' } }, { k: 'acousticGlass', v: { en: 'Good Soundproofing · Low Wind Noise', de: 'Gute Dämmung · Wenig Windgeräusche', ru: 'Хорошая шумоизоляция · Минимум шума ветра' } }], note: { en: 'One of the quietest mainstream family cars of its generation.', de: 'Eines der ruhigsten Familienautos seiner Generation.', ru: 'Один из самых тихих семейных автомобилей своего времени.' } }
+      },
+      interiorQualityFeatures: {
+        cabinMaterials: { specs: [{ k: 'dashTrim', v: { en: 'Soft-Touch Dash · Convers+ Color Cluster (Titanium)', de: 'Soft-Touch-Cockpit · Convers+-Display (Titanium)', ru: 'Мягкая панель · Экран Convers+ (Titanium)' } }, { k: 'buildFit', v: { en: 'Solid German Build (Genk Plant)', de: 'Solide Verarbeitung (Werk Genk)', ru: 'Добротная европейская сборка' } }], note: { en: 'Titanium trims feel noticeably more upscale than base Trend models.', de: 'Titanium-Ausstattungen wirken deutlich hochwertiger als einfache Trend-Versionen.', ru: 'Версии Titanium ощущаются заметно богаче базовых.' } },
+        controls: '@controlsPhys'
+      },
+      visibilityManeuverability: {
+        turningCircle: { specs: [{ k: 'turningDiam', v: '11.6 m' }, { k: 'bodyDimensions', v: '4,778 × 1,886 mm' }], note: { en: 'Big 4.78 m × 1.89 m footprint feels huge on highways, tight in old European garages.', de: 'Mit 4,78 m × 1,89 m sehr stattlich — braucht in engen Parkhäusern etwas Platz.', ru: 'Крупный кузов (4.78 × 1.89 м) — простор на трассе, но аккуратность в тесных дворах.' } },
+        visibility: { specs: [{ k: 'sightlines', v: { en: 'Good Forward · Long Sloping Liftback Rear', de: 'Gut vorn · Langes Fließheck hinten', ru: 'Хорошо спереди · Длинная корма лифтбека' } }, { k: 'parkingAids', v: { en: 'Front & Rear Parking Sensors Common', de: 'Parksensoren vorn & hinten weit verbreitet', ru: 'Парктроники спереди и сзади часто в базе' } }], note: { en: 'Front/rear sensors are very helpful given the 4.78 m length.', de: 'Parksensoren sind bei 4,78 m Außenlänge sehr hilfreich.', ru: 'Парктроники сильно упрощают маневрирование.' } }
+      },
+      safetyProtection: {
+        euroNcap: { specs: [{ k: 'ncapOverall', v: '★★★★★ (2007)' }, { k: 'ncapBreakdown', v: { en: '35/37 Adult · 4★ Child · 2★ Pedestrian', de: '35/37 Erwachsene · 4★ Kinder · 2★ Fußgänger', ru: '35/37 Взрослые · 4★ Дети · 2★ Пешеходы' } }, { k: 'airbagsCount', v: { en: '7 Airbags (incl. Driver Knee Airbag)', de: '7 Airbags (inkl. Fahrer-Knieairbag)', ru: '7 подушек (вкл. коленную водителя)' } }], note: { en: 'Heavy, wide Euro-platform shell with 7 standard airbags.', de: 'Schwere, breite Karosserie mit 7 serienmäßigen Airbags.', ru: 'Тяжёлый крепкий кузов и 7 подушек уже в базе.' } },
+        safetyTech: { specs: [{ k: 'activeAssists', v: { en: '✓ ESP Standard · Optional ACC / Blind-Spot (FL)', de: '✓ ESP Serie · Optional ACC & Totwinkel (Facelift)', ru: '✓ ESP в базе · Опционально ACC / слепые зоны' } }], note: { en: '2011+ facelift models offer rare-for-its-era blind-spot and lane warnings.', de: 'Facelift-Modelle ab 2011 bieten optional Totwinkel- und Spurwarner.', ru: 'Рестайлинг с 2011 года добавил контроль слепых зон.' } }
+      },
+      passengerSpaceErgonomics: {
+        rearRoom: { specs: [{ k: 'wheelbase', v: '2,850 mm (Limousine-Class)' }, { k: 'rearLegHead', v: { en: 'Cavernous Rear Legroom & 3-Across Width', de: 'Riesige Beinfreiheit & volle 3er-Breite im Fond', ru: 'Огромный запас для ног и ширина на троих' } }], note: { en: '2,850 mm wheelbase beats many E-segment luxury sedans for back-seat legroom.', de: '2.850 mm Radstand bieten mehr Beinfreiheit als viele Oberklasse-Limousinen.', ru: 'База 2850 мм дарит простор уровня бизнес-класса.' } },
+        isofixEntry: { specs: [{ k: 'isofixAccess', v: { en: '✓ 2× ISOFIX · Wide Rear Doors · Easy Child Seats', de: '✓ 2× ISOFIX · Breite Fondtüren', ru: '✓ 2× ISOFIX · Широкие задние двери' } }], note: { en: 'Swallows bulky rear-facing child seats without cramping front passengers.', de: 'Schluckt selbst große Reboarder-Kindersitze ohne Enge vorn.', ru: 'Легко вмещает крупные детские кресла, не стесняя передних пассажиров.' } }
+      },
+      interiorBootSpace: {
+        bootVolume: { specs: [{ k: 'bootUpDown', v: '540 L / 1,460 L (Liftback)' }, { k: 'loadSill', v: { en: '~680 mm · Massive Wide Hatch Opening', de: '~680 mm · Riesige Fließheck-Öffnung', ru: '~680 мм · Огромный проём лифтбека' } }], note: { en: 'Massive 540 L liftback boot swallows strollers and furniture almost like an estate.', de: 'Riesiger 540-L-Kofferraum mit großer Heckklappe — fast auf Kombi-Niveau.', ru: 'Гигантский 540-литровый багажник лифтбека почти не уступает универсалу.' } },
+        seatUtility: { specs: [{ k: 'foldingMech', v: { en: '60/40 Split-Fold Rear Bench', de: '60/40 geteilt umklappbare Rückbank', ru: 'Складывание спинки 60/40' } }], note: { en: 'Huge 1,460 L flat cargo bay when folded.', de: 'Enorme 1.460 L Ladevolumen bei umgeklappter Bank.', ru: 'Огромные 1460 л при сложенном заднем ряде.' } }
+      },
+      payloadTowing: {
+        payloadRoof: { specs: [{ k: 'maxPayload', v: '~540 kg' }, { k: 'roofLoad', v: '75 kg' }], note: { en: 'Heavy-duty family payload.', de: 'Hohe Familien-Zuladung.', ru: 'Отличная грузоподъёмность для всей семьи.' } },
+        towingBraked: '@towingDynamic'
+      },
+      accelerationOvertaking: { sprint0100: '@sprintDynamic', topSpeed: '@vmaxDynamic' },
+      midRangeTorquePassing: { peakTorque: '@torqueDynamic', passingPunch: '@passingDynamic' },
+      handlingAgility: {
+        chassisFeel: { specs: [{ k: 'kerbWeight', v: '1,435–1,610 kg' }, { k: 'handlingChar', v: { en: 'Hydraulic Steering Feedback · Benchmark D-Segment Agility', de: 'Direkte hydraulische Lenkung · Klassenbeste Dynamik', ru: 'Честный гидроусилитель · Эталон рулёжки D-класса' } }, { k: 'tyreSizes', v: '215/55 R16 · 235/45 R17' }], note: { en: 'Widely considered the best-handling mainstream family car of its era.', de: 'Gilt als der handlichste Mittelklassewagen seiner Generation.', ru: 'Признан лучшим по управляемости семейным авто своего поколения.' } },
+        tractionDiff: '@tractionFwdOpen'
+      },
+      brakingPerformance: { braking1000: '@brakingDistDynamic', brakeSetup: '@brakeSetupDiscs4' },
+      efficiencyFuel: { realWorldFuel: '@fuelDynamic', tankRange: '@tankDynamic' },
+      taxInsuranceNorm: { euroNorm: '@euroDynamic', taxInsurance: '@taxInsDynamic' },
+      maintenanceRepairCosts: { timingDrive: '@timingDynamic', serviceWear: '@serviceDynamic' },
+      depreciationResale: { valueRetention: '@retentionDynamic', resaleDemand: '@demandDynamic' }
+    },    sharedBuyerFit: {
       cards: {
         mondeoCabinBoot: {
           en: 'You want mid-size family space: Wide rear legroom and a huge 528–550 L boot handle road trips and family gear with ease.',
@@ -12199,6 +13529,14 @@ const CAR_ROSTER = [
     engines: [
       {
         id: '1.6-ecoboost',
+        specOverrides: {
+          engineName: { en: '1.6L EcoBoost Turbo', de: '1.6L EcoBoost Turbo', ru: '1.6L EcoBoost Турбо' },
+          forcedInduction: '@turbo', injection: '@direct', gearbox: '@manual6', clutchDmf: '@clutchDmf',
+          towingBraked: '1,600 kg', sprint0100: '9.3 s', topSpeed: '215 km/h', peakTorque: '240 Nm @ 1,600',
+          passingPunch: { en: 'Punchy Turbo Mid-Range', de: 'Kräftiger Turbo-Durchzug', ru: 'Бодрая тяга с низов' },
+          realWorldFuel: '7.4–8.4 L/100 km', tankRange: '70 L · ~890 km', euroNorm: 'Euro 5',
+          taxInsurance: '@tierMod', timingDrive: '@belt', serviceWear: '@tierMod'
+        },
         dossierGroup: 'petrol-6mt',
         buyerFitGroup: 'turbo-petrol',
         buyerFitOverrides: {
@@ -12283,6 +13621,19 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '1.6L EcoBoost Inline-4 Turbo (JTBA)', de: '1.6L EcoBoost Reihenvierzylinder Turbo (JTBA)', ru: '1.6L EcoBoost рядный 4-цил. турбо (JTBA)' } },
+                  { k: 'displacement', v: '1,596 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 16V DOHC', de: '4 Zylinder · 16V DOHC', ru: '4 цилиндра · 16V DOHC' } },
+                  { k: 'output', v: { en: '118 kW (160 HP)', de: '118 kW (160 PS)', ru: '118 кВт (160 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Petrol · Dry Timing Belt', de: 'Benzin · Trockener Zahnriemen', ru: 'Бензин · Сухой ремень ГРМ' } }
+                ],
+                note: { en: 'Punchy 160 HP downsized turbo; verify coolant-hose recall & timely belt replacement.', de: 'Durchzugsstarker Turbo; Kühlmittelschlauch-Rückruf und Zahnriemenwechsel unbedingt prüfen.', ru: 'Бодрый турбомотор — важно проверить замену патрубков охлаждения и ремня ГРМ.' }
+              },
+              forcedInduction: '@turboPetrol', injection: '@directInjPetrol'
+            },
             score: 6.8,
             badges: {
               en: ['Coolant Line Recall', 'Watch Degas Hose & Cooling'],
@@ -12631,6 +13982,15 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '200k km · 10 yrs', action: { en: 'Timing Belt & Water Pump Kit', de: 'Zahnriemen & Wasserpumpe wechseln', ru: 'Замена ремня ГРМ и помпы' }, cost: '€550–850' },
+                { when: '~120,000 km · 8 yrs', action: { en: 'MMT6 6-Speed Gearbox Oil & Spark Plugs', de: '6-Gang Getriebeöl & Zündkerzen wechseln', ru: 'Масло в 6-ст. МКПП и свечи' }, cost: '€220–340' }
+              ],
+              critical: [
+                { when: '100–160k km · 7–11 yrs', action: { en: 'Coolant Return Hose & Expansion Tank Upgrade', de: 'Kühlmittel-Rücklaufleitung & Ausgleichsbehälter (Rückruf)', ru: 'Патрубок охлаждения и расширительный бачок' }, cost: '€180–320', risk: { en: 'Sudden coolant loss causes severe overheating & cracked head', de: 'Plötzlicher Kühlmittelverlust führt zu Überhitzung & Kopfriss', ru: 'Внезапная утечка антифриза и перегрев ГБЦ' }, damage: '€2,800–4,500' }
+              ]
+            },
             score: 6.8,
             badges: {
               en: ['Cheap Chassis Wear Parts', 'Watch Cooling & Turbo Plumbing'],
@@ -12650,6 +14010,14 @@ const CAR_ROSTER = [
       },
       {
         id: '1.6-tivct',
+        specOverrides: {
+          engineName: { en: '1.6L Ti-VCT NA', de: '1.6L Ti-VCT Sauger', ru: '1.6L Ti-VCT Атм.' },
+          forcedInduction: '@na', injection: '@port', gearbox: '@manual5', clutchDmf: '@singleClutch',
+          towingBraked: '1,100 kg', sprint0100: '12.3 s', topSpeed: '195 km/h', peakTorque: '160 Nm @ 4,100',
+          passingPunch: { en: 'Modest · Heavy Body', de: 'Gemächlich · Schweres Auto', ru: 'Спокойно · Тяжёлый кузов' },
+          realWorldFuel: '7.5–8.3 L/100 km', tankRange: '70 L · ~880 km', euroNorm: 'Euro 5',
+          taxInsurance: '@tierLowMod', timingDrive: '@belt', serviceWear: '@tierLow'
+        },
         dossierGroup: 'petrol-5mt',
         buyerFitGroup: 'na-petrol',
         isDefault: false,
@@ -12731,6 +14099,19 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '1.6L Duratec Ti-VCT Inline-4 NA (KGBA)', de: '1.6L Duratec Ti-VCT Reihenvierzylinder Sauger (KGBA)', ru: '1.6L Duratec Ti-VCT рядный 4-цил. атмосферный (KGBA)' } },
+                  { k: 'displacement', v: '1,596 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 16V DOHC', de: '4 Zylinder · 16V DOHC', ru: '4 цилиндра · 16V DOHC' } },
+                  { k: 'output', v: { en: '88 kW (120 HP)', de: '88 kW (120 PS)', ru: '88 кВт (120 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Petrol · Dry Timing Belt', de: 'Benzin · Trockener Zahnriemen', ru: 'Бензин · Сухой ремень ГРМ' } }
+                ],
+                note: { en: 'Simple, rugged naturally aspirated petrol — slow in the big Mondeo, but very cheap to keep running.', de: 'Schlichter, robuster Sauger — im großen Mondeo gemütlich, dafür sehr wartungsfreundlich.', ru: 'Простой и выносливый атмосферник — неспешный, но максимально дешёвый в ремонте.' }
+              },
+              forcedInduction: '@naNoTurbo', injection: '@portInj'
+            },
             score: 8.6,
             badges: {
               en: ['Port-Injected NA', 'Simple Low-Stress 16V Block'],
@@ -12939,6 +14320,7 @@ const CAR_ROSTER = [
             }
           },
           transmissionDriveline: {
+            specBreakdown: { gearbox: '@gbManual5Ford', clutchDmf: '@clutchSingle' },
             score: 8.7,
             badges: {
               en: ['Simple 5-Speed Manual', 'Cheap Clutch Kit'],
@@ -13067,6 +14449,15 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '160k km · 8 yrs', action: { en: 'Timing Belt & Water Pump Replacement', de: 'Zahnriemen & Wasserpumpe wechseln', ru: 'Замена ремня ГРМ и помпы' }, cost: '€480–750' },
+                { when: '~120,000 km · 8 yrs', action: { en: 'IB5 5-Speed Gearbox Oil Change', de: '5-Gang Schaltgetriebeöl wechseln', ru: 'Замена масла в 5-ст. МКПП' }, cost: '€110–170' }
+              ],
+              critical: [
+                { when: '150–210k km · 10–14 yrs', action: { en: 'Rear Control-Blade Trailing-Arm Bushings', de: 'Hinterachs-Längslenkerlager (Control-Blade)', ru: 'Сайлентблоки задних продольных рычагов' }, cost: '€280–480', risk: { en: 'Rear clunking & rapid inner tyre wear', de: 'Poltern hinten & starker Reifenverschleiß', ru: 'Стук сзади и быстрый износ резины' }, damage: '€650–950' }
+              ]
+            },
             score: 8.7,
             badges: {
               en: ['Very Cheap Ford Parts', 'Simple Belt & NA Maintenance'],
@@ -13086,6 +14477,14 @@ const CAR_ROSTER = [
       },
       {
         id: '2.0-duratec',
+        specOverrides: {
+          engineName: { en: '2.0L Duratec NA', de: '2.0L Duratec Sauger', ru: '2.0L Duratec Атм.' },
+          forcedInduction: '@na', injection: '@port', gearbox: '@manual5', clutchDmf: '@singleClutch',
+          towingBraked: '1,400 kg', sprint0100: '9.9 s', topSpeed: '210 km/h', peakTorque: '185 Nm @ 4,500',
+          passingPunch: { en: 'Smooth · Needs Revs', de: 'Linear · Braucht Drehzahl', ru: 'Ровно · Нужны обороты' },
+          realWorldFuel: '8.0–9.0 L/100 km', tankRange: '70 L · ~820 km', euroNorm: 'Euro 4 / 5',
+          taxInsurance: '@tierMod', timingDrive: '@chain', serviceWear: '@tierLow'
+        },
         dossierGroup: 'petrol-5mt',
         buyerFitGroup: 'na-petrol',
         buyerFitOverrides: {
@@ -13170,6 +14569,19 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '2.0L Duratec HE Inline-4 NA (AOBA · Mazda L-Block)', de: '2.0L Duratec HE Reihenvierzylinder Sauger (AOBA · Mazda-Basis)', ru: '2.0L Duratec HE рядный 4-цил. атмосферный (база Mazda L)' } },
+                  { k: 'displacement', v: '1,999 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 16V DOHC', de: '4 Zylinder · 16V DOHC', ru: '4 цилиндра · 16V DOHC' } },
+                  { k: 'output', v: { en: '107 kW (145 HP)', de: '107 kW (145 PS)', ru: '107 кВт (145 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Petrol · Timing Chain', de: 'Benzin · Steuerkette', ru: 'Бензин · Цепь ГРМ' } }
+                ],
+                note: { en: 'Mazda-engineered timing-chain Duratec — the safest, lowest-risk petrol engine in the Mk4 Mondeo.', de: 'Mazda-entwickelter Steuerketten-Sauger — der risikoärmste Benziner im Mondeo Mk4.', ru: 'Атмосферник с цепью ГРМ (база Mazda) — самый надёжный бензиновый мотор Mondeo Mk4.' }
+              },
+              forcedInduction: '@naNoTurbo', injection: '@portInj'
+            },
             score: 9.2,
             badges: {
               en: ['2.0 Chain-Driven NA', 'Zero Turbo / DI Issues'],
@@ -13378,6 +14790,7 @@ const CAR_ROSTER = [
             }
           },
           transmissionDriveline: {
+            specBreakdown: { gearbox: '@gbManual5Ford', clutchDmf: '@clutchSingle' },
             score: 8.8,
             badges: {
               en: ['Robust 5-Speed Manual', 'Long-Lasting Clutch'],
@@ -13506,6 +14919,14 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '~100,000 km · 6 yrs', action: { en: 'Spark Plugs, Thermostat & MTX-75 Gearbox Fluid', de: 'Zündkerzen, Thermostat & Getriebeöl wechseln', ru: 'Свечи, термостат и масло в МКПП' }, cost: '€240–380' }
+              ],
+              critical: [
+                { when: '150–220k km · 10–14 yrs', action: { en: 'Intake Manifold Swirl-Flap Bushings & Rear Trailing-Arm Bushes', de: 'Drallklappen-Lagerung Ansaugbrücke & Hinterachs-Buchsen', ru: 'Вихревые заслонки впуска и задние сайлентблоки' }, cost: '€350–650', risk: { en: 'Rattling intake manifold & uneven rear tyre wear', de: 'Klappernde Ansaugbrücke & hoher Reifenverschleiß', ru: 'Стук впуска и ускоренный износ шин' }, damage: '€1,200–1,800' }
+              ]
+            },
             score: 8.6,
             badges: {
               en: ['Abundant Cheap Ford Parts', 'No Turbo / No DPF / No DMF'],
@@ -13525,6 +14946,14 @@ const CAR_ROSTER = [
       },
       {
         id: '2.0-ecoboost',
+        specOverrides: {
+          engineName: { en: '2.0L EcoBoost Turbo', de: '2.0L EcoBoost Turbo', ru: '2.0L EcoBoost Турбо' },
+          forcedInduction: '@turbo', injection: '@direct', gearbox: '@dsg6Wet', clutchDmf: '@dualClutchWet',
+          towingBraked: '1,600 kg', sprint0100: '7.9 s', topSpeed: '232 km/h', peakTorque: '300 Nm @ 1,750',
+          passingPunch: { en: 'Very Strong Autobahn', de: 'Sehr starker Durchzug', ru: 'Мощная тяга на трассе' },
+          realWorldFuel: '8.5–9.8 L/100 km', tankRange: '70 L · ~760 km', euroNorm: 'Euro 5',
+          taxInsurance: '@tierModHigh', timingDrive: '@chain', serviceWear: '@tierModHigh'
+        },
         dossierGroup: 'petrol-powershift',
         buyerFitGroup: 'turbo-petrol',
         isDefault: false,
@@ -13606,6 +15035,19 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '2.0L EcoBoost Inline-4 Turbo (TNBA / TPBA)', de: '2.0L EcoBoost Reihenvierzylinder Turbo (TNBA / TPBA)', ru: '2.0L EcoBoost рядный 4-цил. турбо (TNBA / TPBA)' } },
+                  { k: 'displacement', v: '1,999 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 16V DOHC', de: '4 Zylinder · 16V DOHC', ru: '4 цилиндра · 16V DOHC' } },
+                  { k: 'output', v: { en: '149–176 kW (203 / 240 HP)', de: '149–176 kW (203 / 240 PS)', ru: '149–176 кВт (203 / 240 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Petrol · Timing Chain', de: 'Benzin · Steuerkette', ru: 'Бензин · Цепь ГРМ' } }
+                ],
+                note: { en: 'Fast 203/240 HP timing-chain turbo; main ownership risk is the PowerShift DCT gearbox rather than the block.', de: 'Schneller Steuerketten-Turbo; Hauptrisiko ist meist das PowerShift-Doppelkupplungsgetriebe.', ru: 'Быстрый цепной турбомотор; главный узел риска — робот PowerShift.' }
+              },
+              forcedInduction: '@turboPetrol', injection: '@directInjPetrol'
+            },
             score: 6.2,
             badges: {
               en: ['Check Exhaust Manifold Studs', '203 HP / 240 HP Tunes'],
@@ -13954,6 +15396,14 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '60,000 km · 3 yrs', action: { en: 'PowerShift Wet-DCT Fluid & External Filter (Strictly Mandatory)', de: 'PowerShift-Getriebeöl & Filter wechseln (Strikt alle 60.000 km)', ru: 'Масло и фильтр робота PowerShift (строго раз в 60 тыс. км)' }, cost: '€320–480' }
+              ],
+              critical: [
+                { when: '120–180k km · 8–12 yrs', action: { en: 'PowerShift Wet-Clutch Damper Springs & Mechatronics', de: 'PowerShift-Kupplungsdämpfer & Mechatronik', ru: 'Демпфер сцепления и мехатроник PowerShift' }, cost: '€1,600–2,600', risk: { en: 'Harsh shifting, plastic damper fragments & gearbox failure', de: 'Ruckartiges Schalten & kapitaler Getriebeschaden', ru: 'Рывки при переключении и выход КПП из строя' }, damage: '€3,500–5,500' }
+              ]
+            },
             score: 5.9,
             badges: {
               en: ['Costly PowerShift Oil & Clutches', 'Expensive DI Turbo & Manifold'],
@@ -13973,6 +15423,14 @@ const CAR_ROSTER = [
       },
       {
         id: '2.3-duratec',
+        specOverrides: {
+          engineName: { en: '2.3L Duratec NA', de: '2.3L Duratec Sauger', ru: '2.3L Duratec Атм.' },
+          forcedInduction: '@na', injection: '@port', gearbox: '@auto6', clutchDmf: '@torqueConv',
+          towingBraked: '1,600 kg', sprint0100: '10.5 s', topSpeed: '207 km/h', peakTorque: '208 Nm @ 4,200',
+          passingPunch: { en: 'Smooth Auto Cruiser', de: 'Sanfter Wandler-Gleiter', ru: 'Плавный автомат-круизер' },
+          realWorldFuel: '9.5–10.8 L/100 km', tankRange: '70 L · ~690 km', euroNorm: 'Euro 4 / 5',
+          taxInsurance: '@tierModHigh', timingDrive: '@chain', serviceWear: '@tierLowMod'
+        },
         dossierGroup: 'petrol-conv-auto',
         buyerFitGroup: 'na-petrol',
         buyerFitOverrides: {
@@ -14057,6 +15515,19 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '2.3L Duratec HE Inline-4 NA (SEBA · Mazda L3)', de: '2.3L Duratec HE Reihenvierzylinder Sauger (SEBA · Mazda-Basis)', ru: '2.3L Duratec HE рядный 4-цил. атмосферный (база Mazda L3)' } },
+                  { k: 'displacement', v: '2,261 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 16V DOHC', de: '4 Zylinder · 16V DOHC', ru: '4 цилиндра · 16V DOHC' } },
+                  { k: 'output', v: { en: '118 kW (161 HP)', de: '118 kW (161 PS)', ru: '118 кВт (161 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Petrol · Timing Chain', de: 'Benzin · Steuerkette', ru: 'Бензин · Цепь ГРМ' } }
+                ],
+                note: { en: 'Thirsty but ultra-durable combination: naturally aspirated timing-chain engine + Japanese Aisin 6-speed torque auto.', de: 'Durstig, aber extrem haltbar: Steuerketten-Sauger plus japanische Aisin-6-Gang-Wandlerautomatik.', ru: 'Прожорливая, но супернадёжная связка: цепной атмосферник + 6-ст. автомат Aisin.' }
+              },
+              forcedInduction: '@naNoTurbo', injection: '@portInj'
+            },
             score: 8.9,
             badges: {
               en: ['Naturally Aspirated Port Injection', '2.3 Chain-Driven NA'],
@@ -14262,6 +15733,7 @@ const CAR_ROSTER = [
             }
           },
           transmissionDriveline: {
+            specBreakdown: { gearbox: '@gbAuto6Ford', clutchDmf: '@clutchTorqueConv' },
             score: 8.9,
             badges: {
               en: ['Reliable Aisin 6-Speed Auto', 'Avoids PowerShift DCT Risk'],
@@ -14390,6 +15862,14 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '~70,000 km · 5 yrs', action: { en: 'Aisin TF-80SC 6-Speed Automatic ATF Flush', de: 'Aisin 6-Gang-Wandlerautomatik ATF-Ölwechsel', ru: 'Замена масла ATF в 6-ст. автомате Aisin' }, cost: '€240–380' }
+              ],
+              critical: [
+                { when: '150–220k km · 10–14 yrs', action: { en: 'Rear Control-Blade Bushings & Valve-Body Solenoid Wear (If ATF Neglected)', de: 'Hinterachs-Buchsen & Wandler-Ventilkörper (bei vernachlässigtem ATF)', ru: 'Задние сайлентблоки и гидроблок АКПП (при старом ATF)' }, cost: '€350–850', risk: { en: 'Flaring shifts & uneven rear tyre wear', de: 'Schaltstöße & einseitiger Reifenverschleiß', ru: 'Пинки при переключениях и износ шин' }, damage: '€1,600–2,400' }
+              ]
+            },
             score: 8.0,
             badges: {
               en: ['Low Unscheduled Repair Risk', 'Cheap Parts + Routine 6-AT Oil'],
@@ -14409,6 +15889,14 @@ const CAR_ROSTER = [
       },
       {
         id: '2.5t',
+        specOverrides: {
+          engineName: { en: '2.5T 5-Cyl Turbo', de: '2.5T 5-Zyl. Turbo', ru: '2.5T 5-цил. Турбо' },
+          forcedInduction: '@turbo', injection: '@port', gearbox: '@manual6', clutchDmf: '@clutchDmf',
+          towingBraked: '1,800 kg', sprint0100: '7.5 s', topSpeed: '245 km/h', peakTorque: '320 Nm @ 1,500',
+          passingPunch: { en: 'Effortless 5-Cyl Surge', de: 'Satter 5-Zylinder-Schub', ru: 'Мощная тяга 5 цилиндров' },
+          realWorldFuel: '9.8–11.5 L/100 km', tankRange: '70 L · ~650 km', euroNorm: 'Euro 4',
+          taxInsurance: '@tierHigh', timingDrive: '@belt', serviceWear: '@tierModHigh'
+        },
         dossierGroup: 'petrol-6mt',
         buyerFitGroup: 'turbo-petrol',
         buyerFitOverrides: {
@@ -14499,6 +15987,19 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '2.5L Duratec ST Inline-5 Turbo (HUBA · Volvo T5)', de: '2.5L Duratec ST Reihenfünfzylinder Turbo (HUBA · Volvo T5)', ru: '2.5L Duratec ST рядный 5-цил. турбо (Volvo T5)' } },
+                  { k: 'displacement', v: '2,521 cc' },
+                  { k: 'cylinders', v: { en: '5 Cylinders · 20V DOHC', de: '5 Zylinder · 20V DOHC', ru: '5 цилиндров · 20V DOHC' } },
+                  { k: 'output', v: { en: '162 kW (220 HP)', de: '162 kW (220 PS)', ru: '162 кВт (220 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Petrol · Timing Belt', de: 'Benzin · Zahnriemen', ru: 'Бензин · Ремень ГРМ' } }
+                ],
+                note: { en: 'Charismatic Volvo-built 5-cylinder turbo with port injection — strong & melodic when left stock.', de: 'Charakterstarker Volvo-Fünfzylinder mit Saugrohreinspritzung — im Serienzustand sehr standfest.', ru: 'Харизматичный 5-цилиндровый мотор Volvo с распределённым впрыском — очень крепок в стоке.' }
+              },
+              forcedInduction: '@turboPetrol', injection: '@portInj'
+            },
             score: 8.1,
             badges: {
               en: ['Volvo 5-Cyl Block', 'Check PCV Oil Trap & Timing Belt'],
@@ -14835,6 +16336,14 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '200k km · 10 yrs', action: { en: 'Volvo 5-Cyl Timing Belt, Water Pump & PCV Oil-Trap Check', de: 'Zahnriemen, Wasserpumpe & Kurbelgehäuse-Entlüftung (PCV)', ru: 'Ремень ГРМ, помпа и проверка вентиляции картера (PCV)' }, cost: '€650–950' }
+              ],
+              critical: [
+                { when: '140–200k km · 10–14 yrs', action: { en: 'PCV Diaphragm Membrane & Dual-Mass Flywheel (DMF)', de: 'PCV-Membran (Ölfiltergehäuse) & Zweimassenschwungrad (ZMS)', ru: 'Мембрана маслоотделителя (PCV) и двухмассовый маховик' }, cost: '€450–1,600', risk: { en: 'Blown camshaft seals (oil leaks) or heavy DMF vibration', de: 'Herausgedrückte Simmerringe (Ölverlust) oder ZMS-Rasseln', ru: 'Выдавливание сальников (течь масла) или стук ДММ' }, damage: '€1,800–2,800' }
+              ]
+            },
             score: 6.3,
             badges: {
               en: ['Costly Volvo 5-Cyl Parts', 'PCV, Timing Belt & Heavy Tyres'],
@@ -14854,6 +16363,14 @@ const CAR_ROSTER = [
       },
       {
         id: '1.6-tdci',
+        specOverrides: {
+          engineName: { en: '1.6L TDCi Diesel', de: '1.6L TDCi Diesel', ru: '1.6L TDCi Дизель' },
+          forcedInduction: '@turbo', injection: '@commonRail', gearbox: '@manual6', clutchDmf: '@clutchDmf',
+          towingBraked: '1,200 kg', sprint0100: '11.9 s', topSpeed: '190 km/h', peakTorque: '270 Nm @ 1,750',
+          passingPunch: { en: 'Frugal Cruiser', de: 'Sparsamer Gleiter', ru: 'Экономичный круизер' },
+          realWorldFuel: '4.9–5.6 L/100 km', tankRange: '70 L · ~1,320 km', euroNorm: 'Euro 5 (DPF)',
+          taxInsurance: '@tierLowMod', timingDrive: '@belt', serviceWear: '@tierMod'
+        },
         dossierGroup: 'diesel-6mt',
         buyerFitGroup: 'diesel',
         buyerFitOverrides: {
@@ -14943,6 +16460,19 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '1.6L TDCi 8V Inline-4 Turbodiesel (T1BA · PSA DV6C)', de: '1.6L TDCi 8V Reihenvierzylinder Turbodiesel (T1BA · PSA DV6C)', ru: '1.6L TDCi 8V рядный 4-цил. турбодизель (PSA DV6C)' } },
+                  { k: 'displacement', v: '1,560 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 8V SOHC', de: '4 Zylinder · 8V SOHC', ru: '4 цилиндра · 8V SOHC' } },
+                  { k: 'output', v: { en: '85 kW (115 HP)', de: '85 kW (115 PS)', ru: '85 кВт (115 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Diesel · Timing Belt', de: 'Diesel · Zahnriemen', ru: 'Дизель · Ремень ГРМ' } }
+                ],
+                note: { en: 'Improved 8-valve PSA 1.6 diesel — far more reliable than older 16V versions with 1,300+ km tank range.', de: 'Überarbeiteter 8-Ventil-PSA-Diesel — deutlich haltbarer als frühe 16V-Versionen.', ru: 'Доработанный 8-клапанный дизель PSA — надёжнее старых 16V и невероятно экономичен.' }
+              },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi'
+            },
             score: 7.1,
             badges: {
               en: ['Updated 8v PSA DV6', '15k km Oil Rule'],
@@ -15279,6 +16809,14 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '180k km · 10 yrs', action: { en: 'Timing Belt, Water Pump & Diesel Fuel Filter', de: 'Zahnriemen, Wasserpumpe & Dieselfilter wechseln', ru: 'Ремень ГРМ, помпа и топливный фильтр' }, cost: '€520–800' }
+              ],
+              critical: [
+                { when: '140–200k km · 9–13 yrs', action: { en: 'Injector Copper Seals & DPF Soot Cleaning', de: 'Injektor-Kupferdichtungen & DPF-Reinigung', ru: 'Медные шайбы форсунок и чистка DPF' }, cost: '€350–700', risk: { en: 'Black carbon tar around injectors & oil sludge', de: 'Verkokung um die Injektoren & Ölschlamm-Risiko', ru: 'Прорыв газов и закоксовка масла' }, damage: '€1,600–2,500' }
+              ]
+            },
             score: 7.6,
             badges: {
               en: ['Cheap Filters & Chassis Parts', 'Budget Piezo Injectors & DPF'],
@@ -15298,6 +16836,14 @@ const CAR_ROSTER = [
       },
       {
         id: '1.8-tdci',
+        specOverrides: {
+          engineName: { en: '1.8L TDCi Diesel', de: '1.8L TDCi Diesel', ru: '1.8L TDCi Дизель' },
+          forcedInduction: '@turbo', injection: '@commonRail', gearbox: '@manual6', clutchDmf: '@clutchDmf',
+          towingBraked: '1,600 kg', sprint0100: '10.5 s', topSpeed: '200 km/h', peakTorque: '320 Nm @ 1,800',
+          passingPunch: { en: 'Old-School Turbo Lag', de: 'Spürbares Turboloch', ru: 'Заметная турбояма' },
+          realWorldFuel: '5.8–6.5 L/100 km', tankRange: '70 L · ~1,130 km', euroNorm: 'Euro 4 (✕ No DPF)',
+          taxInsurance: '@tierMod', timingDrive: '@wetBelt', serviceWear: '@tierMod'
+        },
         dossierGroup: 'diesel-6mt',
         buyerFitGroup: 'diesel',
         isDefault: false,
@@ -15379,6 +16925,19 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '1.8L Lynx TDCi Inline-4 Turbodiesel (QYBA)', de: '1.8L Lynx TDCi Reihenvierzylinder Turbodiesel (QYBA)', ru: '1.8L Lynx TDCi рядный 4-цил. турбодизель (QYBA)' } },
+                  { k: 'displacement', v: '1,753 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 8V SOHC (Cast-Iron Block)', de: '4 Zylinder · 8V SOHC (Graugussblock)', ru: '4 цилиндра · 8V SOHC (чугунный блок)' } },
+                  { k: 'output', v: { en: '74–92 kW (100 / 125 HP)', de: '74–92 kW (100 / 125 PS)', ru: '74–92 кВт (100 / 125 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Diesel · Upper Dry Belt + Lower Wet Belt', de: 'Diesel · Trocken- + Ölbad-Zahnriemen', ru: 'Дизель · Сухой + нижний ремень в масле' } }
+                ],
+                note: { en: 'Tough iron block with NO factory DPF, but post-2007 units use a lower wet timing belt that must be verified.', de: 'Robuster Gussblock ohne DPF, aber ab 2007 mit unterem Ölbad-Zahnriemen — Wechselhistorie prüfen.', ru: 'Крепкий чугунный блок без сажевого фильтра, но важно проверить замену нижнего ремня в масле.' }
+              },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi'
+            },
             score: 7.6,
             badges: {
               en: ['Cast-Iron Ford Block', 'Check Wet Belt Service'],
@@ -15717,6 +17276,14 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '150–180k km · 8 yrs', action: { en: 'Upper Dry Timing Belt + Lower Wet Timing Belt Kit', de: 'Oberen & unteren Ölbad-Zahnriemen komplett ersetzen', ru: 'Замена верхнего и нижнего (в масле) ремней ГРМ' }, cost: '€750–1,150' }
+              ],
+              critical: [
+                { when: '140–190k km · 9–13 yrs', action: { en: 'Lower Wet Belt Degradation & Dual-Mass Flywheel (DMF)', de: 'Unterer Ölbad-Zahnriemen & Zweimassenschwungrad (ZMS)', ru: 'Износ нижнего ремня в масле и маховика (ДММ)' }, cost: '€950–1,600', risk: { en: 'Snapped wet belt destroys engine valves instantly', de: 'Riss des unteren Riemens führt zum Motorschaden', ru: 'Обрыв нижнего ремня ведёт к встрече клапанов' }, damage: '€3,000–4,500' }
+              ]
+            },
             score: 7.2,
             badges: {
               en: ['No Factory DPF Upkeep', 'Pricey Wet Timing Belt & DMF'],
@@ -15736,6 +17303,14 @@ const CAR_ROSTER = [
       },
       {
         id: '2.0-tdci',
+        specOverrides: {
+          engineName: { en: '2.0L TDCi Diesel', de: '2.0L TDCi Diesel', ru: '2.0L TDCi Дизель' },
+          forcedInduction: '@turbo', injection: '@commonRail', gearbox: '@manual6', clutchDmf: '@clutchDmf',
+          towingBraked: '1,800 kg', sprint0100: '9.5 s', topSpeed: '210 km/h', peakTorque: '320–340 Nm @ 1,750',
+          passingPunch: { en: 'Effortless Autobahn', de: 'Souveräner Durchzug', ru: 'Уверенная тяга на трассе' },
+          realWorldFuel: '5.5–6.3 L/100 km', tankRange: '70 L · ~1,180 km', euroNorm: 'Euro 5 (DPF)',
+          taxInsurance: '@tierMod', timingDrive: '@belt', serviceWear: '@tierLowMod'
+        },
         dossierGroup: 'diesel-6mt',
         buyerFitGroup: 'diesel',
         isDefault: false,
@@ -15817,6 +17392,19 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '2.0L TDCi Inline-4 Turbodiesel (QXBA / UFBA · PSA DW10)', de: '2.0L TDCi Reihenvierzylinder Turbodiesel (PSA DW10)', ru: '2.0L TDCi рядный 4-цил. турбодизель (PSA DW10)' } },
+                  { k: 'displacement', v: '1,997 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 16V DOHC', de: '4 Zylinder · 16V DOHC', ru: '4 цилиндра · 16V DOHC' } },
+                  { k: 'output', v: { en: '103–120 kW (140 / 163 HP)', de: '103–120 kW (140 / 163 PS)', ru: '103–120 кВт (140 / 163 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Diesel · Dry Timing Belt', de: 'Diesel · Trockener Zahnriemen', ru: 'Дизель · Сухой ремень ГРМ' } }
+                ],
+                note: { en: 'Legendary PSA DW10 diesel — the sweet-spot Mondeo engine, routinely crossing 350,000–450,000 km.', de: 'Legendärer PSA-DW10-Diesel — der beste Mondeo-Motor, regelmäßig über 350.000–450.000 km.', ru: 'Легендарный дизель PSA DW10 — лучший мотор для Mondeo с ресурсом 350–450 тыс. км.' }
+              },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi'
+            },
             score: 8.8,
             badges: {
               en: ['PSA DW10 Workhorse', 'Robust Cast-Iron Block'],
@@ -16154,6 +17742,15 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '200k km · 10 yrs', action: { en: 'Dry Timing Belt & Water Pump Kit', de: 'Zahnriemen & Wasserpumpe wechseln', ru: 'Замена ремня ГРМ и помпы' }, cost: '€520–780' },
+                { when: '~60,000 km · 4 yrs', action: { en: 'Diesel Fuel Filter & MMT6 Gearbox Oil (@ 120k)', de: 'Dieselfilter & 6-Gang Getriebeöl (bei 120tkm)', ru: 'Топливный фильтр и масло МКПП (к 120 тыс.)' }, cost: '€140–240' }
+              ],
+              critical: [
+                { when: '160–220k km · 10–14 yrs', action: { en: 'Dual-Mass Flywheel (DMF) + Clutch Kit', de: 'Zweimassenschwungrad (ZMS) + Kupplung', ru: 'Двухмассовый маховик (ДММ) + сцепление' }, cost: '€1,050–1,550', risk: { en: 'Idle knock & heavy driveline vibration', de: 'Leerlauf-Klopfen & Vibrationen', ru: 'Стук на холостых и вибрации' }, damage: '€1,900–2,600' }
+              ]
+            },
             score: 7.7,
             badges: {
               en: ['Abundant PSA Spare Parts', 'Manual Keeps Repair Bills Low'],
@@ -16173,6 +17770,14 @@ const CAR_ROSTER = [
       },
       {
         id: '2.2-tdci',
+        specOverrides: {
+          engineName: { en: '2.2L TDCi Diesel', de: '2.2L TDCi Diesel', ru: '2.2L TDCi Дизель' },
+          forcedInduction: '@turbo', injection: '@commonRail', gearbox: '@manual6', clutchDmf: '@clutchDmf',
+          towingBraked: '2,000 kg', sprint0100: '8.1 s', topSpeed: '230 km/h', peakTorque: '420 Nm @ 1,750',
+          passingPunch: { en: 'Massive 420 Nm Surge', de: 'Brachiale 420 Nm', ru: 'Огромная тяга 420 Н·м' },
+          realWorldFuel: '6.3–7.2 L/100 km', tankRange: '70 L · ~1,040 km', euroNorm: 'Euro 5 (DPF)',
+          taxInsurance: '@tierModHigh', timingDrive: '@belt', serviceWear: '@tierMod'
+        },
         dossierGroup: 'diesel-conv-auto',
         buyerFitGroup: 'diesel',
         isDefault: false,
@@ -16254,6 +17859,19 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '2.2L TDCi Inline-4 Turbodiesel (KNBA · PSA DW12)', de: '2.2L TDCi Reihenvierzylinder Turbodiesel (PSA DW12)', ru: '2.2L TDCi рядный 4-цил. турбодизель (PSA DW12)' } },
+                  { k: 'displacement', v: '2,179 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 16V DOHC', de: '4 Zylinder · 16V DOHC', ru: '4 цилиндра · 16V DOHC' } },
+                  { k: 'output', v: { en: '129–147 kW (175 / 200 HP)', de: '129–147 kW (175 / 200 PS)', ru: '129–147 кВт (175 / 200 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Diesel · Dry Timing Belt', de: 'Diesel · Trockener Zahnriemen', ru: 'Дизель · Сухой ремень ГРМ' } }
+                ],
+                note: { en: 'Torquey 200 HP PSA DW12 highway express — very durable block with 2,000 kg towing rating.', de: 'Bärenstarker 200-PS-PSA-Diesel mit 2.000 kg Anhängelast und robuster Grundmechanik.', ru: 'Мощнейший 200-сильный дизель PSA с тягой 420 Н·м и крепкой базой.' }
+              },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi'
+            },
             score: 8.0,
             badges: {
               en: ['PSA DW12 175/200 HP', 'Water-Cooled VGT Turbo'],
@@ -16590,6 +18208,14 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '200k km · 10 yrs', action: { en: 'Timing Belt, Water Pump & Intercooler Hose Check', de: 'Zahnriemen, Wasserpumpe & Ladeluftschläuche prüfen', ru: 'Ремень ГРМ, помпа и патрубки интеркулера' }, cost: '€580–880' }
+              ],
+              critical: [
+                { when: '150–200k km · 9–13 yrs', action: { en: 'Dual-Mass Flywheel (DMF) + Heavy-Duty Clutch', de: 'Zweimassenschwungrad (ZMS) + Kupplung (420 Nm Last)', ru: 'Двухмассовый маховик (ДММ) + сцепление' }, cost: '€1,150–1,750', risk: { en: 'Clutch slip in 5th/6th gear under full torque', de: 'Kupplungsrutschen unter 420 Nm Volllast', ru: 'Пробуксовка сцепления под нагрузкой 420 Н·м' }, damage: '€2,100–2,900' }
+              ]
+            },
             score: 6.5,
             badges: {
               en: ['Aisin Auto Avoids PowerShift', 'High 420 Nm Clutch/DMF & Tyres'],
@@ -16622,7 +18248,109 @@ const CAR_ROSTER = [
     drivetrain: 'FWD',
     image: 'assets/honda-civic-type-r-2015.png',
     defaultEngineId: '2.0-vtec-turbo',
-    sharedBuyerFit: {
+    sharedSpecs: {
+      rustProtection: '@rustGood',
+      suspensionWear: '@suspSport',
+      starterAlternator: '@starter12v',
+      electronicsRisk: '@elecLow',
+      rideTuning: { en: 'Very Firm (+R Adaptive)', de: 'Sehr straff (+R Adaptiv)', ru: 'Очень жёсткая (+R)' },
+      highwayNoise: { en: '~73 dB · Loud Tyres', de: '~73 dB · Laut (Reifen)', ru: '~73 дБ · Громкие шины' },
+      cabinMaterials: { en: 'Red Suede Buckets · Sport', de: 'Rote Alcantara-Schalen', ru: 'Красные ковши · Спорт' },
+      controls: '@physButtons',
+      turningCircle: '12.6 m',
+      visibility: { en: 'Limited Rear (Wing + Split)', de: 'Eingeschränkt (Spoiler)', ru: 'Ограничен сзади (спойлер)' },
+      euroNcap: '★★★★★ (2012)',
+      safetyTech: { en: '✓ ESP · ✓ CTBA & Blind-Spot', de: '✓ ESP · ✓ Notbrems & Totwinkel', ru: '✓ ESP · ✓ CTBA и слепые зоны' },
+      rearRoom: { en: 'Generous (4-Seater)', de: 'Großzügig (4-Sitzer)', ru: 'Просторно (4 места)' },
+      isofixEntry: { en: '✓ 2× ISOFIX · Wide Doors', de: '✓ 2× ISOFIX · Breit', ru: '✓ 2× ISOFIX · Широкие' },
+      bootVolume: '498 L / 1,427 L',
+      seatUtility: { en: '60/40 Split-Fold Rear Seats', de: '60/40 Klappbare Rückbank', ru: 'Складывание 60/40' },
+      payloadRoof: '390 kg · 0 kg Roof',
+      driveline: 'FWD · Helical LSD',
+      chassisFeel: { en: 'Track-Grade · Dual-Axis', de: 'Track-Präzision · Dual-Axis', ru: 'Трековая · Dual-Axis' },
+      tractionDiff: { en: 'FWD · ✓ Mechanical Helical LSD', de: 'FWD · ✓ Mechanische Sperre', ru: 'FWD · ✓ Блокировка LSD' },
+      braking1000: '~33.5 m',
+      brakeSetup: { en: '350 mm Brembo 4-Piston', de: '350 mm Brembo 4-Kolben', ru: '350 мм Brembo 4-поршн.' },
+      valueRetention: '@retVeryHigh',
+      resaleDemand: '@demNiche'
+    },
+    sharedDossierBreakdowns: {
+      transmissionDriveline: { gearbox: '@gbManual6Honda', clutchDmf: '@clutchDmf', driveline: '@driveFwdLsd' },
+      buildQualityRust: { rustProtection: '@rustGalvanized12y', suspensionWear: '@suspSportHotHatch' },
+      electronicsReliability: { starterAlternator: '@starterStandard12v', electronicsRisk: '@elecSimpleEps' },
+      rideNoiseComfort: {
+        rideTuning: {
+          specs: [
+            { k: 'damperSetup', v: { en: '4-Point Adaptive Sport Suspension (+R Track Mode)', de: 'Adaptives 4-Punkt-Sportfahrwerk (+R Modus)', ru: 'Адаптивная спортподвеска (+R режим)' } },
+            { k: 'seatSupport', v: { en: 'Deep Bolstered Suede Bucket Seats (Race Hold)', de: 'Tiefe rote Alcantara-Schalensitze (Top Seitenhalt)', ru: 'Глубокие спортивные ковши с развитой поддержкой' } }
+          ],
+          note: { en: 'Uncompromisingly firm on broken pavement, especially in +R mode; built for smooth tarmac and circuits.', de: 'Kompromisslos straff auf schlechten Straßen — klar auf Performance und Track abgestimmt.', ru: 'Бескомпромиссно жёсткий на ямах — создан для ровного асфальта и трека.' }
+        },
+        highwayNoise: {
+          specs: [
+            { k: 'cabinNoise130', v: { en: '~73 dB(A) at 130 km/h (Wide 19" Sport Tyres)', de: '~73 dB(A) bei 130 km/h (Breite 19"-Sportreifen)', ru: '~73 дБ(А) при 130 км/ч (широкие шины 19")' } },
+            { k: 'acousticGlass', v: { en: 'Weight-Saved Insulation · Prominent Exhaust & Tyre Roar', de: 'Leichtbau-Dämmung · Präsenter Abroll- & Auspuffklang', ru: 'Облегчённая шумоизоляция · Слышны шины и выхлоп' } }
+          ],
+          note: { en: 'Focused sports-car acoustics rather than hushed motorway touring.', de: 'Klar sportliche Akustik statt gedämmtem Langstrecken-Komfort.', ru: 'Спортивный звук и обратная связь вместо тихого круиза.' }
+        }
+      },
+      interiorQualityFeatures: {
+        cabinMaterials: {
+          specs: [
+            { k: 'dashTrim', v: { en: 'Suede-Trimmed Buckets · Machined Aluminium Shift Knob', de: 'Alcantara-Schalen · Gefräster Alu-Schaltknauf', ru: 'Ковши из замши · Алюминиевый набалдашник КПП' } },
+            { k: 'buildFit', v: { en: 'Solid Civic FK Cabin + Numbered Build Plaque', de: 'Solides Civic-Cockpit + nummerierte Plakette', ru: 'Крепкий салон FK + номерная табличка' } }
+          ],
+          note: { en: 'One of the best driver interfaces and gearshift feels in hot-hatch history.', de: 'Eines der besten Fahrer-Cockpits und Schaltgefühle der gesamten Hot-Hatch-Geschichte.', ru: 'Одна из лучших посадок и механизмов переключения КПП среди хот-хэтчей.' }
+        },
+        controls: '@controlsPhys'
+      },
+      visibilityManeuverability: {
+        turningCircle: { specs: [{ k: 'turningDiam', v: '12.6 m (Wide Track)' }, { k: 'bodyDimensions', v: '4,390 × 1,878 mm' }], note: { en: 'Wide front track and Dual-Axis struts give a broad 12.6 m turning circle.', de: 'Breite Spur und Dual-Axis-Achse sorgen für einen großen 12,6 m Wendekreis.', ru: 'Широкая колея и передняя ось Dual-Axis дают большой разворот 12.6 м.' } },
+        visibility: { specs: [{ k: 'sightlines', v: { en: 'Good Forward · Large Rear Wing + Split Glass', de: 'Gut vorn · Großer Heckflügel + geteilte Scheibe', ru: 'Хорошо спереди · Большое антикрыло сзади' } }, { k: 'parkingAids', v: { en: 'Standard Reversing Camera + Parking Sensors (GT)', de: 'Rückfahrkamera & Parksensoren (GT-Paket)', ru: 'Камера заднего вида и парктроники (GT)' } }], note: { en: 'Rear camera is essential in tight car parks.', de: 'Die Rückfahrkamera ist im engen Parkhaus unverzichtbar.', ru: 'Камера заднего вида крайне полезна при парковке.' } }
+      },
+      safetyProtection: {
+        euroNcap: { specs: [{ k: 'ncapOverall', v: '★★★★★ (2012 Civic Base)' }, { k: 'ncapBreakdown', v: { en: '94% Adult · 83% Child · 69% Pedestrian', de: '94 % Erwachsene · 83 % Kinder · 69 % Fußgänger', ru: '94% Взрослые · 83% Дети · 69% Пешеходы' } }, { k: 'airbagsCount', v: { en: '6 Airbags', de: '6 Airbags', ru: '6 подушек безопасности' } }], note: { en: 'Stiffened Civic FK shell with massive Brembo stopping reserves.', de: 'Versteifte Civic-FK-Karosserie mit riesigen Brembo-Bremsreserven.', ru: 'Усиленный кузов Civic FK и огромные тормоза Brembo.' } },
+        safetyTech: { specs: [{ k: 'activeAssists', v: { en: '✓ VSA/ESP · ✓ CTBA, Blind-Spot & Cross-Traffic (GT)', de: '✓ VSA/ESP · ✓ Notbrems, Totwinkel & Querverkehr (GT)', ru: '✓ VSA/ESP · ✓ CTBA и контроль слепых зон (GT)' } }], note: { en: 'GT pack adds full modern active-safety suite without diluting driving feel.', de: 'GT-Paket bringt moderne Assistenzsysteme ohne den Fahrspaß zu dämpfen.', ru: 'Пакет GT добавляет современные ассистенты без ущерба драйву.' } }
+      },
+      passengerSpaceErgonomics: {
+        rearRoom: { specs: [{ k: 'wheelbase', v: '2,594 mm' }, { k: 'rearLegHead', v: { en: 'Generous 4-Seater Layout (2 Sculpted Rear Seats)', de: 'Großzügiger 4-Sitzer (2 konturierte Fondplätze)', ru: 'Просторный 4-местный салон' } }], note: { en: 'Strict 4-seater homologation with ample knee room.', de: 'Als reiner 4-Sitzer zugelassen, aber mit sehr viel Platz im Fond.', ru: 'Строго 4-местный, но с большим запасом места для ног.' } },
+        isofixEntry: { specs: [{ k: 'isofixAccess', v: { en: '✓ 2× ISOFIX · Practical 5-Door Access', de: '✓ 2× ISOFIX · Praktischer 5-Türer', ru: '✓ 2× ISOFIX · Удобный 5-дверный кузов' } }], note: { en: 'Rare track weapon that doubles as a genuinely usable family hatch.', de: 'Seltene Track-Waffe mit vollwertiger 5-Türer-Alltagstauglichkeit.', ru: 'Редкий трековый спорткар с практичностью 5-дверного хэтчбека.' } }
+      },
+      interiorBootSpace: {
+        bootVolume: { specs: [{ k: 'bootUpDown', v: '498 L / 1,427 L' }, { k: 'loadSill', v: { en: '~675 mm · Huge Deep Well', de: '~675 mm · Riesiges Unterbodenfach', ru: '~675 мм · Огромная ниша' } }], note: { en: 'Insane 498 L boot — bigger than many compact SUVs.', de: 'Enorme 498 L Kofferraum — größer als bei vielen Kompakt-SUVs.', ru: 'Невероятные 498 литров — больше многих кроссоверов.' } },
+        seatUtility: { specs: [{ k: 'foldingMech', v: { en: '60/40 Split-Fold Rear Bench (No Magic Seats on FK2 Type-R)', de: '60/40 umklappbare Rückbank (Keine Magic Seats im FK2 Type-R)', ru: 'Складывание спинки 60/40 (без Magic Seats на FK2 Type-R)' } }], note: { en: 'FK2 Type-R omits standard Civic Magic Seats for weight saving and rear floor stiffness, while keeping a huge 1,427 L folded bay.', de: 'Der FK2 Type-R verzichtet aus Gewichts- und Steifigkeitsgründen auf Magic Seats, behält aber riesige 1.427 L Ladevolumen.', ru: 'В FK2 Type-R отказались от Magic Seats ради снижения веса и жёсткости кузова, сохранив 1427 л объёма.' } }
+      },
+      payloadTowing: {
+        payloadRoof: { specs: [{ k: 'maxPayload', v: '~390 kg' }, { k: 'roofLoad', v: '0 kg (Not Approved)' }], negative: true, note: { en: 'Strict 4-person homologation (~390 kg) with no roof-rack approval.', de: 'Strikte 4-Sitzer-Zulassung (~390 kg) ohne Dachlast-Freigabe.', ru: 'Строго 4-местная омологация (~390 кг), багажник на крышу не допускается.' } },
+        towingBraked: '@towingDynamic'
+      },
+      accelerationOvertaking: { sprint0100: '@sprintDynamic', topSpeed: '@vmaxDynamic' },
+      midRangeTorquePassing: { peakTorque: '@torqueDynamic', passingPunch: '@passingDynamic' },
+      handlingAgility: {
+        chassisFeel: {
+          specs: [
+            { k: 'kerbWeight', v: '1,382 kg' },
+            { k: 'handlingChar', v: { en: 'Dual-Axis Strut Front · Zero Torque-Steer Precision', de: 'Dual-Axis-Vorderachse · Extreme Kurvenpräzision', ru: 'Передняя ось Dual-Axis · Бритвенная точность' } },
+            { k: 'tyreSizes', v: '235/35 R19' }
+          ],
+          note: { en: 'Benchmark FWD chassis grip and steering feedback.', de: 'Referenzklasse bei Frontantriebs-Grip und Lenkpräzision.', ru: 'Эталонный зацеп и точность руля среди переднеприводных авто.' }
+        },
+        tractionDiff: '@tractionFwdLsd'
+      },
+      brakingPerformance: {
+        braking1000: '@brakingDistDynamic',
+        brakeSetup: {
+          specs: [
+            { k: 'discHardware', v: { en: '350 mm Cross-Drilled Brembo Front Discs + 4-Piston Monoblock Calipers', de: '350 mm gelochte Brembo-Scheiben vorn + 4-Kolben-Monoblock-Sättel', ru: '350 мм перфорированные диски Brembo + 4-поршневые суппорты' } }
+          ],
+          note: { en: 'Track-tuned Brembo 4-piston setup with dedicated front cooling ducts — crisp pedal feel and significantly cheaper replacement discs than Peugeot’s 380 mm Alcons.', de: 'Track-erprobte Brembo-4-Kolben-Anlage mit Bremsenkühlung — präziser Druckpunkt und spürbar günstigere Ersatzscheiben als beim 308 GTi.', ru: 'Трековые 4-поршневые Brembo с каналами охлаждения — чёткая педаль и заметно дешевле в замене, чем Alcon у 308 GTi.' }
+        }
+      },
+      efficiencyFuel: { realWorldFuel: '@fuelDynamic', tankRange: '@tankDynamic' },
+      taxInsuranceNorm: { euroNorm: '@euroDynamic', taxInsurance: '@taxInsDynamic' },
+      maintenanceRepairCosts: { timingDrive: '@timingDynamic', serviceWear: '@serviceDynamic' },
+      depreciationResale: { valueRetention: '@retentionDynamic', resaleDemand: '@demandDynamic' }
+    },    sharedBuyerFit: {
       cards: {
         typeRTrackPace: {
           en: 'You want raw, front-drive track performance: The 310 HP K20C1 turbo, helical LSD, and dual-axis front suspension deliver relentless pace.',
@@ -17246,6 +18974,14 @@ const CAR_ROSTER = [
     engines: [
       {
         id: '2.0-vtec-turbo',
+        specOverrides: {
+          engineName: { en: '2.0L VTEC Turbo', de: '2.0L VTEC Turbo', ru: '2.0L VTEC Турбо' },
+          forcedInduction: '@turbo', injection: '@direct', gearbox: '@manual6', clutchDmf: '@clutchDmf',
+          towingBraked: '0 kg (No Tow)', sprint0100: '5.7 s', topSpeed: '270 km/h', peakTorque: '400 Nm @ 2,500',
+          passingPunch: { en: 'Ferocious Turbo Punch', de: 'Brachialer Turbo-Schub', ru: 'Ураганный турбо-подхват' },
+          realWorldFuel: '8.5–10.5 L/100 km', tankRange: '50 L · ~530 km', euroNorm: 'Euro 6',
+          taxInsurance: '@tierHigh', timingDrive: '@chain', serviceWear: '@tierHigh'
+        },
         dossierGroup: 'petrol-6mt-lsd',
         buyerFitGroup: 'hot-hatch',
         isDefault: true,
@@ -17330,6 +19066,19 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '2.0L VTEC Turbo Inline-4 (K20C1)', de: '2.0L VTEC Reihenvierzylinder Turbo (K20C1)', ru: '2.0L VTEC рядный 4-цил. турбо (K20C1)' } },
+                  { k: 'displacement', v: '1,996 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 16V DOHC VTEC', de: '4 Zylinder · 16V DOHC VTEC', ru: '4 цилиндра · 16V DOHC VTEC' } },
+                  { k: 'output', v: { en: '228 kW (310 HP)', de: '228 kW (310 PS)', ru: '228 кВт (310 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Petrol (98 RON) · Timing Chain', de: 'Super Plus · Steuerkette', ru: 'Бензин (АИ-98) · Цепь ГРМ' } }
+                ],
+                note: { en: 'Over-engineered K20C1 block built to survive track abuse with remarkably few internal failures.', de: 'Extrem standfest gebauter K20C1-Motor — übersteht selbst harte Track-Einsätze bemerkenswert zuverlässig.', ru: 'Сверхкрепкий мотор K20C1 с огромным запасом прочности даже для трек-дней.' }
+              },
+              forcedInduction: '@turboHotHatch', injection: '@directInjPetrol'
+            },
             score: 8.6,
             badges: {
               en: ['K20C1 Forged Internals', 'Upgraded Oil Cooler & Cooling'],
@@ -17666,6 +19415,16 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '~40,000 km · 3 yrs', action: { en: 'Honda MTF-3 Gearbox Fluid (Protects 2nd-Gear Synchro)', de: 'Honda MTF-3 Getriebeöl wechseln (Schützt 2.-Gang-Synchronring)', ru: 'Замена масла MTF-3 (защита синхронизатора 2-й передачи)' }, cost: '€120–190' },
+                { when: '~60,000 km · 4 yrs', action: { en: 'Iridium Spark Plugs & Valve-Clearance Check', de: 'Iridium-Zündkerzen & Ventilspiel prüfen', ru: 'Иридиевые свечи и проверка зазоров клапанов' }, cost: '€240–380' }
+              ],
+              critical: [
+                { when: '60–120k km · Driven', action: { en: '2nd-Gear Synchro / Shift-Fork Wear (Hard Shifts)', de: 'Synchronring 2. Gang (bei hartem Schalten)', ru: 'Износ синхронизатора 2-й передачи при жёстких переключениях' }, cost: '€800–1,400', risk: { en: 'Crunch into 2nd gear at high rpm', de: 'Kratzen beim schnellen Schalten in den 2. Gang', ru: 'Хруст при быстром включении 2-й передачи' }, damage: '€1,600–2,400' },
+                { when: '80–140k km · 6–10 yrs', action: { en: '350 mm Brembo Front Discs & Adaptive Damper Seepage', de: '350 mm Brembo-Scheiben vorn & adaptive Dämpfer prüfen', ru: 'Передние диски Brembo 350 мм и адаптивные амортизаторы' }, cost: '€750–1,400', risk: { en: 'Brake judder or harsh knocking damper', de: 'Bremsrubbeln oder polternder Stoßdämpfer', ru: 'Биение тормозов или стук амортизатора' }, damage: '€1,800–2,600' }
+              ]
+            },
             score: 5.9,
             badges: {
               en: ['Pricey 19" Tyres & Brembo Pads', 'Frequent Fluid & Spark Care'],
@@ -17698,7 +19457,76 @@ const CAR_ROSTER = [
     drivetrain: 'FWD',
     image: 'assets/honda-accord-2011.png',
     defaultEngineId: '2.0-ivtec',
-    sharedBuyerFit: {
+    sharedSpecs: {
+      rustProtection: '@rustGood',
+      suspensionWear: '@suspDoubleWishbone',
+      starterAlternator: '@starter12v',
+      electronicsRisk: '@elecLow',
+      rideTuning: { en: 'Composed / Refined', de: 'Souverän / Komfortabel', ru: 'Собранная / Комфортная' },
+      highwayNoise: { en: '~68 dB · Quiet', de: '~68 dB · Sehr ruhig', ru: '~68 дБ · Тихо' },
+      cabinMaterials: { en: 'Premium Soft-Touch', de: 'Hochwertig / Soft-Touch', ru: 'Премиальный мягкий салон' },
+      controls: '@physButtons',
+      turningCircle: '11.4 m',
+      visibility: { en: 'Good Forward · High Boot', de: 'Gut vorn · Hohes Heck', ru: 'Хорошо спереди · Высокий багажник' },
+      euroNcap: '★★★★★ (2008)',
+      safetyTech: { en: '✓ ESP/VSA · ✓ LKAS/CMBS (Opt.)', de: '✓ ESP/VSA · ✓ ACC/Spur (Opt.)', ru: '✓ ESP/VSA · ✓ ACC/LKAS (опц.)' },
+      rearRoom: { en: 'Adequate (Mid-Size)', de: 'Solide (Mittelklasse)', ru: 'Норма (бизнес-класс)' },
+      isofixEntry: { en: '✓ 2× ISOFIX · Low Sedan', de: '✓ 2× ISOFIX · Flach', ru: '✓ 2× ISOFIX · Низкий седан' },
+      bootVolume: '467 L (Sedan)',
+      seatUtility: { en: '60/40 Split-Fold', de: '60/40 Klappbank', ru: 'Складывание 60/40' },
+      payloadRoof: '465 kg · 75 kg',
+      driveline: 'FWD',
+      chassisFeel: { en: 'Sharp · Planted Highway', de: 'Präzise · Souverän', ru: 'Точное · Устойчивое' },
+      tractionDiff: { en: 'FWD · Open Diff', de: 'FWD · Offen', ru: 'FWD · Своб. дифф.' },
+      braking1000: '~36.2 m',
+      brakeSetup: '@discs4',
+      valueRetention: '@retVeryHigh',
+      resaleDemand: '@demFast'
+    },
+    sharedDossierBreakdowns: {
+      transmissionDriveline: { gearbox: '@gbManual6Honda', clutchDmf: '@clutchSingle', driveline: '@driveFwd' },
+      buildQualityRust: { rustProtection: '@rustGalvanized12y', suspensionWear: '@suspDoubleWishbone' },
+      electronicsReliability: { starterAlternator: '@starterStandard12v', electronicsRisk: '@elecSimpleEps' },
+      rideNoiseComfort: {
+        rideTuning: { specs: [{ k: 'damperSetup', v: { en: 'Double-Wishbone Front + Multi-Link Rear', de: 'Doppelquerlenker vorn + Mehrlenker hinten', ru: 'Двухрычажка спереди + многорычажка сзади' } }, { k: 'seatSupport', v: { en: 'Executive Long-Distance Contoured Seats', de: 'Sehr bequeme Langstrecken-Sitze', ru: 'Отличные кресла для дальних поездок' } }], note: { en: 'Feels genuinely near-premium on long motorway trips.', de: 'Fährt sich auf langen Autobahnetappen auf Oberklasse-Niveau.', ru: 'На трассе ощущается на уровне премиальных седанов.' } },
+        highwayNoise: { specs: [{ k: 'cabinNoise130', v: { en: '~68 dB(A) at 130 km/h (Very Quiet)', de: '~68 dB(A) bei 130 km/h (Sehr leise)', ru: '~68 дБ(А) при 130 км/ч (очень тихо)' } }, { k: 'acousticGlass', v: { en: 'Thick Door Seals + Low 0.28 Cd Drag', de: 'Dicke Türdichtungen + niedriger cW-Wert 0,28', ru: 'Плотные уплотнители + аэродинамика 0.28' } }], note: { en: 'Noticeably quieter than compact hatches at 140–160 km/h.', de: 'Bei 140–160 km/h spürbar ruhiger als Kompaktwagen.', ru: 'Заметно тише хэтчбеков на высоких скоростях.' } }
+      },
+      interiorQualityFeatures: {
+        cabinMaterials: { specs: [{ k: 'dashTrim', v: { en: 'Near-Premium Soft-Touch Wraparound Cockpit', de: 'Sehr wertiges Soft-Touch-Cockpit', ru: 'Качественный мягкий пластик и отделка' } }, { k: 'buildFit', v: { en: 'Japanese Built (Sayama) · Exceptional Aging', de: 'Japan-Fertigung (Sayama) · Extrem langlebig', ru: 'Японская сборка · Прекрасно держится с годами' } }], note: { en: 'Widely praised as one of Honda’s best-built European cabins.', de: 'Gilt als einer der bestverarbeiteten Honda-Innenräume in Europa.', ru: 'Считается одним из лучших салонов Honda по качеству сборки.' } },
+        controls: '@controlsPhys'
+      },
+      visibilityManeuverability: {
+        turningCircle: { specs: [{ k: 'turningDiam', v: '11.4 m' }, { k: 'bodyDimensions', v: '4,726 × 1,840 mm' }], note: { en: 'Wide 1.84 m body feels planted on highways but wide in narrow alleys.', de: 'Breite 1,84 m Karosserie liegt satt auf der Autobahn, braucht aber Platz beim Parken.', ru: 'Широкий кузов (1.84 м) солидно стоит на трассе, но требует аккуратности во дворах.' } },
+        visibility: { specs: [{ k: 'sightlines', v: { en: 'Good Forward · Tall Sedan Boot Lid', de: 'Gut vorn · Hohe Kofferraumkante hinten', ru: 'Хорошо спереди · Высокая кромка багажника' } }, { k: 'parkingAids', v: { en: 'Front & Rear Sensors Standard on Most Trims', de: 'Parksensoren vorn & hinten meist Serie', ru: 'Парктроники спереди и сзади в большинстве версий' } }], note: { en: 'Standard parking sensors make reversing the long sedan effortless.', de: 'Serienmäßige Parksensoren erleichtern das Einparken der Limousine deutlich.', ru: 'Штатные парктроники делают парковку седана простой.' } }
+      },
+      safetyProtection: {
+        euroNcap: { specs: [{ k: 'ncapOverall', v: '★★★★★ (2008)' }, { k: 'ncapBreakdown', v: { en: '35/37 Adult · 4★ Child · 3★ Pedestrian', de: '35/37 Erwachsene · 4★ Kinder · 3★ Fußgänger', ru: '35/37 Взрослые · 4★ Дети · 3★ Пешеходы' } }, { k: 'airbagsCount', v: { en: '6 Airbags + Active Front Headrests', de: '6 Airbags + aktive Kopfstützen vorn', ru: '6 подушек + активные подголовники' } }], note: { en: 'Top-tier 5-star sedan crash safety.', de: 'Erstklassige 5-Sterne-Limousinen-Sicherheit.', ru: 'Высочайший уровень пассивной безопасности.' } },
+        safetyTech: { specs: [{ k: 'activeAssists', v: { en: '✓ VSA/ESP · ✓ Optional ACC, LKAS & CMBS Braking', de: '✓ VSA/ESP · ✓ Optional ACC, Spurhalte- & Notbremsassistent', ru: '✓ VSA/ESP · ✓ Опционально ACC, LKAS и CMBS' } }], note: { en: 'Ahead of its time — Executive ADAS models already featured adaptive cruise and lane keep.', de: 'Seiner Zeit voraus — Top-Modelle boten schon damals ACC und Spurhalteassistent.', ru: 'Опередил время — топ-версии уже имели адаптивный круиз и удержание в полосе.' } }
+      },
+      passengerSpaceErgonomics: {
+        rearRoom: { specs: [{ k: 'wheelbase', v: '2,705 mm' }, { k: 'rearLegHead', v: { en: 'Good Adult Comfort · Tighter than Mondeo/Passat', de: 'Solider Fondplatz · Etwas kompakter als Mondeo/Passat', ru: 'Комфортно сзади · Чуть теснее Mondeo/Passat' } }], note: { en: 'Sporty sedan proportions prioritize front cockpit feel.', de: 'Sportliche Proportionen legen den Schwerpunkt auf den Fahrerplatz.', ru: 'Спортивный профиль с акцентом на передние места.' } },
+        isofixEntry: { specs: [{ k: 'isofixAccess', v: { en: '✓ 2× Outer ISOFIX · Low Sleek Sedan Entry', de: '✓ 2× ISOFIX außen · Flacher Limousinen-Einstieg', ru: '✓ 2× ISOFIX · Низкая посадка седана' } }], note: { en: 'Easy ISOFIX access with wide front seats.', de: 'Gut zugängliche ISOFIX-Punkte.', ru: 'Удобный доступ к креплениям ISOFIX.' } }
+      },
+      interiorBootSpace: {
+        bootVolume: { specs: [{ k: 'bootUpDown', v: '467 L (Sedan)' }, { k: 'loadSill', v: { en: '~670 mm · Narrower Sedan Aperture', de: '~670 mm · Typische Limousinen-Ladeöffnung', ru: '~670 мм · Проём классического седана' } }], note: { en: 'Deep 467 L trunk for suitcases; bulky tall boxes need the Tourer estate.', de: 'Tiefer 467-L-Kofferraum für Koffer; für sehr sperrige Güter empfiehlt sich der Tourer.', ru: 'Глубокий багажник 467 л для чемоданов; для крупногабарита лучше универсал.' } },
+        seatUtility: { specs: [{ k: 'foldingMech', v: { en: '60/40 Split-Fold Rear Seatbacks (Release in Boot)', de: '60/40 umklappbar (Fernentriegelung im Kofferraum)', ru: 'Складывание 60/40 (рычажки из багажника)' } }], note: { en: 'Handy trunk release levers let you slide long items through.', de: 'Praktische Fernentriegelung im Kofferraum für lange Gegenstände.', ru: 'Удобные рычажки в багажнике для перевозки длинномеров.' } }
+      },
+      payloadTowing: {
+        payloadRoof: { specs: [{ k: 'maxPayload', v: '~465 kg' }, { k: 'roofLoad', v: '75 kg' }], note: { en: 'Solid mid-size touring capacity.', de: 'Solide Mittelklasse-Zuladung.', ru: 'Хорошая загрузка для бизнес-седана.' } },
+        towingBraked: '@towingDynamic'
+      },
+      accelerationOvertaking: { sprint0100: '@sprintDynamic', topSpeed: '@vmaxDynamic' },
+      midRangeTorquePassing: { peakTorque: '@torqueDynamic', passingPunch: '@passingDynamic' },
+      handlingAgility: {
+        chassisFeel: { specs: [{ k: 'kerbWeight', v: '1,450–1,590 kg' }, { k: 'handlingChar', v: { en: 'Balanced Double-Wishbone Precision · High-Speed Poise', de: 'Präzise Doppelquerlenker-Balance · Hohe Autobahn-Ruhe', ru: 'Точность двухрычажки · Монолитность на трассе' } }, { k: 'tyreSizes', v: '225/50 R17 · 235/45 R18' }], note: { en: 'One of the sharpest-handling FWD executive sedans of its decade.', de: 'Eine der präzisesten Frontantriebs-Limousinen ihrer Zeit.', ru: 'Один из лучших переднеприводных седанов по управляемости.' } },
+        tractionDiff: '@tractionFwdOpen'
+      },
+      brakingPerformance: { braking1000: '@brakingDistDynamic', brakeSetup: '@brakeSetupDiscs4' },
+      efficiencyFuel: { realWorldFuel: '@fuelDynamic', tankRange: '@tankDynamic' },
+      taxInsuranceNorm: { euroNorm: '@euroDynamic', taxInsurance: '@taxInsDynamic' },
+      maintenanceRepairCosts: { timingDrive: '@timingDynamic', serviceWear: '@serviceDynamic' },
+      depreciationResale: { valueRetention: '@retentionDynamic', resaleDemand: '@demandDynamic' }
+    },    sharedBuyerFit: {
       cards: {
         accordRefinedDrive: {
           en: 'You want a refined, engaging Japanese sedan: Crisp steering, double-wishbone front suspension, and quiet motorway manners.',
@@ -18511,6 +20339,14 @@ const CAR_ROSTER = [
     engines: [
       {
         id: '2.0-ivtec',
+        specOverrides: {
+          engineName: { en: '2.0L i-VTEC NA', de: '2.0L i-VTEC Sauger', ru: '2.0L i-VTEC Атм.' },
+          forcedInduction: '@na', injection: '@port', gearbox: '@manual6', clutchDmf: '@singleClutch',
+          towingBraked: '1,500 kg', sprint0100: '9.4 s', topSpeed: '215 km/h', peakTorque: '192 Nm @ 4,100',
+          passingPunch: { en: 'Smooth · Likes Revs', de: 'Kultiviert · Drehfreudig', ru: 'Плавно · Любит обороты' },
+          realWorldFuel: '7.4–8.2 L/100 km', tankRange: '65 L · ~830 km', euroNorm: 'Euro 5',
+          taxInsurance: '@tierMod', timingDrive: '@chain', serviceWear: '@tierLow'
+        },
         dossierGroup: 'petrol-conv-auto',
         buyerFitGroup: 'na-petrol',
         isDefault: true,
@@ -18589,6 +20425,19 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '2.0L i-VTEC Inline-4 NA (R20A3)', de: '2.0L i-VTEC Reihenvierzylinder Sauger (R20A3)', ru: '2.0L i-VTEC рядный 4-цил. атмосферный (R20A3)' } },
+                  { k: 'displacement', v: '1,997 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 16V SOHC', de: '4 Zylinder · 16V SOHC', ru: '4 цилиндра · 16V SOHC' } },
+                  { k: 'output', v: { en: '115 kW (156 HP)', de: '115 kW (156 PS)', ru: '115 кВт (156 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Petrol · Timing Chain', de: 'Benzin · Steuerkette', ru: 'Бензин · Цепь ГРМ' } }
+                ],
+                note: { en: 'Ultra-reliable R20 naturally aspirated engine — effortless 350,000+ km longevity.', de: 'Extrem zuverlässiger R20-Sauger mit bewährter Laufleistung über 350.000+ km.', ru: 'Сверхнадёжный атмосферник R20 с ресурсом 350 000+ км.' }
+              },
+              forcedInduction: '@naNoTurbo', injection: '@portInj'
+            },
             score: 9.5,
             badges: {
               en: ['R20A3 Chain SOHC NA', 'No Turbo / No Injectors Risk'],
@@ -18926,6 +20775,15 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '~100,000 km · 6 yrs', action: { en: 'Valve-Clearance Check & Iridium Spark Plugs', de: 'Ventilspiel prüfen & Iridium-Zündkerzen wechseln', ru: 'Регулировка клапанов и иридиевые свечи' }, cost: '€220–350' },
+                { when: '~110,000 km · 7 yrs', action: { en: 'Honda MTF-3 Manual Gearbox Oil Change', de: 'Honda MTF-3 Schaltgetriebeöl wechseln', ru: 'Замена масла в МКПП (Honda MTF-3)' }, cost: '€120–190' }
+              ],
+              critical: [
+                { when: '150–210k km · 10–14 yrs', action: { en: 'Front Upper Ball Joints & EPS Steering Rack Bushing', de: 'Obere Traggelenke vorn & Lenkgetriebe-Buchse', ru: 'Верхние шаровые опоры и втулка рулевой рейки' }, cost: '€280–520', risk: { en: 'Knocking over bumps & steering play', de: 'Poltern auf Bodenwellen & Lenkungsspiel', ru: 'Стук на неровностях и люфт руля' }, damage: '€900–1,500' }
+              ]
+            },
             score: 8.8,
             badges: {
               en: ['Simple NA Routine Servicing', 'Very Few Unexpected Repairs'],
@@ -18945,6 +20803,14 @@ const CAR_ROSTER = [
       },
       {
         id: '2.4-ivtec',
+        specOverrides: {
+          engineName: { en: '2.4L i-VTEC NA', de: '2.4L i-VTEC Sauger', ru: '2.4L i-VTEC Атм.' },
+          forcedInduction: '@na', injection: '@port', gearbox: '@manual6', clutchDmf: '@singleClutch',
+          towingBraked: '1,600 kg', sprint0100: '8.1 s', topSpeed: '227 km/h', peakTorque: '234 Nm @ 4,300',
+          passingPunch: { en: 'Crisp High-Rev Pull', de: 'Drehfreudig & stark', ru: 'Мощный подхват на верхах' },
+          realWorldFuel: '8.8–9.8 L/100 km', tankRange: '65 L · ~700 km', euroNorm: 'Euro 5',
+          taxInsurance: '@tierModHigh', timingDrive: '@chain', serviceWear: '@tierLowMod'
+        },
         dossierGroup: 'petrol-conv-auto',
         buyerFitGroup: 'na-petrol',
         buyerFitOverrides: {
@@ -19023,6 +20889,19 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '2.4L i-VTEC Inline-4 NA (K24Z3)', de: '2.4L i-VTEC Reihenvierzylinder Sauger (K24Z3)', ru: '2.4L i-VTEC рядный 4-цил. атмосферный (K24Z3)' } },
+                  { k: 'displacement', v: '2,354 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 16V DOHC', de: '4 Zylinder · 16V DOHC', ru: '4 цилиндра · 16V DOHC' } },
+                  { k: 'output', v: { en: '148 kW (201 HP)', de: '148 kW (201 PS)', ru: '148 кВт (201 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Petrol · Timing Chain', de: 'Benzin · Steuerkette', ru: 'Бензин · Цепь ГРМ' } }
+                ],
+                note: { en: 'Iconic 201 HP Honda K24 engine — combines thrilling 7,000 rpm response with legendary durability.', de: 'Legendärer 201-PS-K24-Sauger — vereint Drehfreude bis 7.000 U/min mit höchster Haltbarkeit.', ru: 'Культовый 201-сильный K24 — яркий характер и легендарная выносливость.' }
+              },
+              forcedInduction: '@naNoTurbo', injection: '@portInj'
+            },
             score: 9.4,
             badges: {
               en: ['K24Z3 Chain DOHC NA', 'Forged Internals & Chain'],
@@ -19362,6 +21241,15 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '~100,000 km · 6 yrs', action: { en: 'Valve-Clearance Check & Iridium Spark Plugs', de: 'Ventilspiel prüfen & Iridium-Zündkerzen wechseln', ru: 'Регулировка клапанов и иридиевые свечи' }, cost: '€220–350' },
+                { when: '~110,000 km · 7 yrs', action: { en: 'Honda MTF-3 Manual Gearbox Oil Change', de: 'Honda MTF-3 Schaltgetriebeöl wechseln', ru: 'Замена масла в МКПП (Honda MTF-3)' }, cost: '€120–190' }
+              ],
+              critical: [
+                { when: '150–210k km · 10–14 yrs', action: { en: 'Front Upper Ball Joints & EPS Steering Rack Bushing', de: 'Obere Traggelenke vorn & Lenkgetriebe-Buchse', ru: 'Верхние шаровые опоры и втулка рулевой рейки' }, cost: '€280–520', risk: { en: 'Knocking over bumps & steering play', de: 'Poltern auf Bodenwellen & Lenkungsspiel', ru: 'Стук на неровностях и люфт руля' }, damage: '€900–1,500' }
+              ]
+            },
             score: 7.8,
             badges: {
               en: ['Low Engine Breakdown Risk', '17"/18" Tyres & 320 mm Brakes'],
@@ -19381,6 +21269,14 @@ const CAR_ROSTER = [
       },
       {
         id: '2.2-idtec',
+        specOverrides: {
+          engineName: { en: '2.2L i-DTEC Diesel', de: '2.2L i-DTEC Diesel', ru: '2.2L i-DTEC Дизель' },
+          forcedInduction: '@turbo', injection: '@commonRail', gearbox: '@manual6', clutchDmf: '@clutchDmf',
+          towingBraked: '1,700 kg', sprint0100: '9.6 s', topSpeed: '212 km/h', peakTorque: '350 Nm @ 2,000',
+          passingPunch: { en: 'Effortless Highway', de: 'Souveräner Durchzug', ru: 'Мощная тяга на трассе' },
+          realWorldFuel: '5.8–6.6 L/100 km', tankRange: '65 L · ~1,050 km', euroNorm: 'Euro 5 (DPF)',
+          taxInsurance: '@tierModHigh', timingDrive: '@chain', serviceWear: '@tierMod'
+        },
         dossierGroup: 'diesel-conv-auto',
         buyerFitGroup: 'diesel',
         isDefault: false,
@@ -19455,6 +21351,19 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '2.2L i-DTEC Inline-4 Turbodiesel (N22B1)', de: '2.2L i-DTEC Reihenvierzylinder Turbodiesel (N22B1)', ru: '2.2L i-DTEC рядный 4-цил. турбодизель (N22B1)' } },
+                  { k: 'displacement', v: '2,199 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 16V DOHC', de: '4 Zylinder · 16V DOHC', ru: '4 цилиндра · 16V DOHC' } },
+                  { k: 'output', v: { en: '110 kW (150 HP)', de: '110 kW (150 PS)', ru: '110 кВт (150 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Diesel · Timing Chain', de: 'Diesel · Steuerkette', ru: 'Дизель · Цепь ГРМ' } }
+                ],
+                note: { en: 'Quiet, 1,000+ km-range motorway diesel with proven 300,000+ km chain reliability.', de: 'Leiser Langstrecken-Diesel mit über 1.000 km Reichweite und bewährter Steuerkette.', ru: 'Тихий трассовый дизель с запасом хода 1 000+ км и крепкой цепью.' }
+              },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi'
+            },
             score: 8.9,
             badges: {
               en: ['Updated 2.2 Chain Block', 'Watch City DPF & EGR'],
@@ -19793,6 +21702,16 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '~60,000 km · 4 yrs', action: { en: 'Diesel Fuel Filter & EGR Valve Check', de: 'Dieselfilter wechseln & AGR-Ventil prüfen', ru: 'Топливный фильтр и проверка клапана EGR' }, cost: '€160–250' },
+                { when: '~110,000 km · 7 yrs', action: { en: 'Honda MTF-3 Manual Gearbox Oil Change', de: 'Honda MTF-3 Schaltgetriebeöl wechseln', ru: 'Замена масла в МКПП (Honda MTF-3)' }, cost: '€120–190' }
+              ],
+              critical: [
+                { when: '140–200k km · 9–13 yrs', action: { en: 'Dual-Mass Flywheel (DMF) + Clutch Kit', de: 'Zweimassenschwungrad (ZMS) + Kupplungssatz', ru: 'Двухмассовый маховик (ДММ) + сцепление' }, cost: '€1,200–1,800', risk: { en: 'Clutch slip under 350 Nm torque & idle knock', de: 'Rutschende Kupplung & ZMS-Klopfen im Leerlauf', ru: 'Пробуксовка сцепления и стук маховика' }, damage: '€2,100–2,900' },
+                { when: '140–210k km · 9–14 yrs', action: { en: 'DPF Soot Cleaning & Differential Pressure Sensor', de: 'DPF-Reinigung & Differenzdrucksensor', ru: 'Чистка DPF и датчик давления' }, cost: '€350–650', risk: { en: 'Limp mode & turbocharger backpressure wear', de: 'Notlauf & erhöhter Abgasgegendruck am Turbo', ru: 'Аварийный режим и нагрузка на турбину' }, damage: '€1,500–2,300' }
+              ]
+            },
             score: 7.1,
             badges: {
               en: ['Tough Closed-Deck Diesel', 'Costly DPF, Clutch & DMF'],
@@ -19825,7 +21744,76 @@ const CAR_ROSTER = [
     drivetrain: 'FWD',
     image: 'assets/honda-jazz-2011.png',
     defaultEngineId: '1.3-ivtec',
-    sharedBuyerFit: {
+    sharedSpecs: {
+      rustProtection: '@rustGood',
+      suspensionWear: '@suspTorsion',
+      starterAlternator: '@starter12v',
+      electronicsRisk: '@elecLow',
+      rideTuning: { en: 'Firm / Nimble City', de: 'Straff / Stadt-agil', ru: 'Упругая / Городская' },
+      highwayNoise: { en: '~72 dB · Buzzier Hwy', de: '~72 dB · Lauter AB', ru: '~72 дБ · Шумнее на трассе' },
+      cabinMaterials: { en: 'Tough Practical Plastics', de: 'Robuster Alltagskunststoff', ru: 'Практичный пластик' },
+      controls: '@physButtons',
+      turningCircle: '9.8 m',
+      visibility: { en: 'Panoramic · Huge Glass', de: 'Panorama-Rundumsicht', ru: 'Отличный панорамный обзор' },
+      euroNcap: '★★★★★ (2009)',
+      safetyTech: { en: '✓ ESP/VSA · ✕ AEB', de: '✓ ESP/VSA · ✕ Kein AEB', ru: '✓ ESP/VSA · ✕ Без AEB' },
+      rearRoom: { en: 'Huge for Subcompact', de: 'Riesig für Kleinwagen', ru: 'Огромно для B-класса' },
+      isofixEntry: { en: '✓ 2× ISOFIX · Tall Doors', de: '✓ 2× ISOFIX · Hohe Türen', ru: '✓ 2× ISOFIX · Высокие двери' },
+      bootVolume: '399 L / 1,321 L',
+      seatUtility: { en: '✓ Magic Seats (Fold-Up)', de: '✓ Magic Seats (Hochklapp.)', ru: '✓ Magic Seats (складные)' },
+      payloadRoof: '410 kg · 50 kg',
+      driveline: 'FWD',
+      chassisFeel: { en: 'Zippy · Easy Urban', de: 'Wendig · Leicht', ru: 'Юркое · Лёгкое' },
+      tractionDiff: { en: 'FWD · Open Diff', de: 'FWD · Offen', ru: 'FWD · Своб. дифф.' },
+      braking1000: '~37.0 m',
+      brakeSetup: '@discs4',
+      valueRetention: '@retVeryHigh',
+      resaleDemand: '@demFast'
+    },
+    sharedDossierBreakdowns: {
+      transmissionDriveline: { gearbox: '@gbManual5Honda', clutchDmf: '@clutchSingle', driveline: '@driveFwd' },
+      buildQualityRust: { rustProtection: '@rustGalvanized12y', suspensionWear: '@suspTorsionBeam' },
+      electronicsReliability: { starterAlternator: '@starterStandard12v', electronicsRisk: '@elecSimpleEps' },
+      rideNoiseComfort: {
+        rideTuning: { specs: [{ k: 'damperSetup', v: { en: 'Short-Wheelbase City Tuning (Firm on 16" Wheels)', de: 'Kurzer Radstand · Etwas straff (besonders auf 16")', ru: 'Упругая городская подвеска (жёстче на 16")' } }, { k: 'seatSupport', v: { en: 'High Upright MPV-Style Seating', de: 'Hohe aufrechte Sitzposition (Mini-Van-Gefühl)', ru: 'Высокая вертикальная посадка' } }], note: { en: '15-inch wheels give noticeably smoother city comfort than 16-inch alloys.', de: 'Auf 15-Zoll-Rädern spürbar komfortabler als mit 16-Zoll-Alufelgen.', ru: 'На 15-дюймовых колёсах едет заметно мягче, чем на 16-дюймовых.' } },
+        highwayNoise: { specs: [{ k: 'cabinNoise130', v: { en: '~72 dB(A) at 130 km/h (Short 5th Gear)', de: '~72 dB(A) bei 130 km/h (Hohe Drehzahl im 5. Gang)', ru: '~72 дБ(А) при 130 км/ч (короткая 5-я передача)' } }, { k: 'acousticGlass', v: { en: 'Light City-Car Insulation', de: 'Leichte Kleinwagen-Dämmung', ru: 'Лёгкая шумоизоляция B-класса' } }], note: { en: 'Whisper-quiet in town, noticeably busier at 130+ km/h motorway speeds.', de: 'In der Stadt sehr leise, bei über 130 km/h auf der Autobahn hörbar lauter.', ru: 'Тихий в городе, но на трассе выше 120–130 км/ч мотор слышно.' } }
+      },
+      interiorQualityFeatures: {
+        cabinMaterials: { specs: [{ k: 'dashTrim', v: { en: 'Hard-Wearing Plastics · Huge Dual Gloveboxes & 10 Cupholders', de: 'Robuster Kunststoff · Doppel-Handschuhfach & viele Ablagen', ru: 'Прочный пластик · Двойной бардачок и масса ниш' } }, { k: 'buildFit', v: { en: 'Exceptionally Durable · Built to Take Daily Abuse', de: 'Extrem widerstandsfähig im Alltag', ru: 'Очень износостойкий салон' } }], note: { en: 'Smartest small-car packaging ever built.', de: 'Genialste Raumausnutzung der gesamten Kleinwagenklasse.', ru: 'Гениальная компоновка салона среди компактных авто.' } },
+        controls: '@controlsPhys'
+      },
+      visibilityManeuverability: {
+        turningCircle: { specs: [{ k: 'turningDiam', v: '9.8 m (Class-Leading)' }, { k: 'bodyDimensions', v: '3,900 × 1,695 mm' }], note: { en: 'Sub-4-meter length + 9.8 m turning circle makes parking anywhere effortless.', de: 'Unter 4 Meter lang + 9,8 m Wendekreis — passt in praktisch jede Parklücke.', ru: 'Длина 3.9 м и разворот 9.8 м — паркуется в любом дворе.' } },
+        visibility: { specs: [{ k: 'sightlines', v: { en: 'Huge Windscreen & Large Side Glass · Small Front Quarter Windows', de: 'Riesige Glasflächen & hohe Sitzposition', ru: 'Огромное остекление и высокая посадка' } }, { k: 'parkingAids', v: { en: 'Rarely Needed · Rear Sensors Optional', de: 'Kaum nötig · Parksensoren hinten optional', ru: 'Почти не нужны благодаря габаритам' } }], note: { en: 'Outstanding 360-degree visibility for new drivers and city commuters.', de: 'Hervorragende Rundumsicht für Fahranfänger und Stadtverkehr.', ru: 'Прекрасный круговой обзор для города.' } }
+      },
+      safetyProtection: {
+        euroNcap: { specs: [{ k: 'ncapOverall', v: '★★★★★ (2009)' }, { k: 'ncapBreakdown', v: { en: '78% Adult · 79% Child · 60% Pedestrian', de: '78 % Erwachsene · 79 % Kinder · 60 % Fußgänger', ru: '78% Взрослые · 79% Дети · 60% Пешеходы' } }, { k: 'airbagsCount', v: { en: '6 Airbags + Active Headrests', de: '6 Airbags + aktive Kopfstützen', ru: '6 подушек + активные подголовники' } }], note: { en: 'Strong 5-star subcompact safety with standard VSA stability control.', de: 'Starke 5-Sterne-Kleinwagensicherheit mit serienmäßigem VSA-ESP.', ru: 'Крепкие 5 звёзд для B-класса со стандартной ESP.' } },
+        safetyTech: { specs: [{ k: 'activeAssists', v: { en: '✓ ESP/VSA Standard · ✕ No AEB / Lane Assist', de: '✓ ESP/VSA Serie · ✕ Kein Notbrems-/Spurassistent', ru: '✓ ESP/VSA в базе · ✕ Без AEB и полосы' } }], note: { en: 'Simple, reliable mechanical safety without modern camera assists.', de: 'Klassisch-solide Sicherheit ohne moderne Kamera-Assistenten.', ru: 'Классическая надёжная безопасность без сложных камер.' } }
+      },
+      passengerSpaceErgonomics: {
+        rearRoom: { specs: [{ k: 'wheelbase', v: '2,500 mm' }, { k: 'rearLegHead', v: { en: 'Compact-Class Legroom & Tall Headroom in a 3.9 m Car', de: 'Bein- & Kopffreiheit auf Kompaktklasse-Niveau bei 3,9 m Länge', ru: 'Простор уровня C-класса в кузове длиной 3.9 м' } }], note: { en: 'Center fuel tank unlocks rear cabin space that shames much larger cars.', de: 'Mittig verbauter Tank schafft Fondplatz wie in einer Fahrzeugklasse höher.', ru: 'Центральный бак даёт простор сзади на уровне более крупных авто.' } },
+        isofixEntry: { specs: [{ k: 'isofixAccess', v: { en: '✓ 2× ISOFIX · Tall Square Rear Doors', de: '✓ 2× ISOFIX · Hohe, weit öffnende Türen', ru: '✓ 2× ISOFIX · Высокие удобные двери' } }], note: { en: 'Effortless entry and child-seat loading.', de: 'Müheloses Einsteigen und Kindersitz-Einbau.', ru: 'Очень лёгкая посадка и установка детских кресел.' } }
+      },
+      interiorBootSpace: {
+        bootVolume: { specs: [{ k: 'bootUpDown', v: '399 L / 1,321 L (300 L IMA)' }, { k: 'loadSill', v: { en: '~605 mm (Ultra-Low Sill)', de: '~605 mm (Extrem niedrige Ladekante)', ru: '~605 мм (очень низкий порог)' } }], note: { en: '399 L boot beats even the larger Toyota Auris!', de: '399 L Kofferraum schlagen sogar den größeren Toyota Auris!', ru: 'Багажник 399 л больше, чем у более крупного Toyota Auris!' } },
+        seatUtility: { specs: [{ k: 'foldingMech', v: { en: '✓ Honda Magic Seats (Cinema Fold-Up + Flat Floor)', de: '✓ Honda Magic Seats (Hochklappbar + Ebener Boden)', ru: '✓ Honda Magic Seats (подъём + ровный пол)' } }], note: { en: 'Swallows tall plants, washing machines, and bicycles inside a sub-4m hatchback.', de: 'Schluckt Fahrräder, Pflanzen und Umzugskartons auf unter 4 Metern Länge.', ru: 'Вмещает велосипеды, высокие растения и коробки в 3.9-метровом кузове.' } }
+      },
+      payloadTowing: {
+        payloadRoof: { specs: [{ k: 'maxPayload', v: '~410 kg' }, { k: 'roofLoad', v: '50 kg' }], note: { en: 'Generous payload for a lightweight subcompact.', de: 'Gute Zuladung für einen leichten Kleinwagen.', ru: 'Хорошая загрузка для лёгкого субкомпакта.' } },
+        towingBraked: '@towingDynamic'
+      },
+      accelerationOvertaking: { sprint0100: '@sprintDynamic', topSpeed: '@vmaxDynamic' },
+      midRangeTorquePassing: { peakTorque: '@torqueDynamic', passingPunch: '@passingDynamic' },
+      handlingAgility: {
+        chassisFeel: { specs: [{ k: 'kerbWeight', v: '1,070–1,162 kg' }, { k: 'handlingChar', v: { en: 'Featherweight Urban Agility · Light Electric Steering', de: 'Federleicht & wendig in der Stadt · Leichte Lenkung', ru: 'Лёгкость и юркость в городе · Лёгкий руль' } }, { k: 'tyreSizes', v: '175/65 R15 · 185/55 R16' }], note: { en: 'Tiny tyres keep replacement costs rock-bottom.', de: 'Kleine Reifengrößen halten Folgekosten extrem niedrig.', ru: 'Небольшие шины обходятся очень дёшево.' } },
+        tractionDiff: '@tractionFwdOpen'
+      },
+      brakingPerformance: { braking1000: '@brakingDistDynamic', brakeSetup: '@brakeSetupDiscs4' },
+      efficiencyFuel: { realWorldFuel: '@fuelDynamic', tankRange: '@tankDynamic' },
+      taxInsuranceNorm: { euroNorm: '@euroDynamic', taxInsurance: '@taxInsDynamic' },
+      maintenanceRepairCosts: { timingDrive: '@timingDynamic', serviceWear: '@serviceDynamic' },
+      depreciationResale: { valueRetention: '@retentionDynamic', resaleDemand: '@demandDynamic' }
+    },    sharedBuyerFit: {
       cards: {
         jazzMagicSpace: {
           en: 'You want maximum space in a tiny footprint: Flip-up Magic Seats and a 399 L boot outclass cars a full size larger.',
@@ -20818,6 +22806,14 @@ const CAR_ROSTER = [
     engines: [
       {
         id: '1.2-ivtec',
+        specOverrides: {
+          engineName: { en: '1.2L i-VTEC NA', de: '1.2L i-VTEC Sauger', ru: '1.2L i-VTEC Атм.' },
+          forcedInduction: '@na', injection: '@port', gearbox: '@manual5', clutchDmf: '@singleClutch',
+          towingBraked: '1,000 kg', sprint0100: '12.6 s', topSpeed: '177 km/h', peakTorque: '114 Nm @ 4,900',
+          passingPunch: { en: 'City-Focused · Revvy', de: 'Stadt-Motor · Drehfreudig', ru: 'Городской · Любит обороты' },
+          realWorldFuel: '5.5–6.1 L/100 km', tankRange: '42 L · ~720 km', euroNorm: 'Euro 5',
+          taxInsurance: '@tierVeryLow', timingDrive: '@chain', serviceWear: '@tierVeryLow'
+        },
         dossierGroup: 'petrol-5mt',
         buyerFitGroup: 'na-petrol',
         isDefault: false,
@@ -20896,6 +22892,19 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '1.2L i-VTEC Inline-4 NA (L12B1)', de: '1.2L i-VTEC Reihenvierzylinder Sauger (L12B1)', ru: '1.2L i-VTEC рядный 4-цил. атмосферный (L12B1)' } },
+                  { k: 'displacement', v: '1,198 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 16V SOHC', de: '4 Zylinder · 16V SOHC', ru: '4 цилиндра · 16V SOHC' } },
+                  { k: 'output', v: { en: '66 kW (90 HP)', de: '66 kW (90 PS)', ru: '66 кВт (90 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Petrol · Timing Chain', de: 'Benzin · Steuerkette', ru: 'Бензин · Цепь ГРМ' } }
+                ],
+                note: { en: 'Virtually indestructible L12 four-cylinder — top TÜV reliability scores year after year.', de: 'Nahezu unverwüstlicher L12-Vierzylinder mit Spitzenwerten im TÜV-Report.', ru: 'Практически вечный 4-цилиндровый атмосферник с топовой надёжностью TÜV.' }
+              },
+              forcedInduction: '@naNoTurbo', injection: '@portInj'
+            },
             score: 9.6,
             badges: {
               en: ['Bulletproof L12B1 Chain NA', 'No Turbo / Zero EGR Issues'],
@@ -21235,6 +23244,15 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '~100,000 km · 6 yrs', action: { en: 'Valve-Clearance Check & Iridium Spark Plugs', de: 'Ventilspiel prüfen & Iridium-Zündkerzen wechseln', ru: 'Регулировка клапанов и иридиевые свечи' }, cost: '€190–300' },
+                { when: '~100,000 km · 6 yrs', action: { en: 'Honda MTF-3 5-Speed Gearbox Oil Change', de: 'Honda MTF-3 Schaltgetriebeöl wechseln', ru: 'Замена масла в 5-ст. МКПП (MTF-3)' }, cost: '€100–160' }
+              ],
+              critical: [
+                { when: '140–200k km · 10–14 yrs', action: { en: 'Manual Gearbox Input-Shaft Bearing (Whirring Noise)', de: 'Getriebeeingangslager (Mahlgeräusch im Leerlauf)', ru: 'Подшипник первичного вала МКПП (шум на нейтрали)' }, cost: '€550–850', risk: { en: 'Loud bearing whine & eventual gearbox wear', de: 'Lauter werdendes Getriebegeräusch & Lagerschaden', ru: 'Усиление гула и износ подшипников КПП' }, damage: '€1,200–1,800' }
+              ]
+            },
             score: 9.4,
             badges: {
               en: ['Tiny 15" Tyres & Cheap Brakes', 'Zero Turbo / DPF / DMF Bills'],
@@ -21254,6 +23272,14 @@ const CAR_ROSTER = [
       },
       {
         id: '1.3-ivtec',
+        specOverrides: {
+          engineName: { en: '1.3L i-VTEC NA', de: '1.3L i-VTEC Sauger', ru: '1.3L i-VTEC Атм.' },
+          forcedInduction: '@na', injection: '@port', gearbox: '@manual5', clutchDmf: '@singleClutch',
+          towingBraked: '1,000 kg', sprint0100: '11.4 s', topSpeed: '182 km/h', peakTorque: '127 Nm @ 4,800',
+          passingPunch: { en: 'Peppy City · High Revs Hwy', de: 'Spritzig Stadt · Drehzahl AB', ru: 'Бодро в городе · Обороты на трассе' },
+          realWorldFuel: '5.6–6.2 L/100 km', tankRange: '42 L · ~710 km', euroNorm: 'Euro 5',
+          taxInsurance: '@tierVeryLow', timingDrive: '@chain', serviceWear: '@tierVeryLow'
+        },
         dossierGroup: 'petrol-cvt',
         buyerFitGroup: 'na-petrol',
         isDefault: true,
@@ -21328,6 +23354,19 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '1.3L i-VTEC Inline-4 NA (L13Z1)', de: '1.3L i-VTEC Reihenvierzylinder Sauger (L13Z1)', ru: '1.3L i-VTEC рядный 4-цил. атмосферный (L13Z1)' } },
+                  { k: 'displacement', v: '1,339 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 16V SOHC', de: '4 Zylinder · 16V SOHC', ru: '4 цилиндра · 16V SOHC' } },
+                  { k: 'output', v: { en: '73 kW (99 HP)', de: '73 kW (99 PS)', ru: '73 кВт (99 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Petrol · Timing Chain', de: 'Benzin · Steuerkette', ru: 'Бензин · Цепь ГРМ' } }
+                ],
+                note: { en: 'Sweet-spot Jazz engine — bulletproof timing-chain reliability and rock-bottom running costs.', de: 'Der perfekte Jazz-Motor — unverwüstliche Steuerkette und minimale Unterhaltskosten.', ru: 'Оптимальный мотор для Jazz — неубиваемая цепь ГРМ и копеечное содержание.' }
+              },
+              forcedInduction: '@naNoTurbo', injection: '@portInj'
+            },
             score: 9.6,
             badges: {
               en: ['Bulletproof L13Z1 Chain NA', 'Clean Multi-Point Port Injection'],
@@ -21667,6 +23706,15 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '~100,000 km · 6 yrs', action: { en: 'Valve-Clearance Check & Iridium Spark Plugs', de: 'Ventilspiel prüfen & Iridium-Zündkerzen wechseln', ru: 'Регулировка клапанов и иридиевые свечи' }, cost: '€190–300' },
+                { when: '~100,000 km · 6 yrs', action: { en: 'Honda MTF-3 5-Speed Gearbox Oil Change', de: 'Honda MTF-3 Schaltgetriebeöl wechseln', ru: 'Замена масла в 5-ст. МКПП (MTF-3)' }, cost: '€100–160' }
+              ],
+              critical: [
+                { when: '140–200k km · 10–14 yrs', action: { en: 'Manual Gearbox Input-Shaft Bearing (Whirring Noise)', de: 'Getriebeeingangslager (Mahlgeräusch im Leerlauf)', ru: 'Подшипник первичного вала МКПП (шум на нейтрали)' }, cost: '€550–850', risk: { en: 'Loud bearing whine & eventual gearbox wear', de: 'Lauter werdendes Getriebegeräusch & Lagerschaden', ru: 'Усиление гула и износ подшипников КПП' }, damage: '€1,200–1,800' }
+              ]
+            },
             score: 9.2,
             badges: {
               en: ['Tiny 15" Tyres & Cheap Parts', '40k km Fluid On CVT Trims'],
@@ -21686,6 +23734,15 @@ const CAR_ROSTER = [
       },
       {
         id: '1.3-ima',
+        specOverrides: {
+          engineName: { en: '1.3L IMA Hybrid', de: '1.3L IMA Hybrid', ru: '1.3L IMA Гибрид' },
+          forcedInduction: '@hybridEMotor', injection: '@port', gearbox: '@cvt', clutchDmf: '@noClutch',
+          bootVolume: '300 L / 1,320 L', towingBraked: '0 kg (No Tow)', sprint0100: '12.1 s', topSpeed: '175 km/h',
+          peakTorque: { en: '167 Nm System', de: '167 Nm System', ru: '167 Н·м системн.' },
+          passingPunch: { en: 'Smooth City E-Boost', de: 'Sanfter E-Schub Stadt', ru: 'Плавный подхват в городе' },
+          brakeSetup: '@discsRegen', realWorldFuel: '4.6–5.3 L/100 km', tankRange: '40 L · ~800 km',
+          euroNorm: 'Euro 5', taxInsurance: '@tierVeryLow', timingDrive: '@chain', serviceWear: '@tierLow'
+        },
         dossierGroup: 'hybrid-cvt',
         buyerFitGroup: 'hybrid',
         isDefault: false,
@@ -21764,6 +23821,19 @@ const CAR_ROSTER = [
         },
         subStats: {
           powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '1.3L i-VTEC IMA Inline-4 Hybrid (LDA3)', de: '1.3L i-VTEC IMA Reihenvierzylinder Hybrid (LDA3)', ru: '1.3L i-VTEC IMA рядный 4-цил. гибрид (LDA3)' } },
+                  { k: 'displacement', v: '1,339 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 8V SOHC (Dual Spark)', de: '4 Zylinder · 8V SOHC (Doppelzündung)', ru: '4 цилиндра · 8V SOHC (8 свечей)' } },
+                  { k: 'output', v: { en: '65 kW (88 HP) · System: 72 kW (98 HP)', de: '65 kW (88 PS) · System: 72 kW (98 PS)', ru: '65 кВт (88 л.с.) · Сист.: 72 кВт (98 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Petrol / Electric · Timing Chain', de: 'Benzin / Elektro · Steuerkette', ru: 'Бензин / Электро · Цепь ГРМ' } }
+                ],
+                note: { en: 'Simple parallel IMA hybrid with timing chain; keeps driving on petrol even if the small battery ages.', de: 'Simpler Parallel-Hybrid mit Steuerkette; bleibt selbst bei gealtertem Akku fahrbereit.', ru: 'Простой параллельный гибрид с цепью ГРМ.' }
+              },
+              forcedInduction: '@hybridIma', injection: '@portInj'
+            },
             score: 8.9,
             badges: {
               en: ['Reliable LDA Chain Engine', 'Check NiMH IMA Battery'],
@@ -22142,6 +24212,15 @@ const CAR_ROSTER = [
             }
           },
           maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '~40,000 km · 3 yrs', action: { en: 'Honda CVT Transmission Fluid Change (Strict Interval)', de: 'Honda CVT-Getriebeöl wechseln (Strikt alle 40.000 km)', ru: 'Замена масла в вариаторе CVT (строго раз в 40 тыс. км)' }, cost: '€130–210' },
+                { when: '~100,000 km · 6 yrs', action: { en: '8× Iridium Spark Plugs (Dual-Spark Head) & Valve Check', de: '8× Iridium-Zündkerzen (Doppelzündung) & Ventilspiel', ru: '8 иридиевых свечей и проверка клапанов' }, cost: '€260–400' }
+              ],
+              critical: [
+                { when: '150–230k km · 10–15 yrs', action: { en: '0.6 kWh NiMH IMA Hybrid Battery Pack Refresh', de: '0,6 kWh NiMH IMA-Hybridakku aufbereiten / tauschen', ru: 'Восстановление или замена батареи IMA (0.6 кВт·ч)' }, cost: '€750–1,400', risk: { en: 'IMA warning light & loss of electric assist', de: 'IMA-Warnleuchte & Wegfall der E-Unterstützung', ru: 'Ошибка IMA и отключение электропомощи' }, damage: '€1,500–2,200' }
+              ]
+            },
             score: 8.7,
             badges: {
               en: ['Regen Saves Brake Wear', '40k CVT Oil • Ageing NiMH Pack'],
@@ -23446,6 +25525,171 @@ const CAR_ROSTER = [
         }
       }
     },
+    sharedSpecs: {
+      rustProtection: '@rustGood',
+      suspensionWear: '@suspMultiLink',
+      starterAlternator: '@starter12v',
+      electronicsRisk: '@elecLowMod',
+      rideTuning: { en: 'Plush Executive (Agility)', de: 'Souverän (Agility Control)', ru: 'Благородная (Agility Control)' },
+      highwayNoise: { en: '~66 dB · Executive Quiet', de: '~66 dB · Oberklasse-Ruhe', ru: '~66 дБ · Тишина бизнес-класса' },
+      cabinMaterials: { en: 'Solid Mopf 2011+ Luxury', de: 'Solider Mopf-Premium-Mix', ru: 'Добротный премиум (Mopf)' },
+      controls: '@physButtons',
+      turningCircle: '10.8 m',
+      visibility: { en: 'Classic 3-Box · Easy Corners', de: 'Klassisches Stufenheck · Gut', ru: 'Классический седан · Хорошо' },
+      euroNcap: '★★★★★ (2007)',
+      safetyTech: { en: '✓ ESP · ✓ 7 Airbags + PRE-SAFE', de: '✓ ESP · ✓ 7 Airbags + PRE-SAFE', ru: '✓ ESP · ✓ 7 подушек + PRE-SAFE' },
+      rearRoom: { en: 'Snug Behind Tall Drivers', de: 'Eher kompakt im Fond', ru: 'Скромно за высоким водителем' },
+      isofixEntry: { en: '✓ 2× ISOFIX · Classic Doors', de: '✓ 2× ISOFIX · Gute Türen', ru: '✓ 2× ISOFIX · Удобные двери' },
+      bootVolume: '475 L / 1,350 L',
+      seatUtility: { en: 'Opt. 60/40 Split Fold', de: 'Opt. 60/40 umklappbar', ru: 'Опц. спинка 60/40' },
+      payloadRoof: '530 kg · 100 kg',
+      driveline: { en: 'RWD (Opt. 4MATIC AWD)', de: 'Heckantrieb (Opt. 4MATIC)', ru: 'Задний привод (Опц. 4MATIC)' },
+      chassisFeel: { en: 'Balanced RWD · Autobahn King', de: 'Ausgewogener Heckantrieb', ru: 'Баланс RWD · Король автобана' },
+      tractionDiff: { en: 'RWD · ESP (Opt. 4MATIC)', de: 'Heckantrieb · ESP (Opt. 4MATIC)', ru: 'Задний привод · ESP (Опц. 4MATIC)' },
+      braking1000: '~35.8 m',
+      brakeSetup: '@discs4',
+      valueRetention: '@retHigh',
+      resaleDemand: '@demFast'
+    },
+    sharedDossierBreakdowns: {
+      transmissionDriveline: { gearbox: { specs: [{ k: 'gearboxModel', v: { en: '5G-Tronic (722.6) / 7G-Tronic Plus (722.9) / 6-MT', de: '5G-Tronic (722.6) / 7G-Tronic Plus (722.9) / 6-Gang', ru: '5G-Tronic (722.6) / 7G-Tronic Plus (722.9) / 6-МКПП' } }, { k: 'shiftQuality', v: { en: 'Silky Longitudinal Automatics · 60,000 km ATF Flush Mandatory', de: 'Seidige Längs-Automatiken · 60.000-km-Ölspülung Pflicht', ru: 'Плавные продольные автоматы · Замена ATF каждые 60 000 км' } }], note: { en: 'Both the old-school 5G-Tronic and upgraded 2011+ 7G-Tronic Plus are durable when flushed every 60,000 km; avoid unserviced early 722.9 boxes.', de: 'Sowohl die unverwüstliche 5G-Tronic als auch die 7G-Tronic Plus ab 2011 halten ewig mit 60.000-km-Ölwechsel.', ru: 'И 5G-Tronic, и обновлённая 7G-Tronic Plus (2011+) служат долго при замене масла каждые 60 000 км.' } }, clutchDmf: '@clutchTorqueConv', driveline: { specs: [{ k: 'drivelineArch', v: { en: 'Longitudinal Rear-Wheel Drive (Optional 4MATIC AWD)', de: 'Längsmotor mit Heckantrieb (Optional 4MATIC Allrad)', ru: 'Продольный мотор и задний привод (Опционально 4MATIC)' } }, { k: 'transferCase', v: { en: 'Zero Torque Steer · Tight 10.8 m Turning Circle', de: 'Keine Antriebseinflüsse in der Lenkung · 10,8 m Wendekreis', ru: 'Чистый руль без силовых подруливаний · Разворот 10,8 м' } }], note: { en: 'True RWD balance delivers effortless Autobahn poise and a tighter turning circle than front-drive rivals.', de: 'Echter Heckantrieb sorgt für überlegene Autobahn-Ruhe und einen engeren Wendekreis als Fronttriebler.', ru: 'Классический задний привод даёт благородную устойчивость на трассе и малый радиус разворота.' } } },
+      buildQualityRust: {
+        rustProtection: {
+          specs: [
+            { k: 'antiCorrosion', v: { en: 'Galvanized Body Panels (Huge Leap Over Rusty W203)', de: 'Vollverzinkte Karosserie (Riesensprung gegenüber W203)', ru: 'Оцинкованный кузов (на порядок лучше ржавеющего W203)' } },
+            { k: 'watchAreas', v: { en: 'CRITICAL: Rear Steel Subframe Rusts From Inside (MB Goodwill!)', de: 'WICHTIG: Hinterachsträger rostet von innen (MB-Kulanz prüfen!)', ru: 'ВАЖНО: Задний подрамник гниёт изнутри (проверяйте замену!)' } }
+          ],
+          note: { en: 'Outer body panels stay virtually rust-free, but inspect the rear subframe on a lift — Mercedes frequently replaces rusted W204 subframes on goodwill.', de: 'Die Außenhaut bleibt nahezu rostfrei, aber der Hinterachsträger rostet gern von innen — oft auf Mercedes-Kulanz getauscht.', ru: 'Кузов отлично держит коррозию, но обязательно осмотрите задний подрамник на подъёмнике — известная болезнь W204.' }
+        },
+        suspensionWear: '@suspMultiLink'
+      },
+      electronicsReliability: {
+        starterAlternator: '@starterStandard12v',
+        electronicsRisk: {
+          specs: [
+            { k: 'busArch', v: { en: 'Mature Mercedes CAN-Bus · Rotary COMAND Dial + Hard Keys', de: 'Ausgereifter Mercedes-CAN-Bus · COMAND-Drehregler + Tasten', ru: 'Надёжная шина CAN · Шайба COMAND и физические кнопки' } },
+            { k: 'knownWatchout', v: { en: 'Electronic Steering Lock (ELV/ESL) Motor Can Fail Past 150k km', de: 'Elektronische Lenkradverriegelung (ELV) kann ab 150 Tkm streiken', ru: 'Моторчик блокиратора руля (ELV/ESL) может отказать после 150 тыс. км' } }
+          ],
+          note: { en: 'Overall one of the most reliable modern Mercedes electronics platforms; budget once for the ELV steering-lock motor if never replaced.', de: 'Insgesamt eine der zuverlässigsten modernen Mercedes-Plattformen; lediglich die ELV-Lenkradverriegelung ist ein typisches Verschleißteil.', ru: 'Одна из самых надёжных платформ Mercedes по электрике; главное слабое место — блокиратор руля ELV.' }
+        }
+      },
+      rideNoiseComfort: {
+        rideTuning: {
+          specs: [
+            { k: 'damperSetup', v: { en: 'Agility Control Amplitude-Selective Dampers · Multi-Link Rear', de: 'Agility-Control-Dämpfer (amplitudenselektiv) · Mehrlenker hinten', ru: 'Амортизаторы Agility Control · Многорычажная задняя подвеска' } },
+            { k: 'seatSupport', v: { en: 'Ergonomic Long-Distance German Seats · Effortless 800 km Days', de: 'Langstrecken-Sitze auf Oberklasse-Niveau · Ermüdungsfrei', ru: 'Удобнейшие немецкие кресла для дальних перегонов' } }
+          ],
+          note: { en: 'Standard Elegance/Classic trims glide like an E-Class; Avantgarde/AMG-Line adds firmer springs and sharper turn-in.', de: 'Elegance/Classic gleiten fast wie eine E-Klasse; Avantgarde/AMG-Line fahren straffer und direkter.', ru: 'Версии Elegance/Classic плывут почти как E-Class; Avantgarde и AMG-Line ощутимо собраннее.' }
+        },
+        highwayNoise: {
+          specs: [
+            { k: 'cabinNoise130', v: { en: '~66 dB(A) at 130 km/h (Whisper-Quiet Cabin)', de: '~66 dB(A) bei 130 km/h (Flüsterleiser Innenraum)', ru: '~66 дБ(А) при 130 км/ч (Тишина бизнес-класса)' } },
+            { k: 'acousticGlass', v: { en: 'Heavy Soundproofing & Tight Aero Sealing (0.26–0.27 Cd)', de: 'Aufwendige Dämmung & exzellente Aerodynamik (0,26–0,27 cW)', ru: 'Мощная шумоизоляция и отличная аэродинамика (0,26 Cd)' } }
+          ],
+          note: { en: 'Noticeably quieter at 150–180 km/h than mainstream midsize sedans — built for all-day Autobahn cruising.', de: 'Bei 150–180 km/h spürbar leiser als Volumen-Mittelklasse — wie geschaffen für lange Autobahnetappen.', ru: 'На 150–180 км/ч заметно тише массовых седанов — идеален для дальних трасс.' }
+        }
+      },
+      interiorQualityFeatures: {
+        cabinMaterials: {
+          specs: [
+            { k: 'dashboardTrim', v: { en: '2011+ Mopf Facelift Upgraded Soft Dash & Integrated Screen', de: 'Ab Mopf 2011 deutlich edleres Cockpit & integriertes Display', ru: 'С рестайлинга 2011 (Mopf) — богатая панель и встроенный экран' } },
+            { k: 'seatUpholstery', v: { en: 'Cloth, Artico Synthetic (Watch Side-Bolster Cracks) or Real Leather', de: 'Stoff, Artico-Kunstleder (Wangen prüfen) oder Echtleder', ru: 'Ткань, экокожа Artico (проверяйте боковины) или натуральная кожа' } }
+          ],
+          note: { en: '2011+ Mopf facelift transformed the interior feel; check Artico driver seat bolsters for splitting.', de: 'Die Modellpflege 2011 wertete den Innenraum massiv auf; bei Artico-Kunstleder die Fahrersitzwange auf Risse prüfen.', ru: 'Рестайлинг 2011 года сильно поднял уровень салона; на экокоже Artico проверяйте трещины боковины.' }
+        },
+        controls: '@controlsPhys'
+      },
+      visibilityManeuverability: {
+        turningCircle: {
+          specs: [
+            { k: 'turnDiameter', v: { en: '10.8 m (Class-Leading RWD Turning Radius)', de: '10,8 m (Klassenbester Heckantrieb-Wendekreis)', ru: '10,8 м (Лучший в классе разворот благодаря RWD)' } },
+            { k: 'steeringType', v: { en: 'Speed-Sensitive Hydraulic / Parametric Steering (Crisp Feel)', de: 'Parameterlenkung · Exaktes Feedback & leicht beim Parken', ru: 'Параметрический усилитель руля · Точность и лёгкость' } }
+          ],
+          note: { en: 'Without front driveshafts, the front wheels turn sharper than any FWD rival — U-turns feel effortless.', de: 'Ohne Antriebswellen vorn schlagen die Räder weiter ein als bei Fronttrieblern — extrem handlich beim Wenden.', ru: 'Отсутствие передних приводов даёт огромный угол поворота колёс — разворачиваться в городе очень легко.' }
+        },
+        visibility: {
+          specs: [
+            { k: 'allRoundView', v: { en: 'Classic 3-Box Proportions · Clear Sightlines', de: 'Klassische Proportionen · Sehr übersichtlich', ru: 'Классические пропорции · Понятные габариты' } },
+            { k: 'rearView', v: { en: 'Front & Rear Parktronic Sensors Widely Fitted', de: 'Parktronic-Sensoren vorn & hinten weit verbreitet', ru: 'Парктроники Parktronic спереди и сзади есть у большинства' } }
+          ],
+          note: { en: 'Traditional upright glasshouse and visible bonnet corners make judging tight gaps easy.', de: 'Klassische Fensterflächen und gut erkennbare Motorhaube machen das Rangieren angenehm einfach.', ru: 'Классическое остекление и чёткие углы кузова упрощают маневрирование.' }
+        }
+      },
+      safetyProtection: {
+        euroNcap: {
+          specs: [
+            { k: 'crashRating', v: { en: '5 Stars Euro NCAP (2007) · 7 Airbags incl. Driver Knee', de: '5 Sterne Euro NCAP (2007) · 7 Airbags inkl. Knieairbag', ru: '5 звёзд Euro NCAP (2007) · 7 подушек (вкл. коленную)' } },
+            { k: 'bodyStructure', v: { en: '70% High-Strength Steel Executive Safety Cell', de: '70% hochfester Stahl in der Fahrgastzelle', ru: '70% высокопрочной стали в силовой клетке кузова' } }
+          ],
+          note: { en: 'Tank-like structural rigidity with 7 airbags, NECK-PRO active headrests, and available PRE-SAFE.', de: 'Extrem verwindungssteife Sicherheitszelle mit 7 Airbags, NECK-PRO-Kopfstützen und optionalem PRE-SAFE.', ru: 'Исключительная жёсткость кузова, 7 подушек, активные подголовники NECK-PRO и система PRE-SAFE.' }
+        },
+        safetyTech: {
+          specs: [
+            { k: 'activeSafety', v: { en: 'ESP, Attention Assist, Adaptive Brake + Hill Hold', de: 'ESP, Attention Assist, Adaptive Brake + Berganfahrhilfe', ru: 'ESP, контроль усталости, Adaptive Brake и помощь в горку' } },
+            { k: 'driverAssists', v: { en: 'Optional Distronic Plus, Blind-Spot & Lane Assist (2011+)', de: 'Optional Distronic Plus, Totwinkel- & Spurassistent (ab 2011)', ru: 'Опционально Distronic Plus, контроль слепых зон и полосы (2011+)' } }
+          ],
+          note: { en: '2011+ facelift cars offered radar cruise and blind-spot tech years ahead of mainstream competitors.', de: 'Ab Facelift 2011 gab es Radar-Abstandstempomat und Totwinkel-Assistent — der Konkurrenz Jahre voraus.', ru: 'После рестайлинга 2011 года доступны радарный круиз и контроль слепых зон на уровне более новых авто.' }
+        }
+      },
+      passengerSpaceErgonomics: {
+        rearRoom: {
+          specs: [
+            { k: 'rearSpace', v: { en: 'Cozy Rear Kneeroom · Tall RWD Propshaft Tunnel', de: 'Kompakter Fond · Hoher Kardanwellen-Tunnel', ru: 'Скромный запас сзади · Высокий тоннель кардана' } },
+            { k: 'frontErgo', v: { en: 'First-Class Front Cockpit · Huge Seat Travel', de: 'Erstklassiges Cockpit vorn · Riesiger Verstellbereich', ru: 'Превосходный передний ряд · Огромный запас регулировок' } }
+          ],
+          note: { en: 'Superb for two front occupants and kids in back, but noticeably tighter rear knee room than a Mondeo or Avensis.', de: 'Vorn erstklassig, im Fond aber spürbar knapper als in Mondeo oder Avensis — eher für 2 Erwachsene + Kinder.', ru: 'Великолепен спереди, но сзади заметно теснее Mondeo или Avensis — оптимален для семьи с детьми.' }
+        },
+        isofixEntry: {
+          specs: [
+            { k: 'childSeats', v: { en: '2× Outer Rear ISOFIX + Top-Tether Anchors', de: '2× ISOFIX außen hinten + Top-Tether', ru: '2× ISOFIX сзади + якорные крепления' } },
+            { k: 'doorAccess', v: { en: 'Solid Heavy Doors · Check Space for Large Rear-Facing Seats', de: 'Solide Türen · Platz für große Reboarder vorher testen', ru: 'Тяжёлые добротные двери · Проверьте запас под крупное кресло' } }
+          ],
+          note: { en: 'ISOFIX points are easy to click in, though tall front drivers reduce space behind them for bulky rear-facing seats.', de: 'ISOFIX ist gut zugänglich, bei sehr großen Fahrern wird es hinter dem Fahrersitz für große Reboarder aber eng.', ru: 'Крепления ISOFIX удобны, но за высоким водителем крупному детскому креслу может быть тесновато.' }
+        }
+      },
+      interiorBootSpace: {
+        bootVolume: {
+          specs: [
+            { k: 'bootCapacity', v: { en: '475 L (Sedan) / 485–1,500 L (T-Model Wagon)', de: '475 L (Limousine) / 485–1.500 L (T-Modell Kombi)', ru: '475 л (Седан) / 485–1 500 л (Универсал T-Model)' } },
+            { k: 'loadingLip', v: { en: 'Deep Well-Trimmed Sedan Trunk · Clean Square Floor', de: 'Tiefer, edel verkleideter Kofferraum · Sauber geschnitten', ru: 'Глубокий, аккуратно обитый багажник правильной формы' } }
+          ],
+          note: { en: '475 L easily holds holiday suitcases; verify whether a used sedan has the optional folding rear seatback.', de: '475 L reichen locker für Urlaubsgepäck; bei der Limousine prüfen, ob die optionale umklappbare Rückbank verbaut ist.', ru: '475 л хватает для путешествий; у седана проверяйте наличие опции складной задней спинки.' }
+        },
+        seatUtility: {
+          specs: [
+            { k: 'foldingSystem', v: { en: 'Optional 60/40 Split-Fold Rear Seat on Sedan (Standard on Wagon)', de: '60/40-Umklappung bei Limousine optional (Kombi Serie)', ru: 'Складная спинка 60/40 — опция на седане (база на универсале)' } }
+          ],
+          note: { en: 'Folding rear seats were a paid option on the W204 sedan — confirm the release handles inside the trunk before buying.', de: 'Umklappbare Rücksitze waren bei der Limousine aufpreispflichtig — vor dem Kauf die Hebel im Kofferraum checken.', ru: 'Складная спинка была платной опцией для седана — обязательно проверьте рычаги в багажнике.' }
+        }
+      },
+      payloadTowing: {
+        payloadRoof: {
+          specs: [
+            { k: 'maxPayload', v: { en: '~530 kg (525–540 kg Depending on Engine)', de: '~530 kg (525–540 kg je nach Motor)', ru: '~530 кг (525–540 кг в зависимости от мотора)' } },
+            { k: 'roofLoad', v: { en: '100 kg Approved Dynamic Roof Load', de: '100 kg zugelassene Dachlast', ru: '100 кг допустимая нагрузка на крышу' } }
+          ],
+          note: { en: 'Strong 100 kg roof load and 1,800 kg RWD towing stability make the W204 an outstanding tow vehicle.', de: 'Starke 100 kg Dachlast und 1.800 kg Anhängelast mit Heckantrieb machen den W204 zum erstklassigen Zugwagen.', ru: '100 кг на крышу и 1 800 кг на фаркопе с задним приводом делают W204 отличным тягачом.' }
+        },
+        towingBraked: '@towingDynamic'
+      },
+      accelerationOvertaking: { sprint0100: '@sprintDynamic', topSpeed: '@vmaxDynamic' },
+      midRangeTorquePassing: { peakTorque: '@torqueDynamic', passingPunch: '@passingDynamic' },
+      handlingAgility: {
+        chassisFeel: {
+          specs: [
+            { k: 'steeringFeel', v: { en: 'Pure Uncorrupted RWD Steering · Sharp Turn-In', de: 'Saubere Heckantriebs-Lenkung · Präzises Einlenken', ru: 'Чистый руль заднего привода · Точные реакции' } },
+            { k: 'cornering', v: { en: 'Near-50/50 Balance · Rock-Solid at 200+ km/h', de: 'Ausgewogene Balance · Felsenfest auch über 200 km/h', ru: 'Отличная развесовка · Непоколебим на 200+ км/ч' } }
+          ],
+          note: { en: 'Combines genuine driver engagement with unmistakable German Autobahn stability.', de: 'Verbindet echten Heckantriebs-Fahrspaß mit unverkennbarer Mercedes-Autobahnruhe.', ru: 'Сочетает удовольствие от заднего привода с фирменной стабильностью Mercedes на автобане.' }
+        },
+        tractionDiff: { specs: [{ k: 'tractionSystem', v: { en: 'Rear-Wheel Drive + Mercedes ESP (4MATIC AWD on Select Trims)', de: 'Heckantrieb + Mercedes-ESP (4MATIC Allrad optional)', ru: 'Задний привод + ESP (полный привод 4MATIC на части версий)' } }], note: { en: 'Superb dry-road traction off the line; fit quality winter tyres for snowy climbs unless choosing 4MATIC.', de: 'Sehr gute Traktion auf trockener Straße; im Winter gute Winterreifen fahren oder 4MATIC wählen.', ru: 'Отличный зацеп на сухом асфальте; для снежной зимы ставьте хорошую зимнюю резину или берите 4MATIC.' } }
+      },
+      brakingPerformance: { braking1000: '@brakingDistDynamic', brakeSetup: '@brakeSetupDiscs4' },
+      efficiencyFuel: { realWorldFuel: '@fuelDynamic', tankRange: '@tankDynamic' },
+      taxInsuranceNorm: { euroNorm: '@euroDynamic', taxInsurance: '@taxInsDynamic' },
+      maintenanceRepairCosts: { timingDrive: '@timingDynamic', serviceWear: '@serviceDynamic' },
+      depreciationResale: { valueRetention: '@retHigh', resaleDemand: '@demFast' }
+    },
     engines: [
       {
         id: 'c180-kompressor-1.8',
@@ -23525,6 +25769,15 @@ const CAR_ROSTER = [
           performanceDynamics: 7.6,
           runningCostsTco: 7.5
         },
+        specOverrides: {
+          engineName: { en: '1.8L I4 Kompressor (Chain)', de: '1.8L Reihenvierzylinder Kompressor', ru: '1.8L R4 Kompressor (Цепь)' },
+          forcedInduction: '@supercharger', injection: '@port', timingDrive: '@chain',
+          gearbox: { en: '5G-Tronic (722.6) / 6-MT', de: '5G-Tronic (722.6) / 6-Gang', ru: '5G-Tronic (722.6) / 6-МКПП' },
+          clutchDmf: '@torqueConv', payloadRoof: '535 kg · 100 kg', towingBraked: '1,800 kg',
+          sprint0100: '9.5 s', topSpeed: '223 km/h', peakTorque: '230 Nm @ 2,800 rpm',
+          passingPunch: { en: 'Instant Supercharger Pull', de: 'Spontaner Kompressor-Antritt', ru: 'Мгновенная тяга компрессора' },
+          realWorldFuel: '8.2 L/100km', tankRange: '66 L (~805 km)', euroNorm: 'Euro 4 (Petrol)', taxInsurance: '@tierMod', serviceWear: '@tierMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.6,
@@ -23532,6 +25785,11 @@ const CAR_ROSTER = [
               en: ['M271 Simplex Chain Watch-Out', 'Durable Roots Supercharger'],
               de: ['M271 Simplex-Kette prüfen', 'Robuster Roots-Kompressor'],
               ru: ['Контроль цепи ГРМ M271', 'Надёжный механический компрессор']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'M271 E18 ML · 1,796 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium · Roots Supercharger + Port Injection', de: 'Reihenvierzylinder Alu · Kompressor + Saugrohreinspritzung', ru: 'Рядный 4-цил. алюминий · Компрессор + распредел. впрыск' } }], note: { en: 'Zero turbo lag and port injection (no intake carbon), paired with the bulletproof 5G-Tronic; budget once for the M271 simplex timing chain.', de: 'Kein Turboloch, keine Verkokung und unverwüstliche 5G-Tronic; lediglich die M271-Simplex-Steuerkette im Blick behalten.', ru: 'Нет турбоямы и нагара на клапанах, крепчайший 5G-Tronic; главный регламент — цепь и звёзды M271.' } },
+              forcedInduction: { specs: [{ k: 'boostType', v: { en: 'Belt-Driven Roots Supercharger (Instant Boost)', de: 'Mechanischer Kompressor (sofortiger Ladedruck)', ru: 'Механический компрессор Roots (мгновенный наддув)' } }], note: { en: 'Instant throttle response from idle with no turbo lag; supercharger unit itself is very durable.', de: 'Direktes Ansprechverhalten ab Leerlauf ohne Turboloch; der Kompressor selbst gilt als sehr langlebig.', ru: 'Мгновенный отклик с холостых без турбоямы; сам компрессор очень ресурсный.' } },
+              injection: '@portInj', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -23867,6 +26125,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.6,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Flush 5G-Tronic (722.6) ATF + filter & inspect cam-magnet oil blocker leads', de: '5G-Tronic-Öl (722.6) + Filter wechseln & Ölstoppkabel an Nockenwellenmagneten prüfen', ru: 'Замена масла/фильтра 5G-Tronic (722.6) и проверка магнитов фазовращателей' }, cost: '€240–360' },
+                { when: { en: 'Every 80,000–100,000 km', de: 'Alle 80.000–100.000 km', ru: 'Каждые 80–100 тыс. км' }, action: { en: 'Replace spark plugs, crankcase breather hoses & supercharger belt', de: 'Zündkerzen, Teillastentlüftung (Schläuche) & Kompressorriemen ersetzen', ru: 'Замена свечей, шлангов вентиляции картера и ремня компрессора' }, cost: '€220–340' }
+              ],
+              critical: [
+                { when: { en: '110,000–160,000 km', de: '110.000–160.000 km', ru: '110 000–160 000 км' }, action: { en: 'M271 simplex timing chain & worn camshaft adjuster sprockets', de: 'M271 Simplex-Steuerkette & abgenutzte Nockenwellenversteller-Räder', ru: 'Замена тонкой цепи ГРМ M271 и звёзд фазовращателей' }, cost: '€1,100–1,900', risk: { en: 'Stretched chain shears sprocket teeth, jumps timing, and bends valves', de: 'Gelängte Kette fräst Zahnräder ab und überspringt — Motorschaden', ru: 'Растянутая цепь стачивает зубья звёзд, перескакивает и гнёт клапаны' }, damage: '€3,500–5,500' },
+                { when: { en: '120,000–200,000 km', de: '120.000–200.000 km', ru: '120 000–200 000 км' }, action: { en: 'W204 rear subframe rust inspection & ELV steering-lock motor', de: 'W204 Hinterachsträger-Rostprüfung (MB-Kulanz) & ELV-Lenkradschloss', ru: 'Проверка заднего подрамника на коррозию и моторчик ELV руля' }, cost: '€350–1,200', risk: { en: 'Rusted subframe fails inspection; failed ELV prevents ignition turn-on', de: 'Durchrostung stoppt HU; defekte ELV blockiert den Fahrzeugstart', ru: 'Гнилой подрамник опасен; отказ ELV полностью блокирует запуск' }, damage: '€1,500–2,600' }
+              ]
+            },
             badges: {
               en: ['Cheap Aftermarket W204 Parts', 'Budget ~€800 Chain Refresh'],
               de: ['Günstige W204-Zubehörteile', 'Steuerkette (~800 €) einplanen'],
@@ -23958,6 +26226,15 @@ const CAR_ROSTER = [
           performanceDynamics: 7.6,
           runningCostsTco: 7.7
         },
+        specOverrides: {
+          engineName: { en: '1.6L I4 Kompressor BE (Chain)', de: '1.6L Reihenvierzylinder Kompressor', ru: '1.6L R4 Kompressor BE (Цепь)' },
+          forcedInduction: '@supercharger', injection: '@port', timingDrive: '@chain',
+          gearbox: { en: '5G-Tronic (722.6) / 6-MT', de: '5G-Tronic (722.6) / 6-Gang', ru: '5G-Tronic (722.6) / 6-МКПП' },
+          clutchDmf: '@torqueConv', payloadRoof: '535 kg · 100 kg', towingBraked: '1,800 kg',
+          sprint0100: '9.5 s', topSpeed: '230 km/h', peakTorque: '230 Nm @ 3,000 rpm',
+          passingPunch: { en: 'Crisp Low-End Kompressor', de: 'Spontaner Kompressor-Schub', ru: 'Бодрый отклик компрессора' },
+          realWorldFuel: '7.8 L/100km', tankRange: '66 L (~845 km)', euroNorm: 'Euro 5 (Petrol)', taxInsurance: '@tierLowMod', serviceWear: '@tierMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.6,
@@ -23965,6 +26242,11 @@ const CAR_ROSTER = [
               en: ['M271 1.6L Port Injection', 'Watch Simplex Timing Chain'],
               de: ['M271 1.6L Saugrohreinspritzer', 'Simplex-Steuerkette prüfen'],
               ru: ['Цепной M271 1.6L MPI', 'Следить за однорядной цепью']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'M271 E16 ML (BlueEfficiency) · 1,597 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium · 1.6L Supercharged Port Injection', de: 'Reihenvierzylinder Alu · 1.6L Kompressor-Saugrohr', ru: 'Рядный 4-цил. алюминий · 1.6L компрессор' } }], note: { en: 'Lower CO2 and road tax than the 1.8L Kompressor with the same 156 HP and reliable 5G-Tronic; keep an eye on the M271 simplex chain.', de: 'Günstigere Steuer und weniger Verbrauch als der 1.8 Kompressor bei gleichen 156 PS; M271-Steuerkette beobachten.', ru: 'Экономичнее 1.8 Kompressor при тех же 156 л.с. и надёжной 5G-Tronic; следите за цепью ГРМ M271.' } },
+              forcedInduction: { specs: [{ k: 'boostType', v: { en: 'Belt-Driven Roots Supercharger (BlueEfficiency)', de: 'Mechanischer Kompressor (BlueEfficiency)', ru: 'Механический компрессор Roots (BlueEfficiency)' } }], note: { en: 'Linear, lag-free pull without direct-injection carbon buildup.', de: 'Linearer Antritt ohne Turboloch und ohne Direkteinspritz-Verkokung.', ru: 'Ровная тяга без турбоямы и без проблем с нагаром прямого впрыска.' } },
+              injection: '@portInj', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -24299,6 +26581,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.6,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Flush 5G-Tronic (722.6) ATF + filter & inspect cam-magnet oil blocker leads', de: '5G-Tronic-Öl (722.6) + Filter wechseln & Ölstoppkabel an Nockenwellenmagneten prüfen', ru: 'Замена масла/фильтра 5G-Tronic (722.6) и проверка магнитов фазовращателей' }, cost: '€240–360' },
+                { when: { en: 'Every 80,000–100,000 km', de: 'Alle 80.000–100.000 km', ru: 'Каждые 80–100 тыс. км' }, action: { en: 'Replace spark plugs, crankcase breather hoses & supercharger belt', de: 'Zündkerzen, Teillastentlüftung (Schläuche) & Kompressorriemen ersetzen', ru: 'Замена свечей, шлангов вентиляции картера и ремня компрессора' }, cost: '€220–340' }
+              ],
+              critical: [
+                { when: { en: '110,000–160,000 km', de: '110.000–160.000 km', ru: '110 000–160 000 км' }, action: { en: 'M271 simplex timing chain & worn camshaft adjuster sprockets', de: 'M271 Simplex-Steuerkette & abgenutzte Nockenwellenversteller-Räder', ru: 'Замена тонкой цепи ГРМ M271 и звёзд фазовращателей' }, cost: '€1,100–1,900', risk: { en: 'Stretched chain shears sprocket teeth, jumps timing, and bends valves', de: 'Gelängte Kette fräst Zahnräder ab und überspringt — Motorschaden', ru: 'Растянутая цепь стачивает зубья звёзд, перескакивает и гнёт клапаны' }, damage: '€3,500–5,500' },
+                { when: { en: '120,000–200,000 km', de: '120.000–200.000 km', ru: '120 000–200 000 км' }, action: { en: 'W204 rear subframe rust inspection & ELV steering-lock motor', de: 'W204 Hinterachsträger-Rostprüfung (MB-Kulanz) & ELV-Lenkradschloss', ru: 'Проверка заднего подрамника на коррозию и моторчик ELV руля' }, cost: '€350–1,200', risk: { en: 'Rusted subframe fails inspection; failed ELV prevents ignition turn-on', de: 'Durchrostung stoppt HU; defekte ELV blockiert den Fahrzeugstart', ru: 'Гнилой подрамник опасен; отказ ELV полностью блокирует запуск' }, damage: '€1,500–2,600' }
+              ]
+            },
             badges: {
               en: ['Cheap Aftermarket W204 Parts', 'Budget ~€800 Chain Refresh'],
               de: ['Günstige W204-Zubehörteile', 'Steuerkette (~800 €) einplanen'],
@@ -24393,6 +26685,15 @@ const CAR_ROSTER = [
           performanceDynamics: 7.8,
           runningCostsTco: 7.6
         },
+        specOverrides: {
+          engineName: { en: '1.8L I4 CGI Turbo (Chain)', de: '1.8L Reihenvierzylinder CGI Turbo', ru: '1.8L R4 CGI Турбо (Цепь)' },
+          forcedInduction: '@turbo', injection: '@direct', timingDrive: '@chain',
+          gearbox: { en: '7G-Tronic Plus / 5-AT / 6-MT', de: '7G-Tronic Plus / 5-AT / 6-Gang', ru: '7G-Tronic Plus / 5-АКПП / 6-МКПП' },
+          clutchDmf: '@torqueConv', payloadRoof: '525 kg · 100 kg', towingBraked: '1,800 kg',
+          sprint0100: '8.9 s', topSpeed: '225 km/h', peakTorque: '250 Nm @ 1,600 rpm',
+          passingPunch: { en: 'Smooth 250 Nm Turbo Wave', de: 'Souveräne 250 Nm ab 1.600/min', ru: 'Плавная волна 250 Н·м' },
+          realWorldFuel: '7.6 L/100km', tankRange: '66 L (~870 km)', euroNorm: 'Euro 5 (Petrol)', taxInsurance: '@tierMod', serviceWear: '@tierModHigh'
+        },
         subStats: {
           powertrainDurability: {
             score: 6.7,
@@ -24400,6 +26701,10 @@ const CAR_ROSTER = [
               en: ['M271 EVO Chain & Gear Risk', 'Verify Service Replacement'],
               de: ['M271 EVO Ketten- & Verstellerrisiko', 'Wechsel-Nachweis prüfen'],
               ru: ['Риск цепи и звёзд M271 EVO', 'Искать авто после замены ГРМ']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'M271 EVO (DE18 AL) · 1,796 cc' }, { k: 'architecture', v: { en: 'Inline-4 Turbo Direct Injection · Simplex Chain + Cam Phasers', de: 'Reihenvierzylinder Turbo-DI · Kette + Nockenwellenversteller', ru: 'Рядный 4-цил. турбо DI · Цепь + фазовращатели' } }], note: { en: 'Refined and punchy 1.8 turbo, but verify cold-start silence — worn M271 EVO cam adjusters and stretched chains are the #1 repair item.', de: 'Ruhiger, kräftiger 1.8-Turbo — aber Kaltstart zwingend anhören, da M271-EVO-Nockenwellenversteller und Steuerkette oft fällig sind.', ru: 'Тихий и тяговитый турбомотор, но слушайте холодный пуск — муфты фазовращателей и цепь M271 EVO требуют внимания.' } },
+              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -24744,6 +27049,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 6.9,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Flush 5G/7G-Tronic Plus ATF + filter & replace spark plugs', de: '5G/7G-Tronic-Plus-Öl + Filter wechseln & Zündkerzen erneuern', ru: 'Замена масла/фильтра АКПП 5G/7G-Tronic и свечей зажигания' }, cost: '€280–420' },
+                { when: { en: 'Every 100,000 km', de: 'Alle 100.000 km', ru: 'Каждые 100 000 км' }, action: { en: 'Check fuel-in-oil dilution & thermostat / crankcase ventilation valve', de: 'Kraftstoff-Ölverdünnung, Thermostat & Kurbelgehäuseentlüftung prüfen', ru: 'Проверка попадания бензина в масло, термостата и клапана ВКГ' }, cost: '€180–300' }
+              ],
+              critical: [
+                { when: { en: '90,000–150,000 km', de: '90.000–150.000 km', ru: '90 000–150 000 км' }, action: { en: 'M271 EVO timing chain + both camshaft adjusters (2-sec cold-start rattle!)', de: 'M271 EVO Steuerkette + beide Nockenwellenversteller (Kaltstart-Rasseln!)', ru: 'Цепь ГРМ M271 EVO и обе муфты фазовращателей (треск при пуске!)' }, cost: '€1,500–2,400', risk: { en: 'Worn lock pins & stretched chain jump timing and destroy cylinder head', de: 'Ausgeschlagene Versteller lassen Kette überspringen — Motorschaden', ru: 'Износ муфт и растяжение цепи ведут к перескоку и ремонту ГБЦ' }, damage: '€4,000–6,000' },
+                { when: { en: '120,000–200,000 km', de: '120.000–200.000 km', ru: '120 000–200 000 км' }, action: { en: 'W204 rear subframe rust check & ELV electronic steering lock', de: 'W204 Hinterachsträger auf Rost prüfen & ELV-Lenkradverriegelung', ru: 'Осмотр заднего подрамника на коррозию и блокиратор руля ELV' }, cost: '€350–1,200', risk: { en: 'Subframe corrosion or no-start from jammed steering lock', de: 'Durchrostung oder Startblockade durch defekte ELV', ru: 'Коррозия подрамника или невозможность включить зажигание' }, damage: '€1,500–2,600' }
+              ]
+            },
             badges: {
               en: ['Affordable Routine Oils & Pads', 'Expensive Chain & Cam Gears'],
               de: ['Normale Öl- & Bremsenpreise', 'Teure Kette & Nockenwellenräder'],
@@ -24847,6 +27162,15 @@ const CAR_ROSTER = [
           performanceDynamics: 7.9,
           runningCostsTco: 8.3
         },
+        specOverrides: {
+          engineName: { en: '1.6L I4 M274 Turbo (Chain)', de: '1.6L Reihenvierzylinder M274 Turbo', ru: '1.6L R4 M274 Турбо (Цепь)' },
+          forcedInduction: '@turbo', injection: '@direct', timingDrive: '@chain',
+          gearbox: { en: '7G-Tronic Plus / 6-MT', de: '7G-Tronic Plus / 6-Gang', ru: '7G-Tronic Plus / 6-МКПП' },
+          clutchDmf: '@torqueConv', payloadRoof: '525 kg · 100 kg', towingBraked: '1,800 kg',
+          sprint0100: '8.5 s', topSpeed: '225 km/h', peakTorque: '250 Nm @ 1,250 rpm',
+          passingPunch: { en: 'Refined 250 Nm From 1,250', de: 'Ruhige 250 Nm ab 1.250/min', ru: 'Тяга 250 Н·м уже с 1 250' },
+          realWorldFuel: '7.0 L/100km', tankRange: '66 L (~940 km)', euroNorm: 'Euro 5/6 (Petrol)', taxInsurance: '@tierLowMod', serviceWear: '@tierMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 8.4,
@@ -24854,6 +27178,10 @@ const CAR_ROSTER = [
               en: ['Upgraded M274 Timing Drive', 'Watch Thermostat & Water Pump'],
               de: ['Standfester M274-Kettentrieb', 'Thermostat & Wasserpumpe prüfen'],
               ru: ['Доработанный ГРМ M274', 'Проверить термостат и помпу']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'M274 DE16 AL · 1,595 cc' }, { k: 'architecture', v: { en: 'Inline-4 Modern Aluminium Turbo · Replaced M271 (2012+)', de: 'Reihenvierzylinder Alu-Turbo · Moderner M271-Nachfolger', ru: 'Рядный 4-цил. алюминиевый турбо · Преемник M271 (2012+)' } }], note: { en: 'The smartest 4-cylinder petrol W204: fixes the M271 cam-chain weakness, pairs with upgraded 7G-Tronic Plus, and sips just 7.0 L/100km.', de: 'Der klügste 4-Zylinder-Benziner im W204: löst das M271-Kettenproblem, kommt mit 7G-Tronic Plus und braucht nur 7,0 L/100km.', ru: 'Самый удачный 4-цилиндровый бензин W204: избавлен от проблем цепи M271, экономичный (7,0 л) и с 7G-Tronic Plus.' } },
+              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -25189,6 +27517,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 8.2,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Flush 7G-Tronic Plus (722.9) ATF + filter & replace spark plugs', de: '7G-Tronic-Plus-Öl (722.9) + Filter wechseln & Zündkerzen erneuern', ru: 'Замена масла/фильтра 7G-Tronic Plus и свечей зажигания' }, cost: '€300–450' },
+                { when: { en: 'Every 100,000 km', de: 'Alle 100.000 km', ru: 'Каждые 100 000 км' }, action: { en: 'Inspect electronic thermostat housing & coolant pump vacuum valve', de: 'Elektronisches Thermostat & schaltbare Wasserpumpe prüfen', ru: 'Проверка электронного термостата и вакуумного клапана помпы' }, cost: '€180–300' }
+              ],
+              critical: [
+                { when: { en: '120,000–190,000 km', de: '120.000–190.000 km', ru: '120 000–190 000 км' }, action: { en: 'M274 camshaft impulse wheel slip / cam-adjuster & thermostat replacement', de: 'M274 Nockenwellen-Geberrad / Versteller & Thermostat erneuern', ru: 'Проворот импульсного диска распредвала M274 / муфта и термостат' }, cost: '€650–1,350', risk: { en: 'Check Engine light, rough idle, or slow warm-up with high fuel burn', de: 'Motorkontrollleuchte, unrunder Lauf oder dauerhaft zu kalter Motor', ru: 'Ошибка фаз, неровная работа или постоянный недогрев двигателя' }, damage: '€1,600–2,400' },
+                { when: { en: '120,000–200,000 km', de: '120.000–200.000 km', ru: '120 000–200 000 км' }, action: { en: 'W204 rear subframe rust check & ELV steering-lock motor', de: 'W204 Hinterachsträger-Rostprüfung & ELV-Lenkradschloss', ru: 'Проверка заднего подрамника и блокиратора руля ELV' }, cost: '€350–1,200', risk: { en: 'Structural rear subframe corrosion or locked ignition', de: 'Hinterachs-Durchrostung oder blockierte Zündung', ru: 'Коррозия подрамника или блокировка запуска' }, damage: '€1,500–2,500' }
+              ]
+            },
             badges: {
               en: ['Fewer Unexpected Failures', 'Standard Mercedes Parts Pricing'],
               de: ['Wenige außerplanmäßige Defekte', 'Normale Mercedes-Teilepreise'],
@@ -25283,6 +27621,15 @@ const CAR_ROSTER = [
           performanceDynamics: 7.8,
           runningCostsTco: 7.4
         },
+        specOverrides: {
+          engineName: { en: '1.8L I4 Kompressor 184', de: '1.8L Reihenvierzylinder 184 PS', ru: '1.8L R4 Kompressor 184' },
+          forcedInduction: '@supercharger', injection: '@port', timingDrive: '@chain',
+          gearbox: { en: '5G-Tronic (722.6) / 6-MT', de: '5G-Tronic (722.6) / 6-Gang', ru: '5G-Tronic (722.6) / 6-МКПП' },
+          clutchDmf: '@torqueConv', payloadRoof: '535 kg · 100 kg', towingBraked: '1,800 kg',
+          sprint0100: '8.6 s', topSpeed: '235 km/h', peakTorque: '250 Nm @ 2,800 rpm',
+          passingPunch: { en: 'Brisk Lag-Free Supercharger', de: 'Kräftiger Kompressor-Schub', ru: 'Бодрый безынерционный подхват' },
+          realWorldFuel: '8.5 L/100km', tankRange: '66 L (~775 km)', euroNorm: 'Euro 4 (Petrol)', taxInsurance: '@tierMod', serviceWear: '@tierMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.6,
@@ -25290,6 +27637,11 @@ const CAR_ROSTER = [
               en: ['M271 184 HP Port-Injected', 'Watch Simplex Chain & Oil Cables'],
               de: ['M271 184 PS Saugrohr-Block', 'Simplex-Kette & Ölstoppkabel'],
               ru: ['M271 184 л.с. (впрыск MPI)', 'Контроль цепи и стоп-кабелей']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'M271 E18 ML (184 HP) · 1,796 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium · Higher-Boost Kompressor + Port Inj.', de: 'Reihenvierzylinder Alu · Stärkerer Kompressor + Saugrohr', ru: 'Рядный 4-цил. алюминий · Форсированный компрессор' } }], note: { en: 'Noticeably livelier than the C180 Kompressor with the same bulletproof 5G-Tronic and port-injection simplicity; inspect M271 timing chain.', de: 'Merklich spritziger als der C180 Kompressor bei gleicher robuster 5G-Tronic; M271-Steuerkette prüfen.', ru: 'Заметно бодрее C180 Kompressor при той же неубиваемой 5G-Tronic; проверяйте состояние цепи M271.' } },
+              forcedInduction: { specs: [{ k: 'boostType', v: { en: 'Belt-Driven Roots Supercharger (184 HP Spec)', de: 'Mechanischer Kompressor (184-PS-Auslegung)', ru: 'Механический компрессор Roots (184 л.с.)' } }], note: { en: 'Crisp, immediate throttle response with classic Mercedes mechanical durability.', de: 'Direkter Antritt ohne Verzögerung und sehr robuste Kompressor-Mechanik.', ru: 'Мгновенная реакция на газ и высокая механическая надёжность.' } },
+              injection: '@portInj', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -25625,6 +27977,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.6,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Flush 5G-Tronic (722.6) ATF + filter & inspect cam-magnet oil blocker leads', de: '5G-Tronic-Öl (722.6) + Filter wechseln & Ölstoppkabel an Nockenwellenmagneten prüfen', ru: 'Замена масла/фильтра 5G-Tronic (722.6) и проверка магнитов фазовращателей' }, cost: '€240–360' },
+                { when: { en: 'Every 80,000–100,000 km', de: 'Alle 80.000–100.000 km', ru: 'Каждые 80–100 тыс. км' }, action: { en: 'Replace spark plugs, crankcase breather hoses & supercharger belt', de: 'Zündkerzen, Teillastentlüftung (Schläuche) & Kompressorriemen ersetzen', ru: 'Замена свечей, шлангов вентиляции картера и ремня компрессора' }, cost: '€220–340' }
+              ],
+              critical: [
+                { when: { en: '110,000–160,000 km', de: '110.000–160.000 km', ru: '110 000–160 000 км' }, action: { en: 'M271 simplex timing chain & worn camshaft adjuster sprockets', de: 'M271 Simplex-Steuerkette & abgenutzte Nockenwellenversteller-Räder', ru: 'Замена тонкой цепи ГРМ M271 и звёзд фазовращателей' }, cost: '€1,100–1,900', risk: { en: 'Stretched chain shears sprocket teeth, jumps timing, and bends valves', de: 'Gelängte Kette fräst Zahnräder ab und überspringt — Motorschaden', ru: 'Растянутая цепь стачивает зубья звёзд, перескакивает и гнёт клапаны' }, damage: '€3,500–5,500' },
+                { when: { en: '120,000–200,000 km', de: '120.000–200.000 km', ru: '120 000–200 000 км' }, action: { en: 'W204 rear subframe rust inspection & ELV steering-lock motor', de: 'W204 Hinterachsträger-Rostprüfung (MB-Kulanz) & ELV-Lenkradschloss', ru: 'Проверка заднего подрамника на коррозию и моторчик ELV руля' }, cost: '€350–1,200', risk: { en: 'Rusted subframe fails inspection; failed ELV prevents ignition turn-on', de: 'Durchrostung stoppt HU; defekte ELV blockiert den Fahrzeugstart', ru: 'Гнилой подрамник опасен; отказ ELV полностью блокирует запуск' }, damage: '€1,500–2,600' }
+              ]
+            },
             badges: {
               en: ['No High-Pressure Fuel Parts', 'Budget Timing Chain Check'],
               de: ['Keine teure Hochdrucktechnik', 'Steuerkette rechtzeitig prüfen'],
@@ -25719,6 +28081,15 @@ const CAR_ROSTER = [
           performanceDynamics: 8.0,
           runningCostsTco: 7.5
         },
+        specOverrides: {
+          engineName: { en: '1.8L I4 CGI 184 Turbo', de: '1.8L Reihenvierzylinder 184 CGI', ru: '1.8L R4 CGI 184 Турбо' },
+          forcedInduction: '@turbo', injection: '@direct', timingDrive: '@chain',
+          gearbox: { en: '7G-Tronic Plus / 5-AT / 6-MT', de: '7G-Tronic Plus / 5-AT / 6-Gang', ru: '7G-Tronic Plus / 5-АКПП / 6-МКПП' },
+          clutchDmf: '@torqueConv', payloadRoof: '525 kg · 100 kg', towingBraked: '1,800 kg',
+          sprint0100: '7.8 s', topSpeed: '237 km/h', peakTorque: '270 Nm @ 1,800 rpm',
+          passingPunch: { en: 'Brisk 270 Nm Autobahn Pull', de: 'Flotter 270-Nm-Durchzug', ru: 'Уверенный подхват 270 Н·м' },
+          realWorldFuel: '7.8 L/100km', tankRange: '66 L (~845 km)', euroNorm: 'Euro 5 (Petrol)', taxInsurance: '@tierMod', serviceWear: '@tierModHigh'
+        },
         subStats: {
           powertrainDurability: {
             score: 6.6,
@@ -25726,6 +28097,10 @@ const CAR_ROSTER = [
               en: ['M271 EVO Chain & Gear Risk', 'Check Verified Chain Overhaul'],
               de: ['M271 EVO Ketten- & Verstellerrisiko', 'Ketten-Beleg verlangen'],
               ru: ['Риск цепи и звёзд M271 EVO', 'Нужна история замены ГРМ']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'M271 EVO (184 HP) · 1,796 cc' }, { k: 'architecture', v: { en: 'Inline-4 Direct-Injection Turbo · Simplex Chain', de: 'Reihenvierzylinder Turbo-DI · Simplex-Kette', ru: 'Рядный 4-цил. турбо DI · Цепь M271 EVO' } }], note: { en: 'Sub-8-second pace with sensible 7.8 L/100km economy; always confirm updated M271 EVO cam adjusters and chain on cold start.', de: 'Unter 8 Sekunden auf 100 bei fairen 7,8 L/100km; unbedingt M271-EVO-Steuerkette und Versteller beim Kaltstart prüfen.', ru: 'Разгон 7,8 с при умеренном расходе 7,8 л; обязательно проверьте цепь и муфты M271 EVO на холодную.' } },
+              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -26070,6 +28445,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 6.8,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Flush 5G/7G-Tronic Plus ATF + filter & replace spark plugs', de: '5G/7G-Tronic-Plus-Öl + Filter wechseln & Zündkerzen erneuern', ru: 'Замена масла/фильтра АКПП 5G/7G-Tronic и свечей зажигания' }, cost: '€280–420' },
+                { when: { en: 'Every 100,000 km', de: 'Alle 100.000 km', ru: 'Каждые 100 000 км' }, action: { en: 'Check fuel-in-oil dilution & thermostat / crankcase ventilation valve', de: 'Kraftstoff-Ölverdünnung, Thermostat & Kurbelgehäuseentlüftung prüfen', ru: 'Проверка попадания бензина в масло, термостата и клапана ВКГ' }, cost: '€180–300' }
+              ],
+              critical: [
+                { when: { en: '90,000–150,000 km', de: '90.000–150.000 km', ru: '90 000–150 000 км' }, action: { en: 'M271 EVO timing chain + both camshaft adjusters (2-sec cold-start rattle!)', de: 'M271 EVO Steuerkette + beide Nockenwellenversteller (Kaltstart-Rasseln!)', ru: 'Цепь ГРМ M271 EVO и обе муфты фазовращателей (треск при пуске!)' }, cost: '€1,500–2,400', risk: { en: 'Worn lock pins & stretched chain jump timing and destroy cylinder head', de: 'Ausgeschlagene Versteller lassen Kette überspringen — Motorschaden', ru: 'Износ муфт и растяжение цепи ведут к перескоку и ремонту ГБЦ' }, damage: '€4,000–6,000' },
+                { when: { en: '120,000–200,000 km', de: '120.000–200.000 km', ru: '120 000–200 000 км' }, action: { en: 'W204 rear subframe rust check & ELV electronic steering lock', de: 'W204 Hinterachsträger auf Rost prüfen & ELV-Lenkradverriegelung', ru: 'Осмотр заднего подрамника на коррозию и блокиратор руля ELV' }, cost: '€350–1,200', risk: { en: 'Subframe corrosion or no-start from jammed steering lock', de: 'Durchrostung oder Startblockade durch defekte ELV', ru: 'Коррозия подрамника или невозможность включить зажигание' }, damage: '€1,500–2,600' }
+              ]
+            },
             badges: {
               en: ['Shared W204 Service Parts', 'Expensive Chain & Cam Gears'],
               de: ['Gute W204-Teileverfügbarkeit', 'Teure Kette & Nockenwellenräder'],
@@ -26167,6 +28552,15 @@ const CAR_ROSTER = [
           performanceDynamics: 8.2,
           runningCostsTco: 7.3
         },
+        specOverrides: {
+          engineName: { en: '1.8L I4 CGI 204 Turbo', de: '1.8L Reihenvierzylinder 204 CGI', ru: '1.8L R4 CGI 204 Турбо' },
+          forcedInduction: '@turbo', injection: '@direct', timingDrive: '@chain',
+          gearbox: { en: '7G-Tronic Plus / 5-AT', de: '7G-Tronic Plus / 5G-Tronic', ru: '7G-Tronic Plus / 5G-Tronic' },
+          clutchDmf: '@torqueConv', payloadRoof: '525 kg · 100 kg', towingBraked: '1,800 kg',
+          sprint0100: '7.2 s', topSpeed: '240 km/h', peakTorque: '310 Nm @ 2,000 rpm',
+          passingPunch: { en: 'Strong 310 Nm Mid-Range', de: 'Kräftige 310 Nm Durchzug', ru: 'Мощная тяга 310 Н·м' },
+          realWorldFuel: '8.2 L/100km', tankRange: '66 L (~805 km)', euroNorm: 'Euro 5 (Petrol)', taxInsurance: '@tierModHigh', serviceWear: '@tierModHigh'
+        },
         subStats: {
           powertrainDurability: {
             score: 6.4,
@@ -26174,6 +28568,10 @@ const CAR_ROSTER = [
               en: ['High-Output M271 EVO', 'Timing Chain & Turbo Heat Watch'],
               de: ['Hochbelasteter M271 EVO', 'Steuerkette & Turbo-Öl prüfen'],
               ru: ['Форсированный M271 EVO', 'Контроль цепи ГРМ и турбины']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'M271 EVO (204 HP) · 1,796 cc' }, { k: 'architecture', v: { en: 'Inline-4 High-Boost Turbo DI · 310 Nm', de: 'Reihenvierzylinder High-Boost Turbo · 310 Nm', ru: 'Рядный 4-цил. форсированный турбо · 310 Н·м' } }], note: { en: 'Matches the old V6 for speed (7.2 s) while saving 1.5–2.0 L/100km; higher boost makes M271 EVO chain & cam-phaser maintenance vital.', de: 'So schnell wie der alte V6 (7,2 s) bei 1,5–2 L weniger Verbrauch; M271-EVO-Kette und Versteller sind Pflicht-Check.', ru: 'Едет на уровне старого V6 (7,2 с), но заметно экономичнее; строго следите за цепью и муфтами M271 EVO.' } },
+              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -26518,6 +28916,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 6.7,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Flush 5G/7G-Tronic Plus ATF + filter & replace spark plugs', de: '5G/7G-Tronic-Plus-Öl + Filter wechseln & Zündkerzen erneuern', ru: 'Замена масла/фильтра АКПП 5G/7G-Tronic и свечей зажигания' }, cost: '€280–420' },
+                { when: { en: 'Every 100,000 km', de: 'Alle 100.000 km', ru: 'Каждые 100 000 км' }, action: { en: 'Check fuel-in-oil dilution & thermostat / crankcase ventilation valve', de: 'Kraftstoff-Ölverdünnung, Thermostat & Kurbelgehäuseentlüftung prüfen', ru: 'Проверка попадания бензина в масло, термостата и клапана ВКГ' }, cost: '€180–300' }
+              ],
+              critical: [
+                { when: { en: '90,000–150,000 km', de: '90.000–150.000 km', ru: '90 000–150 000 км' }, action: { en: 'M271 EVO timing chain + both camshaft adjusters (2-sec cold-start rattle!)', de: 'M271 EVO Steuerkette + beide Nockenwellenversteller (Kaltstart-Rasseln!)', ru: 'Цепь ГРМ M271 EVO и обе муфты фазовращателей (треск при пуске!)' }, cost: '€1,500–2,400', risk: { en: 'Worn lock pins & stretched chain jump timing and destroy cylinder head', de: 'Ausgeschlagene Versteller lassen Kette überspringen — Motorschaden', ru: 'Износ муфт и растяжение цепи ведут к перескоку и ремонту ГБЦ' }, damage: '€4,000–6,000' },
+                { when: { en: '120,000–200,000 km', de: '120.000–200.000 km', ru: '120 000–200 000 км' }, action: { en: 'W204 rear subframe rust check & ELV electronic steering lock', de: 'W204 Hinterachsträger auf Rost prüfen & ELV-Lenkradverriegelung', ru: 'Осмотр заднего подрамника на коррозию и блокиратор руля ELV' }, cost: '€350–1,200', risk: { en: 'Subframe corrosion or no-start from jammed steering lock', de: 'Durchrostung oder Startblockade durch defekte ELV', ru: 'Коррозия подрамника или невозможность включить зажигание' }, damage: '€1,500–2,600' }
+              ]
+            },
             badges: {
               en: ['More Brake & Tyre Wear (204 HP)', 'Budget Chain & Cam-Gear Kit'],
               de: ['Mehr Brems-/Reifenverschleiß', 'Ketten- & Verstellersatz teuer'],
@@ -26612,6 +29020,15 @@ const CAR_ROSTER = [
           performanceDynamics: 7.6,
           runningCostsTco: 6.8
         },
+        specOverrides: {
+          engineName: { en: '2.5L V6 NA Petrol (Chain)', de: '2.5L V6 Sauger (Kette)', ru: '2.5L V6 Атмосферный (Цепь)' },
+          forcedInduction: '@na', injection: '@port', timingDrive: '@chain',
+          gearbox: { en: '7G-Tronic (722.9) / 6-MT', de: '7G-Tronic (722.9) / 6-Gang', ru: '7G-Tronic (722.9) / 6-МКПП' },
+          clutchDmf: '@torqueConv', payloadRoof: '540 kg · 100 kg', towingBraked: '1,800 kg',
+          sprint0100: '8.4 s', topSpeed: '240 km/h', peakTorque: '245 Nm @ 2,900 rpm',
+          passingPunch: { en: 'Silky V6 Linear Revs', de: 'Seidiger V6-Sauger', ru: 'Бархатный линейный V6' },
+          realWorldFuel: '9.8 L/100km', tankRange: '66 L (~675 km)', euroNorm: 'Euro 4 (Petrol)', taxInsurance: '@tierModHigh', serviceWear: '@tierModHigh'
+        },
         subStats: {
           powertrainDurability: {
             score: 8.0,
@@ -26619,6 +29036,10 @@ const CAR_ROSTER = [
               en: ['Smooth M272 V6 (2008+ Safe)', 'Watch Intake Manifold Flaps'],
               de: ['Laufruhiger M272 V6 (ab 2008 top)', 'Saugrohr-Drallklappen prüfen'],
               ru: ['Плавный M272 V6 (с 2008 г. надёжен)', 'Следить за вихревыми заслонками']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'M272 E25 · 2,496 cc V6' }, { k: 'architecture', v: { en: '90° V6 Aluminium · Naturally Aspirated Port Injection', de: '90°-V6 Alu · Saugrohreinspritzung (ohne Turbo)', ru: 'V6 90° алюминий · Атмосферник с распредел. впрыском' } }], note: { en: 'Silky entry-level Mercedes V6 with zero turbo complexity; thirstier than the 4-cylinders, so mainly for smooth-sound fans.', de: 'Seidiger Einstiegs-V6 ohne Turbo-Technik; durstiger als die Vierzylinder, aber herrlich kultiviert.', ru: 'Мягкий базовый V6 без турбины; прожорливее четвёрок, но радует благородным звуком и плавностью.' } },
+              forcedInduction: '@naNoTurbo', injection: '@portInj', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -26954,6 +29375,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 6.8,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Flush 7G-Tronic (722.9) ATF + filter & rear diff / 4MATIC oil', de: '7G-Tronic-Öl (722.9) + Filter & Hinterachs-/4MATIC-Öl wechseln', ru: 'Замена масла 7G-Tronic + фильтр и масло в редукторе / 4MATIC' }, cost: '€320–480' },
+                { when: { en: 'Every 80,000 km', de: 'Alle 80.000 km', ru: 'Каждые 80 000 км' }, action: { en: 'Replace 6× iridium spark plugs & inspect oil-cooler gasket for seepage', de: '6× Iridium-Zündkerzen wechseln & Ölkühlerdichtung auf Schwitzen prüfen', ru: 'Замена 6 свечей и проверка прокладки теплообменника' }, cost: '€220–340' }
+              ],
+              critical: [
+                { when: { en: '120,000–180,000 km', de: '120.000–180.000 km', ru: '120 000–180 000 км' }, action: { en: 'M272 plastic intake manifold tumble-flap lever (upgrade to aluminium kit)', de: 'M272 Saugrohr-Drallklappen-Hebel (auf Alu-Reparatursatz umrüsten)', ru: 'Тяга заслонок впускного коллектора M272 (замена на алюминиевую)' }, cost: '€450–1,100', risk: { en: 'Broken plastic lever causes limp torque or loose flaps entering valves', de: 'Abgebrochene Kunststoffhebel kosten Leistung oder schädigen Ventile', ru: 'Сломанная тяга душит тягу, а обломки заслонок опасны для клапанов' }, damage: '€1,800–3,200' },
+                { when: { en: '140,000–210,000 km', de: '140.000–210.000 km', ru: '140 000–210 000 км' }, action: { en: '7G-Tronic conductor plate / speed sensor & rear subframe rust check', de: '7G-Tronic Steuereinheit / Drehzahlsensor & Hinterachsträger-Check', ru: 'Плата управления 7G-Tronic (датчик оборотов) и осмотр подрамника' }, cost: '€650–1,300', risk: { en: 'Gearbox locked in 2nd gear limp mode or subframe rust', de: 'Getriebe bleibt im Notlauf hängen oder Achsträger rostet durch', ru: 'Аварийный режим АКПП на 2-й передаче или коррозия подрамника' }, damage: '€1,800–2,800' }
+              ]
+            },
             badges: {
               en: ['6 Plugs & 8L Synthetic Oil', 'Moderate V6 Intake-Flap Repair'],
               de: ['6 Kerzen & 8L Synthetiköl', 'Bezahlbare Saugrohr-Reparatur'],
@@ -27048,6 +29479,15 @@ const CAR_ROSTER = [
           performanceDynamics: 8.0,
           runningCostsTco: 6.6
         },
+        specOverrides: {
+          engineName: { en: '3.0L V6 NA Petrol (Chain)', de: '3.0L V6 Sauger (Kette)', ru: '3.0L V6 Атмосферный (Цепь)' },
+          forcedInduction: '@na', injection: '@port', timingDrive: '@chain',
+          gearbox: { en: '7G-Tronic (Opt. 4MATIC)', de: '7G-Tronic (Opt. 4MATIC)', ru: '7G-Tronic (Опц. 4MATIC)' },
+          clutchDmf: '@torqueConv', payloadRoof: '540 kg · 100 kg', towingBraked: '1,800 kg',
+          sprint0100: '7.2 s', topSpeed: '250 km/h', peakTorque: '300 Nm @ 2,500 rpm',
+          passingPunch: { en: 'Effortless 3.0L V6 Pull', de: 'Souveräner 3.0L-V6-Schub', ru: 'Благородная тяга 3.0 V6' },
+          realWorldFuel: '10.2 L/100km', tankRange: '66 L (~645 km)', euroNorm: 'Euro 4/5 (Petrol)', taxInsurance: '@tierHigh', serviceWear: '@tierModHigh'
+        },
         subStats: {
           powertrainDurability: {
             score: 8.1,
@@ -27055,6 +29495,10 @@ const CAR_ROSTER = [
               en: ['Updated 3.0L V6 (C 300 Ideal)', 'Watch Intake Manifold Flaps'],
               de: ['Robuster 3.0L V6 (C 300 top)', 'Drallklappen-Gestänge prüfen'],
               ru: ['Проверенный 3.0L V6 (C 300 топ)', 'Проверить тяги коллектора']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'M272 E30 · 2,996 cc V6' }, { k: 'architecture', v: { en: '90° V6 Aluminium · Naturally Aspirated + Opt. 4MATIC', de: '90°-V6 Alu · Saugmotor + Optional 4MATIC', ru: 'V6 90° алюминий · Атмосферник + опц. 4MATIC' } }], note: { en: 'Sweet-sounding 3.0 V6 that avoids the M271 simplex-chain headaches; just budget for 10+ L/100km fuel and the intake tumble-flap lever.', de: 'Klangvoller 3.0-V6 ohne die M271-Kettenprobleme; lediglich 10+ L Verbrauch und den Saugrohr-Hebel einplanen.', ru: 'Отличный атмосферный 3.0 V6 без проблем цепи M271; требует лишь 10+ л топлива и внимания к заслонкам впуска.' } },
+              forcedInduction: '@naNoTurbo', injection: '@portInj', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -27390,6 +29834,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 6.6,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Flush 7G-Tronic (722.9) ATF + filter & rear diff / 4MATIC oil', de: '7G-Tronic-Öl (722.9) + Filter & Hinterachs-/4MATIC-Öl wechseln', ru: 'Замена масла 7G-Tronic + фильтр и масло в редукторе / 4MATIC' }, cost: '€320–480' },
+                { when: { en: 'Every 80,000 km', de: 'Alle 80.000 km', ru: 'Каждые 80 000 км' }, action: { en: 'Replace 6× iridium spark plugs & inspect oil-cooler gasket for seepage', de: '6× Iridium-Zündkerzen wechseln & Ölkühlerdichtung auf Schwitzen prüfen', ru: 'Замена 6 свечей и проверка прокладки теплообменника' }, cost: '€220–340' }
+              ],
+              critical: [
+                { when: { en: '120,000–180,000 km', de: '120.000–180.000 km', ru: '120 000–180 000 км' }, action: { en: 'M272 plastic intake manifold tumble-flap lever (upgrade to aluminium kit)', de: 'M272 Saugrohr-Drallklappen-Hebel (auf Alu-Reparatursatz umrüsten)', ru: 'Тяга заслонок впускного коллектора M272 (замена на алюминиевую)' }, cost: '€450–1,100', risk: { en: 'Broken plastic lever causes limp torque or loose flaps entering valves', de: 'Abgebrochene Kunststoffhebel kosten Leistung oder schädigen Ventile', ru: 'Сломанная тяга душит тягу, а обломки заслонок опасны для клапанов' }, damage: '€1,800–3,200' },
+                { when: { en: '140,000–210,000 km', de: '140.000–210.000 km', ru: '140 000–210 000 км' }, action: { en: '7G-Tronic conductor plate / speed sensor & rear subframe rust check', de: '7G-Tronic Steuereinheit / Drehzahlsensor & Hinterachsträger-Check', ru: 'Плата управления 7G-Tronic (датчик оборотов) и осмотр подрамника' }, cost: '€650–1,300', risk: { en: 'Gearbox locked in 2nd gear limp mode or subframe rust', de: 'Getriebe bleibt im Notlauf hängen oder Achsträger rostet durch', ru: 'Аварийный режим АКПП на 2-й передаче или коррозия подрамника' }, damage: '€1,800–2,800' }
+              ]
+            },
             badges: {
               en: ['8L Oil + 7G-Tronic ATF Service', 'Moderate V6 Intake-Flap Repair'],
               de: ['8L Öl + 7G-Tronic-Getriebeöl', 'Bezahlbare Saugrohr-Reparatur'],
@@ -27484,6 +29938,15 @@ const CAR_ROSTER = [
           performanceDynamics: 8.5,
           runningCostsTco: 6.4
         },
+        specOverrides: {
+          engineName: { en: '3.5L V6 M272 Petrol (Chain)', de: '3.5L V6 Sauger M272 (Kette)', ru: '3.5L V6 M272 Бензин (Цепь)' },
+          forcedInduction: '@na', injection: '@port', timingDrive: '@chain',
+          gearbox: { en: '7G-Tronic (Opt. 4MATIC)', de: '7G-Tronic (Opt. 4MATIC)', ru: '7G-Tronic (Опц. 4MATIC)' },
+          clutchDmf: '@torqueConv', payloadRoof: '540 kg · 100 kg', towingBraked: '1,800 kg',
+          sprint0100: '6.4 s', topSpeed: '250 km/h', peakTorque: '350 Nm @ 2,400 rpm',
+          passingPunch: { en: 'Effortless 350 Nm V6 Surge', de: 'Souveräner 350-Nm-V6-Schub', ru: 'Мощная ровная тяга 350 Н·м' },
+          realWorldFuel: '10.8 L/100km', tankRange: '66 L (~610 km)', euroNorm: 'Euro 4/5 (Petrol)', taxInsurance: '@tierHigh', serviceWear: '@tierHigh'
+        },
         subStats: {
           powertrainDurability: {
             score: 8.0,
@@ -27491,6 +29954,10 @@ const CAR_ROSTER = [
               en: ['Port-Injected 3.5L V6', 'Check Early 2007 Balance Shaft'],
               de: ['Saugrohr-3.5L-V6 (2008+ top)', '2007er Ausgleichswelle prüfen'],
               ru: ['Атмосферник 3.5 V6 MPI', 'На 2007 г. проверить балансир']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'M272 E35 · 3,498 cc V6' }, { k: 'architecture', v: { en: '90° V6 Aluminium · 272 HP Port-Injected Naturally Aspirated', de: '90°-V6 Alu · 272 PS Saugmotor mit Saugrohreinspritzung', ru: 'V6 90° алюминий · 272 л.с. атмосферный' } }], note: { en: 'Rapid 6.4 s classic naturally aspirated V6 with a 250 km/h limiter; thirsty in city traffic, but remarkably smooth and reliable once intake flaps are upgraded.', de: 'Schneller 6,4-s-V6-Sauger mit 250 km/h Spitze; im Stadtverkehr durstig, aber extrem kultiviert und solide.', ru: 'Быстрый атмосферный V6 (6,4 с, 250 км/ч); прожорлив в городе, зато очень плавный и крепкий.' } },
+              forcedInduction: '@naNoTurbo', injection: '@portInj', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -27826,6 +30293,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 6.4,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Flush 7G-Tronic (722.9) ATF + filter & rear diff / 4MATIC oil', de: '7G-Tronic-Öl (722.9) + Filter & Hinterachs-/4MATIC-Öl wechseln', ru: 'Замена масла 7G-Tronic + фильтр и масло в редукторе / 4MATIC' }, cost: '€320–480' },
+                { when: { en: 'Every 80,000 km', de: 'Alle 80.000 km', ru: 'Каждые 80 000 км' }, action: { en: 'Replace 6× iridium spark plugs & inspect oil-cooler gasket for seepage', de: '6× Iridium-Zündkerzen wechseln & Ölkühlerdichtung auf Schwitzen prüfen', ru: 'Замена 6 свечей и проверка прокладки теплообменника' }, cost: '€220–340' }
+              ],
+              critical: [
+                { when: { en: '120,000–180,000 km', de: '120.000–180.000 km', ru: '120 000–180 000 км' }, action: { en: 'M272 plastic intake manifold tumble-flap lever (upgrade to aluminium kit)', de: 'M272 Saugrohr-Drallklappen-Hebel (auf Alu-Reparatursatz umrüsten)', ru: 'Тяга заслонок впускного коллектора M272 (замена на алюминиевую)' }, cost: '€450–1,100', risk: { en: 'Broken plastic lever causes limp torque or loose flaps entering valves', de: 'Abgebrochene Kunststoffhebel kosten Leistung oder schädigen Ventile', ru: 'Сломанная тяга душит тягу, а обломки заслонок опасны для клапанов' }, damage: '€1,800–3,200' },
+                { when: { en: '140,000–210,000 km', de: '140.000–210.000 km', ru: '140 000–210 000 км' }, action: { en: '7G-Tronic conductor plate / speed sensor & rear subframe rust check', de: '7G-Tronic Steuereinheit / Drehzahlsensor & Hinterachsträger-Check', ru: 'Плата управления 7G-Tronic (датчик оборотов) и осмотр подрамника' }, cost: '€650–1,300', risk: { en: 'Gearbox locked in 2nd gear limp mode or subframe rust', de: 'Getriebe bleibt im Notlauf hängen oder Achsträger rostet durch', ru: 'Аварийный режим АКПП на 2-й передаче или коррозия подрамника' }, damage: '€1,800–2,800' }
+              ]
+            },
             badges: {
               en: ['322 mm Brakes & 17"/18" Tyres', '8L Oil + Early Balance Shaft'],
               de: ['322-mm-Bremsen & 17/18" Reifen', '8 L Öl + Ausgleichswelle (2007)'],
@@ -27923,6 +30400,15 @@ const CAR_ROSTER = [
           performanceDynamics: 8.6,
           runningCostsTco: 6.5
         },
+        specOverrides: {
+          engineName: { en: '3.5L V6 CGI Petrol (Chain)', de: '3.5L V6 CGI Sauger (Kette)', ru: '3.5L V6 CGI Бензин (Цепь)' },
+          forcedInduction: '@na', injection: '@direct', timingDrive: '@chain',
+          gearbox: { en: '7G-Tronic (722.9)', de: '7G-Tronic (722.9)', ru: '7G-Tronic (722.9)' },
+          clutchDmf: '@torqueConv', payloadRoof: '525 kg · 100 kg', towingBraked: '1,800 kg',
+          sprint0100: '6.2 s', topSpeed: '250 km/h', peakTorque: '365 Nm @ 3,000 rpm',
+          passingPunch: { en: 'Crisp 292 HP V6 Punch', de: 'Druckvoller 292-PS-V6', ru: 'Сочный подхват 292 л.с. V6' },
+          realWorldFuel: '9.6 L/100km', tankRange: '66 L (~685 km)', euroNorm: 'Euro 5 (Petrol)', taxInsurance: '@tierHigh', serviceWear: '@tierHigh'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.5,
@@ -27930,6 +30416,10 @@ const CAR_ROSTER = [
               en: ['No Balance-Shaft Risk', 'Watch Piezo Injectors & NOx'],
               de: ['Ohne Wellenproblem', 'Piezo-Injektoren & NOx beachten'],
               ru: ['Без дефекта балансира', 'Дорогие пьезофорсунки и NOx']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'M272 DE35 (CGI) · 3,498 cc V6' }, { k: 'architecture', v: { en: '90° V6 Aluminium · Piezo Direct Injection (Rare Spec)', de: '90°-V6 Alu · Piezo-Direkteinspritzung (selten)', ru: 'V6 90° алюминий · Пьезо-прямой впрыск (редкий)' } }], note: { en: 'Faster and ~1 L/100km thriftier than the port-injected C350, though piezo injectors and high-pressure pumps cost more if ever needed.', de: 'Schneller und ~1 L sparsamer als der normale C350, allerdings sind Piezo-Injektoren im Ersatz teurer.', ru: 'Быстрее и экономичнее обычного C350, но пьезофорсунки и ТНВД дороже при замене.' } },
+              forcedInduction: '@naNoTurbo', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -28265,6 +30755,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 6.1,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Flush 7G-Tronic (722.9) ATF + filter & rear diff / 4MATIC oil', de: '7G-Tronic-Öl (722.9) + Filter & Hinterachs-/4MATIC-Öl wechseln', ru: 'Замена масла 7G-Tronic + фильтр и масло в редукторе / 4MATIC' }, cost: '€320–480' },
+                { when: { en: 'Every 80,000 km', de: 'Alle 80.000 km', ru: 'Каждые 80 000 км' }, action: { en: 'Replace 6× iridium spark plugs & inspect oil-cooler gasket for seepage', de: '6× Iridium-Zündkerzen wechseln & Ölkühlerdichtung auf Schwitzen prüfen', ru: 'Замена 6 свечей и проверка прокладки теплообменника' }, cost: '€220–340' }
+              ],
+              critical: [
+                { when: { en: '120,000–180,000 km', de: '120.000–180.000 km', ru: '120 000–180 000 км' }, action: { en: 'M272 plastic intake manifold tumble-flap lever (upgrade to aluminium kit)', de: 'M272 Saugrohr-Drallklappen-Hebel (auf Alu-Reparatursatz umrüsten)', ru: 'Тяга заслонок впускного коллектора M272 (замена на алюминиевую)' }, cost: '€450–1,100', risk: { en: 'Broken plastic lever causes limp torque or loose flaps entering valves', de: 'Abgebrochene Kunststoffhebel kosten Leistung oder schädigen Ventile', ru: 'Сломанная тяга душит тягу, а обломки заслонок опасны для клапанов' }, damage: '€1,800–3,200' },
+                { when: { en: '140,000–210,000 km', de: '140.000–210.000 km', ru: '140 000–210 000 км' }, action: { en: '7G-Tronic conductor plate / speed sensor & rear subframe rust check', de: '7G-Tronic Steuereinheit / Drehzahlsensor & Hinterachsträger-Check', ru: 'Плата управления 7G-Tronic (датчик оборотов) и осмотр подрамника' }, cost: '€650–1,300', risk: { en: 'Gearbox locked in 2nd gear limp mode or subframe rust', de: 'Getriebe bleibt im Notlauf hängen oder Achsträger rostet durch', ru: 'Аварийный режим АКПП на 2-й передаче или коррозия подрамника' }, damage: '€1,800–2,800' }
+              ]
+            },
             badges: {
               en: ['8L Oil & 322 mm Sport Brakes', 'Very Expensive Piezo Injectors'],
               de: ['8 L Öl & 322-mm-Bremsen', 'Sehr teure Piezo-Injektoren'],
@@ -28367,6 +30867,15 @@ const CAR_ROSTER = [
           performanceDynamics: 8.8,
           runningCostsTco: 7.1
         },
+        specOverrides: {
+          engineName: { en: '3.5L V6 M276 (306 HP Chain)', de: '3.5L V6 M276 (306 PS Kette)', ru: '3.5L V6 M276 (306 л.с. Цепь)' },
+          forcedInduction: '@na', injection: '@direct', timingDrive: '@chain',
+          gearbox: { en: '7G-Tronic Plus (722.9)', de: '7G-Tronic Plus (722.9)', ru: '7G-Tronic Plus (722.9)' },
+          clutchDmf: '@torqueConv', payloadRoof: '530 kg · 100 kg', towingBraked: '1,800 kg',
+          sprint0100: '6.0 s', topSpeed: '250 km/h', peakTorque: '370 Nm @ 3,500 rpm',
+          passingPunch: { en: 'Rapid 306 HP V6 Express', de: 'Souveräner 306-PS-Express', ru: 'Мощнейший 306-сильный V6' },
+          realWorldFuel: '8.8 L/100km', tankRange: '66 L (~750 km)', euroNorm: 'Euro 5 (Petrol)', taxInsurance: '@tierHigh', serviceWear: '@tierModHigh'
+        },
         subStats: {
           powertrainDurability: {
             score: 8.9,
@@ -28374,6 +30883,10 @@ const CAR_ROSTER = [
               en: ['Bulletproof Modern M276 V6', 'Check Tensioner Valves (2011–12)'],
               de: ['Sehr robuster M276-V6', 'Spanner-Ventile 2011–12 prüfen'],
               ru: ['Один из лучших V6 M276', 'Клапаны натяжителей (2011–12)']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'M276 DE35 · 3,498 cc 60° V6' }, { k: 'architecture', v: { en: '60° V6 Aluminium · 306 HP Direct Injection + 7G-Tronic Plus', de: '60°-V6 Alu · 306 PS Direkteinspritzung + 7G-Tronic Plus', ru: 'V6 60° алюминий · 306 л.с. DI + 7G-Tronic Plus' } }], note: { en: 'Crown jewel of the non-AMG W204 range: 6.0 s sprint, only 8.8 L/100km, and rock-solid M276 reliability once chain check-valves are updated.', de: 'Krönung aller Nicht-AMG-W204: 6,0 s auf 100, nur 8,8 L Verbrauch und sehr hoher M276-Langzeitqualität.', ru: 'Жемчужина линейки W204 (кроме AMG): 6,0 с до 100, расход всего 8,8 л и отличный ресурс мотора M276.' } },
+              forcedInduction: '@naNoTurbo', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -28709,6 +31222,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.0,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Flush 7G-Tronic Plus (722.9) ATF + filter & rear differential oil', de: '7G-Tronic-Plus-Öl (722.9) + Filter & Hinterachsöl wechseln', ru: 'Замена масла 7G-Tronic Plus + фильтр и масло в заднем редукторе' }, cost: '€320–480' },
+                { when: { en: 'Every 80,000 km', de: 'Alle 80.000 km', ru: 'Каждые 80 000 км' }, action: { en: 'Replace 6× direct-injection spark plugs & inspect cam-sensor plugs for oil', de: '6× Zündkerzen wechseln & Nockenwellensensor-Stecker auf Öl prüfen', ru: 'Замена 6 свечей и проверка разъёмов датчиков распредвалов на масло' }, cost: '€240–360' }
+              ],
+              critical: [
+                { when: { en: '100,000–170,000 km', de: '100.000–170.000 km', ru: '100 000–170 000 км' }, action: { en: 'M276 secondary timing-chain tensioners & check-valve update (cold rattle)', de: 'M276 Sekundärkettenspanner & Rückschlagventile (Kaltstart-Rasseln)', ru: 'Натяжители вторичных цепей M276 и обратные клапаны (треск при пуске)' }, cost: '€650–1,200', risk: { en: 'Oil drain-back causes cold-start chain rattle and cam-phaser wear', de: 'Leergelaufene Spanner verschleißen Nockenwellenversteller rapide', ru: 'Масляное голодание при пуске быстро изнашивает муфты фаз' }, damage: '€2,400–3,800' },
+                { when: { en: '120,000–200,000 km', de: '120.000–200.000 km', ru: '120 000–200 000 км' }, action: { en: 'W204 rear subframe rust check & ELV steering lock', de: 'W204 Hinterachsträger-Rostprüfung & ELV-Lenkradschloss', ru: 'Проверка заднего подрамника и блокиратора руля ELV' }, cost: '€350–1,200', risk: { en: 'Subframe rust or jammed electronic steering lock', de: 'Hinterachs-Korrosion oder blockiertes Lenkradschloss', ru: 'Коррозия подрамника или отказ блокиратора руля' }, damage: '€1,500–2,500' }
+              ]
+            },
             badges: {
               en: ['Clean M276 Cuts Surprises', 'V6 Oil, Plugs & 322 mm Brakes'],
               de: ['Robuster M276 spart Defekte', 'V6-Ölmenge & 322-mm-Bremsen'],
@@ -28806,6 +31329,15 @@ const CAR_ROSTER = [
           performanceDynamics: 7.7,
           runningCostsTco: 8.1
         },
+        specOverrides: {
+          engineName: { en: '2.1L I4 OM651 CDI 120', de: '2.1L Reihenvierzylinder OM651', ru: '2.1L R4 OM651 CDI 120' },
+          forcedInduction: '@turbo', injection: '@commonRail', timingDrive: '@chain',
+          gearbox: { en: '7G-Tronic Plus / 6-MT', de: '7G-Tronic Plus / 6-Gang', ru: '7G-Tronic Plus / 6-МКПП' },
+          clutchDmf: '@torqueConv', payloadRoof: '530 kg · 100 kg', towingBraked: '1,800 kg',
+          sprint0100: '10.5 s', topSpeed: '208 km/h', peakTorque: '300 Nm @ 1,400 rpm',
+          passingPunch: { en: 'Understressed 300 Nm Torque', de: 'Entspannte 300 Nm ab 1.400/min', ru: 'Спокойная тяга 300 Н·м' },
+          realWorldFuel: '5.3 L/100km', tankRange: '66 L (~1,245 km)', euroNorm: 'Euro 5 (Diesel)', taxInsurance: '@tierLowMod', serviceWear: '@tierMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 8.1,
@@ -28813,6 +31345,10 @@ const CAR_ROSTER = [
               en: ['Under-Stressed 120 HP 2.1L', 'Check Recall Injectors & Chain'],
               de: ['Entspannter 120-PS 2.1L', 'Rückruf-Injektoren & Kette prüfen'],
               ru: ['Ненагруженный 2.1L (120 л.с.)', 'Отзыв форсунок и цепь ГРМ']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'OM651 DE22 LA red. · 2,143 cc' }, { k: 'architecture', v: { en: 'Inline-4 Cast-Iron Diesel · Detuned 2.1L + Rear Chain', de: 'Reihenvierzylinder Grauguss · Gedrosselter 2.1L + Heckkette', ru: 'Рядный 4-цил. чугунный дизель · Дефорсированный 2.1L' } }], note: { en: 'Heavily understressed 2.1-litre fleet diesel delivering 1,245 km per tank; still check OM651 plastic coolant flange and rear timing chain.', de: 'Stark gedrosselter 2,1-Liter-Flottendiesel mit 1.245 km Reichweite; OM651-Kühlwasserstutzen und hintere Steuerkette prüfen.', ru: 'Сильно дефорсированный дизель 2.1 с запасом хода 1 245 км; следите за фланцем ОЖ и задней цепью OM651.' } },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -29148,6 +31684,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.8,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Flush 7G-Tronic Plus / 5G-Tronic ATF + filter & diesel fuel filter', de: '7G/5G-Tronic-Öl + Filter & Dieselfilter wechseln', ru: 'Замена масла АКПП 7G/5G-Tronic + фильтр и топливный фильтр' }, cost: '€280–420' },
+                { when: { en: 'Every 100,000 km', de: 'Alle 100.000 km', ru: 'Каждые 100 000 км' }, action: { en: 'Inspect plastic coolant outlet flange, water pump & EGR cooler', de: 'Kühlmittel-Kunststoffflansch, Wasserpumpe & AGR-Kühler prüfen', ru: 'Проверка пластикового фланца ОЖ, помпы и охладителя EGR' }, cost: '€180–300' }
+              ],
+              critical: [
+                { when: { en: '130,000–200,000 km', de: '130.000–200.000 km', ru: '130 000–200 000 км' }, action: { en: 'OM651 rear simplex timing chain + updated hydraulic tensioner', de: 'OM651 hinten liegende Simplex-Steuerkette + verbesserter Spanner', ru: 'Задняя однорядная цепь ГРМ OM651 и обновлённый натяжитель' }, cost: '€1,100–1,800', risk: { en: 'Cold-start chain rattle progresses to skipped teeth and bent valves', de: 'Kaltstart-Rasseln führt zu Überspringen und kapitalem Motorschaden', ru: 'Грохот цепи при пуске ведёт к перескоку и разрушению ГБЦ' }, damage: '€4,000–6,000' },
+                { when: { en: '110,000–180,000 km', de: '110.000–180.000 km', ru: '110 000–180 000 км' }, action: { en: 'Plastic fuel-filter coolant flange leak & rear subframe rust check', de: 'Undichter Kühlwasserstutzen am Kraftstofffilter & Hinterachsträger-Check', ru: 'Течь пластикового фланца ОЖ у топливного фильтра и осмотр подрамника' }, cost: '€320–750', risk: { en: 'Sudden coolant loss on highway or structural subframe rust', de: 'Plötzlicher Kühlwasserverlust auf der Autobahn oder Achsträger-Rost', ru: 'Резкая потеря антифриза на трассе или коррозия подрамника' }, damage: '€1,600–2,800' }
+              ]
+            },
             badges: {
               en: ['Shared 2.1L OM651 Parts', '16" Tyres • Standard DPF Care'],
               de: ['Günstige 16-Zoll-Reifen', 'Normale OM651-Wartung'],
@@ -29242,6 +31788,15 @@ const CAR_ROSTER = [
           performanceDynamics: 7.6,
           runningCostsTco: 7.6
         },
+        specOverrides: {
+          engineName: { en: '2.1L I4 OM646 CDI (Duplex)', de: '2.1L Reihenvierzylinder OM646', ru: '2.1L R4 OM646 CDI (Цепь)' },
+          forcedInduction: '@turbo', injection: '@commonRail', timingDrive: '@chain',
+          gearbox: { en: '5G-Tronic (722.6) / 6-MT', de: '5G-Tronic (722.6) / 6-Gang', ru: '5G-Tronic (722.6) / 6-МКПП' },
+          clutchDmf: '@torqueConv', payloadRoof: '540 kg · 100 kg', towingBraked: '1,800 kg',
+          sprint0100: '10.4 s', topSpeed: '215 km/h', peakTorque: '270 Nm @ 1,600 rpm',
+          passingPunch: { en: 'Steady Taxi-Grade Pull', de: 'Ruhiger Dauerläufer-Schub', ru: 'Ровная выносливая тяга' },
+          realWorldFuel: '6.1 L/100km', tankRange: '66 L (~1,080 km)', euroNorm: 'Euro 4 (Diesel)', taxInsurance: '@tierMod', serviceWear: '@tierLowMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 9.2,
@@ -29249,6 +31804,10 @@ const CAR_ROSTER = [
               en: ['Duplex-Chain OM646 Legend', 'No Delphi Piezo Recall Risk'],
               de: ['Duplex-Ketten-Legende OM646', 'Ohne Piezo-Injektor-Risiko'],
               ru: ['Двухрядная цепь OM646', 'Простые электромагнитные форсунки']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'OM646 EVO · 2,148 cc' }, { k: 'architecture', v: { en: 'Inline-4 Cast-Iron · Front Duplex Timing Chain', de: 'Reihenvierzylinder Grauguss · Vordere Duplex-Steuerkette', ru: 'Рядный 4-цил. чугун · Передняя двухрядная цепь' } }], note: { en: 'Legendary German taxi powertrain: front duplex chain + cast-iron OM646 + bulletproof 5G-Tronic routinely clear 400,000+ km.', de: 'Legendärer Taxi-Antrieb: vordere Duplexkette + Grauguss-OM646 + unverwüstliche 5G-Tronic schaffen problemlos 400.000+ km.', ru: 'Легендарная связка такси: двухрядная цепь OM646 + 5G-Tronic спокойно проходят 400 000+ км.' } },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -29584,6 +32143,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.9,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Flush 5G-Tronic (722.6) ATF + filter & replace diesel fuel filter', de: '5G-Tronic-Öl (722.6) + Filter & Dieselfilter wechseln', ru: 'Замена масла 5G-Tronic + фильтр и топливный фильтр' }, cost: '€250–380' },
+                { when: { en: 'Every 100,000 km', de: 'Alle 100.000 km', ru: 'Каждые 100 000 км' }, action: { en: 'Inspect injector seats for black tar ("black death") & thermostat', de: 'Injektorsitze auf Verkokung prüfen & Thermostat kontrollieren', ru: 'Проверка посадочных мест форсунок на кокс и проверка термостата' }, cost: '€140–240' }
+              ],
+              critical: [
+                { when: { en: '150,000–240,000 km', de: '150.000–240.000 km', ru: '150 000–240 000 км' }, action: { en: 'Copper injector sealing washers + stretch bolts & 5G-Tronic plug bush', de: 'Injektor-Kupferdichtringe + Dehnschrauben & 722.6-Steckerbuchse', ru: 'Медные шайбы форсунок + болты и разъём АКПП 722.6 (от течи масла)' }, cost: '€320–620', risk: { en: 'Leaking injector seals bake solid black carbon; ATF wicks into TCU', de: 'Undichte Injektoren verkoken massiv; Getriebeöl wandert ins Steuergerät', ru: 'Прогар шайб забивает крышку коксом; масло АКПП идёт по косе в блок' }, damage: '€1,400–2,400' },
+                { when: { en: '140,000–220,000 km', de: '140.000–220.000 km', ru: '140 000–220 000 км' }, action: { en: 'W204 rear subframe rust check & ELV steering lock', de: 'W204 Hinterachsträger-Rostprüfung & ELV-Lenkradschloss', ru: 'Проверка заднего подрамника и блокиратора руля ELV' }, cost: '€350–1,200', risk: { en: 'Subframe rust or jammed electronic steering lock', de: 'Durchrostung oder Startblockade durch ELV', ru: 'Коррозия подрамника или блокировка зажигания ELV' }, damage: '€1,500–2,500' }
+              ]
+            },
             badges: {
               en: ['Very Cheap Taxi-Hero Parts', 'Solenoid Injectors Easy To Fix'],
               de: ['Sehr günstige Taxi-Ersatzteile', 'Magnet-Injektoren preiswert'],
@@ -29675,6 +32244,15 @@ const CAR_ROSTER = [
           performanceDynamics: 8.0,
           runningCostsTco: 8.0
         },
+        specOverrides: {
+          engineName: { en: '2.1L I4 OM651 CDI 136', de: '2.1L Reihenvierzylinder OM651', ru: '2.1L R4 OM651 CDI 136' },
+          forcedInduction: '@turbo', injection: '@commonRail', timingDrive: '@chain',
+          gearbox: { en: '7G-Tronic Plus / 6-MT', de: '7G-Tronic Plus / 6-Gang', ru: '7G-Tronic Plus / 6-МКПП' },
+          clutchDmf: '@torqueConv', payloadRoof: '530 kg · 100 kg', towingBraked: '1,800 kg',
+          sprint0100: '9.1 s', topSpeed: '218 km/h', peakTorque: '360 Nm @ 1,600 rpm',
+          passingPunch: { en: 'Strong 360 Nm Mid-Range', de: 'Souveräne 360 Nm Durchzug', ru: 'Уверенная тяга 360 Н·м' },
+          realWorldFuel: '5.5 L/100km', tankRange: '66 L (~1,200 km)', euroNorm: 'Euro 5 (Diesel)', taxInsurance: '@tierMod', serviceWear: '@tierMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 8.0,
@@ -29682,6 +32260,10 @@ const CAR_ROSTER = [
               en: ['360 Nm OM651 Workhorse', 'Verify Injector Recall & Chain'],
               de: ['360 Nm OM651 Dauerläufer', 'Injektor-Rückruf & Kette prüfen'],
               ru: ['Тяговитый OM651 (360 Н·м)', 'Проверить форсунки и цепь']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'OM651 DE22 LA · 2,143 cc' }, { k: 'architecture', v: { en: 'Inline-4 Cast-Iron Diesel · Single Turbo + 360 Nm', de: 'Reihenvierzylinder Grauguss · Mono-Turbo + 360 Nm', ru: 'Рядный 4-цил. чугун · Одна турбина + 360 Н·м' } }], note: { en: 'Huge 90 Nm torque jump over the older OM646 C200 CDI while burning less fuel (1,200 km range); inspect coolant flange and rear timing chain.', de: 'Satte 90 Nm mehr als der alte OM646 bei geringerem Verbrauch (1.200 km Reichweite); Kühlwasserstutzen & hintere Kette prüfen.', ru: 'На 90 Н·м тяговитее старого OM646 при меньшем расходе (1 200 км на баке); следите за фланцем ОЖ и задней цепью.' } },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -30016,6 +32598,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.5,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Flush 7G-Tronic Plus / 5G-Tronic ATF + filter & diesel fuel filter', de: '7G/5G-Tronic-Öl + Filter & Dieselfilter wechseln', ru: 'Замена масла АКПП 7G/5G-Tronic + фильтр и топливный фильтр' }, cost: '€280–420' },
+                { when: { en: 'Every 100,000 km', de: 'Alle 100.000 km', ru: 'Каждые 100 000 км' }, action: { en: 'Inspect plastic coolant outlet flange, water pump & EGR cooler', de: 'Kühlmittel-Kunststoffflansch, Wasserpumpe & AGR-Kühler prüfen', ru: 'Проверка пластикового фланца ОЖ, помпы и охладителя EGR' }, cost: '€180–300' }
+              ],
+              critical: [
+                { when: { en: '130,000–200,000 km', de: '130.000–200.000 km', ru: '130 000–200 000 км' }, action: { en: 'OM651 rear simplex timing chain + updated hydraulic tensioner', de: 'OM651 hinten liegende Simplex-Steuerkette + verbesserter Spanner', ru: 'Задняя однорядная цепь ГРМ OM651 и обновлённый натяжитель' }, cost: '€1,100–1,800', risk: { en: 'Cold-start chain rattle progresses to skipped teeth and bent valves', de: 'Kaltstart-Rasseln führt zu Überspringen und kapitalem Motorschaden', ru: 'Грохот цепи при пуске ведёт к перескоку и разрушению ГБЦ' }, damage: '€4,000–6,000' },
+                { when: { en: '110,000–180,000 km', de: '110.000–180.000 km', ru: '110 000–180 000 км' }, action: { en: 'Plastic fuel-filter coolant flange leak & rear subframe rust check', de: 'Undichter Kühlwasserstutzen am Kraftstofffilter & Hinterachsträger-Check', ru: 'Течь пластикового фланца ОЖ у топливного фильтра и осмотр подрамника' }, cost: '€320–750', risk: { en: 'Sudden coolant loss on highway or structural subframe rust', de: 'Plötzlicher Kühlwasserverlust auf der Autobahn oder Achsträger-Rost', ru: 'Резкая потеря антифриза на трассе или коррозия подрамника' }, damage: '€1,600–2,800' }
+              ]
+            },
             badges: {
               en: ['Huge OM651 Parts Supply', 'Budget Water Pump & 7G ATF'],
               de: ['Riesige OM651-Teileauswahl', 'Wasserpumpe & 7G-ATF einplanen'],
@@ -30110,6 +32702,15 @@ const CAR_ROSTER = [
           performanceDynamics: 8.2,
           runningCostsTco: 7.6
         },
+        specOverrides: {
+          engineName: { en: '2.1L I4 OM646 170 (Duplex)', de: '2.1L Reihenvierzylinder OM646', ru: '2.1L R4 OM646 170 (Цепь)' },
+          forcedInduction: '@turbo', injection: '@commonRail', timingDrive: '@chain',
+          gearbox: { en: '5G-Tronic (722.6) / 6-MT', de: '5G-Tronic (722.6) / 6-Gang', ru: '5G-Tronic (722.6) / 6-МКПП' },
+          clutchDmf: '@torqueConv', payloadRoof: '540 kg · 100 kg', towingBraked: '1,800 kg',
+          sprint0100: '8.5 s', topSpeed: '229 km/h', peakTorque: '400 Nm @ 2,000 rpm',
+          passingPunch: { en: 'Effortless 400 Nm Cruiser', de: 'Souveräne 400 Nm Zugkraft', ru: 'Уверенная тяга 400 Н·м' },
+          realWorldFuel: '6.3 L/100km', tankRange: '66 L (~1,045 km)', euroNorm: 'Euro 4 (Diesel)', taxInsurance: '@tierMod', serviceWear: '@tierLowMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 9.2,
@@ -30117,6 +32718,10 @@ const CAR_ROSTER = [
               en: ['Duplex-Chain OM646 (400 Nm)', '500k+ km Proven Endurance'],
               de: ['Duplex-Ketten-OM646 (400 Nm)', '500.000+ km Taxi-Bewährt'],
               ru: ['Двухрядный OM646 (400 Н·м)', 'Ресурс 500 000+ км']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'OM646 EVO (170 HP) · 2,148 cc' }, { k: 'architecture', v: { en: 'Inline-4 Cast-Iron · Front Duplex Chain + 400 Nm', de: 'Reihenvierzylinder Grauguss · Duplexkette + 400 Nm', ru: 'Рядный 4-цил. чугун · Двухрядная цепь + 400 Н·м' } }], note: { en: 'Arguably the highest-mileage reliability champion in the entire W204 lineup: 400 Nm punch, duplex timing chain, and bulletproof 5G-Tronic.', de: 'Wohl der langlebigste Dauerläufer der gesamten W204-Baureihe: 400 Nm, Duplex-Steuerkette und unverwüstliche 5G-Tronic.', ru: 'Главный чемпион ресурса среди всех W204: 400 Н·м, двухрядная цепь ГРМ и неубиваемая 5G-Tronic.' } },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -30452,6 +33057,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.9,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Flush 5G-Tronic (722.6) ATF + filter & replace diesel fuel filter', de: '5G-Tronic-Öl (722.6) + Filter & Dieselfilter wechseln', ru: 'Замена масла 5G-Tronic + фильтр и топливный фильтр' }, cost: '€250–380' },
+                { when: { en: 'Every 100,000 km', de: 'Alle 100.000 km', ru: 'Каждые 100 000 км' }, action: { en: 'Inspect injector seats for black tar ("black death") & thermostat', de: 'Injektorsitze auf Verkokung prüfen & Thermostat kontrollieren', ru: 'Проверка посадочных мест форсунок на кокс и проверка термостата' }, cost: '€140–240' }
+              ],
+              critical: [
+                { when: { en: '150,000–240,000 km', de: '150.000–240.000 km', ru: '150 000–240 000 км' }, action: { en: 'Copper injector sealing washers + stretch bolts & 5G-Tronic plug bush', de: 'Injektor-Kupferdichtringe + Dehnschrauben & 722.6-Steckerbuchse', ru: 'Медные шайбы форсунок + болты и разъём АКПП 722.6 (от течи масла)' }, cost: '€320–620', risk: { en: 'Leaking injector seals bake solid black carbon; ATF wicks into TCU', de: 'Undichte Injektoren verkoken massiv; Getriebeöl wandert ins Steuergerät', ru: 'Прогар шайб забивает крышку коксом; масло АКПП идёт по косе в блок' }, damage: '€1,400–2,400' },
+                { when: { en: '140,000–220,000 km', de: '140.000–220.000 km', ru: '140 000–220 000 км' }, action: { en: 'W204 rear subframe rust check & ELV steering lock', de: 'W204 Hinterachsträger-Rostprüfung & ELV-Lenkradschloss', ru: 'Проверка заднего подрамника и блокиратора руля ELV' }, cost: '€350–1,200', risk: { en: 'Subframe rust or jammed electronic steering lock', de: 'Durchrostung oder Startblockade durch ELV', ru: 'Коррозия подрамника или блокировка зажигания ELV' }, damage: '€1,500–2,500' }
+              ]
+            },
             badges: {
               en: ['Very Cheap Taxi-Hero Parts', 'Duplex Chain Rarely Needs Work'],
               de: ['Sehr günstige Taxi-Ersatzteile', 'Duplex-Steuerkette langlebig'],
@@ -30546,6 +33161,15 @@ const CAR_ROSTER = [
           performanceDynamics: 8.4,
           runningCostsTco: 7.9
         },
+        specOverrides: {
+          engineName: { en: '2.1L I4 OM651 170 (Bi-Turbo)', de: '2.1L Reihenvierzylinder OM651', ru: '2.1L R4 OM651 170 (Би-турбо)' },
+          forcedInduction: '@twinTurbo', injection: '@commonRail', timingDrive: '@chain',
+          gearbox: { en: '7G-Tronic Plus / 6-MT', de: '7G-Tronic Plus / 6-Gang', ru: '7G-Tronic Plus / 6-МКПП' },
+          clutchDmf: '@torqueConv', payloadRoof: '530 kg · 100 kg', towingBraked: '1,800 kg',
+          sprint0100: '8.1 s', topSpeed: '232 km/h', peakTorque: '400 Nm @ 1,400 rpm',
+          passingPunch: { en: 'Instant 400 Nm Twin-Turbo', de: 'Sofortige 400 Nm (Bi-Turbo)', ru: 'Мгновенные 400 Н·м (Би-турбо)' },
+          realWorldFuel: '5.6 L/100km', tankRange: '66 L (~1,180 km)', euroNorm: 'Euro 5 (Diesel)', taxInsurance: '@tierMod', serviceWear: '@tierMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 8.2,
@@ -30553,6 +33177,10 @@ const CAR_ROSTER = [
               en: ['400 Nm Sequential Bi-Turbo', 'Verify Recall Injectors & Chain'],
               de: ['400 Nm Register-Bi-Turbo', 'Injektor-Update & Kette prüfen'],
               ru: ['Би-турбо OM651 (400 Н·м)', 'Обновл. форсунки и цепь ГРМ']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'OM651 DE22 LA (170 HP) · 2,143 cc' }, { k: 'architecture', v: { en: 'Inline-4 Cast-Iron · Sequential Twin-Turbo + Rear Chain', de: 'Reihenvierzylinder Grauguss · Stufenaufladung + Heckkette', ru: 'Рядный 4-цил. чугун · Последовательный би-турбо + задняя цепь' } }], note: { en: 'The #1 European bestseller W204: 400 Nm from just 1,400 rpm, 1,180 km range, and slick 7G-Tronic Plus; watch rear chain tensioner & coolant flange.', de: 'Der meistgekaufte W204: 400 Nm schon ab 1.400/min, 1.180 km Reichweite und 7G-Tronic Plus; hintere Kette & Kühlwasserflansch prüfen.', ru: 'Хит продаж W204: 400 Н·м с 1 400 об/мин, 1 180 км на баке и 7G-Tronic Plus; контролируйте цепь и фланец ОЖ.' } },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -30888,6 +33516,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.4,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Flush 7G-Tronic Plus / 5G-Tronic ATF + filter & diesel fuel filter', de: '7G/5G-Tronic-Öl + Filter & Dieselfilter wechseln', ru: 'Замена масла АКПП 7G/5G-Tronic + фильтр и топливный фильтр' }, cost: '€280–420' },
+                { when: { en: 'Every 100,000 km', de: 'Alle 100.000 km', ru: 'Каждые 100 000 км' }, action: { en: 'Inspect plastic coolant outlet flange, water pump & EGR cooler', de: 'Kühlmittel-Kunststoffflansch, Wasserpumpe & AGR-Kühler prüfen', ru: 'Проверка пластикового фланца ОЖ, помпы и охладителя EGR' }, cost: '€180–300' }
+              ],
+              critical: [
+                { when: { en: '130,000–200,000 km', de: '130.000–200.000 km', ru: '130 000–200 000 км' }, action: { en: 'OM651 rear simplex timing chain + updated hydraulic tensioner', de: 'OM651 hinten liegende Simplex-Steuerkette + verbesserter Spanner', ru: 'Задняя однорядная цепь ГРМ OM651 и обновлённый натяжитель' }, cost: '€1,100–1,800', risk: { en: 'Cold-start chain rattle progresses to skipped teeth and bent valves', de: 'Kaltstart-Rasseln führt zu Überspringen und kapitalem Motorschaden', ru: 'Грохот цепи при пуске ведёт к перескоку и разрушению ГБЦ' }, damage: '€4,000–6,000' },
+                { when: { en: '110,000–180,000 km', de: '110.000–180.000 km', ru: '110 000–180 000 км' }, action: { en: 'Plastic fuel-filter coolant flange leak & rear subframe rust check', de: 'Undichter Kühlwasserstutzen am Kraftstofffilter & Hinterachsträger-Check', ru: 'Течь пластикового фланца ОЖ у топливного фильтра и осмотр подрамника' }, cost: '€320–750', risk: { en: 'Sudden coolant loss on highway or structural subframe rust', de: 'Plötzlicher Kühlwasserverlust auf der Autobahn oder Achsträger-Rost', ru: 'Резкая потеря антифриза на трассе или коррозия подрамника' }, damage: '€1,600–2,800' }
+              ]
+            },
             badges: {
               en: ['Massive Used Parts Market', 'Bi-Turbo Hoses, Pump & 7G ATF'],
               de: ['Riesiger Teilemarkt', 'Ladeluftschlauch, Pumpe & ATF'],
@@ -30990,6 +33628,15 @@ const CAR_ROSTER = [
           performanceDynamics: 8.9,
           runningCostsTco: 7.7
         },
+        specOverrides: {
+          engineName: { en: '2.1L I4 OM651 204 (Bi-Turbo)', de: '2.1L Reihenvierzylinder 204 PS', ru: '2.1L R4 OM651 204 (Би-турбо)' },
+          forcedInduction: '@twinTurbo', injection: '@commonRail', timingDrive: '@chain',
+          gearbox: { en: '7G-Tronic Plus (Opt. 4MATIC)', de: '7G-Tronic Plus (Opt. 4MATIC)', ru: '7G-Tronic Plus (Опц. 4MATIC)' },
+          clutchDmf: '@torqueConv', payloadRoof: '530 kg · 100 kg', towingBraked: '1,800 kg',
+          sprint0100: '7.0 s', topSpeed: '240 km/h', peakTorque: '500 Nm @ 1,600 rpm',
+          passingPunch: { en: 'Ferocious 500 Nm 4-Cyl Surge', de: 'Brachiale 500 Nm (4-Zyl.)', ru: 'Ураганные 500 Н·м' },
+          realWorldFuel: '5.9 L/100km', tankRange: '66 L (~1,120 km)', euroNorm: 'Euro 5 (Diesel)', taxInsurance: '@tierModHigh', serviceWear: '@tierModHigh'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.7,
@@ -30997,6 +33644,10 @@ const CAR_ROSTER = [
               en: ['500 Nm High-Output OM651', 'Post-2012 Units Strongly Preferred'],
               de: ['500 Nm Top-OM651', 'Ab 2012 (Mopf) klar bevorzugt'],
               ru: ['Мощный OM651 (500 Н·м)', 'Лучше брать рестайлинг 2012+']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'OM651 DE22 LA (204 HP) · 2,143 cc' }, { k: 'architecture', v: { en: 'Inline-4 Sequential Twin-Turbo · 500 Nm High-Output', de: 'Reihenvierzylinder Bi-Turbo · 500 Nm Top-Ausbaustufe', ru: 'Рядный 4-цил. би-турбо · 500 Н·м форсированная версия' } }], note: { en: 'V6-rivaling 500 Nm and 7.0 s pace with 4-cylinder 5.9 L/100km economy; change oil every 15,000 km to keep the high-boost chain and turbos happy.', de: 'V6-Drehmoment (500 Nm) und 7,0 s bei nur 5,9 L Verbrauch; bei dieser Literleistung Öl strikt alle 15.000 km wechseln.', ru: 'Тяга как у V6 (500 Н·м, 7,0 с) при расходе 5,9 л; из-за высокой форсировки меняйте масло каждые 15 000 км.' } },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -31332,6 +33983,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.2,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Flush 7G-Tronic Plus / 5G-Tronic ATF + filter & diesel fuel filter', de: '7G/5G-Tronic-Öl + Filter & Dieselfilter wechseln', ru: 'Замена масла АКПП 7G/5G-Tronic + фильтр и топливный фильтр' }, cost: '€280–420' },
+                { when: { en: 'Every 100,000 km', de: 'Alle 100.000 km', ru: 'Каждые 100 000 км' }, action: { en: 'Inspect plastic coolant outlet flange, water pump & EGR cooler', de: 'Kühlmittel-Kunststoffflansch, Wasserpumpe & AGR-Kühler prüfen', ru: 'Проверка пластикового фланца ОЖ, помпы и охладителя EGR' }, cost: '€180–300' }
+              ],
+              critical: [
+                { when: { en: '130,000–200,000 km', de: '130.000–200.000 km', ru: '130 000–200 000 км' }, action: { en: 'OM651 rear simplex timing chain + updated hydraulic tensioner', de: 'OM651 hinten liegende Simplex-Steuerkette + verbesserter Spanner', ru: 'Задняя однорядная цепь ГРМ OM651 и обновлённый натяжитель' }, cost: '€1,100–1,800', risk: { en: 'Cold-start chain rattle progresses to skipped teeth and bent valves', de: 'Kaltstart-Rasseln führt zu Überspringen und kapitalem Motorschaden', ru: 'Грохот цепи при пуске ведёт к перескоку и разрушению ГБЦ' }, damage: '€4,000–6,000' },
+                { when: { en: '110,000–180,000 km', de: '110.000–180.000 km', ru: '110 000–180 000 км' }, action: { en: 'Plastic fuel-filter coolant flange leak & rear subframe rust check', de: 'Undichter Kühlwasserstutzen am Kraftstofffilter & Hinterachsträger-Check', ru: 'Течь пластикового фланца ОЖ у топливного фильтра и осмотр подрамника' }, cost: '€320–750', risk: { en: 'Sudden coolant loss on highway or structural subframe rust', de: 'Plötzlicher Kühlwasserverlust auf der Autobahn oder Achsträger-Rost', ru: 'Резкая потеря антифриза на трассе или коррозия подрамника' }, damage: '€1,600–2,800' }
+              ]
+            },
             badges: {
               en: ['500 Nm Wears Rear Tyres Faster', '322 mm Pads + Boost Plumbing'],
               de: ['500 Nm fressen Hinterreifen', '322-mm-Bremsen & Ladeluftwege'],
@@ -31429,6 +34090,15 @@ const CAR_ROSTER = [
           performanceDynamics: 8.8,
           runningCostsTco: 6.6
         },
+        specOverrides: {
+          engineName: { en: '3.0L V6 OM642 CDI (Chain)', de: '3.0L V6 Diesel OM642 (Kette)', ru: '3.0L V6 OM642 Дизель (Цепь)' },
+          forcedInduction: '@turbo', injection: '@commonRail', timingDrive: '@chain',
+          gearbox: { en: '7G-Tronic (Opt. 4MATIC)', de: '7G-Tronic (Opt. 4MATIC)', ru: '7G-Tronic (Опц. 4MATIC)' },
+          clutchDmf: '@torqueConv', payloadRoof: '540 kg · 100 kg', towingBraked: '1,800 kg',
+          sprint0100: '6.9 s', topSpeed: '250 km/h', peakTorque: '510 Nm @ 1,600 rpm',
+          passingPunch: { en: 'Silky 510 Nm V6 Wave', de: 'Seidige 510-Nm-V6-Welle', ru: 'Бархатная волна 510 Н·м V6' },
+          realWorldFuel: '7.6 L/100km', tankRange: '66 L (~870 km)', euroNorm: 'Euro 4 (Diesel)', taxInsurance: '@tierHigh', serviceWear: '@tierHigh'
+        },
         subStats: {
           powertrainDurability: {
             score: 8.2,
@@ -31436,6 +34106,10 @@ const CAR_ROSTER = [
               en: ['Tough 3.0L OM642 V6 Core', 'Watch V-Valley Oil Cooler Seals'],
               de: ['Robuster OM642 V6-Kern', 'Ölkühler-Dichtung im V beachten'],
               ru: ['Крепкий блок V6 OM642', 'Уплотнения теплообменника в V']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'OM642 DE30 LA (224 HP) · 2,987 cc V6' }, { k: 'architecture', v: { en: '72° V6 Aluminium Diesel · Duplex Chain + 510 Nm', de: '72°-V6 Alu-Diesel · Duplex-Steuerkette + 510 Nm', ru: 'V6 72° алюминиевый дизель · Цепь + 510 Н·м' } }], note: { en: 'Whisper-smooth V6 diesel luxury with 510 Nm; mechanically huge longevity once the notorious V-valley oil-cooler seals are upgraded to purple Viton.', de: 'Flüsterleiser V6-Diesel-Luxus mit 510 Nm; mechanisch extrem haltbar, sobald die Ölkühlerdichtungen im V auf Viton umgerüstet wurden.', ru: 'Тихий и бархатный V6 дизель на 510 Н·м; огромный ресурс после замены прокладок теплообменника в развале V.' } },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -31771,6 +34445,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 6.0,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Flush 7G-Tronic (722.9) ATF + filter & 4MATIC/diff oil + fuel filter', de: '7G-Tronic-Öl (722.9) + Filter, Diff-/4MATIC-Öl & Dieselfilter wechseln', ru: 'Замена масла 7G-Tronic + фильтр, масла редукторов и топливный фильтр' }, cost: '€360–520' },
+                { when: { en: 'Every 100,000 km', de: 'Alle 100.000 km', ru: 'Каждые 100 000 км' }, action: { en: 'Replace turbo-inlet orange seal (prevents oil dripping on swirl motor!)', de: 'Rote Turbolader-Dichtung ersetzen (schützt Drallklappen-Stellmotor!)', ru: 'Замена уплотнительного кольца на впуске турбины (защита мотора заслонок!)' }, cost: '€120–200' }
+              ],
+              critical: [
+                { when: { en: '120,000–190,000 km', de: '120.000–190.000 km', ru: '120 000–190 000 км' }, action: { en: 'OM642 V-valley oil-cooler seals (upgrade to purple Viton) & swirl motor', de: 'OM642 Ölkühlerdichtungen im V (lila Viton) & Drallklappen-Stellmotor', ru: 'Прокладки теплообменника в развале V OM642 (фиолетовые Viton) и актуатор заслонок' }, cost: '€1,100–1,800', risk: { en: 'Heavy oil pool in V-valley drips onto starter & shorts swirl actuator', de: 'Ölsee im V tropft auf Anlasser und zerstört den Drallklappen-Motor', ru: 'Масло в развале заливает стартер и выводит из строя актуатор заслонок' }, damage: '€2,200–3,400' },
+                { when: { en: '150,000–220,000 km', de: '150.000–220.000 km', ru: '150 000–220 000 км' }, action: { en: '600+ Nm 7G-Tronic conductor plate & rear subframe rust check', de: '7G-Tronic-Steuereinheit (bei 510–620 Nm) & Hinterachsträger-Check', ru: 'Плата АКПП 7G-Tronic (при 510–620 Н·м) и осмотр заднего подрамника' }, cost: '€750–1,450', risk: { en: 'Harsh shifts / limp mode or rear subframe rust', de: 'Harte Schaltschläge / Notlauf oder Hinterachs-Korrosion', ru: 'Пинки / аварийный режим АКПП или коррозия подрамника' }, damage: '€2,000–3,200' }
+              ]
+            },
             badges: {
               en: ['8.5L Oil + Tight V6 Engine Bay', 'Expensive Oil Cooler Seal Labor'],
               de: ['8,5 L Öl + enger V6-Motorraum', 'Teurer Ölkühler-Dichtungswechsel'],
@@ -31866,6 +34550,17 @@ const CAR_ROSTER = [
           performanceDynamics: 9.1,
           runningCostsTco: 6.9
         },
+        specOverrides: {
+          engineName: { en: '3.0L V6 OM642 4MATIC (Chain)', de: '3.0L V6 OM642 4MATIC (Kette)', ru: '3.0L V6 OM642 4MATIC (Цепь)' },
+          forcedInduction: '@turbo', injection: '@commonRail', timingDrive: '@chain',
+          gearbox: { en: '7G-Tronic + 4MATIC AWD', de: '7G-Tronic + 4MATIC Allrad', ru: '7G-Tronic + 4MATIC AWD' },
+          clutchDmf: '@torqueConv', driveline: '@awdFull',
+          tractionDiff: { en: '4MATIC Full-Time AWD · ESP', de: '4MATIC Dauer-Allrad · ESP', ru: 'Постоянный 4MATIC · ESP' },
+          payloadRoof: '540 kg · 100 kg', towingBraked: '1,800 kg',
+          sprint0100: '6.4 s', topSpeed: '250 km/h', peakTorque: '540 Nm @ 1,600 rpm',
+          passingPunch: { en: 'All-Weather 540 Nm V6', de: 'Allwetter-540-Nm-V6', ru: 'Всепогодные 540 Н·м V6' },
+          realWorldFuel: '7.5 L/100km', tankRange: '66 L (~880 km)', euroNorm: 'Euro 5 (Diesel)', taxInsurance: '@tierHigh', serviceWear: '@tierHigh'
+        },
         subStats: {
           powertrainDurability: {
             score: 8.3,
@@ -31873,6 +34568,10 @@ const CAR_ROSTER = [
               en: ['Updated 231 HP OM642 V6', 'Watch V-Valley Oil Cooler Seals'],
               de: ['Überarb. 231 PS OM642 V6', 'Ölkühlerdichtungen im V prüfen'],
               ru: ['Обновл. V6 OM642 (231 л.с.)', 'Прокладки теплообменника в развале']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'OM642 DE30 LA (231 HP) · 2,987 cc V6' }, { k: 'architecture', v: { en: '72° V6 Aluminium Diesel · Standard 4MATIC + 540 Nm', de: '72°-V6 Alu-Diesel · Serien-4MATIC + 540 Nm', ru: 'V6 72° алюминиевый дизель · Полный 4MATIC + 540 Н·м' } }], note: { en: 'Ultimate all-season Autobahn cruiser combining 540 Nm V6 torque with full-time 4MATIC traction; watch V-valley oil cooler & transfer-case bearings.', de: 'Ultimativer Allwetter-Autobahngleiter mit 540 Nm und 4MATIC; Ölkühler im V und Verteilergetriebelager prüfen.', ru: 'Идеальный всепогодный экспресс с 540 Н·м и полным приводом 4MATIC; проверяйте теплообменник и подшипник раздатки.' } },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -32205,6 +34904,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 6.1,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Flush 7G-Tronic (722.9) ATF + filter & 4MATIC/diff oil + fuel filter', de: '7G-Tronic-Öl (722.9) + Filter, Diff-/4MATIC-Öl & Dieselfilter wechseln', ru: 'Замена масла 7G-Tronic + фильтр, масла редукторов и топливный фильтр' }, cost: '€360–520' },
+                { when: { en: 'Every 100,000 km', de: 'Alle 100.000 km', ru: 'Каждые 100 000 км' }, action: { en: 'Replace turbo-inlet orange seal (prevents oil dripping on swirl motor!)', de: 'Rote Turbolader-Dichtung ersetzen (schützt Drallklappen-Stellmotor!)', ru: 'Замена уплотнительного кольца на впуске турбины (защита мотора заслонок!)' }, cost: '€120–200' }
+              ],
+              critical: [
+                { when: { en: '120,000–190,000 km', de: '120.000–190.000 km', ru: '120 000–190 000 км' }, action: { en: 'OM642 V-valley oil-cooler seals (upgrade to purple Viton) & swirl motor', de: 'OM642 Ölkühlerdichtungen im V (lila Viton) & Drallklappen-Stellmotor', ru: 'Прокладки теплообменника в развале V OM642 (фиолетовые Viton) и актуатор заслонок' }, cost: '€1,100–1,800', risk: { en: 'Heavy oil pool in V-valley drips onto starter & shorts swirl actuator', de: 'Ölsee im V tropft auf Anlasser und zerstört den Drallklappen-Motor', ru: 'Масло в развале заливает стартер и выводит из строя актуатор заслонок' }, damage: '€2,200–3,400' },
+                { when: { en: '150,000–220,000 km', de: '150.000–220.000 km', ru: '150 000–220 000 км' }, action: { en: '600+ Nm 7G-Tronic conductor plate & rear subframe rust check', de: '7G-Tronic-Steuereinheit (bei 510–620 Nm) & Hinterachsträger-Check', ru: 'Плата АКПП 7G-Tronic (при 510–620 Н·м) и осмотр заднего подрамника' }, cost: '€750–1,450', risk: { en: 'Harsh shifts / limp mode or rear subframe rust', de: 'Harte Schaltschläge / Notlauf oder Hinterachs-Korrosion', ru: 'Пинки / аварийный режим АКПП или коррозия подрамника' }, damage: '€2,000–3,200' }
+              ]
+            },
             badges: {
               en: ['8.5L Oil + 4Matic Drivetrain', 'Oil Cooler Seal & Shaft Labor'],
               de: ['8,5 L Öl + 4Matic-Wartung', 'Ölkühler- & Allrad-Arbeiten teuer'],
@@ -32299,6 +35008,15 @@ const CAR_ROSTER = [
           performanceDynamics: 9.2,
           runningCostsTco: 7.1
         },
+        specOverrides: {
+          engineName: { en: '3.0L V6 OM642 265 (620 Nm)', de: '3.0L V6 OM642 265 PS (620 Nm)', ru: '3.0L V6 OM642 265 (620 Н·м)' },
+          forcedInduction: '@turbo', injection: '@commonRail', timingDrive: '@chain',
+          gearbox: { en: '7G-Tronic Plus (722.9)', de: '7G-Tronic Plus (722.9)', ru: '7G-Tronic Plus (722.9)' },
+          clutchDmf: '@torqueConv', payloadRoof: '540 kg · 100 kg', towingBraked: '1,800 kg',
+          sprint0100: '6.0 s', topSpeed: '250 km/h', peakTorque: '620 Nm @ 1,600 rpm',
+          passingPunch: { en: 'Locomotive 620 Nm V6 Thrust', de: 'Lokomotiv-Schub (620 Nm)', ru: 'Локомотивная тяга 620 Н·м' },
+          realWorldFuel: '7.2 L/100km', tankRange: '66 L (~915 km)', euroNorm: 'Euro 5 (Diesel)', taxInsurance: '@tierHigh', serviceWear: '@tierHigh'
+        },
         subStats: {
           powertrainDurability: {
             score: 8.5,
@@ -32306,6 +35024,10 @@ const CAR_ROSTER = [
               en: ['Revised 265 HP OM642 LS', 'Factory Purple Viton Seals'],
               de: ['Überarbeiteter OM642 LS (265 PS)', 'Ab Werk Viton-Dichtungen'],
               ru: ['Доработанный OM642 LS (265 л.с.)', 'Усиленные прокладки Viton']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'OM642 LS (265 HP) · 2,987 cc V6' }, { k: 'architecture', v: { en: '72° V6 Upgraded Diesel · 620 Nm + 7G-Tronic Plus', de: '72°-V6 Überarbeiteter Diesel · 620 Nm + 7G-Tronic Plus', ru: 'V6 72° модернизированный дизель · 620 Н·м + 7G-Tronic Plus' } }], note: { en: 'The diesel flagship: 620 Nm (more than a C63 AMG!) and 6.0 s sprint while still returning 7.2 L/100km; keep 7G-Tronic Plus oil fresh every 60,000 km.', de: 'Das Diesel-Flaggschiff: 620 Nm (mehr als ein C63 AMG!) und 6,0 s bei 7,2 L Verbrauch; 7G-Tronic-Plus-Öl alle 60.000 km pflegen.', ru: 'Дизельный флагман: 620 Н·м (больше, чем у C63 AMG!) и 6,0 с до 100 при расходе 7,2 л; меняйте масло в 7G-Tronic каждые 60 000 км.' } },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -32641,6 +35363,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 6.5,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Flush 7G-Tronic (722.9) ATF + filter & 4MATIC/diff oil + fuel filter', de: '7G-Tronic-Öl (722.9) + Filter, Diff-/4MATIC-Öl & Dieselfilter wechseln', ru: 'Замена масла 7G-Tronic + фильтр, масла редукторов и топливный фильтр' }, cost: '€360–520' },
+                { when: { en: 'Every 100,000 km', de: 'Alle 100.000 km', ru: 'Каждые 100 000 км' }, action: { en: 'Replace turbo-inlet orange seal (prevents oil dripping on swirl motor!)', de: 'Rote Turbolader-Dichtung ersetzen (schützt Drallklappen-Stellmotor!)', ru: 'Замена уплотнительного кольца на впуске турбины (защита мотора заслонок!)' }, cost: '€120–200' }
+              ],
+              critical: [
+                { when: { en: '120,000–190,000 km', de: '120.000–190.000 km', ru: '120 000–190 000 км' }, action: { en: 'OM642 V-valley oil-cooler seals (upgrade to purple Viton) & swirl motor', de: 'OM642 Ölkühlerdichtungen im V (lila Viton) & Drallklappen-Stellmotor', ru: 'Прокладки теплообменника в развале V OM642 (фиолетовые Viton) и актуатор заслонок' }, cost: '€1,100–1,800', risk: { en: 'Heavy oil pool in V-valley drips onto starter & shorts swirl actuator', de: 'Ölsee im V tropft auf Anlasser und zerstört den Drallklappen-Motor', ru: 'Масло в развале заливает стартер и выводит из строя актуатор заслонок' }, damage: '€2,200–3,400' },
+                { when: { en: '150,000–220,000 km', de: '150.000–220.000 km', ru: '150 000–220 000 км' }, action: { en: '600+ Nm 7G-Tronic conductor plate & rear subframe rust check', de: '7G-Tronic-Steuereinheit (bei 510–620 Nm) & Hinterachsträger-Check', ru: 'Плата АКПП 7G-Tronic (при 510–620 Н·м) и осмотр заднего подрамника' }, cost: '€750–1,450', risk: { en: 'Harsh shifts / limp mode or rear subframe rust', de: 'Harte Schaltschläge / Notlauf oder Hinterachs-Korrosion', ru: 'Пинки / аварийный режим АКПП или коррозия подрамника' }, damage: '€2,000–3,200' }
+              ]
+            },
             badges: {
               en: ['Upgraded Seals Cut Leaks', '620 Nm Tyre Wear + V6 Service'],
               de: ['Dichtungen verbessert', '620 Nm Reifenverschleiß + V6-TO'],
@@ -33817,6 +36549,153 @@ const CAR_ROSTER = [
         }
       }
     },
+    sharedSpecs: {
+      rustProtection: '@rustGood',
+      suspensionWear: '@suspDoubleWishbone',
+      starterAlternator: '@starter12v',
+      electronicsRisk: '@elecLow',
+      rideTuning: { en: 'Firm-Composed SUV', de: 'Straff-Komfortabel SUV', ru: 'Упругая / Собранная SUV' },
+      highwayNoise: { en: '~71 dB · Moderate', de: '~71 dB · Mittel', ru: '~71 дБ · Умеренно' },
+      cabinMaterials: { en: 'Hard-Wearing Utility', de: 'Robuster Nutz-Mix', ru: 'Износостойкий пластик' },
+      controls: '@physButtons',
+      turningCircle: '11.0 m',
+      visibility: { en: 'High Upright · Clear', de: 'Hoch aufrecht · Sehr gut', ru: 'Высокая посадка · Отлично' },
+      euroNcap: '★★★★☆ (2006)',
+      safetyTech: { en: '✓ VSC+ · ✓ Hill-Start Assist', de: '✓ VSC+ · ✓ Berganfahrhilfe', ru: '✓ VSC+ · ✓ Помощь в горку' },
+      rearRoom: { en: 'Generous · Sliding Bench', de: 'Großzügig · Verschiebbar', ru: 'Просторно · Сдвижной ряд' },
+      isofixEntry: { en: '✓ 2× ISOFIX · Wide Doors', de: '✓ 2× ISOFIX · Große Türen', ru: '✓ 2× ISOFIX · Широкий проём' },
+      bootVolume: '586 L / 1,469 L',
+      seatUtility: { en: '✓ Easy-Flat + Deep Well', de: '✓ Easy-Flat + Tiefes Fach', ru: '✓ Easy-Flat + глубокая ниша' },
+      payloadRoof: '540 kg · 75 kg',
+      driveline: '@awdOnDemand',
+      chassisFeel: { en: 'Composed · Tight Turn-In', de: 'Stabil · Handlich', ru: 'Собранное · Манёвренный' },
+      tractionDiff: { en: 'AWD + Lock Button · VSC', de: 'Allrad + Lock-Taste · VSC', ru: 'Полный + Lock · VSC' },
+      braking1000: '~37.8 m',
+      brakeSetup: '@discs4',
+      valueRetention: '@retVeryHigh',
+      resaleDemand: '@demFast'
+    },
+    sharedDossierBreakdowns: {
+      transmissionDriveline: { gearbox: '@gbManual6Toyota', clutchDmf: '@clutchSingle', driveline: { specs: [{ k: 'drivelineArch', v: { en: 'Active Torque Control AWD (Electromagnetic Coupling + Lock)', de: 'Aktiver Allradantrieb (Elektromagnetkupplung + Lock)', ru: 'Подключаемый полный привод (электромуфта + Lock)' } }, { k: 'transferCase', v: { en: 'Front Transfer Case + Rear Differential (Requires Oil Service)', de: 'Verteilergetriebe + Hinterachsdiff (Ölwechsel nötig)', ru: 'Раздатка + задний дифференциал (требуют замены масла)' } }], note: { en: 'Reliable electromagnetic AWD with a 50:50 Lock button up to 40 km/h; refresh transfer and rear diff oil every 60,000 km.', de: 'Zuverlässiger Allrad mit 50:50-Sperrtaste bis 40 km/h; Verteiler- und Hinterachsöl alle 60.000 km wechseln.', ru: 'Надёжный полный привод с блокировкой Lock до 40 км/ч; меняйте масло в раздатке и редукторе каждые 60 000 км.' } } },
+      buildQualityRust: { rustProtection: '@rustGalvanized12y', suspensionWear: '@suspDoubleWishbone' },
+      electronicsReliability: { starterAlternator: '@starterStandard12v', electronicsRisk: '@elecSimpleEps' },
+      rideNoiseComfort: {
+        rideTuning: {
+          specs: [
+            { k: 'damperSetup', v: { en: 'Taut SUV Springs · Independent Double-Wishbone Rear', de: 'Straffe SUV-Abstimmung · Doppelquerlenker hinten', ru: 'Упругая подвеска SUV · Двухрычажка сзади' } },
+            { k: 'seatSupport', v: { en: 'Upright Touring Seating · Good Thigh Support', de: 'Aufrechte Sitzposition · Guter Halt', ru: 'Высокая посадка · Удобная поддержка' } }
+          ],
+          note: { en: 'Slightly firmer than a CR-V over sharp city potholes, but stays planted and controlled on winding country roads.', de: 'Etwas straffer als ein CR-V auf harten Stadtfugen, dafür sehr stabil auf Landstraßen.', ru: 'Чуть жёстче CR-V на острых стыках, зато собраннее на трассе и в поворотах.' }
+        },
+        highwayNoise: {
+          specs: [
+            { k: 'cabinNoise130', v: { en: '~71 dB(A) at 130 km/h', de: '~71 dB(A) bei 130 km/h', ru: '~71 дБ(А) при 130 км/ч' } },
+            { k: 'acousticGlass', v: { en: 'Standard SUV Glazing · Noticeable Mirror Wind Above 120 km/h', de: 'Standard-Verglasung · Windgeräusche ab 120 km/h', ru: 'Обычные стёкла · Шум ветра выше 120 км/ч' } }
+          ],
+          note: { en: 'Comfortable up to 120 km/h; upright SUV shape and taller 17-inch tyres add wind and tyre hum at fast motorway speeds.', de: 'Bis 120 km/h angenehm; hohe SUV-Form und Reifen bringen bei schnellem Autobahntempo hörbares Rauschen.', ru: 'Комфортен до 120 км/ч; на высокой скорости заметен аэродинамический шум и гул шин.' }
+        }
+      },
+      interiorQualityFeatures: {
+        cabinMaterials: {
+          specs: [
+            { k: 'dashboardTrim', v: { en: 'Durable Hard-Wearing Plastics · Solid Fitment', de: 'Robuste Hartkunststoffe · Solide Verarbeitung', ru: 'Износостойкий жёсткий пластик · Крепкая сборка' } },
+            { k: 'seatUpholstery', v: { en: 'Tough Woven Cloth or Optional Full Leather', de: 'Strapazierfähiger Stoff oder optional Vollleder', ru: 'Прочная ткань или опциональная кожа' } }
+          ],
+          note: { en: 'Utilitarian rather than plush, but switches and trim resist wear well even past 200,000 km.', de: 'Eher funktional als luxuriös, dafür extrem abriebfest und klapperarm auch über 200.000 km.', ru: 'Без премиальной мягкости, но фурнитура и панели спокойно выдерживают пробеги за 200 000 км.' }
+        },
+        controls: '@controlsPhys'
+      },
+      visibilityManeuverability: {
+        turningCircle: {
+          specs: [
+            { k: 'turnDiameter', v: { en: '11.0 m (Tight for a Compact SUV)', de: '11,0 m (Handlich für ein Kompakt-SUV)', ru: '11,0 м (Компактный разворот для SUV)' } },
+            { k: 'steeringType', v: { en: 'Electric Power Steering (EPS) · Light Parking Effort', de: 'Elektrische Servolenkung (EPS) · Leicht beim Parken', ru: 'Электроусилитель (ЭУР) · Лёгкий руль на парковке' } }
+          ],
+          note: { en: 'Compact 4.4 m footprint and tight 11.0 m turning circle make it far easier to park than larger crossovers.', de: 'Kompakte 4,4 m Länge und 11,0 m Wendekreis machen ihn deutlich stadttauglicher als größere SUVs.', ru: 'Длина 4,4 м и разворот 11,0 м делают парковку проще, чем у большинства одноклассников.' }
+        },
+        visibility: {
+          specs: [
+            { k: 'allRoundView', v: { en: 'High Seating · Large Upright Side Glass', de: 'Hohe Sitzposition · Große steile Fensterflächen', ru: 'Высокая посадка · Большая площадь остекления' } },
+            { k: 'rearView', v: { en: 'Side-Hinged Tailgate (Watch Swing Space Behind)', de: 'Seitlich öffnende Hecktür (Platz nach hinten beachten)', ru: 'Распашная дверь багажника (нужно место сзади)' } }
+          ],
+          note: { en: 'Commanding forward view; note that the side-hinged tailgate swings toward the kerb and needs room when parallel parked.', de: 'Sehr gute Rundumsicht; die seitlich öffnende Hecktür braucht beim Längsparken allerdings Platz nach hinten.', ru: 'Отличный обзор вперёд; учитывайте распашную заднюю дверь при тесной параллельной парковке.' }
+        }
+      },
+      safetyProtection: {
+        euroNcap: {
+          specs: [
+            { k: 'crashRating', v: { en: '4 Stars Euro NCAP (2006) · 7 Airbags incl. Driver Knee', de: '4 Sterne Euro NCAP (2006) · 7 Airbags inkl. Knieairbag', ru: '4 звезды Euro NCAP (2006) · 7 подушек (вкл. коленную)' } },
+            { k: 'bodyStructure', v: { en: 'High-Rigidity SUV Unibody · Standard Knee Airbag', de: 'Steife SUV-Karosserie · Serienmäßiger Knieairbag', ru: 'Жёсткий кузов SUV · Коленная подушка в базе' } }
+          ],
+          note: { en: 'Strong occupant protection for its 2006–2012 era with a rare standard driver knee airbag and integrated VSC+ stability.', de: 'Solider Insassenschutz für 2006–2012 mit seltenem Serien-Knieairbag und integriertem VSC+.', ru: 'Надёжная пассивная безопасность для 2006–2012 годов плюс редкая в классе коленная подушка.' }
+        },
+        safetyTech: {
+          specs: [
+            { k: 'activeSafety', v: { en: 'VSC+ (Steering-Assist Stability), TRC, ABS/EBD, HAC', de: 'VSC+ (Lenk-ESP), TRC, ABS/EBD, Berganfahrhilfe', ru: 'VSC+ (стабилизация с подруливанием), TRC, ABS, HAC' } },
+            { k: 'driverAssists', v: { en: 'No Modern AEB / Lane Keep (Era-Standard)', de: 'Kein moderner Notbrems-/Spurassistent (zeitgemäß)', ru: 'Без современных AEB и удержания в полосе (по возрасту)' } }
+          ],
+          note: { en: 'Toyota VSC+ coordinates steering torque, brakes, and AWD coupling automatically in slippery winter conditions.', de: 'Toyotas VSC+ vernetzt Lenkung, Bremse und Allrad automatisch bei Schnee und Nässe.', ru: 'Система VSC+ согласует руль, тормоза и муфту полного привода на скользком покрытии.' }
+        }
+      },
+      passengerSpaceErgonomics: {
+        rearRoom: {
+          specs: [
+            { k: 'rearSpace', v: { en: '60/40 Sliding & Reclining Rear Bench · Flat Floor', de: '60/40 verschieb- & neigbare Rückbank · Flacher Boden', ru: 'Сдвижной ряд 60/40 с регулировкой спинки · Ровный пол' } },
+            { k: 'frontErgo', v: { en: 'Tall Upright Cabin · Ample Headroom for 1.90 m+', de: 'Hoher luftiger Innenraum · Viel Kopffreiheit ab 1,90 m', ru: 'Высокий потолок · Запас места для пассажиров 1,90 м+' } }
+          ],
+          note: { en: 'Sliding and reclining rear bench lets you trade extra legroom for cargo length in seconds.', de: 'Verschiebbare und neigbare Rückbank passt Beinfreiheit und Kofferraumlänge flexibel an.', ru: 'Сдвижной задний диван с регулировкой наклона позволяет гибко менять баланс между ногами и багажником.' }
+        },
+        isofixEntry: {
+          specs: [
+            { k: 'childSeats', v: { en: '2× Outer Rear ISOFIX + Top-Tether Anchors', de: '2× ISOFIX außen hinten + Top-Tether', ru: '2× ISOFIX сзади + якорные крепления Top-Tether' } },
+            { k: 'doorAccess', v: { en: 'High Hip Point · Effortless Entry Without Bending', de: 'Hoher Einstieg · Rückenschonendes Ein- & Aussteigen', ru: 'Высокий проём · Удобная посадка без наклона' } }
+          ],
+          note: { en: 'Elevated seat height makes strapping in child seats or getting in and out effortless.', de: 'Hohe Sitzposition macht das Anschnallen von Kindersitzen und den Einstieg sehr bequem.', ru: 'Высокая посадка облегчает установку детских кресел и ежедневный вход/выход.' }
+        }
+      },
+      interiorBootSpace: {
+        bootVolume: {
+          specs: [
+            { k: 'bootCapacity', v: { en: '586 L (Seats Up incl. Underfloor) / 1,469 L (Folded)', de: '586 L (inkl. Unterbodenfach) / 1.469 L (Umgeklappt)', ru: '586 л (с подпольем) / 1 469 л (сложено)' } },
+            { k: 'loadingLip', v: { en: 'Low Flat Floor · Huge 100 L Underfloor Compartment', de: 'Flacher Ladeboden · Riesiges 100-L-Unterbodenfach', ru: 'Низкий пол · Огромная ниша 100 л под полом' } }
+          ],
+          note: { en: 'Class-leading 586 L total volume thanks to the huge underfloor well; note the side-hinged tailgate opens sideways.', de: 'Sehr große 586 L dank riesigem Unterbodenfach; die seitliche Hecktür braucht allerdings Platz nach hinten.', ru: 'Один из лучших объёмов в классе (586 л) за счёт глубокого подполья; учитывайте распашную дверь.' }
+        },
+        seatUtility: {
+          specs: [
+            { k: 'foldingSystem', v: { en: '✓ Easy-Flat One-Touch Levers in Boot · Completely Flat Floor', de: '✓ Easy-Flat-Hebel im Kofferraum · Komplett ebener Boden', ru: '✓ Рычаги Easy-Flat в багажнике · Абсолютно ровный пол' } }
+          ],
+          note: { en: 'Pull one lever in the boot and the rear seats drop flat automatically without removing headrests.', de: 'Ein Zug am Hebel im Kofferraum klappt die Rückbank komplett eben um — ohne Kopfstützen-Ausbau.', ru: 'Один рычаг в багажнике складывает задний ряд в ровный пол без снятия подголовников.' }
+        }
+      },
+      payloadTowing: {
+        payloadRoof: {
+          specs: [
+            { k: 'maxPayload', v: { en: '~540 kg (5 Adults + Heavy Holiday Luggage)', de: '~540 kg (5 Personen + schweres Urlaubsgepäck)', ru: '~540 кг (5 человек + тяжёлый багаж)' } },
+            { k: 'roofLoad', v: { en: '75 kg Approved Dynamic Roof Load', de: '75 kg zugelassene Dachlast', ru: '75 кг допустимая нагрузка на крышу' } }
+          ],
+          note: { en: 'Strong 540 kg payload handles family holiday loads and roof boxes without sagging.', de: 'Hohe 540 kg Zuladung meistern Urlaubsgepäck und Dachbox mühelos.', ru: 'Запас 540 кг спокойно выдерживает полную загрузку семьи и багажник на крыше.' }
+        },
+        towingBraked: '@towingDynamic'
+      },
+      accelerationOvertaking: { sprint0100: '@sprintDynamic', topSpeed: '@vmaxDynamic' },
+      midRangeTorquePassing: { peakTorque: '@torqueDynamic', passingPunch: '@passingDynamic' },
+      handlingAgility: {
+        chassisFeel: {
+          specs: [
+            { k: 'steeringFeel', v: { en: 'Direct Electric Steering · Predictable SUV Balance', de: 'Direkte EPS-Lenkung · Berechenbare SUV-Balance', ru: 'Точный ЭУР · Понятный баланс SUV' } },
+            { k: 'cornering', v: { en: 'Double-Wishbone Rear Keeps Body Roll Well Contained', de: 'Doppelquerlenker hinten halten Seitenneigung im Zaum', ru: 'Задняя двухрычажка хорошо сдерживает крены' } }
+          ],
+          note: { en: 'Feels tighter and more agile than most soft-sprung 2006–2012 compact SUVs.', de: 'Wirkt handlicher und straffer als die meisten weich abgestimmten Kompakt-SUVs von 2006–2012.', ru: 'Управляется собраннее и точнее большинства мягких кроссоверов 2006–2012 годов.' }
+        },
+        tractionDiff: '@tractionAwd'
+      },
+      brakingPerformance: { braking1000: '@brakingDistDynamic', brakeSetup: '@brakeSetupDiscs4' },
+      efficiencyFuel: { realWorldFuel: '@fuelDynamic', tankRange: '@tankDynamic' },
+      taxInsuranceNorm: { euroNorm: '@euroDynamic', taxInsurance: '@taxInsDynamic' },
+      maintenanceRepairCosts: { timingDrive: '@timingDynamic', serviceWear: '@serviceDynamic' },
+      depreciationResale: { valueRetention: '@retVeryHigh', resaleDemand: '@demFast' }
+    },
     engines: [
       {
         id: '2.0-valvematic',
@@ -33902,6 +36781,24 @@ const CAR_ROSTER = [
           performanceDynamics: 6.7,
           runningCostsTco: 8.0
         },
+        specOverrides: {
+          engineName: { en: '2.0L I4 Valvematic (Chain)', de: '2.0L Reihenvierzylinder (Kette)', ru: '2.0L R4 Valvematic (Цепь)' },
+          forcedInduction: '@na',
+          injection: '@port',
+          timingDrive: '@chain',
+          gearbox: { en: '6-MT / Multidrive S CVT', de: '6-Gang / Multidrive-S-CVT', ru: '6-МКПП / Вариатор CVT' },
+          clutchDmf: '@singleClutch',
+          towingBraked: '2,000 kg',
+          sprint0100: '10.2 s',
+          topSpeed: '185 km/h',
+          peakTorque: '198 Nm @ 4,400 rpm',
+          passingPunch: { en: 'Needs Revs Above 4,000 rpm', de: 'Braucht Drehzahl >4.000/min', ru: 'Тяга выше 4 000 об/мин' },
+          realWorldFuel: '8.3 L/100km',
+          tankRange: '60 L (~720 km)',
+          euroNorm: 'Euro 5 (Petrol)',
+          taxInsurance: '@tierMod',
+          serviceWear: '@tierLow'
+        },
         subStats: {
           powertrainDurability: {
             score: 9.5,
@@ -33909,6 +36806,12 @@ const CAR_ROSTER = [
               en: ['3ZR-FAE Chain NA', '300,000+ km Potential'],
               de: ['3ZR-FAE Kettenmotor', '300.000+ km Potenzial'],
               ru: ['Цепной 3ZR-FAE NA', 'Ресурс 300 000+ км']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: '3ZR-FAE · 1,987 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium · Variable Valve Lift (Valvematic)', de: 'Reihenvierzylinder Alu · Variabler Ventilhub (Valvematic)', ru: 'Рядный 4-цил. алюминий · Valvematic' } }], note: { en: 'Smooth, durable Toyota chain petrol; keeps fuel use slightly lower than the older 1AZ-FE while remaining naturally aspirated.', de: 'Ruhiger, langlebiger Toyota-Kettenbenziner; sparsamer als der alte 1AZ-FE und komplett ohne Turbo.', ru: 'Надёжный цепной атмосферник Toyota; экономичнее старого 1AZ-FE и без турбины.' } },
+              forcedInduction: '@naNoTurbo',
+              injection: '@portInj',
+              timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -34245,6 +37148,17 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 8.6,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km / 4 yrs', de: 'Alle 60.000 km / 4 J.', ru: 'Каждые 60 000 км / 4 г.' }, action: { en: 'Change AWD transfer case & rear differential oil (+ CVT fluid if automatic)', de: 'Verteilergetriebe- & Hinterachsöl wechseln (+ CVT-Öl bei Automatik)', ru: 'Замена масла в раздатке и заднем редукторе (+ жидкость CVT)' }, cost: '€180–340' },
+                { when: { en: 'Every 90,000 km', de: 'Alle 90.000 km', ru: 'Каждые 90 000 км' }, action: { en: 'Replace iridium spark plugs & inspect auxiliary drive belt', de: 'Iridium-Zündkerzen wechseln & Keilrippenriemen prüfen', ru: 'Замена иридиевых свечей и проверка приводного ремня' }, cost: '€160–240' },
+                { when: { en: '150,000 km / 10 yrs', de: '150.000 km / 10 J.', ru: '150 000 км / 10 лет' }, action: { en: 'Flush Toyota Super Long Life Coolant & inspect radiator hoses', de: 'Kühlmittel (SLLC) wechseln & Kühlerschläuche prüfen', ru: 'Замена антифриза SLLC и проверка патрубков' }, cost: '€120–180' }
+              ],
+              critical: [
+                { when: { en: '140,000–220,000 km', de: '140.000–220.000 km', ru: '140 000–220 000 км' }, action: { en: 'Valvematic variable-lift actuator module (if Check Engine / limp mode appears)', de: 'Valvematic-Stellmotor (bei Motorkontrollleuchte / Notlauf)', ru: 'Блок управления Valvematic (при ошибке и потере тяги)' }, cost: '€900–1,400', risk: { en: 'Engine stuck in limp mode with flat throttle response', de: 'Dauerhafter Notlauf und stark reduzierter Vortrieb', ru: 'Двигатель уходит в аварийный режим с резкой потерей тяги' }, damage: '€1,400–1,800' },
+                { when: { en: '130,000–180,000 km', de: '130.000–180.000 km', ru: '130 000–180 000 км' }, action: { en: 'Water pump bearing weep & rear AWD coupling bearing hum', de: 'Wasserpumpe (Lagerspiel/Leck) & Lager der Allrad-Magnetkupplung', ru: 'Течь помпы и гул подшипника электромуфты полного привода' }, cost: '€260–520', risk: { en: 'Coolant loss or loud rear driveline drone under load', de: 'Kühlmittelverlust oder starkes Dröhnen an der Hinterachse', ru: 'Утечка антифриза или сильный гул заднего редуктора' }, damage: '€900–1,600' }
+              ]
+            },
             badges: {
               en: ['No Turbo / DPF Bills', '4WD Tyres & Routine Oils'],
               de: ['Keine Turbo-/DPF-Reparaturen', 'SUV-Reifen & Differentialöl'],
@@ -34342,6 +37256,24 @@ const CAR_ROSTER = [
           performanceDynamics: 6.5,
           runningCostsTco: 7.7
         },
+        specOverrides: {
+          engineName: { en: '2.0L I4 VVT-i (Chain)', de: '2.0L Reihenvierzylinder (Kette)', ru: '2.0L R4 VVT-i (Цепь)' },
+          forcedInduction: '@na',
+          injection: '@port',
+          timingDrive: '@chain',
+          gearbox: { en: '5-MT / 4-Speed Auto', de: '5-Gang / 4-Gang-Automatik', ru: '5-МКПП / 4-АКПП' },
+          clutchDmf: '@torqueConv',
+          towingBraked: '2,000 kg (MT) / 1,500 kg (AT)',
+          sprint0100: '10.6 s',
+          topSpeed: '185 km/h',
+          peakTorque: '194 Nm @ 4,000 rpm',
+          passingPunch: { en: 'Modest · High-Revving', de: 'Gemütlich · Drehzahlorientiert', ru: 'Спокойная · Любит обороты' },
+          realWorldFuel: '9.1 L/100km',
+          tankRange: '60 L (~660 km)',
+          euroNorm: 'Euro 4 (Petrol)',
+          taxInsurance: '@tierMod',
+          serviceWear: '@tierLow'
+        },
         subStats: {
           powertrainDurability: {
             score: 9.4,
@@ -34349,6 +37281,12 @@ const CAR_ROSTER = [
               en: ['Updated 2006+ 1AZ-FE', 'Clean Multi-Point Port Injection'],
               de: ['Verbesserter 1AZ-FE', 'Saubere Saugrohreinspritzung'],
               ru: ['Доработанный 1AZ-FE', 'Надёжный распределённый впрыск']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: '1AZ-FE · 1,998 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium · Simple VVT-i (No Valvematic)', de: 'Reihenvierzylinder Alu · Simples VVT-i (kein Valvematic)', ru: 'Рядный 4-цил. алюминий · Простой VVT-i' } }], note: { en: 'Ultra-simple old-school Toyota petrol with zero turbo, zero direct injection, and zero Valvematic actuator risk — just thirstier.', de: 'Extrem simpler Toyota-Sauger ohne Turbo, ohne Direkteinspritzung und ohne Valvematic — lediglich etwas durstiger.', ru: 'Максимально простой атмосферник Toyota без турбины, прямого впрыска и Valvematic — лишь более прожорливый.' } },
+              forcedInduction: '@naNoTurbo',
+              injection: '@portInj',
+              timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -34685,6 +37623,17 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 8.6,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km / 4 yrs', de: 'Alle 60.000 km / 4 J.', ru: 'Каждые 60 000 км / 4 г.' }, action: { en: 'Change 4-speed ATF (if auto) plus AWD transfer case & rear diff oil', de: '4-Gang-Automatiköl (falls AT) sowie Verteiler- & Hinterachsöl wechseln', ru: 'Замена масла в 4-АКПП (если есть), раздатке и заднем редукторе' }, cost: '€180–300' },
+                { when: { en: 'Every 90,000 km', de: 'Alle 90.000 km', ru: 'Каждые 90 000 км' }, action: { en: 'Replace iridium spark plugs & serpentine drive belt', de: 'Iridium-Zündkerzen & Keilrippenriemen ersetzen', ru: 'Замена иридиевых свечей и приводного ремня' }, cost: '€160–240' },
+                { when: { en: '150,000 km / 10 yrs', de: '150.000 km / 10 J.', ru: '150 000 км / 10 лет' }, action: { en: 'Coolant flush & inspect rubber steering rack boots', de: 'Kühlmittel wechseln & Lenkmanschetten prüfen', ru: 'Замена антифриза и проверка пыльников рулевой рейки' }, cost: '€130–200' }
+              ],
+              critical: [
+                { when: { en: '160,000–240,000 km', de: '160.000–240.000 km', ru: '160 000–240 000 км' }, action: { en: 'Monitor oil consumption (stuck oil-control rings on neglected cars)', de: 'Ölverbrauch beobachten (verkokte Kolbenringe bei Wartungsstau)', ru: 'Контроль расхода масла (залегание колец при редких ТО)' }, cost: '€1,200–2,000', risk: { en: 'Low oil starvation damages crankshaft bearings & catalytic converter', de: 'Ölmangel schädigt Kurbelwellenlager und Katalysator', ru: 'Масляное голодание губит вкладыши и катализатор' }, damage: '€2,500–4,000' },
+                { when: { en: '140,000–200,000 km', de: '140.000–200.000 km', ru: '140 000–200 000 км' }, action: { en: 'Rear AWD electromagnetic coupling bearing replacement', de: 'Lager der hinteren Allrad-Magnetkupplung erneuern', ru: 'Замена подшипника электромуфты заднего привода' }, cost: '€280–450', risk: { en: 'Progressive howling noise and seized coupling unit', de: 'Starkes Heulen bis zum Defekt der kompletten Kupplung', ru: 'Нарастающий вой и выход из строя всей муфты' }, damage: '€1,100–1,600' }
+              ]
+            },
             badges: {
               en: ['Very Simple 4-AT / 5-MT Upkeep', 'Affordable Japanese Parts'],
               de: ['Simpler 4-AT-/5-MT-Service', 'Günstige Japan-Ersatzteile'],
@@ -34782,6 +37731,24 @@ const CAR_ROSTER = [
           performanceDynamics: 7.0,
           runningCostsTco: 7.3
         },
+        specOverrides: {
+          engineName: { en: '2.2L I4 D-4D Diesel (Chain)', de: '2.2L Reihenvierzylinder Diesel', ru: '2.2L R4 D-4D Дизель (Цепь)' },
+          forcedInduction: '@turbo',
+          injection: '@commonRail',
+          timingDrive: '@chain',
+          gearbox: '@manual6',
+          clutchDmf: '@clutchDmf',
+          towingBraked: '2,000 kg',
+          sprint0100: '10.5 s',
+          topSpeed: '180 km/h',
+          peakTorque: '310 Nm @ 2,000 rpm',
+          passingPunch: { en: 'Strong Mid-Range Pull', de: 'Kräftiger Durchzug', ru: 'Уверенная тяга в середине' },
+          realWorldFuel: '7.1 L/100km',
+          tankRange: '60 L (~845 km)',
+          euroNorm: 'Euro 4 (Diesel)',
+          taxInsurance: '@tierHigh',
+          serviceWear: '@tierModHigh'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.4,
@@ -34789,6 +37756,12 @@ const CAR_ROSTER = [
               en: ['No D-CAT 5th Injector', 'Check Head Gasket History'],
               de: ['Ohne D-CAT-Komplexität', 'Kopfdichtung prüfen'],
               ru: ['Без системы D-CAT', 'Проверить ГБЦ до 2009 г.']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: '2AD-FTV · 2,231 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium Diesel · Open-Deck Block', de: 'Reihenvierzylinder Alu-Diesel · Open-Deck-Block', ru: 'Рядный 4-цил. алюминиевый дизель' } }], note: { en: 'Pre-2009 2AD-FTV engines are notorious for head-gasket blow-by and coolant loss; verify updated block/gasket history before buying.', de: 'Frühe 2AD-FTV bis 2009 sind bekannt für Zylinderkopfdichtungs-Schäden; nachweisliche Überholung beim Kauf prüfen.', ru: 'Ранние 2AD-FTV до 2009 года склонны к пробою прокладки ГБЦ; проверяйте историю ремонта и отсутствие газов в ОЖ.' } },
+              forcedInduction: '@turboDiesel',
+              injection: '@commonRailDi',
+              timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -35124,6 +38097,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.1,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Clean EGR valve & intake ports; refresh 6-MT, transfer & rear diff oil', de: 'AGR-Ventil reinigen; 6-Gang-, Verteiler- & Hinterachsöl wechseln', ru: 'Чистка клапана EGR; замена масла в МКПП, раздатке и редукторе' }, cost: '€240–380' },
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Replace diesel fuel filter & drain water separator', de: 'Dieselfilter wechseln & Wasserabscheider entleeren', ru: 'Замена топливного фильтра и слив конденсата' }, cost: '€90–140' }
+              ],
+              critical: [
+                { when: { en: '120,000–190,000 km', de: '120.000–190.000 km', ru: '120 000–190 000 км' }, action: { en: '2AD-FTV head gasket & cylinder block face erosion (pre-2009)', de: '2AD-FTV Zylinderkopfdichtung & Block-Erosion (bis 2009)', ru: 'Прокладка ГБЦ и эрозия привалочной плоскости блока (до 2009)' }, cost: '€1,800–2,800', risk: { en: 'Coolant blown out of expansion tank and warped aluminium block', de: 'Kühlmittelverlust aus Ausgleichsbehälter bis zum kapitalen Motorschaden', ru: 'Выдавливание антифриза и перегрев алюминиевого блока' }, damage: '€3,500–5,500' },
+                { when: { en: '140,000–200,000 km', de: '140.000–200.000 km', ru: '140 000–200 000 км' }, action: { en: 'Dual-mass flywheel (DMF) + clutch kit & Denso SCV fuel valve', de: 'Zweimassenschwungrad (ZMS) + Kupplung & Denso-Saughubsteuerventil', ru: 'Двухмассовый маховик + сцепление и клапан SCV Denso' }, cost: '€1,100–1,600', risk: { en: 'Heavy idle rattle, hard cold starts, and gearbox input shaft wear', de: 'Starkes Leerlauf-Rasseln, Startprobleme und Getriebelagerschaden', ru: 'Стук на холостых, тяжёлый пуск и износ первичного вала КПП' }, damage: '€2,000–2,800' }
+              ]
+            },
             badges: {
               en: ['Cheaper Solenoid Injectors', 'Watch Head Gasket & DMF Cost'],
               de: ['Günstigere Magnet-Injektoren', 'Kopfdichtung & ZMS beachten'],
@@ -35229,6 +38212,24 @@ const CAR_ROSTER = [
           performanceDynamics: 7.2,
           runningCostsTco: 7.5
         },
+        specOverrides: {
+          engineName: { en: '2.2L I4 D-4D Diesel (Chain)', de: '2.2L Reihenvierzylinder Diesel', ru: '2.2L R4 D-4D Дизель (Цепь)' },
+          forcedInduction: '@turbo',
+          injection: '@commonRail',
+          timingDrive: '@chain',
+          gearbox: { en: '6-MT / Aisin 6-AT', de: '6-Gang / Aisin 6-AT', ru: '6-МКПП / Aisin 6-АКПП' },
+          clutchDmf: '@torqueConv',
+          towingBraked: '2,000 kg (MT) / 1,800 kg (AT)',
+          sprint0100: '10.2 s',
+          topSpeed: '190 km/h',
+          peakTorque: '340 Nm @ 2,000 rpm',
+          passingPunch: { en: 'Effortless 340 Nm Surge', de: 'Souveräner 340-Nm-Durchzug', ru: 'Уверенная тяга 340 Н·м' },
+          realWorldFuel: '6.8 L/100km',
+          tankRange: '60 L (~880 km)',
+          euroNorm: 'Euro 5 (Diesel)',
+          taxInsurance: '@tierModHigh',
+          serviceWear: '@tierMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 8.3,
@@ -35236,6 +38237,12 @@ const CAR_ROSTER = [
               en: ['Updated 2009+ 2.2 Block', 'Revised Euro 5 Head Gasket Spec'],
               de: ['Überarb. 2.2 Block (2009+)', 'Überarbeitete Euro-5-Kopfdichtung'],
               ru: ['Обновл. блок 2.2 (2009+)', 'Доработанная прокладка ГБЦ Euro 5']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: '2AD-FTV (Rev. 2009+) · 2,231 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium Diesel · Revised Pistons & Gasket', de: 'Reihenvierzylinder Alu-Diesel · Überarbeitete Dichtung', ru: 'Рядный 4-цил. дизель · Доработанная ГБЦ (2009+)' } }], note: { en: 'Significantly more dependable than pre-2009 2AD diesels thanks to revised head gasket and pistons; pairs nicely with the tough Aisin 6-AT.', de: 'Deutlich standfester als frühe 2AD-Diesel dank verbesserter Kopfdichtung; harmoniert sehr gut mit der robusten Aisin-6-AT.', ru: 'Гораздо надёжнее ранних 2AD благодаря доработанной прокладке ГБЦ; отлично сочетается с крепким 6-ст. автоматом Aisin.' } },
+              forcedInduction: '@turboDiesel',
+              injection: '@commonRailDi',
+              timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -35571,6 +38578,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.0,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Change Aisin 6-AT / 6-MT fluid plus AWD transfer & rear diff oil', de: 'Aisin-6-AT- / 6-Gang-Öl sowie Verteiler- & Hinterachsöl wechseln', ru: 'Замена масла в АКПП Aisin / МКПП, раздатке и заднем редукторе' }, cost: '€240–390' },
+                { when: { en: 'Every 60,000–80,000 km', de: 'Alle 60.000–80.000 km', ru: 'Каждые 60 000–80 000 км' }, action: { en: 'Clean EGR valve & replace diesel fuel filter', de: 'AGR-Ventil reinigen & Dieselfilter ersetzen', ru: 'Чистка клапана EGR и замена топливного фильтра' }, cost: '€180–260' }
+              ],
+              critical: [
+                { when: { en: '130,000–200,000 km', de: '130.000–200.000 km', ru: '130 000–200 000 км' }, action: { en: 'DPF differential pressure sensor / clogged DPF on short-trip cars', de: 'DPF-Differenzdrucksensor / verstopfter DPF bei Kurzstrecke', ru: 'Датчик давления DPF / забитый сажевый фильтр при коротких поездках' }, cost: '€450–1,300', risk: { en: 'Limp mode, failed regenerations, and diesel dilution in engine oil', de: 'Notlauf, abgebrochene Regenerationen und Ölverdünnung', ru: 'Аварийный режим, срыв регенераций и разжижение масла дизелем' }, damage: '€1,800–2,800' },
+                { when: { en: '150,000–210,000 km', de: '150.000–210.000 km', ru: '150 000–210 000 км' }, action: { en: 'Dual-mass flywheel + clutch (6-MT only; 6-AT avoids DMF)', de: 'Zweimassenschwungrad + Kupplung (nur 6-Gang; 6-AT ohne ZMS)', ru: 'Двухмассовый маховик + сцепление (только МКПП; АКПП без ДММ)' }, cost: '€1,000–1,450', risk: { en: 'Driveline shudder and clutch slip under 340 Nm towing loads', de: 'Rupfende Kupplung und Durchrutschen bei 340 Nm Anhängerlast', ru: 'Вибрации трансмиссии и пробуксовка под нагрузкой 340 Н·м' }, damage: '€1,800–2,400' }
+              ]
+            },
             badges: {
               en: ['Revised Facelift Block', 'High DPF, Clutch & SUV Tyre Cost'],
               de: ['Überarbeiteter Facelift-Block', 'Teurer DPF-, ZMS- & Reifenservice'],
@@ -35671,6 +38688,24 @@ const CAR_ROSTER = [
           performanceDynamics: 7.6,
           runningCostsTco: 7.0
         },
+        specOverrides: {
+          engineName: { en: '2.2L I4 D-CAT Diesel (Chain)', de: '2.2L Reihenvierzylinder D-CAT', ru: '2.2L R4 D-CAT Дизель (Цепь)' },
+          forcedInduction: '@turbo',
+          injection: '@commonRail',
+          timingDrive: '@chain',
+          gearbox: '@manual6',
+          clutchDmf: '@clutchDmf',
+          towingBraked: '2,000 kg',
+          sprint0100: '9.3 s',
+          topSpeed: '200 km/h',
+          peakTorque: '400 Nm @ 2,000 rpm',
+          passingPunch: { en: 'Muscular 400 Nm Push', de: 'Wuchtiger 400-Nm-Schub', ru: 'Мощный подхват 400 Н·м' },
+          realWorldFuel: '7.7 L/100km',
+          tankRange: '60 L (~780 km)',
+          euroNorm: 'Euro 4/5 (D-CAT)',
+          taxInsurance: '@tierHigh',
+          serviceWear: '@tierHigh'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.2,
@@ -35678,6 +38713,12 @@ const CAR_ROSTER = [
               en: ['400 Nm Piezo 2AD-FHV', 'Complex D-CAT Exhaust'],
               de: ['400 Nm Piezo 2AD-FHV', 'Komplexe D-CAT-Abgasanlage'],
               ru: ['Пьезо-дизель 400 Н·м', 'Сложная система D-CAT']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: '2AD-FHV · 2,231 cc' }, { k: 'architecture', v: { en: 'Inline-4 High-Output Diesel · Piezo Injectors + 5th Exhaust Injector', de: 'Reihenvierzylinder Top-Diesel · Piezo-Injektoren + 5. Düse', ru: 'Рядный 4-цил. форсированный дизель · Пьезофорсунки + 5-я форсунка' } }], note: { en: 'Fastest RAV4 XA30 with 400 Nm, but carries the highest repair risk: 2AD head gasket, complex D-CAT 5th injector, and costly piezo injectors.', de: 'Stärkster XA30-RAV4 mit 400 Nm, aber höchstes Kostenrisiko: 2AD-Kopfdichtung, komplexe D-CAT-Abgasnachbehandlung und teure Piezo-Injektoren.', ru: 'Самый быстрый RAV4 XA30 (400 Н·м), но самый рискованный по ремонту: прокладка ГБЦ 2AD, сложная система D-CAT и дорогие пьезофорсунки.' } },
+              forcedInduction: '@turboDiesel',
+              injection: '@commonRailDi',
+              timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -36013,6 +39054,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 6.2,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Clean EGR valve & 5th exhaust injector; change 6-MT & AWD oils', de: 'AGR-Ventil & 5. Einspritzdüse reinigen; Getriebe- & Allradöle wechseln', ru: 'Чистка EGR и 5-й форсунки; замена масла в МКПП и редукторах' }, cost: '€260–420' },
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Replace diesel fuel filter & run injector feedback scan', de: 'Dieselfilter wechseln & Injektor-Korrekturwerte prüfen', ru: 'Замена топливного фильтра и проверка коррекций форсунок' }, cost: '€100–160' }
+              ],
+              critical: [
+                { when: { en: '110,000–180,000 km', de: '110.000–180.000 km', ru: '110 000–180 000 км' }, action: { en: '2AD-FHV head gasket failure & DPNR/D-CAT catalyst clogging', de: '2AD-FHV Zylinderkopfdichtung & verstopfter DPNR/D-CAT-Kat', ru: 'Пробой прокладки ГБЦ 2AD-FHV и забитый катализатор DPNR/D-CAT' }, cost: '€1,800–3,200', risk: { en: 'White smoke, coolant loss, and permanent limp mode', de: 'Weißrauch, Kühlwasserverlust und dauerhafter Notlauf', ru: 'Белый дым, выброс антифриза и постоянный аварийный режим' }, damage: '€4,000–6,000' },
+                { when: { en: '130,000–190,000 km', de: '130.000–190.000 km', ru: '130 000–190 000 км' }, action: { en: '400 Nm dual-mass flywheel + heavy-duty clutch & piezo injectors', de: '400-Nm-Zweimassenschwungrad + Kupplung & Piezo-Injektoren', ru: 'Двухмассовый маховик под 400 Н·м + сцепление и пьезофорсунки' }, cost: '€1,300–2,400', risk: { en: 'Severe vibration, black smoke, and potential piston melt from leaking injector', de: 'Starke Vibrationen, Schwarzrauch bis Kolbenschaden durch tropfenden Injektor', ru: 'Сильные вибрации, чёрный дым и риск прогара поршня от льющей форсунки' }, damage: '€3,000–5,000' }
+              ]
+            },
             badges: {
               en: ['SUV Brakes & 18" Tyres', 'Very Expensive Piezo / D-CAT'],
               de: ['SUV-Bremsen & 18-Zoll-Reifen', 'Sehr teure Piezo-/D-CAT-Teile'],
@@ -37258,6 +40309,153 @@ const CAR_ROSTER = [
         }
       }
     },
+    sharedSpecs: {
+      rustProtection: '@rustGood',
+      suspensionWear: '@suspMultiLink',
+      starterAlternator: '@starter12v',
+      electronicsRisk: '@elecLowMod',
+      rideTuning: { en: 'Firm-ish / Facelift Tuned', de: 'Straff / Facelift-Abstimmung', ru: 'Упругая / Рестайлинг' },
+      highwayNoise: { en: '~69 dB · Quiet Facelift', de: '~69 dB · Ruhiges Facelift', ru: '~69 дБ · Тихий рестайлинг' },
+      cabinMaterials: { en: 'Modern Soft-Touch Dash', de: 'Modernes Soft-Touch-Cockpit', ru: 'Мягкий пластик панели' },
+      controls: '@physButtons',
+      turningCircle: '10.6 m',
+      visibility: { en: 'Thick C-Pillars · Needs Cam', de: 'Breite C-Säule · Kamera top', ru: 'Толстые стойки · Нужна камера' },
+      euroNcap: '★★★★★ (2010)',
+      safetyTech: { en: '✓ ESC · ✓ Downhill Assist', de: '✓ ESC · ✓ Bergabfahrhilfe', ru: '✓ ESC · ✓ Помощь на спуске' },
+      rearRoom: { en: 'Spacious · High Beltline', de: 'Geräumig · Hohe Fensterlinie', ru: 'Просторно · Высокий подоконник' },
+      isofixEntry: { en: '✓ 2× ISOFIX · Wide Doors', de: '✓ 2× ISOFIX · Große Türen', ru: '✓ 2× ISOFIX · Удобный вход' },
+      bootVolume: '564 L / 1,353 L',
+      seatUtility: { en: '✓ 60/40 Flat Fold + Liftgate', de: '✓ 60/40 eben + Heckklappe', ru: '✓ 60/40 в ровный пол' },
+      payloadRoof: '490 kg · 80 kg',
+      driveline: '@awdOnDemand',
+      chassisFeel: { en: 'Stable · Safe Understeer', de: 'Stabil · Sicheres Untersteuern', ru: 'Стабильное · Безопасное' },
+      tractionDiff: { en: 'Dynamax AWD + Lock · ESC', de: 'Dynamax-Allrad + Lock · ESC', ru: 'Полный Dynamax + Lock · ESC' },
+      braking1000: '~37.2 m',
+      brakeSetup: '@discs4',
+      valueRetention: '@retHigh',
+      resaleDemand: '@demFast'
+    },
+    sharedDossierBreakdowns: {
+      transmissionDriveline: { gearbox: { specs: [{ k: 'gearboxModel', v: { en: 'Hyundai-Kia 6-Speed Manual / 6-Speed Torque-Converter Auto', de: 'Hyundai-Kia 6-Gang-Schalter / 6-Gang-Wandlerautomatik', ru: '6-ст. МКПП / 6-ст. классическая АКПП Hyundai-Kia' } }, { k: 'shiftQuality', v: { en: 'Light Precise Manual · Smooth Reliable 6-AT', de: 'Leichter exakter Schalter · Robuste 6-Gang-Automatik', ru: 'Лёгкая чёткая МКПП · Надёжный 6-ст. автомат' } }], note: { en: 'Both the 6-speed manual and Hyundai-Kia 6-speed torque-converter automatic are durable; change ATF every 60,000 km.', de: 'Sowohl der 6-Gang-Schalter als auch die 6-Gang-Wandlerautomatik sind sehr robust; Automatiköl alle 60.000 km wechseln.', ru: 'И 6-ст. МКПП, и 6-ст. классический автомат надёжны; меняйте масло в АКПП каждые 60 000 км.' } }, clutchDmf: '@clutchSingle', driveline: { specs: [{ k: 'drivelineArch', v: { en: 'Dynamax On-Demand AWD (Electro-Hydraulic Coupling + Lock)', de: 'Dynamax-Allradantrieb (Elektrohydraulisch + Lock)', ru: 'Полный привод Dynamax (электрогидравлическая муфта + Lock)' } }, { k: 'transferCase', v: { en: 'Known Watchout: Transfer-Case Output Splines Dry Out & Rust', de: 'Bekannte Schwachstelle: Verzahnung am Verteilergetriebe rostet', ru: 'Слабое место: коррозия и срез шлицов раздаточной коробки' } }], note: { en: 'Preventively clean and re-grease the AWD transfer-case splines every 60,000–80,000 km to avoid losing rear-wheel drive.', de: 'Die Steckverzahnung am Verteilergetriebe alle 60.000–80.000 km reinigen und fetten, sonst fällt der Allrad aus.', ru: 'Профилактически очищайте и смазывайте шлицы раздатки каждые 60–80 тыс. км, чтобы не потерять полный привод.' } } },
+      buildQualityRust: { rustProtection: '@rustGalvanized12y', suspensionWear: '@suspMultiLink' },
+      electronicsReliability: { starterAlternator: '@starterStandard12v', electronicsRisk: '@elecSimpleEps' },
+      rideNoiseComfort: {
+        rideTuning: {
+          specs: [
+            { k: 'damperSetup', v: { en: '2014 Facelift Revised Dampers · Independent Multi-Link Rear', de: 'Facelift-Dämpfer ab 2014 · Mehrlenker-Hinterachse', ru: 'Доработанные амортизаторы (2014+) · Многорычажка сзади' } },
+            { k: 'seatSupport', v: { en: 'Supportive High Seats · Heated Front & Rear Common', de: 'Bequeme hohe Sitze · Sitzheizung vorn & hinten oft Serie', ru: 'Удобные высокие кресла · Часто подогрев всех сидений' } }
+          ],
+          note: { en: '2014+ facelift models gained noticeably smoother damping and acoustic windshield improvements over early 2010–2013 cars.', de: 'Das Facelift ab 2014 bietet merklich sanftere Dämpfung und bessere Geräuschdämmung als frühe 2010–2013er Modelle.', ru: 'Рестайлинг 2014+ заметно мягче на неровностях и тише ранних версий 2010–2013 годов.' }
+        },
+        highwayNoise: {
+          specs: [
+            { k: 'cabinNoise130', v: { en: '~69 dB(A) at 130 km/h (2014+ Acoustic Windshield)', de: '~69 dB(A) bei 130 km/h (Akustik-Frontscheibe ab 2014)', ru: '~69 дБ(А) при 130 км/ч (Акустическое стекло с 2014)' } },
+            { k: 'acousticGlass', v: { en: 'Acoustic Windscreen Standard on Facelift Trims', de: 'Akustik-Windschutzscheibe bei Facelift-Modellen Serie', ru: 'Акустическое лобовое стекло в рестайлинге' } }
+          ],
+          note: { en: 'Quieter at motorway cruise than older RAV4/CR-V rivals thanks to the 2014 facelift sound-deadening package.', de: 'Auf der Autobahn ruhiger als ältere RAV4/CR-V-Rivalen dank der besseren Facelift-Dämmung ab 2014.', ru: 'Тише на трассе, чем старые RAV4 и CR-V, благодаря улучшенной шумоизоляции рестайлинга 2014 года.' }
+        }
+      },
+      interiorQualityFeatures: {
+        cabinMaterials: {
+          specs: [
+            { k: 'dashboardTrim', v: { en: 'Soft-Touch Upper Dash (2014+) · Well-Equipped European Spec', de: 'Soft-Touch-Armaturenbrett (ab 2014) · Gute Ausstattung', ru: 'Мягкий верх панели (2014+) · Богатое оснащение' } },
+            { k: 'seatUpholstery', v: { en: 'Half-Leather or Full Leather + Heated Rear Seats Common', de: 'Teilleder oder Vollleder + Sitzheizung hinten verbreitet', ru: 'Комбинированная или полная кожа + подогрев заднего ряда' } }
+          ],
+          note: { en: 'Looks and feels a generation newer inside than 2010 Japanese SUVs, often with dual-zone climate, heated rear seats, and camera.', de: 'Wirkt innen eine Generation moderner als 2010er Japan-SUVs — oft mit Rückfahrkamera und Sitzheizung hinten.', ru: 'Салон выглядит на поколение современнее японских SUV 2010 года и часто радует камерой и подогревом сзади.' }
+        },
+        controls: '@controlsPhys'
+      },
+      visibilityManeuverability: {
+        turningCircle: {
+          specs: [
+            { k: 'turnDiameter', v: { en: '10.6 m (Very Agile for a Family SUV)', de: '10,6 m (Sehr wendig für ein Familien-SUV)', ru: '10,6 м (Очень манёвренный для семейного SUV)' } },
+            { k: 'steeringType', v: { en: 'FlexSteer EPS (Comfort / Normal / Sport Effort Modes)', de: 'FlexSteer-EPS (Comfort / Normal / Sport Lenk-Modi)', ru: 'ЭУР FlexSteer (режимы Comfort / Normal / Sport)' } }
+          ],
+          note: { en: 'Tight 10.6 m turning circle makes urban parking easy, though rear-quarter visibility demands parking sensors or a camera.', de: 'Enge 10,6 m Wendekreis erleichtern das Rangieren, aber nach schräg hinten sind Sensoren oder Kamera Pflicht.', ru: 'Разворот 10,6 м упрощает парковку, но из-за задних стоек очень желательны парктроники или камера.' }
+        },
+        visibility: {
+          specs: [
+            { k: 'allRoundView', v: { en: 'High Forward View · High Window Line & Small Rear Glass', de: 'Gute Sicht nach vorn · Hohe Gürtellinie & kleines Heckfenster', ru: 'Хороший обзор вперёд · Высокая линия окон и узкое заднее стекло' } },
+            { k: 'rearView', v: { en: 'Thick C-Pillars Create Large Rear-Quarter Blind Spots', de: 'Breite C-Säulen erzeugen große tote Winkel schräg hinten', ru: 'Массивные задние стойки создают крупные слепые зоны' } }
+          ],
+          note: { en: 'Stylish coupe-like C-pillars hurt over-the-shoulder visibility; prioritize examples fitted with the factory reversing camera.', de: 'Die schicken breiten C-Säulen schränken die Sicht nach hinten spürbar ein — Exemplare mit Rückfahrkamera bevorzugen.', ru: 'Эффектные широкие стойки ухудшают обзор назад — выбирайте версии с заводской камерой заднего вида.' }
+        }
+      },
+      safetyProtection: {
+        euroNcap: {
+          specs: [
+            { k: 'crashRating', v: { en: '5 Stars Euro NCAP (2010) · 93% Adult / 86% Child', de: '5 Sterne Euro NCAP (2010) · 93% Erwachsene / 86% Kinder', ru: '5 звёзд Euro NCAP (2010) · 93% взрослые / 86% дети' } },
+            { k: 'bodyStructure', v: { en: 'High-Tensile Steel Safety Cage · 6 Airbags + Active Headrests', de: 'Hochfeste Sicherheitszelle · 6 Airbags + aktive Kopfstützen', ru: 'Силовая клетка из высокопрочной стали · 6 подушек' } }
+          ],
+          note: { en: 'Top-tier 5-star Euro NCAP score for its generation with strong side-impact and child-occupant results.', de: 'Starkes 5-Sterne-Euro-NCAP-Ergebnis seiner Generation mit sehr gutem Seitenaufprall- und Kinderschutz.', ru: 'Высокий 5-звёздочный рейтинг Euro NCAP с отличной защитой при боковом ударе и для детей.' }
+        },
+        safetyTech: {
+          specs: [
+            { k: 'activeSafety', v: { en: 'ESC, VSM Stability, Hill-Start (HAC) & Downhill Brake Control (DBC)', de: 'ESC, VSM-Stabilität, Berganfahr- (HAC) & Bergabfahrhilfe (DBC)', ru: 'ESC, VSM, помощь на подъёме (HAC) и спуске (DBC)' } },
+            { k: 'driverAssists', v: { en: 'Reversing Camera, Park Sensors & Trailer Stability Assist', de: 'Rückfahrkamera, Parksensoren & Gespannstabilisierung', ru: 'Камера заднего вида, парктроники и стабилизация прицепа' } }
+          ],
+          note: { en: 'Comprehensive active stability suite including Downhill Brake Control and Trailer Stability Assist.', de: 'Umfangreiche aktive Sicherheit inklusive Bergabfahrhilfe und Gespannstabilisierung.', ru: 'Полный набор систем стабилизации, включая контроль спуска с горы и стабилизацию прицепа.' }
+        }
+      },
+      passengerSpaceErgonomics: {
+        rearRoom: {
+          specs: [
+            { k: 'rearSpace', v: { en: 'Comfortable Legroom for 2 Adults · Slightly Raised Floor Tunnel', de: 'Gute Beinfreiheit für 2 Erwachsene · Flacher Mitteltunnel', ru: 'Удобный запас для 2 взрослых · Небольшой тоннель' } },
+            { k: 'frontErgo', v: { en: 'Generous Front Cabin · Wide Armrest & Clear Gauges', de: 'Luftiges Cockpit vorn · Breite Mittelarmlehne & klare Anzeigen', ru: 'Просторный передний ряд · Широкий подлокотник' } }
+          ],
+          note: { en: 'Plush rear bench (often heated), though smaller side windows make the back feel cosier than a boxy CR-V or RAV4.', de: 'Bequeme Rückbank (oft beheizt), durch die hohe Fensterlinie wirkt es hinten aber etwas dunkler als im CR-V.', ru: 'Удобный диван (часто с подогревом), но высокая линия окон делает второй ряд чуть менее воздушным, чем в CR-V.' }
+        },
+        isofixEntry: {
+          specs: [
+            { k: 'childSeats', v: { en: '2× Outer Rear ISOFIX + Top-Tether Anchors', de: '2× ISOFIX außen hinten + Top-Tether', ru: '2× ISOFIX сзади + Top-Tether' } },
+            { k: 'doorAccess', v: { en: 'Wide-Opening Rear Doors · Easy Child-Seat Loading', de: 'Weit öffnende Fondtüren · Einfaches Kindersitz-Einsetzen', ru: 'Широко открывающиеся двери · Удобная установка кресел' } }
+          ],
+          note: { en: 'Elevated SUV sill and wide door openings make daily family loading straightforward.', de: 'Hohe Sitzposition und weite Türöffnungen erleichtern das tägliche Anschnallen.', ru: 'Высокий порог и широкий проём дверей упрощают ежедневную посадку детей.' }
+        }
+      },
+      interiorBootSpace: {
+        bootVolume: {
+          specs: [
+            { k: 'bootCapacity', v: { en: '564 L (Seats Up incl. Underfloor) / 1,353 L (Folded)', de: '564 L (inkl. Unterboden) / 1.353 L (Umgeklappt)', ru: '564 л (с подпольем) / 1 353 л (сложено)' } },
+            { k: 'loadingLip', v: { en: 'Conventional Top-Hinged Liftgate · Flat Load Floor', de: 'Klassische Heckklappe nach oben · Ebener Ladeboden', ru: 'Классическая подъёмная дверь · Ровный пол' } }
+          ],
+          note: { en: 'Practical square boot with a top-hinged tailgate (easier in tight parking spots than the RAV4 side-hinged door).', de: 'Praktischer rechteckiger Kofferraum mit klassischer Heckklappe (beim Parken praktischer als die RAV4-Hecktür).', ru: 'Удобный квадратный багажник с обычной подъёмной дверью — на тесной парковке практичнее распашной двери RAV4.' }
+        },
+        seatUtility: {
+          specs: [
+            { k: 'foldingSystem', v: { en: '✓ 60/40 Split-Fold Rear Seats · Nearly Flat Load Bay', de: '✓ 60/40 teilbare Rückbank · Nahezu ebene Ladefläche', ru: '✓ Спинка 60/40 · Почти ровная грузовая площадка' } }
+          ],
+          note: { en: 'Straightforward 60/40 folding with an underfloor organizer tray for cables and tools.', de: 'Unkomplizierte 60/40-Umklappung mit praktischem Staufach unter dem Ladeboden.', ru: 'Простое складывание 60/40 и удобный органайзер под полом багажника.' }
+        }
+      },
+      payloadTowing: {
+        payloadRoof: {
+          specs: [
+            { k: 'maxPayload', v: { en: '~490 kg (450–515 kg Depending on Engine/AWD)', de: '~490 kg (450–515 kg je nach Motor/Allrad)', ru: '~490 кг (450–515 кг в зависимости от версии)' } },
+            { k: 'roofLoad', v: { en: '80 kg Approved Dynamic Roof Load', de: '80 kg zugelassene Dachlast', ru: '80 кг допустимая нагрузка на крышу' } }
+          ],
+          note: { en: 'Solid 80 kg roof-load rating for roof boxes or bike racks; 2.0 CRDi versions are strong 2,000 kg tow cars.', de: 'Starke 80 kg Dachlast für Dachboxen; die 2.0-CRDi-Modelle ziehen bis zu 2.000 kg.', ru: 'Хорошие 80 кг на крышу для бокса или велосипедов; версии 2.0 CRDi уверенно тянут до 2 000 кг.' }
+        },
+        towingBraked: '@towingDynamic'
+      },
+      accelerationOvertaking: { sprint0100: '@sprintDynamic', topSpeed: '@vmaxDynamic' },
+      midRangeTorquePassing: { peakTorque: '@torqueDynamic', passingPunch: '@passingDynamic' },
+      handlingAgility: {
+        chassisFeel: {
+          specs: [
+            { k: 'steeringFeel', v: { en: 'Light Synthetic EPS (FlexSteer) · Stable Highway Tracking', de: 'Leichte EPS-Lenkung (FlexSteer) · Ruhiger Geradeauslauf', ru: 'Лёгкий ЭУР (FlexSteer) · Стабильный ход по трассе' } },
+            { k: 'cornering', v: { en: 'Safe Predictable Understeer · Multi-Link Rear Stability', de: 'Sicheres gutmütiges Untersteuern · Stabile Mehrlenkerachse', ru: 'Предсказуемое поведение · Устойчивая многорычажка сзади' } }
+          ],
+          note: { en: 'Tuned for relaxed, predictable family driving rather than sharp feedback; steering stays light around town.', de: 'Auf entspanntes, sicheres Familienfahren ausgelegt; die Lenkung bleibt in der Stadt angenehm leichtgängig.', ru: 'Настроен на спокойную и предсказуемую семейную езду; руль остаётся лёгким в городе.' }
+        },
+        tractionDiff: '@tractionAwd'
+      },
+      brakingPerformance: { braking1000: '@brakingDistDynamic', brakeSetup: '@brakeSetupDiscs4' },
+      efficiencyFuel: { realWorldFuel: '@fuelDynamic', tankRange: '@tankDynamic' },
+      taxInsuranceNorm: { euroNorm: '@euroDynamic', taxInsurance: '@taxInsDynamic' },
+      maintenanceRepairCosts: { timingDrive: '@timingDynamic', serviceWear: '@serviceDynamic' },
+      depreciationResale: { valueRetention: '@retHigh', resaleDemand: '@demFast' }
+    },
     engines: [
       {
         id: '1.6-gdi',
@@ -37343,6 +40541,27 @@ const CAR_ROSTER = [
           spacePracticality: 8.1,
           performanceDynamics: 6.6,
           runningCostsTco: 8.2
+        },
+        specOverrides: {
+          engineName: { en: '1.6L I4 GDI Petrol (Chain)', de: '1.6L Reihenvierzylinder GDI (Kette)', ru: '1.6L R4 GDI Бензин (Цепь)' },
+          forcedInduction: '@na',
+          injection: '@direct',
+          timingDrive: '@chain',
+          gearbox: '@manual6',
+          clutchDmf: '@singleClutch',
+          driveline: { en: 'FWD (No AWD Spline Risk)', de: 'Frontantrieb (Kein Allrad-Risiko)', ru: 'Передний привод (без раздатки)' },
+          tractionDiff: { en: 'FWD · ESC Stability', de: 'Frontantrieb · ESC', ru: 'Передний привод · ESC' },
+          payloadRoof: '450 kg · 80 kg',
+          towingBraked: '1,200 kg',
+          sprint0100: '11.1 s',
+          topSpeed: '178 km/h',
+          peakTorque: '165 Nm @ 4,850 rpm',
+          passingPunch: { en: 'Needs Downshifts To Pass', de: 'Braucht Runterschalten', ru: 'Требует понижения передачи' },
+          realWorldFuel: '7.6 L/100km',
+          tankRange: '55 L (~725 km)',
+          euroNorm: 'Euro 5 (Petrol)',
+          taxInsurance: '@tierLow',
+          serviceWear: '@tierLow'
         },
         subStats: {
           buildQualityRust: {
@@ -37439,6 +40658,12 @@ const CAR_ROSTER = [
               en: ['Chain-Driven Non-Turbo 1.6', 'Keep Catalytic Converter Checked'],
               de: ['Ketten-Saugmotor ohne Turbo', 'Katalysator & Öl im Blick behalten'],
               ru: ['Цепной атмосферник 1.6', 'Контроль катализатора и масла']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'G4FD (Gamma) · 1,591 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium · Direct Injection (No Turbo)', de: 'Reihenvierzylinder Alu · Direkteinspritzung (Sauger)', ru: 'Рядный 4-цил. алюминий · Прямой впрыск (атмосферник)' } }], note: { en: 'Simple, economical entry petrol with FWD only (avoiding AWD transfer-case spline issues); inspect exhaust catalyst health past 120,000 km.', de: 'Unkomplizierter, sparsamer Einstiegsbenziner nur mit Frontantrieb (kein Allrad-Verzahnungsrisiko); Kat ab 120.000 km prüfen.', ru: 'Простой и экономичный базовый бензин только на переднем приводе (без проблем раздатки); следите за катализатором после 120 000 км.' } },
+              forcedInduction: '@naNoTurbo',
+              injection: '@directInjPetrol',
+              timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -37686,6 +40911,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 8.7,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Replace iridium spark plugs & inspect 6-MT gearbox oil', de: 'Iridium-Zündkerzen wechseln & 6-Gang-Getriebeöl prüfen', ru: 'Замена иридиевых свечей и проверка масла в 6-МКПП' }, cost: '€150–230' },
+                { when: { en: 'Every 90,000–120,000 km', de: 'Alle 90.000–120.000 km', ru: 'Каждые 90–120 тыс. км' }, action: { en: 'Check mechanical valve clearances & flush coolant', de: 'Ventilspiel prüfen & Kühlmittel wechseln', ru: 'Проверка тепловых зазоров клапанов и замена антифриза' }, cost: '€220–350' }
+              ],
+              critical: [
+                { when: { en: '110,000–170,000 km', de: '110.000–170.000 km', ru: '110 000–170 000 км' }, action: { en: 'Close-coupled catalytic converter inspection (ceramic crumbling risk)', de: 'Krümmer-Katalysator endoskopieren (Keramik-Zerfall vermeiden)', ru: 'Эндоскопия катализатора (риск разрушения керамики)' }, cost: '€550–950', risk: { en: 'Ceramic dust sucked back into cylinders causes severe bore scoring', de: 'Keramikstaub wird angesaugt und verursacht tiefe Kolbenfresser', ru: 'Керамическая пыль затягивается в цилиндры и вызывает задиры' }, damage: '€2,800–4,200' },
+                { when: { en: '100,000–150,000 km', de: '100.000–150.000 km', ru: '100 000–150 000 км' }, action: { en: 'GDI intake valve walnut-blasting (carbon buildup)', de: 'GDI-Einlassventile reinigen (Verkokung entfernen)', ru: 'Очистка впускных клапанов GDI от нагара' }, cost: '€320–500', risk: { en: 'Rough cold idle, misfires, and noticeable power loss', de: 'Unrunder Kaltlauf, Zündaussetzer und spürbarer Leistungsverlust', ru: 'Неровный холодный пуск, пропуски зажигания и потеря тяги' }, damage: '€900–1,400' }
+              ]
+            },
             badges: {
               en: ['No Turbo / DPF / AWD Parts', 'Cheap Routine Filters & Pads'],
               de: ['Kein Turbo / DPF / Allrad', 'Günstige Bremsen & Inspektion'],
@@ -37784,6 +41019,24 @@ const CAR_ROSTER = [
           performanceDynamics: 6.9,
           runningCostsTco: 7.1
         },
+        specOverrides: {
+          engineName: { en: '2.0L I4 CVVT Petrol (Chain)', de: '2.0L Reihenvierzylinder CVVT', ru: '2.0L R4 CVVT Бензин (Цепь)' },
+          forcedInduction: '@na',
+          injection: '@port',
+          timingDrive: '@chain',
+          gearbox: { en: '5-MT / 6-Speed Auto', de: '5-Gang / 6-Gang-Automatik', ru: '5-МКПП / 6-АКПП' },
+          clutchDmf: '@torqueConv',
+          towingBraked: '1,900 kg (MT) / 1,600 kg (AT)',
+          sprint0100: '10.4 s',
+          topSpeed: '184 km/h',
+          peakTorque: '194 Nm @ 4,600 rpm',
+          passingPunch: { en: 'Rev-Dependent · Auto Hunts', de: 'Braucht Drehzahl am Berg', ru: 'Любит обороты на подъёмах' },
+          realWorldFuel: '8.5 L/100km',
+          tankRange: '55 L (~650 km)',
+          euroNorm: 'Euro 5 (Petrol)',
+          taxInsurance: '@tierMod',
+          serviceWear: '@tierMod'
+        },
         subStats: {
           buildQualityRust: {
             score: 7.9,
@@ -37879,6 +41132,12 @@ const CAR_ROSTER = [
               en: ['Port-Injected (Zero Valve Soot)', 'Watch Cold-Start Cylinder Knock'],
               de: ['Saugrohreinspritzung (ohne Verkokung)', 'Kaltstart-Klopfen prüfen'],
               ru: ['Распределённый впрыск (без нагара)', 'Риск задиров и стука на холодную']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'G4KD (Theta II) · 1,998 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium · Port Injection (No Direct Inj.)', de: 'Reihenvierzylinder Alu · Saugrohreinspritzung', ru: 'Рядный 4-цил. алюминий · Распределённый впрыск' } }], note: { en: 'Port injection avoids intake carbon, but the G4KD block is known for cold piston-slap / cylinder-wall scoring — always listen to a dead-cold start.', de: 'Saugrohreinspritzung verhindert Verkokung, aber der G4KD neigt zu Kolbenkippern — unbedingt kalt probefahren und auf Klackern achten.', ru: 'Распределённый впрыск не боится нагара, но блок G4KD известен задирами цилиндров — обязательно слушайте холодный пуск.' } },
+              forcedInduction: '@naNoTurbo',
+              injection: '@portInj',
+              timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -38135,6 +41394,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.4,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Change 6-AT fluid + AWD transfer/rear diff oil & grease AWD splines', de: '6-Gang-Automatiköl + Allradöle wechseln & Verteilerverzahnung fetten', ru: 'Замена масла в 6-АКПП и редукторах + смазка шлицов раздатки' }, cost: '€240–390' },
+                { when: { en: 'Every 90,000 km', de: 'Alle 90.000 km', ru: 'Каждые 90 000 км' }, action: { en: 'Replace spark plugs, coolant & serpentine drive belt', de: 'Zündkerzen, Kühlmittel & Keilrippenriemen erneuern', ru: 'Замена свечей, антифриза и приводного ремня' }, cost: '€190–290' }
+              ],
+              critical: [
+                { when: { en: '100,000–170,000 km', de: '100.000–170.000 km', ru: '100 000–170 000 км' }, action: { en: 'G4KD cylinder-wall scoring / cold piston slap (borescope check)', de: 'G4KD Zylinderlaufbahn-Verschleiß / Kolbenkipper (Endoskopie)', ru: 'Задиры цилиндров G4KD / стук на холодную (эндоскопия)' }, cost: '€2,200–3,500', risk: { en: 'Loud metallic knocking and heavy oil burning requiring engine rebuild', de: 'Lautes metallisches Klopfen und hoher Ölverbrauch bis Motorschaden', ru: 'Сильный стук поршней и жор масла вплоть до капитального ремонта' }, damage: '€3,500–5,000' },
+                { when: { en: '80,000–140,000 km', de: '80.000–140.000 km', ru: '80 000–140 000 км' }, action: { en: 'AWD transfer-case spline corrosion & seal replacement', de: 'Allrad-Verteilergetriebe-Verzahnung & Wellendichtring instandsetzen', ru: 'Ремонт шлицов раздатки и замена сальника (AWD)' }, cost: '€450–950', risk: { en: 'Stripped splines leave AWD car permanently stuck in front-wheel drive', de: 'Abgescherte Verzahnung legt den Allradantrieb komplett lahm', ru: 'Срезанные шлицы полностью отключают задний привод' }, damage: '€1,600–2,400' }
+              ]
+            },
             badges: {
               en: ['AWD Spline & Auto Fluids', 'Keep Oil Changes Under 10k km'],
               de: ['Allrad-Welle & AT-Öl pflegen', 'Kurze Öl-Intervalle wichtig'],
@@ -38241,6 +41510,25 @@ const CAR_ROSTER = [
           performanceDynamics: 7.1,
           runningCostsTco: 7.5
         },
+        specOverrides: {
+          engineName: { en: '2.0L I4 GDI Petrol (Chain)', de: '2.0L Reihenvierzylinder GDI (Kette)', ru: '2.0L R4 GDI Бензин (Цепь)' },
+          forcedInduction: '@na',
+          injection: '@direct',
+          timingDrive: '@chain',
+          gearbox: { en: '6-MT / 6-Speed Auto', de: '6-Gang / 6-Gang-Automatik', ru: '6-МКПП / 6-АКПП' },
+          clutchDmf: '@torqueConv',
+          payloadRoof: '495 kg · 80 kg',
+          towingBraked: '1,900 kg (MT) / 1,600 kg (AT)',
+          sprint0100: '10.4 s',
+          topSpeed: '185 km/h',
+          peakTorque: '205 Nm @ 4,000 rpm',
+          passingPunch: { en: 'Crisper Mid-Range With 6-MT', de: 'Spritziger mit 6-Gang-Box', ru: 'Бодрее с 6-ст. коробкой' },
+          realWorldFuel: '8.1 L/100km',
+          tankRange: '55 L (~680 km)',
+          euroNorm: 'Euro 5 (Petrol)',
+          taxInsurance: '@tierMod',
+          serviceWear: '@tierMod'
+        },
         subStats: {
           buildQualityRust: {
             score: 7.9,
@@ -38336,6 +41624,12 @@ const CAR_ROSTER = [
               en: ['Updated 2014+ Hydraulic Lifters', 'Clean Direct-Injection Valves'],
               de: ['Facelift mit Hydrostößeln', 'Direkteinspritzer-Pflege nötig'],
               ru: ['Гидрокомпенсаторы с 2014 г.', 'Нужен уход за прямым впрыском']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'G4NC (Nu) · 1,999 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium · Direct Injection (Facelift 2014+)', de: 'Reihenvierzylinder Alu · Direkteinspritzung (Facelift)', ru: 'Рядный 4-цил. алюминий · Прямой впрыск (Рестайлинг)' } }], note: { en: 'More refined and slightly thriftier than the older G4KD, but still requires clean 5W-30 oil intervals and a cold-start listen for piston slap.', de: 'Kultivierter und sparsamer als der alte G4KD, braucht aber strikte Ölwechsel und einen Kaltstart-Check auf Kolbengeräusche.', ru: 'Тише и экономичнее старого G4KD, но требует частой замены масла и проверки цилиндров на холодную.' } },
+              forcedInduction: '@naNoTurbo',
+              injection: '@directInjPetrol',
+              timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -38580,6 +41874,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.8,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Change 6-AT fluid + AWD transfer/diff oil & re-grease AWD splines', de: '6-AT-Öl + Allradöle wechseln & Allrad-Verzahnung fetten', ru: 'Замена масла в 6-АКПП и редукторах + смазка шлицов раздатки' }, cost: '€240–390' },
+                { when: { en: 'Every 90,000 km', de: 'Alle 90.000 km', ru: 'Каждые 90 000 км' }, action: { en: 'Replace iridium spark plugs & flush cooling system', de: 'Iridium-Zündkerzen wechseln & Kühlmittel erneuern', ru: 'Замена иридиевых свечей и обновление антифриза' }, cost: '€180–270' }
+              ],
+              critical: [
+                { when: { en: '110,000–180,000 km', de: '110.000–180.000 km', ru: '110 000–180 000 км' }, action: { en: 'G4NC cylinder-wall scoring watch & GDI intake valve carbon cleaning', de: 'G4NC Zylinder-Check & GDI-Einlassventil-Reinigung', ru: 'Проверка цилиндров G4NC и чистка впускных клапанов GDI' }, cost: '€350–2,800', risk: { en: 'Cold knocking and rising oil consumption on neglected long-interval cars', de: 'Kaltklackern und steigender Ölverbrauch bei überzogenen Intervallen', ru: 'Стук на холодную и рост расхода масла при редкой замене масла' }, damage: '€3,200–4,800' },
+                { when: { en: '80,000–140,000 km', de: '80.000–140.000 km', ru: '80 000–140 000 км' }, action: { en: 'AWD transfer-case spline & seal service (AWD models)', de: 'Allrad-Verteilerverzahnung & Dichtring prüfen/ersetzen (AWD)', ru: 'Обслуживание шлицов раздатки и сальника (версии AWD)' }, cost: '€450–950', risk: { en: 'Rust strips the splines and disables rear-axle drive completely', de: 'Rost schert die Verzahnung ab — Allrad fällt komplett aus', ru: 'Коррозия срезает шлицы и полностью отключает заднюю ось' }, damage: '€1,600–2,400' }
+              ]
+            },
             badges: {
               en: ['Hydraulic Lifters Cut Costs', 'AWD Spline & Auto Care'],
               de: ['Hydrostößel sparen Wartung', 'AWD-Welle & AT-Öl pflegen'],
@@ -38678,6 +41982,27 @@ const CAR_ROSTER = [
           performanceDynamics: 6.9,
           runningCostsTco: 8.2
         },
+        specOverrides: {
+          engineName: { en: '1.7L I4 CRDi Diesel (Chain)', de: '1.7L Reihenvierzylinder Diesel', ru: '1.7L R4 CRDi Дизель (Цепь)' },
+          forcedInduction: '@turbo',
+          injection: '@commonRail',
+          timingDrive: '@chain',
+          gearbox: '@manual6',
+          clutchDmf: '@singleClutch',
+          driveline: { en: 'FWD (No AWD Spline Risk)', de: 'Frontantrieb (Kein Allrad-Risiko)', ru: 'Передний привод (без раздатки)' },
+          tractionDiff: { en: 'FWD · ESC Stability', de: 'Frontantrieb · ESC', ru: 'Передний привод · ESC' },
+          payloadRoof: '470 kg · 80 kg',
+          towingBraked: '1,200 kg',
+          sprint0100: '12.3 s',
+          topSpeed: '173 km/h',
+          peakTorque: '260 Nm @ 1,250 rpm',
+          passingPunch: { en: 'Brisk Low-End · Fades >120', de: 'Untenrum gut · Zäh >120', ru: 'Бодрый низ · Сдувается >120' },
+          realWorldFuel: '5.8 L/100km',
+          tankRange: '55 L (~950 km)',
+          euroNorm: 'Euro 5 (Diesel)',
+          taxInsurance: '@tierLowMod',
+          serviceWear: '@tierLowMod'
+        },
         subStats: {
           buildQualityRust: {
             score: 7.9,
@@ -38773,6 +42098,12 @@ const CAR_ROSTER = [
               en: ['Tough Chain 1.7L Diesel', 'Check Tank Strainer & Clutch Seal'],
               de: ['Robuster 1.7-Kettendiesel', 'Tanksieb & Kupplungssimmering'],
               ru: ['Выносливый цепной 1.7 CRDi', 'Чистить сетку бака и следить за сальником']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'D4FD (U2) · 1,685 cc' }, { k: 'architecture', v: { en: 'Inline-4 Iron-Block Diesel · Timing Chain (FWD Only)', de: 'Reihenvierzylinder Grauguss-Diesel · Steuerkette (FWD)', ru: 'Рядный 4-цил. чугунный дизель · Цепь (передний привод)' } }], note: { en: 'Arguably the thriftiest and most trouble-free Sportage SL engine: solid chain-driven U2 diesel with no AWD spline risk, just modest highway pace.', de: 'Wohl der sparsamste und sorgenfreiste Sportage-SL-Motor: solider Ketten-Diesel ohne Allrad-Risiko, nur auf der Autobahn etwas gemütlich.', ru: 'Пожалуй, самый экономичный и беспроблемный мотор Sportage SL: крепкий цепной дизель без рисков раздатки, лишь скромный на обгонах.' } },
+              forcedInduction: '@turboDiesel',
+              injection: '@commonRailDi',
+              timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -39019,6 +42350,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 8.1,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Replace diesel fuel filter & change 6-MT gearbox oil', de: 'Dieselfilter ersetzen & 6-Gang-Getriebeöl wechseln', ru: 'Замена топливного фильтра и масла в 6-МКПП' }, cost: '€160–240' },
+                { when: { en: 'Every 90,000–120,000 km', de: 'Alle 90.000–120.000 km', ru: 'Каждые 90–120 тыс. км' }, action: { en: 'Clean EGR valve & inspect auxiliary belt / tensioner', de: 'AGR-Ventil reinigen & Keilrippenriemen samt Spanner prüfen', ru: 'Чистка клапана EGR и проверка приводного ремня с роликами' }, cost: '€180–280' }
+              ],
+              critical: [
+                { when: { en: '90,000–150,000 km', de: '90.000–150.000 km', ru: '90 000–150 000 км' }, action: { en: '6-MT gearbox input-shaft oil seal (can contaminate clutch)', de: 'Getriebeeingangswellen-Simmerring (kann Kupplung verölen)', ru: 'Сальник первичного вала 6-МКПП (замасливание сцепления)' }, cost: '€480–820', risk: { en: 'Gearbox oil leaks onto friction plate causing sudden clutch slip', de: 'Getriebeöl benetzt die Kupplungsscheibe und sorgt für Durchrutschen', ru: 'Масло из КПП попадает на диск и вызывает пробуксовку сцепления' }, damage: '€900–1,300' },
+                { when: { en: '140,000–200,000 km', de: '140.000–200.000 km', ru: '140 000–200 000 км' }, action: { en: 'DPF differential pressure sensor / soot cleaning on short-trip cars', de: 'DPF-Differenzdrucksensor / Reinigung bei viel Stadtbetrieb', ru: 'Датчик давления DPF / очистка сажевого фильтра при городской езде' }, cost: '€320–750', risk: { en: 'Limp mode and high exhaust backpressure stressing turbocharger', de: 'Notlauf und hoher Abgasgegendruck belasten den Turbolader', ru: 'Аварийный режим и перегрузка турбины противодавлением' }, damage: '€1,400–2,200' }
+              ]
+            },
             badges: {
               en: ['Lowest Fuel & Tyre Costs', 'Clutch Seal & Tank Mesh Care'],
               de: ['Sparsamste Unterhaltskosten', 'Kupplungsdichtung & Sieb beachten'],
@@ -39117,6 +42458,25 @@ const CAR_ROSTER = [
           performanceDynamics: 7.7,
           runningCostsTco: 7.7
         },
+        specOverrides: {
+          engineName: { en: '2.0L I4 CRDi Diesel (Chain)', de: '2.0L Reihenvierzylinder Diesel', ru: '2.0L R4 CRDi Дизель (Цепь)' },
+          forcedInduction: '@turbo',
+          injection: '@commonRail',
+          timingDrive: '@chain',
+          gearbox: { en: '6-MT / 6-Speed Auto', de: '6-Gang / 6-Gang-Automatik', ru: '6-МКПП / 6-АКПП' },
+          clutchDmf: '@torqueConv',
+          payloadRoof: '515 kg · 80 kg',
+          towingBraked: '2,000 kg (MT) / 1,600 kg (AT)',
+          sprint0100: '10.8 s',
+          topSpeed: '182 km/h',
+          peakTorque: '320 Nm (MT) / 373 Nm (AT)',
+          passingPunch: { en: 'Effortless Highway & Hill Pull', de: 'Souveräner Durchzug am Berg', ru: 'Уверенная тяга на трассе' },
+          realWorldFuel: '6.6 L/100km',
+          tankRange: '55 L (~830 km)',
+          euroNorm: 'Euro 5 (Diesel)',
+          taxInsurance: '@tierMod',
+          serviceWear: '@tierMod'
+        },
         subStats: {
           buildQualityRust: {
             score: 7.9,
@@ -39212,6 +42572,12 @@ const CAR_ROSTER = [
               en: ['Heavy-Duty R-Series 2.0 Chain', 'Service AWD Splines & Pulley'],
               de: ['Sehr robuster R-Ketten-Diesel', 'AWD-Welle & Riemenscheibe pflegen'],
               ru: ['Выносливый цепной дизель R 2.0', 'Смазка шлицов AWD и шкив коленвала']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'D4HA (R-Engine) · 1,995 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium/Iron-Liner Diesel · Twin Timing Chains', de: 'Reihenvierzylinder R-Diesel · Robuste Steuerketten', ru: 'Рядный 4-цил. дизель серии R · Надёжные цепи ГРМ' } }], note: { en: 'Hyundai-Kia’s durable R-series diesel is the sweet spot of the Sportage range: strong torque, reliable 6-AT option, and 2,000 kg towing.', de: 'Der langlebige R-Diesel ist der Sweetspot im Sportage: starkes Drehmoment, robuste 6-AT und 2.000 kg Anhängelast.', ru: 'Надёжный дизель серии R — оптимальный выбор для Sportage: отличная тяга, крепкий 6-АКПП и 2 000 кг на фаркопе.' } },
+              forcedInduction: '@turboDiesel',
+              injection: '@commonRailDi',
+              timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -39458,6 +42824,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.5,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Change 6-AT fluid + AWD transfer/diff oil & re-grease AWD splines', de: '6-AT-Öl + Allradöle wechseln & Allrad-Verzahnung fetten', ru: 'Замена масла в 6-АКПП и редукторах + смазка шлицов раздатки' }, cost: '€240–390' },
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Replace diesel fuel filter & inspect auxiliary belt / crank pulley', de: 'Dieselfilter wechseln & Kurbelwellen-Riemenscheibe prüfen', ru: 'Замена топливного фильтра и проверка демпферного шкива коленвала' }, cost: '€120–190' }
+              ],
+              critical: [
+                { when: { en: '80,000–140,000 km', de: '80.000–140.000 km', ru: '80 000–140 000 км' }, action: { en: 'AWD transfer-case output splines & seal kit (AWD versions)', de: 'Allrad-Verteilergetriebe-Verzahnung & Dichtringe (AWD)', ru: 'Шлицы раздаточной коробки и сальники (версии AWD)' }, cost: '€480–980', risk: { en: 'Stripped splines leave the car front-wheel drive only', de: 'Abgescherte Verzahnung legt den Allradantrieb komplett lahm', ru: 'Срезанные шлицы полностью отключают полный привод' }, damage: '€1,600–2,500' },
+                { when: { en: '140,000–200,000 km', de: '140.000–200.000 km', ru: '140 000–200 000 км' }, action: { en: 'Harmonic crank damper pulley & 6-MT dual-mass flywheel (if manual)', de: 'Kurbelwellen-Schwingungsdämpfer & ZMS (nur bei 6-Gang-Schalter)', ru: 'Демпферный шкив коленвала и ДММ (только на 6-МКПП)' }, cost: '€350–1,300', risk: { en: 'Snapped auxiliary belt or heavy clutch chatter under torque', de: 'Gerissener Nebenaggregatriemen oder starkes Kupplungsrupfen', ru: 'Обрыв ремня навесного или сильные вибрации сцепления' }, damage: '€1,500–2,200' }
+              ]
+            },
             badges: {
               en: ['Tough Chain Motor', 'AWD Splines, Pulley & DPF Care'],
               de: ['Robuster Kettenmotor', 'Allrad, Riemenscheibe & DPF pflegen'],
@@ -39556,6 +42932,25 @@ const CAR_ROSTER = [
           performanceDynamics: 8.1,
           runningCostsTco: 7.2
         },
+        specOverrides: {
+          engineName: { en: '2.0L I4 CRDi 184 Diesel (Chain)', de: '2.0L Reihenvierzylinder 184 PS', ru: '2.0L R4 CRDi 184 Дизель (Цепь)' },
+          forcedInduction: '@turbo',
+          injection: '@commonRail',
+          timingDrive: '@chain',
+          gearbox: { en: '6-MT / 6-Speed Auto', de: '6-Gang / 6-Gang-Automatik', ru: '6-МКПП / 6-АКПП' },
+          clutchDmf: '@torqueConv',
+          payloadRoof: '510 kg · 80 kg',
+          towingBraked: '2,000 kg (MT) / 1,600 kg (AT)',
+          sprint0100: '9.8 s',
+          topSpeed: '195 km/h',
+          peakTorque: '383 Nm (MT) / 392 Nm (AT)',
+          passingPunch: { en: 'Strong Fast-Lane Muscle', de: 'Kräftiger Autobahn-Durchzug', ru: 'Мощный обгонный запас' },
+          realWorldFuel: '7.1 L/100km',
+          tankRange: '55 L (~775 km)',
+          euroNorm: 'Euro 5 (Diesel)',
+          taxInsurance: '@tierModHigh',
+          serviceWear: '@tierModHigh'
+        },
         subStats: {
           buildQualityRust: {
             score: 7.9,
@@ -39651,6 +43046,12 @@ const CAR_ROSTER = [
               en: ['Strong R-Block • 392 Nm Load', 'Watch AWD Splines, Turbo & Pulley'],
               de: ['Starker Block • 392 Nm Last', 'Allrad-Welle, Lader & Scheibe'],
               ru: ['Крепкий блок под 392 Н·м', 'Следить за 4WD, турбиной и шкивом']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'D4HA High-Output · 1,995 cc' }, { k: 'architecture', v: { en: 'Inline-4 High-Output R-Diesel · Standard AWD + 392 Nm', de: 'Reihenvierzylinder Top-R-Diesel · Serien-Allrad + 392 Nm', ru: 'Рядный 4-цил. форсированный R-дизель · AWD + 392 Н·м' } }], note: { en: 'Punchy top-spec diesel that makes the Sportage genuinely swift on motorways; high 392 Nm torque makes periodic AWD spline greasing essential.', de: 'Durchzugsstarker Top-Diesel für flotte Autobahnetappen; bei 392 Nm ist das regelmäßige Fetten der Allrad-Verzahnung Pflicht.', ru: 'Динамичный топовый дизель для трассы; при 392 Н·м профилактическая смазка шлицов раздатки строго обязательна.' } },
+              forcedInduction: '@turboDiesel',
+              injection: '@commonRailDi',
+              timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -39896,6 +43297,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 6.9,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Change 6-AT fluid + AWD transfer/diff oil & re-grease AWD splines', de: '6-AT-Öl + Allradöle wechseln & Allrad-Verzahnung fetten', ru: 'Замена масла в 6-АКПП и редукторах + смазка шлицов раздатки' }, cost: '€260–410' },
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Replace diesel fuel filter & inspect VGT turbo actuator linkage', de: 'Dieselfilter wechseln & VTG-Turbolader-Gestänge prüfen', ru: 'Замена топливного фильтра и проверка актуатора турбины VGT' }, cost: '€130–200' }
+              ],
+              critical: [
+                { when: { en: '70,000–130,000 km', de: '70.000–130.000 km', ru: '70 000–130 000 км' }, action: { en: 'AWD transfer-case splines & differential sleeve under 392 Nm load', de: 'Allrad-Verteilerverzahnung & Differentialhülse bei 392 Nm', ru: 'Шлицы раздатки и корпус дифференциала под нагрузкой 392 Н·м' }, cost: '€520–1,050', risk: { en: 'High torque accelerates spline stripping if water enters the seal', de: 'Hohes Drehmoment schert angerostete Verzahnung schneller ab', ru: 'Высокий момент быстро срезает ржавые шлицы — отказ AWD' }, damage: '€1,800–2,600' },
+                { when: { en: '140,000–200,000 km', de: '140.000–200.000 km', ru: '140 000–200 000 км' }, action: { en: '6-MT dual-mass flywheel + clutch (if manual) & DPF/EGR clean', de: 'ZMS + Kupplung (bei 6-Gang) & DPF/AGR-Reinigung', ru: 'Двухмассовый маховик + сцепление (на МКПП) и чистка DPF/EGR' }, cost: '€600–1,450', risk: { en: 'Clutch slip under boost or clogged DPF causing limp mode', de: 'Durchrutschende Kupplung oder verstopfter DPF mit Notlauf', ru: 'Пробуксовка сцепления или забитый DPF с аварийным режимом' }, damage: '€1,800–2,800' }
+              ]
+            },
             badges: {
               en: ['18" Tyres, Turbo & AWD Care', 'Higher Thermal Wear vs 136'],
               de: ['18-Zoll-Reifen, Turbo & Allrad', 'Mehr Verschleiß als 136 PS'],
@@ -41049,6 +44460,162 @@ const CAR_ROSTER = [
         }
       }
     },
+    sharedSpecs: {
+      rustProtection: '@rustWatch',
+      suspensionWear: '@suspDoubleWishbone',
+      starterAlternator: '@starter12v',
+      electronicsRisk: '@elecLow',
+      rideTuning: { en: 'Taut / Driver-Focused', de: 'Straff / Fahrerorientiert', ru: 'Упругая / Драйверская' },
+      highwayNoise: { en: '~69 dB · Slight Tyre Hum', de: '~69 dB · Leichtes Abrollen', ru: '~69 дБ · Лёгкий шум шин' },
+      cabinMaterials: { en: 'Clean Sporty Cockpit', de: 'Sportliches klares Cockpit', ru: 'Спортивный строгий салон' },
+      controls: '@physButtons',
+      turningCircle: '11.4 m',
+      visibility: { en: 'Sleek Sedan · Low Nose', de: 'Flache Limousine · Gut', ru: 'Низкий силуэт · Неплохо' },
+      euroNcap: '★★★★★ (2009)',
+      safetyTech: { en: '✓ DSC · ✓ Opt. RVM Blind-Spot', de: '✓ DSC · ✓ Opt. Totwinkel-RVM', ru: '✓ DSC · ✓ Опц. контроль мёртвых зон' },
+      rearRoom: { en: 'Generous Midsize Legroom', de: 'Viel Beinfreiheit (Mittelkl.)', ru: 'Просторный задний ряд' },
+      isofixEntry: { en: '✓ 2× ISOFIX · Wide Doors', de: '✓ 2× ISOFIX · Große Türen', ru: '✓ 2× ISOFIX · Удобные двери' },
+      bootVolume: '519 L / 1,702 L',
+      seatUtility: { en: '✓ Karakuri 60/40 Flat Fold', de: '✓ Karakuri 60/40 eben', ru: '✓ Karakuri 60/40 в ровный пол' },
+      payloadRoof: '540 kg · 100 kg',
+      driveline: { en: 'FWD (Low-Loss)', de: 'Frontantrieb (Effizient)', ru: 'Передний привод' },
+      chassisFeel: { en: 'Sharp · Agile Midsize', de: 'Agil · Sehr präzises Einlenken', ru: 'Острое · Азартный седан' },
+      tractionDiff: { en: 'FWD · DSC Stability', de: 'Frontantrieb · DSC', ru: 'Передний привод · DSC' },
+      braking1000: '~36.5 m',
+      brakeSetup: '@discs4',
+      valueRetention: '@retMod',
+      resaleDemand: '@demSteady'
+    },
+    sharedDossierBreakdowns: {
+      transmissionDriveline: { gearbox: { specs: [{ k: 'gearboxModel', v: { en: 'Mazda 6-Speed Manual (Crisp Short Throw) / 5-Speed Auto', de: 'Mazda 6-Gang-Schalter (knackig) / 5-Gang-Automatik', ru: '6-ст. МКПП Mazda (короткий ход) / 5-ст. АКПП' } }, { k: 'shiftQuality', v: { en: 'Mechanical Precise Gate · Durable 5-AT Torque Converter', de: 'Mechanisch exakt · Sehr robuste 5-Gang-Wandlerautomatik', ru: 'Чёткие переключения · Крепкий 5-ст. автомат' } }], note: { en: 'One of the sharpest-shifting manuals in the midsize class; the optional 5-speed automatic on petrols is old-school and reliable.', de: 'Einer der knackigsten Handschalter der Mittelklasse; die optionale 5-Gang-Wandlerautomatik bei Benzinern gilt als sehr robust.', ru: 'Одна из лучших по чёткости МКПП в классе; опциональный 5-ст. автомат на бензиновых версиях прост и долговечен.' } }, clutchDmf: '@clutchSingle', driveline: '@driveFwd' },
+      buildQualityRust: {
+        rustProtection: {
+          specs: [
+            { k: 'antiCorrosion', v: { en: 'Improved vs 1st-Gen GG, but Thin Factory Underbody Wax', de: 'Besser als 1. Gen GG, aber dünner Werks-Unterbodenschutz', ru: 'Лучше первого поколения GG, но тонкий заводской антикор' } },
+            { k: 'watchAreas', v: { en: 'Inspect Rear Subframe, Rear Wheel Arches & Floor Seams', de: 'Hinterachsträger, hintere Radläufe & Unterbodenfalze prüfen', ru: 'Осмотрите задний подрамник, арки и швы днища' } }
+          ],
+          note: { en: 'Much less rust-prone than the 2002–2007 Mazda 6, yet salted winter roads still attack rear subframes and arches unless cavity-waxed.', de: 'Deutlich besser als der alte GG, aber Streusalz greift Hinterachsträger und Radläufe an — Hohlraumkonservierung lohnt sich.', ru: 'Гораздо устойчивее старого поколения GG, но без дополнительного антикора зимой ржавеют подрамник и задние арки.' }
+        },
+        suspensionWear: '@suspDoubleWishbone'
+      },
+      electronicsReliability: { starterAlternator: '@starterStandard12v', electronicsRisk: '@elecSimpleEps' },
+      rideNoiseComfort: {
+        rideTuning: {
+          specs: [
+            { k: 'damperSetup', v: { en: 'Double-Wishbone Front · E-Type Multi-Link Rear', de: 'Doppelquerlenker vorn · E-Typ-Mehrlenkerachse hinten', ru: 'Двухрычажка спереди · Многорычажка E-Type сзади' } },
+            { k: 'seatSupport', v: { en: 'Low Sporty Driving Position · Good Lateral Support', de: 'Tiefe sportliche Sitzposition · Guter Seitenhalt', ru: 'Низкая спортивная посадка · Хорошая боковая поддержка' } }
+          ],
+          note: { en: '2010 facelift softened sharp low-speed bumps while preserving crisp body control and highway poise.', de: 'Das 2010er Facelift federt kurze Stöße spürbar harmonischer ab, ohne die straffe Straßenlage zu verlieren.', ru: 'Рестайлинг 2010 года стал мягче на мелких неровностях, сохранив собранность на трассе.' }
+        },
+        highwayNoise: {
+          specs: [
+            { k: 'cabinNoise130', v: { en: '~69 dB(A) at 130 km/h (Audible Road/Tyre Noise on 18")', de: '~69 dB(A) bei 130 km/h (Abrollgeräusch auf 18-Zoll hörbar)', ru: '~69 дБ(А) при 130 км/ч (Заметный шум шин на 18")' } },
+            { k: 'acousticGlass', v: { en: 'Aerodynamic 0.27 Cd Shell · Modest Wheel-Arch Insulation', de: 'Windschnittige 0,27 cW · Mäßige Radhausdämmung', ru: 'Отличная аэродинамика 0,27 Cd · Средняя изоляция арок' } }
+          ],
+          note: { en: 'Low wind noise thanks to sleek aerodynamics, though coarse tarmac transmits more tyre hum than a Mondeo or C-Class.', de: 'Geringe Windgeräusche durch flache Form, auf rauem Asphalt aber etwas mehr Abrollgeräusch als Mondeo oder C-Klasse.', ru: 'Тихий по ветру благодаря обтекаемому кузову, но на шершавом асфальте слышнее шум колёсных арок.' }
+        }
+      },
+      interiorQualityFeatures: {
+        cabinMaterials: {
+          specs: [
+            { k: 'dashboardTrim', v: { en: 'Soft Upper Dash · Piano-Black Facelift Trim · Red/Blue Gauges', de: 'Weiches Oberteil · Klavierlack im Facelift · Sportliche Instrumente', ru: 'Мягкий верх панели · Глянцевые вставки · Чёткие приборы' } },
+            { k: 'seatUpholstery', v: { en: 'Hard-Wearing Cloth or Half/Full Leather (Bose Audio Common)', de: 'Robuster Stoff oder Teil-/Vollleder (Bose-Sound oft verbaut)', ru: 'Прочная ткань или кожа (часто встречается акустика Bose)' } }
+          ],
+          note: { en: 'Driver-focused Japanese cockpit that ages cleanly; steering-wheel CF-Net buttons take a day to learn but work reliably.', de: 'Fahrerorientiertes Cockpit mit guter Langzeitqualität; die Lenkrad-Tasten sind nach kurzer Eingewöhnung intuitiv.', ru: 'Строгий и долговечный японский салон; кнопки на руле CF-Net требуют дня привыкания, но служат безотказно.' }
+        },
+        controls: '@controlsPhys'
+      },
+      visibilityManeuverability: {
+        turningCircle: {
+          specs: [
+            { k: 'turnDiameter', v: { en: '11.4 m (Standard for 4.75 m Midsize Sedan)', de: '11,4 m (Üblich für 4,75-m-Mittelklasse)', ru: '11,4 м (Стандарт для седана длиной 4,75 м)' } },
+            { k: 'steeringType', v: { en: 'Electric Power Steering (EPS) · Crisp Centre Feel', de: 'Elektrische Servolenkung (EPS) · Präzise Mittellage', ru: 'Электроусилитель (ЭУР) · Точный ноль на руле' } }
+          ],
+          note: { en: 'Long 4.75 m body needs standard midsize parking spaces; front and rear park sensors are common on mid/high trims.', de: 'Die 4,75 m Länge brauchen normale Mittelklasse-Parklücken; Einparkhilfe vorn und hinten ist weit verbreitet.', ru: 'Длина 4,75 м требует стандартного места для D-класса; парктроники спереди и сзади есть в большинстве версий.' }
+        },
+        visibility: {
+          specs: [
+            { k: 'allRoundView', v: { en: 'Good Forward Sightlines · Sloping Rear Glass', de: 'Gute Sicht nach vorn · Flache Heckscheibe', ru: 'Хороший обзор вперёд · Покатое заднее стекло' } },
+            { k: 'rearView', v: { en: 'High Tail Deck Benefits From Park Sensors', de: 'Hohes Heck profitiert von Einparksensoren', ru: 'Высокая корма — парктроники очень полезны' } }
+          ],
+          note: { en: 'Low bonnet makes front corners easy to place, while the high boot lid makes rear parking sensors valuable.', de: 'Die flache Motorhaube lässt sich gut abschätzen; hinten helfen Parksensoren beim hohen Kofferraumdeckel.', ru: 'Передние габариты чувствуются отлично, а сзади при парковке выручают датчики.' }
+        }
+      },
+      safetyProtection: {
+        euroNcap: {
+          specs: [
+            { k: 'crashRating', v: { en: '5 Stars Euro NCAP (2009) · High-Strength Lightweight Shell', de: '5 Sterne Euro NCAP (2009) · Leichte hochfeste Karosserie', ru: '5 звёзд Euro NCAP (2009) · Лёгкий высокопрочный кузов' } },
+            { k: 'bodyStructure', v: { en: '6 Airbags + Active Front Headrests + Bi-Xenon AFS Option', de: '6 Airbags + aktive Kopfstützen + optionales Bi-Xenon-Kurvenlicht', ru: '6 подушек + активные подголовники + опц. биксенон AFS' } }
+          ],
+          note: { en: 'Full 5-star Euro NCAP protection in a remarkably light (~1,380 kg petrol) chassis.', de: 'Volle 5 Sterne im Euro NCAP trotz erfreulich geringem Fahrzeuggewicht (~1.380 kg Benziner).', ru: 'Полноценные 5 звёзд Euro NCAP при удивительно лёгком кузове (~1 380 кг у бензина).' }
+        },
+        safetyTech: {
+          specs: [
+            { k: 'activeSafety', v: { en: 'DSC Stability, TCS, EBA & Hill-Launch Assist (Facelift)', de: 'DSC-Stabilität, TCS, Bremsassistent & Berganfahrhilfe', ru: 'DSC, TCS, экстренное торможение и помощь на подъёме' } },
+            { k: 'driverAssists', v: { en: 'Rare Era Option: RVM Radar Blind-Spot Monitoring', de: 'Seltene Option seiner Zeit: RVM-Radar-Totwinkelwarner', ru: 'Редкая для тех лет опция: радар слепых зон RVM' } }
+          ],
+          note: { en: 'Mazda was one of the first mainstream brands to offer radar blind-spot monitoring (RVM) in this price class.', de: 'Mazda bot als einer der ersten Volumenhersteller den RVM-Totwinkelwarner per Radar in dieser Klasse an.', ru: 'Mazda одной из первых в массовом сегменте предложила радарный контроль слепых зон (RVM).' }
+        }
+      },
+      passengerSpaceErgonomics: {
+        rearRoom: {
+          specs: [
+            { k: 'rearSpace', v: { en: 'Generous Rear Legroom · Contoured 2-Adult Outer Seats', de: 'Großzügige Beinfreiheit hinten · Bequeme Außensitze', ru: 'Много места для ног сзади · Удобные крайние места' } },
+            { k: 'frontErgo', v: { en: 'Long-Legged Front Ergonomics · Wide Adjustment Range', de: 'Sehr gute Ergonomie vorn · Weiter Verstellbereich', ru: 'Отличная посадка водителя · Большой диапазон регулировок' } }
+          ],
+          note: { en: 'Long 2,725 mm wheelbase gives adults comfortable knee room on long motorway trips.', de: 'Der lange 2.725-mm-Radstand bietet Erwachsenen im Fond entspannte Kniefreiheit auf Langstrecken.', ru: 'Длинная база 2 725 мм обеспечивает взрослым пассажирам комфортный запас места для коленей.' }
+        },
+        isofixEntry: {
+          specs: [
+            { k: 'childSeats', v: { en: '2× Outer Rear ISOFIX + Top-Tether Anchors', de: '2× ISOFIX außen hinten + Top-Tether', ru: '2× ISOFIX сзади + Top-Tether' } },
+            { k: 'doorAccess', v: { en: 'Wide Rear Door Aperture · Lower Sedan Roofline', de: 'Weite hintere Türöffnung · Niedrigere Limousinen-Dachlinie', ru: 'Широкий дверной проём · Низкая крыша седана' } }
+          ],
+          note: { en: 'Easy ISOFIX access with plenty of depth for rear-facing child seats without cramping front passengers.', de: 'Gut erreichbare ISOFIX-Bügel und genug Tiefe für Reboarder, ohne die Vordersitze ganz nach vorn zu schieben.', ru: 'Удобные скобы ISOFIX и достаточно места для установки крупного детского кресла.' }
+        }
+      },
+      interiorBootSpace: {
+        bootVolume: {
+          specs: [
+            { k: 'bootCapacity', v: { en: '519 L (Seats Up) / 1,702 L (Folded Hatchback)', de: '519 L (Normal) / 1.702 L (Umgeklappt Fließheck)', ru: '519 л (обычный) / 1 702 л (сложено лифтбек)' } },
+            { k: 'loadingLip', v: { en: 'Deep Wide Cargo Bay · Easy-Access Liftback Option', de: 'Tiefer breiter Laderaum · Riesige Öffnung beim Fließheck', ru: 'Глубокий широкий багажник · Огромный проём у лифтбека' } }
+          ],
+          note: { en: '519 L rivals bigger executive cars; the 5-door liftback version combines sedan looks with near-estate practicality.', de: '519 L liegen auf Oberklasse-Niveau; das 5-türige Fließheck verbindet Limousinen-Optik mit Kombi-Nutzwert.', ru: '519 л — один из лучших показателей в классе; версия лифтбек сочетает стиль седана с практичностью универсала.' }
+        },
+        seatUtility: {
+          specs: [
+            { k: 'foldingSystem', v: { en: '✓ Karakuri One-Touch Levers in Boot · Flat Load Floor', de: '✓ Karakuri-Hebel im Kofferraum · Ebene Ladefläche', ru: '✓ Система Karakuri (рычаги в багажнике) · Ровный пол' } }
+          ],
+          note: { en: 'Pulling the Karakuri levers in the boot drops the rear backrests flat in one motion.', de: 'Ein Zug an den Karakuri-Hebeln im Kofferraum legt die Rückbank sofort eben um.', ru: 'Рычаги Karakuri в багажнике складывают спинку дивана в ровный пол одним движением.' }
+        }
+      },
+      payloadTowing: {
+        payloadRoof: {
+          specs: [
+            { k: 'maxPayload', v: { en: '~540 kg (515–555 kg Depending on Engine)', de: '~540 kg (515–555 kg je nach Motor)', ru: '~540 кг (515–555 кг в зависимости от мотора)' } },
+            { k: 'roofLoad', v: { en: '100 kg Approved Dynamic Roof Load (Class-Leading)', de: '100 kg zugelassene Dachlast (Klassenbestwert)', ru: '100 кг допустимая нагрузка на крышу (лучше класса)' } }
+          ],
+          note: { en: 'Rare 100 kg roof-load rating easily handles heavy roof boxes, kayaks, or multiple bikes.', de: 'Seltene 100 kg Dachlast tragen problemlos große Dachboxen, Kajaks oder mehrere Fahrräder.', ru: 'Редкие 100 кг нагрузки на крышу спокойно выдерживают тяжёлый бокс или несколько велосипедов.' }
+        },
+        towingBraked: '@towingDynamic'
+      },
+      accelerationOvertaking: { sprint0100: '@sprintDynamic', topSpeed: '@vmaxDynamic' },
+      midRangeTorquePassing: { peakTorque: '@torqueDynamic', passingPunch: '@passingDynamic' },
+      handlingAgility: {
+        chassisFeel: {
+          specs: [
+            { k: 'steeringFeel', v: { en: 'Direct, Communicative Steering · Light ~1,400 kg Curb Weight', de: 'Direkte, präzise Lenkung · Geringes Leergewicht (~1.400 kg)', ru: 'Острый, понятный руль · Лёгкий кузов (~1 400 кг)' } },
+            { k: 'cornering', v: { en: 'Double-Wishbone Front Gives Best-in-Class Turn-In', de: 'Doppelquerlenker vorn sorgen für klassenbestes Einlenken', ru: 'Передняя двухрычажка даёт лучшую в классе управляемость' } }
+          ],
+          note: { en: 'Noticeably lighter and nimbler than rival midsize sedans — genuinely enjoyable on winding B-roads.', de: 'Spürbar leichter und handlicher als klassische Mittelklasse-Limousinen — macht auf kurvigen Landstraßen richtig Freude.', ru: 'Заметно легче и проворнее конкурентов D-класса — дарит удовольствие на извилистых дорогах.' }
+        },
+        tractionDiff: '@tractionFwdOpen'
+      },
+      brakingPerformance: { braking1000: '@brakingDistDynamic', brakeSetup: '@brakeSetupDiscs4' },
+      efficiencyFuel: { realWorldFuel: '@fuelDynamic', tankRange: '@tankDynamic' },
+      taxInsuranceNorm: { euroNorm: '@euroDynamic', taxInsurance: '@taxInsDynamic' },
+      maintenanceRepairCosts: { timingDrive: '@timingDynamic', serviceWear: '@serviceDynamic' },
+      depreciationResale: { valueRetention: '@retMod', resaleDemand: '@demSteady' }
+    },
     engines: [
       {
         id: '2.0-mzr-disi',
@@ -41134,6 +44701,24 @@ const CAR_ROSTER = [
           spacePracticality: 8.3,
           performanceDynamics: 7.5,
           runningCostsTco: 8.0
+        },
+        specOverrides: {
+          engineName: { en: '2.0L I4 MZR-DISI (Chain)', de: '2.0L Reihenvierzylinder DISI', ru: '2.0L R4 MZR-DISI (Цепь)' },
+          forcedInduction: '@na',
+          injection: '@direct',
+          timingDrive: '@chain',
+          gearbox: { en: '6-MT / 5-Speed Auto', de: '6-Gang / 5-Gang-Automatik', ru: '6-МКПП / 5-АКПП' },
+          clutchDmf: '@singleClutch',
+          towingBraked: '1,500 kg',
+          sprint0100: '10.0 s',
+          topSpeed: '217 km/h',
+          peakTorque: '193 Nm @ 4,500 rpm',
+          passingPunch: { en: 'Clean Linear Mid-Range', de: 'Sauberer linearer Durchzug', ru: 'Ровная линейная тяга' },
+          realWorldFuel: '7.5 L/100km',
+          tankRange: '64 L (~850 km)',
+          euroNorm: 'Euro 5 (Petrol)',
+          taxInsurance: '@tierLowMod',
+          serviceWear: '@tierLow'
         },
         subStats: {
           buildQualityRust: {
@@ -41230,6 +44815,12 @@ const CAR_ROSTER = [
               en: ['Facelift Chain 2.0 Petrol', 'No Turbo • Clean Direct Injection'],
               de: ['Robuster Facelift-Kettenmotor', 'Ohne Turbo • Direkteinspritzer'],
               ru: ['Надёжный цепной 2.0 рестайлинг', 'Без турбины • Прямой впрыск']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'LF-VD (MZR-DISI) · 1,999 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium · Direct Injection + i-stop (Facelift)', de: 'Reihenvierzylinder Alu · Direkteinspritzung + i-stop', ru: 'Рядный 4-цил. алюминий · Прямой впрыск + i-stop' } }], note: { en: 'Facelift Euro 5 sweet spot: crisp 155 HP naturally aspirated chain petrol with lower fuel burn and strong long-term reliability.', de: 'Der Facelift-Sweetspot: spritziger Euro-5-Ketten-Sauger mit 155 PS, geringerem Verbrauch und sehr hoher Langzeit-Zuverlässigkeit.', ru: 'Удачный рестайлинговый атмосферник Euro 5: цепной привод, 155 л.с., умеренный расход и высокая надёжность.' } },
+              forcedInduction: '@naNoTurbo',
+              injection: '@directInjPetrol',
+              timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -41476,6 +45067,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 8.5,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000–80,000 km', de: 'Alle 60.000–80.000 km', ru: 'Каждые 60–80 тыс. км' }, action: { en: 'Change 6-MT or 5-AT gearbox oil & inspect auxiliary belt', de: '6-Gang- oder 5-AT-Getriebeöl wechseln & Keilrippenriemen prüfen', ru: 'Замена масла в 6-МКПП или 5-АКПП и проверка приводного ремня' }, cost: '€140–250' },
+                { when: { en: 'Every 100,000 km', de: 'Alle 100.000 km', ru: 'Каждые 100 000 км' }, action: { en: 'Replace iridium spark plugs & flush FL22 long-life coolant', de: 'Iridium-Zündkerzen wechseln & FL22-Kühlmittel erneuern', ru: 'Замена иридиевых свечей и антифриза FL22' }, cost: '€170–260' }
+              ],
+              critical: [
+                { when: { en: '120,000–180,000 km', de: '120.000–180.000 km', ru: '120 000–180 000 км' }, action: { en: 'Underbody / rear subframe rust-proofing & thermostat housing check', de: 'Unterboden-/Hinterachs-Rostvorsorge & Thermostat prüfen', ru: 'Антикор заднего подрамника и проверка термостата' }, cost: '€260–550', risk: { en: 'Advanced subframe rust fails safety inspection; stuck-open thermostat hurts MPG', de: 'Durchgerosteter Achsträger scheitert bei der HU; offenes Thermostat erhöht Verbrauch', ru: 'Сквозная коррозия подрамника; заклинивший термостат повышает расход' }, damage: '€1,100–1,800' },
+                { when: { en: '120,000–170,000 km', de: '120.000–170.000 km', ru: '120 000–170 000 км' }, action: { en: 'DISI intake valve carbon cleaning (if rough cold idle develops)', de: 'DISI-Einlassventile reinigen (bei unrundem Kaltlauf)', ru: 'Чистка впускных клапанов DISI от нагара (при неровном холодном пуске)' }, cost: '€300–480', risk: { en: 'Hesitation and misfires under light throttle', de: 'Ruckeln und Zündaussetzer im Teillastbereich', ru: 'Провалы тяги и пропуски зажигания на малых оборотах' }, damage: '€700–1,100' }
+              ]
+            },
             badges: {
               en: ['No Turbo / DPF / DMF Bills', 'Affordable Routine Filters'],
               de: ['Kein Turbo / DPF / ZMS', 'Günstiger Verschleißteil-Unterhalt'],
@@ -41574,6 +45175,25 @@ const CAR_ROSTER = [
           performanceDynamics: 7.0,
           runningCostsTco: 8.0
         },
+        specOverrides: {
+          engineName: { en: '1.8L I4 MZR Petrol (Chain)', de: '1.8L Reihenvierzylinder (Kette)', ru: '1.8L R4 MZR Бензин (Цепь)' },
+          forcedInduction: '@na',
+          injection: '@port',
+          timingDrive: '@chain',
+          gearbox: '@manual5',
+          clutchDmf: '@singleClutch',
+          payloadRoof: '515 kg · 100 kg',
+          towingBraked: '1,500 kg',
+          sprint0100: '11.3 s',
+          topSpeed: '200 km/h',
+          peakTorque: '165 Nm @ 4,300 rpm',
+          passingPunch: { en: 'Relaxed · Needs Downshifts', de: 'Gemütlich · Runterschalten', ru: 'Спокойная · Нужны обороты' },
+          realWorldFuel: '7.4 L/100km',
+          tankRange: '64 L (~865 km)',
+          euroNorm: 'Euro 4/5 (Petrol)',
+          taxInsurance: '@tierLow',
+          serviceWear: '@tierVeryLow'
+        },
         subStats: {
           buildQualityRust: {
             score: 7.2,
@@ -41669,6 +45289,12 @@ const CAR_ROSTER = [
               en: ['Simple Port-Injected 1.8 Chain', 'Check Oil Use & Intake Flaps'],
               de: ['Einfacher 1.8 Ketten-Saugmotor', 'Ölverbrauch & Saugrohrklappen'],
               ru: ['Простой цепной 1.8 распределённый', 'Контроль масла и заслонок']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'L8-DE (MZR) · 1,798 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium · Port Injection (Simple Chain NA)', de: 'Reihenvierzylinder Alu · Saugrohreinspritzung (Sauger)', ru: 'Рядный 4-цил. алюминий · Распределённый впрыск' } }], note: { en: 'Ultra-simple, low-cost entry petrol with port injection and timing chain; modest highway pull with the 5-speed gearbox, but almost nothing expensive to fail.', de: 'Extrem simpler, günstiger Einstiegs-Sauger mit Kette und Saugrohreinspritzung; mit 5-Gang gemütlich, aber kaum teure Ausfallrisiken.', ru: 'Максимально простой и дешёвый в содержании цепной атмосферник; спокойный на трассе с 5-МКПП, зато почти нечему ломаться.' } },
+              forcedInduction: '@naNoTurbo',
+              injection: '@portInj',
+              timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -41916,6 +45542,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 8.5,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 80,000 km', de: 'Alle 80.000 km', ru: 'Каждые 80 000 км' }, action: { en: 'Change 5-MT gearbox oil & inspect serpentine belt', de: '5-Gang-Getriebeöl wechseln & Keilrippenriemen prüfen', ru: 'Замена масла в 5-МКПП и проверка приводного ремня' }, cost: '€120–180' },
+                { when: { en: 'Every 100,000 km', de: 'Alle 100.000 km', ru: 'Каждые 100 000 км' }, action: { en: 'Replace iridium spark plugs & FL22 coolant', de: 'Iridium-Zündkerzen & FL22-Kühlmittel ersetzen', ru: 'Замена иридиевых свечей и антифриза FL22' }, cost: '€160–240' }
+              ],
+              critical: [
+                { when: { en: '140,000–220,000 km', de: '140.000–220.000 km', ru: '140 000–220 000 км' }, action: { en: 'Monitor oil consumption on high-mileage cars (stuck oil rings if neglected)', de: 'Ölverbrauch ab hoher Laufleistung prüfen (verkokte Ölabstreifringe)', ru: 'Контроль расхода масла (залегание маслосъёмных колец при редких ТО)' }, cost: '€900–1,600', risk: { en: 'Running low on oil causes rapid big-end bearing knock', de: 'Zu niedriger Ölstand führt rasch zum Pleuellagerschaden', ru: 'Масляное голодание быстро проворачивает вкладыши' }, damage: '€2,200–3,400' },
+                { when: { en: '120,000–180,000 km', de: '120.000–180.000 km', ru: '120 000–180 000 км' }, action: { en: 'Rear subframe & wheel-arch rust treatment + swirl-flap rattle check', de: 'Hinterachsträger-/Radlauf-Konservierung & Drallklappen prüfen', ru: 'Антикор заднего подрамника и проверка заслонок впуска' }, cost: '€260–550', risk: { en: 'Structural subframe corrosion or loose intake swirl flaps', de: 'Durchgerosteter Achsträger oder ausgeschlagenes Saugrohr', ru: 'Глубокая коррозия подрамника или люфт заслонок коллектора' }, damage: '€1,100–1,800' }
+              ]
+            },
             badges: {
               en: ['Lowest Parts Complexity', 'Check Oil & Intake Flaps'],
               de: ['Simpelste Technik im GH', 'Ölstand & Saugrohrklappen im Blick'],
@@ -42014,6 +45650,25 @@ const CAR_ROSTER = [
           performanceDynamics: 7.3,
           runningCostsTco: 7.7
         },
+        specOverrides: {
+          engineName: { en: '2.0L I4 MZR Petrol (Chain)', de: '2.0L Reihenvierzylinder (Kette)', ru: '2.0L R4 MZR Бензин (Цепь)' },
+          forcedInduction: '@na',
+          injection: '@port',
+          timingDrive: '@chain',
+          gearbox: { en: '6-MT / 5-Speed Auto', de: '6-Gang / 5-Gang-Automatik', ru: '6-МКПП / 5-АКПП' },
+          clutchDmf: '@singleClutch',
+          payloadRoof: '535 kg · 100 kg',
+          towingBraked: '1,500 kg',
+          sprint0100: '9.9 s',
+          topSpeed: '214 km/h',
+          peakTorque: '184 Nm @ 4,000 rpm',
+          passingPunch: { en: 'Rev-Happy · Best With 6-MT', de: 'Drehfreudig · Top mit 6-Gang', ru: 'Охотно крутится · Лучше с 6-МКПП' },
+          realWorldFuel: '7.8 L/100km',
+          tankRange: '64 L (~820 km)',
+          euroNorm: 'Euro 4/5 (Petrol)',
+          taxInsurance: '@tierLowMod',
+          serviceWear: '@tierVeryLow'
+        },
         subStats: {
           buildQualityRust: {
             score: 7.1,
@@ -42109,6 +45764,12 @@ const CAR_ROSTER = [
               en: ['Clean Port-Injected 2.0 Chain', 'Great LPG & Auto Candidate'],
               de: ['Bewährter 2.0 Saugrohr-Motor', 'Ohne Verkokung • Gute 5-AT'],
               ru: ['Чистый впуск на 2.0 с цепью', 'Дружелюбен к ГБО и 5-АКПП']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'LF-DE (MZR) · 1,999 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium · Port Injection (Chain, No Direct Inj.)', de: 'Reihenvierzylinder Alu · Saugrohreinspritzung (Kette)', ru: 'Рядный 4-цил. алюминий · Распределённый впрыск (Цепь)' } }], note: { en: 'Bulletproof port-injected 2.0 MZR with zero turbo or direct-injection carbon issues; arguably the most dependable engine in the GH lineup.', de: 'Extrem standfester 2.0-Saugrohreinspritzer ohne Turbo- und Verkokungsrisiko — wohl der zuverlässigste Motor der gesamten GH-Reihe.', ru: 'Неубиваемый цепной 2.0 с распределённым впрыском без турбины и нагара — самый беспроблемный мотор линейки GH.' } },
+              forcedInduction: '@naNoTurbo',
+              injection: '@portInj',
+              timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -42354,6 +46015,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 8.4,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000–80,000 km', de: 'Alle 60.000–80.000 km', ru: 'Каждые 60–80 тыс. км' }, action: { en: 'Change 6-MT or 5-AT fluid & inspect belt tensioner', de: '6-Gang- oder 5-AT-Getriebeöl wechseln & Riemenspanner prüfen', ru: 'Замена масла в 6-МКПП или 5-АКПП и проверка натяжителя ремня' }, cost: '€140–250' },
+                { when: { en: 'Every 100,000 km', de: 'Alle 100.000 km', ru: 'Каждые 100 000 км' }, action: { en: 'Replace iridium spark plugs & flush FL22 coolant', de: 'Iridium-Zündkerzen wechseln & FL22-Kühlmittel erneuern', ru: 'Замена иридиевых свечей и антифриза FL22' }, cost: '€170–250' }
+              ],
+              critical: [
+                { when: { en: '120,000–180,000 km', de: '120.000–180.000 km', ru: '120 000–180 000 км' }, action: { en: 'Rear subframe & arch anti-rust treatment + intake swirl-flap check', de: 'Hinterachs-/Radlauf-Rostschutz & Saugrohr-Drallklappen prüfen', ru: 'Антикор заднего подрамника и проверка заслонок коллектора' }, cost: '€260–550', risk: { en: 'Salt corrosion on subframe seams or rattling intake manifold flaps', de: 'Korrosion am Achsträger oder klappernde Drallklappen im Saugrohr', ru: 'Коррозия подрамника или стук заслонок впускного коллектора' }, damage: '€1,100–1,800' },
+                { when: { en: '140,000–210,000 km', de: '140.000–210.000 km', ru: '140 000–210 000 км' }, action: { en: 'Thermostat stuck open & hydraulic right-hand engine mount sag', de: 'Thermostat (offen klemmend) & rechtes Hydrolager erneuern', ru: 'Замена термостата и правой гидроопоры двигателя' }, cost: '€240–420', risk: { en: 'Engine runs cold with high fuel use; heavy cabin vibration at idle', de: 'Motor erreicht keine Betriebstemperatur; starke Vibrationen im Leerlauf', ru: 'Двигатель не греется (растёт расход) и сильная вибрация на холостых' }, damage: '€500–850' }
+              ]
+            },
             badges: {
               en: ['Zero Direct-Injection Carbon', 'Cheap Independent Servicing'],
               de: ['Keine DISI-Verkokung', 'Günstiger Unterhalt ohne Turbo'],
@@ -42452,6 +46123,25 @@ const CAR_ROSTER = [
           performanceDynamics: 8.0,
           runningCostsTco: 7.5
         },
+        specOverrides: {
+          engineName: { en: '2.5L I4 MZR Sport (Chain)', de: '2.5L Reihenvierzylinder Sport', ru: '2.5L R4 MZR Sport (Цепь)' },
+          forcedInduction: '@na',
+          injection: '@port',
+          timingDrive: '@chain',
+          gearbox: '@manual6',
+          clutchDmf: '@singleClutch',
+          payloadRoof: '550 kg · 100 kg',
+          towingBraked: '1,600 kg',
+          sprint0100: '8.0 s',
+          topSpeed: '220 km/h',
+          peakTorque: '226 Nm @ 4,000 rpm',
+          passingPunch: { en: 'Instant Linear 2.5L Pull', de: 'Spontaner linearer 2.5L-Schub', ru: 'Мгновенный линейный отклик 2.5L' },
+          realWorldFuel: '8.3 L/100km',
+          tankRange: '64 L (~770 km)',
+          euroNorm: 'Euro 4/5 (Petrol)',
+          taxInsurance: '@tierModHigh',
+          serviceWear: '@tierLowMod'
+        },
         subStats: {
           buildQualityRust: {
             score: 7.4,
@@ -42547,6 +46237,12 @@ const CAR_ROSTER = [
               en: ['Bulletproof 2.5 Port Chain NA', '300,000+ km Long-Stroke Unit'],
               de: ['Extrem robuster 2.5-Kettenmotor', '300.000+ km Langhuber-Potential'],
               ru: ['Вечный цепной атмосферник 2.5', 'Ресурс 300 000+ км без турбины']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'L5-VE (MZR 2.5) · 2,488 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium · Balance Shafts + Port Injection', de: 'Reihenvierzylinder Alu · Ausgleichswellen + Saugrohr', ru: 'Рядный 4-цил. алюминий · Балансирные валы + распредел. впрыск' } }], note: { en: 'Enthusiast gem: 8.0 s sprint, instant naturally aspirated throttle, stout 6-speed manual, and none of the turbo or diesel repair traps.', de: 'Liebhaber-Tipp: 8,0 s auf 100, direkter Sauger-Antritt, knackiger 6-Gang-Schalter und keine Turbo- oder Diesel-Kostenfallen.', ru: 'Находка для энтузиаста: 8,0 с до 100, мгновенный отклик атмосферника 2.5, чёткая 6-МКПП и отсутствие турбо/дизельных проблем.' } },
+              forcedInduction: '@naNoTurbo',
+              injection: '@portInj',
+              timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -42793,6 +46489,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 8.3,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000–80,000 km', de: 'Alle 60.000–80.000 km', ru: 'Каждые 60–80 тыс. км' }, action: { en: 'Change 6-MT gearbox oil & inspect serpentine belt / tensioner', de: '6-Gang-Getriebeöl wechseln & Riemenspanner prüfen', ru: 'Замена масла в 6-МКПП и проверка приводного ремня с роликом' }, cost: '€150–230' },
+                { when: { en: 'Every 100,000 km', de: 'Alle 100.000 km', ru: 'Каждые 100 000 км' }, action: { en: 'Replace iridium spark plugs & flush FL22 long-life coolant', de: 'Iridium-Zündkerzen wechseln & FL22-Kühlmittel erneuern', ru: 'Замена иридиевых свечей и антифриза FL22' }, cost: '€180–270' }
+              ],
+              critical: [
+                { when: { en: '120,000–180,000 km', de: '120.000–180.000 km', ru: '120 000–180 000 км' }, action: { en: 'Rear subframe & arch cavity-waxing + right hydraulic engine mount', de: 'Hinterachs-Konservierung & rechtes Hydrolager erneuern', ru: 'Антикор заднего подрамника и замена правой гидроопоры' }, cost: '€320–620', risk: { en: 'Subframe rust in winter salt regions; harsh engine-bay vibration', de: 'Rost am Hinterachsträger im Winter; spürbare Vibrationen im Leerlauf', ru: 'Коррозия подрамника зимой; жёсткие вибрации двигателя на кузове' }, damage: '€1,200–1,900' },
+                { when: { en: '150,000–220,000 km', de: '150.000–220.000 km', ru: '150 000–220 000 км' }, action: { en: 'VVT cam-phaser rattle on cold start & valve-cover gasket weep', de: 'VVT-Nockenwellenversteller (Kaltstart-Rasseln) & Ventildeckeldichtung', ru: 'Муфта VVT (треск при холодном пуске) и прокладка клапанной крышки' }, cost: '€420–780', risk: { en: 'Oil seepage into spark-plug wells and rough variable-cam timing', de: 'Öl in den Zündkerzenschächten und verzögerte Steuerzeiten', ru: 'Масло в свечных колодцах и сбой фаз газораспределения' }, damage: '€1,100–1,600' }
+              ]
+            },
             badges: {
               en: ['No Turbo / DPF / Injector Bills', 'Hydro Mount & 18" Tyre Costs'],
               de: ['Kein Turbo / DPF / Injektor', 'Hydrolager & 18-Zoll-Reifen'],
@@ -42891,6 +46597,24 @@ const CAR_ROSTER = [
           performanceDynamics: 7.7,
           runningCostsTco: 7.1
         },
+        specOverrides: {
+          engineName: { en: '2.0L I4 MZR-CD Diesel (Belt)', de: '2.0L Reihenvierzylinder Diesel (Riemen)', ru: '2.0L R4 MZR-CD Дизель (Ремень)' },
+          forcedInduction: '@turbo',
+          injection: '@commonRail',
+          timingDrive: '@belt',
+          gearbox: '@manual6',
+          clutchDmf: '@clutchDmf',
+          towingBraked: '1,600 kg',
+          sprint0100: '10.5 s',
+          topSpeed: '204 km/h',
+          peakTorque: '330 Nm @ 2,000 rpm',
+          passingPunch: { en: 'Strong 330 Nm Mid-Range', de: 'Kräftiger 330-Nm-Durchzug', ru: 'Уверенная тяга 330 Н·м' },
+          realWorldFuel: '6.1 L/100km',
+          tankRange: '64 L (~1,050 km)',
+          euroNorm: 'Euro 4 (Diesel)',
+          taxInsurance: '@tierHigh',
+          serviceWear: '@tierModHigh'
+        },
         subStats: {
           buildQualityRust: {
             score: 7.0,
@@ -42986,6 +46710,12 @@ const CAR_ROSTER = [
               en: ['Belt-Driven 2.0 Diesel', 'Copper Injector Seals & Oil Strainer Critical'],
               de: ['2.0-Zahnriemendiesel', 'Injektor-Kupferringe & Ölsieb kritisch'],
               ru: ['Ременной 2.0 турбодизель', 'Критичны шайбы форсунок и маслоприёмник']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'RF7J (MZR-CD) · 1,998 cc' }, { k: 'architecture', v: { en: 'Inline-4 Iron-Block Diesel · Timing Belt (120k km)', de: 'Reihenvierzylinder Grauguss-Diesel · Zahnriemen (120 Tkm)', ru: 'Рядный 4-цил. чугунный дизель · Ремень ГРМ (120 тыс. км)' } }], note: { en: 'Frugal 1,000+ km cruiser, but demands strict injector copper-washer replacement and sump-strainer cleaning to prevent sudden oil starvation.', de: 'Sparsamer Langstrecken-Diesel, braucht aber zwingend neue Injektor-Kupferdichtringe und Sieb-Kontrolle gegen Ölmangel-Motorschaden.', ru: 'Экономичный трассовый дизель, но обязательно меняйте медные шайбы форсунок и чистите маслоприёмник от кокса.' } },
+              forcedInduction: '@turboDiesel',
+              injection: '@commonRailDi',
+              timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -43242,6 +46972,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 6.6,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 120,000 km / 6 yrs', de: 'Alle 120.000 km / 6 J.', ru: 'Каждые 120 000 км / 6 лет' }, action: { en: 'Replace timing belt, hydraulic tensioner & water pump', de: 'Zahnriemen, hydraulischen Spanner & Wasserpumpe erneuern', ru: 'Замена ремня ГРМ, гидронатяжителя и помпы' }, cost: '€580–850' },
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Check mechanical valve clearances & replace diesel fuel filter', de: 'Ventilspiel prüfen/einstellen & Dieselfilter ersetzen', ru: 'Регулировка клапанов и замена топливного фильтра' }, cost: '€180–280' }
+              ],
+              critical: [
+                { when: { en: 'Every 100,000–120,000 km', de: 'Alle 100.000–120.000 km', ru: 'Каждые 100–120 тыс. км' }, action: { en: 'Replace copper injector washers & drop sump to clean oil pickup screen', de: 'Injektor-Kupferdichtringe wechseln & Ölsieb in der Ölwanne reinigen', ru: 'Замена медных шайб форсунок и чистка сетки маслоприёмника' }, cost: '€320–520', risk: { en: 'Blow-by carbon clogs the oil strainer and seizes turbo & crankshaft bearings', de: 'Verkoktes Ölsieb führt zu Öldruckverlust, Turbo- und Motorschaden', ru: 'Кокс забивает маслоприёмник — падение давления масла и клин мотора' }, damage: '€3,500–5,500' },
+                { when: { en: '140,000–200,000 km', de: '140.000–200.000 km', ru: '140 000–200 000 км' }, action: { en: 'Dual-mass flywheel + clutch & DPF oil-dilution check (dipstick X-mark)', de: 'ZMS + Kupplung & DPF-Ölverdünnung prüfen (Ölmessstab X-Marke)', ru: 'Двухмассовый маховик + сцепление и контроль уровня масла (метка X)' }, cost: '€1,050–1,550', risk: { en: 'Failed DPF regens raise oil level past X-mark causing engine runaway', de: 'Abgebrochene DPF-Regenerationen verdünnen das Öl bis zum Motorschaden', ru: 'Срывы регенерации DPF разжижают масло выше метки X — риск разноса' }, damage: '€2,500–4,500' }
+              ]
+            },
             badges: {
               en: ['Belt + Copper Washers + Sump', 'DMF & Early DPF Expenses'],
               de: ['Zahnriemen + Kupferringe + ZMS', 'Höheres Wartungsrisiko im Alter'],
@@ -43340,6 +47080,25 @@ const CAR_ROSTER = [
           performanceDynamics: 7.7,
           runningCostsTco: 7.5
         },
+        specOverrides: {
+          engineName: { en: '2.2L I4 MZR-CD 129 (Chain)', de: '2.2L Reihenvierzylinder 129 PS', ru: '2.2L R4 MZR-CD 129 (Цепь)' },
+          forcedInduction: '@turbo',
+          injection: '@commonRail',
+          timingDrive: '@chain',
+          gearbox: '@manual6',
+          clutchDmf: '@clutchDmf',
+          payloadRoof: '555 kg · 100 kg',
+          towingBraked: '1,600 kg',
+          sprint0100: '10.7 s',
+          topSpeed: '198 km/h',
+          peakTorque: '340 Nm @ 1,800 rpm',
+          passingPunch: { en: 'Easy 340 Nm Highway Pull', de: 'Entspannte 340 Nm ab 1.800/min', ru: 'Лёгкая тяга 340 Н·м с 1 800 об/мин' },
+          realWorldFuel: '5.6 L/100km',
+          tankRange: '64 L (~1,140 km)',
+          euroNorm: 'Euro 5 (Diesel)',
+          taxInsurance: '@tierMod',
+          serviceWear: '@tierModHigh'
+        },
         subStats: {
           buildQualityRust: {
             score: 7.4,
@@ -43435,6 +47194,12 @@ const CAR_ROSTER = [
               en: ['129 HP Chain 2.2 Diesel', 'Monitor Timing Chain Stretch & Injector Seals'],
               de: ['129-PS Ketten-Diesel 2.2', 'Steuerkette, Kupferringe & Ölstand prüfen'],
               ru: ['Цепной дизель 2.2 (129 л.с.)', 'Контроль цепи, шайб и уровня масла']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'R2BF (2.2 MZR-CD) · 2,184 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium Diesel · Timing Chain (Monitor Stretch)', de: 'Reihenvierzylinder Alu-Diesel · Steuerkette (Längung prüfen)', ru: 'Рядный 4-цил. алюминиевый дизель · Цепь ГРМ (контроль растяжения)' } }], note: { en: 'Detuned 129 HP version of Mazda’s 2.2 R2 diesel — super frugal (5.6 L/100km), but still requires copper injector-washer and timing-chain stretch checks.', de: 'Gedrosselte 129-PS-Version des 2.2-R2-Diesels — sehr sparsam (5,6 L/100km), erfordert aber Injektor-Dichtring- und Steuerketten-Kontrolle.', ru: 'Дефорсированный дизель 2.2 R2 (129 л.с.) — очень экономичный (5,6 л), но требует контроля медных шайб форсунок и растяжения цепи.' } },
+              forcedInduction: '@turboDiesel',
+              injection: '@commonRailDi',
+              timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -43679,6 +47444,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.1,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Read timing-chain stretch angle via OBD & replace diesel fuel filter', de: 'Steuerketten-Längungswinkel per Diagnose prüfen & Dieselfilter wechseln', ru: 'Проверка угла растяжения цепи сканером и замена топливного фильтра' }, cost: '€100–160' },
+                { when: { en: 'Every 100,000 km', de: 'Alle 100.000 km', ru: 'Каждые 100 000 км' }, action: { en: 'Change 6-MT oil & clean EGR valve / intake flap', de: '6-Gang-Getriebeöl wechseln & AGR-Ventil reinigen', ru: 'Замена масла в 6-МКПП и чистка клапана EGR' }, cost: '€200–320' }
+              ],
+              critical: [
+                { when: { en: '100,000–160,000 km', de: '100.000–160.000 km', ru: '100 000–160 000 км' }, action: { en: 'Replace injector copper washers + clean oil pickup screen & check chain stretch', de: 'Injektor-Kupferdichtringe + Ölsieb reinigen & Steuerkette bei Längung ersetzen', ru: 'Замена медных шайб форсунок + чистка маслоприёмника и контроль цепи' }, cost: '€450–1,350', risk: { en: 'Clogged oil pickup starves bearings; stretched chain triggers flashing DPF light & jumps teeth', de: 'Verstopftes Ölsieb zerstört Lager; gelängte Kette lässt DPF-Lampe blinken und überspringt', ru: 'Забитая сетка гробит вкладыши; растянутая цепь зажигает DPF и перескакивает' }, damage: '€3,500–5,500' },
+                { when: { en: '150,000–210,000 km', de: '150.000–210.000 km', ru: '150 000–210 000 км' }, action: { en: 'Dual-mass flywheel + clutch & DPF oil-dilution watch', de: 'Zweimassenschwungrad + Kupplung & DPF-Ölverdünnung beobachten', ru: 'Двухмассовый маховик + сцепление и контроль разжижения масла DPF' }, cost: '€1,050–1,500', risk: { en: 'Clutch judder or rising oil level past dipstick X-mark', de: 'Kupplungsrupfen oder steigender Ölstand über die X-Marke', ru: 'Вибрации сцепления или рост уровня масла выше метки X' }, damage: '€2,400–4,000' }
+              ]
+            },
             badges: {
               en: ['Timing Chain & Copper Washers', 'Budget Chain + DMF Care'],
               de: ['Steuerkette, Kupferringe & ZMS', 'Teurere Diesel-Wartung beachten'],
@@ -43777,6 +47552,25 @@ const CAR_ROSTER = [
           performanceDynamics: 8.2,
           runningCostsTco: 7.4
         },
+        specOverrides: {
+          engineName: { en: '2.2L I4 MZR-CD 163 (Chain)', de: '2.2L Reihenvierzylinder 163 PS', ru: '2.2L R4 MZR-CD 163 (Цепь)' },
+          forcedInduction: '@turbo',
+          injection: '@commonRail',
+          timingDrive: '@chain',
+          gearbox: '@manual6',
+          clutchDmf: '@clutchDmf',
+          payloadRoof: '555 kg · 100 kg',
+          towingBraked: '1,600 kg',
+          sprint0100: '9.0 s',
+          topSpeed: '212 km/h',
+          peakTorque: '360 Nm @ 1,800 rpm',
+          passingPunch: { en: 'Effortless 360 Nm Surge', de: 'Souveräner 360-Nm-Schub', ru: 'Уверенный подхват 360 Н·м' },
+          realWorldFuel: '5.9 L/100km',
+          tankRange: '64 L (~1,085 km)',
+          euroNorm: 'Euro 5 (Diesel)',
+          taxInsurance: '@tierMod',
+          serviceWear: '@tierModHigh'
+        },
         subStats: {
           buildQualityRust: {
             score: 7.4,
@@ -43872,6 +47666,12 @@ const CAR_ROSTER = [
               en: ['163 HP Chain 2.2 Diesel', 'Monitor Timing Chain Stretch & Injector Seals'],
               de: ['163-PS Ketten-Diesel 2.2', 'Steuerkette, Kupferringe & Ölstand prüfen'],
               ru: ['Цепной дизель 2.2 (163 л.с.)', 'Контроль цепи, шайб и уровня масла']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'R2AA (2.2 MZR-CD) · 2,184 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium Diesel · Twin Balance Shafts + Chain', de: 'Reihenvierzylinder Alu-Diesel · Ausgleichswellen + Kette', ru: 'Рядный 4-цил. алюминиевый дизель · Балансирные валы + цепь' } }], note: { en: 'Quick, refined 360 Nm Autobahn cruiser that easily tops 1,000 km per tank; treat injector washers, oil strainer, and chain stretch as mandatory maintenance.', de: 'Flotter, kultivierter 360-Nm-Autobahngleiter mit über 1.000 km Reichweite; Injektor-Dichtringe, Ölsieb und Steuerkette unbedingt im Blick behalten.', ru: 'Быстрый и мягкий трассовый дизель на 360 Н·м с запасом хода 1 000+ км; шайбы форсунок, маслоприёмник и цепь — обязательный регламент.' } },
+              forcedInduction: '@turboDiesel',
+              injection: '@commonRailDi',
+              timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -44119,6 +47919,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 6.9,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Check timing-chain stretch angle via OBD & replace diesel fuel filter', de: 'Steuerketten-Längung per Diagnose auslesen & Dieselfilter wechseln', ru: 'Контроль растяжения цепи сканером и замена топливного фильтра' }, cost: '€100–160' },
+                { when: { en: 'Every 100,000 km', de: 'Alle 100.000 km', ru: 'Каждые 100 000 км' }, action: { en: 'Change 6-MT gearbox oil & clean EGR valve / intake manifold', de: '6-Gang-Getriebeöl wechseln & AGR-Ventil reinigen', ru: 'Замена масла в 6-МКПП и чистка клапана EGR' }, cost: '€210–330' }
+              ],
+              critical: [
+                { when: { en: '100,000–160,000 km', de: '100.000–160.000 km', ru: '100 000–160 000 км' }, action: { en: 'Injector copper washers + oil pickup strainer cleaning & chain kit if >10°', de: 'Injektor-Kupferdichtringe + Ölsieb reinigen & Steuerkette bei Längung', ru: 'Медные шайбы форсунок + чистка маслоприёмника и цепь при растяжении' }, cost: '€450–1,400', risk: { en: 'Oil starvation kills turbo/bearings; stretched chain jumps timing', de: 'Ölmangel zerstört Turbo/Lager; gelängte Kette überspringt', ru: 'Масляное голодание губит турбину и вкладыши; цепь перескакивает' }, damage: '€3,500–5,500' },
+                { when: { en: '140,000–200,000 km', de: '140.000–200.000 km', ru: '140 000–200 000 км' }, action: { en: '360 Nm dual-mass flywheel + clutch kit & DPF soot/dilution check', de: '360-Nm-ZMS + Kupplungssatz & DPF-Ölverdünnung prüfen', ru: 'Двухмассовый маховик под 360 Н·м + сцепление и контроль DPF' }, cost: '€1,100–1,600', risk: { en: 'Heavy idle clatter and clutch slip in 5th/6th gear', de: 'Starkes Leerlauf-Klappern und Rutschen im 5./6. Gang', ru: 'Сильный стук на холостых и пробуксовка на 5–6 передачах' }, damage: '€2,400–3,800' }
+              ]
+            },
             badges: {
               en: ['Timing Chain & Copper Washers', 'Budget Chain + DMF Care'],
               de: ['Steuerkette, Kupferringe & ZMS', 'Teurere Diesel-Wartung beachten'],
@@ -44217,6 +48027,25 @@ const CAR_ROSTER = [
           performanceDynamics: 8.5,
           runningCostsTco: 7.2
         },
+        specOverrides: {
+          engineName: { en: '2.2L I4 MZR-CD 180 (Chain)', de: '2.2L Reihenvierzylinder 180 PS', ru: '2.2L R4 MZR-CD 180 (Цепь)' },
+          forcedInduction: '@turbo',
+          injection: '@commonRail',
+          timingDrive: '@chain',
+          gearbox: '@manual6',
+          clutchDmf: '@clutchDmf',
+          payloadRoof: '555 kg · 100 kg',
+          towingBraked: '1,600 kg',
+          sprint0100: '8.5 s',
+          topSpeed: '218 km/h',
+          peakTorque: '400 Nm @ 1,800 rpm',
+          passingPunch: { en: 'Muscular 400 Nm Mid-Range', de: 'Wuchtige 400 Nm ab 1.800/min', ru: 'Мощнейшая тяга 400 Н·м' },
+          realWorldFuel: '6.2 L/100km',
+          tankRange: '64 L (~1,030 km)',
+          euroNorm: 'Euro 5 (Diesel)',
+          taxInsurance: '@tierModHigh',
+          serviceWear: '@tierHigh'
+        },
         subStats: {
           buildQualityRust: {
             score: 7.4,
@@ -44312,6 +48141,12 @@ const CAR_ROSTER = [
               en: ['180 HP Chain 2.2 Diesel', 'Monitor Timing Chain Stretch & Injector Seals'],
               de: ['180-PS Ketten-Diesel 2.2', 'Steuerkette, Kupferringe & Ölstand prüfen'],
               ru: ['Цепной дизель 2.2 (180 л.с.)', 'Контроль цепи, шайб и уровня масла']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'R2AA High-Output · 2,184 cc' }, { k: 'architecture', v: { en: 'Inline-4 High-Output Diesel · 400 Nm + Timing Chain', de: 'Reihenvierzylinder Top-Diesel · 400 Nm + Steuerkette', ru: 'Рядный 4-цил. форсированный дизель · 400 Н·м + цепь' } }], note: { en: 'Flagship 400 Nm diesel that turns the Mazda 6 into a rapid long-distance express; demands strict injector-washer, chain-stretch, and 400 Nm DMF upkeep.', de: 'Flaggschiff-Diesel mit 400 Nm für müheloses Langstrecken-Tempo; verlangt strikte Pflege von Injektor-Dichtringen, Steuerkette und ZMS.', ru: 'Флагманский дизель 400 Н·м для быстрых марш-бросков; требует строгого контроля шайб форсунок, цепи и двухмассового маховика.' } },
+              forcedInduction: '@turboDiesel',
+              injection: '@commonRailDi',
+              timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -44559,6 +48394,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 6.6,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Read timing-chain stretch angle via OBD & replace diesel fuel filter', de: 'Steuerketten-Längung auslesen & Dieselfilter ersetzen', ru: 'Диагностика растяжения цепи и замена топливного фильтра' }, cost: '€100–160' },
+                { when: { en: 'Every 100,000 km', de: 'Alle 100.000 km', ru: 'Каждые 100 000 км' }, action: { en: 'Change 6-MT gearbox oil & clean EGR valve / boost pipes', de: '6-Gang-Getriebeöl wechseln & AGR-Ventil / Ladeluftstrecke reinigen', ru: 'Замена масла в 6-МКПП и чистка EGR / патрубков наддува' }, cost: '€220–350' }
+              ],
+              critical: [
+                { when: { en: '90,000–150,000 km', de: '90.000–150.000 km', ru: '90 000–150 000 км' }, action: { en: 'Injector copper washers + oil pickup screen clean & timing-chain kit', de: 'Injektor-Kupferdichtringe + Ölsieb reinigen & Steuerkettensatz', ru: 'Медные шайбы форсунок + чистка маслоприёмника и комплект цепи ГРМ' }, cost: '€480–1,450', risk: { en: 'Carbon-clogged strainer kills bearings/turbo; stretched chain jumps timing', de: 'Verkoktes Ölsieb zerstört Lager/Turbo; gelängte Kette überspringt', ru: 'Забитый маслоприёмник губит мотор и турбину; цепь перескакивает' }, damage: '€3,800–5,800' },
+                { when: { en: '130,000–190,000 km', de: '130.000–190.000 km', ru: '130 000–190 000 км' }, action: { en: '400 Nm dual-mass flywheel + heavy-duty clutch & turbo/DPF check', de: '400-Nm-ZMS + Kupplung & Turbolader-/DPF-Prüfung', ru: 'Двухмассовый маховик под 400 Н·м + сцепление и проверка турбины/DPF' }, cost: '€1,200–1,800', risk: { en: 'Rapid DMF wear under 400 Nm torque and boost-leak limp mode', de: 'Schneller ZMS-Verschleiß bei 400 Nm und Notlauf bei Ladedruckverlust', ru: 'Ускоренный износ маховика от 400 Н·м и аварийный режим по наддуву' }, damage: '€2,600–4,200' }
+              ]
+            },
             badges: {
               en: ['Timing Chain & Copper Washers', 'Budget Chain + DMF Care'],
               de: ['Steuerkette, Kupferringe & ZMS', 'Teurere Diesel-Wartung beachten'],
@@ -45739,6 +49584,153 @@ const CAR_ROSTER = [
         }
       }
     },
+    sharedSpecs: {
+      rustProtection: '@rustGood',
+      suspensionWear: '@suspDoubleWishbone',
+      starterAlternator: '@starter12v',
+      electronicsRisk: '@elecLow',
+      rideTuning: { en: 'Plush / Highway Cruiser', de: 'Komfortabel / Gleiter', ru: 'Мягкая / Трассовый круизер' },
+      highwayNoise: { en: '~67 dB · Very Quiet', de: '~67 dB · Sehr leise', ru: '~67 дБ · Очень тихо' },
+      cabinMaterials: { en: 'Sober Soft-Touch Quality', de: 'Solides Soft-Touch-Cockpit', ru: 'Качественный строгий салон' },
+      controls: '@physButtons',
+      turningCircle: '10.8 m',
+      visibility: { en: 'Good Forward · High Boot', de: 'Vorn top · Hohes Heck', ru: 'Хороший вперёд · Высокий багажник' },
+      euroNcap: '★★★★★ (2009)',
+      safetyTech: { en: '✓ VSC+ · ✓ 7 Airbags (Knee)', de: '✓ VSC+ · ✓ 7 Airbags (Knie)', ru: '✓ VSC+ · ✓ 7 подушек (коленная)' },
+      rearRoom: { en: 'Spacious · Flat Rear Floor', de: 'Geräumig · Flacher Boden', ru: 'Просторно · Ровный пол сзади' },
+      isofixEntry: { en: '✓ 2× ISOFIX · Wide Doors', de: '✓ 2× ISOFIX · Große Türen', ru: '✓ 2× ISOFIX · Широкие двери' },
+      bootVolume: '509 L / 1,400 L',
+      seatUtility: { en: '✓ 60/40 Split + Ski Hatch', de: '✓ 60/40 + Durchlade', ru: '✓ 60/40 + лючок для лыж' },
+      payloadRoof: '530 kg · 75 kg',
+      driveline: { en: 'FWD (Low-Loss)', de: 'Frontantrieb (Effizient)', ru: 'Передний привод' },
+      chassisFeel: { en: 'Calm · Safe & Composed', de: 'Ruhig · Sicher & gelassen', ru: 'Спокойное · Надёжный курс' },
+      tractionDiff: { en: 'FWD · VSC+ Stability', de: 'Frontantrieb · VSC+', ru: 'Передний привод · VSC+' },
+      braking1000: '~36.8 m',
+      brakeSetup: '@discs4',
+      valueRetention: '@retHigh',
+      resaleDemand: '@demSteady'
+    },
+    sharedDossierBreakdowns: {
+      transmissionDriveline: { gearbox: '@gbManual6Toyota', clutchDmf: '@clutchSingle', driveline: '@driveFwd' },
+      buildQualityRust: { rustProtection: '@rustGalvanized12y', suspensionWear: '@suspDoubleWishbone' },
+      electronicsReliability: { starterAlternator: '@starterStandard12v', electronicsRisk: '@elecSimpleEps' },
+      rideNoiseComfort: {
+        rideTuning: {
+          specs: [
+            { k: 'damperSetup', v: { en: 'Comfort-Biased Springs · Double-Wishbone Rear', de: 'Komfort-Abstimmung · Doppelquerlenker hinten', ru: 'Комфортная подвеска · Двухрычажка сзади' } },
+            { k: 'seatSupport', v: { en: 'Wide Long-Distance Seats · Low Fatigue', de: 'Breite Langstreckensitze · Sehr ermüdungsarm', ru: 'Широкие кресла для дальних поездок' } }
+          ],
+          note: { en: 'Built as a relaxed European Autobahn cruiser — prioritizes plush suspension compliance over sharp cornering.', de: 'Als entspannter Reisewagen abgestimmt — schluckt lange Autobahn-Etappen und schlechte Straßen souverän weg.', ru: 'Создан как спокойный европейский круизер — мягко глотает неровности и не утомляет на трассе.' }
+        },
+        highwayNoise: {
+          specs: [
+            { k: 'cabinNoise130', v: { en: '~67 dB(A) at 130 km/h (Quiet Petrols)', de: '~67 dB(A) bei 130 km/h (Leise Benziner)', ru: '~67 дБ(А) при 130 км/ч (Тихие бензины)' } },
+            { k: 'acousticGlass', v: { en: 'Strong Firewall & Door Sealing · Calm Cruise', de: 'Gute Stirnwand- & Türdämmung · Ruhiges Gleiten', ru: 'Хорошая шумоизоляция щита и дверей' } }
+          ],
+          note: { en: 'Notably quieter at motorway speeds than a Mazda 6 or compact hatchbacks.', de: 'Auf der Autobahn spürbar leiser als ein Mazda 6 oder Kompaktwagen.', ru: 'Заметно тише на трассе, чем Mazda 6 или хэтчбеки C-класса.' }
+        }
+      },
+      interiorQualityFeatures: {
+        cabinMaterials: {
+          specs: [
+            { k: 'dashboardTrim', v: { en: 'Soft-Touch Dash · Conservative, Tightly Screwed Cabin', de: 'Soft-Touch-Armaturenbrett · Sehr solide verschraubt', ru: 'Мягкая панель · Добротная, нескрипучая сборка' } },
+            { k: 'seatUpholstery', v: { en: 'Durable Cloth, Alcantara/Leather or Full Leather', de: 'Robuster Stoff, Alcantara/Leder oder Vollleder', ru: 'Износостойкая ткань, алькантара или кожа' } }
+          ],
+          note: { en: 'Understated design, but cabin trim and switchgear hold up remarkably well at 200,000+ km.', de: 'Unaufgeregtes Design, aber extrem abriebfeste Schalter und Verkleidungen auch jenseits von 200.000 km.', ru: 'Сдержанный дизайн, но материалы и кнопки сохраняют свежий вид даже после 200 000 км.' }
+        },
+        controls: '@controlsPhys'
+      },
+      visibilityManeuverability: {
+        turningCircle: {
+          specs: [
+            { k: 'turnDiameter', v: { en: '10.8 m (Surprisingly Tight for a 4.7 m Sedan)', de: '10,8 m (Sehr handlich für 4,7 m Länge)', ru: '10,8 м (Компактный разворот для 4,7 м)' } },
+            { k: 'steeringType', v: { en: 'Light Electric Power Steering (EPS)', de: 'Leichte elektrische Servolenkung (EPS)', ru: 'Лёгкий электроусилитель (ЭУР)' } }
+          ],
+          note: { en: 'Tight 10.8 m turning circle makes city U-turns and parking easier than a Mondeo or Mazda 6.', de: 'Der enge 10,8-m-Wendekreis macht Stadtverkehr und Parken leichter als bei Mondeo oder Mazda 6.', ru: 'Разворот 10,8 м делает маневрирование в городе проще, чем на Mondeo или Mazda 6.' }
+        },
+        visibility: {
+          specs: [
+            { k: 'allRoundView', v: { en: 'Good Forward Glass · High Sedan Boot Deck', de: 'Gute Sicht nach vorn · Hohes Limousinen-Heck', ru: 'Хороший обзор вперёд · Высокая корма седана' } },
+            { k: 'rearView', v: { en: 'Reversing Camera Common on 2012+ Facelift Trims', de: 'Rückfahrkamera ab Facelift 2012 häufig verbaut', ru: 'Камера заднего вида часто есть с рестайлинга 2012' } }
+          ],
+          note: { en: '2012+ Toyota Touch infotainment trims typically include a crisp factory reversing camera.', de: 'Modelle ab 2012 mit Toyota-Touch-Display bieten meist eine serienmäßige Rückfahrkamera.', ru: 'Версии с 2012 года с экраном Toyota Touch обычно оснащены штатной камерой заднего вида.' }
+        }
+      },
+      safetyProtection: {
+        euroNcap: {
+          specs: [
+            { k: 'crashRating', v: { en: '5 Stars Euro NCAP (2009) · 90% Adult / 86% Child', de: '5 Sterne Euro NCAP (2009) · 90% Erwachsene / 86% Kinder', ru: '5 звёзд Euro NCAP (2009) · 90% взрослые / 86% дети' } },
+            { k: 'bodyStructure', v: { en: '7 Standard Airbags incl. Driver Knee + Active Headrests', de: '7 Serien-Airbags inkl. Knieairbag + aktive Kopfstützen', ru: '7 подушек в базе (вкл. коленную) + активные подголовники' } }
+          ],
+          note: { en: 'High 5-star crash score with 7 standard airbags across every trim level.', de: 'Starkes 5-Sterne-Crashtestergebnis mit 7 serienmäßigen Airbags in jeder Ausstattung.', ru: 'Высокий 5-звёздочный рейтинг с 7 подушками безопасности в любой комплектации.' }
+        },
+        safetyTech: {
+          specs: [
+            { k: 'activeSafety', v: { en: 'VSC+ (Steering-Assist Stability), TRC, ABS/EBD, Brake Assist', de: 'VSC+ (Lenk-ESP), TRC, ABS/EBD, Bremsassistent', ru: 'VSC+ (стабилизация с подруливанием), TRC, ABS/EBD' } },
+            { k: 'driverAssists', v: { en: 'Optional Adaptive Cruise (ACC) & Pre-Crash on Top Trims', de: 'Optional Abstandstempomat (ACC) & Pre-Crash in Top-Trims', ru: 'Опционально адаптивный круиз (ACC) в топ-версиях' } }
+          ],
+          note: { en: 'Solid active safety suite; later 2015+ facelift cars even added Toyota Safety Sense autonomous braking.', de: 'Solide aktive Sicherheit; das zweite Facelift ab 2015 ergänzte sogar Toyota Safety Sense mit Notbremsassistent.', ru: 'Надёжная активная безопасность; после рестайлинга 2015 года добавился комплекс Toyota Safety Sense.' }
+        }
+      },
+      passengerSpaceErgonomics: {
+        rearRoom: {
+          specs: [
+            { k: 'rearSpace', v: { en: 'Generous Rear Legroom · Almost Completely Flat Rear Floor', de: 'Sehr viel Beinfreiheit · Nahezu ebener Fondboden', ru: 'Просторный второй ряд · Почти идеально ровный пол' } },
+            { k: 'frontErgo', v: { en: 'Relaxed Touring Position · Good Visibility & Armrests', de: 'Entspannte Reise-Sitzposition · Gute Ablagen', ru: 'Удобная туристическая посадка и подлокотники' } }
+          ],
+          note: { en: 'Flat rear floor makes carrying three passengers across the back far more comfortable than RWD rivals.', de: 'Durch den flachen Boden im Fond sitzen auch drei Personen deutlich bequemer als in Hecktrieblern.', ru: 'Ровный пол сзади делает поездки втроём намного удобнее, чем в заднеприводных седанах.' }
+        },
+        isofixEntry: {
+          specs: [
+            { k: 'childSeats', v: { en: '2× Outer Rear ISOFIX + Top-Tether Anchors', de: '2× ISOFIX außen hinten + Top-Tether', ru: '2× ISOFIX сзади + Top-Tether' } },
+            { k: 'doorAccess', v: { en: 'Wide Rear Doors · Ample Depth for Rear-Facing Seats', de: 'Weite Fondtüren · Genug Tiefe für Reboarder-Sitze', ru: 'Широкие задние двери · Достаточно места для кресел' } }
+          ],
+          note: { en: 'Easy family access with generous distance between rear bench and front seatbacks.', de: 'Familienfreundlicher Zugang mit großem Abstand zwischen Rückbank und Vordersitzen.', ru: 'Удобный семейный доступ и большой запас места для установки детских кресел.' }
+        }
+      },
+      interiorBootSpace: {
+        bootVolume: {
+          specs: [
+            { k: 'bootCapacity', v: { en: '509 L (Sedan) / 543–1,609 L (Touring Sports Wagon)', de: '509 L (Limousine) / 543–1.609 L (Kombi)', ru: '509 л (Седан) / 543–1 609 л (Универсал)' } },
+            { k: 'loadingLip', v: { en: 'Deep Square Sedan Trunk · Wide Opening', de: 'Tiefer rechteckiger Kofferraum · Breite Öffnung', ru: 'Глубокий квадратный багажник с широким проёмом' } }
+          ],
+          note: { en: 'Generous 509 L sedan trunk swallows full family luggage effortlessly.', de: 'Geräumiger 509-Liter-Kofferraum schluckt Familiengepäck mühelos.', ru: 'Вместительный 509-литровый багажник без труда вмещает семейный багаж.' }
+        },
+        seatUtility: {
+          specs: [
+            { k: 'foldingSystem', v: { en: '✓ 60/40 Split-Fold Rear Seats + Center Ski Pass-Through', de: '✓ 60/40 umklappbare Rückbank + Ski-Durchlade', ru: '✓ Спинка 60/40 + лючок для длинномеров' } }
+          ],
+          note: { en: 'Standard 60/40 folding plus center ski hatch adds long-item flexibility to the classic sedan shape.', de: '60/40-Umklappung samt Durchladeklappe macht auch die Limousine alltagstauglich für lange Gegenstände.', ru: 'Складная спинка 60/40 и лючок позволяют перевозить длинные предметы в седане.' }
+        }
+      },
+      payloadTowing: {
+        payloadRoof: {
+          specs: [
+            { k: 'maxPayload', v: { en: '~530 kg (5 Adults + Full Luggage)', de: '~530 kg (5 Personen + volles Gepäck)', ru: '~530 кг (5 человек + полный багажник)' } },
+            { k: 'roofLoad', v: { en: '75 kg Approved Dynamic Roof Load', de: '75 kg zugelassene Dachlast', ru: '75 кг допустимая нагрузка на крышу' } }
+          ],
+          note: { en: 'Solid 530 kg payload handles holiday loads smoothly; 2.2 diesels tow up to 1,800 kg.', de: 'Solide 530 kg Zuladung für Urlaubsfahrten; die 2.2-Diesel ziehen bis zu 1.800 kg.', ru: 'Запас 530 кг отлично подходит для путешествий; дизели 2.2 тянут до 1 800 кг.' }
+        },
+        towingBraked: '@towingDynamic'
+      },
+      accelerationOvertaking: { sprint0100: '@sprintDynamic', topSpeed: '@vmaxDynamic' },
+      midRangeTorquePassing: { peakTorque: '@torqueDynamic', passingPunch: '@passingDynamic' },
+      handlingAgility: {
+        chassisFeel: {
+          specs: [
+            { k: 'steeringFeel', v: { en: 'Calm, Isolated EPS · Rock-Steady Straight-Line Tracking', de: 'Ruhige EPS-Lenkung · Sehr stabiler Geradeauslauf', ru: 'Спокойный ЭУР · Отличная курсовая устойчивость' } },
+            { k: 'cornering', v: { en: 'Safe Understeer Bias · Built for Stability, Not Apexes', de: 'Sicheres Untersteuern · Auf Stabilität ausgelegt', ru: 'Безопасный баланс · Настроен на стабильность' } }
+          ],
+          note: { en: 'Less playful than a Mazda 6 or Mondeo, but reassuringly calm and predictable in wet highway weather.', de: 'Weniger sportlich als Mazda 6 oder Mondeo, dafür bei Regen und hohem Tempo extrem gelassen und sicher.', ru: 'Менее азартный, чем Mazda 6 или Mondeo, но очень спокойный и предсказуемый на мокрой трассе.' }
+        },
+        tractionDiff: '@tractionFwdOpen'
+      },
+      brakingPerformance: { braking1000: '@brakingDistDynamic', brakeSetup: '@brakeSetupDiscs4' },
+      efficiencyFuel: { realWorldFuel: '@fuelDynamic', tankRange: '@tankDynamic' },
+      taxInsuranceNorm: { euroNorm: '@euroDynamic', taxInsurance: '@taxInsDynamic' },
+      maintenanceRepairCosts: { timingDrive: '@timingDynamic', serviceWear: '@serviceDynamic' },
+      depreciationResale: { valueRetention: '@retHigh', resaleDemand: '@demSteady' }
+    },
     engines: [
       {
         id: '1.6-valvematic',
@@ -45812,6 +49804,14 @@ const CAR_ROSTER = [
           performanceDynamics: 6.5,
           runningCostsTco: 8.2
         },
+        specOverrides: {
+          engineName: { en: '1.6L I4 Valvematic (Chain)', de: '1.6L Reihenvierzylinder (Kette)', ru: '1.6L R4 Valvematic (Цепь)' },
+          forcedInduction: '@na', injection: '@port', timingDrive: '@chain', gearbox: '@manual6', clutchDmf: '@singleClutch',
+          payloadRoof: '520 kg · 75 kg', towingBraked: '1,300 kg',
+          sprint0100: '11.0 s', topSpeed: '195 km/h', peakTorque: '160 Nm @ 4,400 rpm',
+          passingPunch: { en: 'Needs Revs To Overtake', de: 'Braucht Drehzahl', ru: 'Нужны обороты для обгона' },
+          realWorldFuel: '7.2 L/100km', tankRange: '60 L (~830 km)', euroNorm: 'Euro 5 (Petrol)', taxInsurance: '@tierLow', serviceWear: '@tierLow'
+        },
         subStats: {
           powertrainDurability: {
             score: 8.8,
@@ -45819,6 +49819,10 @@ const CAR_ROSTER = [
               en: ['Simple 1.6 Chain Petrol', 'Check Oil Level & History'],
               de: ['Einfacher 1.6-Kettenmotor', 'Ölstand & Historie prüfen'],
               ru: ['Простой цепной 1.6', 'Следить за маслом и историей']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: '1ZR-FAE · 1,598 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium · Valvematic Variable Lift (Chain)', de: 'Reihenvierzylinder Alu · Valvematic-Steuerung (Kette)', ru: 'Рядный 4-цил. алюминий · Valvematic (Цепь)' } }], note: { en: 'Reliable, economical entry petrol; modest torque for a 1.4-ton sedan, so best suited to flat commuting rather than heavy mountain towing.', de: 'Sehr zuverlässiger, sparsamer Einstiegsbenziner; für die 1,4-Tonnen-Limousine eher gemütlich, aber extrem wartungsarm.', ru: 'Надёжный и экономичный базовый атмосферник; спокойный для тяжёлого седана, но очень дешёвый в содержании.' } },
+              forcedInduction: '@naNoTurbo', injection: '@portInj', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -46154,6 +50158,17 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 8.9,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Change Multidrive S CVT fluid (if automatic) or 6-MT gearbox oil', de: 'Multidrive-S-CVT-Öl (bei Automatik) oder 6-Gang-Getriebeöl wechseln', ru: 'Замена жидкости вариатора Multidrive S (если CVT) или масла 6-МКПП' }, cost: '€160–290' },
+                { when: { en: 'Every 90,000 km', de: 'Alle 90.000 km', ru: 'Каждые 90 000 км' }, action: { en: 'Replace iridium spark plugs & inspect auxiliary drive belt', de: 'Iridium-Zündkerzen wechseln & Keilrippenriemen prüfen', ru: 'Замена иридиевых свечей и проверка приводного ремня' }, cost: '€150–230' },
+                { when: { en: '150,000 km / 10 yrs', de: '150.000 km / 10 J.', ru: '150 000 км / 10 лет' }, action: { en: 'Flush Toyota SLLC coolant & inspect water pump for seepage', de: 'Toyota-SLLC-Kühlmittel wechseln & Wasserpumpe prüfen', ru: 'Замена антифриза SLLC и проверка помпы на течь' }, cost: '€130–200' }
+              ],
+              critical: [
+                { when: { en: '140,000–220,000 km', de: '140.000–220.000 km', ru: '140 000–220 000 км' }, action: { en: 'Valvematic variable-lift actuator module (if Check Engine / limp mode)', de: 'Valvematic-Stellmotor (bei Motorkontrollleuchte / Notlauf)', ru: 'Блок управления Valvematic (при ошибке и потере тяги)' }, cost: '€900–1,400', risk: { en: 'Engine stuck in limp mode with flat power delivery', de: 'Dauerhafter Notlauf mit stark gedrosselter Leistung', ru: 'Постоянный аварийный режим и резкая потеря мощности' }, damage: '€1,400–1,800' },
+                { when: { en: '120,000–190,000 km', de: '120.000–190.000 km', ru: '120 000–190 000 км' }, action: { en: 'T27 electronic parking brake (EPB) rear actuator module', de: 'T27 elektronische Feststellbremse (EPB-Stellmodul hinten)', ru: 'Блок электронного стояночного тормоза (EPB) T27' }, cost: '€550–1,050', risk: { en: 'Warning lights or jammed rear parking brake cables', de: 'Fehlermeldung oder blockierende elektrische Handbremse', ru: 'Ошибки на панели или заклинивание ручника' }, damage: '€1,100–1,500' }
+              ]
+            },
             badges: {
               en: ['No Turbo / DPF / Belt Bills', 'Affordable Routine Parts'],
               de: ['Kein Turbo / DPF / Zahnriemen', 'Günstige Verschleißteile'],
@@ -46249,6 +50264,15 @@ const CAR_ROSTER = [
           performanceDynamics: 6.9,
           runningCostsTco: 8.2
         },
+        specOverrides: {
+          engineName: { en: '1.8L I4 Valvematic (Chain)', de: '1.8L Reihenvierzylinder (Kette)', ru: '1.8L R4 Valvematic (Цепь)' },
+          forcedInduction: '@na', injection: '@port', timingDrive: '@chain',
+          gearbox: { en: '6-MT / Multidrive S CVT', de: '6-Gang / Multidrive-S-CVT', ru: '6-МКПП / Вариатор CVT' },
+          clutchDmf: '@singleClutch', towingBraked: '1,500 kg',
+          sprint0100: '10.4 s', topSpeed: '200 km/h', peakTorque: '180 Nm @ 4,000 rpm',
+          passingPunch: { en: 'Relaxed Linear Pull', de: 'Gleichmäßiger Durchzug', ru: 'Ровная спокойная тяга' },
+          realWorldFuel: '7.4 L/100km', tankRange: '60 L (~810 km)', euroNorm: 'Euro 5 (Petrol)', taxInsurance: '@tierLowMod', serviceWear: '@tierLow'
+        },
         subStats: {
           powertrainDurability: {
             score: 8.9,
@@ -46256,6 +50280,10 @@ const CAR_ROSTER = [
               en: ['Proven 1.8 Chain Petrol', 'Check Oil Level & History'],
               de: ['Bewährter 1.8-Kettenmotor', 'Ölstand & Historie prüfen'],
               ru: ['Проверенный цепной 1.8', 'Следить за маслом и историей']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: '2ZR-FAE · 1,798 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium · Valvematic Chain Petrol', de: 'Reihenvierzylinder Alu · Valvematic-Kettenbenziner', ru: 'Рядный 4-цил. алюминий · Цепной Valvematic' } }], note: { en: 'The #1 pick of the T27 Avensis range: combines Corolla-like longevity with enough punch for family highway cruising and zero diesel traps.', de: 'Der klare Favorit im T27 Avensis: extrem langlebig, kräftig genug für die Autobahn und komplett frei von Diesel-Risiken.', ru: 'Лучший выбор в линейке Avensis T27: легендарный ресурс, достаточная динамика и отсутствие дизельных проблем.' } },
+              forcedInduction: '@naNoTurbo', injection: '@portInj', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -46591,6 +50619,17 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 8.8,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Change Multidrive S CVT fluid (if automatic) or 6-MT gearbox oil', de: 'Multidrive-S-CVT-Öl (bei Automatik) oder 6-Gang-Getriebeöl wechseln', ru: 'Замена жидкости вариатора Multidrive S (если CVT) или масла 6-МКПП' }, cost: '€160–290' },
+                { when: { en: 'Every 90,000 km', de: 'Alle 90.000 km', ru: 'Каждые 90 000 км' }, action: { en: 'Replace iridium spark plugs & inspect auxiliary drive belt', de: 'Iridium-Zündkerzen wechseln & Keilrippenriemen prüfen', ru: 'Замена иридиевых свечей и проверка приводного ремня' }, cost: '€150–230' },
+                { when: { en: '150,000 km / 10 yrs', de: '150.000 km / 10 J.', ru: '150 000 км / 10 лет' }, action: { en: 'Flush Toyota SLLC coolant & inspect water pump for seepage', de: 'Toyota-SLLC-Kühlmittel wechseln & Wasserpumpe prüfen', ru: 'Замена антифриза SLLC и проверка помпы на течь' }, cost: '€130–200' }
+              ],
+              critical: [
+                { when: { en: '140,000–220,000 km', de: '140.000–220.000 km', ru: '140 000–220 000 км' }, action: { en: 'Valvematic variable-lift actuator module (if Check Engine / limp mode)', de: 'Valvematic-Stellmotor (bei Motorkontrollleuchte / Notlauf)', ru: 'Блок управления Valvematic (при ошибке и потере тяги)' }, cost: '€900–1,400', risk: { en: 'Engine stuck in limp mode with flat power delivery', de: 'Dauerhafter Notlauf mit stark gedrosselter Leistung', ru: 'Постоянный аварийный режим и резкая потеря мощности' }, damage: '€1,400–1,800' },
+                { when: { en: '120,000–190,000 km', de: '120.000–190.000 km', ru: '120 000–190 000 км' }, action: { en: 'T27 electronic parking brake (EPB) rear actuator module', de: 'T27 elektronische Feststellbremse (EPB-Stellmodul hinten)', ru: 'Блок электронного стояночного тормоза (EPB) T27' }, cost: '€550–1,050', risk: { en: 'Warning lights or jammed rear parking brake cables', de: 'Fehlermeldung oder blockierende elektrische Handbremse', ru: 'Ошибки на панели или заклинивание ручника' }, damage: '€1,100–1,500' }
+              ]
+            },
             badges: {
               en: ['No Turbo / DPF / Belt Bills', 'Affordable Routine Parts'],
               de: ['Kein Turbo / DPF / Zahnriemen', 'Günstige Verschleißteile'],
@@ -46679,6 +50718,15 @@ const CAR_ROSTER = [
           performanceDynamics: 7.1,
           runningCostsTco: 7.6
         },
+        specOverrides: {
+          engineName: { en: '2.0L I4 Valvematic (Chain)', de: '2.0L Reihenvierzylinder (Kette)', ru: '2.0L R4 Valvematic (Цепь)' },
+          forcedInduction: '@na', injection: '@port', timingDrive: '@chain',
+          gearbox: { en: '6-MT / Multidrive S CVT', de: '6-Gang / Multidrive-S-CVT', ru: '6-МКПП / Вариатор CVT' },
+          clutchDmf: '@singleClutch', towingBraked: '1,500 kg',
+          sprint0100: '9.8 s', topSpeed: '205 km/h', peakTorque: '196 Nm @ 4,000 rpm',
+          passingPunch: { en: 'Smooth Confident Delivery', de: 'Souveräner ruhiger Antritt', ru: 'Плавная уверенная тяга' },
+          realWorldFuel: '7.8 L/100km', tankRange: '60 L (~770 km)', euroNorm: 'Euro 5 (Petrol)', taxInsurance: '@tierMod', serviceWear: '@tierLow'
+        },
         subStats: {
           powertrainDurability: {
             score: 8.9,
@@ -46686,6 +50734,10 @@ const CAR_ROSTER = [
               en: ['Proven 2.0 Chain Petrol', 'Check Oil Level & History'],
               de: ['Bewährter 2.0-Kettenmotor', 'Ölstand & Historie prüfen'],
               ru: ['Проверенный цепной 2.0', 'Следить за маслом и историей']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: '3ZR-FAE · 1,987 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium · 2.0L Valvematic Chain', de: 'Reihenvierzylinder Alu · 2.0L Valvematic-Kette', ru: 'Рядный 4-цил. алюминий · 2.0L Valvematic (Цепь)' } }], note: { en: 'Refined top petrol option with noticeably fuller low-end torque than the 1.6/1.8 while retaining Toyota chain-driven simplicity.', de: 'Souveräner Top-Benziner mit spürbar mehr Druck untenrum als 1.6/1.8 bei gleicher robuster Toyota-Ketten-Technik.', ru: 'Спокойный топовый бензин с более плотной тягой на низах и высокой надёжностью цепного атмосферника.' } },
+              forcedInduction: '@naNoTurbo', injection: '@portInj', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -47021,6 +51073,17 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 8.6,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Change Multidrive S CVT fluid (if automatic) or 6-MT gearbox oil', de: 'Multidrive-S-CVT-Öl (bei Automatik) oder 6-Gang-Getriebeöl wechseln', ru: 'Замена жидкости вариатора Multidrive S (если CVT) или масла 6-МКПП' }, cost: '€160–290' },
+                { when: { en: 'Every 90,000 km', de: 'Alle 90.000 km', ru: 'Каждые 90 000 км' }, action: { en: 'Replace iridium spark plugs & inspect auxiliary drive belt', de: 'Iridium-Zündkerzen wechseln & Keilrippenriemen prüfen', ru: 'Замена иридиевых свечей и проверка приводного ремня' }, cost: '€150–230' },
+                { when: { en: '150,000 km / 10 yrs', de: '150.000 km / 10 J.', ru: '150 000 км / 10 лет' }, action: { en: 'Flush Toyota SLLC coolant & inspect water pump for seepage', de: 'Toyota-SLLC-Kühlmittel wechseln & Wasserpumpe prüfen', ru: 'Замена антифриза SLLC и проверка помпы на течь' }, cost: '€130–200' }
+              ],
+              critical: [
+                { when: { en: '140,000–220,000 km', de: '140.000–220.000 km', ru: '140 000–220 000 км' }, action: { en: 'Valvematic variable-lift actuator module (if Check Engine / limp mode)', de: 'Valvematic-Stellmotor (bei Motorkontrollleuchte / Notlauf)', ru: 'Блок управления Valvematic (при ошибке и потере тяги)' }, cost: '€900–1,400', risk: { en: 'Engine stuck in limp mode with flat power delivery', de: 'Dauerhafter Notlauf mit stark gedrosselter Leistung', ru: 'Постоянный аварийный режим и резкая потеря мощности' }, damage: '€1,400–1,800' },
+                { when: { en: '120,000–190,000 km', de: '120.000–190.000 km', ru: '120 000–190 000 км' }, action: { en: 'T27 electronic parking brake (EPB) rear actuator module', de: 'T27 elektronische Feststellbremse (EPB-Stellmodul hinten)', ru: 'Блок электронного стояночного тормоза (EPB) T27' }, cost: '€550–1,050', risk: { en: 'Warning lights or jammed rear parking brake cables', de: 'Fehlermeldung oder blockierende elektrische Handbremse', ru: 'Ошибки на панели или заклинивание ручника' }, damage: '€1,100–1,500' }
+              ]
+            },
             badges: {
               en: ['No Turbo / DPF / Belt Bills', 'Affordable Routine Parts'],
               de: ['Kein Turbo / DPF / Zahnriemen', 'Günstige Verschleißteile'],
@@ -47121,6 +51184,14 @@ const CAR_ROSTER = [
           performanceDynamics: 6.8,
           runningCostsTco: 8.2
         },
+        specOverrides: {
+          engineName: { en: '1.6L I4 D-4D (BMW-Derived)', de: '1.6L Reihenvierzylinder Diesel', ru: '1.6L R4 D-4D (база BMW)' },
+          forcedInduction: '@turbo', injection: '@commonRail', timingDrive: '@chain', gearbox: '@manual6', clutchDmf: '@clutchDmf',
+          payloadRoof: '520 kg · 75 kg', towingBraked: '1,500 kg',
+          sprint0100: '12.0 s', topSpeed: '190 km/h', peakTorque: '270 Nm @ 1,750 rpm',
+          passingPunch: { en: 'Frugal 270 Nm Cruise', de: 'Sparsame 270 Nm', ru: 'Экономичные 270 Н·м' },
+          realWorldFuel: '5.0 L/100km', tankRange: '60 L (~1,200 km)', euroNorm: 'Euro 6 (Diesel)', taxInsurance: '@tierLowMod', serviceWear: '@tierMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.6,
@@ -47128,6 +51199,10 @@ const CAR_ROSTER = [
               en: ['Modern 1.6 Diesel Chain', 'Cold-Start Rattle = Warning'],
               de: ['Moderner 1.6-Diesel mit Kette', 'Rasseln beim Kaltstart = Warnung'],
               ru: ['Современный 1.6 с цепью', 'Стук на холодную = тревога']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: '1WW (BMW N47-Derived) · 1,598 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium Diesel · Rear-Mounted Timing Chain', de: 'Reihenvierzylinder Alu-Diesel · Hinten liegende Kette', ru: 'Рядный 4-цил. дизель (база BMW) · Цепь сзади' } }], note: { en: 'Clean Euro 6 economy champion (1,200 km range), sourced from BMW’s N47 family — listen for rear timing-chain scrape past 150,000 km.', de: 'Sauberer Euro-6-Sparmeister (1.200 km Reichweite) auf BMW-N47-Basis — ab 150.000 km auf Schleifgeräusche der hinteren Steuerkette achten.', ru: 'Очень экономичный дизель Euro 6 (база BMW N47) с запасом хода 1 200 км — слушайте заднюю цепь ГРМ после 150 000 км.' } },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -47463,6 +51538,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.4,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Replace diesel fuel filter & inspect 6-MT gearbox oil', de: 'Dieselfilter wechseln & 6-Gang-Getriebeöl prüfen', ru: 'Замена топливного фильтра и проверка масла в 6-МКПП' }, cost: '€140–220' },
+                { when: { en: 'Every 100,000 km', de: 'Alle 100.000 km', ru: 'Каждые 100 000 км' }, action: { en: 'Inspect harmonic crank pulley & clean EGR cooler/valve', de: 'Kurbelwellen-Riemenscheibe prüfen & AGR-Ventil reinigen', ru: 'Проверка демпферного шкива коленвала и чистка EGR' }, cost: '€200–320' }
+              ],
+              critical: [
+                { when: { en: '150,000–220,000 km', de: '150.000–220.000 km', ru: '150 000–220 000 км' }, action: { en: 'Rear-mounted timing chain kit (BMW N47-derived 1WW/2WW architecture)', de: 'Hinten liegender Steuerkettensatz (BMW-N47-Basis 1WW/2WW)', ru: 'Замена задней цепи ГРМ (архитектура BMW N47 — 1WW/2WW)' }, cost: '€1,400–2,100', risk: { en: 'Scraping/rattling chain at firewall can snap and destroy valves', de: 'Schleifende Kette an der Spritzwand kann reißen — kapitaler Motorschaden', ru: 'Шуршащая цепь у моторного щита может оборваться и погнуть клапаны' }, damage: '€4,000–6,000' },
+                { when: { en: '140,000–200,000 km', de: '140.000–200.000 km', ru: '140 000–200 000 км' }, action: { en: 'Dual-mass flywheel + clutch & T27 EPB parking brake actuator', de: 'ZMS + Kupplung & T27-EPB-Feststellbremsmodul', ru: 'Двухмассовый маховик + сцепление и блок EPB' }, cost: '€950–1,450', risk: { en: 'Heavy idle vibration or jammed electric parking brake', de: 'Starkes Leerlauf-Rasseln oder blockierte Handbremse', ru: 'Сильная вибрация на холостых или отказ электроручника' }, damage: '€1,800–2,400' }
+              ]
+            },
             badges: {
               en: ['Rear Timing Chain = Costly If Neglected', 'Flywheel & Filter Care'],
               de: ['Hintere Steuerkette teuer bei Vernachlässigung', 'Schwungrad & Filter pflegen'],
@@ -47555,6 +51640,13 @@ const CAR_ROSTER = [
           performanceDynamics: 7.4,
           runningCostsTco: 7.2
         },
+        specOverrides: {
+          engineName: { en: '2.0L I4 D-4D 126 (Chain)', de: '2.0L Reihenvierzylinder 126 PS', ru: '2.0L R4 D-4D 126 (Цепь)' },
+          forcedInduction: '@turbo', injection: '@commonRail', timingDrive: '@chain', gearbox: '@manual6', clutchDmf: '@clutchDmf',
+          towingBraked: '1,500 kg', sprint0100: '10.5 s', topSpeed: '200 km/h', peakTorque: '310 Nm @ 1,600 rpm',
+          passingPunch: { en: 'Easy 310 Nm Highway Pull', de: 'Solide 310 Nm ab 1.600/min', ru: 'Уверенные 310 Н·м с низов' },
+          realWorldFuel: '5.9 L/100km', tankRange: '60 L (~1,015 km)', euroNorm: 'Euro 5 (Diesel)', taxInsurance: '@tierMod', serviceWear: '@tierMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.2,
@@ -47562,6 +51654,10 @@ const CAR_ROSTER = [
               en: ['Chain 2.0 Diesel (Early Build)', 'Head Seal & Soot Need Checks'],
               de: ['2.0-Kettendiesel (Frühe Serie)', 'Kopfdichtung & Ruß prüfen'],
               ru: ['Цепной дизель 2.0 (ранний)', 'Проверять ГБЦ и сажу']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: '1AD-FTV · 1,998 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium Toyota Diesel · Timing Chain', de: 'Reihenvierzylinder Toyota-Alu-Diesel · Steuerkette', ru: 'Рядный 4-цил. дизель Toyota · Цепь ГРМ' } }], note: { en: 'More dependable than the 2.2L 2AD sibling with far fewer head-gasket issues; keep EGR clean and drive regularly on highways for DPF health.', de: 'Zuverlässiger als der 2.2-Liter-Bruder mit deutlich weniger Kopfdichtungs-Risiko; AGR sauber halten und Langstrecke für den DPF fahren.', ru: 'Надёжнее 2.2-литрового собрата и почти без проблем с прокладкой ГБЦ; следите за чистотой EGR и регенерацией DPF.' } },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -47897,6 +51993,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.0,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Clean EGR valve, replace diesel fuel filter & change gearbox oil', de: 'AGR-Ventil reinigen, Dieselfilter & Getriebeöl wechseln', ru: 'Чистка клапана EGR, замена топливного фильтра и масла в КПП' }, cost: '€200–330' },
+                { when: { en: 'Every 120,000 km', de: 'Alle 120.000 km', ru: 'Каждые 120 000 км' }, action: { en: 'Inspect glow plugs, auxiliary belt & Denso SCV fuel valve', de: 'Glühkerzen, Keilrippenriemen & Denso-SCV-Ventil prüfen', ru: 'Проверка свечей накала, ремня и клапана SCV Denso' }, cost: '€180–280' }
+              ],
+              critical: [
+                { when: { en: '130,000–190,000 km', de: '130.000–190.000 km', ru: '130 000–190 000 км' }, action: { en: 'DPF clogging / 5th injector soot & dual-mass flywheel (6-MT)', de: 'DPF-Beladung / 5. Einspritzdüse & Zweimassenschwungrad (6-Gang)', ru: 'Засорение DPF / 5-й форсунки и двухмассовый маховик (6-МКПП)' }, cost: '€950–1,600', risk: { en: 'Limp mode, high backpressure, and driveline clatter', de: 'Notlauf, hoher Abgasgegendruck und starkes Kupplungsrasseln', ru: 'Аварийный режим, высокое противодавление и стук маховика' }, damage: '€2,000–3,200' },
+                { when: { en: '120,000–190,000 km', de: '120.000–190.000 km', ru: '120 000–190 000 км' }, action: { en: 'T27 electronic parking brake (EPB) actuator & 2AD gasket check (2.2L)', de: 'T27-EPB-Stellmodul & 2AD-Kopfdichtungs-Check (bei 2.2L)', ru: 'Блок электроручника EPB и контроль ГБЦ 2AD (на 2.2L)' }, cost: '€550–1,800', risk: { en: 'Jammed EPB or coolant pressurization on high-mileage 2.2 diesels', de: 'Blockierte Feststellbremse oder Kühlwasserverlust beim 2.2-Diesel', ru: 'Заклинивший ручник или газы в антифризе на 2.2 дизеле' }, damage: '€1,500–3,800' }
+              ]
+            },
             badges: {
               en: ['Flywheel, EGR & Filter Care', 'Head Seal Worth Checking'],
               de: ['Schwungrad, AGR & Filter pflegen', 'Kopfdichtung im Blick behalten'],
@@ -47989,6 +52095,13 @@ const CAR_ROSTER = [
           performanceDynamics: 7.4,
           runningCostsTco: 7.5
         },
+        specOverrides: {
+          engineName: { en: '2.0L I4 D-4D 124 (Chain)', de: '2.0L Reihenvierzylinder 124 PS', ru: '2.0L R4 D-4D 124 (Цепь)' },
+          forcedInduction: '@turbo', injection: '@commonRail', timingDrive: '@chain', gearbox: '@manual6', clutchDmf: '@clutchDmf',
+          towingBraked: '1,500 kg', sprint0100: '10.7 s', topSpeed: '200 km/h', peakTorque: '310 Nm @ 1,600 rpm',
+          passingPunch: { en: 'Smooth 310 Nm Mid-Range', de: 'Ruhige 310 Nm Durchzug', ru: 'Ровная тяга 310 Н·м' },
+          realWorldFuel: '5.7 L/100km', tankRange: '60 L (~1,050 km)', euroNorm: 'Euro 5 (Diesel)', taxInsurance: '@tierMod', serviceWear: '@tierMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.4,
@@ -47996,6 +52109,10 @@ const CAR_ROSTER = [
               en: ['Chain 2.0 Diesel (Facelift)', 'Head Seal & Soot Need Checks'],
               de: ['2.0-Kettendiesel (Facelift)', 'Kopfdichtung & Ruß prüfen'],
               ru: ['Цепной дизель 2.0 (рестайлинг)', 'Проверять ГБЦ и сажу']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: '1AD-FTV (2012 Facelift) · 1,998 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium Diesel · Revised Turbo & Lower CO2', de: 'Reihenvierzylinder Alu-Diesel · Überarbeiteter Turbo', ru: 'Рядный 4-цил. дизель · Доработанная турбина (2012+)' } }], note: { en: 'Updated 2012+ Toyota 2.0 D-4D with quicker turbo spool and lower fuel burn — the safest all-round Toyota-built diesel in the Avensis.', de: 'Überarbeiteter 2012+ Toyota-Diesel mit besserem Ansprechverhalten — der rundeste hauseigene Diesel im Avensis.', ru: 'Обновлённый в 2012 году дизель 1AD-FTV — самый сбалансированный и надёжный собственный дизель Toyota в Avensis.' } },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -48331,6 +52448,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.1,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Clean EGR valve, replace diesel fuel filter & change gearbox oil', de: 'AGR-Ventil reinigen, Dieselfilter & Getriebeöl wechseln', ru: 'Чистка клапана EGR, замена топливного фильтра и масла в КПП' }, cost: '€200–330' },
+                { when: { en: 'Every 120,000 km', de: 'Alle 120.000 km', ru: 'Каждые 120 000 км' }, action: { en: 'Inspect glow plugs, auxiliary belt & Denso SCV fuel valve', de: 'Glühkerzen, Keilrippenriemen & Denso-SCV-Ventil prüfen', ru: 'Проверка свечей накала, ремня и клапана SCV Denso' }, cost: '€180–280' }
+              ],
+              critical: [
+                { when: { en: '130,000–190,000 km', de: '130.000–190.000 km', ru: '130 000–190 000 км' }, action: { en: 'DPF clogging / 5th injector soot & dual-mass flywheel (6-MT)', de: 'DPF-Beladung / 5. Einspritzdüse & Zweimassenschwungrad (6-Gang)', ru: 'Засорение DPF / 5-й форсунки и двухмассовый маховик (6-МКПП)' }, cost: '€950–1,600', risk: { en: 'Limp mode, high backpressure, and driveline clatter', de: 'Notlauf, hoher Abgasgegendruck und starkes Kupplungsrasseln', ru: 'Аварийный режим, высокое противодавление и стук маховика' }, damage: '€2,000–3,200' },
+                { when: { en: '120,000–190,000 km', de: '120.000–190.000 km', ru: '120 000–190 000 км' }, action: { en: 'T27 electronic parking brake (EPB) actuator & 2AD gasket check (2.2L)', de: 'T27-EPB-Stellmodul & 2AD-Kopfdichtungs-Check (bei 2.2L)', ru: 'Блок электроручника EPB и контроль ГБЦ 2AD (на 2.2L)' }, cost: '€550–1,800', risk: { en: 'Jammed EPB or coolant pressurization on high-mileage 2.2 diesels', de: 'Blockierte Feststellbremse oder Kühlwasserverlust beim 2.2-Diesel', ru: 'Заклинивший ручник или газы в антифризе на 2.2 дизеле' }, damage: '€1,500–3,800' }
+              ]
+            },
             badges: {
               en: ['Flywheel, EGR & Filter Care', 'Head Seal Worth Checking'],
               de: ['Schwungrad, AGR & Filter pflegen', 'Kopfdichtung im Blick behalten'],
@@ -48431,6 +52558,13 @@ const CAR_ROSTER = [
           performanceDynamics: 7.7,
           runningCostsTco: 8.0
         },
+        specOverrides: {
+          engineName: { en: '2.0L I4 D-4D 143 (BMW-Derived)', de: '2.0L Reihenvierzylinder 143 PS', ru: '2.0L R4 D-4D 143 (база BMW)' },
+          forcedInduction: '@turbo', injection: '@commonRail', timingDrive: '@chain', gearbox: '@manual6', clutchDmf: '@clutchDmf',
+          towingBraked: '1,500 kg', sprint0100: '9.7 s', topSpeed: '210 km/h', peakTorque: '320 Nm @ 1,750 rpm',
+          passingPunch: { en: 'Brisk 320 Nm Euro-6 Pull', de: 'Flotte 320 Nm (Euro 6)', ru: 'Бодрые 320 Н·м (Euro 6)' },
+          realWorldFuel: '5.5 L/100km', tankRange: '60 L (~1,090 km)', euroNorm: 'Euro 6 (Diesel)', taxInsurance: '@tierMod', serviceWear: '@tierMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.8,
@@ -48438,6 +52572,10 @@ const CAR_ROSTER = [
               en: ['Modern 2.0 Diesel Chain', 'Cold-Start Rattle = Warning'],
               de: ['Moderner 2.0-Diesel mit Kette', 'Rasseln beim Kaltstart = Warnung'],
               ru: ['Современный 2.0 с цепью', 'Стук на холодную = тревога']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: '2WW (BMW N47-Derived) · 1,995 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium Diesel · Euro 6 + Rear Timing Chain', de: 'Reihenvierzylinder Alu-Diesel · Euro 6 + hintere Kette', ru: 'Рядный 4-цил. дизель (база BMW) · Euro 6 + задняя цепь' } }], note: { en: 'Refined, punchy Euro 6 facelift diesel with 1,090 km range; uses BMW’s revised N47 rear-chain layout, so keep oil intervals at 15,000 km.', de: 'Kultivierter, starker Euro-6-Facelift-Diesel mit 1.090 km Reichweite; wegen der hinteren N47-Kette Öl alle 15.000 km wechseln.', ru: 'Тихий и тяговитый дизель Euro 6 с запасом хода 1 090 км; из-за задней цепи N47 меняйте масло каждые 15 000 км.' } },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -48773,6 +52911,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.3,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Replace diesel fuel filter & inspect 6-MT gearbox oil', de: 'Dieselfilter wechseln & 6-Gang-Getriebeöl prüfen', ru: 'Замена топливного фильтра и проверка масла в 6-МКПП' }, cost: '€140–220' },
+                { when: { en: 'Every 100,000 km', de: 'Alle 100.000 km', ru: 'Каждые 100 000 км' }, action: { en: 'Inspect harmonic crank pulley & clean EGR cooler/valve', de: 'Kurbelwellen-Riemenscheibe prüfen & AGR-Ventil reinigen', ru: 'Проверка демпферного шкива коленвала и чистка EGR' }, cost: '€200–320' }
+              ],
+              critical: [
+                { when: { en: '150,000–220,000 km', de: '150.000–220.000 km', ru: '150 000–220 000 км' }, action: { en: 'Rear-mounted timing chain kit (BMW N47-derived 1WW/2WW architecture)', de: 'Hinten liegender Steuerkettensatz (BMW-N47-Basis 1WW/2WW)', ru: 'Замена задней цепи ГРМ (архитектура BMW N47 — 1WW/2WW)' }, cost: '€1,400–2,100', risk: { en: 'Scraping/rattling chain at firewall can snap and destroy valves', de: 'Schleifende Kette an der Spritzwand kann reißen — kapitaler Motorschaden', ru: 'Шуршащая цепь у моторного щита может оборваться и погнуть клапаны' }, damage: '€4,000–6,000' },
+                { when: { en: '140,000–200,000 km', de: '140.000–200.000 km', ru: '140 000–200 000 км' }, action: { en: 'Dual-mass flywheel + clutch & T27 EPB parking brake actuator', de: 'ZMS + Kupplung & T27-EPB-Feststellbremsmodul', ru: 'Двухмассовый маховик + сцепление и блок EPB' }, cost: '€950–1,450', risk: { en: 'Heavy idle vibration or jammed electric parking brake', de: 'Starkes Leerlauf-Rasseln oder blockierte Handbremse', ru: 'Сильная вибрация на холостых или отказ электроручника' }, damage: '€1,800–2,400' }
+              ]
+            },
             badges: {
               en: ['Rear Timing Chain = Costly If Neglected', 'Flywheel & Filter Care'],
               de: ['Hintere Steuerkette teuer bei Vernachlässigung', 'Schwungrad & Filter pflegen'],
@@ -48873,6 +53021,15 @@ const CAR_ROSTER = [
           performanceDynamics: 7.8,
           runningCostsTco: 6.8
         },
+        specOverrides: {
+          engineName: { en: '2.2L I4 D-4D 150 (Chain)', de: '2.2L Reihenvierzylinder 150 PS', ru: '2.2L R4 D-4D 150 (Цепь)' },
+          forcedInduction: '@turbo', injection: '@commonRail', timingDrive: '@chain',
+          gearbox: { en: '6-MT / Aisin 6-AT', de: '6-Gang / Aisin 6-AT', ru: '6-МКПП / Aisin 6-АКПП' },
+          clutchDmf: '@torqueConv', towingBraked: '1,800 kg',
+          sprint0100: '9.5 s', topSpeed: '205 km/h', peakTorque: '340 Nm @ 1,400 rpm',
+          passingPunch: { en: 'Strong 340 Nm Tow Torque', de: 'Kräftige 340 Nm Zugkraft', ru: 'Мощная тяга 340 Н·м' },
+          realWorldFuel: '6.6 L/100km', tankRange: '60 L (~910 km)', euroNorm: 'Euro 5 (Diesel)', taxInsurance: '@tierModHigh', serviceWear: '@tierModHigh'
+        },
         subStats: {
           powertrainDurability: {
             score: 6.9,
@@ -48880,6 +53037,10 @@ const CAR_ROSTER = [
               en: ['Strong 2.2 Chain Diesel', 'Head Seal History Critical'],
               de: ['Starker 2.2-Kettendiesel', 'Kopfdichtungs-Historie kritisch'],
               ru: ['Сильный цепной дизель 2.2', 'История ГБЦ критична']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: '2AD-FTV · 2,231 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium Diesel · Available With Aisin 6-AT', de: 'Reihenvierzylinder Alu-Diesel · Mit robuster Aisin-6-AT', ru: 'Рядный 4-цил. дизель · Доступен с 6-АКПП Aisin' } }], note: { en: 'Strong 1,800 kg towing cruiser and the only Avensis diesel with a proper 6-speed torque-converter automatic; watch DPF and coolant level.', de: 'Starker 1.800-kg-Zugwagen und einziger Diesel mit klassischer 6-Gang-Automatik; DPF und Kühlwasserstand im Blick behalten.', ru: 'Отличный тягач (1 800 кг) и редкий дизель с классическим 6-АКПП Aisin; контролируйте DPF и уровень антифриза.' } },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -49224,6 +53385,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 6.6,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Clean EGR valve, replace diesel fuel filter & change gearbox oil', de: 'AGR-Ventil reinigen, Dieselfilter & Getriebeöl wechseln', ru: 'Чистка клапана EGR, замена топливного фильтра и масла в КПП' }, cost: '€200–330' },
+                { when: { en: 'Every 120,000 km', de: 'Alle 120.000 km', ru: 'Каждые 120 000 км' }, action: { en: 'Inspect glow plugs, auxiliary belt & Denso SCV fuel valve', de: 'Glühkerzen, Keilrippenriemen & Denso-SCV-Ventil prüfen', ru: 'Проверка свечей накала, ремня и клапана SCV Denso' }, cost: '€180–280' }
+              ],
+              critical: [
+                { when: { en: '130,000–190,000 km', de: '130.000–190.000 km', ru: '130 000–190 000 км' }, action: { en: 'DPF clogging / 5th injector soot & dual-mass flywheel (6-MT)', de: 'DPF-Beladung / 5. Einspritzdüse & Zweimassenschwungrad (6-Gang)', ru: 'Засорение DPF / 5-й форсунки и двухмассовый маховик (6-МКПП)' }, cost: '€950–1,600', risk: { en: 'Limp mode, high backpressure, and driveline clatter', de: 'Notlauf, hoher Abgasgegendruck und starkes Kupplungsrasseln', ru: 'Аварийный режим, высокое противодавление и стук маховика' }, damage: '€2,000–3,200' },
+                { when: { en: '120,000–190,000 km', de: '120.000–190.000 km', ru: '120 000–190 000 км' }, action: { en: 'T27 electronic parking brake (EPB) actuator & 2AD gasket check (2.2L)', de: 'T27-EPB-Stellmodul & 2AD-Kopfdichtungs-Check (bei 2.2L)', ru: 'Блок электроручника EPB и контроль ГБЦ 2AD (на 2.2L)' }, cost: '€550–1,800', risk: { en: 'Jammed EPB or coolant pressurization on high-mileage 2.2 diesels', de: 'Blockierte Feststellbremse oder Kühlwasserverlust beim 2.2-Diesel', ru: 'Заклинивший ручник или газы в антифризе на 2.2 дизеле' }, damage: '€1,500–3,800' }
+              ]
+            },
             badges: {
               en: ['Head Seal, Flywheel & Filter Costs', 'Heavier Diesel Wear Items'],
               de: ['Kopfdichtung, Schwungrad & Filter kosten', 'Teurere Diesel-Verschleißteile'],
@@ -49324,6 +53495,15 @@ const CAR_ROSTER = [
           performanceDynamics: 8.2,
           runningCostsTco: 6.5
         },
+        specOverrides: {
+          engineName: { en: '2.2L I4 D-CAT 177 (Chain)', de: '2.2L Reihenvierzylinder D-CAT', ru: '2.2L R4 D-CAT 177 (Цепь)' },
+          forcedInduction: '@turbo', injection: '@commonRail', timingDrive: '@chain',
+          gearbox: { en: '6-MT / Aisin 6-AT', de: '6-Gang / Aisin 6-AT', ru: '6-МКПП / Aisin 6-АКПП' },
+          clutchDmf: '@clutchDmf', towingBraked: '1,800 kg',
+          sprint0100: '8.4 s', topSpeed: '220 km/h', peakTorque: '400 Nm @ 1,500 rpm',
+          passingPunch: { en: 'Massive 400 Nm Surge', de: 'Wuchtiger 400-Nm-Schub', ru: 'Мощнейший рывок 400 Н·м' },
+          realWorldFuel: '7.2 L/100km', tankRange: '60 L (~830 km)', euroNorm: 'Euro 5 (D-CAT)', taxInsurance: '@tierHigh', serviceWear: '@tierHigh'
+        },
         subStats: {
           powertrainDurability: {
             score: 6.6,
@@ -49331,6 +53511,10 @@ const CAR_ROSTER = [
               en: ['Strong 2.2 + D-CAT System', 'Exhaust Injector & Head Seal Care'],
               de: ['Starker 2.2 mit D-CAT', 'Abgasdüse & Kopfdichtung pflegen'],
               ru: ['Сильный 2.2 с системой D-CAT', 'Следить за форсункой и ГБЦ']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: '2AD-FHV (D-CAT) · 2,231 cc' }, { k: 'architecture', v: { en: 'Inline-4 High-Output Diesel · Piezo Injectors + 5th Exhaust Injector', de: 'Reihenvierzylinder Top-Diesel · Piezo-Injektoren + 5. Düse', ru: 'Рядный 4-цил. форсированный дизель · Пьезофорсунки + D-CAT' } }], note: { en: 'Fastest Avensis ever built (8.4 s, 400 Nm), but also the costliest to maintain due to D-CAT 5th-injector soot, piezo injectors, and head-gasket risk.', de: 'Schnellster Avensis seiner Zeit (8,4 s, 400 Nm), aber am teuersten im Unterhalt durch D-CAT-5.-Düse, Piezo-Injektoren und ZKD-Risiko.', ru: 'Самый быстрый Avensis (8,4 с, 400 Н·м), но самый дорогой в ремонте из-за системы D-CAT, пьезофорсунок и риска по ГБЦ.' } },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -49675,6 +53859,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 6.1,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Clean EGR valve, replace diesel fuel filter & change gearbox oil', de: 'AGR-Ventil reinigen, Dieselfilter & Getriebeöl wechseln', ru: 'Чистка клапана EGR, замена топливного фильтра и масла в КПП' }, cost: '€200–330' },
+                { when: { en: 'Every 120,000 km', de: 'Alle 120.000 km', ru: 'Каждые 120 000 км' }, action: { en: 'Inspect glow plugs, auxiliary belt & Denso SCV fuel valve', de: 'Glühkerzen, Keilrippenriemen & Denso-SCV-Ventil prüfen', ru: 'Проверка свечей накала, ремня и клапана SCV Denso' }, cost: '€180–280' }
+              ],
+              critical: [
+                { when: { en: '130,000–190,000 km', de: '130.000–190.000 km', ru: '130 000–190 000 км' }, action: { en: 'DPF clogging / 5th injector soot & dual-mass flywheel (6-MT)', de: 'DPF-Beladung / 5. Einspritzdüse & Zweimassenschwungrad (6-Gang)', ru: 'Засорение DPF / 5-й форсунки и двухмассовый маховик (6-МКПП)' }, cost: '€950–1,600', risk: { en: 'Limp mode, high backpressure, and driveline clatter', de: 'Notlauf, hoher Abgasgegendruck und starkes Kupplungsrasseln', ru: 'Аварийный режим, высокое противодавление и стук маховика' }, damage: '€2,000–3,200' },
+                { when: { en: '120,000–190,000 km', de: '120.000–190.000 km', ru: '120 000–190 000 км' }, action: { en: 'T27 electronic parking brake (EPB) actuator & 2AD gasket check (2.2L)', de: 'T27-EPB-Stellmodul & 2AD-Kopfdichtungs-Check (bei 2.2L)', ru: 'Блок электроручника EPB и контроль ГБЦ 2AD (на 2.2L)' }, cost: '€550–1,800', risk: { en: 'Jammed EPB or coolant pressurization on high-mileage 2.2 diesels', de: 'Blockierte Feststellbremse oder Kühlwasserverlust beim 2.2-Diesel', ru: 'Заклинивший ручник или газы в антифризе на 2.2 дизеле' }, damage: '€1,500–3,800' }
+              ]
+            },
             badges: {
               en: ['D-CAT Injector, Filter & Head Seal', 'Highest Diesel Repair Risk'],
               de: ['D-CAT-Düse, Filter & Kopfdichtung', 'Höchstes Diesel-Reparaturrisiko'],
@@ -51567,6 +55761,153 @@ const CAR_ROSTER = [
         }
       }
     },
+    sharedSpecs: {
+      rustProtection: '@rustVeryGood',
+      suspensionWear: '@suspMultiLink',
+      starterAlternator: '@starter12v',
+      electronicsRisk: '@elecLowMod',
+      rideTuning: { en: 'Firm-Planted German', de: 'Straff-Satt (Deutsch)', ru: 'Плотная / Собранная' },
+      highwayNoise: { en: '~68 dB · Quiet Premium', de: '~68 dB · Ruhig (Premium)', ru: '~68 дБ · Тихий премиум' },
+      cabinMaterials: { en: 'Best-in-Class Soft-Touch', de: 'Klassenbeste Haptik', ru: 'Эталонный мягкий салон' },
+      controls: '@physButtons',
+      turningCircle: '10.7 m',
+      visibility: { en: 'Clear Upright · Good', de: 'Gute Rundumsicht', ru: 'Хороший круговой обзор' },
+      euroNcap: '★★★★☆ (2003)',
+      safetyTech: { en: '✓ ESP · ✓ 6 Airbags', de: '✓ ESP · ✓ 6 Airbags', ru: '✓ ESP · ✓ 6 подушек' },
+      rearRoom: { en: 'Tight-ish · Tall Tunnel', de: 'Eher knapp · Hoher Tunnel', ru: 'Тесновато · Высокий тоннель' },
+      isofixEntry: { en: '✓ 2× ISOFIX · Sportback 5d', de: '✓ 2× ISOFIX · Sportback 5T', ru: '✓ 2× ISOFIX · Sportback 5дв' },
+      bootVolume: '370 L / 1,100 L',
+      seatUtility: { en: '✓ 60/40 Split Fold', de: '✓ 60/40 teilbar', ru: '✓ Спинка 60/40' },
+      payloadRoof: '540 kg · 75 kg',
+      driveline: { en: 'FWD / Opt. Haldex Quattro', de: 'Front / Opt. Haldex-Quattro', ru: 'Передний / Опц. Quattro' },
+      chassisFeel: { en: 'Poised · Tight & Accurate', de: 'Satt · Präzise & neutral', ru: 'Собранное · Точное' },
+      tractionDiff: { en: 'FWD · ESP (Opt. Quattro)', de: 'Front · ESP (Opt. Quattro)', ru: 'Передний · ESP (Опц. Quattro)' },
+      braking1000: '~36.2 m',
+      brakeSetup: '@discs4',
+      valueRetention: '@retHigh',
+      resaleDemand: '@demFast'
+    },
+    sharedDossierBreakdowns: {
+      transmissionDriveline: { gearbox: { specs: [{ k: 'gearboxModel', v: { en: 'VW-Group 5/6-MT · Dry 7-DSG (DQ200) or Wet 6-DSG (DQ250)', de: 'VW-Konzern 5/6-Gang · Trockenes 7-DSG (DQ200) / Nasses 6-DSG (DQ250)', ru: '5/6-МКПП · Сухой 7-DSG (DQ200) или мокрый 6-DSG (DQ250)' } }, { k: 'shiftQuality', v: { en: 'Crisp Manual · Wet 6-DSG Tough (60k Oil); Dry 7-DSG Needs Care', de: 'Exakter Schalter · Nasses 6-DSG robust (60 Tkm Öl); DQ200 sensibel', ru: 'Чёткая МКПП · Мокрый 6-DSG крепкий; сухой DQ200 капризнее' } }], note: { en: 'Manuals and wet 6-speed DSG (DQ250, 60k oil changes) are solid; treat dry-clutch 7-speed DSG (DQ200 on ≤250 Nm engines) with caution.', de: 'Handschalter und nasses 6-Gang-DSG (60.000-km-Ölwechsel) sind robust; beim trockenen 7-Gang-DSG (DQ200 bis 250 Nm) genau auf Ruckeln achten.', ru: 'МКПП и мокрый 6-DSG (масло каждые 60 000 км) надёжны; к сухому 7-DSG (DQ200 до 250 Н·м) относитесь осторожнее.' } }, clutchDmf: '@clutchSingle', driveline: '@driveFwd' },
+      buildQualityRust: { rustProtection: '@rustGalvanized12y', suspensionWear: '@suspMultiLink' },
+      electronicsReliability: { starterAlternator: '@starterStandard12v', electronicsRisk: '@elecSimpleEps' },
+      rideNoiseComfort: {
+        rideTuning: {
+          specs: [
+            { k: 'damperSetup', v: { en: 'PQ35 Platform · Independent Multi-Link Rear (Firm S-Line)', de: 'PQ35-Plattform · Mehrlenker-Hinterachse (S-Line sehr straff)', ru: 'Платформа PQ35 · Многорычажка сзади (S-Line жёстче)' } },
+            { k: 'seatSupport', v: { en: 'Firm Supportive German Seats · Great Long-Trip Posture', de: 'Straffe ergonomische Sitze · Top Langstrecken-Halt', ru: 'Плотные немецкие кресла · Отличная посадка' } }
+          ],
+          note: { en: 'Standard/Attraction suspension rides nicely; Ambition & S-Line trims are noticeably firm over rough city streets.', de: 'Serienfahrwerk federt ausgewogen; Ambition und S-Line sind auf schlechten Stadtstraßen spürbar hart.', ru: 'Базовая подвеска комфортна; версии Ambition и S-Line ощутимо жёстче на городских стыках.' }
+        },
+        highwayNoise: {
+          specs: [
+            { k: 'cabinNoise130', v: { en: '~68 dB(A) at 130 km/h (Quiet Premium Isolation)', de: '~68 dB(A) bei 130 km/h (Leise Premium-Dämmung)', ru: '~68 дБ(А) при 130 км/ч (Тихая премиум-изоляция)' } },
+            { k: 'acousticGlass', v: { en: 'Thick Door Seals & Solid Bulkhead Soundproofing', de: 'Dicke Türdichtungen & solide Spritzwand-Dämmung', ru: 'Плотные уплотнители и качественная шумоизоляция' } }
+          ],
+          note: { en: 'Feels like a baby executive car on the Autobahn — quieter than Japanese and French compact rivals of the same era.', de: 'Wirkt auf der Autobahn eine Klasse höher — deutlich ruhiger als Kompakt-Rivalen gleicher Baujahre.', ru: 'На трассе ощущается классом выше — тише большинства одноклассников тех же лет.' }
+        }
+      },
+      interiorQualityFeatures: {
+        cabinMaterials: {
+          specs: [
+            { k: 'dashboardTrim', v: { en: 'Plush Soft-Touch Plastics · Knurled Aluminium Air Vents', de: 'Hochwertige Soft-Touch-Flächen · Alu-Lüftungsdüsen', ru: 'Дорогой мягкий пластик · Алюминиевые дефлекторы' } },
+            { k: 'seatUpholstery', v: { en: 'Hard-Wearing Audi Cloth, Alcantara or Fine Nappa Leather', de: 'Robuster Stoff, Alcantara oder feines Nappa-Leder', ru: 'Износостойкая ткань, алькантара или кожа Nappa' } }
+          ],
+          note: { en: 'Benchmark compact interior of 2003–2012; switchgear and trim stay rattle-free well past 200,000 km.', de: 'Referenz-Innenraum der Kompaktklasse 2003–2012; klapperfrei und hochwertig auch weit über 200.000 km.', ru: 'Эталонный салон C-класса 2003–2012 годов — без скрипов и с отличной износостойкостью.' }
+        },
+        controls: '@controlsPhys'
+      },
+      visibilityManeuverability: {
+        turningCircle: {
+          specs: [
+            { k: 'turnDiameter', v: { en: '10.7 m (Compact & City-Friendly)', de: '10,7 m (Handlich in der Stadt)', ru: '10,7 м (Удобный в городе)' } },
+            { k: 'steeringType', v: { en: 'Electro-Mechanical Steering · Weighted & Accurate', de: 'Elektromechanische Lenkung · Präzise & ausgewogen', ru: 'Электромеханический руль · Точный и собранный' } }
+          ],
+          note: { en: 'Compact 4.29 m Sportback length and 10.7 m turning circle make tight urban parking effortless.', de: 'Kompakte 4,29 m Länge (Sportback) und 10,7 m Wendekreis machen Stadt-Parken mühelos.', ru: 'Длина 4,29 м и разворот 10,7 м делают парковку в тесных дворах очень простой.' }
+        },
+        visibility: {
+          specs: [
+            { k: 'allRoundView', v: { en: 'Clean Upright Glasshouse · Slim A-Pillars', de: 'Klare aufrechte Fensterflächen · Schlanke A-Säulen', ru: 'Чёткое остекление · Умеренные передние стойки' } },
+            { k: 'rearView', v: { en: 'Square Hatchback Tail Easy to Judge', de: 'Steiles Heck gut abschätzbar', ru: 'Прямоугольная корма легко чувствуется' } }
+          ],
+          note: { en: 'Far better all-round visibility than modern high-beltline hatchbacks.', de: 'Deutlich bessere Rundumsicht als moderne Kompaktwagen mit hoher Gürtellinie.', ru: 'Обзорность заметно лучше, чем у современных хэтчбеков с узкими окнами.' }
+        }
+      },
+      safetyProtection: {
+        euroNcap: {
+          specs: [
+            { k: 'crashRating', v: { en: '4 Stars Euro NCAP (2003) · Solid Galvanized PQ35 Shell', de: '4 Sterne Euro NCAP (2003) · Solide PQ35-Karosserie', ru: '4 звезды Euro NCAP (2003) · Крепкий кузов PQ35' } },
+            { k: 'bodyStructure', v: { en: '6 Standard Airbags + Laser-Welded Roof Seams', de: '6 Serien-Airbags + lasergeschweißte Dachnähte', ru: '6 подушек в базе + лазерная сварка кузова' } }
+          ],
+          note: { en: 'Tested under the older 2003 protocol; structurally sturdy with standard ESP and 6 airbags.', de: 'Nach dem älteren 2003er Protokoll getestet; strukturell sehr solide mit Serien-ESP und 6 Airbags.', ru: 'Испытан по протоколу 2003 года; жёсткий кузов с базовыми ESP и 6 подушками.' }
+        },
+        safetyTech: {
+          specs: [
+            { k: 'activeSafety', v: { en: 'ESP, ASR, EDS Diff Lock & Hydraulic Brake Assist', de: 'ESP, ASR, EDS-Differentialsperre & Bremsassistent', ru: 'ESP, ASR, электронная блокировка EDS и Brake Assist' } },
+            { k: 'driverAssists', v: { en: 'Optional Bi-Xenon, Park Assist & Hill-Hold (2008+ Facelift)', de: 'Optional Bi-Xenon, Parklenkassistent & Berganfahrhilfe (ab 2008)', ru: 'Опционально биксенон, автопарковщик и помощь в горку (2008+)' } }
+          ],
+          note: { en: '2008+ facelift models added LED daytime running lights, Hill-Hold, and optional self-parking.', de: 'Ab Facelift 2008 mit LED-Tagfahrlicht, Berganfahrassistent und optionalem Parklenkassistent.', ru: 'Рестайлинг 2008+ получил LED ДХО, помощь при старте в горку и опцию автопарковки.' }
+        }
+      },
+      passengerSpaceErgonomics: {
+        rearRoom: {
+          specs: [
+            { k: 'rearSpace', v: { en: 'Adequate for 2 Adults · Tall Central Quattro Tunnel', de: 'Ordentlich für 2 Erwachsene · Hoher Mitteltunnel', ru: 'Комфортно для двоих · Высокий центральный тоннель' } },
+            { k: 'frontErgo', v: { en: 'Superb Driving Position · Wide Seat & Wheel Adjustment', de: 'Perfekte Fahrerposition · Großer Verstellbereich', ru: 'Образцовая посадка водителя с большим диапазоном регулировок' } }
+          ],
+          note: { en: 'Front ergonomics are class-leading; rear legroom is slightly tighter than a Civic or Golf Plus, best for two adults or kids.', de: 'Vorn erstklassige Ergonomie; hinten etwas knapper als im Civic, ideal für zwei Erwachsene oder Kinder.', ru: 'Спереди эргономика эталонная; сзади чуть теснее Civic, оптимально для двоих взрослых или детей.' }
+        },
+        isofixEntry: {
+          specs: [
+            { k: 'childSeats', v: { en: '2× Outer Rear ISOFIX (+ Optional Front Passenger ISOFIX)', de: '2× ISOFIX hinten (+ optional Beifahrersitz-ISOFIX)', ru: '2× ISOFIX сзади (+ опционально на переднем кресле)' } },
+            { k: 'doorAccess', v: { en: '5-Door Sportback Strongly Recommended for Family Use', de: '5-Türer Sportback klar für Familien empfohlen', ru: '5-дверный Sportback намного удобнее для семьи' } }
+          ],
+          note: { en: 'Choose the 5-door Sportback over the 3-door if fitting child seats regularly.', de: 'Für regelmäßige Kindersitz-Nutzung unbedingt den 5-türigen Sportback wählen.', ru: 'Для частой установки детских кресел однозначно выбирайте 5-дверный Sportback.' }
+        }
+      },
+      interiorBootSpace: {
+        bootVolume: {
+          specs: [
+            { k: 'bootCapacity', v: { en: '370 L (Sportback) / 350 L (3-Door) · 1,100 L Folded', de: '370 L (Sportback) / 350 L (3-Türer) · 1.100 L umgeklappt', ru: '370 л (Sportback) / 350 л (3-дв.) · 1 100 л сложено' } },
+            { k: 'loadingLip', v: { en: 'Square Neat Cargo Bay (Quattro Loses ~68 L Depth)', de: 'Sauber geschnittener Kofferraum (Quattro -68 L)', ru: 'Ровный аккуратный багажник (Quattro меньше на ~68 л)' } }
+          ],
+          note: { en: 'Practical everyday compact boot; note that Quattro AWD models have a higher boot floor (-68 L).', de: 'Alltagstauglicher Kompakt-Kofferraum; Quattro-Modelle haben durch das Heckdifferential einen höheren Ladeboden.', ru: 'Удобный багажник для города; у версий Quattro пол выше из-за заднего редуктора (-68 л).' }
+        },
+        seatUtility: {
+          specs: [
+            { k: 'foldingSystem', v: { en: '✓ 60/40 Split-Fold Rear Seats (Slight Step When Folded)', de: '✓ 60/40 umklappbare Rückbank (leichte Stufe)', ru: '✓ Спинка 60/40 (небольшая ступенька при складывании)' } }
+          ],
+          note: { en: 'Simple 60/40 split fold with quality carpeted trim and sturdy tie-down hooks.', de: 'Solide 60/40-Umklappung mit hochwertiger Teppichauskleidung und stabilen Verzurrösen.', ru: 'Простое складывание 60/40, качественная обивка и крепкие петли для груза.' }
+        }
+      },
+      payloadTowing: {
+        payloadRoof: {
+          specs: [
+            { k: 'maxPayload', v: { en: '~540 kg (520–560 kg Depending on Engine)', de: '~540 kg (520–560 kg je nach Motor)', ru: '~540 кг (520–560 кг в зависимости от мотора)' } },
+            { k: 'roofLoad', v: { en: '75 kg Approved Dynamic Roof Load', de: '75 kg zugelassene Dachlast', ru: '75 кг допустимая нагрузка на крышу' } }
+          ],
+          note: { en: 'Impressive 540 kg payload for a compact hatch, plus up to 1,600 kg braked towing on 2.0 TDI models.', de: 'Starke 540 kg Zuladung für die Kompaktklasse und bis zu 1.600 kg Anhängelast beim 2.0 TDI.', ru: 'Отличный запас 540 кг для компактного хэтчбека и до 1 600 кг буксировки на 2.0 TDI.' }
+        },
+        towingBraked: '@towingDynamic'
+      },
+      accelerationOvertaking: { sprint0100: '@sprintDynamic', topSpeed: '@vmaxDynamic' },
+      midRangeTorquePassing: { peakTorque: '@torqueDynamic', passingPunch: '@passingDynamic' },
+      handlingAgility: {
+        chassisFeel: {
+          specs: [
+            { k: 'steeringFeel', v: { en: 'Direct, Well-Weighted Steering · Confident High-Speed Poise', de: 'Direkte, sauber gewichtete Lenkung · Sehr stabil bei Tempo', ru: 'Точный руль с приятным усилием · Уверенность на скорости' } },
+            { k: 'cornering', v: { en: 'Independent Multi-Link Rear Keeps It Planted in Fast Sweeps', de: 'Mehrlenker-Hinterachse sorgt für sattes Kurvenverhalten', ru: 'Задняя многорычажка держит траекторию в быстрых поворотах' } }
+          ],
+          note: { en: 'Composed, secure German chassis that feels rock-solid at 180+ km/h on the Autobahn.', de: 'Sehr sicheres, sattes Fahrwerk, das auch bei 180+ km/h auf der Autobahn souverän liegt.', ru: 'Собранное немецкое шасси, уверенно стоящее на трассе даже на 180+ км/ч.' }
+        },
+        tractionDiff: '@tractionFwdOpen'
+      },
+      brakingPerformance: { braking1000: '@brakingDistDynamic', brakeSetup: '@brakeSetupDiscs4' },
+      efficiencyFuel: { realWorldFuel: '@fuelDynamic', tankRange: '@tankDynamic' },
+      taxInsuranceNorm: { euroNorm: '@euroDynamic', taxInsurance: '@taxInsDynamic' },
+      maintenanceRepairCosts: { timingDrive: '@timingDynamic', serviceWear: '@serviceDynamic' },
+      depreciationResale: { valueRetention: '@retHigh', resaleDemand: '@demFast' }
+    },
     engines: [
       {
         id: '1.2-tfsi',
@@ -51634,6 +55975,15 @@ const CAR_ROSTER = [
             'Слабоват на трассе выше 130 км/ч'
           ]
         },
+        specOverrides: {
+          engineName: { en: '1.2L I4 TFSI (Simplex Chain)', de: '1.2L Reihenvierzylinder TFSI (Kette)', ru: '1.2L R4 TFSI (Цепь EA111)' },
+          forcedInduction: '@turbo', injection: '@direct', timingDrive: '@chain',
+          gearbox: { en: '6-MT / Dry 7-DSG (DQ200)', de: '6-Gang / Trockenes 7-DSG', ru: '6-МКПП / Сухой 7-DSG' },
+          clutchDmf: '@singleClutch', towingBraked: '1,200 kg',
+          sprint0100: '10.6 s', topSpeed: '192 km/h', peakTorque: '175 Nm @ 1,550 rpm',
+          passingPunch: { en: 'Lively Low-End City Pull', de: 'Spritzig in der Stadt', ru: 'Бодрый подхват в городе' },
+          realWorldFuel: '6.2 L/100km', tankRange: '55 L (~885 km)', euroNorm: 'Euro 5 (Petrol)', taxInsurance: '@tierLow', serviceWear: '@tierMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 6.3,
@@ -51641,6 +55991,10 @@ const CAR_ROSTER = [
               en: ['Updated Chain Kit Fixes Stretch', 'Watch Cold-Start Rattle'],
               de: ['Verstärkter Kettensatz löst Problem', 'Kaltstart-Rasseln prüfen'],
               ru: ['Усиленный комплект цепи решает вопрос', 'Слушать треск на холодную']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'CBZB (EA111) · 1,197 cc' }, { k: 'architecture', v: { en: 'Inline-4 8V Aluminium · Small Turbo + Simplex Chain', de: 'Reihenvierzylinder 8V Alu · Kleiner Turbo + Simplex-Kette', ru: 'Рядный 4-цил. 8V алюминий · Турбо + тонкая цепь EA111' } }], note: { en: 'Frugal and punchy around town, but notorious for stretched EA111 simplex timing chains — verify updated chain kit receipt before buying.', de: 'Sparsam und spritzig in der Stadt, aber berüchtigt für gelängte EA111-Simplex-Steuerketten — Nachweis über Kettentausch zwingend prüfen.', ru: 'Экономичный и живой в городе, но известен растяжением тонкой цепи ГРМ EA111 — проверяйте историю её замены.' } },
+              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -51985,6 +56339,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.3,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Replace spark plugs, inspect ignition coils & refresh 6-MT oil', de: 'Zündkerzen wechseln, Zündspulen & 6-Gang-Getriebeöl prüfen', ru: 'Замена свечей, проверка катушек и масла в 6-МКПП' }, cost: '€160–250' },
+                { when: { en: 'Every 100,000 km', de: 'Alle 100.000 km', ru: 'Каждые 100 000 км' }, action: { en: 'Inspect turbo wastegate actuator rod & water pump / thermostat', de: 'Turbo-Wastegate-Gestänge & Wasserpumpe / Thermostat prüfen', ru: 'Проверка актуатора вестгейта турбины и помпы' }, cost: '€140–240' }
+              ],
+              critical: [
+                { when: { en: '60,000–120,000 km', de: '60.000–120.000 km', ru: '60 000–120 000 км' }, action: { en: 'EA111 simplex timing chain & tensioner upgrade kit (cold-start rattle!)', de: 'EA111 Simplex-Steuerkette & Spanner (Kaltstart-Rasseln = Alarm!)', ru: 'Замена тонкой цепи ГРМ EA111 и натяжителя (треск при холодном пуске!)' }, cost: '€750–1,200', risk: { en: 'Stretched simplex chain jumps teeth on startup and bends all valves', de: 'Gelängte Simplex-Kette überspringt beim Start — kapitaler Motorschaden', ru: 'Растянутая цепь перескакивает при пуске и гнёт клапаны' }, damage: '€3,000–4,800' },
+                { when: { en: '90,000–150,000 km', de: '90.000–150.000 km', ru: '90 000–150 000 км' }, action: { en: 'Dry 7-speed DSG (DQ200) mechatronic & clutch pack (if automatic)', de: 'Trockenes 7-Gang-DSG (DQ200) Mechatronik & Kupplungspaket (falls AT)', ru: 'Мехатроник и сцепление сухого 7-DSG (DQ200, если автомат)' }, cost: '€1,300–2,100', risk: { en: 'Shuddering in 2nd gear, lost gears, or cracked pressure accumulator', de: 'Ruckeln im 2. Gang, Gangausfall oder geplatzter Druckspeicher', ru: 'Рывки на 2-й передаче, потеря передач или трещина гидроплиты' }, damage: '€2,200–3,200' }
+              ]
+            },
             badges: {
               en: ['Cheap Routine Parts', 'Chain Replacement ~€850'],
               de: ['Günstige Verschleißteile', 'Steuerkette ca. 850 €'],
@@ -52067,6 +56431,15 @@ const CAR_ROSTER = [
             'Люфт калитки вестгейта к 150 тыс. км'
           ]
         },
+        specOverrides: {
+          engineName: { en: '1.4L I4 TFSI (Simplex Chain)', de: '1.4L Reihenvierzylinder TFSI (Kette)', ru: '1.4L R4 TFSI (Цепь EA111)' },
+          forcedInduction: '@turbo', injection: '@direct', timingDrive: '@chain',
+          gearbox: { en: '6-MT / Dry 7-DSG (DQ200)', de: '6-Gang / Trockenes 7-DSG', ru: '6-МКПП / Сухой 7-DSG' },
+          clutchDmf: '@singleClutch', towingBraked: '1,200 kg',
+          sprint0100: '9.4 s', topSpeed: '203 km/h', peakTorque: '200 Nm @ 1,500 rpm',
+          passingPunch: { en: 'Flat 200 Nm Turbo Band', de: 'Breites 200-Nm-Band', ru: 'Ровная полка 200 Н·м' },
+          realWorldFuel: '6.6 L/100km', tankRange: '55 L (~830 km)', euroNorm: 'Euro 5 (Petrol)', taxInsurance: '@tierLowMod', serviceWear: '@tierMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 6.8,
@@ -52074,6 +56447,10 @@ const CAR_ROSTER = [
               en: ['Better Than 1.4 Twincharger', 'Watch Chain & Turbo Actuator'],
               de: ['Deutlich robuster als Twincharger', 'Kette & Wastegate prüfen'],
               ru: ['Надёжнее версии Twincharger', 'Проверить цепь и вестгейт']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'CAXC (EA111) · 1,390 cc' }, { k: 'architecture', v: { en: 'Inline-4 Single-Turbo (No Supercharger) · Simplex Chain', de: 'Reihenvierzylinder Mono-Turbo (kein Kompressor) · Kette', ru: 'Рядный 4-цил. моно-турбо (без компрессора) · Цепь EA111' } }], note: { en: 'Much safer than VW’s twincharged 160 HP 1.4 TSI, yet still suffers EA111 simplex chain stretch — buy one with the revised chain & 6-MT.', de: 'Viel robuster als der 160-PS-Twincharger, leidet aber an der EA111-Simplex-Kette — am besten mit erneuerter Kette und 6-Gang kaufen.', ru: 'Намного надёжнее 160-сильного Twincharger, но страдает растяжением цепи EA111 — ищите с обновлённой цепью и 6-МКПП.' } },
+              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -52418,6 +56795,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.4,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Replace spark plugs, inspect ignition coils & refresh 6-MT oil', de: 'Zündkerzen wechseln, Zündspulen & 6-Gang-Getriebeöl prüfen', ru: 'Замена свечей, проверка катушек и масла в 6-МКПП' }, cost: '€160–250' },
+                { when: { en: 'Every 100,000 km', de: 'Alle 100.000 km', ru: 'Каждые 100 000 км' }, action: { en: 'Inspect turbo wastegate actuator rod & water pump / thermostat', de: 'Turbo-Wastegate-Gestänge & Wasserpumpe / Thermostat prüfen', ru: 'Проверка актуатора вестгейта турбины и помпы' }, cost: '€140–240' }
+              ],
+              critical: [
+                { when: { en: '60,000–120,000 km', de: '60.000–120.000 km', ru: '60 000–120 000 км' }, action: { en: 'EA111 simplex timing chain & tensioner upgrade kit (cold-start rattle!)', de: 'EA111 Simplex-Steuerkette & Spanner (Kaltstart-Rasseln = Alarm!)', ru: 'Замена тонкой цепи ГРМ EA111 и натяжителя (треск при холодном пуске!)' }, cost: '€750–1,200', risk: { en: 'Stretched simplex chain jumps teeth on startup and bends all valves', de: 'Gelängte Simplex-Kette überspringt beim Start — kapitaler Motorschaden', ru: 'Растянутая цепь перескакивает при пуске и гнёт клапаны' }, damage: '€3,000–4,800' },
+                { when: { en: '90,000–150,000 km', de: '90.000–150.000 km', ru: '90 000–150 000 км' }, action: { en: 'Dry 7-speed DSG (DQ200) mechatronic & clutch pack (if automatic)', de: 'Trockenes 7-Gang-DSG (DQ200) Mechatronik & Kupplungspaket (falls AT)', ru: 'Мехатроник и сцепление сухого 7-DSG (DQ200, если автомат)' }, cost: '€1,300–2,100', risk: { en: 'Shuddering in 2nd gear, lost gears, or cracked pressure accumulator', de: 'Ruckeln im 2. Gang, Gangausfall oder geplatzter Druckspeicher', ru: 'Рывки на 2-й передаче, потеря передач или трещина гидроплиты' }, damage: '€2,200–3,200' }
+              ]
+            },
             badges: {
               en: ['Affordable Routine Service', 'Chain Kit ~€900'],
               de: ['Überschaubare Wartungskosten', 'Kettensatz ca. 900 €'],
@@ -52500,6 +56887,13 @@ const CAR_ROSTER = [
             'Расход выше, чем у TFSI'
           ]
         },
+        specOverrides: {
+          engineName: { en: '1.6L I4 MPI Petrol (Belt)', de: '1.6L Reihenvierzylinder Sauger (Riemen)', ru: '1.6L R4 MPI Бензин (Ремень)' },
+          forcedInduction: '@na', injection: '@port', timingDrive: '@belt', gearbox: '@manual5', clutchDmf: '@singleClutch',
+          towingBraked: '1,200 kg', sprint0100: '11.9 s', topSpeed: '185 km/h', peakTorque: '148 Nm @ 3,800 rpm',
+          passingPunch: { en: 'Unrushed · Needs Downshifts', de: 'Gemütlich · Runterschalten', ru: 'Спокойная · Нужны обороты' },
+          realWorldFuel: '7.6 L/100km', tankRange: '55 L (~725 km)', euroNorm: 'Euro 4/5 (Petrol)', taxInsurance: '@tierLow', serviceWear: '@tierVeryLow'
+        },
         subStats: {
           powertrainDurability: {
             score: 8.9,
@@ -52507,6 +56901,10 @@ const CAR_ROSTER = [
               en: ['Port-Injected 8V Iron-Clad Reliability', 'Easy 300,000+ km Potential'],
               de: ['Robuster 8V-Saugmotor ohne Turbo', '300.000+ km problemlos möglich'],
               ru: ['Простой 8-клапанный атмосферник', 'Ресурс легко 300 000+ км']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'BSE / BSF (EA113) · 1,595 cc' }, { k: 'architecture', v: { en: 'Inline-4 8V Aluminium · Port Injection + Timing Belt', de: 'Reihenvierzylinder 8V Alu · Saugrohr + Zahnriemen', ru: 'Рядный 4-цил. 8V · Распределённый впрыск + ремень' } }], note: { en: 'The bulletproof legend of the A3 8P: slow and a bit thirsty on highways, but zero turbo, zero direct-injection carbon, and zero simplex-chain risk.', de: 'Der unverwüstliche Dauerläufer im A3 8P: gemütlich und etwas durstig, aber ohne Turbo, ohne Verkokung und ohne Steuerketten-Risiko.', ru: 'Самый неубиваемый мотор A3 8P: спокойный и чуть прожорливый, но без турбины, нагара и проблем с цепью.' } },
+              forcedInduction: '@naNoTurbo', injection: '@portInj', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -52842,6 +57240,15 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 8.8,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 120,000 km / 7 yrs', de: 'Alle 120.000 km / 7 J.', ru: 'Каждые 120 000 км / 7 лет' }, action: { en: 'Replace timing belt, tensioner roller & water pump', de: 'Zahnriemen, Spannrolle & Wasserpumpe erneuern', ru: 'Замена ремня ГРМ, ролика и помпы' }, cost: '€380–560' },
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Replace spark plugs, HT leads & check 5-MT gearbox oil', de: 'Zündkerzen, Zündkabel & 5-Gang-Getriebeöl prüfen/wechseln', ru: 'Замена свечей, проводов и проверка масла в 5-МКПП' }, cost: '€130–210' }
+              ],
+              critical: [
+                { when: { en: '140,000–220,000 km', de: '140.000–220.000 km', ru: '140 000–220 000 км' }, action: { en: '5-MT pinion bearing whine (early DUU/0AF boxes) & oil-ring wear', de: '5-Gang-Getriebelager-Heulen & Ölabstreifringe ab hoher Laufleistung', ru: 'Гул подшипника 5-МКПП и износ маслосъёмных колец на больших пробегах' }, cost: '€550–1,100', risk: { en: 'Loud gearbox whine in 1st–3rd gear or rising oil consumption', de: 'Lautes Getriebeheulen oder steigender Ölverbrauch', ru: 'Сильный гул коробки передач или рост расхода масла' }, damage: '€1,300–2,000' }
+              ]
+            },
             badges: {
               en: ['Lowest Repair Bills in Class', 'Timing Belt ~€450'],
               de: ['Niedrigste Reparaturkosten', 'Zahnriemen ca. 450 €'],
@@ -52923,6 +57330,13 @@ const CAR_ROSTER = [
             'Просит АИ-98; 1.6 MPI надёжнее'
           ]
         },
+        specOverrides: {
+          engineName: { en: '1.6L I4 FSI Petrol (Chain)', de: '1.6L Reihenvierzylinder FSI (Kette)', ru: '1.6L R4 FSI Бензин (Цепь)' },
+          forcedInduction: '@na', injection: '@direct', timingDrive: '@chain', gearbox: '@manual6', clutchDmf: '@singleClutch',
+          towingBraked: '1,200 kg', sprint0100: '10.9 s', topSpeed: '196 km/h', peakTorque: '155 Nm @ 4,000 rpm',
+          passingPunch: { en: 'Must Be Revved Hard', de: 'Braucht hohe Drehzahl', ru: 'Требует высоких оборотов' },
+          realWorldFuel: '7.1 L/100km', tankRange: '55 L (~775 km)', euroNorm: 'Euro 4 (Petrol)', taxInsurance: '@tierLow', serviceWear: '@tierMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 6.6,
@@ -52930,6 +57344,10 @@ const CAR_ROSTER = [
               en: ['Watch Timing Chain & NOx Sensor', 'Carbon Buildup on Intake Valves'],
               de: ['Steuerkette & NOx-Sensor prüfen', 'Verkokung an Einlassventilen'],
               ru: ['Проверить цепь и датчик NOx', 'Нагар на впускных клапанах']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'BLP / BLF (EA111) · 1,598 cc' }, { k: 'architecture', v: { en: 'Inline-4 16V · Early Direct Injection + Simplex Chain', de: 'Reihenvierzylinder 16V · Frühe Direkteinspritzung + Kette', ru: 'Рядный 4-цил. 16V · Ранний FSI + цепь EA111' } }], note: { en: 'Slightly quicker and thriftier than the 1.6 MPI, but adds NOx sensor, intake carbon, and EA111 chain complexity for little extra punch.', de: 'Etwas flotter als der 1.6 MPI, bringt aber NOx-Sensor, Verkokung und EA111-Steuerkette für wenig Mehrleistung mit.', ru: 'Чуть бодрее 1.6 MPI, но добавляет дорогой датчик NOx, нагар на клапанах и риск по цепи EA111.' } },
+              forcedInduction: '@naNoTurbo', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -53274,6 +57692,14 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.1,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Replace spark plugs, ignition coils & refresh 6-MT gearbox oil', de: 'Zündkerzen, Zündspulen & 6-Gang-Getriebeöl prüfen/wechseln', ru: 'Замена свечей, катушек и масла в 6-МКПП' }, cost: '€160–240' }
+              ],
+              critical: [
+                { when: { en: '90,000–160,000 km', de: '90.000–160.000 km', ru: '90 000–160 000 км' }, action: { en: 'EA111 timing chain kit & exhaust NOx sensor replacement', de: 'EA111-Steuerkettensatz & Abgas-NOx-Sensor erneuern', ru: 'Замена цепи ГРМ EA111 и датчика NOx в выхлопе' }, cost: '€750–1,350', risk: { en: 'Stretched chain jumps teeth; faulty NOx sensor triggers CEL and high fuel burn', de: 'Übersprungene Kette zerstört Ventile; defekter NOx-Sensor erhöht Verbrauch', ru: 'Перескок цепи гнёт клапаны; сбой NOx зажигает Check Engine и повышает расход' }, damage: '€2,800–4,200' }
+              ]
+            },
             badges: {
               en: ['NOx Sensor ~€450', 'Chain Kit ~€850'],
               de: ['NOx-Sensor ca. 450 €', 'Kettensatz ca. 850 €'],
@@ -53359,6 +57785,15 @@ const CAR_ROSTER = [
             'Дорогой капремонт без замены поршневой'
           ]
         },
+        specOverrides: {
+          engineName: { en: '1.8L I4 TFSI (EA888 Chain)', de: '1.8L Reihenvierzylinder TFSI (EA888)', ru: '1.8L R4 TFSI (Цепь EA888)' },
+          forcedInduction: '@turbo', injection: '@direct', timingDrive: '@chain',
+          gearbox: { en: '6-MT / Dry 7-DSG (DQ200)', de: '6-Gang / Trockenes 7-DSG', ru: '6-МКПП / Сухой 7-DSG' },
+          clutchDmf: '@clutchDmf', towingBraked: '1,400 kg',
+          sprint0100: '7.7 s', topSpeed: '222 km/h', peakTorque: '250 Nm @ 1,500 rpm',
+          passingPunch: { en: 'Instant 250 Nm Surge', de: 'Sofortiger 250-Nm-Schub', ru: 'Мгновенный подхват 250 Н·м' },
+          realWorldFuel: '7.8 L/100km', tankRange: '55 L (~705 km)', euroNorm: 'Euro 5 (Petrol)', taxInsurance: '@tierMod', serviceWear: '@tierHigh'
+        },
         subStats: {
           powertrainDurability: {
             score: 5.1,
@@ -53366,6 +57801,10 @@ const CAR_ROSTER = [
               en: ['Piston Ring Oil Consumption Risk', 'Verify Rebuild Invoice Before Buying'],
               de: ['Kolbenring-Ölverbrauch-Risiko', 'Nur mit überholten Kolben kaufen'],
               ru: ['Риск масложора (кольца поршней)', 'Брать только после замены поршневой']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'CDAA / BZB (EA888) · 1,798 cc' }, { k: 'architecture', v: { en: 'Inline-4 Cast-Iron Block · Turbo + Chain (Oil-Ring Watchout)', de: 'Reihenvierzylinder Grauguss · Turbo + Kette (Kolbenring-Risiko)', ru: 'Рядный 4-цил. чугунный блок · Турбо + цепь (риск масложора)' } }], note: { en: 'Quick, refined warm hatch, but 2009–2011 CDAA engines are infamous for clogged oil-control rings burning 1L/1,000 km and jumping chain tensioners.', de: 'Flott und kultiviert, aber 2009–2011er CDAA-Motoren sind berüchtigt für Ölverbrauch (Kolbenringe) und überspringende Kettenspanner.', ru: 'Быстрый и тихий, но моторы CDAA 2009–2011 печально известны масложором (кольца) и перескоком цепи ГРМ.' } },
+              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -53710,6 +58149,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 5.6,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Change wet 6-DSG oil (if 2.0 TFSI) + spark plugs & PCV valve check', de: 'Nasses 6-DSG-Öl wechseln (bei 2.0 TFSI) + Zündkerzen & KGE prüfen', ru: 'Замена масла в мокром 6-DSG (если есть) + свечи и клапан ВКГ (PCV)' }, cost: '€240–390' },
+                { when: { en: 'Every 90,000–120,000 km', de: 'Alle 90.000–120.000 km', ru: 'Каждые 90–120 тыс. км' }, action: { en: 'Direct-injection intake valve walnut-blasting & water pump inspection', de: 'Einlassventile reinigen (Verkokung) & Wasserpumpe prüfen', ru: 'Чистка впускных клапанов от нагара и проверка помпы' }, cost: '€350–550' }
+              ],
+              critical: [
+                { when: { en: '80,000–140,000 km', de: '80.000–140.000 km', ru: '80 000–140 000 км' }, action: { en: 'EA888 Gen2 thin oil-control piston rings (1L/1,000 km oil burn fix)', de: 'EA888 Gen2 Kolbenringe/Kolben-Umbau (bekanntes Ölverbrauchs-Problem)', ru: 'Замена поршней/колец EA888 Gen2 (масложор до 1 л / 1 000 км)' }, cost: '€2,600–4,200', risk: { en: 'Clogged rings burn oil rapidly, foul plugs, and score cylinder walls', de: 'Verkokte Ölabstreifringe führen zu extremem Ölverbrauch und Motorschaden', ru: 'Закоксовка колец вызывает дикий масложор и разрушение поршневой' }, damage: '€4,500–6,500' },
+                { when: { en: '90,000–150,000 km', de: '90.000–150.000 km', ru: '90 000–150 000 км' }, action: { en: 'Timing chain & revised tensioner upgrade (pre-2012 weak tensioner!)', de: 'Steuerkette & verbesserter Kettenspanner (alte Spanner versagen!)', ru: 'Замена цепи ГРМ и натяжителя на обновлённый (старый перескакивает!)' }, cost: '€950–1,450', risk: { en: 'Ratchet failure on startup jumps chain and destroys cylinder head', de: 'Defekter Spanner lässt Kette beim Anlassen überspringen — Motorschaden', ru: 'Отказ натяжителя при запуске — перескок цепи и загиб клапанов' }, damage: '€3,500–5,500' }
+              ]
+            },
             badges: {
               en: ['Piston Rebuild €2,500–€3,800', 'Chain Kit ~€1,100'],
               de: ['Kolben-Revision 2.500–3.800 €', 'Steuerkette ca. 1.100 €'],
@@ -53791,6 +58240,15 @@ const CAR_ROSTER = [
             'Снизу уступает турбомоторам'
           ]
         },
+        specOverrides: {
+          engineName: { en: '2.0L I4 FSI Petrol (Belt)', de: '2.0L Reihenvierzylinder FSI (Riemen)', ru: '2.0L R4 FSI Бензин (Ремень)' },
+          forcedInduction: '@na', injection: '@direct', timingDrive: '@belt',
+          gearbox: { en: '6-MT / Aisin 6-AT', de: '6-Gang / Aisin 6-AT', ru: '6-МКПП / Aisin 6-АКПП' },
+          clutchDmf: '@singleClutch', towingBraked: '1,400 kg',
+          sprint0100: '9.1 s', topSpeed: '211 km/h', peakTorque: '200 Nm @ 3,500 rpm',
+          passingPunch: { en: 'Linear Pull Above 3,500', de: 'Linear ab 3.500/min', ru: 'Ровная тяга выше 3 500' },
+          realWorldFuel: '8.2 L/100km', tankRange: '55 L (~670 km)', euroNorm: 'Euro 4 (Petrol)', taxInsurance: '@tierMod', serviceWear: '@tierMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.2,
@@ -53798,6 +58256,10 @@ const CAR_ROSTER = [
               en: ['Solid Bottom End • No Turbo', 'Watch Cam Follower & NOx Sensor'],
               de: ['Robuster Rumpf • Kein Turbo', 'Stößel & NOx-Sensor prüfen'],
               ru: ['Крепкий блок • Без турбины', 'Проверить толкатель ТНВД и NOx']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'BLR / BVY (EA113) · 1,984 cc' }, { k: 'architecture', v: { en: 'Inline-4 Naturally Aspirated FSI · Belt + Rear Cam Chain', de: 'Reihenvierzylinder Sauger FSI · Zahnriemen + hintere Kette', ru: 'Рядный 4-цил. атмосферный FSI · Ремень + малая цепь валов' } }], note: { en: 'Solid naturally aspirated 2.0 with optional Aisin 6-AT; prefers 98 RON petrol and watch the high-pressure fuel-pump cam follower.', de: 'Solider 2.0-Sauger mit robuster Aisin-6-AT-Option; bevorzugt Super Plus und braucht gelegentlich neue Hochdruckpumpen-Stößel.', ru: 'Крепкий атмосферник 2.0 с надёжным 6-АКПП Aisin; любит 98-й бензин и требует контроля толкателя ТНВД.' } },
+              forcedInduction: '@naNoTurbo', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -54125,6 +58587,15 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.4,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 120,000 km / 7 yrs', de: 'Alle 120.000 km / 7 J.', ru: 'Каждые 120 000 км / 7 лет' }, action: { en: 'Replace timing belt kit & water pump; change Aisin 6-AT fluid every 60k', de: 'Zahnriemensatz & Wasserpumpe wechseln; Aisin-6-AT-Öl alle 60.000 km', ru: 'Замена ремня ГРМ и помпы; масло в 6-АКПП Aisin каждые 60 000 км' }, cost: '€480–750' },
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Inspect HPFP cam follower tappet & spark plugs', de: 'Becherstößel der Hochdruckpumpe & Zündkerzen prüfen', ru: 'Проверка толкателя ТНВД и замена свечей' }, cost: '€160–250' }
+              ],
+              critical: [
+                { when: { en: '110,000–170,000 km', de: '110.000–170.000 km', ru: '110 000–170 000 км' }, action: { en: 'HPFP cam follower wear, intake manifold flap motor & rear cam chain', de: 'HPFP-Becherstößel, Saugrohrklappen-Stellmotor & Nockenwellenkette', ru: 'Износ толкателя ТНВД, привод заслонок впуска и цепь распредвалов' }, cost: '€450–950', risk: { en: 'Worn cam follower grinds down intake camshaft lobe and HPFP', de: 'Durchgeschliffener Stößel zerstört Nockenwelle und Hochdruckpumpe', ru: 'Протёртый толкатель уничтожает кулачок распредвала и ТНВД' }, damage: '€1,800–2,800' }
+              ]
+            },
             badges: {
               en: ['Belt + Chain Link Service', 'Cam Follower Cheap (€45)'],
               de: ['Zahnriemen + kurze Kette hinten', 'Pumpenstößel günstig (45 €)'],
@@ -54210,6 +58681,15 @@ const CAR_ROSTER = [
             'Расход под нагрузкой 8,5–10 л'
           ]
         },
+        specOverrides: {
+          engineName: { en: '2.0L I4 TFSI (200 HP Turbo)', de: '2.0L Reihenvierzylinder TFSI (200 PS)', ru: '2.0L R4 TFSI (200 л.с. Турбо)' },
+          forcedInduction: '@turbo', injection: '@direct', timingDrive: '@chain',
+          gearbox: { en: '6-MT / Wet 6-DSG (DQ250)', de: '6-Gang / Nasses 6-DSG (DQ250)', ru: '6-МКПП / Мокрый 6-DSG' },
+          clutchDmf: '@dsg6Wet', towingBraked: '1,400 kg',
+          sprint0100: '6.9 s', topSpeed: '238 km/h', peakTorque: '280 Nm @ 1,800 rpm',
+          passingPunch: { en: 'Effortless Warm-Hatch Pull', de: 'Souveräner Warm-Hatch-Schub', ru: 'Мощный подхват хот-хэтча' },
+          realWorldFuel: '8.9 L/100km', tankRange: '55 L (~620 km)', euroNorm: 'Euro 5 (Petrol)', taxInsurance: '@tierModHigh', serviceWear: '@tierHigh'
+        },
         subStats: {
           powertrainDurability: {
             score: 6.4,
@@ -54217,6 +58697,10 @@ const CAR_ROSTER = [
               en: ['2004–08 Belt Engine Better Than 2009–11 Chain', 'Check Cam Follower or Oil Burn'],
               de: ['2004–08 Zahnriemen solider als 2009–11 Kette', 'Stößel bzw. Ölverbrauch prüfen'],
               ru: ['Ременной 2004–08 удачнее цепного 2009–11', 'Проверить толкатель / масложор']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'CCZA (EA888) / BWA (EA113) · 1,984 cc' }, { k: 'architecture', v: { en: 'Inline-4 Cast-Iron Turbo · Pairs With Wet 6-DSG (DQ250)', de: 'Reihenvierzylinder Grauguss-Turbo · Mit nassem 6-DSG', ru: 'Рядный 4-цил. чугунный турбо · Мокрый 6-DSG (DQ250)' } }], note: { en: 'Rapid 6.9 s sleeper with the tough wet-clutch 6-DSG; facelift CCZA needs the updated chain tensioner and oil-burn check before purchase.', de: 'Schneller 6,9-s-Sleeper mit robustem nassem 6-DSG; Facelift-CCZA unbedingt auf Kettenspanner-Update und Ölverbrauch prüfen.', ru: 'Быстрый хэтч (6,9 с) с крепким мокрым 6-DSG; у рестайлинга CCZA проверяйте натяжитель цепи и расход масла.' } },
+              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -54561,6 +59045,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 6.5,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Change wet 6-DSG oil (if 2.0 TFSI) + spark plugs & PCV valve check', de: 'Nasses 6-DSG-Öl wechseln (bei 2.0 TFSI) + Zündkerzen & KGE prüfen', ru: 'Замена масла в мокром 6-DSG (если есть) + свечи и клапан ВКГ (PCV)' }, cost: '€240–390' },
+                { when: { en: 'Every 90,000–120,000 km', de: 'Alle 90.000–120.000 km', ru: 'Каждые 90–120 тыс. км' }, action: { en: 'Direct-injection intake valve walnut-blasting & water pump inspection', de: 'Einlassventile reinigen (Verkokung) & Wasserpumpe prüfen', ru: 'Чистка впускных клапанов от нагара и проверка помпы' }, cost: '€350–550' }
+              ],
+              critical: [
+                { when: { en: '80,000–140,000 km', de: '80.000–140.000 km', ru: '80 000–140 000 км' }, action: { en: 'EA888 Gen2 thin oil-control piston rings (1L/1,000 km oil burn fix)', de: 'EA888 Gen2 Kolbenringe/Kolben-Umbau (bekanntes Ölverbrauchs-Problem)', ru: 'Замена поршней/колец EA888 Gen2 (масложор до 1 л / 1 000 км)' }, cost: '€2,600–4,200', risk: { en: 'Clogged rings burn oil rapidly, foul plugs, and score cylinder walls', de: 'Verkokte Ölabstreifringe führen zu extremem Ölverbrauch und Motorschaden', ru: 'Закоксовка колец вызывает дикий масложор и разрушение поршневой' }, damage: '€4,500–6,500' },
+                { when: { en: '90,000–150,000 km', de: '90.000–150.000 km', ru: '90 000–150 000 км' }, action: { en: 'Timing chain & revised tensioner upgrade (pre-2012 weak tensioner!)', de: 'Steuerkette & verbesserter Kettenspanner (alte Spanner versagen!)', ru: 'Замена цепи ГРМ и натяжителя на обновлённый (старый перескакивает!)' }, cost: '€950–1,450', risk: { en: 'Ratchet failure on startup jumps chain and destroys cylinder head', de: 'Defekter Spanner lässt Kette beim Anlassen überspringen — Motorschaden', ru: 'Отказ натяжителя при запуске — перескок цепи и загиб клапанов' }, damage: '€3,500–5,500' }
+              ]
+            },
             badges: {
               en: ['DSG Oil Service ~€280', 'Chain/Oil Fix Can Be Costly'],
               de: ['DSG-Ölservice ca. 280 €', 'Ketten-/Kolben-Reparatur teuer'],
@@ -54646,6 +59140,13 @@ const CAR_ROSTER = [
             'Дорогая замена радиатора EGR'
           ]
         },
+        specOverrides: {
+          engineName: { en: '1.6L I4 TDI 90 (CR Belt)', de: '1.6L Reihenvierzylinder TDI (Riemen)', ru: '1.6L R4 TDI 90 (CR Ремень)' },
+          forcedInduction: '@turbo', injection: '@commonRail', timingDrive: '@belt', gearbox: '@manual5', clutchDmf: '@singleClutch',
+          towingBraked: '1,300 kg', sprint0100: '12.2 s', topSpeed: '180 km/h', peakTorque: '230 Nm @ 1,500 rpm',
+          passingPunch: { en: 'Frugal Low-End Commuter', de: 'Sparsam & entspannt', ru: 'Экономичная городская тяга' },
+          realWorldFuel: '4.6 L/100km', tankRange: '55 L (~1,195 km)', euroNorm: 'Euro 5 (Diesel)', taxInsurance: '@tierLow', serviceWear: '@tierMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.0,
@@ -54653,6 +59154,10 @@ const CAR_ROSTER = [
               en: ['Solid Bottom End • 210k Belt', 'Watch Piezo Injectors & EGR Cooler'],
               de: ['Robuster Rumpf • 210 Tkm Zahnriemen', 'Piezo-Injektoren & AGR-Kühler prüfen'],
               ru: ['Крепкий блок • Ремень 210 тыс.', 'Проверить пьезофорсунки и EGR']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'CAYB (EA189) · 1,598 cc' }, { k: 'architecture', v: { en: 'Inline-4 Common-Rail Diesel · 210k Timing Belt', de: 'Reihenvierzylinder Common-Rail-Diesel · 210-Tkm-Zahnriemen', ru: 'Рядный 4-цил. дизель Common-Rail · Ремень 210 тыс. км' } }], note: { en: 'Ultra-economical 1,195 km commuter; simple 5-MT avoids DSG bills, though EA189 EGR cooler and Siemens injectors remain watchouts.', de: 'Extrem sparsamer 1.195-km-Pendler; simpler 5-Gang vermeidet DSG-Kosten, aber EA189-AGR-Kühler und Injektoren bleiben Schwachstellen.', ru: 'Сверхэкономичный дизель с запасом хода 1 195 км; простая 5-МКПП, но следите за клапаном EGR и форсунками Siemens.' } },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -54982,6 +59487,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.1,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 180,000–210,000 km / 8 yrs', de: 'Alle 180.000–210.000 km / 8 J.', ru: 'Каждые 180–210 тыс. км / 8 лет' }, action: { en: 'Replace timing belt kit, tensioners & water pump', de: 'Zahnriemensatz, Spannrollen & Wasserpumpe wechseln', ru: 'Замена комплекта ремня ГРМ, роликов и помпы' }, cost: '€580–850' },
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Change wet 6-DSG oil (if 2.0 TDI DSG) & diesel fuel filter', de: 'Nasses 6-DSG-Öl (bei 2.0 TDI DSG) & Dieselfilter wechseln', ru: 'Замена масла в мокром 6-DSG (если есть) и топливного фильтра' }, cost: '€240–360' }
+              ],
+              critical: [
+                { when: { en: '110,000–180,000 km', de: '110.000–180.000 km', ru: '110 000–180 000 км' }, action: { en: 'EA189 EGR cooler/valve assembly (especially on 1.6 TDI & post-update cars)', de: 'EA189 AGR-Kühler/Ventil-Einheit (besonders nach Software-Update)', ru: 'Модуль клапана и охладителя EGR EA189 (частая болезнь)' }, cost: '€650–1,050', risk: { en: 'Flashing glow-plug light, coolant loss, and limp mode', de: 'Blinkende Vorglühlampe, Kühlmittelverlust und Notlauf', ru: 'Мигающая спираль, потеря антифриза и аварийный режим' }, damage: '€1,200–1,800' },
+                { when: { en: '150,000–220,000 km', de: '150.000–220.000 km', ru: '150 000–220 000 км' }, action: { en: 'Dual-mass flywheel + clutch & DPF ash-load check (1.6 TDI: Siemens injectors)', de: 'ZMS + Kupplung & DPF-Aschebeladung (1.6 TDI: Injektoren prüfen)', ru: 'Двухмассовый маховик + сцепление и проверка сажевого фильтра (1.6: форсунки)' }, cost: '€950–1,600', risk: { en: 'Idle knock, blocked DPF, or knocking injectors on 1.6 TDI', de: 'Starkes ZMS-Klappern, voller DPF oder nagelnde 1.6-TDI-Injektoren', ru: 'Стук маховика, забитый DPF или стук пьезофорсунок на 1.6 TDI' }, damage: '€2,000–3,200' }
+              ]
+            },
             badges: {
               en: ['Long 210k km Belt Interval', 'Injector Replacement ~€450 Each'],
               de: ['210 Tkm Zahnriemen-Intervall', 'Injektor ca. 450 € / Stück'],
@@ -55067,6 +59582,15 @@ const CAR_ROSTER = [
             'Сухая 7-DSG чувствительна к пробкам'
           ]
         },
+        specOverrides: {
+          engineName: { en: '1.6L I4 TDI 105 (CR Belt)', de: '1.6L Reihenvierzylinder TDI (Riemen)', ru: '1.6L R4 TDI 105 (CR Ремень)' },
+          forcedInduction: '@turbo', injection: '@commonRail', timingDrive: '@belt',
+          gearbox: { en: '5-MT / Dry 7-DSG (DQ200)', de: '5-Gang / Trockenes 7-DSG', ru: '5-МКПП / Сухой 7-DSG' },
+          clutchDmf: '@clutchDmf', towingBraked: '1,400 kg',
+          sprint0100: '11.4 s', topSpeed: '194 km/h', peakTorque: '250 Nm @ 1,500 rpm',
+          passingPunch: { en: 'Smooth 250 Nm Cruise', de: 'Ruhige 250 Nm', ru: 'Ровные 250 Н·м' },
+          realWorldFuel: '4.7 L/100km', tankRange: '55 L (~1,170 km)', euroNorm: 'Euro 5 (Diesel)', taxInsurance: '@tierLowMod', serviceWear: '@tierMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.0,
@@ -55074,6 +59598,10 @@ const CAR_ROSTER = [
               en: ['Tough Block • 210k Belt', 'Watch Piezo Injectors & EGR'],
               de: ['Robuster Block • 210 Tkm Riemen', 'Injektoren & AGR prüfen'],
               ru: ['Крепкий блок • Ремень 210 тыс.', 'Проверить форсунки и EGR']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'CAYC (EA189) · 1,598 cc' }, { k: 'architecture', v: { en: 'Inline-4 Common-Rail Diesel · Long-Life Belt', de: 'Reihenvierzylinder Common-Rail · Langlebiger Zahnriemen', ru: 'Рядный 4-цил. дизель Common-Rail · Долговечный ремень' } }], note: { en: 'Refined, thrifty Euro 5 commuter; pick the 5-MT over the dry 7-DSG and check if the EGR cooler was already replaced.', de: 'Kultivierter, sparsamer Euro-5-Pendler; lieber mit 5-Gang als trockenem 7-DSG kaufen und AGR-Kühler-Historie prüfen.', ru: 'Тихий и экономичный дизель Euro 5; лучше брать на 5-МКПП (без сухого DQ200) и проверить замену охладителя EGR.' } },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -55409,6 +59937,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.1,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 180,000–210,000 km / 8 yrs', de: 'Alle 180.000–210.000 km / 8 J.', ru: 'Каждые 180–210 тыс. км / 8 лет' }, action: { en: 'Replace timing belt kit, tensioners & water pump', de: 'Zahnriemensatz, Spannrollen & Wasserpumpe wechseln', ru: 'Замена комплекта ремня ГРМ, роликов и помпы' }, cost: '€580–850' },
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Change wet 6-DSG oil (if 2.0 TDI DSG) & diesel fuel filter', de: 'Nasses 6-DSG-Öl (bei 2.0 TDI DSG) & Dieselfilter wechseln', ru: 'Замена масла в мокром 6-DSG (если есть) и топливного фильтра' }, cost: '€240–360' }
+              ],
+              critical: [
+                { when: { en: '110,000–180,000 km', de: '110.000–180.000 km', ru: '110 000–180 000 км' }, action: { en: 'EA189 EGR cooler/valve assembly (especially on 1.6 TDI & post-update cars)', de: 'EA189 AGR-Kühler/Ventil-Einheit (besonders nach Software-Update)', ru: 'Модуль клапана и охладителя EGR EA189 (частая болезнь)' }, cost: '€650–1,050', risk: { en: 'Flashing glow-plug light, coolant loss, and limp mode', de: 'Blinkende Vorglühlampe, Kühlmittelverlust und Notlauf', ru: 'Мигающая спираль, потеря антифриза и аварийный режим' }, damage: '€1,200–1,800' },
+                { when: { en: '150,000–220,000 km', de: '150.000–220.000 km', ru: '150 000–220 000 км' }, action: { en: 'Dual-mass flywheel + clutch & DPF ash-load check (1.6 TDI: Siemens injectors)', de: 'ZMS + Kupplung & DPF-Aschebeladung (1.6 TDI: Injektoren prüfen)', ru: 'Двухмассовый маховик + сцепление и проверка сажевого фильтра (1.6: форсунки)' }, cost: '€950–1,600', risk: { en: 'Idle knock, blocked DPF, or knocking injectors on 1.6 TDI', de: 'Starkes ZMS-Klappern, voller DPF oder nagelnde 1.6-TDI-Injektoren', ru: 'Стук маховика, забитый DPF или стук пьезофорсунок на 1.6 TDI' }, damage: '€2,000–3,200' }
+              ]
+            },
             badges: {
               en: ['210k km Belt Interval', 'Injectors/EGR Main Cost'],
               de: ['210 Tkm Zahnriemen', 'Injektoren/AGR Hauptkosten'],
@@ -55491,6 +60029,15 @@ const CAR_ROSTER = [
             'Только Евро-4'
           ]
         },
+        specOverrides: {
+          engineName: { en: '1.9L I4 TDI (Pumpe-Düse)', de: '1.9L Reihenvierzylinder PD (Riemen)', ru: '1.9L R4 TDI (Насос-форсунки)' },
+          forcedInduction: '@turbo', injection: '@pumpDuse', timingDrive: '@belt',
+          gearbox: { en: '5-MT / Wet 6-DSG (DQ250)', de: '5-Gang / Nasses 6-DSG', ru: '5-МКПП / Мокрый 6-DSG' },
+          clutchDmf: '@clutchDmf', towingBraked: '1,400 kg',
+          sprint0100: '11.4 s', topSpeed: '187 km/h', peakTorque: '250 Nm @ 1,900 rpm',
+          passingPunch: { en: 'Punchy PD Mid-Range Kick', de: 'Typischer PD-Drehmoment-Kick', ru: 'Бодрый толчок насос-форсунок' },
+          realWorldFuel: '5.1 L/100km', tankRange: '55 L (~1,080 km)', euroNorm: 'Euro 4 (Diesel)', taxInsurance: '@tierMod', serviceWear: '@tierLowMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 8.6,
@@ -55498,6 +60045,10 @@ const CAR_ROSTER = [
               en: ['400k+ km Legend (Best: BKC)', 'Check 2007–08 BXE Rod Bearings'],
               de: ['400 Tkm+ Legende (Top: BKC)', '2007–08 BXE-Pleuellager prüfen'],
               ru: ['Легенда 400+ тыс. км (лучший BKC)', 'На BXE 2007–08 проверить вкладыши']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'BKC / BXE / BLS (EA188) · 1,896 cc' }, { k: 'architecture', v: { en: 'Inline-4 8V Cast-Iron · Mechanical Unit Injectors (PD)', de: 'Reihenvierzylinder 8V Grauguss · Pumpe-Düse (PD)', ru: 'Рядный 4-цил. 8V чугун · Насос-форсунки (PD)' } }], note: { en: 'Legendary half-million-km workhorse (especially BKC); on 2006–2008 BXE codes, replace conrod bearings preventively to avoid a thrown rod.', de: 'Legendärer Dauerläufer (besonders BKC); bei 2006–2008er BXE-Motoren die Pleuellager präventiv wechseln gegen Pleuelabriss.', ru: 'Легендарный ресурсный мотор (особенно BKC); на коде BXE (2006–2008) профилактически меняйте шатунные вкладыши.' } },
+              forcedInduction: '@turboDiesel', injection: { specs: [{ k: 'injectionType', v: { en: 'Pumpe-Düse (Unit Injectors) · Cam-Driven High Pressure', de: 'Pumpe-Düse-Einspritzung · Nockenwellen-Hochdruck', ru: 'Насос-форсунки (Pumpe-Düse) с приводом от распредвала' } }], note: { en: 'Rougher sound than Common-Rail, but mechanically tough and immune to high-pressure fuel-pump metal-shaving failures.', de: 'Rauer im Klang als Common-Rail, aber extrem robust und frei von Hochdruckpumpen-Spänen.', ru: 'Шумнее Common-Rail, но механически неубиваем и не боится стружки от ТНВД.' } }, timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -55824,6 +60375,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 8.5,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 120,000 km / 6 yrs', de: 'Alle 120.000 km / 6 J.', ru: 'Каждые 120 000 км / 6 лет' }, action: { en: 'Replace timing belt kit, rollers & water pump', de: 'Zahnriemensatz, Rollen & Wasserpumpe erneuern', ru: 'Замена ремня ГРМ, роликов и помпы' }, cost: '€520–780' },
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Change wet 6-DSG oil (if DSG) & diesel fuel filter; use VW 505.01 PD oil', de: '6-DSG-Öl (falls DSG) & Dieselfilter wechseln; strikt PD-Öl VW 505.01', ru: 'Замена масла в 6-DSG (если есть) и фильтра; строго масло допуска PD' }, cost: '€220–340' }
+              ],
+              critical: [
+                { when: { en: '140,000–220,000 km', de: '140.000–220.000 km', ru: '140 000–220 000 км' }, action: { en: 'PD-specific weak spots: BXE conrod bearings (1.9) / BKD head cracks & oil-pump hex drive (2.0)', de: 'PD-Schwachstellen: BXE-Pleuellager (1.9) / BKD-Kopfrisse & Ölpumpen-Sechskant (2.0)', ru: 'Болезни PD: вкладыши BXE (1.9) / трещины ГБЦ BKD и шестигранник маслонасоса (2.0)' }, cost: '€600–1,800', risk: { en: 'Thrown conrod through block (BXE) or sudden zero oil pressure (2.0 PD)', de: 'Pleuelabriss (BXE) oder plötzlicher Öldruckverlust (2.0 PD)', ru: 'Обрыв шатуна (BXE) или внезапная потеря давления масла (2.0 PD)' }, damage: '€3,500–5,500' },
+                { when: { en: '160,000–230,000 km', de: '160.000–230.000 km', ru: '160 000–230 000 км' }, action: { en: 'Dual-mass flywheel + clutch & PD injector loom / seals', de: 'Zweimassenschwungrad + Kupplung & PD-Kabelbaum / Dichtringe', ru: 'Двухмассовый маховик + сцепление и коса/уплотнители насос-форсунок' }, cost: '€950–1,500', risk: { en: 'Misfiring under load, hard hot starts, and heavy flywheel rattle', de: 'Aussetzer unter Last, schlechter Warmstart und starkes ZMS-Rasseln', ru: 'Троение под нагрузкой, плохой горячий пуск и стук маховика' }, damage: '€1,800–2,600' }
+              ]
+            },
             badges: {
               en: ['Cheap Parts Everywhere', 'No Piezo Injectors to Fail'],
               de: ['Überall günstige Teile', 'Robuste PD-Elemente'],
@@ -55902,6 +60463,15 @@ const CAR_ROSTER = [
             'Шумный; рестайлинг CR (2008+) намного лучше'
           ]
         },
+        specOverrides: {
+          engineName: { en: '2.0L I4 TDI 140 PD (Belt)', de: '2.0L Reihenvierzylinder PD (Riemen)', ru: '2.0L R4 TDI 140 PD (Ремень)' },
+          forcedInduction: '@turbo', injection: '@pumpDuse', timingDrive: '@belt',
+          gearbox: { en: '6-MT / Wet 6-DSG (DQ250)', de: '6-Gang / Nasses 6-DSG', ru: '6-МКПП / Мокрый 6-DSG' },
+          clutchDmf: '@clutchDmf', towingBraked: '1,500 kg',
+          sprint0100: '9.5 s', topSpeed: '207 km/h', peakTorque: '320 Nm @ 1,750 rpm',
+          passingPunch: { en: 'Punchy 320 Nm PD Surge', de: 'Kräftiger 320-Nm-PD-Schub', ru: 'Резкий подхват 320 Н·м PD' },
+          realWorldFuel: '5.6 L/100km', tankRange: '55 L (~980 km)', euroNorm: 'Euro 4 (Diesel)', taxInsurance: '@tierMod', serviceWear: '@tierModHigh'
+        },
         subStats: {
           powertrainDurability: {
             score: 6.0,
@@ -55909,6 +60479,10 @@ const CAR_ROSTER = [
               en: ['2003–05 Head Crack Risk', '2006+ Updated Head Better'],
               de: ['2003–05 Kopf-Rissgefahr', 'Ab 2006 verbesserter Kopf'],
               ru: ['Риск трещины ГБЦ на 2003–05', 'С 2006 г. ГБЦ доработана']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'BKD / BMM (EA188) · 1,968 cc' }, { k: 'architecture', v: { en: 'Inline-4 Cast-Iron · Pumpe-Düse + Timing Belt', de: 'Reihenvierzylinder Grauguss · Pumpe-Düse + Zahnriemen', ru: 'Рядный 4-цил. чугун · Насос-форсунки + ремень' } }], note: { en: 'Strong, frugal 320 Nm highway runner; check early 2003–2006 BKD cylinder-head revision ("C" casting) and oil-pump hex drive.', de: 'Kräftiger 320-Nm-Diesel; bei frühen BKD (2003–2006) auf Zylinderkopf-Revision ("C") und Ölpumpen-Mitnehmer achten.', ru: 'Тяговитый 320-Н·м дизель; на ранних BKD проверяйте ревизию ГБЦ ("C") и шестигранник привода маслонасоса.' } },
+              forcedInduction: '@turboDiesel', injection: { specs: [{ k: 'injectionType', v: { en: 'Pumpe-Düse (Bosch Unit Injectors)', de: 'Pumpe-Düse (Bosch-Einheiten)', ru: 'Насос-форсунки Bosch (PD)' } }], note: { en: 'Delivers an addictive mid-range punch; strictly requires VW 505.01 PD-spec oil to protect camshaft lobes.', de: 'Satter Durchzug in der Mitte; zwingend Motoröl nach VW-Norm 505.01 für die Nockenwelle nutzen.', ru: 'Мощный подхват в середине; требует строго масла допуска VW 505.01 для защиты распредвала.' } }, timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -56253,6 +60827,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 6.6,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 120,000 km / 6 yrs', de: 'Alle 120.000 km / 6 J.', ru: 'Каждые 120 000 км / 6 лет' }, action: { en: 'Replace timing belt kit, rollers & water pump', de: 'Zahnriemensatz, Rollen & Wasserpumpe erneuern', ru: 'Замена ремня ГРМ, роликов и помпы' }, cost: '€520–780' },
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Change wet 6-DSG oil (if DSG) & diesel fuel filter; use VW 505.01 PD oil', de: '6-DSG-Öl (falls DSG) & Dieselfilter wechseln; strikt PD-Öl VW 505.01', ru: 'Замена масла в 6-DSG (если есть) и фильтра; строго масло допуска PD' }, cost: '€220–340' }
+              ],
+              critical: [
+                { when: { en: '140,000–220,000 km', de: '140.000–220.000 km', ru: '140 000–220 000 км' }, action: { en: 'PD-specific weak spots: BXE conrod bearings (1.9) / BKD head cracks & oil-pump hex drive (2.0)', de: 'PD-Schwachstellen: BXE-Pleuellager (1.9) / BKD-Kopfrisse & Ölpumpen-Sechskant (2.0)', ru: 'Болезни PD: вкладыши BXE (1.9) / трещины ГБЦ BKD и шестигранник маслонасоса (2.0)' }, cost: '€600–1,800', risk: { en: 'Thrown conrod through block (BXE) or sudden zero oil pressure (2.0 PD)', de: 'Pleuelabriss (BXE) oder plötzlicher Öldruckverlust (2.0 PD)', ru: 'Обрыв шатуна (BXE) или внезапная потеря давления масла (2.0 PD)' }, damage: '€3,500–5,500' },
+                { when: { en: '160,000–230,000 km', de: '160.000–230.000 km', ru: '160 000–230 000 км' }, action: { en: 'Dual-mass flywheel + clutch & PD injector loom / seals', de: 'Zweimassenschwungrad + Kupplung & PD-Kabelbaum / Dichtringe', ru: 'Двухмассовый маховик + сцепление и коса/уплотнители насос-форсунок' }, cost: '€950–1,500', risk: { en: 'Misfiring under load, hard hot starts, and heavy flywheel rattle', de: 'Aussetzer unter Last, schlechter Warmstart und starkes ZMS-Rasseln', ru: 'Троение под нагрузкой, плохой горячий пуск и стук маховика' }, damage: '€1,800–2,600' }
+              ]
+            },
             badges: {
               en: ['Head Replacement ~€1,800', '120k–150k Belt Interval'],
               de: ['Kopf-Tausch ca. 1.800 €', '120–150 Tkm Zahnriemen'],
@@ -56335,6 +60919,15 @@ const CAR_ROSTER = [
             'Дизельный налог выше бензинового'
           ]
         },
+        specOverrides: {
+          engineName: { en: '2.0L I4 TDI 140 CR (Belt)', de: '2.0L Reihenvierzylinder CR (Riemen)', ru: '2.0L R4 TDI 140 CR (Ремень)' },
+          forcedInduction: '@turbo', injection: '@commonRail', timingDrive: '@belt',
+          gearbox: { en: '6-MT / Wet 6-DSG (DQ250)', de: '6-Gang / Nasses 6-DSG', ru: '6-МКПП / Мокрый 6-DSG' },
+          clutchDmf: '@clutchDmf', towingBraked: '1,600 kg',
+          sprint0100: '9.1 s', topSpeed: '209 km/h', peakTorque: '320 Nm @ 1,750 rpm',
+          passingPunch: { en: 'Effortless 6th-Gear Passing', de: 'Souverän im 6. Gang', ru: 'Лёгкий обгон на 6-й передаче' },
+          realWorldFuel: '5.4 L/100km', tankRange: '55 L (~1,020 km)', euroNorm: 'Euro 5 (Diesel)', taxInsurance: '@tierMod', serviceWear: '@tierMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 8.4,
@@ -56342,6 +60935,10 @@ const CAR_ROSTER = [
               en: ['Facelift CR Fixes Early PD Issues', 'Easy 300,000+ km Highway Runner'],
               de: ['Facelift-CR behebt PD-Schwächen', '300.000+ km Langstreckenläufer'],
               ru: ['Рестайлинг CR избавлен от болячек PD', 'Ресурс 300 000+ км на трассе']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'CBAB / CFFB (EA189) · 1,968 cc' }, { k: 'architecture', v: { en: 'Inline-4 Cast-Iron Common-Rail · 210k Timing Belt', de: 'Reihenvierzylinder Common-Rail · 210-Tkm-Zahnriemen', ru: 'Рядный 4-цил. Common-Rail · Ремень на 210 тыс. км' } }], note: { en: 'The #1 all-round engine in the A3 8P: quiet, refined Common-Rail, 1,000+ km range, tough wet 6-DSG option, and far more reliable than early PD or TSI units.', de: 'Der beste Allrounder im A3 8P: leiser Common-Rail, über 1.000 km Reichweite, robustes nasses 6-DSG und viel standfester als frühe PD/TSI.', ru: 'Лучший универсальный мотор A3 8P: тихий Common-Rail, 1 000+ км на баке, крепкий мокрый 6-DSG и высокий ресурс.' } },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -56674,6 +61271,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.8,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 180,000–210,000 km / 8 yrs', de: 'Alle 180.000–210.000 km / 8 J.', ru: 'Каждые 180–210 тыс. км / 8 лет' }, action: { en: 'Replace timing belt kit, tensioners & water pump', de: 'Zahnriemensatz, Spannrollen & Wasserpumpe wechseln', ru: 'Замена комплекта ремня ГРМ, роликов и помпы' }, cost: '€580–850' },
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Change wet 6-DSG oil (if 2.0 TDI DSG) & diesel fuel filter', de: 'Nasses 6-DSG-Öl (bei 2.0 TDI DSG) & Dieselfilter wechseln', ru: 'Замена масла в мокром 6-DSG (если есть) и топливного фильтра' }, cost: '€240–360' }
+              ],
+              critical: [
+                { when: { en: '110,000–180,000 km', de: '110.000–180.000 km', ru: '110 000–180 000 км' }, action: { en: 'EA189 EGR cooler/valve assembly (especially on 1.6 TDI & post-update cars)', de: 'EA189 AGR-Kühler/Ventil-Einheit (besonders nach Software-Update)', ru: 'Модуль клапана и охладителя EGR EA189 (частая болезнь)' }, cost: '€650–1,050', risk: { en: 'Flashing glow-plug light, coolant loss, and limp mode', de: 'Blinkende Vorglühlampe, Kühlmittelverlust und Notlauf', ru: 'Мигающая спираль, потеря антифриза и аварийный режим' }, damage: '€1,200–1,800' },
+                { when: { en: '150,000–220,000 km', de: '150.000–220.000 km', ru: '150 000–220 000 км' }, action: { en: 'Dual-mass flywheel + clutch & DPF ash-load check (1.6 TDI: Siemens injectors)', de: 'ZMS + Kupplung & DPF-Aschebeladung (1.6 TDI: Injektoren prüfen)', ru: 'Двухмассовый маховик + сцепление и проверка сажевого фильтра (1.6: форсунки)' }, cost: '€950–1,600', risk: { en: 'Idle knock, blocked DPF, or knocking injectors on 1.6 TDI', de: 'Starkes ZMS-Klappern, voller DPF oder nagelnde 1.6-TDI-Injektoren', ru: 'Стук маховика, забитый DPF или стук пьезофорсунок на 1.6 TDI' }, damage: '€2,000–3,200' }
+              ]
+            },
             badges: {
               en: ['180k–210k Timing Belt Interval', 'Huge Parts Availability'],
               de: ['180–210 Tkm Zahnriemen-Intervall', 'Günstige Teileversorgung'],
@@ -56751,6 +61358,15 @@ const CAR_ROSTER = [
             'Рестайлинг CR (2008+) намного надёжнее'
           ]
         },
+        specOverrides: {
+          engineName: { en: '2.0L I4 TDI 170 PD (Belt)', de: '2.0L Reihenvierzylinder 170 PD', ru: '2.0L R4 TDI 170 PD (Ремень)' },
+          forcedInduction: '@turbo', injection: '@pumpDuse', timingDrive: '@belt',
+          gearbox: { en: '6-MT / Wet 6-DSG (DQ250)', de: '6-Gang / Nasses 6-DSG', ru: '6-МКПП / Мокрый 6-DSG' },
+          clutchDmf: '@clutchDmf', towingBraked: '1,600 kg',
+          sprint0100: '8.2 s', topSpeed: '222 km/h', peakTorque: '350 Nm @ 1,750 rpm',
+          passingPunch: { en: 'Huge 350 Nm PD Surge', de: 'Wuchtiger 350-Nm-PD-Schub', ru: 'Мощнейший рывок 350 Н·м PD' },
+          realWorldFuel: '6.1 L/100km', tankRange: '55 L (~900 km)', euroNorm: 'Euro 4 (Diesel)', taxInsurance: '@tierModHigh', serviceWear: '@tierHigh'
+        },
         subStats: {
           powertrainDurability: {
             score: 5.8,
@@ -56758,6 +61374,10 @@ const CAR_ROSTER = [
               en: ['Siemens Piezo PD Injector Recall', 'Early DPF + Oil Pump Shaft'],
               de: ['Siemens-Piezo-Rückruf prüfen', 'Früher DPF & Ölpumpen-Mitnehmer'],
               ru: ['Проверить отзыв по форсункам Siemens', 'Ранний DPF и привод маслонасоса']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'BMN (EA188) · 1,968 cc' }, { k: 'architecture', v: { en: 'Inline-4 Cast-Iron · Piezo Pumpe-Düse + Early DPF', de: 'Reihenvierzylinder Grauguss · Piezo-PD + früher DPF', ru: 'Рядный 4-цил. чугун · Пьезо насос-форсунки + ранний DPF' } }], note: { en: 'Rapid 350 Nm diesel hatch, but early BMN engines had notorious Siemens piezo PD injector failures (confirm recall replacement) and sensitive early DPFs.', de: 'Flotter 350-Nm-Diesel, aber frühe BMN hatten anfällige Siemens-Piezo-PD-Elemente (Rückruf-Nachweis prüfen) und empfindliche DPF.', ru: 'Очень бодрый дизель (350 Н·м), но ранние BMN славились отказом пьезо-форсунок Siemens (проверяйте отзывную) и капризным DPF.' } },
+              forcedInduction: '@turboDiesel', injection: { specs: [{ k: 'injectionType', v: { en: 'Siemens Piezo Pumpe-Düse (Verify Recall Update)', de: 'Siemens Piezo-Pumpe-Düse (Rückruf-Update prüfen)', ru: 'Пьезо насос-форсунки Siemens (проверьте замену по отзывной)' } }], note: { en: 'Ensure the factory Siemens injector recall was completed; updated units are far more dependable.', de: 'Sicherstellen, dass der Werks-Rückruf der Siemens-PD-Elemente durchgeführt wurde.', ru: 'Убедитесь, что проведена заводская замена пьезо-форсунок Siemens.' } }, timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -57102,6 +61722,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 6.3,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 120,000 km / 6 yrs', de: 'Alle 120.000 km / 6 J.', ru: 'Каждые 120 000 км / 6 лет' }, action: { en: 'Replace timing belt kit, rollers & water pump', de: 'Zahnriemensatz, Rollen & Wasserpumpe erneuern', ru: 'Замена ремня ГРМ, роликов и помпы' }, cost: '€520–780' },
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Change wet 6-DSG oil (if DSG) & diesel fuel filter; use VW 505.01 PD oil', de: '6-DSG-Öl (falls DSG) & Dieselfilter wechseln; strikt PD-Öl VW 505.01', ru: 'Замена масла в 6-DSG (если есть) и фильтра; строго масло допуска PD' }, cost: '€220–340' }
+              ],
+              critical: [
+                { when: { en: '140,000–220,000 km', de: '140.000–220.000 km', ru: '140 000–220 000 км' }, action: { en: 'PD-specific weak spots: BXE conrod bearings (1.9) / BKD head cracks & oil-pump hex drive (2.0)', de: 'PD-Schwachstellen: BXE-Pleuellager (1.9) / BKD-Kopfrisse & Ölpumpen-Sechskant (2.0)', ru: 'Болезни PD: вкладыши BXE (1.9) / трещины ГБЦ BKD и шестигранник маслонасоса (2.0)' }, cost: '€600–1,800', risk: { en: 'Thrown conrod through block (BXE) or sudden zero oil pressure (2.0 PD)', de: 'Pleuelabriss (BXE) oder plötzlicher Öldruckverlust (2.0 PD)', ru: 'Обрыв шатуна (BXE) или внезапная потеря давления масла (2.0 PD)' }, damage: '€3,500–5,500' },
+                { when: { en: '160,000–230,000 km', de: '160.000–230.000 km', ru: '160 000–230 000 км' }, action: { en: 'Dual-mass flywheel + clutch & PD injector loom / seals', de: 'Zweimassenschwungrad + Kupplung & PD-Kabelbaum / Dichtringe', ru: 'Двухмассовый маховик + сцепление и коса/уплотнители насос-форсунок' }, cost: '€950–1,500', risk: { en: 'Misfiring under load, hard hot starts, and heavy flywheel rattle', de: 'Aussetzer unter Last, schlechter Warmstart und starkes ZMS-Rasseln', ru: 'Троение под нагрузкой, плохой горячий пуск и стук маховика' }, damage: '€1,800–2,600' }
+              ]
+            },
             badges: {
               en: ['Piezo PD Elements Expensive', 'DPF & Flywheel Maintenance'],
               de: ['Piezo-PD-Elemente teuer', 'DPF & ZMS kostenintensiv'],
@@ -57184,6 +61814,15 @@ const CAR_ROSTER = [
             'На переднем приводе быстрее стираются шины'
           ]
         },
+        specOverrides: {
+          engineName: { en: '2.0L I4 TDI 170 CR (Belt)', de: '2.0L Reihenvierzylinder 170 CR', ru: '2.0L R4 TDI 170 CR (Ремень)' },
+          forcedInduction: '@turbo', injection: '@commonRail', timingDrive: '@belt',
+          gearbox: { en: '6-MT / Wet 6-DSG (DQ250)', de: '6-Gang / Nasses 6-DSG', ru: '6-МКПП / Мокрый 6-DSG' },
+          clutchDmf: '@clutchDmf', towingBraked: '1,600 kg',
+          sprint0100: '8.2 s', topSpeed: '224 km/h', peakTorque: '350 Nm @ 1,750 rpm',
+          passingPunch: { en: 'GTI-Rivaling 350 Nm Pull', de: 'GTI-ähnlicher 350-Nm-Durchzug', ru: 'Мощная тяга 350 Н·м' },
+          realWorldFuel: '5.7 L/100km', tankRange: '55 L (~965 km)', euroNorm: 'Euro 5 (Diesel)', taxInsurance: '@tierModHigh', serviceWear: '@tierMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 8.2,
@@ -57191,6 +61830,10 @@ const CAR_ROSTER = [
               en: ['Proven Facelift Common-Rail', '180–210k km Belt • Watch EGR'],
               de: ['Bewährter Facelift-Common-Rail', '180–210 Tkm Riemen • AGR prüfen'],
               ru: ['Надёжный рестайлинг Common-Rail', 'Ремень 180–210 тыс. • Контроль EGR']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'CBBB / CFGB (EA189) · 1,968 cc' }, { k: 'architecture', v: { en: 'Inline-4 Cast-Iron Common-Rail · 170 HP / 350 Nm', de: 'Reihenvierzylinder Common-Rail · 170 PS / 350 Nm', ru: 'Рядный 4-цил. Common-Rail · 170 л.с. / 350 Н·м' } }], note: { en: 'Effortless Autobahn express: fixes the old BMN piezo-injector headaches, delivers 224 km/h cruise, and pairs cleanly with wet 6-DSG or Quattro.', de: 'Souveräner Autobahn-Express: behebt die alten BMN-Schwächen, läuft 224 km/h und harmoniert top mit nassem 6-DSG oder Quattro.', ru: 'Отличный скоростной дизель: избавлен от проблем старого BMN, едет 224 км/ч и отлично сочетается с 6-DSG или Quattro.' } },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -57526,6 +62169,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.6,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 180,000–210,000 km / 8 yrs', de: 'Alle 180.000–210.000 km / 8 J.', ru: 'Каждые 180–210 тыс. км / 8 лет' }, action: { en: 'Replace timing belt kit, tensioners & water pump', de: 'Zahnriemensatz, Spannrollen & Wasserpumpe wechseln', ru: 'Замена комплекта ремня ГРМ, роликов и помпы' }, cost: '€580–850' },
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Change wet 6-DSG oil (if 2.0 TDI DSG) & diesel fuel filter', de: 'Nasses 6-DSG-Öl (bei 2.0 TDI DSG) & Dieselfilter wechseln', ru: 'Замена масла в мокром 6-DSG (если есть) и топливного фильтра' }, cost: '€240–360' }
+              ],
+              critical: [
+                { when: { en: '110,000–180,000 km', de: '110.000–180.000 km', ru: '110 000–180 000 км' }, action: { en: 'EA189 EGR cooler/valve assembly (especially on 1.6 TDI & post-update cars)', de: 'EA189 AGR-Kühler/Ventil-Einheit (besonders nach Software-Update)', ru: 'Модуль клапана и охладителя EGR EA189 (частая болезнь)' }, cost: '€650–1,050', risk: { en: 'Flashing glow-plug light, coolant loss, and limp mode', de: 'Blinkende Vorglühlampe, Kühlmittelverlust und Notlauf', ru: 'Мигающая спираль, потеря антифриза и аварийный режим' }, damage: '€1,200–1,800' },
+                { when: { en: '150,000–220,000 km', de: '150.000–220.000 km', ru: '150 000–220 000 км' }, action: { en: 'Dual-mass flywheel + clutch & DPF ash-load check (1.6 TDI: Siemens injectors)', de: 'ZMS + Kupplung & DPF-Aschebeladung (1.6 TDI: Injektoren prüfen)', ru: 'Двухмассовый маховик + сцепление и проверка сажевого фильтра (1.6: форсунки)' }, cost: '€950–1,600', risk: { en: 'Idle knock, blocked DPF, or knocking injectors on 1.6 TDI', de: 'Starkes ZMS-Klappern, voller DPF oder nagelnde 1.6-TDI-Injektoren', ru: 'Стук маховика, забитый DPF или стук пьезофорсунок на 1.6 TDI' }, damage: '€2,000–3,200' }
+              ]
+            },
             badges: {
               en: ['210k Belt Interval', 'EGR/DMF Main Wear Items'],
               de: ['210 Tkm Zahnriemen', 'AGR & ZMS Hauptverschleiß'],
@@ -58933,6 +63586,153 @@ const CAR_ROSTER = [
         }
       }
     },
+    sharedSpecs: {
+      rustProtection: '@rustVeryGood',
+      suspensionWear: '@suspMultiLink',
+      starterAlternator: '@starter12v',
+      electronicsRisk: '@elecLowMod',
+      rideTuning: { en: 'Crisp MQB · Composed', de: 'Sattes MQB · Ausgewogen', ru: 'Собранная MQB · Комфорт' },
+      highwayNoise: { en: '~66 dB · Class-Leading Quiet', de: '~66 dB · Klassenbeste Ruhe', ru: '~66 дБ · Лучшая тишина' },
+      cabinMaterials: { en: 'Minimalist Benchmark Luxury', de: 'Minimalistische Top-Haptik', ru: 'Эталонный минимализм Audi' },
+      controls: '@physButtons',
+      turningCircle: '10.9 m',
+      visibility: { en: 'Clean Glass · Clear Corners', de: 'Gute Rundumsicht', ru: 'Хороший круговой обзор' },
+      euroNcap: '★★★★★ (2012)',
+      safetyTech: { en: '✓ ESC · ✓ 7 Airbags + Opt. AEB', de: '✓ ESC · ✓ 7 Airbags + Opt. AEB', ru: '✓ ESC · ✓ 7 подушек + Опц. AEB' },
+      rearRoom: { en: 'Improved MQB · 2 Adults', de: 'Verbessert (MQB) · 2 Erw.', ru: 'Просторнее 8P · 2 взрослых' },
+      isofixEntry: { en: '✓ 2× ISOFIX · Sportback 5d', de: '✓ 2× ISOFIX · Sportback 5T', ru: '✓ 2× ISOFIX · Sportback 5дв' },
+      bootVolume: '380 L / 1,220 L',
+      seatUtility: { en: '✓ 60/40 Flat + Dual Floor', de: '✓ 60/40 + Doppelter Boden', ru: '✓ 60/40 + двойной пол' },
+      payloadRoof: '535 kg · 75 kg',
+      driveline: { en: 'FWD / Opt. Haldex V Quattro', de: 'Front / Opt. Haldex-5-Quattro', ru: 'Передний / Опц. Quattro' },
+      chassisFeel: { en: 'Light MQB · Sharp & Refined', de: 'Leichter MQB · Präzise & satt', ru: 'Лёгкая MQB · Точное шасси' },
+      tractionDiff: { en: 'FWD · ESC (Opt. Quattro)', de: 'Front · ESC (Opt. Quattro)', ru: 'Передний · ESC (Опц. Quattro)' },
+      braking1000: '~35.2 m',
+      brakeSetup: '@discs4',
+      valueRetention: '@retVeryHigh',
+      resaleDemand: '@demFast'
+    },
+    sharedDossierBreakdowns: {
+      transmissionDriveline: { gearbox: { specs: [{ k: 'gearboxModel', v: { en: '6-MT · Dry 7-DSG (DQ200 ≤250 Nm) / Wet 6/7-DSG (DQ250/DQ381)', de: '6-Gang · Trockenes 7-DSG (DQ200 ≤250 Nm) / Nasses 6/7-DSG', ru: '6-МКПП · Сухой 7-DSG (DQ200 ≤250 Н·м) / Мокрый 6/7-DSG' } }, { k: 'shiftQuality', v: { en: 'Lightning-Fast S tronic · Wet DSG Tough (60k Oil); Dry DQ200 Needs Smooth Creep', de: 'Blitzschnelle S tronic · Nasses DSG robust (60 Tkm Öl); DQ200 sensibler', ru: 'Быстрая S tronic · Мокрые DSG крепкие (60 тыс. масло); DQ200 бережнее' } }], note: { en: 'Engines ≥180 HP / ≥320 Nm get the tough wet-clutch DSG (service every 60,000 km); ≤150 HP engines use the dry DQ200 (check smooth uphill creep).', de: 'Ab 180 PS / 320 Nm gibt es das robuste nasse DSG (60.000-km-Ölwechsel); bis 150 PS arbeitet das trockene DQ200.', ru: 'Моторы от 180 л.с. / 320 Н·м оснащены крепким мокрым DSG; до 150 л.с. ставится сухой DQ200 (проверяйте плавность трогания).' } }, clutchDmf: '@clutchSingle', driveline: '@driveFwd' },
+      buildQualityRust: { rustProtection: '@rustGalvanized12y', suspensionWear: '@suspMultiLink' },
+      electronicsReliability: { starterAlternator: '@starterStandard12v', electronicsRisk: '@elecSimpleEps' },
+      rideNoiseComfort: {
+        rideTuning: {
+          specs: [
+            { k: 'damperSetup', v: { en: 'MQB Platform · Multi-Link Rear (≥122 HP) / Torsion Beam (<122 HP)', de: 'MQB-Plattform · Mehrlenker hinten (ab 122 PS) / Verbundlenker (<122 PS)', ru: 'Платформа MQB · Многорычажка (от 122 л.с.) / Балка (<122 л.с.)' } },
+            { k: 'seatSupport', v: { en: 'Superb Supportive Seats · S-Line Adds Extendable Thigh Bolsters', de: 'Top ergonomische Sitze · S-Line mit ausziehbarer Beinauflage', ru: 'Отличные кресла · В S-Line выдвижная поддержка ног' } }
+          ],
+          note: { en: 'Models with ≥122 HP get independent multi-link rear suspension for noticeably smoother rough-road poise than entry torsion-beam trims.', de: 'Modelle ab 122 PS erhalten die feinere Mehrlenker-Hinterachse und federn spürbar geschmeidiger als Einstiegs-Verbundlenker.', ru: 'Версии от 122 л.с. оснащены задней многорычажкой — заметно плавнее и точнее базовых версий с балкой.' }
+        },
+        highwayNoise: {
+          specs: [
+            { k: 'cabinNoise130', v: { en: '~66 dB(A) at 130 km/h (Acoustic Windscreen Standard)', de: '~66 dB(A) bei 130 km/h (Akustik-Frontscheibe Serie)', ru: '~66 дБ(А) при 130 км/ч (Акустическое лобовое стекло в базе)' } },
+            { k: 'acousticGlass', v: { en: 'Executive-Grade Door Seals & Acoustic Windscreen', de: 'Akustik-Verglasung vorn & doppelte Türdichtungen', ru: 'Акустическое стекло и двойные уплотнители дверей' } }
+          ],
+          note: { en: 'Arguably the quietest compact hatchback of the 2013–2020 generation — rivals midsize executive sedans on the Autobahn.', de: 'Wohl der leiseste Kompaktwagen der Generation 2013–2020 — auf der Autobahn auf Mittelklasse-Niveau.', ru: 'Один из самых тихих хэтчбеков 2013–2020 годов — по акустическому комфорту спорит с D-классом.' }
+        }
+      },
+      interiorQualityFeatures: {
+        cabinMaterials: {
+          specs: [
+            { k: 'dashboardTrim', v: { en: 'Minimalist Soft-Touch Dash · Jet-Turbine Metal Air Vents', de: 'Minimalistisches Soft-Touch-Cockpit · Turbinen-Aludüsen', ru: 'Минималистичная мягкая панель · Металлические дефлекторы' } },
+            { k: 'seatUpholstery', v: { en: 'Premium Cloth, Alcantara/Leather or Full Leather + Virtual Cockpit (2016+)', de: 'Edler Stoff, Alcantara/Leder oder Vollleder + Virtual Cockpit (ab 2016)', ru: 'Ткань, алькантара/кожа + опц. цифровая приборка Virtual Cockpit (2016+)' } }
+          ],
+          note: { en: 'Widely regarded as the finest interior Audi ever built in the A3 — rotary MMI dial and physical climate knobs beat modern touchscreens.', de: 'Gilt als der edelste A3-Innenraum aller Zeiten — MMI-Drehrad und echte Klima-Regler sind modernen Touchscreens überlegen.', ru: 'Считается лучшим салоном в истории A3 — шайба MMI и физические крутилки климата удобнее современных экранов.' }
+        },
+        controls: '@controlsPhys'
+      },
+      visibilityManeuverability: {
+        turningCircle: {
+          specs: [
+            { k: 'turnDiameter', v: { en: '10.9 m (Easy Urban Footprint)', de: '10,9 m (Sehr stadtfreundlich)', ru: '10,9 м (Удобный в городе)' } },
+            { k: 'steeringType', v: { en: 'Electro-Mechanical Progressive Steering (Light & Direct)', de: 'Elektromechanische Lenkung (Leicht & direkt)', ru: 'Электромеханический руль (Лёгкий и точный)' } }
+          ],
+          note: { en: 'Compact 4.31 m Sportback length with optional reversing camera and acoustic front/rear sensors.', de: 'Kompakte 4,31 m Länge (Sportback) mit häufiger Einparkhilfe vorn/hinten und Rückfahrkamera.', ru: 'Компактная длина 4,31 м (Sportback), часто с парктрониками в круг и камерой.' }
+        },
+        visibility: {
+          specs: [
+            { k: 'allRoundView', v: { en: 'Slim Low-Mount Dash · Good Forward & Side Sightlines', de: 'Flaches Armaturenbrett · Gute Sicht nach vorn & seitlich', ru: 'Низкая панель · Хороший обзор вперёд и в стороны' } },
+            { k: 'rearView', v: { en: 'Clean Hatchback Tail · Wide-Opening Mirrors', de: 'Gut abschätzbares Heck · Klare Außenspiegel', ru: 'Понятная корма · Удобные зеркала' } }
+          ],
+          note: { en: 'Low uncluttered dashboard and slim A-pillars give notably clearer forward visibility than newer rivals.', de: 'Das niedrige Cockpit und schlanke A-Säulen bieten eine deutlich bessere Sicht als viele neuere Konkurrenten.', ru: 'Низкая панель и аккуратные стойки обеспечивают отличный обзор.' }
+        }
+      },
+      safetyProtection: {
+        euroNcap: {
+          specs: [
+            { k: 'crashRating', v: { en: '5 Stars Euro NCAP (2012) · 95% Adult / 87% Child', de: '5 Sterne Euro NCAP (2012) · 95% Erwachsene / 87% Kinder', ru: '5 звёзд Euro NCAP (2012) · 95% взрослые / 87% дети' } },
+            { k: 'bodyStructure', v: { en: 'Hot-Formed Steel MQB Safety Cell · 7 Airbags incl. Driver Knee', de: 'Warmgeformte MQB-Sicherheitszelle · 7 Airbags inkl. Knieairbag', ru: 'Силовая клетка MQB · 7 подушек (вкл. коленную)' } }
+          ],
+          note: { en: '95% adult protection score — one of the safest compact cars of its decade with a standard driver knee airbag.', de: '95% Erwachsenenschutz — einer der sichersten Kompaktwagen seiner Dekade mit Serien-Knieairbag.', ru: '95% защиты взрослых — один из самых безопасных компактных авто десятилетия.' }
+        },
+        safetyTech: {
+          specs: [
+            { k: 'activeSafety', v: { en: 'ESC, Multi-Collision Brake, XDS+ & Fatigue Detection', de: 'ESC, Multikollisionsbremse, XDS+ & Müdigkeitserkennung', ru: 'ESC, система предотвращения вторичных столкновений и XDS+' } },
+            { k: 'driverAssists', v: { en: '2016+ Facelift: Optional Audi Pre Sense Front (AEB), ACC & Matrix LED', de: 'Facelift ab 2016: Optional Pre Sense Front (Notbrems), ACC & Matrix-LED', ru: 'Рестайлинг 2016+: опц. автоторможение Pre Sense, ACC и Matrix LED' } }
+          ],
+          note: { en: '2016+ facelift models brought modern Adaptive Cruise, Autonomous Emergency Braking, and Matrix LED headlights.', de: 'Das Facelift ab 2016 brachte modernen Abstandstempomat, Notbremsassistent und Matrix-LED-Scheinwerfer.', ru: 'Рестайлинг 2016 года добавил современный адаптивный круиз, автоторможение и матричные фары.' }
+        }
+      },
+      passengerSpaceErgonomics: {
+        rearRoom: {
+          specs: [
+            { k: 'rearSpace', v: { en: 'Longer MQB Wheelbase (+58 mm vs 8P) · Good for 2 Adults', de: 'Längerer MQB-Radstand (+58 mm vs. 8P) · Gut für 2 Erw.', ru: 'Удлинённая база MQB (+58 мм к 8P) · Удобно для двоих' } },
+            { k: 'frontErgo', v: { en: 'Benchmark Seating Geometry · Retractable MMI Screen', de: 'Referenz-Sitzposition · Ausfahrbarer MMI-Bildschirm', ru: 'Эталонная посадка водителя · Выдвижной экран MMI' } }
+          ],
+          note: { en: 'Noticeably airier in the back than the older 8P, though the tall centre tunnel still makes it a 4-adult car.', de: 'Hinten spürbar luftiger als der alte 8P, durch den hohen Mitteltunnel aber weiterhin ideal für 4 Erwachsene.', ru: 'Заметно просторнее старого 8P, но высокий центральный тоннель делает его комфортным скорее для четверых.' }
+        },
+        isofixEntry: {
+          specs: [
+            { k: 'childSeats', v: { en: '2× Outer Rear ISOFIX (+ Optional Front Passenger ISOFIX)', de: '2× ISOFIX hinten (+ optional Beifahrer-ISOFIX)', ru: '2× ISOFIX сзади (+ опц. на переднем пассажирском)' } },
+            { k: 'doorAccess', v: { en: 'Wide Sportback Doors · Easy Clip-In Guides', de: 'Weite Sportback-Türen · Gut zugängliche ISOFIX-Führungen', ru: 'Широкие двери Sportback · Удобные направляющие ISOFIX' } }
+          ],
+          note: { en: 'Clean plastic ISOFIX guides make clicking child seats in and out quick and frustration-free.', de: 'Saubere Kunststoff-Führungen machen das Einklicken von Kindersitzen sekundenschnell.', ru: 'Аккуратные направляющие ISOFIX позволяют быстро устанавливать детские кресла.' }
+        }
+      },
+      interiorBootSpace: {
+        bootVolume: {
+          specs: [
+            { k: 'bootCapacity', v: { en: '380 L (Sportback) / 1,220 L (Folded) · 280 L on e-tron/g-tron', de: '380 L (Sportback) / 1.220 L (Umgeklappt) · 280 L bei e-tron/g-tron', ru: '380 л (Sportback) / 1 220 л (Сложено) · 280 л у e-tron/g-tron' } },
+            { k: 'loadingLip', v: { en: 'Dual-Height Variable Boot Floor · Square Practical Shape', de: 'Variabler doppelter Ladeboden · Praktisch geschnitten', ru: 'Двойной пол багажника · Правильная прямоугольная форма' } }
+          ],
+          note: { en: '380 L matches a Golf 7 with a neat dual-height floor; note that e-tron hybrid and g-tron CNG versions lose ~100 L underfloor space.', de: '380 L auf Golf-7-Niveau mit doppeltem Ladeboden; e-tron und g-tron verlieren ~100 L durch Akku bzw. Gastanks.', ru: '380 л на уровне Golf 7 с удобным двойным полом; у версий e-tron и g-tron багажник меньше на ~100 л.' }
+        },
+        seatUtility: {
+          specs: [
+            { k: 'foldingSystem', v: { en: '✓ 60/40 (Opt. 40/20/40) Split Fold · Flush With Raised Floor', de: '✓ 60/40 (Opt. 40/20/40) · Eben bei oberem Ladeboden', ru: '✓ 60/40 (Опц. 40/20/40) · Ровный пол на верхнем уровне' } }
+          ],
+          note: { en: 'With the variable boot floor in the upper position, folding the rear seats creates a completely flat loading surface.', de: 'Mit dem Ladeboden in der oberen Stufe entsteht beim Umklappen eine komplett ebene Ladefläche.', ru: 'При установке полки в верхнее положение сложенные сиденья образуют абсолютно ровный пол.' }
+        }
+      },
+      payloadTowing: {
+        payloadRoof: {
+          specs: [
+            { k: 'maxPayload', v: { en: '~535 kg (510–560 kg Depending on Engine)', de: '~535 kg (510–560 kg je nach Motor)', ru: '~535 кг (510–560 кг в зависимости от мотора)' } },
+            { k: 'roofLoad', v: { en: '75 kg Approved Dynamic Roof Load', de: '75 kg zugelassene Dachlast', ru: '75 кг допустимая нагрузка на крышу' } }
+          ],
+          note: { en: 'Strong MQB payload and up to 1,800 kg braked towing on 2.0 TDI / Quattro versions.', de: 'Hohe MQB-Zuladung und bis zu 1.800 kg Anhängelast bei 2.0 TDI / Quattro.', ru: 'Отличная грузоподъёмность MQB и до 1 800 кг на фаркопе у версий 2.0 TDI / Quattro.' }
+        },
+        towingBraked: '@towingDynamic'
+      },
+      accelerationOvertaking: { sprint0100: '@sprintDynamic', topSpeed: '@vmaxDynamic' },
+      midRangeTorquePassing: { peakTorque: '@torqueDynamic', passingPunch: '@passingDynamic' },
+      handlingAgility: {
+        chassisFeel: {
+          specs: [
+            { k: 'steeringFeel', v: { en: 'Light, Crisp MQB Steering · ~80 kg Lighter Than Old 8P', de: 'Leichte, präzise MQB-Lenkung · ~80 kg leichter als der 8P', ru: 'Лёгкий и точный руль MQB · На ~80 кг легче старого 8P' } },
+            { k: 'cornering', v: { en: 'Neutral, Agile Turn-In · Composed At 200+ km/h', de: 'Neutrales, agiles Einlenken · Souverän über 200 km/h', ru: 'Нейтральный азартный вход в поворот · Устойчив за 200 км/ч' } }
+          ],
+          note: { en: 'MQB weight reduction made the 8V noticeably sharper and livelier than the heavier 8P while keeping classic Audi Autobahn composure.', de: 'Die MQB-Gewichtsersparnis macht den 8V spürbar agiler als den 8P bei gewohnter Audi-Autobahnruhe.', ru: 'Платформа MQB сделала 8V заметно легче и проворнее 8P, сохранив фирменную стабильность на скорости.' }
+        },
+        tractionDiff: '@tractionFwdOpen'
+      },
+      brakingPerformance: { braking1000: '@brakingDistDynamic', brakeSetup: '@brakeSetupDiscs4' },
+      efficiencyFuel: { realWorldFuel: '@fuelDynamic', tankRange: '@tankDynamic' },
+      taxInsuranceNorm: { euroNorm: '@euroDynamic', taxInsurance: '@taxInsDynamic' },
+      maintenanceRepairCosts: { timingDrive: '@timingDynamic', serviceWear: '@serviceDynamic' },
+      depreciationResale: { valueRetention: '@retVeryHigh', resaleDemand: '@demFast' }
+    },
     engines: [
       {
         id: '1.4-g-tron',
@@ -59004,6 +63804,14 @@ const CAR_ROSTER = [
             'Сзади балка на версиях до 125 л.с.'
           ]
         },
+        specOverrides: {
+          engineName: { en: '1.4L I4 TFSI g-tron (CNG)', de: '1.4L Reihenvierzylinder g-tron', ru: '1.4L R4 TFSI g-tron (CNG)' },
+          forcedInduction: '@turbo', injection: '@direct', timingDrive: '@belt',
+          gearbox: { en: '6-MT / Dry 7-DSG (DQ200)', de: '6-Gang / Trockenes 7-DSG', ru: '6-МКПП / Сухой 7-DSG' }, clutchDmf: '@singleClutch', towingBraked: '1,300 kg',
+          sprint0100: '10.8 s', topSpeed: '197 km/h', peakTorque: '200 Nm @ 1,500 rpm',
+          passingPunch: { en: 'Ultra-Cheap CNG Cruise', de: 'Extrem günstig auf Erdgas', ru: 'Сверхдешёвый ход на метане' },
+          realWorldFuel: '3.5 kg CNG / 5.2 L', tankRange: '14.4 kg + 50 L (~1,150 km)', euroNorm: 'Euro 6 (CNG/Petrol)', taxInsurance: '@tierVeryLow', serviceWear: '@tierMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.6,
@@ -59011,6 +63819,10 @@ const CAR_ROSTER = [
               en: ['Belt EA211 Much Tougher Than 8P', 'Watch Plastic Water Pump Housing'],
               de: ['EA211-Zahnriemen deutlich robuster', 'Wasserpumpen-Gehäuse prüfen'],
               ru: ['Ременной EA211 намного надёжнее', 'Проверить корпус помпы']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'CPWA (EA211) · 1,395 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium · Bi-Fuel CNG + Petrol (Belt)', de: 'Reihenvierzylinder Alu · Bivalent Erdgas + Benzin (Riemen)', ru: 'Рядный 4-цил. алюминий · Битопливный метан + бензин' } }], note: { en: 'Pennies-per-km commuting on CNG with full 50 L petrol backup; requires 4-year composite tank inspection and loses ~100 L boot depth.', de: 'Extrem günstige Kilometerkosten auf Erdgas plus voller 50-L-Benzintank; alle 4 Jahre Gastank-Prüfung nötig.', ru: 'Копеечная стоимость километра на метане плюс полный бензобак 50 л; раз в 4 года нужна поверка баллонов.' } },
+              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -59349,6 +64161,15 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.7,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 4 yrs (Mandatory)', de: 'Alle 4 Jahre (Pflicht)', ru: 'Каждые 4 года (Обязательно)' }, action: { en: 'Mandatory CNG composite tank visual/safety inspection + spark plugs every 60k', de: 'Vorgeschriebene CNG-Gastank-Prüfung (GAP) + Zündkerzen alle 60.000 km', ru: 'Обязательная поверка газовых баллонов CNG + свечи каждые 60 000 км' }, cost: '€220–360' },
+                { when: { en: '180,000–210,000 km / 10 yrs', de: '180.000–210.000 km / 10 J.', ru: '180–210 тыс. км / 10 лет' }, action: { en: 'Replace EA211 timing belt kit & inspect CNG injector rails', de: 'EA211-Zahnriemensatz wechseln & CNG-Einblasventile prüfen', ru: 'Замена ремня ГРМ EA211 и проверка газовых форсунок' }, cost: '€550–820' }
+              ],
+              critical: [
+                { when: { en: '100,000–160,000 km', de: '100.000–160.000 km', ru: '100 000–160 000 км' }, action: { en: 'CNG high-pressure regulator / solenoid valves & dry 7-DSG (if automatic)', de: 'CNG-Hochdruckregler / Tankventile & trockenes 7-DSG (falls Automatik)', ru: 'Газовый редуктор высокого давления / клапаны и сухой 7-DSG (если АКПП)' }, cost: '€650–1,600', risk: { en: 'Car refuses CNG mode and defaults to small petrol reserve tank', de: 'Kein Erdgasbetrieb mehr möglich — nur noch kleiner Benzin-Reservetank', ru: 'Отказ работы на газе — остаётся только маленький бензиновый бак' }, damage: '€1,400–2,400' }
+              ]
+            },
             badges: {
               en: ['180k–210k Belt • Affordable Parts', 'DSG Service if Fitted'],
               de: ['180–210 Tkm Riemen • Faire Teile', 'DSG-Wartung beachten'],
@@ -59431,6 +64252,14 @@ const CAR_ROSTER = [
             'Сзади балка на версиях до 125 л.с.'
           ]
         },
+        specOverrides: {
+          engineName: { en: '1.0L I3 TFSI Turbo (Belt)', de: '1.0L Dreizylinder TFSI (Riemen)', ru: '1.0L R3 TFSI Турбо (Ремень)' },
+          forcedInduction: '@turbo', injection: '@direct', timingDrive: '@belt',
+          gearbox: { en: '6-MT / Dry 7-DSG (DQ200)', de: '6-Gang / Trockenes 7-DSG', ru: '6-МКПП / Сухой 7-DSG' }, clutchDmf: '@singleClutch', towingBraked: '1,300 kg',
+          sprint0100: '9.9 s', topSpeed: '206 km/h', peakTorque: '200 Nm @ 2,000 rpm',
+          passingPunch: { en: 'Lively Light-Nose Turbo', de: 'Spritziger leichter 3-Zyl.', ru: 'Живой лёгкий 3-цил. турбо' },
+          realWorldFuel: '5.6 L/100km', tankRange: '50 L (~890 km)', euroNorm: 'Euro 6 (Petrol)', taxInsurance: '@tierVeryLow', serviceWear: '@tierLow'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.9,
@@ -59438,6 +64267,10 @@ const CAR_ROSTER = [
               en: ['Belt EA211 Much Tougher Than 8P', 'Watch Plastic Water Pump Housing'],
               de: ['EA211-Zahnriemen deutlich robuster', 'Wasserpumpen-Gehäuse prüfen'],
               ru: ['Ременной EA211 намного надёжнее', 'Проверить корпус помпы']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'CHZD (EA211) · 999 cc' }, { k: 'architecture', v: { en: 'Inline-3 Aluminium · Turbo + Long-Life Timing Belt', de: 'Dreizylinder Alu · Turbo + Longlife-Zahnriemen', ru: 'Рядный 3-цил. алюминий · Турбо + ремень ГРМ' } }], note: { en: 'Surprisingly refined and brisk 3-cylinder EA211 with zero simplex-chain issues and low road tax; stick to 6-MT for peak simplicity.', de: 'Überraschend kultivierter, flotter EA211-Dreizylinder ohne Kettenprobleme; mit 6-Gang sehr sorgenfrei.', ru: 'Удивительно тихий и бодрый 3-цилиндровый EA211 без проблем с цепью; с 6-МКПП максимально надёжен.' } },
+              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -59776,6 +64609,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.7,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Replace spark plugs, inspect ignition coils & refresh 6-MT gearbox oil', de: 'Zündkerzen wechseln, Zündspulen & 6-Gang-Getriebeöl prüfen', ru: 'Замена свечей, проверка катушек и масла в 6-МКПП' }, cost: '€170–260' },
+                { when: { en: '180,000–210,000 km / 10 yrs', de: '180.000–210.000 km / 10 J.', ru: '180–210 тыс. км / 10 лет' }, action: { en: 'Replace EA211 long-life timing belt & tensioner rollers', de: 'EA211 Longlife-Zahnriemen & Spannrollen präventiv erneuern', ru: 'Профилактическая замена долговечного ремня ГРМ EA211 и роликов' }, cost: '€520–780' }
+              ],
+              critical: [
+                { when: { en: '100,000–160,000 km', de: '100.000–160.000 km', ru: '100 000–160 000 км' }, action: { en: 'Dry 7-DSG (DQ200) clutch pack / mechatronic (if automatic) & water-pump/thermostat module', de: 'Trockenes 7-DSG (DQ200) Kupplung/Mechatronik (falls AT) & Wasserpumpen-Thermostatmodul', ru: 'Сцепление/мехатроник сухого 7-DSG (DQ200, если АКПП) и модуль помпы/термостата' }, cost: '€480–1,800', risk: { en: 'Shuddering in 2nd gear (DQ200) or slow coolant weep from thermostat housing', de: 'Ruckeln im 2. Gang (DQ200) oder schleichender Kühlwasserverlust am Modul', ru: 'Рывки на 2-й передаче (DQ200) или течь антифриза из модуля термостата' }, damage: '€1,600–2,800' },
+                { when: { en: '110,000–170,000 km', de: '110.000–170.000 km', ru: '110 000–170 000 км' }, action: { en: 'Turbo wastegate actuator rod sticking (EPC light / reduced boost)', de: 'Turbo-Wastegate-Gestänge fest (EPC-Lampe / reduzierter Ladedruck)', ru: 'Подклинивание тяги актуатора турбины (ошибка EPC / потеря наддува)' }, cost: '€220–580', risk: { en: 'Limp mode under acceleration; seized actuator can require turbo replacement', de: 'Notlauf beim Beschleunigen; festsitzende Welle erfordert oft neuen Lader', ru: 'Аварийный режим при разгоне; закисший шток может потребовать замены турбины' }, damage: '€1,200–1,900' }
+              ]
+            },
             badges: {
               en: ['180k–210k Belt • Affordable Parts', 'DSG Service if Fitted'],
               de: ['180–210 Tkm Riemen • Faire Teile', 'DSG-Wartung beachten'],
@@ -59858,6 +64701,14 @@ const CAR_ROSTER = [
             'Сзади балка на версиях до 125 л.с.'
           ]
         },
+        specOverrides: {
+          engineName: { en: '1.2L I4 TFSI 105 (Belt)', de: '1.2L Reihenvierzylinder 105 PS', ru: '1.2L R4 TFSI 105 (Ремень)' },
+          forcedInduction: '@turbo', injection: '@direct', timingDrive: '@belt',
+          gearbox: { en: '6-MT / Dry 7-DSG (DQ200)', de: '6-Gang / Trockenes 7-DSG', ru: '6-МКПП / Сухой 7-DSG' }, clutchDmf: '@singleClutch', towingBraked: '1,300 kg',
+          sprint0100: '10.3 s', topSpeed: '193 km/h', peakTorque: '175 Nm @ 1,400 rpm',
+          passingPunch: { en: 'Smooth City Turbo Pull', de: 'Ruhiger Stadt-Turbo', ru: 'Плавная городская тяга' },
+          realWorldFuel: '5.9 L/100km', tankRange: '50 L (~845 km)', euroNorm: 'Euro 5/6 (Petrol)', taxInsurance: '@tierLow', serviceWear: '@tierLow'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.9,
@@ -59865,6 +64716,10 @@ const CAR_ROSTER = [
               en: ['Belt EA211 Much Tougher Than 8P', 'Watch Plastic Water Pump Housing'],
               de: ['EA211-Zahnriemen deutlich robuster', 'Wasserpumpen-Gehäuse prüfen'],
               ru: ['Ременной EA211 намного надёжнее', 'Проверить корпус помпы']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'CJZA (EA211) · 1,197 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium 16V · Belt-Driven (Fixed 8P Chain!)', de: 'Reihenvierzylinder Alu 16V · Zahnriemen (löst 8P-Kette!)', ru: 'Рядный 4-цил. 16V · Ремень ГРМ (исправил цепь 8P!)' } }], note: { en: 'Completely redesigned belt-driven EA211 — solves the old 8P simplex-chain problem completely while staying whisper-quiet.', de: 'Komplett neu konstruierter EA211 mit Zahnriemen — behebt das alte 8P-Kettenproblem endgültig.', ru: 'Полностью новый ременной EA211 — окончательно решил проблему цепи ГРМ старого 8P.' } },
+              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -60203,6 +65058,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.7,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Replace spark plugs, inspect ignition coils & refresh 6-MT gearbox oil', de: 'Zündkerzen wechseln, Zündspulen & 6-Gang-Getriebeöl prüfen', ru: 'Замена свечей, проверка катушек и масла в 6-МКПП' }, cost: '€170–260' },
+                { when: { en: '180,000–210,000 km / 10 yrs', de: '180.000–210.000 km / 10 J.', ru: '180–210 тыс. км / 10 лет' }, action: { en: 'Replace EA211 long-life timing belt & tensioner rollers', de: 'EA211 Longlife-Zahnriemen & Spannrollen präventiv erneuern', ru: 'Профилактическая замена долговечного ремня ГРМ EA211 и роликов' }, cost: '€520–780' }
+              ],
+              critical: [
+                { when: { en: '100,000–160,000 km', de: '100.000–160.000 km', ru: '100 000–160 000 км' }, action: { en: 'Dry 7-DSG (DQ200) clutch pack / mechatronic (if automatic) & water-pump/thermostat module', de: 'Trockenes 7-DSG (DQ200) Kupplung/Mechatronik (falls AT) & Wasserpumpen-Thermostatmodul', ru: 'Сцепление/мехатроник сухого 7-DSG (DQ200, если АКПП) и модуль помпы/термостата' }, cost: '€480–1,800', risk: { en: 'Shuddering in 2nd gear (DQ200) or slow coolant weep from thermostat housing', de: 'Ruckeln im 2. Gang (DQ200) oder schleichender Kühlwasserverlust am Modul', ru: 'Рывки на 2-й передаче (DQ200) или течь антифриза из модуля термостата' }, damage: '€1,600–2,800' },
+                { when: { en: '110,000–170,000 km', de: '110.000–170.000 km', ru: '110 000–170 000 км' }, action: { en: 'Turbo wastegate actuator rod sticking (EPC light / reduced boost)', de: 'Turbo-Wastegate-Gestänge fest (EPC-Lampe / reduzierter Ladedruck)', ru: 'Подклинивание тяги актуатора турбины (ошибка EPC / потеря наддува)' }, cost: '€220–580', risk: { en: 'Limp mode under acceleration; seized actuator can require turbo replacement', de: 'Notlauf beim Beschleunigen; festsitzende Welle erfordert oft neuen Lader', ru: 'Аварийный режим при разгоне; закисший шток может потребовать замены турбины' }, damage: '€1,200–1,900' }
+              ]
+            },
             badges: {
               en: ['180k–210k Belt • Affordable Parts', 'DSG Service if Fitted'],
               de: ['180–210 Tkm Riemen • Faire Teile', 'DSG-Wartung beachten'],
@@ -60285,6 +65150,14 @@ const CAR_ROSTER = [
             'Сзади балка на версиях до 125 л.с.'
           ]
         },
+        specOverrides: {
+          engineName: { en: '1.2L I4 TFSI 110 (Belt)', de: '1.2L Reihenvierzylinder 110 PS', ru: '1.2L R4 TFSI 110 (Ремень)' },
+          forcedInduction: '@turbo', injection: '@direct', timingDrive: '@belt',
+          gearbox: { en: '6-MT / Dry 7-DSG (DQ200)', de: '6-Gang / Trockenes 7-DSG', ru: '6-МКПП / Сухой 7-DSG' }, clutchDmf: '@singleClutch', towingBraked: '1,300 kg',
+          sprint0100: '9.9 s', topSpeed: '198 km/h', peakTorque: '175 Nm @ 1,400 rpm',
+          passingPunch: { en: 'Crisp Everyday 4-Cyl', de: 'Ruhiger Alltags-4-Zylinder', ru: 'Мягкая 4-цилиндровая тяга' },
+          realWorldFuel: '5.8 L/100km', tankRange: '50 L (~860 km)', euroNorm: 'Euro 6 (Petrol)', taxInsurance: '@tierLow', serviceWear: '@tierLow'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.9,
@@ -60292,6 +65165,10 @@ const CAR_ROSTER = [
               en: ['Belt EA211 Much Tougher Than 8P', 'Watch Plastic Water Pump Housing'],
               de: ['EA211-Zahnriemen deutlich robuster', 'Wasserpumpen-Gehäuse prüfen'],
               ru: ['Ременной EA211 намного надёжнее', 'Проверить корпус помпы']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'CYVB (EA211) · 1,197 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium 16V · Euro 6 Belt-Driven Turbo', de: 'Reihenvierzylinder Alu 16V · Euro-6-Zahnriemen-Turbo', ru: 'Рядный 4-цил. 16V · Euro 6 с ремнём ГРМ' } }], note: { en: 'Updated Euro 6 version of the reliable 1.2 EA211; silky 4-cylinder refinement and low running costs for urban and commuter driving.', de: 'Überarbeiteter Euro-6-EA211 mit feiner Vierzylinder-Laufruhe und sehr günstigen Unterhaltskosten.', ru: 'Обновлённый Euro 6 мотор 1.2 EA211 — тихий, надёжный и очень экономичный.' } },
+              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -60630,6 +65507,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.7,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Replace spark plugs, inspect ignition coils & refresh 6-MT gearbox oil', de: 'Zündkerzen wechseln, Zündspulen & 6-Gang-Getriebeöl prüfen', ru: 'Замена свечей, проверка катушек и масла в 6-МКПП' }, cost: '€170–260' },
+                { when: { en: '180,000–210,000 km / 10 yrs', de: '180.000–210.000 km / 10 J.', ru: '180–210 тыс. км / 10 лет' }, action: { en: 'Replace EA211 long-life timing belt & tensioner rollers', de: 'EA211 Longlife-Zahnriemen & Spannrollen präventiv erneuern', ru: 'Профилактическая замена долговечного ремня ГРМ EA211 и роликов' }, cost: '€520–780' }
+              ],
+              critical: [
+                { when: { en: '100,000–160,000 km', de: '100.000–160.000 km', ru: '100 000–160 000 км' }, action: { en: 'Dry 7-DSG (DQ200) clutch pack / mechatronic (if automatic) & water-pump/thermostat module', de: 'Trockenes 7-DSG (DQ200) Kupplung/Mechatronik (falls AT) & Wasserpumpen-Thermostatmodul', ru: 'Сцепление/мехатроник сухого 7-DSG (DQ200, если АКПП) и модуль помпы/термостата' }, cost: '€480–1,800', risk: { en: 'Shuddering in 2nd gear (DQ200) or slow coolant weep from thermostat housing', de: 'Ruckeln im 2. Gang (DQ200) oder schleichender Kühlwasserverlust am Modul', ru: 'Рывки на 2-й передаче (DQ200) или течь антифриза из модуля термостата' }, damage: '€1,600–2,800' },
+                { when: { en: '110,000–170,000 km', de: '110.000–170.000 km', ru: '110 000–170 000 км' }, action: { en: 'Turbo wastegate actuator rod sticking (EPC light / reduced boost)', de: 'Turbo-Wastegate-Gestänge fest (EPC-Lampe / reduzierter Ladedruck)', ru: 'Подклинивание тяги актуатора турбины (ошибка EPC / потеря наддува)' }, cost: '€220–580', risk: { en: 'Limp mode under acceleration; seized actuator can require turbo replacement', de: 'Notlauf beim Beschleunigen; festsitzende Welle erfordert oft neuen Lader', ru: 'Аварийный режим при разгоне; закисший шток может потребовать замены турбины' }, damage: '€1,200–1,900' }
+              ]
+            },
             badges: {
               en: ['180k–210k Belt • Affordable Parts', 'DSG Service if Fitted'],
               de: ['180–210 Tkm Riemen • Faire Teile', 'DSG-Wartung beachten'],
@@ -60712,6 +65599,14 @@ const CAR_ROSTER = [
             'Сзади балка на версиях до 125 л.с.'
           ]
         },
+        specOverrides: {
+          engineName: { en: '1.4L I4 TFSI 125 (Belt)', de: '1.4L Reihenvierzylinder 125 PS', ru: '1.4L R4 TFSI 125 (Ремень)' },
+          forcedInduction: '@turbo', injection: '@direct', timingDrive: '@belt',
+          gearbox: { en: '6-MT / Dry 7-DSG (DQ200)', de: '6-Gang / Trockenes 7-DSG', ru: '6-МКПП / Сухой 7-DSG' }, clutchDmf: '@singleClutch', towingBraked: '1,400 kg',
+          sprint0100: '9.3 s', topSpeed: '206 km/h', peakTorque: '200 Nm @ 1,400 rpm',
+          passingPunch: { en: 'Balanced 200 Nm Punch', de: 'Ausgewogene 200 Nm', ru: 'Сбалансированные 200 Н·м' },
+          realWorldFuel: '6.0 L/100km', tankRange: '50 L (~830 km)', euroNorm: 'Euro 5/6 (Petrol)', taxInsurance: '@tierLowMod', serviceWear: '@tierLow'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.9,
@@ -60719,6 +65614,10 @@ const CAR_ROSTER = [
               en: ['Belt EA211 Much Tougher Than 8P', 'Watch Plastic Water Pump Housing'],
               de: ['EA211-Zahnriemen deutlich robuster', 'Wasserpumpen-Gehäuse prüfen'],
               ru: ['Ременной EA211 намного надёжнее', 'Проверить корпус помпы']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'CMBA / CZCA (EA211) · 1,395 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium · Belt-Driven + Multi-Link Rear Axle', de: 'Reihenvierzylinder Alu · Zahnriemen + Mehrlenker-Hinterachse', ru: 'Рядный 4-цил. алюминий · Ремень ГРМ + многорычажка сзади' } }], note: { en: 'The reliability sweet spot of the A3 8V: belt-driven EA211, no cylinder-deactivation complexity, and gains independent multi-link rear suspension.', de: 'Der Zuverlässigkeits-Sweetspot im A3 8V: EA211 mit Zahnriemen, ohne COD-Technik und ab hier mit Mehrlenker-Hinterachse.', ru: 'Оптимальный по надёжности мотор A3 8V: ременной EA211 без усложнений и уже с задней многорычажкой.' } },
+              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -61057,6 +65956,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.7,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Replace spark plugs, inspect ignition coils & refresh 6-MT gearbox oil', de: 'Zündkerzen wechseln, Zündspulen & 6-Gang-Getriebeöl prüfen', ru: 'Замена свечей, проверка катушек и масла в 6-МКПП' }, cost: '€170–260' },
+                { when: { en: '180,000–210,000 km / 10 yrs', de: '180.000–210.000 km / 10 J.', ru: '180–210 тыс. км / 10 лет' }, action: { en: 'Replace EA211 long-life timing belt & tensioner rollers', de: 'EA211 Longlife-Zahnriemen & Spannrollen präventiv erneuern', ru: 'Профилактическая замена долговечного ремня ГРМ EA211 и роликов' }, cost: '€520–780' }
+              ],
+              critical: [
+                { when: { en: '100,000–160,000 km', de: '100.000–160.000 km', ru: '100 000–160 000 км' }, action: { en: 'Dry 7-DSG (DQ200) clutch pack / mechatronic (if automatic) & water-pump/thermostat module', de: 'Trockenes 7-DSG (DQ200) Kupplung/Mechatronik (falls AT) & Wasserpumpen-Thermostatmodul', ru: 'Сцепление/мехатроник сухого 7-DSG (DQ200, если АКПП) и модуль помпы/термостата' }, cost: '€480–1,800', risk: { en: 'Shuddering in 2nd gear (DQ200) or slow coolant weep from thermostat housing', de: 'Ruckeln im 2. Gang (DQ200) oder schleichender Kühlwasserverlust am Modul', ru: 'Рывки на 2-й передаче (DQ200) или течь антифриза из модуля термостата' }, damage: '€1,600–2,800' },
+                { when: { en: '110,000–170,000 km', de: '110.000–170.000 km', ru: '110 000–170 000 км' }, action: { en: 'Turbo wastegate actuator rod sticking (EPC light / reduced boost)', de: 'Turbo-Wastegate-Gestänge fest (EPC-Lampe / reduzierter Ladedruck)', ru: 'Подклинивание тяги актуатора турбины (ошибка EPC / потеря наддува)' }, cost: '€220–580', risk: { en: 'Limp mode under acceleration; seized actuator can require turbo replacement', de: 'Notlauf beim Beschleunigen; festsitzende Welle erfordert oft neuen Lader', ru: 'Аварийный режим при разгоне; закисший шток может потребовать замены турбины' }, damage: '€1,200–1,900' }
+              ]
+            },
             badges: {
               en: ['180k–210k Belt • Affordable Parts', 'DSG Service if Fitted'],
               de: ['180–210 Tkm Riemen • Faire Teile', 'DSG-Wartung beachten'],
@@ -61139,6 +66048,14 @@ const CAR_ROSTER = [
             'Сзади теснее Golf'
           ]
         },
+        specOverrides: {
+          engineName: { en: '1.4L I4 TFSI 140 (Belt)', de: '1.4L Reihenvierzylinder 140 PS', ru: '1.4L R4 TFSI 140 (Ремень)' },
+          forcedInduction: '@turbo', injection: '@direct', timingDrive: '@belt',
+          gearbox: { en: '6-MT / Dry 7-DSG (DQ200)', de: '6-Gang / Trockenes 7-DSG', ru: '6-МКПП / Сухой 7-DSG' }, clutchDmf: '@singleClutch', towingBraked: '1,500 kg',
+          sprint0100: '8.4 s', topSpeed: '213 km/h', peakTorque: '250 Nm @ 1,500 rpm',
+          passingPunch: { en: 'Brisk 250 Nm Mid-Range', de: 'Flotte 250 Nm ab 1.500/min', ru: 'Бодрые 250 Н·м с низов' },
+          realWorldFuel: '6.1 L/100km', tankRange: '50 L (~820 km)', euroNorm: 'Euro 5/6 (Petrol)', taxInsurance: '@tierLowMod', serviceWear: '@tierLowMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.9,
@@ -61146,6 +66063,10 @@ const CAR_ROSTER = [
               en: ['Belt EA211 Much Tougher Than 8P', 'Watch Plastic Water Pump Housing'],
               de: ['EA211-Zahnriemen deutlich robuster', 'Wasserpumpen-Gehäuse prüfen'],
               ru: ['Ременной EA211 намного надёжнее', 'Проверить корпус помпы']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'CPTA / CHPA (EA211) · 1,395 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium · 250 Nm Belt-Driven Turbo', de: 'Reihenvierzylinder Alu · 250-Nm-Zahnriemen-Turbo', ru: 'Рядный 4-цил. алюминий · 250 Н·м с ремнём ГРМ' } }], note: { en: 'Punchy 8.4 s acceleration with 250 Nm from 1,500 rpm and ~6.1 L/100km; pair with 6-MT to avoid the DQ200 250 Nm ceiling.', de: 'Flotte 8,4 s mit 250 Nm ab 1.500/min bei ~6,1 L Verbrauch; ideal mit 6-Gang-Schalter.', ru: 'Отличная динамика (8,4 с, 250 Н·м) при расходе 6,1 л; с 6-МКПП полностью лишён рисков сухого DSG.' } },
+              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -61484,6 +66405,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.7,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Replace spark plugs, inspect ignition coils & refresh 6-MT gearbox oil', de: 'Zündkerzen wechseln, Zündspulen & 6-Gang-Getriebeöl prüfen', ru: 'Замена свечей, проверка катушек и масла в 6-МКПП' }, cost: '€170–260' },
+                { when: { en: '180,000–210,000 km / 10 yrs', de: '180.000–210.000 km / 10 J.', ru: '180–210 тыс. км / 10 лет' }, action: { en: 'Replace EA211 long-life timing belt & tensioner rollers', de: 'EA211 Longlife-Zahnriemen & Spannrollen präventiv erneuern', ru: 'Профилактическая замена долговечного ремня ГРМ EA211 и роликов' }, cost: '€520–780' }
+              ],
+              critical: [
+                { when: { en: '100,000–160,000 km', de: '100.000–160.000 km', ru: '100 000–160 000 км' }, action: { en: 'Dry 7-DSG (DQ200) clutch pack / mechatronic (if automatic) & water-pump/thermostat module', de: 'Trockenes 7-DSG (DQ200) Kupplung/Mechatronik (falls AT) & Wasserpumpen-Thermostatmodul', ru: 'Сцепление/мехатроник сухого 7-DSG (DQ200, если АКПП) и модуль помпы/термостата' }, cost: '€480–1,800', risk: { en: 'Shuddering in 2nd gear (DQ200) or slow coolant weep from thermostat housing', de: 'Ruckeln im 2. Gang (DQ200) oder schleichender Kühlwasserverlust am Modul', ru: 'Рывки на 2-й передаче (DQ200) или течь антифриза из модуля термостата' }, damage: '€1,600–2,800' },
+                { when: { en: '110,000–170,000 km', de: '110.000–170.000 km', ru: '110 000–170 000 км' }, action: { en: 'Turbo wastegate actuator rod sticking (EPC light / reduced boost)', de: 'Turbo-Wastegate-Gestänge fest (EPC-Lampe / reduzierter Ladedruck)', ru: 'Подклинивание тяги актуатора турбины (ошибка EPC / потеря наддува)' }, cost: '€220–580', risk: { en: 'Limp mode under acceleration; seized actuator can require turbo replacement', de: 'Notlauf beim Beschleunigen; festsitzende Welle erfordert oft neuen Lader', ru: 'Аварийный режим при разгоне; закисший шток может потребовать замены турбины' }, damage: '€1,200–1,900' }
+              ]
+            },
             badges: {
               en: ['180k–210k Belt • Affordable Parts', 'DSG Service if Fitted'],
               de: ['180–210 Tkm Riemen • Faire Teile', 'DSG-Wartung beachten'],
@@ -61566,6 +66497,14 @@ const CAR_ROSTER = [
             'Сзади теснее Golf'
           ]
         },
+        specOverrides: {
+          engineName: { en: '1.4L I4 TFSI COD 150 (Belt)', de: '1.4L Reihenvierzylinder COD 150', ru: '1.4L R4 TFSI COD 150 (Ремень)' },
+          forcedInduction: '@turbo', injection: '@direct', timingDrive: '@belt',
+          gearbox: { en: '6-MT / Dry 7-DSG (DQ200)', de: '6-Gang / Trockenes 7-DSG', ru: '6-МКПП / Сухой 7-DSG' }, clutchDmf: '@singleClutch', towingBraked: '1,500 kg',
+          sprint0100: '8.2 s', topSpeed: '220 km/h', peakTorque: '250 Nm @ 1,500 rpm',
+          passingPunch: { en: 'Quick 150 HP + 2-Cyl Cruise', de: 'Flotte 150 PS + 2-Zyl.-Modus', ru: 'Быстрые 150 л.с. + COD' },
+          realWorldFuel: '5.9 L/100km', tankRange: '50 L (~845 km)', euroNorm: 'Euro 6 (Petrol)', taxInsurance: '@tierLowMod', serviceWear: '@tierLowMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.9,
@@ -61573,6 +66512,10 @@ const CAR_ROSTER = [
               en: ['Belt EA211 Much Tougher Than 8P', 'Watch Plastic Water Pump Housing'],
               de: ['EA211-Zahnriemen deutlich robuster', 'Wasserpumpen-Gehäuse prüfen'],
               ru: ['Ременной EA211 намного надёжнее', 'Проверить корпус помпы']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'CZEA (EA211 COD) · 1,395 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium · Cylinder-on-Demand + Timing Belt', de: 'Reihenvierzylinder Alu · Zylinderabschaltung (COD) + Riemen', ru: 'Рядный 4-цил. алюминий · Отключение цилиндров COD + ремень' } }], note: { en: 'Seamless 2-cylinder cruising saves fuel on highways while delivering 8.2 s sprint punch; one of the best all-round petrols in the 8V.', de: 'Unmerkliche Zylinderabschaltung spart auf der Autobahn Sprit bei 8,2 s Sprint — einer der besten 8V-Benziner.', ru: 'Незаметное отключение двух цилиндров экономит топливо на трассе при разгоне 8,2 с — отличный универсал.' } },
+              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -61911,6 +66854,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.7,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Replace spark plugs, inspect ignition coils & refresh 6-MT gearbox oil', de: 'Zündkerzen wechseln, Zündspulen & 6-Gang-Getriebeöl prüfen', ru: 'Замена свечей, проверка катушек и масла в 6-МКПП' }, cost: '€170–260' },
+                { when: { en: '180,000–210,000 km / 10 yrs', de: '180.000–210.000 km / 10 J.', ru: '180–210 тыс. км / 10 лет' }, action: { en: 'Replace EA211 long-life timing belt & tensioner rollers', de: 'EA211 Longlife-Zahnriemen & Spannrollen präventiv erneuern', ru: 'Профилактическая замена долговечного ремня ГРМ EA211 и роликов' }, cost: '€520–780' }
+              ],
+              critical: [
+                { when: { en: '100,000–160,000 km', de: '100.000–160.000 km', ru: '100 000–160 000 км' }, action: { en: 'Dry 7-DSG (DQ200) clutch pack / mechatronic (if automatic) & water-pump/thermostat module', de: 'Trockenes 7-DSG (DQ200) Kupplung/Mechatronik (falls AT) & Wasserpumpen-Thermostatmodul', ru: 'Сцепление/мехатроник сухого 7-DSG (DQ200, если АКПП) и модуль помпы/термостата' }, cost: '€480–1,800', risk: { en: 'Shuddering in 2nd gear (DQ200) or slow coolant weep from thermostat housing', de: 'Ruckeln im 2. Gang (DQ200) oder schleichender Kühlwasserverlust am Modul', ru: 'Рывки на 2-й передаче (DQ200) или течь антифриза из модуля термостата' }, damage: '€1,600–2,800' },
+                { when: { en: '110,000–170,000 km', de: '110.000–170.000 km', ru: '110 000–170 000 км' }, action: { en: 'Turbo wastegate actuator rod sticking (EPC light / reduced boost)', de: 'Turbo-Wastegate-Gestänge fest (EPC-Lampe / reduzierter Ladedruck)', ru: 'Подклинивание тяги актуатора турбины (ошибка EPC / потеря наддува)' }, cost: '€220–580', risk: { en: 'Limp mode under acceleration; seized actuator can require turbo replacement', de: 'Notlauf beim Beschleunigen; festsitzende Welle erfordert oft neuen Lader', ru: 'Аварийный режим при разгоне; закисший шток может потребовать замены турбины' }, damage: '€1,200–1,900' }
+              ]
+            },
             badges: {
               en: ['180k–210k Belt • Affordable Parts', 'DSG Service if Fitted'],
               de: ['180–210 Tkm Riemen • Faire Teile', 'DSG-Wartung beachten'],
@@ -61993,6 +66946,14 @@ const CAR_ROSTER = [
             'Сзади теснее Golf'
           ]
         },
+        specOverrides: {
+          engineName: { en: '1.5L I4 TFSI Evo 150 (Belt)', de: '1.5L Reihenvierzylinder Evo 150', ru: '1.5L R4 TFSI Evo 150 (Ремень)' },
+          forcedInduction: '@turbo', injection: '@direct', timingDrive: '@belt',
+          gearbox: { en: '6-MT / Dry 7-DSG (DQ200)', de: '6-Gang / Trockenes 7-DSG', ru: '6-МКПП / Сухой 7-DSG' }, clutchDmf: '@singleClutch', towingBraked: '1,500 kg',
+          sprint0100: '8.2 s', topSpeed: '220 km/h', peakTorque: '250 Nm @ 1,500 rpm',
+          passingPunch: { en: 'Refined 250 Nm Evo Turbo', de: 'Kultivierter 250-Nm-Evo', ru: 'Эластичный 250-Н·м Evo' },
+          realWorldFuel: '5.8 L/100km', tankRange: '50 L (~860 km)', euroNorm: 'Euro 6d-TEMP (Petrol)', taxInsurance: '@tierLowMod', serviceWear: '@tierLowMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.9,
@@ -62000,6 +66961,10 @@ const CAR_ROSTER = [
               en: ['Belt EA211 Much Tougher Than 8P', 'Watch Plastic Water Pump Housing'],
               de: ['EA211-Zahnriemen deutlich robuster', 'Wasserpumpen-Gehäuse prüfen'],
               ru: ['Ременной EA211 намного надёжнее', 'Проверить корпус помпы']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'DADA (EA211 Evo) · 1,498 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium · Miller-Cycle VGT Turbo + COD (Belt)', de: 'Reihenvierzylinder Alu · Miller-Zyklus + VTG-Turbo + COD', ru: 'Рядный 4-цил. алюминий · Цикл Миллера + VGT-турбо + COD' } }], note: { en: 'Modern EA211 Evo with variable-geometry turbo and 5.8 L/100km real economy; verify latest ECU update for smooth cold-start 1st-gear pull-away.', de: 'Moderner EA211 Evo mit VTG-Lader und 5,8 L Verbrauch; Software-Update gegen leichtes Kaltstart-Känguru prüfen.', ru: 'Современный EA211 Evo с турбиной VGT и расходом 5,8 л; проверьте обновление ПО для плавного холодного старта.' } },
+              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -62338,6 +67303,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.7,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Replace spark plugs, inspect ignition coils & refresh 6-MT gearbox oil', de: 'Zündkerzen wechseln, Zündspulen & 6-Gang-Getriebeöl prüfen', ru: 'Замена свечей, проверка катушек и масла в 6-МКПП' }, cost: '€170–260' },
+                { when: { en: '180,000–210,000 km / 10 yrs', de: '180.000–210.000 km / 10 J.', ru: '180–210 тыс. км / 10 лет' }, action: { en: 'Replace EA211 long-life timing belt & tensioner rollers', de: 'EA211 Longlife-Zahnriemen & Spannrollen präventiv erneuern', ru: 'Профилактическая замена долговечного ремня ГРМ EA211 и роликов' }, cost: '€520–780' }
+              ],
+              critical: [
+                { when: { en: '100,000–160,000 km', de: '100.000–160.000 km', ru: '100 000–160 000 км' }, action: { en: 'Dry 7-DSG (DQ200) clutch pack / mechatronic (if automatic) & water-pump/thermostat module', de: 'Trockenes 7-DSG (DQ200) Kupplung/Mechatronik (falls AT) & Wasserpumpen-Thermostatmodul', ru: 'Сцепление/мехатроник сухого 7-DSG (DQ200, если АКПП) и модуль помпы/термостата' }, cost: '€480–1,800', risk: { en: 'Shuddering in 2nd gear (DQ200) or slow coolant weep from thermostat housing', de: 'Ruckeln im 2. Gang (DQ200) oder schleichender Kühlwasserverlust am Modul', ru: 'Рывки на 2-й передаче (DQ200) или течь антифриза из модуля термостата' }, damage: '€1,600–2,800' },
+                { when: { en: '110,000–170,000 km', de: '110.000–170.000 km', ru: '110 000–170 000 км' }, action: { en: 'Turbo wastegate actuator rod sticking (EPC light / reduced boost)', de: 'Turbo-Wastegate-Gestänge fest (EPC-Lampe / reduzierter Ladedruck)', ru: 'Подклинивание тяги актуатора турбины (ошибка EPC / потеря наддува)' }, cost: '€220–580', risk: { en: 'Limp mode under acceleration; seized actuator can require turbo replacement', de: 'Notlauf beim Beschleunigen; festsitzende Welle erfordert oft neuen Lader', ru: 'Аварийный режим при разгоне; закисший шток может потребовать замены турбины' }, damage: '€1,200–1,900' }
+              ]
+            },
             badges: {
               en: ['180k–210k Belt • Affordable Parts', 'DSG Service if Fitted'],
               de: ['180–210 Tkm Riemen • Faire Teile', 'DSG-Wartung beachten'],
@@ -62420,6 +67395,14 @@ const CAR_ROSTER = [
             'Ремонт высоковольтной части дорог'
           ]
         },
+        specOverrides: {
+          engineName: { en: '1.4L PHEV e-tron (204 HP)', de: '1.4L Plug-in-Hybrid e-tron (204 PS)', ru: '1.4L PHEV e-tron (204 л.с.)' },
+          forcedInduction: '@hybridEMotor', injection: '@direct', timingDrive: '@belt',
+          gearbox: { en: 'Wet 6-DSG Hybrid (DQ400E)', de: 'Nasses 6-DSG Hybrid (DQ400E)', ru: 'Мокрый 6-DSG Гибрид (DQ400E)' }, clutchDmf: '@dsg6Wet', towingBraked: '1,400 kg',
+          sprint0100: '7.6 s', topSpeed: '222 km/h', peakTorque: '350 Nm Combined',
+          passingPunch: { en: 'Instant Electric Launch', de: 'Sofortiger E-Boost (350 Nm)', ru: 'Мгновенный электроподхват' },
+          realWorldFuel: '2.5–4.5 L/100km (Chg)', tankRange: '40 L + 8.8 kWh (~30–40 km EV)', euroNorm: 'Euro 6 (PHEV)', taxInsurance: '@tierVeryLow', serviceWear: '@tierModHigh'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.6,
@@ -62427,6 +67410,10 @@ const CAR_ROSTER = [
               en: ['Solid 1.4 EA211 + Electric', 'Watch HV Coolant Valve & Seals'],
               de: ['Solider 1.4 EA211 + E-Antrieb', 'HV-Kühlventil & Dichtungen prüfen'],
               ru: ['Надёжный 1.4 EA211 + электромотор', 'Проверить клапаны охлаждения HV']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'CUKB + 75 kW E-Motor · 1,395 cc' }, { k: 'architecture', v: { en: '1.4 TFSI + Electric Motor · Wet 6-DSG (DQ400E) PHEV', de: '1.4 TFSI + E-Motor · Nasses 6-DSG (DQ400E) Plug-in-Hybrid', ru: '1.4 TFSI + электромотор · Мокрый 6-DSG (DQ400E) PHEV' } }], note: { en: '350 Nm instant punch and silent 30–40 km electric commuting if you can charge at home; without home charging, the smaller boot and extra weight make less sense.', de: '350 Nm Sofortschub und 30–40 km rein elektrisch mit Heim-Lademöglichkeit; ohne Wallbox schmälert das Gewicht den Vorteil.', ru: 'Мгновенные 350 Н·м и 30–40 км на электротяге при наличии домашней розетки; без зарядки лишний вес и меньший багажник теряют смысл.' } },
+              forcedInduction: '@hybridEMotor', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -62759,6 +67746,15 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.0,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Change wet 6-DSG hybrid oil (DQ400E) & replace spark plugs', de: 'Nasses 6-DSG-Hybridöl (DQ400E) wechseln & Zündkerzen erneuern', ru: 'Замена масла в гибридном мокром 6-DSG (DQ400E) и свечей' }, cost: '€320–480' },
+                { when: { en: 'Every 180,000 km / 10 yrs', de: 'Alle 180.000 km / 10 J.', ru: 'Каждые 180 000 км / 10 лет' }, action: { en: 'Replace 1.4 TFSI EA211 timing belt & check HV battery cooling circuit', de: '1.4-TFSI-Zahnriemen wechseln & HV-Akku-Kühlkreislauf prüfen', ru: 'Замена ремня ГРМ 1.4 TFSI и проверка контура охлаждения ВВБ' }, cost: '€580–850' }
+              ],
+              critical: [
+                { when: { en: '120,000–190,000 km / 10+ yrs', de: '120.000–190.000 km / 10+ J.', ru: '120–190 тыс. км / 10+ лет' }, action: { en: 'HV battery capacity health / moisture seal & DQ400E K0 disconnect clutch', de: 'HV-Akku-Zustand / Abdichtung & DQ400E Trennkupplung / Mechatronik', ru: 'Состояние/герметичность ВВБ и сцепление/мехатроник DQ400E' }, cost: '€1,200–2,800', risk: { en: 'Reduced EV range, hybrid isolation fault, or jerky engine-to-EV handoff', de: 'Geringe E-Reichweite, Isolationsfehler oder ruckeliger Übergang Verbrenner/E-Motor', ru: 'Падение запаса хода на токе, ошибка изоляции или рывки при переходе на ДВС' }, damage: '€3,500–6,500' }
+              ]
+            },
             badges: {
               en: ['60k DSG Service + Brake Corrosion', 'HV Parts Pricier'],
               de: ['60 Tkm DSG + Bremsen-Rost prüfen', 'HV-Teile teurer'],
@@ -62841,6 +67837,14 @@ const CAR_ROSTER = [
             'Сзади теснее Golf'
           ]
         },
+        specOverrides: {
+          engineName: { en: '1.8L I4 TFSI 180 (EA888 Gen3)', de: '1.8L Reihenvierzylinder 180 PS', ru: '1.8L R4 TFSI 180 (EA888 Gen3)' },
+          forcedInduction: '@turbo', injection: '@dualInj', timingDrive: '@chain',
+          gearbox: { en: '6-MT / Wet 6/7-DSG', de: '6-Gang / Nasses 6/7-DSG', ru: '6-МКПП / Мокрый 6/7-DSG' }, clutchDmf: '@dsg6Wet', towingBraked: '1,600 kg',
+          sprint0100: '7.2 s', topSpeed: '232 km/h', peakTorque: '250 Nm @ 1,250 rpm',
+          passingPunch: { en: 'Rapid 7.2 s Warm-Hatch', de: 'Flotter 7,2-s-Antritt', ru: 'Бодрые 7,2 с до 100' },
+          realWorldFuel: '7.1 L/100km', tankRange: '50 L (~705 km)', euroNorm: 'Euro 6 (Petrol)', taxInsurance: '@tierMod', serviceWear: '@tierMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.8,
@@ -62848,6 +67852,10 @@ const CAR_ROSTER = [
               en: ['Gen3 Fixes 8P Oil Burn', 'Watch Plastic Water Pump Housing'],
               de: ['Gen3 ohne 8P-Ölproblem', 'Wasserpumpen-Gehäuse prüfen'],
               ru: ['Gen3 без масложора 8P', 'Проверить корпус помпы']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'CJSA / CJSB (EA888 Gen3) · 1,798 cc' }, { k: 'architecture', v: { en: 'Inline-4 Cast-Iron · Dual Port+Direct Injection (Chain)', de: 'Reihenvierzylinder Grauguss · Dual-Einspritzung (Kette)', ru: 'Рядный 4-цил. чугун · Комбинированный впрыск (Цепь)' } }], note: { en: 'Huge leap over the 8P 1.8 TFSI: EA888 Gen3 fixed the oil-ring and chain disasters, and dual injection keeps intake valves clean.', de: 'Riesensprung gegenüber dem 8P: Der EA888 Gen3 löst Ölverbrauchs- und Kettenprobleme und hält Ventile per Dual-Einspritzung sauber.', ru: 'Огромный шаг вперёд после 8P: EA888 Gen3 избавился от масложора и проблем цепи, а двойной впрыск чистит клапаны.' } },
+              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -63186,6 +68194,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.2,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Change wet DSG (DQ250/DQ381) oil + Haldex Quattro oil (if AWD) & spark plugs', de: 'Nasses DSG-Öl (DQ250/DQ381) + Haldex-Öl (falls Quattro) & Zündkerzen wechseln', ru: 'Замена масла в мокром DSG + масло муфты Haldex (если Quattro) и свечи' }, cost: '€320–490' },
+                { when: { en: 'Every 120,000 km', de: 'Alle 120.000 km', ru: 'Каждые 120 000 км' }, action: { en: 'Inspect PCV oil separator & camshaft adjuster magnet valves', de: 'Ölabscheider (KGE) & Nockenwellen-Steuerventile prüfen', ru: 'Проверка маслоотделителя ВКГ и клапанов фазовращателей' }, cost: '€160–260' }
+              ],
+              critical: [
+                { when: { en: '90,000–150,000 km', de: '90.000–150.000 km', ru: '90 000–150 000 км' }, action: { en: 'EA888 Gen3 plastic thermostat / water-pump housing (classic coolant leak)', de: 'EA888 Gen3 Kunststoff-Thermostatgehäuse / Wasserpumpe (typische Leckage)', ru: 'Пластиковый модуль термостата и помпы EA888 Gen3 (типичная течь ОЖ)' }, cost: '€650–1,050', risk: { en: 'Slow or sudden coolant leak leading to overheating if ignored', de: 'Schleichender bis starker Kühlwasserverlust bis zur Überhitzung', ru: 'Утечка антифриза вплоть до перегрева двигателя' }, damage: '€1,800–3,200' },
+                { when: { en: '120,000–180,000 km', de: '120.000–180.000 km', ru: '120 000–180 000 км' }, action: { en: 'Haldex V AWD pump strainer clean (Quattro) & wastegate actuator check', de: 'Haldex-5-Sieb reinigen (Quattro) & Turbo-Wastegate prüfen', ru: 'Чистка сетки насоса Haldex 5 (Quattro) и проверка актуатора турбины' }, cost: '€240–550', risk: { en: 'Clogged Haldex screen burns out AWD pump silently', de: 'Verstopftes Haldex-Sieb lässt die Allradpumpe unbemerkt durchbrennen', ru: 'Забитая сетка Haldex незаметно сжигает насос полного привода' }, damage: '€900–1,400' }
+              ]
+            },
             badges: {
               en: ['Updated Chain • Water Pump Watch', 'DSG Service if Fitted'],
               de: ['Robuste Kette • Wasserpumpe prüfen', 'DSG-Wartung beachten'],
@@ -63268,6 +68286,14 @@ const CAR_ROSTER = [
             'Сзади теснее Golf'
           ]
         },
+        specOverrides: {
+          engineName: { en: '2.0L I4 TFSI 190 (EA888 Gen3)', de: '2.0L Reihenvierzylinder 190 PS', ru: '2.0L R4 TFSI 190 (EA888 Gen3)' },
+          forcedInduction: '@turbo', injection: '@dualInj', timingDrive: '@chain',
+          gearbox: { en: '6-MT / Wet 6/7-DSG', de: '6-Gang / Nasses 6/7-DSG', ru: '6-МКПП / Мокрый 6/7-DSG' }, clutchDmf: '@dsg7Wet', towingBraked: '1,600 kg',
+          sprint0100: '6.7 s', topSpeed: '244 km/h', peakTorque: '320 Nm @ 1,500 rpm',
+          passingPunch: { en: 'Effortless 320 Nm Express', de: 'Souveräner 320-Nm-Express', ru: 'Мощный 320-Н·м экспресс' },
+          realWorldFuel: '7.3 L/100km', tankRange: '50 L (~685 km)', euroNorm: 'Euro 6 (Petrol)', taxInsurance: '@tierMod', serviceWear: '@tierMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.8,
@@ -63275,6 +68301,10 @@ const CAR_ROSTER = [
               en: ['Gen3 Fixes 8P Oil Burn', 'Watch Plastic Water Pump Housing'],
               de: ['Gen3 ohne 8P-Ölproblem', 'Wasserpumpen-Gehäuse prüfen'],
               ru: ['Gen3 без масложора 8P', 'Проверить корпус помпы']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'CZPB (EA888 Gen3B) · 1,984 cc' }, { k: 'architecture', v: { en: 'Inline-4 B-Cycle Turbo · Dual Injection + Wet 7-DSG (DQ381)', de: 'Reihenvierzylinder B-Zyklus · Dual-Einspritzung + Nasses 7-DSG', ru: 'Рядный 4-цил. цикл B · Двойной впрыск + мокрый 7-DSG (DQ381)' } }], note: { en: 'Arguably the best petrol A3 8V: 6.7 s pace, tough wet 7-speed DQ381 DSG, optional Quattro, and surprisingly modest 7.3 L/100km fuel burn.', de: 'Wohl der beste Benziner im A3 8V: 6,7 s auf 100, robustes nasses 7-Gang-DSG (DQ381) und faire 7,3 L Verbrauch.', ru: 'Пожалуй, лучший бензиновый A3 8V: 6,7 с до 100, крепкий мокрый 7-DSG (DQ381), опция Quattro и скромные 7,3 л расхода.' } },
+              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -63613,6 +68643,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.2,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Change wet DSG (DQ250/DQ381) oil + Haldex Quattro oil (if AWD) & spark plugs', de: 'Nasses DSG-Öl (DQ250/DQ381) + Haldex-Öl (falls Quattro) & Zündkerzen wechseln', ru: 'Замена масла в мокром DSG + масло муфты Haldex (если Quattro) и свечи' }, cost: '€320–490' },
+                { when: { en: 'Every 120,000 km', de: 'Alle 120.000 km', ru: 'Каждые 120 000 км' }, action: { en: 'Inspect PCV oil separator & camshaft adjuster magnet valves', de: 'Ölabscheider (KGE) & Nockenwellen-Steuerventile prüfen', ru: 'Проверка маслоотделителя ВКГ и клапанов фазовращателей' }, cost: '€160–260' }
+              ],
+              critical: [
+                { when: { en: '90,000–150,000 km', de: '90.000–150.000 km', ru: '90 000–150 000 км' }, action: { en: 'EA888 Gen3 plastic thermostat / water-pump housing (classic coolant leak)', de: 'EA888 Gen3 Kunststoff-Thermostatgehäuse / Wasserpumpe (typische Leckage)', ru: 'Пластиковый модуль термостата и помпы EA888 Gen3 (типичная течь ОЖ)' }, cost: '€650–1,050', risk: { en: 'Slow or sudden coolant leak leading to overheating if ignored', de: 'Schleichender bis starker Kühlwasserverlust bis zur Überhitzung', ru: 'Утечка антифриза вплоть до перегрева двигателя' }, damage: '€1,800–3,200' },
+                { when: { en: '120,000–180,000 km', de: '120.000–180.000 km', ru: '120 000–180 000 км' }, action: { en: 'Haldex V AWD pump strainer clean (Quattro) & wastegate actuator check', de: 'Haldex-5-Sieb reinigen (Quattro) & Turbo-Wastegate prüfen', ru: 'Чистка сетки насоса Haldex 5 (Quattro) и проверка актуатора турбины' }, cost: '€240–550', risk: { en: 'Clogged Haldex screen burns out AWD pump silently', de: 'Verstopftes Haldex-Sieb lässt die Allradpumpe unbemerkt durchbrennen', ru: 'Забитая сетка Haldex незаметно сжигает насос полного привода' }, damage: '€900–1,400' }
+              ]
+            },
             badges: {
               en: ['Updated Chain • Water Pump Watch', 'DSG Service if Fitted'],
               de: ['Robuste Kette • Wasserpumpe prüfen', 'DSG-Wartung beachten'],
@@ -63695,6 +68735,14 @@ const CAR_ROSTER = [
             'У 1.6 TDI сзади балка'
           ]
         },
+        specOverrides: {
+          engineName: { en: '1.6L I4 TDI 105 (EA288 Belt)', de: '1.6L Reihenvierzylinder 105 TDI', ru: '1.6L R4 TDI 105 (EA288 Ремень)' },
+          forcedInduction: '@turbo', injection: '@commonRail', timingDrive: '@belt',
+          gearbox: { en: '6-MT / Dry 7-DSG (DQ200)', de: '6-Gang / Trockenes 7-DSG', ru: '6-МКПП / Сухой 7-DSG' }, clutchDmf: '@clutchDmf', towingBraked: '1,500 kg',
+          sprint0100: '10.7 s', topSpeed: '195 km/h', peakTorque: '250 Nm @ 1,500 rpm',
+          passingPunch: { en: 'Frugal 1,100 km Commuter', de: 'Sparsamer 1.100-km-Pendler', ru: 'Экономичные 250 Н·м' },
+          realWorldFuel: '4.5 L/100km', tankRange: '50 L (~1,110 km)', euroNorm: 'Euro 5 (Diesel)', taxInsurance: '@tierLow', serviceWear: '@tierLowMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.8,
@@ -63702,6 +68750,10 @@ const CAR_ROSTER = [
               en: ['Proven EA288 Common-Rail', '210k Belt • Watch Water Pump'],
               de: ['Bewährter EA288 Common-Rail', '210 Tkm Riemen • Wasserpumpe prüfen'],
               ru: ['Надёжный EA288 Common-Rail', 'Ремень 210 тыс. • Контроль помпы']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'CLHA (EA288) · 1,598 cc' }, { k: 'architecture', v: { en: 'Inline-4 Cast-Iron Common-Rail · 210k Timing Belt', de: 'Reihenvierzylinder Common-Rail · 210-Tkm-Zahnriemen', ru: 'Рядный 4-цил. Common-Rail · Ремень ГРМ 210 тыс. км' } }], note: { en: 'Clean-sheet EA288 replacement for the 8P diesel: quieter, smoother, and 1,100+ km per tank; watch the switchable water pump.', de: 'Komplett neuer EA288-Diesel: leiser, sparsamer (1.100+ km Reichweite) und robuster; auf die schaltbare Wasserpumpe achten.', ru: 'Новое поколение дизеля EA288: тише, экономичнее (1 100+ км на баке) и надёжнее; следите за шторкой помпы.' } },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -64040,6 +69092,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.4,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 210,000 km / 10 yrs', de: 'Alle 210.000 km / 10 J.', ru: 'Каждые 210 000 км / 10 лет' }, action: { en: 'Replace EA288 timing belt kit, rollers & switchable water pump', de: 'EA288-Zahnriemensatz, Rollen & schaltbare Wasserpumpe erneuern', ru: 'Замена комплекта ремня ГРМ EA288, роликов и управляемой помпы' }, cost: '€620–890' },
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Change wet DSG oil (2.0 TDI DSG) + Haldex oil (if Quattro) & diesel fuel filter', de: 'Nasses DSG-Öl (2.0 TDI) + Haldex-Öl (Quattro) & Dieselfilter wechseln', ru: 'Замена масла в мокром DSG (2.0 TDI) + Haldex (Quattro) и топливного фильтра' }, cost: '€260–420' }
+              ],
+              critical: [
+                { when: { en: '100,000–160,000 km', de: '100.000–160.000 km', ru: '100 000–160 000 км' }, action: { en: 'EA288 switchable water-pump sleeve sticking (causes sudden 110°C spikes!)', de: 'EA288 schaltbare Wasserpumpe (Schiebehülse klemmt → plötzliches Überhitzen!)', ru: 'Заклинивание шторки помпы EA288 (резкий скачок температуры!)' }, cost: '€580–850', risk: { en: 'Stuck sleeve blocks coolant flow on highway and warps cylinder head', de: 'Klemmende Hülse stoppt Kühlkreislauf auf der Autobahn — Kopfschaden', ru: 'Заклинившая шторка перекрывает ОЖ на трассе и ведёт к перегреву ГБЦ' }, damage: '€2,400–3,800' },
+                { when: { en: '140,000–210,000 km', de: '140.000–210.000 km', ru: '140 000–210 000 км' }, action: { en: 'EGR cooler / DPF differential sensor & DMF + clutch (or DQ200 on 1.6 TDI)', de: 'AGR-Kühler / DPF-Sensor & ZMS + Kupplung (bzw. DQ200 beim 1.6 TDI)', ru: 'Охладитель EGR / датчик DPF и двухмассовый маховик (или DQ200 на 1.6 TDI)' }, cost: '€850–1,650', risk: { en: 'Limp mode, coolant loss into intake, or driveline vibration', de: 'Notlauf, Kühlwasserverlust im Ansaugtrakt oder starkes ZMS-Rasseln', ru: 'Аварийный режим, течь ОЖ во впуск или сильные вибрации трансмиссии' }, damage: '€1,800–3,000' }
+              ]
+            },
             badges: {
               en: ['210k km Belt Interval', 'Water Pump & EGR Main Items'],
               de: ['210 Tkm Zahnriemen', 'Wasserpumpe & AGR Hauptpunkte'],
@@ -64122,6 +69184,14 @@ const CAR_ROSTER = [
             'У 1.6 TDI сзади балка'
           ]
         },
+        specOverrides: {
+          engineName: { en: '1.6L I4 TDI 110 (EA288 Belt)', de: '1.6L Reihenvierzylinder 110 TDI', ru: '1.6L R4 TDI 110 (EA288 Ремень)' },
+          forcedInduction: '@turbo', injection: '@commonRail', timingDrive: '@belt',
+          gearbox: { en: '6-MT / Dry 7-DSG (DQ200)', de: '6-Gang / Trockenes 7-DSG', ru: '6-МКПП / Сухой 7-DSG' }, clutchDmf: '@clutchDmf', towingBraked: '1,500 kg',
+          sprint0100: '10.5 s', topSpeed: '200 km/h', peakTorque: '250 Nm @ 1,500 rpm',
+          passingPunch: { en: 'Ultra-Thrifty Highway Cruise', de: 'Extrem sparsamer Gleiter', ru: 'Сверхэкономичный крейсер' },
+          realWorldFuel: '4.4 L/100km', tankRange: '50 L (~1,135 km)', euroNorm: 'Euro 6 (Diesel)', taxInsurance: '@tierLow', serviceWear: '@tierLowMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.8,
@@ -64129,6 +69199,10 @@ const CAR_ROSTER = [
               en: ['Proven EA288 Common-Rail', '210k Belt • Watch Water Pump'],
               de: ['Bewährter EA288 Common-Rail', '210 Tkm Riemen • Wasserpumpe prüfen'],
               ru: ['Надёжный EA288 Common-Rail', 'Ремень 210 тыс. • Контроль помпы']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'CRKB / CXXB (EA288) · 1,598 cc' }, { k: 'architecture', v: { en: 'Inline-4 Common-Rail Euro 6 · 6-MT or Dry 7-DSG', de: 'Reihenvierzylinder Common-Rail Euro 6 · 6-Gang / 7-DSG', ru: 'Рядный 4-цил. Common-Rail Euro 6 · 6-МКПП / 7-DSG' } }], note: { en: 'Euro 6 economy king (4.4 L/100km real-world) with a 6-speed manual option; great for high-mileage commuters who prefer low bills over speed.', de: 'Euro-6-Sparmeister (4,4 L real) mit 6-Gang-Schalter; ideal für Vielfahrer mit Fokus auf minimale Kraftstoffkosten.', ru: 'Чемпион экономичности Euro 6 (4,4 л/100 км) с 6-МКПП — отличный выбор для больших трассовых пробегов.' } },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -64467,6 +69541,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.4,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 210,000 km / 10 yrs', de: 'Alle 210.000 km / 10 J.', ru: 'Каждые 210 000 км / 10 лет' }, action: { en: 'Replace EA288 timing belt kit, rollers & switchable water pump', de: 'EA288-Zahnriemensatz, Rollen & schaltbare Wasserpumpe erneuern', ru: 'Замена комплекта ремня ГРМ EA288, роликов и управляемой помпы' }, cost: '€620–890' },
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Change wet DSG oil (2.0 TDI DSG) + Haldex oil (if Quattro) & diesel fuel filter', de: 'Nasses DSG-Öl (2.0 TDI) + Haldex-Öl (Quattro) & Dieselfilter wechseln', ru: 'Замена масла в мокром DSG (2.0 TDI) + Haldex (Quattro) и топливного фильтра' }, cost: '€260–420' }
+              ],
+              critical: [
+                { when: { en: '100,000–160,000 km', de: '100.000–160.000 km', ru: '100 000–160 000 км' }, action: { en: 'EA288 switchable water-pump sleeve sticking (causes sudden 110°C spikes!)', de: 'EA288 schaltbare Wasserpumpe (Schiebehülse klemmt → plötzliches Überhitzen!)', ru: 'Заклинивание шторки помпы EA288 (резкий скачок температуры!)' }, cost: '€580–850', risk: { en: 'Stuck sleeve blocks coolant flow on highway and warps cylinder head', de: 'Klemmende Hülse stoppt Kühlkreislauf auf der Autobahn — Kopfschaden', ru: 'Заклинившая шторка перекрывает ОЖ на трассе и ведёт к перегреву ГБЦ' }, damage: '€2,400–3,800' },
+                { when: { en: '140,000–210,000 km', de: '140.000–210.000 km', ru: '140 000–210 000 км' }, action: { en: 'EGR cooler / DPF differential sensor & DMF + clutch (or DQ200 on 1.6 TDI)', de: 'AGR-Kühler / DPF-Sensor & ZMS + Kupplung (bzw. DQ200 beim 1.6 TDI)', ru: 'Охладитель EGR / датчик DPF и двухмассовый маховик (или DQ200 на 1.6 TDI)' }, cost: '€850–1,650', risk: { en: 'Limp mode, coolant loss into intake, or driveline vibration', de: 'Notlauf, Kühlwasserverlust im Ansaugtrakt oder starkes ZMS-Rasseln', ru: 'Аварийный режим, течь ОЖ во впуск или сильные вибрации трансмиссии' }, damage: '€1,800–3,000' }
+              ]
+            },
             badges: {
               en: ['210k km Belt Interval', 'Water Pump & EGR Main Items'],
               de: ['210 Tkm Zahnriemen', 'Wasserpumpe & AGR Hauptpunkte'],
@@ -64549,6 +69633,14 @@ const CAR_ROSTER = [
             'У 1.6 TDI сзади балка'
           ]
         },
+        specOverrides: {
+          engineName: { en: '1.6L I4 TDI 115 (EA288 Belt)', de: '1.6L Reihenvierzylinder 115 TDI', ru: '1.6L R4 TDI 115 (EA288 Ремень)' },
+          forcedInduction: '@turbo', injection: '@commonRail', timingDrive: '@belt',
+          gearbox: { en: '6-MT / Dry 7-DSG (DQ200)', de: '6-Gang / Trockenes 7-DSG', ru: '6-МКПП / Сухой 7-DSG' }, clutchDmf: '@clutchDmf', towingBraked: '1,500 kg',
+          sprint0100: '10.2 s', topSpeed: '202 km/h', peakTorque: '250 Nm @ 1,500 rpm',
+          passingPunch: { en: 'Calm 250 Nm Facelift TDI', de: 'Ruhige 250 Nm (Facelift)', ru: 'Ровная тяга 250 Н·м' },
+          realWorldFuel: '4.5 L/100km', tankRange: '50 L (~1,110 km)', euroNorm: 'Euro 6 (Diesel)', taxInsurance: '@tierLow', serviceWear: '@tierLowMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.8,
@@ -64556,6 +69648,10 @@ const CAR_ROSTER = [
               en: ['Proven EA288 Common-Rail', '210k Belt • Watch Water Pump'],
               de: ['Bewährter EA288 Common-Rail', '210 Tkm Riemen • Wasserpumpe prüfen'],
               ru: ['Надёжный EA288 Common-Rail', 'Ремень 210 тыс. • Контроль помпы']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'DDYA (EA288 Facelift) · 1,598 cc' }, { k: 'architecture', v: { en: 'Inline-4 Common-Rail Euro 6 · Facelift Refinement', de: 'Reihenvierzylinder Common-Rail Euro 6 · Facelift-Stand', ru: 'Рядный 4-цил. Common-Rail Euro 6 · Рестайлинг' } }], note: { en: '2016+ facelift 1.6 TDI with cleaner Euro 6 emissions and effortless 1,100+ km highway range.', de: 'Facelift-1.6-TDI ab 2016 mit sauberer Euro-6-Norm und über 1.100 km Reichweite.', ru: 'Рестайлинговый 1.6 TDI (2016+) с чистым Euro 6 и запасом хода более 1 100 км.' } },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -64894,6 +69990,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.4,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 210,000 km / 10 yrs', de: 'Alle 210.000 km / 10 J.', ru: 'Каждые 210 000 км / 10 лет' }, action: { en: 'Replace EA288 timing belt kit, rollers & switchable water pump', de: 'EA288-Zahnriemensatz, Rollen & schaltbare Wasserpumpe erneuern', ru: 'Замена комплекта ремня ГРМ EA288, роликов и управляемой помпы' }, cost: '€620–890' },
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Change wet DSG oil (2.0 TDI DSG) + Haldex oil (if Quattro) & diesel fuel filter', de: 'Nasses DSG-Öl (2.0 TDI) + Haldex-Öl (Quattro) & Dieselfilter wechseln', ru: 'Замена масла в мокром DSG (2.0 TDI) + Haldex (Quattro) и топливного фильтра' }, cost: '€260–420' }
+              ],
+              critical: [
+                { when: { en: '100,000–160,000 km', de: '100.000–160.000 km', ru: '100 000–160 000 км' }, action: { en: 'EA288 switchable water-pump sleeve sticking (causes sudden 110°C spikes!)', de: 'EA288 schaltbare Wasserpumpe (Schiebehülse klemmt → plötzliches Überhitzen!)', ru: 'Заклинивание шторки помпы EA288 (резкий скачок температуры!)' }, cost: '€580–850', risk: { en: 'Stuck sleeve blocks coolant flow on highway and warps cylinder head', de: 'Klemmende Hülse stoppt Kühlkreislauf auf der Autobahn — Kopfschaden', ru: 'Заклинившая шторка перекрывает ОЖ на трассе и ведёт к перегреву ГБЦ' }, damage: '€2,400–3,800' },
+                { when: { en: '140,000–210,000 km', de: '140.000–210.000 km', ru: '140 000–210 000 км' }, action: { en: 'EGR cooler / DPF differential sensor & DMF + clutch (or DQ200 on 1.6 TDI)', de: 'AGR-Kühler / DPF-Sensor & ZMS + Kupplung (bzw. DQ200 beim 1.6 TDI)', ru: 'Охладитель EGR / датчик DPF и двухмассовый маховик (или DQ200 на 1.6 TDI)' }, cost: '€850–1,650', risk: { en: 'Limp mode, coolant loss into intake, or driveline vibration', de: 'Notlauf, Kühlwasserverlust im Ansaugtrakt oder starkes ZMS-Rasseln', ru: 'Аварийный режим, течь ОЖ во впуск или сильные вибрации трансмиссии' }, damage: '€1,800–3,000' }
+              ]
+            },
             badges: {
               en: ['210k km Belt Interval', 'Water Pump & EGR Main Items'],
               de: ['210 Tkm Zahnriemen', 'Wasserpumpe & AGR Hauptpunkte'],
@@ -64976,6 +70082,14 @@ const CAR_ROSTER = [
             'Выше дизельный налог'
           ]
         },
+        specOverrides: {
+          engineName: { en: '2.0L I4 TDI 150 (EA288 Belt)', de: '2.0L Reihenvierzylinder 150 TDI', ru: '2.0L R4 TDI 150 (EA288 Ремень)' },
+          forcedInduction: '@turbo', injection: '@commonRail', timingDrive: '@belt',
+          gearbox: { en: '6-MT / Wet 6/7-DSG', de: '6-Gang / Nasses 6/7-DSG', ru: '6-МКПП / Мокрый 6/7-DSG' }, clutchDmf: '@clutchDmf', towingBraked: '1,600 kg',
+          sprint0100: '8.6 s', topSpeed: '218 km/h', peakTorque: '340 Nm @ 1,750 rpm',
+          passingPunch: { en: 'Effortless 340 Nm Autobahn', de: 'Souveräne 340 Nm (Autobahn)', ru: 'Уверенные 340 Н·м на трассе' },
+          realWorldFuel: '4.9 L/100km', tankRange: '50 L (~1,020 km)', euroNorm: 'Euro 6 (Diesel)', taxInsurance: '@tierMod', serviceWear: '@tierLowMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 8.4,
@@ -64983,6 +70097,10 @@ const CAR_ROSTER = [
               en: ['Proven EA288 Common-Rail', '210k Belt • Watch Water Pump'],
               de: ['Bewährter EA288 Common-Rail', '210 Tkm Riemen • Wasserpumpe prüfen'],
               ru: ['Надёжный EA288 Common-Rail', 'Ремень 210 тыс. • Контроль помпы']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'CRBC / CRLB (EA288) · 1,968 cc' }, { k: 'architecture', v: { en: 'Inline-4 Cast-Iron Common-Rail · Tough Wet DSG + Multi-Link', de: 'Reihenvierzylinder Common-Rail · Robustes nasses DSG', ru: 'Рядный 4-цил. Common-Rail · Крепкий мокрый DSG' } }], note: { en: 'The #1 high-mileage champion of the A3 8V: 340 Nm effortless pull, 4.9 L/100km, tough wet 6-DSG, and multi-link rear suspension.', de: 'Der absolute Langstrecken-Favorit im A3 8V: 340 Nm, 4,9 L Verbrauch, robustes nasses DSG und Mehrlenker-Hinterachse.', ru: 'Главный фаворит для дальних дорог: 340 Н·м, расход 4,9 л, крепкий мокрый DSG и задняя многорычажка.' } },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -65321,6 +70439,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.9,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 210,000 km / 10 yrs', de: 'Alle 210.000 km / 10 J.', ru: 'Каждые 210 000 км / 10 лет' }, action: { en: 'Replace EA288 timing belt kit, rollers & switchable water pump', de: 'EA288-Zahnriemensatz, Rollen & schaltbare Wasserpumpe erneuern', ru: 'Замена комплекта ремня ГРМ EA288, роликов и управляемой помпы' }, cost: '€620–890' },
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Change wet DSG oil (2.0 TDI DSG) + Haldex oil (if Quattro) & diesel fuel filter', de: 'Nasses DSG-Öl (2.0 TDI) + Haldex-Öl (Quattro) & Dieselfilter wechseln', ru: 'Замена масла в мокром DSG (2.0 TDI) + Haldex (Quattro) и топливного фильтра' }, cost: '€260–420' }
+              ],
+              critical: [
+                { when: { en: '100,000–160,000 km', de: '100.000–160.000 km', ru: '100 000–160 000 км' }, action: { en: 'EA288 switchable water-pump sleeve sticking (causes sudden 110°C spikes!)', de: 'EA288 schaltbare Wasserpumpe (Schiebehülse klemmt → plötzliches Überhitzen!)', ru: 'Заклинивание шторки помпы EA288 (резкий скачок температуры!)' }, cost: '€580–850', risk: { en: 'Stuck sleeve blocks coolant flow on highway and warps cylinder head', de: 'Klemmende Hülse stoppt Kühlkreislauf auf der Autobahn — Kopfschaden', ru: 'Заклинившая шторка перекрывает ОЖ на трассе и ведёт к перегреву ГБЦ' }, damage: '€2,400–3,800' },
+                { when: { en: '140,000–210,000 km', de: '140.000–210.000 km', ru: '140 000–210 000 км' }, action: { en: 'EGR cooler / DPF differential sensor & DMF + clutch (or DQ200 on 1.6 TDI)', de: 'AGR-Kühler / DPF-Sensor & ZMS + Kupplung (bzw. DQ200 beim 1.6 TDI)', ru: 'Охладитель EGR / датчик DPF и двухмассовый маховик (или DQ200 на 1.6 TDI)' }, cost: '€850–1,650', risk: { en: 'Limp mode, coolant loss into intake, or driveline vibration', de: 'Notlauf, Kühlwasserverlust im Ansaugtrakt oder starkes ZMS-Rasseln', ru: 'Аварийный режим, течь ОЖ во впуск или сильные вибрации трансмиссии' }, damage: '€1,800–3,000' }
+              ]
+            },
             badges: {
               en: ['210k km Belt Interval', 'Water Pump & EGR Main Items'],
               de: ['210 Tkm Zahnriemen', 'Wasserpumpe & AGR Hauptpunkte'],
@@ -65403,6 +70531,14 @@ const CAR_ROSTER = [
             'Выше дизельный налог'
           ]
         },
+        specOverrides: {
+          engineName: { en: '2.0L I4 TDI 184 (EA288 Belt)', de: '2.0L Reihenvierzylinder 184 TDI', ru: '2.0L R4 TDI 184 (EA288 Ремень)' },
+          forcedInduction: '@turbo', injection: '@commonRail', timingDrive: '@belt',
+          gearbox: { en: '6-MT / Wet 6/7-DSG', de: '6-Gang / Nasses 6/7-DSG', ru: '6-МКПП / Мокрый 6/7-DSG' }, clutchDmf: '@clutchDmf', towingBraked: '1,800 kg',
+          sprint0100: '7.3 s', topSpeed: '234 km/h', peakTorque: '380 Nm @ 1,750 rpm',
+          passingPunch: { en: 'Rapid 380 Nm Diesel GTD', de: 'Kräftige 380 Nm (GTD-Niveau)', ru: 'Мощный 380-Н·м дизель' },
+          realWorldFuel: '5.4 L/100km', tankRange: '50 L (~925 km)', euroNorm: 'Euro 6 (Diesel)', taxInsurance: '@tierModHigh', serviceWear: '@tierMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 8.4,
@@ -65410,6 +70546,10 @@ const CAR_ROSTER = [
               en: ['Proven EA288 Common-Rail', '210k Belt • Watch Water Pump'],
               de: ['Bewährter EA288 Common-Rail', '210 Tkm Riemen • Wasserpumpe prüfen'],
               ru: ['Надёжный EA288 Common-Rail', 'Ремень 210 тыс. • Контроль помпы']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'CUNA (EA288 184 HP) · 1,968 cc' }, { k: 'architecture', v: { en: 'Inline-4 High-Output Diesel · 380 Nm + Opt. Quattro', de: 'Reihenvierzylinder Top-Diesel · 380 Nm + Opt. Quattro', ru: 'Рядный 4-цил. форсированный дизель · 380 Н·м + опц. Quattro' } }], note: { en: 'Blistering 7.3 s / 234 km/h diesel express with 1,800 kg towing; check oil consumption on pre-2016 CUNA units past 150,000 km.', de: 'Schneller 7,3-s-Diesel-Express (234 km/h) mit 1.800 kg Anhängelast; bei frühen CUNA ab 150.000 km Ölverbrauch prüfen.', ru: 'Быстрый дизель (7,3 с, 234 км/ч) и 1 800 кг на фаркопе; на ранних CUNA после 150 тыс. км проверяйте расход масла.' } },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -65748,6 +70888,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.4,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 210,000 km / 10 yrs', de: 'Alle 210.000 km / 10 J.', ru: 'Каждые 210 000 км / 10 лет' }, action: { en: 'Replace EA288 timing belt kit, rollers & switchable water pump', de: 'EA288-Zahnriemensatz, Rollen & schaltbare Wasserpumpe erneuern', ru: 'Замена комплекта ремня ГРМ EA288, роликов и управляемой помпы' }, cost: '€620–890' },
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Change wet DSG oil (2.0 TDI DSG) + Haldex oil (if Quattro) & diesel fuel filter', de: 'Nasses DSG-Öl (2.0 TDI) + Haldex-Öl (Quattro) & Dieselfilter wechseln', ru: 'Замена масла в мокром DSG (2.0 TDI) + Haldex (Quattro) и топливного фильтра' }, cost: '€260–420' }
+              ],
+              critical: [
+                { when: { en: '100,000–160,000 km', de: '100.000–160.000 km', ru: '100 000–160 000 км' }, action: { en: 'EA288 switchable water-pump sleeve sticking (causes sudden 110°C spikes!)', de: 'EA288 schaltbare Wasserpumpe (Schiebehülse klemmt → plötzliches Überhitzen!)', ru: 'Заклинивание шторки помпы EA288 (резкий скачок температуры!)' }, cost: '€580–850', risk: { en: 'Stuck sleeve blocks coolant flow on highway and warps cylinder head', de: 'Klemmende Hülse stoppt Kühlkreislauf auf der Autobahn — Kopfschaden', ru: 'Заклинившая шторка перекрывает ОЖ на трассе и ведёт к перегреву ГБЦ' }, damage: '€2,400–3,800' },
+                { when: { en: '140,000–210,000 km', de: '140.000–210.000 km', ru: '140 000–210 000 км' }, action: { en: 'EGR cooler / DPF differential sensor & DMF + clutch (or DQ200 on 1.6 TDI)', de: 'AGR-Kühler / DPF-Sensor & ZMS + Kupplung (bzw. DQ200 beim 1.6 TDI)', ru: 'Охладитель EGR / датчик DPF и двухмассовый маховик (или DQ200 на 1.6 TDI)' }, cost: '€850–1,650', risk: { en: 'Limp mode, coolant loss into intake, or driveline vibration', de: 'Notlauf, Kühlwasserverlust im Ansaugtrakt oder starkes ZMS-Rasseln', ru: 'Аварийный режим, течь ОЖ во впуск или сильные вибрации трансмиссии' }, damage: '€1,800–3,000' }
+              ]
+            },
             badges: {
               en: ['210k km Belt Interval', 'Water Pump & EGR Main Items'],
               de: ['210 Tkm Zahnriemen', 'Wasserpumpe & AGR Hauptpunkte'],
@@ -65830,6 +70980,14 @@ const CAR_ROSTER = [
             'Сзади балка на версиях до 125 л.с.'
           ]
         },
+        specOverrides: {
+          engineName: { en: '1.0L I3 30 TFSI (WLTP Belt)', de: '1.0L Dreizylinder 30 TFSI', ru: '1.0L R3 30 TFSI (WLTP Ремень)' },
+          forcedInduction: '@turbo', injection: '@direct', timingDrive: '@belt',
+          gearbox: { en: '6-MT / Dry 7-DSG (DQ200)', de: '6-Gang / Trockenes 7-DSG', ru: '6-МКПП / Сухой 7-DSG' }, clutchDmf: '@singleClutch', towingBraked: '1,300 kg',
+          sprint0100: '9.9 s', topSpeed: '206 km/h', peakTorque: '200 Nm @ 2,000 rpm',
+          passingPunch: { en: 'Perky Clean Euro-6d Turbo', de: 'Spritziger Euro-6d-Turbo', ru: 'Живой чистый Euro-6d турбо' },
+          realWorldFuel: '5.7 L/100km', tankRange: '50 L (~875 km)', euroNorm: 'Euro 6d-TEMP (OPF)', taxInsurance: '@tierVeryLow', serviceWear: '@tierLow'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.9,
@@ -65837,6 +70995,10 @@ const CAR_ROSTER = [
               en: ['Belt EA211 Much Tougher Than 8P', 'Watch Plastic Water Pump Housing'],
               de: ['EA211-Zahnriemen deutlich robuster', 'Wasserpumpen-Gehäuse prüfen'],
               ru: ['Ременной EA211 намного надёжнее', 'Проверить корпус помпы']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'DKRF (EA211 WLTP) · 999 cc' }, { k: 'architecture', v: { en: 'Inline-3 Aluminium · Petrol Particulate Filter (OPF) + Belt', de: 'Dreizylinder Alu · Ottopartikelfilter (OPF) + Zahnriemen', ru: 'Рядный 3-цил. алюминий · Сажевый фильтр OPF + ремень' } }], note: { en: 'Late-run 2018–2020 badge-updated 1.0 TFSI with ultra-clean Euro 6d-TEMP emissions and proven EA211 belt reliability.', de: 'Späte 2018–2020er Ausbaustufe des 1.0 TFSI mit sauberer Euro-6d-TEMP-Norm und bewährtem EA211-Zahnriemen.', ru: 'Поздняя версия 1.0 TFSI (2018–2020) со строгим Euro 6d-TEMP и проверенной надёжностью ременного EA211.' } },
+              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -66175,6 +71337,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.7,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Replace spark plugs, inspect ignition coils & refresh 6-MT gearbox oil', de: 'Zündkerzen wechseln, Zündspulen & 6-Gang-Getriebeöl prüfen', ru: 'Замена свечей, проверка катушек и масла в 6-МКПП' }, cost: '€170–260' },
+                { when: { en: '180,000–210,000 km / 10 yrs', de: '180.000–210.000 km / 10 J.', ru: '180–210 тыс. км / 10 лет' }, action: { en: 'Replace EA211 long-life timing belt & tensioner rollers', de: 'EA211 Longlife-Zahnriemen & Spannrollen präventiv erneuern', ru: 'Профилактическая замена долговечного ремня ГРМ EA211 и роликов' }, cost: '€520–780' }
+              ],
+              critical: [
+                { when: { en: '100,000–160,000 km', de: '100.000–160.000 km', ru: '100 000–160 000 км' }, action: { en: 'Dry 7-DSG (DQ200) clutch pack / mechatronic (if automatic) & water-pump/thermostat module', de: 'Trockenes 7-DSG (DQ200) Kupplung/Mechatronik (falls AT) & Wasserpumpen-Thermostatmodul', ru: 'Сцепление/мехатроник сухого 7-DSG (DQ200, если АКПП) и модуль помпы/термостата' }, cost: '€480–1,800', risk: { en: 'Shuddering in 2nd gear (DQ200) or slow coolant weep from thermostat housing', de: 'Ruckeln im 2. Gang (DQ200) oder schleichender Kühlwasserverlust am Modul', ru: 'Рывки на 2-й передаче (DQ200) или течь антифриза из модуля термостата' }, damage: '€1,600–2,800' },
+                { when: { en: '110,000–170,000 km', de: '110.000–170.000 km', ru: '110 000–170 000 км' }, action: { en: 'Turbo wastegate actuator rod sticking (EPC light / reduced boost)', de: 'Turbo-Wastegate-Gestänge fest (EPC-Lampe / reduzierter Ladedruck)', ru: 'Подклинивание тяги актуатора турбины (ошибка EPC / потеря наддува)' }, cost: '€220–580', risk: { en: 'Limp mode under acceleration; seized actuator can require turbo replacement', de: 'Notlauf beim Beschleunigen; festsitzende Welle erfordert oft neuen Lader', ru: 'Аварийный режим при разгоне; закисший шток может потребовать замены турбины' }, damage: '€1,200–1,900' }
+              ]
+            },
             badges: {
               en: ['180k–210k Belt • Affordable Parts', 'DSG Service if Fitted'],
               de: ['180–210 Tkm Riemen • Faire Teile', 'DSG-Wartung beachten'],
@@ -66261,6 +71433,14 @@ const CAR_ROSTER = [
             'Сзади теснее Golf'
           ]
         },
+        specOverrides: {
+          engineName: { en: '1.5L I4 30 g-tron (CNG)', de: '1.5L Reihenvierzylinder 30 g-tron', ru: '1.5L R4 30 g-tron (CNG)' },
+          forcedInduction: '@turbo', injection: '@direct', timingDrive: '@belt',
+          gearbox: { en: '6-MT / Dry 7-DSG (DQ200)', de: '6-Gang / Trockenes 7-DSG', ru: '6-МКПП / Сухой 7-DSG' }, clutchDmf: '@singleClutch', towingBraked: '1,300 kg',
+          sprint0100: '9.4 s', topSpeed: '211 km/h', peakTorque: '200 Nm @ 1,400 rpm',
+          passingPunch: { en: 'Livelier 1.5 CNG Commuter', de: 'Flotterer 1.5-Erdgas-Pendler', ru: 'Бодрый 1.5 метановый ход' },
+          realWorldFuel: '3.5 kg CNG / 5.2 L', tankRange: '17.3 kg + 9 L (~490 km CNG)', euroNorm: 'Euro 6d-TEMP (CNG)', taxInsurance: '@tierVeryLow', serviceWear: '@tierMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.6,
@@ -66268,6 +71448,10 @@ const CAR_ROSTER = [
               en: ['Belt EA211 Much Tougher Than 8P', 'Watch Plastic Water Pump Housing'],
               de: ['EA211-Zahnriemen deutlich robuster', 'Wasserpumpen-Gehäuse prüfen'],
               ru: ['Ременной EA211 намного надёжнее', 'Проверить корпус помпы']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'DHFA (EA211 Evo TGI) · 1,498 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium · Larger 17.3 kg CNG Tanks + 9 L Reserve', de: 'Reihenvierzylinder Alu · 17,3 kg CNG-Tanks + 9-L-Reservetank', ru: 'Рядный 4-цил. алюминий · 17,3 кг метана + 9 л резервный бак' } }], note: { en: 'Faster 131 HP 1.5 TGI with bigger 17.3 kg CNG tanks (~400+ km on gas), but note the tiny 9 L petrol reserve tank — only buy if CNG stations are near you.', de: 'Flotterer 131-PS-1.5-TGI mit größerem 17,3-kg-Gastank, aber winzigem 9-L-Benzin-Reservetank — nur mit guter CNG-Tankstellen-Dichte sinnvoll.', ru: 'Более бодрый 131-сильный 1.5 TGI с увеличенным запасом метана, но крошечным 9-литровым бензобаком — берите только при наличии АГНКС рядом.' } },
+              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -66606,6 +71790,15 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.7,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 4 yrs (Mandatory)', de: 'Alle 4 Jahre (Pflicht)', ru: 'Каждые 4 года (Обязательно)' }, action: { en: 'Mandatory CNG composite tank visual/safety inspection + spark plugs every 60k', de: 'Vorgeschriebene CNG-Gastank-Prüfung (GAP) + Zündkerzen alle 60.000 km', ru: 'Обязательная поверка газовых баллонов CNG + свечи каждые 60 000 км' }, cost: '€220–360' },
+                { when: { en: '180,000–210,000 km / 10 yrs', de: '180.000–210.000 km / 10 J.', ru: '180–210 тыс. км / 10 лет' }, action: { en: 'Replace EA211 timing belt kit & inspect CNG injector rails', de: 'EA211-Zahnriemensatz wechseln & CNG-Einblasventile prüfen', ru: 'Замена ремня ГРМ EA211 и проверка газовых форсунок' }, cost: '€550–820' }
+              ],
+              critical: [
+                { when: { en: '100,000–160,000 km', de: '100.000–160.000 km', ru: '100 000–160 000 км' }, action: { en: 'CNG high-pressure regulator / solenoid valves & dry 7-DSG (if automatic)', de: 'CNG-Hochdruckregler / Tankventile & trockenes 7-DSG (falls Automatik)', ru: 'Газовый редуктор высокого давления / клапаны и сухой 7-DSG (если АКПП)' }, cost: '€650–1,600', risk: { en: 'Car refuses CNG mode and defaults to small petrol reserve tank', de: 'Kein Erdgasbetrieb mehr möglich — nur noch kleiner Benzin-Reservetank', ru: 'Отказ работы на газе — остаётся только маленький бензиновый бак' }, damage: '€1,400–2,400' }
+              ]
+            },
             badges: {
               en: ['180k–210k Belt • Affordable Parts', 'DSG Service if Fitted'],
               de: ['180–210 Tkm Riemen • Faire Teile', 'DSG-Wartung beachten'],
@@ -66688,6 +71881,14 @@ const CAR_ROSTER = [
             'Сзади теснее Golf'
           ]
         },
+        specOverrides: {
+          engineName: { en: '1.5L I4 35 TFSI (WLTP Belt)', de: '1.5L Reihenvierzylinder 35 TFSI', ru: '1.5L R4 35 TFSI (WLTP Ремень)' },
+          forcedInduction: '@turbo', injection: '@direct', timingDrive: '@belt',
+          gearbox: { en: '6-MT / Dry 7-DSG (DQ200)', de: '6-Gang / Trockenes 7-DSG', ru: '6-МКПП / Сухой 7-DSG' }, clutchDmf: '@singleClutch', towingBraked: '1,500 kg',
+          sprint0100: '8.2 s', topSpeed: '220 km/h', peakTorque: '250 Nm @ 1,500 rpm',
+          passingPunch: { en: 'Polished 150 HP All-Rounder', de: 'Ausgereifter 150-PS-Allrounder', ru: 'Отличный 150-сильный универсал' },
+          realWorldFuel: '5.9 L/100km', tankRange: '50 L (~845 km)', euroNorm: 'Euro 6d-TEMP (OPF)', taxInsurance: '@tierLowMod', serviceWear: '@tierLowMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.9,
@@ -66695,6 +71896,10 @@ const CAR_ROSTER = [
               en: ['Belt EA211 Much Tougher Than 8P', 'Watch Plastic Water Pump Housing'],
               de: ['EA211-Zahnriemen deutlich robuster', 'Wasserpumpen-Gehäuse prüfen'],
               ru: ['Ременной EA211 намного надёжнее', 'Проверить корпус помпы']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'DADA / DPCA (EA211 Evo) · 1,498 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium · Euro 6d-TEMP + COD + Timing Belt', de: 'Reihenvierzylinder Alu · Euro 6d-TEMP + COD + Zahnriemen', ru: 'Рядный 4-цил. алюминий · Euro 6d-TEMP + COD + ремень' } }], note: { en: 'Late-production 2018–2020 1.5 TFSI Evo with refined ECU calibration, low fuel use, and crisp 8.2 s performance.', de: 'Späte 2018–2020er Baujahre des 1.5 TFSI Evo mit ausgereifter Abstimmung, 8,2 s Sprint und geringem Verbrauch.', ru: 'Поздний 1.5 TFSI Evo (2018–2020) с доработанной прошивкой, низким расходом и уверенным разгоном 8,2 с.' } },
+              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -67033,6 +72238,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.7,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Replace spark plugs, inspect ignition coils & refresh 6-MT gearbox oil', de: 'Zündkerzen wechseln, Zündspulen & 6-Gang-Getriebeöl prüfen', ru: 'Замена свечей, проверка катушек и масла в 6-МКПП' }, cost: '€170–260' },
+                { when: { en: '180,000–210,000 km / 10 yrs', de: '180.000–210.000 km / 10 J.', ru: '180–210 тыс. км / 10 лет' }, action: { en: 'Replace EA211 long-life timing belt & tensioner rollers', de: 'EA211 Longlife-Zahnriemen & Spannrollen präventiv erneuern', ru: 'Профилактическая замена долговечного ремня ГРМ EA211 и роликов' }, cost: '€520–780' }
+              ],
+              critical: [
+                { when: { en: '100,000–160,000 km', de: '100.000–160.000 km', ru: '100 000–160 000 км' }, action: { en: 'Dry 7-DSG (DQ200) clutch pack / mechatronic (if automatic) & water-pump/thermostat module', de: 'Trockenes 7-DSG (DQ200) Kupplung/Mechatronik (falls AT) & Wasserpumpen-Thermostatmodul', ru: 'Сцепление/мехатроник сухого 7-DSG (DQ200, если АКПП) и модуль помпы/термостата' }, cost: '€480–1,800', risk: { en: 'Shuddering in 2nd gear (DQ200) or slow coolant weep from thermostat housing', de: 'Ruckeln im 2. Gang (DQ200) oder schleichender Kühlwasserverlust am Modul', ru: 'Рывки на 2-й передаче (DQ200) или течь антифриза из модуля термостата' }, damage: '€1,600–2,800' },
+                { when: { en: '110,000–170,000 km', de: '110.000–170.000 km', ru: '110 000–170 000 км' }, action: { en: 'Turbo wastegate actuator rod sticking (EPC light / reduced boost)', de: 'Turbo-Wastegate-Gestänge fest (EPC-Lampe / reduzierter Ladedruck)', ru: 'Подклинивание тяги актуатора турбины (ошибка EPC / потеря наддува)' }, cost: '€220–580', risk: { en: 'Limp mode under acceleration; seized actuator can require turbo replacement', de: 'Notlauf beim Beschleunigen; festsitzende Welle erfordert oft neuen Lader', ru: 'Аварийный режим при разгоне; закисший шток может потребовать замены турбины' }, damage: '€1,200–1,900' }
+              ]
+            },
             badges: {
               en: ['180k–210k Belt • Affordable Parts', 'DSG Service if Fitted'],
               de: ['180–210 Tkm Riemen • Faire Teile', 'DSG-Wartung beachten'],
@@ -67115,6 +72330,14 @@ const CAR_ROSTER = [
             'Сзади теснее Golf'
           ]
         },
+        specOverrides: {
+          engineName: { en: '2.0L I4 40 TFSI (190 HP)', de: '2.0L Reihenvierzylinder 40 TFSI', ru: '2.0L R4 40 TFSI (190 л.с.)' },
+          forcedInduction: '@turbo', injection: '@dualInj', timingDrive: '@chain',
+          gearbox: { en: '6-MT / Wet 6/7-DSG', de: '6-Gang / Nasses 6/7-DSG', ru: '6-МКПП / Мокрый 6/7-DSG' }, clutchDmf: '@dsg7Wet', towingBraked: '1,600 kg',
+          sprint0100: '6.8 s', topSpeed: '242 km/h', peakTorque: '320 Nm @ 1,500 rpm',
+          passingPunch: { en: 'Swift 320 Nm + Wet 7-DSG', de: 'Starke 320 Nm + Nasses 7-DSG', ru: 'Мощные 320 Н·м + мокрый 7-DSG' },
+          realWorldFuel: '7.4 L/100km', tankRange: '50 L (~675 km)', euroNorm: 'Euro 6d-TEMP (OPF)', taxInsurance: '@tierMod', serviceWear: '@tierMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.8,
@@ -67122,6 +72345,10 @@ const CAR_ROSTER = [
               en: ['Gen3 Fixes 8P Oil Burn', 'Watch Plastic Water Pump Housing'],
               de: ['Gen3 ohne 8P-Ölproblem', 'Wasserpumpen-Gehäuse prüfen'],
               ru: ['Gen3 без масложора 8P', 'Проверить корпус помпы']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'DKZA (EA888 Gen3B) · 1,984 cc' }, { k: 'architecture', v: { en: 'Inline-4 B-Cycle Turbo · Wet 7-DSG (DQ381) + Opt. Quattro', de: 'Reihenvierzylinder B-Zyklus · Nasses 7-DSG (DQ381) + Opt. Quattro', ru: 'Рядный 4-цил. цикл B · Мокрый 7-DSG (DQ381) + опц. Quattro' } }], note: { en: 'Final-edition 190 HP petrol flagship (below S3): tough wet 7-DSG, 6.8 s pace, and clean Euro 6d-TEMP compliance.', de: 'Ausgereiftes 190-PS-Benzin-Topmodell (unterhalb S3) mit robustem nassem 7-DSG und sauberem Euro 6d-TEMP.', ru: 'Зрелый 190-сильный флагман (до S3) с крепким мокрым 7-DSG, разгоном 6,8 с и чистым Euro 6d-TEMP.' } },
+              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -67460,6 +72687,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.2,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Change wet DSG (DQ250/DQ381) oil + Haldex Quattro oil (if AWD) & spark plugs', de: 'Nasses DSG-Öl (DQ250/DQ381) + Haldex-Öl (falls Quattro) & Zündkerzen wechseln', ru: 'Замена масла в мокром DSG + масло муфты Haldex (если Quattro) и свечи' }, cost: '€320–490' },
+                { when: { en: 'Every 120,000 km', de: 'Alle 120.000 km', ru: 'Каждые 120 000 км' }, action: { en: 'Inspect PCV oil separator & camshaft adjuster magnet valves', de: 'Ölabscheider (KGE) & Nockenwellen-Steuerventile prüfen', ru: 'Проверка маслоотделителя ВКГ и клапанов фазовращателей' }, cost: '€160–260' }
+              ],
+              critical: [
+                { when: { en: '90,000–150,000 km', de: '90.000–150.000 km', ru: '90 000–150 000 км' }, action: { en: 'EA888 Gen3 plastic thermostat / water-pump housing (classic coolant leak)', de: 'EA888 Gen3 Kunststoff-Thermostatgehäuse / Wasserpumpe (typische Leckage)', ru: 'Пластиковый модуль термостата и помпы EA888 Gen3 (типичная течь ОЖ)' }, cost: '€650–1,050', risk: { en: 'Slow or sudden coolant leak leading to overheating if ignored', de: 'Schleichender bis starker Kühlwasserverlust bis zur Überhitzung', ru: 'Утечка антифриза вплоть до перегрева двигателя' }, damage: '€1,800–3,200' },
+                { when: { en: '120,000–180,000 km', de: '120.000–180.000 km', ru: '120 000–180 000 км' }, action: { en: 'Haldex V AWD pump strainer clean (Quattro) & wastegate actuator check', de: 'Haldex-5-Sieb reinigen (Quattro) & Turbo-Wastegate prüfen', ru: 'Чистка сетки насоса Haldex 5 (Quattro) и проверка актуатора турбины' }, cost: '€240–550', risk: { en: 'Clogged Haldex screen burns out AWD pump silently', de: 'Verstopftes Haldex-Sieb lässt die Allradpumpe unbemerkt durchbrennen', ru: 'Забитая сетка Haldex незаметно сжигает насос полного привода' }, damage: '€900–1,400' }
+              ]
+            },
             badges: {
               en: ['Updated Chain • Water Pump Watch', 'DSG Service if Fitted'],
               de: ['Robuste Kette • Wasserpumpe prüfen', 'DSG-Wartung beachten'],
@@ -67542,6 +72779,14 @@ const CAR_ROSTER = [
             'Ремонт высоковольтной части дорог'
           ]
         },
+        specOverrides: {
+          engineName: { en: '1.4L PHEV 40 e-tron (204 HP)', de: '1.4L Plug-in-Hybrid 40 e-tron', ru: '1.4L PHEV 40 e-tron (204 л.с.)' },
+          forcedInduction: '@hybridEMotor', injection: '@direct', timingDrive: '@belt',
+          gearbox: { en: 'Wet 6-DSG Hybrid (DQ400E)', de: 'Nasses 6-DSG Hybrid (DQ400E)', ru: 'Мокрый 6-DSG Гибрид (DQ400E)' }, clutchDmf: '@dsg6Wet', towingBraked: '1,400 kg',
+          sprint0100: '7.6 s', topSpeed: '222 km/h', peakTorque: '350 Nm Combined',
+          passingPunch: { en: 'Silent EV + 350 Nm Boost', de: 'Lautlos elektrisch + 350 Nm', ru: 'Тихий EV + 350 Н·м рывок' },
+          realWorldFuel: '2.5–4.5 L/100km (Chg)', tankRange: '40 L + 8.8 kWh (~35–42 km EV)', euroNorm: 'Euro 6d-TEMP (PHEV)', taxInsurance: '@tierVeryLow', serviceWear: '@tierModHigh'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.6,
@@ -67549,6 +72794,10 @@ const CAR_ROSTER = [
               en: ['Solid 1.4 EA211 + Electric', 'Watch HV Coolant Valve & Seals'],
               de: ['Solider 1.4 EA211 + E-Antrieb', 'HV-Kühlventil & Dichtungen prüfen'],
               ru: ['Надёжный 1.4 EA211 + электромотор', 'Проверить клапаны охлаждения HV']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'DGEA + 75 kW E-Motor · 1,395 cc' }, { k: 'architecture', v: { en: '1.4 TFSI + Electric Motor · Wet 6-DSG (DQ400E) Late PHEV', de: '1.4 TFSI + E-Motor · Nasses 6-DSG (DQ400E) spätes Facelift', ru: '1.4 TFSI + электромотор · Мокрый 6-DSG (DQ400E) поздний PHEV' } }], note: { en: 'Final-run plug-in hybrid A3 8V with strong 350 Nm punch and low urban emissions when charged daily at home.', de: 'Späte Facelift-Ausgabe des Plug-in-Hybrids mit 350 Nm Systemdrehmoment — ideal für tägliche Heim-Lader.', ru: 'Поздняя рестайлинговая версия PHEV с 350 Н·м — отлична при регулярной домашней зарядке.' } },
+              forcedInduction: '@hybridEMotor', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -67881,6 +73130,15 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.0,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Change wet 6-DSG hybrid oil (DQ400E) & replace spark plugs', de: 'Nasses 6-DSG-Hybridöl (DQ400E) wechseln & Zündkerzen erneuern', ru: 'Замена масла в гибридном мокром 6-DSG (DQ400E) и свечей' }, cost: '€320–480' },
+                { when: { en: 'Every 180,000 km / 10 yrs', de: 'Alle 180.000 km / 10 J.', ru: 'Каждые 180 000 км / 10 лет' }, action: { en: 'Replace 1.4 TFSI EA211 timing belt & check HV battery cooling circuit', de: '1.4-TFSI-Zahnriemen wechseln & HV-Akku-Kühlkreislauf prüfen', ru: 'Замена ремня ГРМ 1.4 TFSI и проверка контура охлаждения ВВБ' }, cost: '€580–850' }
+              ],
+              critical: [
+                { when: { en: '120,000–190,000 km / 10+ yrs', de: '120.000–190.000 km / 10+ J.', ru: '120–190 тыс. км / 10+ лет' }, action: { en: 'HV battery capacity health / moisture seal & DQ400E K0 disconnect clutch', de: 'HV-Akku-Zustand / Abdichtung & DQ400E Trennkupplung / Mechatronik', ru: 'Состояние/герметичность ВВБ и сцепление/мехатроник DQ400E' }, cost: '€1,200–2,800', risk: { en: 'Reduced EV range, hybrid isolation fault, or jerky engine-to-EV handoff', de: 'Geringe E-Reichweite, Isolationsfehler oder ruckeliger Übergang Verbrenner/E-Motor', ru: 'Падение запаса хода на токе, ошибка изоляции или рывки при переходе на ДВС' }, damage: '€3,500–6,500' }
+              ]
+            },
             badges: {
               en: ['60k DSG Service + Brake Corrosion', 'HV Parts Pricier'],
               de: ['60 Tkm DSG + Bremsen-Rost prüfen', 'HV-Teile teurer'],
@@ -67963,6 +73221,14 @@ const CAR_ROSTER = [
             'У 1.6 TDI сзади балка'
           ]
         },
+        specOverrides: {
+          engineName: { en: '1.6L I4 30 TDI (Euro 6d)', de: '1.6L Reihenvierzylinder 30 TDI', ru: '1.6L R4 30 TDI (Euro 6d)' },
+          forcedInduction: '@turbo', injection: '@commonRail', timingDrive: '@belt',
+          gearbox: { en: '6-MT / Dry 7-DSG (DQ200)', de: '6-Gang / Trockenes 7-DSG', ru: '6-МКПП / Сухой 7-DSG' }, clutchDmf: '@clutchDmf', towingBraked: '1,500 kg',
+          sprint0100: '10.4 s', topSpeed: '202 km/h', peakTorque: '250 Nm @ 1,500 rpm',
+          passingPunch: { en: 'Clean 1,085 km Euro-6d TDI', de: 'Sauberer 1.085-km-Pendler', ru: 'Чистый и экономичный TDI' },
+          realWorldFuel: '4.6 L/100km', tankRange: '50 L (~1,085 km)', euroNorm: 'Euro 6d-TEMP (SCR)', taxInsurance: '@tierLow', serviceWear: '@tierLowMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 7.8,
@@ -67970,6 +73236,10 @@ const CAR_ROSTER = [
               en: ['Proven EA288 Common-Rail', '210k Belt • Watch Water Pump'],
               de: ['Bewährter EA288 Common-Rail', '210 Tkm Riemen • Wasserpumpe prüfen'],
               ru: ['Надёжный EA288 Common-Rail', 'Ремень 210 тыс. • Контроль помпы']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'DGTE (EA288 SCR) · 1,598 cc' }, { k: 'architecture', v: { en: 'Inline-4 Common-Rail · AdBlue SCR + 210k Timing Belt', de: 'Reihenvierzylinder Common-Rail · AdBlue-SCR + 210-Tkm-Riemen', ru: 'Рядный 4-цил. Common-Rail · AdBlue SCR + ремень 210 тыс.' } }], note: { en: 'Future-proof Euro 6d-TEMP AdBlue diesel with ~1,085 km highway range and very low tax.', de: 'Zukunftssicherer Euro-6d-TEMP-Diesel mit AdBlue, ~1.085 km Reichweite und günstiger Steuer.', ru: 'Чистый дизель Euro 6d-TEMP с AdBlue, запасом хода ~1 085 км и низким налогом.' } },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -68308,6 +73578,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.4,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 210,000 km / 10 yrs', de: 'Alle 210.000 km / 10 J.', ru: 'Каждые 210 000 км / 10 лет' }, action: { en: 'Replace EA288 timing belt kit, rollers & switchable water pump', de: 'EA288-Zahnriemensatz, Rollen & schaltbare Wasserpumpe erneuern', ru: 'Замена комплекта ремня ГРМ EA288, роликов и управляемой помпы' }, cost: '€620–890' },
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Change wet DSG oil (2.0 TDI DSG) + Haldex oil (if Quattro) & diesel fuel filter', de: 'Nasses DSG-Öl (2.0 TDI) + Haldex-Öl (Quattro) & Dieselfilter wechseln', ru: 'Замена масла в мокром DSG (2.0 TDI) + Haldex (Quattro) и топливного фильтра' }, cost: '€260–420' }
+              ],
+              critical: [
+                { when: { en: '100,000–160,000 km', de: '100.000–160.000 km', ru: '100 000–160 000 км' }, action: { en: 'EA288 switchable water-pump sleeve sticking (causes sudden 110°C spikes!)', de: 'EA288 schaltbare Wasserpumpe (Schiebehülse klemmt → plötzliches Überhitzen!)', ru: 'Заклинивание шторки помпы EA288 (резкий скачок температуры!)' }, cost: '€580–850', risk: { en: 'Stuck sleeve blocks coolant flow on highway and warps cylinder head', de: 'Klemmende Hülse stoppt Kühlkreislauf auf der Autobahn — Kopfschaden', ru: 'Заклинившая шторка перекрывает ОЖ на трассе и ведёт к перегреву ГБЦ' }, damage: '€2,400–3,800' },
+                { when: { en: '140,000–210,000 km', de: '140.000–210.000 km', ru: '140 000–210 000 км' }, action: { en: 'EGR cooler / DPF differential sensor & DMF + clutch (or DQ200 on 1.6 TDI)', de: 'AGR-Kühler / DPF-Sensor & ZMS + Kupplung (bzw. DQ200 beim 1.6 TDI)', ru: 'Охладитель EGR / датчик DPF и двухмассовый маховик (или DQ200 на 1.6 TDI)' }, cost: '€850–1,650', risk: { en: 'Limp mode, coolant loss into intake, or driveline vibration', de: 'Notlauf, Kühlwasserverlust im Ansaugtrakt oder starkes ZMS-Rasseln', ru: 'Аварийный режим, течь ОЖ во впуск или сильные вибрации трансмиссии' }, damage: '€1,800–3,000' }
+              ]
+            },
             badges: {
               en: ['210k km Belt Interval', 'Water Pump & EGR Main Items'],
               de: ['210 Tkm Zahnriemen', 'Wasserpumpe & AGR Hauptpunkte'],
@@ -68390,6 +73670,14 @@ const CAR_ROSTER = [
             'Выше дизельный налог'
           ]
         },
+        specOverrides: {
+          engineName: { en: '2.0L I4 35 TDI (150 HP SCR)', de: '2.0L Reihenvierzylinder 35 TDI', ru: '2.0L R4 35 TDI (150 л.с. SCR)' },
+          forcedInduction: '@turbo', injection: '@commonRail', timingDrive: '@belt',
+          gearbox: { en: '6-MT / Wet 6/7-DSG', de: '6-Gang / Nasses 6/7-DSG', ru: '6-МКПП / Мокрый 6/7-DSG' }, clutchDmf: '@clutchDmf', towingBraked: '1,600 kg',
+          sprint0100: '8.1 s', topSpeed: '218 km/h', peakTorque: '340 Nm @ 1,750 rpm',
+          passingPunch: { en: 'Effortless 340 Nm + Wet 7-DSG', de: 'Souveräne 340 Nm + Nasses DSG', ru: 'Уверенные 340 Н·м + мокрый DSG' },
+          realWorldFuel: '5.0 L/100km', tankRange: '50 L (~1,000 km)', euroNorm: 'Euro 6d-TEMP (SCR)', taxInsurance: '@tierMod', serviceWear: '@tierLowMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 8.4,
@@ -68397,6 +73685,10 @@ const CAR_ROSTER = [
               en: ['Proven EA288 Common-Rail', '210k Belt • Watch Water Pump'],
               de: ['Bewährter EA288 Common-Rail', '210 Tkm Riemen • Wasserpumpe prüfen'],
               ru: ['Надёжный EA288 Common-Rail', 'Ремень 210 тыс. • Контроль помпы']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'DFGA (EA288 SCR) · 1,968 cc' }, { k: 'architecture', v: { en: 'Inline-4 Common-Rail · AdBlue SCR + Wet 7-DSG (DQ381)', de: 'Reihenvierzylinder Common-Rail · AdBlue + Nasses 7-DSG (DQ381)', ru: 'Рядный 4-цил. Common-Rail · AdBlue + мокрый 7-DSG (DQ381)' } }], note: { en: 'The ultimate late-model A3 8V diesel: Euro 6d-TEMP AdBlue, tough wet 7-speed DQ381 DSG, 8.1 s pace, and 1,000 km per tank.', de: 'Der ausgereifteste A3-8V-Diesel: Euro 6d-TEMP mit AdBlue, robustes nasses 7-Gang-DSG und 1.000 km Reichweite.', ru: 'Самый зрелый дизель A3 8V: Euro 6d-TEMP с AdBlue, крепкий мокрый 7-DSG DQ381 и 1 000 км на одном баке.' } },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -68735,6 +74027,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.9,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 210,000 km / 10 yrs', de: 'Alle 210.000 km / 10 J.', ru: 'Каждые 210 000 км / 10 лет' }, action: { en: 'Replace EA288 timing belt kit, rollers & switchable water pump', de: 'EA288-Zahnriemensatz, Rollen & schaltbare Wasserpumpe erneuern', ru: 'Замена комплекта ремня ГРМ EA288, роликов и управляемой помпы' }, cost: '€620–890' },
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Change wet DSG oil (2.0 TDI DSG) + Haldex oil (if Quattro) & diesel fuel filter', de: 'Nasses DSG-Öl (2.0 TDI) + Haldex-Öl (Quattro) & Dieselfilter wechseln', ru: 'Замена масла в мокром DSG (2.0 TDI) + Haldex (Quattro) и топливного фильтра' }, cost: '€260–420' }
+              ],
+              critical: [
+                { when: { en: '100,000–160,000 km', de: '100.000–160.000 km', ru: '100 000–160 000 км' }, action: { en: 'EA288 switchable water-pump sleeve sticking (causes sudden 110°C spikes!)', de: 'EA288 schaltbare Wasserpumpe (Schiebehülse klemmt → plötzliches Überhitzen!)', ru: 'Заклинивание шторки помпы EA288 (резкий скачок температуры!)' }, cost: '€580–850', risk: { en: 'Stuck sleeve blocks coolant flow on highway and warps cylinder head', de: 'Klemmende Hülse stoppt Kühlkreislauf auf der Autobahn — Kopfschaden', ru: 'Заклинившая шторка перекрывает ОЖ на трассе и ведёт к перегреву ГБЦ' }, damage: '€2,400–3,800' },
+                { when: { en: '140,000–210,000 km', de: '140.000–210.000 km', ru: '140 000–210 000 км' }, action: { en: 'EGR cooler / DPF differential sensor & DMF + clutch (or DQ200 on 1.6 TDI)', de: 'AGR-Kühler / DPF-Sensor & ZMS + Kupplung (bzw. DQ200 beim 1.6 TDI)', ru: 'Охладитель EGR / датчик DPF и двухмассовый маховик (или DQ200 на 1.6 TDI)' }, cost: '€850–1,650', risk: { en: 'Limp mode, coolant loss into intake, or driveline vibration', de: 'Notlauf, Kühlwasserverlust im Ansaugtrakt oder starkes ZMS-Rasseln', ru: 'Аварийный режим, течь ОЖ во впуск или сильные вибрации трансмиссии' }, damage: '€1,800–3,000' }
+              ]
+            },
             badges: {
               en: ['210k km Belt Interval', 'Water Pump & EGR Main Items'],
               de: ['210 Tkm Zahnriemen', 'Wasserpumpe & AGR Hauptpunkte'],
@@ -68817,6 +74119,14 @@ const CAR_ROSTER = [
             'Выше дизельный налог'
           ]
         },
+        specOverrides: {
+          engineName: { en: '2.0L I4 40 TDI (184 HP SCR)', de: '2.0L Reihenvierzylinder 40 TDI', ru: '2.0L R4 40 TDI (184 л.с. SCR)' },
+          forcedInduction: '@turbo', injection: '@commonRail', timingDrive: '@belt',
+          gearbox: { en: '6-MT / Wet 6/7-DSG', de: '6-Gang / Nasses 6/7-DSG', ru: '6-МКПП / Мокрый 6/7-DSG' }, clutchDmf: '@clutchDmf', towingBraked: '1,800 kg',
+          sprint0100: '6.9 s', topSpeed: '232 km/h', peakTorque: '380 Nm @ 1,750 rpm',
+          passingPunch: { en: 'Blistering 380 Nm Quattro', de: 'Brachiale 380 Nm (Quattro)', ru: 'Мощнейшие 380 Н·м (Quattro)' },
+          realWorldFuel: '5.5 L/100km', tankRange: '50 L (~910 km)', euroNorm: 'Euro 6d-TEMP (SCR)', taxInsurance: '@tierModHigh', serviceWear: '@tierMod'
+        },
         subStats: {
           powertrainDurability: {
             score: 8.4,
@@ -68824,6 +74134,10 @@ const CAR_ROSTER = [
               en: ['Proven EA288 Common-Rail', '210k Belt • Watch Water Pump'],
               de: ['Bewährter EA288 Common-Rail', '210 Tkm Riemen • Wasserpumpe prüfen'],
               ru: ['Надёжный EA288 Common-Rail', 'Ремень 210 тыс. • Контроль помпы']
+            },
+            specBreakdown: {
+              engineName: { specs: [{ k: 'engineCode', v: 'DJGA (EA288 SCR 184) · 1,968 cc' }, { k: 'architecture', v: { en: 'Inline-4 High-Output Diesel · AdBlue + Wet 7-DSG + Quattro', de: 'Reihenvierzylinder Top-Diesel · AdBlue + Nasses 7-DSG + Quattro', ru: 'Рядный 4-цил. топ-дизель · AdBlue + мокрый 7-DSG + Quattro' } }], note: { en: 'Sub-7-second diesel rocket with standard Quattro & wet 7-DSG — fixes early CUNA oil-burn issues while keeping 5.5 L/100km economy.', de: 'Unter-7-Sekunden-Diesel-Express mit Quattro & nassem 7-DSG — behebt frühe CUNA-Ölverbrauchsprobleme bei 5,5 L Verbrauch.', ru: 'Дизельная ракета (6,9 с) с Quattro и мокрым 7-DSG — без проблем раннего CUNA и с расходом 5,5 л.' } },
+              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
             },
             dossier: {
               en: {
@@ -69162,6 +74476,16 @@ const CAR_ROSTER = [
           },
           maintenanceRepairCosts: {
             score: 7.4,
+            repairGuide: {
+              routine: [
+                { when: { en: 'Every 210,000 km / 10 yrs', de: 'Alle 210.000 km / 10 J.', ru: 'Каждые 210 000 км / 10 лет' }, action: { en: 'Replace EA288 timing belt kit, rollers & switchable water pump', de: 'EA288-Zahnriemensatz, Rollen & schaltbare Wasserpumpe erneuern', ru: 'Замена комплекта ремня ГРМ EA288, роликов и управляемой помпы' }, cost: '€620–890' },
+                { when: { en: 'Every 60,000 km', de: 'Alle 60.000 km', ru: 'Каждые 60 000 км' }, action: { en: 'Change wet DSG oil (2.0 TDI DSG) + Haldex oil (if Quattro) & diesel fuel filter', de: 'Nasses DSG-Öl (2.0 TDI) + Haldex-Öl (Quattro) & Dieselfilter wechseln', ru: 'Замена масла в мокром DSG (2.0 TDI) + Haldex (Quattro) и топливного фильтра' }, cost: '€260–420' }
+              ],
+              critical: [
+                { when: { en: '100,000–160,000 km', de: '100.000–160.000 km', ru: '100 000–160 000 км' }, action: { en: 'EA288 switchable water-pump sleeve sticking (causes sudden 110°C spikes!)', de: 'EA288 schaltbare Wasserpumpe (Schiebehülse klemmt → plötzliches Überhitzen!)', ru: 'Заклинивание шторки помпы EA288 (резкий скачок температуры!)' }, cost: '€580–850', risk: { en: 'Stuck sleeve blocks coolant flow on highway and warps cylinder head', de: 'Klemmende Hülse stoppt Kühlkreislauf auf der Autobahn — Kopfschaden', ru: 'Заклинившая шторка перекрывает ОЖ на трассе и ведёт к перегреву ГБЦ' }, damage: '€2,400–3,800' },
+                { when: { en: '140,000–210,000 km', de: '140.000–210.000 km', ru: '140 000–210 000 км' }, action: { en: 'EGR cooler / DPF differential sensor & DMF + clutch (or DQ200 on 1.6 TDI)', de: 'AGR-Kühler / DPF-Sensor & ZMS + Kupplung (bzw. DQ200 beim 1.6 TDI)', ru: 'Охладитель EGR / датчик DPF и двухмассовый маховик (или DQ200 на 1.6 TDI)' }, cost: '€850–1,650', risk: { en: 'Limp mode, coolant loss into intake, or driveline vibration', de: 'Notlauf, Kühlwasserverlust im Ansaugtrakt oder starkes ZMS-Rasseln', ru: 'Аварийный режим, течь ОЖ во впуск или сильные вибрации трансмиссии' }, damage: '€1,800–3,000' }
+              ]
+            },
             badges: {
               en: ['210k km Belt Interval', 'Water Pump & EGR Main Items'],
               de: ['210 Tkm Zahnriemen', 'Wasserpumpe & AGR Hauptpunkte'],
