@@ -58,6 +58,7 @@ I build and expand this project with **Antigravity** and **Gemini 4 (Hydrogen / 
 No build step or package manager required — open `index.html` directly in any modern browser or serve the folder with any static HTTP server.
 
 ## Changelog
+* **v5 (19.11.2026):** Major Overhaul of the Duel-Site, merging of stat-boxes, info-dossier 2.0 
 * **v4 (17.11.2026):** New Homepage, animated background marquee, various new animations, 'Buyer Fit' for quick personalized guidance, extended "i"-dossier for all categories 
 * **v3 (15.11.2026):** Interactive Priority Equalizer sliders, high-mileage repair roadmaps (`0–250,000 km`), `Before You Buy` checklists, and expanded vehicle roster.
 * **v2 (14.11.2026):** Comprehensive homepage redesign, Smash-style contender selection grid, and additional models.
