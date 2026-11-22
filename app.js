@@ -12,6 +12,21 @@ const UI_TRANSLATIONS = {
     navVehicle: 'Vehicle',
     navCompare: 'Compare',
     compareNeedTwoCars: 'Select two vehicles first',
+    inspectCardBtn: 'Inspect',
+    backToCatalog: 'All Models',
+    inDepthTitle: 'IN-DEPTH LOOK',
+    orbitBadge: '360° STUDIO ORBIT',
+    orbitHint: 'Drag image or use ← → keys',
+    fullscreenBtn: 'Fullscreen',
+    engineLabel: 'Engine Configuration',
+    paintLabel: 'Factory Paint Palette',
+    paintOemCode: 'OEM Code',
+    compareCta: '+ Compare with Contender',
+    compareEnginesBtn: '+ Compare Engines',
+    enginePickerKicker: 'SAME-MODEL ENGINE DUEL',
+    enginePickerTitle: 'Select Rival Engine',
+    currentEngineTag: 'CURRENT C1',
+    defaultEngineTitle: 'Featured Default Engine',
     themeToggleTitle: 'Toggle Dark / Light Theme',
     car1Tag: 'CAR 1',
     opponentTag: 'OPPONENT',
@@ -139,6 +154,21 @@ const UI_TRANSLATIONS = {
     navVehicle: 'Fahrzeug',
     navCompare: 'Vergleich',
     compareNeedTwoCars: 'Wähle zuerst zwei Fahrzeuge aus',
+    inspectCardBtn: 'Details',
+    backToCatalog: 'Alle Modelle',
+    inDepthTitle: 'DETAILANSICHT',
+    orbitBadge: '360° STUDIO-ANSICHT',
+    orbitHint: 'Ziehen oder ← → Tasten nutzen',
+    fullscreenBtn: 'Vollbild',
+    engineLabel: 'Motorisierung',
+    paintLabel: 'Werkslackierungen',
+    paintOemCode: 'Farbcode',
+    compareCta: '+ Mit Gegner vergleichen',
+    compareEnginesBtn: '+ Motoren vergleichen',
+    enginePickerKicker: 'MOTOR-DUELL IM SELBEN MODELL',
+    enginePickerTitle: 'Gegner-Motor wählen',
+    currentEngineTag: 'AKTUELL C1',
+    defaultEngineTitle: 'Empfohlener Standard-Motor',
     themeToggleTitle: 'Hell / Dunkel wechseln',
     car1Tag: 'AUTO 1',
     opponentTag: 'GEGNER',
@@ -266,6 +296,21 @@ const UI_TRANSLATIONS = {
     navVehicle: 'Автомобиль',
     navCompare: 'Сравнение',
     compareNeedTwoCars: 'Сначала выберите два автомобиля',
+    inspectCardBtn: 'Обзор',
+    backToCatalog: 'Все модели',
+    inDepthTitle: 'ОБЗОР МОДЕЛИ',
+    orbitBadge: '360° ОБЗОР В СТУДИИ',
+    orbitHint: 'Тяните фото или жмите ← →',
+    fullscreenBtn: 'Во весь экран',
+    engineLabel: 'Двигатель',
+    paintLabel: 'Заводская палитра',
+    paintOemCode: 'Код краски',
+    compareCta: '+ Сравнить с соперником',
+    compareEnginesBtn: '+ Сравнить двигатели',
+    enginePickerKicker: 'ДУЭЛЬ ДВИГАТЕЛЕЙ ОДНОЙ МОДЕЛИ',
+    enginePickerTitle: 'Выберите двигатель-соперник',
+    currentEngineTag: 'ТЕКУЩИЙ C1',
+    defaultEngineTitle: 'Базовый рекомендуемый мотор',
     themeToggleTitle: 'Сменить тему',
     car1Tag: 'АВТО 1',
     opponentTag: 'СОПЕРНИК',
@@ -2701,6 +2746,11 @@ const MAX_TRAITS_PER_GROUP = 7;
 
 // Application State (Default: Homepage landing view, then Smash-style contender selection)
 let isHomeView = true;
+let isVehicleView = false;
+let vehicleViewCarId = null;
+let vehicleViewEngineId = null;
+let vehicleViewAngleIdx = 1;
+let vehicleViewPaintIdx = 0;
 let selectedLeftId = null;
 let selectedRightId = null;
 let selectedLeftEngineId = null;
@@ -2718,6 +2768,196 @@ let catalogFilter = 'all';
 let catalogSort = 'curated';
 const expandedPillars = new Set();
 let activeStatsScrollSide = 'left';
+
+// Authentic OEM Factory Paint Palettes for all 15 Roster Vehicles
+const CAR_FACTORY_PAINTS = {
+  'toyota-auris-2014': [
+    { name: 'Pearl White', code: '070', hex: '#eceef0', glow: 'rgba(226, 232, 240, 0.22)' },
+    { name: 'Titanium Silver Metallic', code: '1F7', hex: '#9ca3af', glow: 'rgba(156, 163, 175, 0.22)' },
+    { name: 'Avantgarde Bronze', code: '4V8', hex: '#6c5a49', glow: 'rgba(180, 140, 100, 0.22)' },
+    { name: 'Denim Blue Metallic', code: '8U6', hex: '#3b5b7c', glow: 'rgba(59, 130, 246, 0.22)' },
+    { name: 'Eclipse Black', code: '209', hex: '#1c2026', glow: 'rgba(216, 180, 108, 0.18)' }
+  ],
+  'honda-civic-2014': [
+    { name: 'Milano Red', code: 'R-81', hex: '#b81d24', glow: 'rgba(220, 38, 38, 0.24)' },
+    { name: 'White Orchid Pearl', code: 'NH-788P', hex: '#eaedf0', glow: 'rgba(226, 232, 240, 0.20)' },
+    { name: 'Polished Metal Metallic', code: 'NH-737M', hex: '#555c65', glow: 'rgba(148, 163, 184, 0.20)' },
+    { name: 'Twilight Blue Metallic', code: 'B-570M', hex: '#283d59', glow: 'rgba(59, 130, 246, 0.22)' },
+    { name: 'Crystal Black Pearl', code: 'NH-731P', hex: '#181a1f', glow: 'rgba(216, 180, 108, 0.18)' }
+  ],
+  'honda-civic-type-r-2015': [
+    { name: 'Championship White', code: 'NH-0', hex: '#edeae0', glow: 'rgba(235, 224, 196, 0.24)' },
+    { name: 'Milano Red', code: 'R-81', hex: '#c81d25', glow: 'rgba(239, 68, 68, 0.26)' },
+    { name: 'Brilliant Sporty Blue', code: 'B-593M', hex: '#1d5fa7', glow: 'rgba(59, 130, 246, 0.26)' },
+    { name: 'Polished Metal Metallic', code: 'NH-737M', hex: '#596069', glow: 'rgba(148, 163, 184, 0.22)' },
+    { name: 'Crystal Black Pearl', code: 'NH-731P', hex: '#16181d', glow: 'rgba(239, 68, 68, 0.18)' }
+  ],
+  'peugeot-308-gti-2019': [
+    { name: 'Ultimate Red', code: 'F3', hex: '#c01a2a', glow: 'rgba(225, 29, 72, 0.25)' },
+    { name: 'Magnetic Blue', code: 'EGQ', hex: '#1a569c', glow: 'rgba(37, 99, 235, 0.24)' },
+    { name: 'Pearl White', code: 'KWE', hex: '#ebedf0', glow: 'rgba(226, 232, 240, 0.20)' },
+    { name: 'Cumulus Grey', code: 'EVL', hex: '#889098', glow: 'rgba(148, 163, 184, 0.22)' },
+    { name: 'Perla Nera Black', code: 'KTV', hex: '#17191e', glow: 'rgba(216, 180, 108, 0.18)' }
+  ],
+  'ford-mondeo-2012': [
+    { name: 'Panther Black Metallic', code: '2851', hex: '#1b1e24', glow: 'rgba(148, 163, 184, 0.18)' },
+    { name: 'Moondust Silver', code: '2431', hex: '#a8b0ba', glow: 'rgba(186, 196, 208, 0.22)' },
+    { name: 'Midnight Sky Grey', code: '9C', hex: '#4a535e', glow: 'rgba(100, 116, 139, 0.22)' },
+    { name: 'Deep Impact Blue', code: 'J4', hex: '#1f4478', glow: 'rgba(59, 130, 246, 0.22)' },
+    { name: 'Frozen White', code: '7VTA', hex: '#eff1f3', glow: 'rgba(226, 232, 240, 0.20)' }
+  ],
+  'honda-crv-2010': [
+    { name: 'Alabaster Silver Metallic', code: 'NH-700M', hex: '#adb4bd', glow: 'rgba(186, 196, 208, 0.22)' },
+    { name: 'Urban Titanium Metallic', code: 'YR-578M', hex: '#635c54', glow: 'rgba(180, 154, 120, 0.22)' },
+    { name: 'Crystal Black Pearl', code: 'NH-731P', hex: '#191b20', glow: 'rgba(216, 180, 108, 0.18)' },
+    { name: 'Royal Blue Pearl', code: 'B-536P', hex: '#233b63', glow: 'rgba(59, 130, 246, 0.22)' },
+    { name: 'Taffeta White', code: 'NH-578', hex: '#eef0f2', glow: 'rgba(226, 232, 240, 0.20)' }
+  ],
+  'honda-accord-2011': [
+    { name: 'Burano / Cobalt Blue Pearl', code: 'B-553P', hex: '#25426b', glow: 'rgba(59, 130, 246, 0.24)' },
+    { name: 'Alabaster Silver', code: 'NH-700M', hex: '#aeb5be', glow: 'rgba(186, 196, 208, 0.22)' },
+    { name: 'Volcano Grey Metallic', code: 'NH-736M', hex: '#4b5058', glow: 'rgba(148, 163, 184, 0.20)' },
+    { name: 'Premium White Pearl', code: 'NH-624P', hex: '#edeff1', glow: 'rgba(226, 232, 240, 0.20)' },
+    { name: 'Crystal Black Pearl', code: 'NH-731P', hex: '#17191f', glow: 'rgba(216, 180, 108, 0.18)' }
+  ],
+  'honda-jazz-2011': [
+    { name: 'Cerulean Blue Metallic', code: 'BG-53M', hex: '#4582b5', glow: 'rgba(56, 189, 248, 0.24)' },
+    { name: 'Milano Red', code: 'R-81', hex: '#bd1e24', glow: 'rgba(239, 68, 68, 0.22)' },
+    { name: 'Storm Silver Metallic', code: 'NH-642M', hex: '#8e96a0', glow: 'rgba(156, 163, 175, 0.22)' },
+    { name: 'Alabaster Silver', code: 'NH-700M', hex: '#b6bdc6', glow: 'rgba(203, 213, 225, 0.20)' },
+    { name: 'Crystal Black Pearl', code: 'NH-731P', hex: '#191c22', glow: 'rgba(216, 180, 108, 0.18)' }
+  ],
+  'mercedes-c-class-2011': [
+    { name: 'Iridium Silver Metallic', code: '775', hex: '#b5bcc4', glow: 'rgba(203, 213, 225, 0.24)' },
+    { name: 'Obsidian Black Metallic', code: '197', hex: '#15171c', glow: 'rgba(216, 180, 108, 0.20)' },
+    { name: 'Tenorite Grey Metallic', code: '755', hex: '#495059', glow: 'rgba(148, 163, 184, 0.22)' },
+    { name: 'Cavansite Blue Metallic', code: '890', hex: '#1c3354', glow: 'rgba(59, 130, 246, 0.24)' },
+    { name: 'Polar White', code: '149', hex: '#f0f2f4', glow: 'rgba(226, 232, 240, 0.20)' }
+  ],
+  'toyota-rav4-2010': [
+    { name: 'Marlingrey / Ash Grey', code: '1G3', hex: '#545b63', glow: 'rgba(148, 163, 184, 0.22)' },
+    { name: 'Silver Metallic', code: '1D4', hex: '#adb4bc', glow: 'rgba(186, 196, 208, 0.22)' },
+    { name: 'Pearl White', code: '070', hex: '#eceef0', glow: 'rgba(226, 232, 240, 0.20)' },
+    { name: 'Barcelona Red Metallic', code: '3R3', hex: '#9e1f28', glow: 'rgba(220, 38, 38, 0.22)' },
+    { name: 'Black Mica', code: '209', hex: '#191b20', glow: 'rgba(216, 180, 108, 0.18)' }
+  ],
+  'kia-sportage-2014': [
+    { name: 'Casa / Deluxe White', code: 'WD', hex: '#edf0f2', glow: 'rgba(226, 232, 240, 0.22)' },
+    { name: 'Dark Gun Metal', code: 'E5B', hex: '#4b5057', glow: 'rgba(148, 163, 184, 0.22)' },
+    { name: 'Sirius Silver', code: 'AA3', hex: '#9fa6ae', glow: 'rgba(186, 196, 208, 0.20)' },
+    { name: 'Techno Orange', code: 'D2A', hex: '#c85a24', glow: 'rgba(249, 115, 22, 0.24)' },
+    { name: 'Black Pearl', code: '1K', hex: '#17191f', glow: 'rgba(216, 180, 108, 0.18)' }
+  ],
+  'mazda-6-2010': [
+    { name: 'Radiant Ebony / Black Mica', code: '16W', hex: '#221f24', glow: 'rgba(168, 85, 247, 0.18)' },
+    { name: 'Velocity Red Mica', code: '27A', hex: '#a61c24', glow: 'rgba(220, 38, 38, 0.24)' },
+    { name: 'Stormy Blue Mica', code: '35J', hex: '#243c5e', glow: 'rgba(59, 130, 246, 0.22)' },
+    { name: 'Sunlight Silver Metallic', code: '22V', hex: '#b2b9c2', glow: 'rgba(203, 213, 225, 0.22)' },
+    { name: 'Crystal White Pearl', code: '34K', hex: '#edf0f2', glow: 'rgba(226, 232, 240, 0.20)' }
+  ],
+  'toyota-avensis-2012': [
+    { name: 'Sterling Silver Metallic', code: '1F7', hex: '#adb4bd', glow: 'rgba(186, 196, 208, 0.22)' },
+    { name: 'Decuma Grey Metallic', code: '1G3', hex: '#4f565f', glow: 'rgba(148, 163, 184, 0.22)' },
+    { name: 'Island Blue Metallic', code: '8T5', hex: '#28456e', glow: 'rgba(59, 130, 246, 0.22)' },
+    { name: 'Pearl White', code: '070', hex: '#edeff2', glow: 'rgba(226, 232, 240, 0.20)' },
+    { name: 'Night Sky Black', code: '209', hex: '#181a20', glow: 'rgba(216, 180, 108, 0.18)' }
+  ],
+  'audi-a3-8p-2010': [
+    { name: 'Ice Silver Metallic', code: 'LX7W', hex: '#b6bdc6', glow: 'rgba(203, 213, 225, 0.22)' },
+    { name: 'Phantom Black Pearl', code: 'LZ9Y', hex: '#16181e', glow: 'rgba(216, 180, 108, 0.18)' },
+    { name: 'Lava Grey Pearl', code: 'LZ7L', hex: '#434850', glow: 'rgba(148, 163, 184, 0.22)' },
+    { name: 'Misano Red Pearl', code: 'LZ3M', hex: '#b81d26', glow: 'rgba(220, 38, 38, 0.24)' },
+    { name: 'Ibis White', code: 'LY9C', hex: '#f1f3f5', glow: 'rgba(226, 232, 240, 0.20)' }
+  ],
+  'audi-a3-8v-2016': [
+    { name: 'Daytona Grey Pearl', code: 'LZ7S', hex: '#545b64', glow: 'rgba(148, 163, 184, 0.24)' },
+    { name: 'Glacier White Metallic', code: 'LS9R', hex: '#eef1f4', glow: 'rgba(226, 232, 240, 0.22)' },
+    { name: 'Mythos Black Metallic', code: 'LY9T', hex: '#16181d', glow: 'rgba(216, 180, 108, 0.18)' },
+    { name: 'Scuba Blue Metallic', code: 'LX5Q', hex: '#1e4a7a', glow: 'rgba(59, 130, 246, 0.24)' },
+    { name: 'Tango Red Metallic', code: 'LY3U', hex: '#b51d29', glow: 'rgba(220, 38, 38, 0.24)' }
+  ]
+};
+
+const ENGINE_DATE_FALLBACKS = {
+  'toyota-auris-2014:1.8-hybrid': '12/2012–12/2018',
+  'toyota-auris-2014:1.33-dual-vvti': '12/2012–03/2018',
+  'toyota-auris-2014:1.6-valvematic': '12/2012–03/2018',
+  'toyota-auris-2014:1.4-d4d': '12/2012–03/2018',
+  'toyota-auris-2014:2.0-d4d': '12/2012–04/2015',
+  'honda-civic-2014:1.8-ivtec': '02/2012–02/2017',
+  'honda-civic-2014:1.4-ivtec': '02/2012–02/2017',
+  'honda-civic-2014:1.6-idtec': '01/2013–02/2017',
+  'honda-civic-2014:2.2-idtec': '02/2012–12/2014',
+  'honda-crv-2010:2.0-ivtec': '01/2007–10/2012',
+  'honda-crv-2010:2.4-ivtec': '09/2009–10/2012',
+  'honda-crv-2010:2.2-idtec': '01/2010–10/2012',
+  'peugeot-308-gti-2019:1.6-thp-263': '09/2018–12/2020',
+  'ford-mondeo-2012:1.6-ecoboost': '12/2010–12/2014',
+  'ford-mondeo-2012:1.6-tivct': '06/2007–12/2014',
+  'ford-mondeo-2012:2.0-duratec': '06/2007–12/2014',
+  'ford-mondeo-2012:2.0-ecoboost': '05/2010–12/2014',
+  'honda-civic-type-r-2015:2.0-vtec-turbo': '07/2015–03/2017'
+};
+
+function formatPowerUnit(text) {
+  const s = String(text || '');
+  if (currentLang === 'de') return s.replace(/\bHP\b/g, 'PS');
+  if (currentLang === 'ru') return s.replace(/\bHP\b/g, 'л.с.');
+  return s;
+}
+
+function getEngineDateSpan(carId, eng) {
+  if (!eng) return '';
+  const sub = (eng.engineSubLabel && eng.engineSubLabel.en) || '';
+  const m = sub.match(/\(((?:\d{2}\/)?\d{4}\s*[–-]\s*(?:\d{2}\/)?\d{4})\)/);
+  if (m) return m[1].replace(/\s*-\s*/, '–');
+  return ENGINE_DATE_FALLBACKS[`${carId}:${eng.id}`] || '';
+}
+
+function getPaintsForCar(carId) {
+  return CAR_FACTORY_PAINTS[carId] || [
+    { name: 'Studio Silver Metallic', code: 'OEM-01', hex: '#aeb5be', glow: 'rgba(216, 180, 108, 0.18)' }
+  ];
+}
+
+function applyAmbientPaintGlow(glowValue) {
+  document.documentElement.style.setProperty('--paint-glow', glowValue || 'rgba(0, 180, 255, 0.14)');
+}
+
+function attachOrbitDrag(el, onStep) {
+  if (!el) return;
+  let startX = null;
+  let pointerId = null;
+
+  el.addEventListener('pointerdown', (e) => {
+    if (e.target.closest('button')) return;
+    startX = e.clientX;
+    pointerId = e.pointerId;
+    el.classList.add('dragging');
+    try { el.setPointerCapture(pointerId); } catch (_) {}
+  });
+
+  el.addEventListener('pointermove', (e) => {
+    if (startX === null) return;
+    const dx = e.clientX - startX;
+    if (Math.abs(dx) >= 52) {
+      onStep(dx > 0 ? -1 : 1);
+      startX = e.clientX;
+    }
+  });
+
+  const endDrag = () => {
+    startX = null;
+    if (pointerId !== null) {
+      try { el.releasePointerCapture(pointerId); } catch (_) {}
+      pointerId = null;
+    }
+    el.classList.remove('dragging');
+  };
+
+  el.addEventListener('pointerup', endDrag);
+  el.addEventListener('pointercancel', endDrag);
+}
 
 // Easy-to-tweak timing constants (ms) for Selection -> Duel transition (3300ms total)
 const DUEL_TRANSITION_TIMING = {
@@ -4905,27 +5145,40 @@ function stepLightbox(delta) {
 }
 
 // Open Full-Picture Car Lightbox
-function openCarLightbox(side) {
+function openCarLightbox(side, customCar = null, startAngleIdx = null) {
   const ui = t();
   const car =
-    side === 'left'
+    customCar ||
+    (side === 'left'
       ? getCarById(selectedLeftId, selectedLeftEngineId)
-      : getCarById(selectedRightId, selectedRightEngineId);
+      : getCarById(selectedRightId, selectedRightEngineId));
+  if (!car) return;
   const { piClassLabel, piScore } = calculateOverallIndex(car);
   const lightbox = document.getElementById('car-lightbox');
   const badge = document.getElementById('lightbox-badge');
   const title = document.getElementById('lightbox-title');
   const spec = document.getElementById('lightbox-spec');
 
-  badge.textContent = side === 'left' ? ui.car1Tag : ui.opponentP2;
-  badge.className = `lightbox-badge ${side === 'left' ? 'p1-badge' : 'p2-badge'}`;
+  if (customCar) {
+    const baseCar = getBaseCarById(car.id);
+    badge.textContent = `#${baseCar.number} · ${getCarTypeLabel(getCarType(baseCar))}`;
+    badge.className = 'lightbox-badge p1-badge';
+  } else {
+    badge.textContent = side === 'left' ? ui.car1Tag : ui.opponentP2;
+    badge.className = `lightbox-badge ${side === 'left' ? 'p1-badge' : 'p2-badge'}`;
+  }
   title.textContent = car.fullName;
-  spec.textContent = `${piClassLabel} (${piScore}/10) • ${car.engineBadge} • ${car.perkLabel[currentLang]}`;
+  spec.textContent = `${piClassLabel} (${piScore}/10) • ${formatPowerUnit(car.engineBadge)} • ${car.perkLabel[currentLang]}`;
 
   lightboxCarName = car.fullName;
   lightboxGallery = getCarGallery(car);
   const frontSideIdx = lightboxGallery.findIndex((g) => g.src === car.image);
-  lightboxIndex = frontSideIdx >= 0 ? frontSideIdx : 0; // Default to Front-Side (same as main stage)
+  lightboxIndex =
+    typeof startAngleIdx === 'number' && startAngleIdx >= 0 && startAngleIdx < lightboxGallery.length
+      ? startAngleIdx
+      : frontSideIdx >= 0
+        ? frontSideIdx
+        : 0;
   renderLightboxSlide();
 
   lightbox.classList.add('open');
@@ -6259,6 +6512,7 @@ function renderSmashPicker() {
           </div>
           ${(isP1 || isP2) ? `<div class="smash-car-badges">${isP1 ? '<span class="mini-p-badge p1-badge">C1</span>' : ''}${isP2 ? '<span class="mini-p-badge p2-badge">C2</span>' : ''}</div>` : ''}
           ${clearTarget ? `<button type="button" class="smash-tile-clear" data-clear-slot="${clearTarget}" title="${ui.smashClearSlot}" aria-label="${ui.smashClearSlot}">✕</button>` : ''}
+          <button type="button" class="catalog-inspect-pill" data-inspect-car="${baseCar.id}" aria-label="${escapeHtmlAttr(`${ui.inspectCardBtn}: ${getSmashGridLabel(baseCar)}`)}"><span aria-hidden="true">⤢</span> ${ui.inspectCardBtn}</button>
         </div>
         <div class="catalog-card-body">
           <span class="card-watermark" aria-hidden="true">#${baseCar.number}</span>
@@ -6279,6 +6533,13 @@ function renderSmashPicker() {
     clearBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       clearSlotSelection(clearBtn.getAttribute('data-clear-slot'));
+    });
+  });
+
+  gridEl.querySelectorAll('[data-inspect-car]').forEach((inspectBtn) => {
+    inspectBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openVehicleView(inspectBtn.getAttribute('data-inspect-car'));
     });
   });
 
@@ -6311,17 +6572,436 @@ function renderSmashPicker() {
     };
 
     tile.addEventListener('click', (e) => {
-      if (e.target.closest('[data-clear-slot]')) return;
+      if (e.target.closest('[data-clear-slot]') || e.target.closest('[data-inspect-car]')) return;
       selectTileCar();
     });
     tile.addEventListener('keydown', (e) => {
-      if (e.target.closest('[data-clear-slot]')) return;
+      if (e.target.closest('[data-clear-slot]') || e.target.closest('[data-inspect-car]')) return;
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         selectTileCar();
       }
     });
   });
+}
+
+// ============================================================================
+// SINGLE-CAR VEHICLE STAGE (Hero-Only In-Depth Look + Same-Model Engine Duel)
+// ============================================================================
+function openVehicleView(carId, engineId = null) {
+  const targetId = carId || vehicleViewCarId || selectedLeftId || (CAR_ROSTER[0] && CAR_ROSTER[0].id);
+  const base = getBaseCarById(targetId);
+  if (!base) return;
+
+  const prevCarId = vehicleViewCarId;
+  vehicleViewCarId = base.id;
+  vehicleViewEngineId = engineId || (prevCarId === base.id && vehicleViewEngineId ? vehicleViewEngineId : base.defaultEngineId);
+  vehicleViewPaintIdx = 0;
+
+  const gallery = getCarGallery(getCarById(base.id, vehicleViewEngineId));
+  const fsIdx = gallery.findIndex((g) => g.src === base.image);
+  vehicleViewAngleIdx = fsIdx >= 0 ? fsIdx : 0;
+
+  cancelDuelTransition();
+  closeAllMenusAndModals();
+  isHomeView = false;
+  isVehicleView = true;
+  smashPickerForceOpen = false;
+
+  const vehicleStage = document.getElementById('vehicle-stage');
+  if (vehicleStage) vehicleStage.scrollTop = 0;
+  updateArena();
+}
+
+function buildVehicleEngineDropdownHtml(baseCar, selectedEngineId) {
+  const ui = t();
+  const activeEng =
+    (baseCar.engines || []).find((e) => e.id === selectedEngineId) ||
+    (baseCar.engines || []).find((e) => e.id === baseCar.defaultEngineId) ||
+    (baseCar.engines || [])[0];
+  const activeCat = getEngineCategory(activeEng);
+  const catLabels = {
+    hybrid: ui.engineCategoryHybrid,
+    petrol: ui.engineCategoryPetrol,
+    diesel: ui.engineCategoryDiesel
+  };
+  const isDef = activeEng.id === baseCar.defaultEngineId;
+
+  const groups = { hybrid: [], petrol: [], diesel: [] };
+  (baseCar.engines || []).forEach((eng) => {
+    const c = getEngineCategory(eng);
+    if (!groups[c]) groups[c] = [];
+    groups[c].push(eng);
+  });
+
+  const menuHtml = ['hybrid', 'petrol', 'diesel']
+    .filter((cat) => groups[cat] && groups[cat].length)
+    .map((cat) => {
+      const opts = groups[cat]
+        .map((eng) => {
+          const isSel = eng.id === activeEng.id;
+          const isDefault = eng.id === baseCar.defaultEngineId;
+          const idx = calculateOverallIndex(getCarById(baseCar.id, eng.id));
+          const dateSpan = getEngineDateSpan(baseCar.id, eng);
+          const dateHtml = dateSpan ? `<span class="engine-date-tag">${dateSpan}</span>` : '';
+          return `
+            <button type="button" class="engine-custom-option ${isSel ? 'selected' : ''}" data-eng-opt="${eng.id}">
+              <span>${formatPowerUnit(eng.engineBadge)}${dateHtml} ${isDefault ? '<span class="engine-star-lime">★</span>' : ''}</span>
+              <span class="engine-opt-score">${idx.piScore}</span>
+            </button>
+          `;
+        })
+        .join('');
+      return `<div class="engine-custom-group-box fuel-${cat}"><div class="engine-custom-group">${catLabels[cat]}</div>${opts}</div>`;
+    })
+    .join('');
+
+  const activeDate = getEngineDateSpan(baseCar.id, activeEng);
+  return `
+    <div class="engine-custom-wrap" id="vehicle-engine-dropdown">
+      <button type="button" class="engine-custom-trigger" id="vehicle-engine-trigger" aria-expanded="false">
+        <span class="engine-trigger-main">
+          <span class="engine-fuel-tag fuel-${activeCat}">${catLabels[activeCat] || activeCat}</span>
+          <span class="engine-trigger-label">${formatPowerUnit(activeEng.engineBadge)}${activeDate ? `<span class="engine-date-tag">${activeDate}</span>` : ''}</span>
+          ${isDef ? `<span class="engine-star-lime" title="${escapeHtmlAttr(ui.defaultEngineTitle)}">★</span>` : ''}
+        </span>
+        <span class="engine-chevron">▾</span>
+      </button>
+      <div class="engine-custom-menu" role="listbox">${menuHtml}</div>
+    </div>
+  `;
+}
+
+function updateVehicleAngleOnly(carRef = null, galleryRef = null) {
+  const car = carRef || (vehicleViewCarId ? getCarById(vehicleViewCarId, vehicleViewEngineId) : null);
+  if (!car) return;
+  const gallery = galleryRef || getCarGallery(car);
+  const slide = gallery[vehicleViewAngleIdx] || gallery[0];
+  const img = document.getElementById('vehicle-turntable-img');
+  if (img && slide) {
+    img.src = slide.src;
+    img.alt = `${car.fullName} — ${slide.label}`;
+    img.classList.toggle('mirrored-car', Boolean(slide.mirrored));
+  }
+  document.querySelectorAll('#vehicle-angles-bar [data-angle-idx]').forEach((b) => {
+    b.classList.toggle('active', Number(b.getAttribute('data-angle-idx')) === vehicleViewAngleIdx);
+  });
+}
+
+function stepVehicleAngle(delta) {
+  if (!isVehicleView || !vehicleViewCarId) return;
+  const car = getCarById(vehicleViewCarId, vehicleViewEngineId);
+  const gallery = getCarGallery(car);
+  if (!gallery.length) return;
+  vehicleViewAngleIdx = (vehicleViewAngleIdx + delta + gallery.length) % gallery.length;
+  updateVehicleAngleOnly(car, gallery);
+}
+
+function openEnginePickerModal(carId, currentEngineId) {
+  const ui = t();
+  const baseCar = getBaseCarById(carId);
+  const kickerEl = document.getElementById('engine-picker-kicker');
+  const titleEl = document.getElementById('engine-picker-title');
+  if (kickerEl) kickerEl.textContent = ui.enginePickerKicker;
+  if (titleEl) titleEl.textContent = `${getSmashGridLabel(baseCar)} — ${ui.enginePickerTitle}`;
+
+  const groups = { hybrid: [], petrol: [], diesel: [] };
+  (baseCar.engines || []).forEach((eng) => {
+    const cat = getEngineCategory(eng);
+    if (!groups[cat]) groups[cat] = [];
+    groups[cat].push(eng);
+  });
+
+  const catLabels = {
+    hybrid: ui.engineCategoryHybrid,
+    petrol: ui.engineCategoryPetrol,
+    diesel: ui.engineCategoryDiesel
+  };
+
+  const listEl = document.getElementById('engine-picker-list');
+  if (!listEl) return;
+  listEl.innerHTML = ['hybrid', 'petrol', 'diesel']
+    .filter((cat) => groups[cat] && groups[cat].length)
+    .map((cat) => {
+      const rows = groups[cat]
+        .map((eng) => {
+          const resolved = getCarById(carId, eng.id);
+          const idx = calculateOverallIndex(resolved);
+          const isCur = eng.id === currentEngineId;
+          const dateSpan = getEngineDateSpan(carId, eng);
+          const dateHtml = dateSpan ? `<span class="engine-date-tag">${dateSpan}</span>` : '';
+          const sub = eng.engineSubLabel ? (eng.engineSubLabel[currentLang] || eng.engineSubLabel.en) : '';
+          return `
+            <button type="button" class="engine-picker-row ${isCur ? 'is-current' : ''}" data-pick-engine="${eng.id}">
+              <div>
+                <div class="engine-picker-name">${formatPowerUnit(eng.engineBadge)}${dateHtml} ${isCur ? `<span class="mini-p-badge p1-badge" style="margin-left:6px;">${ui.currentEngineTag}</span>` : ''}</div>
+                <div class="engine-picker-sub">${sub ? `${sub} · ` : ''}${resolved.estUsedPrice}</div>
+              </div>
+              ${buildForzaIndexBlock(idx, true)}
+            </button>
+          `;
+        })
+        .join('');
+      return `<div class="engine-picker-group-label fuel-${cat}">${catLabels[cat]}</div>${rows}`;
+    })
+    .join('');
+
+  listEl.querySelectorAll('[data-pick-engine]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const pickedEngId = btn.getAttribute('data-pick-engine');
+      if (!pickedEngId || pickedEngId === currentEngineId) return;
+      closeEnginePickerModal();
+      selectedLeftId = carId;
+      selectedLeftEngineId = currentEngineId;
+      selectedRightId = carId;
+      selectedRightEngineId = pickedEngId;
+      isHomeView = false;
+      isVehicleView = false;
+      smashPickerForceOpen = false;
+      runDuelEntranceSequence({ fromSmashPicker: false });
+    });
+  });
+
+  const modal = document.getElementById('engine-picker-modal');
+  if (modal) {
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+  }
+}
+
+function closeEnginePickerModal() {
+  const modal = document.getElementById('engine-picker-modal');
+  if (!modal) return;
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+}
+
+function renderVehicleView() {
+  const ui = t();
+  const targetId = vehicleViewCarId || selectedLeftId || (CAR_ROSTER[0] && CAR_ROSTER[0].id);
+  const baseCar = getBaseCarById(targetId);
+  if (!baseCar) return;
+  vehicleViewCarId = baseCar.id;
+  if (!vehicleViewEngineId || !(baseCar.engines || []).some((e) => e.id === vehicleViewEngineId)) {
+    vehicleViewEngineId = baseCar.defaultEngineId;
+  }
+
+  const car = getCarById(baseCar.id, vehicleViewEngineId);
+  const idx = calculateOverallIndex(car);
+  const gallery = getCarGallery(car);
+  const paints = getPaintsForCar(car.id);
+
+  if (vehicleViewAngleIdx >= gallery.length) vehicleViewAngleIdx = 0;
+  if (vehicleViewPaintIdx >= paints.length) vehicleViewPaintIdx = 0;
+
+  const activeSlide = gallery[vehicleViewAngleIdx] || gallery[0];
+  const activePaint = paints[vehicleViewPaintIdx] || paints[0];
+  applyAmbientPaintGlow(activePaint.glow);
+
+  const backLabel = document.getElementById('vehicle-back-label');
+  const titleEl = document.getElementById('vehicle-indepth-title');
+  if (backLabel) backLabel.textContent = ui.backToCatalog;
+  if (titleEl) titleEl.textContent = ui.inDepthTitle;
+
+  const switcher = document.getElementById('vehicle-quick-switcher');
+  if (switcher) {
+    const sortedRoster = CAR_ROSTER.slice().sort((a, b) => (a.gridOrder ?? Number(a.number)) - (b.gridOrder ?? Number(b.number)));
+    switcher.innerHTML = `
+      <div class="sort-custom-wrap vehicle-jump-wrap" id="vehicle-car-jump-wrap">
+        <button type="button" class="sort-custom-trigger" id="vehicle-car-jump-trigger" aria-expanded="false">
+          <span>#${baseCar.number} ${getSmashGridLabel(baseCar)}</span>
+          <span class="sort-chevron">▾</span>
+        </button>
+        <div class="sort-custom-menu vehicle-jump-menu" role="listbox">
+          ${sortedRoster
+            .map(
+              (c) =>
+                `<button type="button" class="sort-custom-option ${c.id === car.id ? 'selected' : ''}" data-jump-car="${c.id}">#${c.number} ${getSmashGridLabel(c)}</button>`
+            )
+            .join('')}
+        </div>
+      </div>
+    `;
+
+    const jumpWrap = document.getElementById('vehicle-car-jump-wrap');
+    const jumpTrig = document.getElementById('vehicle-car-jump-trigger');
+    if (jumpWrap && jumpTrig) {
+      jumpTrig.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const engWrap = document.getElementById('vehicle-engine-dropdown');
+        const engTrig = document.getElementById('vehicle-engine-trigger');
+        if (engWrap) engWrap.classList.remove('open');
+        if (engTrig) engTrig.setAttribute('aria-expanded', 'false');
+        const open = jumpWrap.classList.toggle('open');
+        jumpTrig.setAttribute('aria-expanded', String(open));
+      });
+      jumpWrap.querySelectorAll('[data-jump-car]').forEach((opt) => {
+        opt.addEventListener('click', (e) => {
+          e.stopPropagation();
+          openVehicleView(opt.getAttribute('data-jump-car'));
+        });
+      });
+    }
+  }
+
+  const hero = document.getElementById('vehicle-hero');
+  if (!hero) return;
+  const perkText = car.perkLabel ? (car.perkLabel[currentLang] || car.perkLabel.en) : '';
+
+  hero.innerHTML = `
+    <div class="vehicle-turntable-card">
+      <div class="vehicle-turntable-stage" id="vehicle-turntable-stage">
+        <img id="vehicle-turntable-img" src="${activeSlide.src}" alt="${escapeHtmlAttr(`${car.fullName} — ${activeSlide.label}`)}" class="${activeSlide.mirrored ? 'mirrored-car' : ''}" draggable="false" />
+        <div class="vehicle-turntable-overlay-top">
+          <span class="vehicle-orbit-badge">⟳ ${ui.orbitBadge}</span>
+          <button type="button" class="vehicle-fullscreen-btn" id="vehicle-fullscreen-btn">⤢ ${ui.fullscreenBtn}</button>
+        </div>
+      </div>
+      <div class="vehicle-turntable-footer">
+        <div class="vehicle-angles-bar" id="vehicle-angles-bar">
+          ${gallery
+            .map(
+              (g, i) =>
+                `<button type="button" class="vehicle-angle-pill ${i === vehicleViewAngleIdx ? 'active' : ''}" data-angle-idx="${i}">${g.label}</button>`
+            )
+            .join('')}
+        </div>
+        <span class="vehicle-drag-hint">${ui.orbitHint}</span>
+      </div>
+    </div>
+
+    <aside class="vehicle-telemetry-rail">
+      <div class="vehicle-rail-watermark-clip" aria-hidden="true">
+        <span class="vehicle-rail-watermark">#${baseCar.number}</span>
+      </div>
+      <div class="vehicle-rail-head">
+        <div class="vehicle-rail-identity">
+          <span class="vehicle-rail-kicker">${car.yearMake}</span>
+          <h1 class="vehicle-rail-title">${car.shortTitle}</h1>
+          <div class="vehicle-rail-tags">
+            <span class="vehicle-rail-tag">${getCarTypeLabel(getCarType(baseCar))}</span>
+            <span class="vehicle-rail-tag">${car.drivetrain}</span>
+            ${perkText ? `<span class="vehicle-rail-tag">${perkText}</span>` : ''}
+          </div>
+        </div>
+        ${buildForzaIndexBlock(idx, false)}
+      </div>
+
+      <div class="vehicle-engine-block">
+        <div class="engine-config-header">
+          <span class="engine-config-title">${ui.engineLabel}</span>
+          <span class="engine-config-count">${formatEngineCount((baseCar.engines || []).length)}</span>
+        </div>
+        ${buildVehicleEngineDropdownHtml(baseCar, car.selectedEngineId)}
+      </div>
+
+      <div class="vehicle-paint-block">
+        <div class="vehicle-rail-section-label">
+          <span>${ui.paintLabel}</span>
+          <span class="paint-code-tag">${ui.paintOemCode}: ${activePaint.code}</span>
+        </div>
+        <div class="paint-swatches-row" id="vehicle-paint-swatches">
+          ${paints
+            .map(
+              (p, i) =>
+                `<button type="button" class="paint-swatch-btn ${i === vehicleViewPaintIdx ? 'active' : ''}" data-paint-idx="${i}" title="${escapeHtmlAttr(`${p.name} (${p.code})`)}" aria-label="${escapeHtmlAttr(p.name)}"><span style="background:${p.hex}"></span></button>`
+            )
+            .join('')}
+        </div>
+        <div class="paint-active-meta">
+          <span>${activePaint.name}</span>
+        </div>
+      </div>
+
+      <div class="vehicle-rail-price-grid">
+        <div>
+          <span class="rail-price-label">${ui.estUsedMarket}</span>
+          <span class="rail-price-value highlight">${car.estUsedPrice}</span>
+        </div>
+        <div>
+          <span class="rail-price-label">${ui.originalMsrp}</span>
+          <span class="rail-price-value">${car.originalMsrp ? (car.originalMsrp[currentLang] || car.originalMsrp.en) : '—'}</span>
+        </div>
+      </div>
+
+      <div class="vehicle-rail-cta-stack">
+        <button type="button" class="vehicle-btn-contender" id="vehicle-compare-cta">${ui.compareCta}</button>
+        ${(baseCar.engines || []).length > 1 ? `<button type="button" class="vehicle-btn-engines" id="vehicle-compare-engines-cta">${ui.compareEnginesBtn}</button>` : ''}
+      </div>
+    </aside>
+  `;
+
+  attachOrbitDrag(document.getElementById('vehicle-turntable-stage'), (delta) => {
+    stepVehicleAngle(delta);
+  });
+
+  document.querySelectorAll('#vehicle-angles-bar [data-angle-idx]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      vehicleViewAngleIdx = Number(btn.getAttribute('data-angle-idx'));
+      updateVehicleAngleOnly(car, gallery);
+    });
+  });
+
+  const fullBtn = document.getElementById('vehicle-fullscreen-btn');
+  if (fullBtn) {
+    fullBtn.addEventListener('click', () => {
+      openCarLightbox('vehicle', car, vehicleViewAngleIdx);
+    });
+  }
+
+  const engWrap = document.getElementById('vehicle-engine-dropdown');
+  const engTrigger = document.getElementById('vehicle-engine-trigger');
+  if (engWrap && engTrigger) {
+    engTrigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const jumpWrap = document.getElementById('vehicle-car-jump-wrap');
+      const jumpTrig = document.getElementById('vehicle-car-jump-trigger');
+      if (jumpWrap) jumpWrap.classList.remove('open');
+      if (jumpTrig) jumpTrig.setAttribute('aria-expanded', 'false');
+      const open = engWrap.classList.toggle('open');
+      engTrigger.setAttribute('aria-expanded', String(open));
+    });
+    engWrap.querySelectorAll('[data-eng-opt]').forEach((opt) => {
+      opt.addEventListener('click', (e) => {
+        e.stopPropagation();
+        vehicleViewEngineId = opt.getAttribute('data-eng-opt');
+        renderVehicleView();
+      });
+    });
+  }
+
+  document.querySelectorAll('#vehicle-paint-swatches [data-paint-idx]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      vehicleViewPaintIdx = Number(btn.getAttribute('data-paint-idx'));
+      renderVehicleView();
+    });
+  });
+
+  const compareBtn = document.getElementById('vehicle-compare-cta');
+  if (compareBtn) {
+    compareBtn.addEventListener('click', () => {
+      cancelDuelTransition();
+      closeAllMenusAndModals();
+      selectedLeftId = car.id;
+      selectedLeftEngineId = car.selectedEngineId;
+      selectedRightId = null;
+      selectedRightEngineId = null;
+      activeRosterTarget = 'p2';
+      isHomeView = false;
+      isVehicleView = false;
+      smashPickerForceOpen = true;
+      const smashStage = document.getElementById('smash-picker-stage');
+      if (smashStage) smashStage.scrollTop = 0;
+      updateArena();
+    });
+  }
+
+  const cmpEngBtn = document.getElementById('vehicle-compare-engines-cta');
+  if (cmpEngBtn) {
+    cmpEngBtn.addEventListener('click', () => {
+      openEnginePickerModal(car.id, car.selectedEngineId);
+    });
+  }
 }
 
 let compareHintTimer = null;
@@ -6363,8 +7043,9 @@ function triggerCompareGuardFeedback() {
 function syncTopNavState() {
   const bothSelected = Boolean(selectedLeftId && selectedRightId);
   const showHome = Boolean(isHomeView);
-  const showSmashGrid = !showHome && (!bothSelected || smashPickerForceOpen);
-  const showDuel = !showHome && bothSelected && !smashPickerForceOpen;
+  const showVehicle = !showHome && Boolean(isVehicleView);
+  const showSmashGrid = !showHome && !showVehicle && (!bothSelected || smashPickerForceOpen);
+  const showDuel = !showHome && !showVehicle && bothSelected && !smashPickerForceOpen;
 
   const navCatalog = document.getElementById('nav-catalog-btn');
   const navShowroom = document.getElementById('nav-showroom-btn');
@@ -6373,8 +7054,8 @@ function syncTopNavState() {
 
   if (navCatalog) navCatalog.classList.toggle('active', showSmashGrid);
   if (navShowroom) {
-    navShowroom.disabled = true;
-    navShowroom.classList.remove('active');
+    navShowroom.disabled = false;
+    navShowroom.classList.toggle('active', showVehicle);
   }
   if (navCompare) {
     navCompare.disabled = false;
@@ -6392,22 +7073,24 @@ function syncTopNavState() {
 function updateArena() {
   const bothSelected = Boolean(selectedLeftId && selectedRightId);
   const showHome = Boolean(isHomeView);
-  const showSmashGrid = !showHome && (!bothSelected || smashPickerForceOpen);
+  const showVehicle = !showHome && Boolean(isVehicleView);
+  const showSmashGrid = !showHome && !showVehicle && (!bothSelected || smashPickerForceOpen);
 
   const duelStage = document.querySelector('.duel-stage');
   const versusArena = document.getElementById('versus-arena');
   const homeStage = document.getElementById('home-landing-stage');
   const smashStage = document.getElementById('smash-picker-stage');
+  const vehicleStage = document.getElementById('vehicle-stage');
 
   document.body.classList.toggle('is-home-view', showHome);
   if (duelStage) {
-    duelStage.classList.toggle('no-left-car', showHome || showSmashGrid || !selectedLeftId);
-    duelStage.classList.toggle('no-right-car', showHome || showSmashGrid || !selectedRightId);
+    duelStage.classList.toggle('no-left-car', showHome || showVehicle || showSmashGrid || !selectedLeftId);
+    duelStage.classList.toggle('no-right-car', showHome || showVehicle || showSmashGrid || !selectedRightId);
   }
   if (versusArena) {
-    versusArena.classList.toggle('awaiting-selection', showHome || showSmashGrid);
-    versusArena.classList.toggle('has-left-car', !showHome && Boolean(selectedLeftId));
-    versusArena.classList.toggle('has-right-car', !showHome && Boolean(selectedRightId));
+    versusArena.classList.toggle('awaiting-selection', showHome || showVehicle || showSmashGrid);
+    versusArena.classList.toggle('has-left-car', !showHome && !showVehicle && Boolean(selectedLeftId));
+    versusArena.classList.toggle('has-right-car', !showHome && !showVehicle && Boolean(selectedRightId));
   }
   if (homeStage) {
     homeStage.classList.toggle('is-hidden', !showHome);
@@ -6417,10 +7100,21 @@ function updateArena() {
     smashStage.classList.toggle('is-hidden', !showSmashGrid);
     smashStage.setAttribute('aria-hidden', String(!showSmashGrid));
   }
+  if (vehicleStage) {
+    vehicleStage.classList.toggle('is-hidden', !showVehicle);
+    vehicleStage.setAttribute('aria-hidden', String(!showVehicle));
+  }
 
   applyStaticTranslations();
   syncTopNavState();
   renderSmashPicker();
+
+  if (showVehicle) {
+    const statsCenter = document.getElementById('stats-center');
+    if (statsCenter) statsCenter.innerHTML = '';
+    renderVehicleView();
+    return;
+  }
 
   if (showHome || showSmashGrid || !bothSelected) {
     const statsCenter = document.getElementById('stats-center');
@@ -6502,14 +7196,34 @@ function initEngineSelectorMenus() {
 // Initialize Top Navigation Bar (Showroom | Vehicle | Compare)
 function initTopNav() {
   const navCatalog = document.getElementById('nav-catalog-btn');
+  const navShowroom = document.getElementById('nav-showroom-btn');
   const navCompare = document.getElementById('nav-compare-btn');
   const compareWrap = document.getElementById('nav-compare-wrap');
+  const vehicleBackBtn = document.getElementById('vehicle-back-btn');
 
   if (navCatalog) {
     navCatalog.addEventListener('click', () => {
       cancelDuelTransition();
       closeAllMenusAndModals();
       isHomeView = false;
+      isVehicleView = false;
+      smashPickerForceOpen = true;
+      updateArena();
+    });
+  }
+
+  if (navShowroom) {
+    navShowroom.addEventListener('click', () => {
+      openVehicleView(vehicleViewCarId || selectedLeftId || (CAR_ROSTER[0] && CAR_ROSTER[0].id));
+    });
+  }
+
+  if (vehicleBackBtn) {
+    vehicleBackBtn.addEventListener('click', () => {
+      cancelDuelTransition();
+      closeAllMenusAndModals();
+      isHomeView = false;
+      isVehicleView = false;
       smashPickerForceOpen = true;
       updateArena();
     });
@@ -6526,6 +7240,7 @@ function initTopNav() {
       cancelDuelTransition();
       closeAllMenusAndModals();
       isHomeView = false;
+      isVehicleView = false;
       smashPickerForceOpen = false;
       updateArena();
     });
@@ -6875,6 +7590,7 @@ function initWeightEqualizerMenu() {
 function closeAllMenusAndModals() {
   closeCarLightbox();
   closeStatDossier();
+  closeEnginePickerModal();
   closeSearchHelpPopover();
   hideCompareHint();
   document.querySelectorAll('.price-info-anchor.is-open').forEach((el) => el.classList.remove('is-open'));
@@ -6882,6 +7598,14 @@ function closeAllMenusAndModals() {
   const sortTrig = document.getElementById('catalog-sort-trigger');
   if (sortWrap) sortWrap.classList.remove('open');
   if (sortTrig) sortTrig.setAttribute('aria-expanded', 'false');
+  const vJumpWrap = document.getElementById('vehicle-car-jump-wrap');
+  const vJumpTrig = document.getElementById('vehicle-car-jump-trigger');
+  if (vJumpWrap) vJumpWrap.classList.remove('open');
+  if (vJumpTrig) vJumpTrig.setAttribute('aria-expanded', 'false');
+  const vEngWrap = document.getElementById('vehicle-engine-dropdown');
+  const vEngTrig = document.getElementById('vehicle-engine-trigger');
+  if (vEngWrap) vEngWrap.classList.remove('open');
+  if (vEngTrig) vEngTrig.setAttribute('aria-expanded', 'false');
   [
     ['engine-btn-left', 'engine-dropdown-left'],
     ['engine-btn-right', 'engine-dropdown-right'],
@@ -6945,6 +7669,7 @@ function initCarDuel() {
   if (homeStartBtn) {
     homeStartBtn.addEventListener('click', () => {
       isHomeView = false;
+      isVehicleView = false;
       smashPickerForceOpen = false;
       updateArena();
     });
@@ -6957,6 +7682,7 @@ function initCarDuel() {
       if (isHomeView) return;
       cancelDuelTransition();
       isHomeView = true;
+      isVehicleView = false;
       selectedLeftId = null;
       selectedRightId = null;
       selectedLeftEngineId = null;
@@ -6977,10 +7703,22 @@ function initCarDuel() {
     });
   }
 
-  // Close open market price popovers on outside click
+  // Close open market price popovers and Vehicle dropdowns on outside click
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.price-info-anchor')) {
       document.querySelectorAll('.price-info-anchor.is-open').forEach((el) => el.classList.remove('is-open'));
+    }
+    const vJumpWrap = document.getElementById('vehicle-car-jump-wrap');
+    const vJumpTrig = document.getElementById('vehicle-car-jump-trigger');
+    if (vJumpWrap && !vJumpWrap.contains(e.target)) {
+      vJumpWrap.classList.remove('open');
+      if (vJumpTrig) vJumpTrig.setAttribute('aria-expanded', 'false');
+    }
+    const vEngWrap = document.getElementById('vehicle-engine-dropdown');
+    const vEngTrig = document.getElementById('vehicle-engine-trigger');
+    if (vEngWrap && !vEngWrap.contains(e.target)) {
+      vEngWrap.classList.remove('open');
+      if (vEngTrig) vEngTrig.setAttribute('aria-expanded', 'false');
     }
   });
 
@@ -7022,6 +7760,11 @@ function initCarDuel() {
   const dossierBackdrop = document.getElementById('stat-dossier-backdrop');
   if (dossierCloseBtn) dossierCloseBtn.addEventListener('click', closeStatDossier);
   if (dossierBackdrop) dossierBackdrop.addEventListener('click', closeStatDossier);
+
+  const engPickerCloseBtn = document.getElementById('engine-picker-close-btn');
+  const engPickerBackdrop = document.getElementById('engine-picker-backdrop');
+  if (engPickerCloseBtn) engPickerCloseBtn.addEventListener('click', closeEnginePickerModal);
+  if (engPickerBackdrop) engPickerBackdrop.addEventListener('click', closeEnginePickerModal);
 
   const dossierPrevBtn = document.getElementById('dossier-nav-prev');
   const dossierNextBtn = document.getElementById('dossier-nav-next');
@@ -7076,6 +7819,25 @@ function initCarDuel() {
         if (activeDossierStatKey && activeDossierSide !== 'right') {
           openStatDossier(activeDossierStatKey, 'right');
         }
+        return;
+      }
+    }
+    const engPickerModal = document.getElementById('engine-picker-modal');
+    const isInput = e.target && /^(INPUT|TEXTAREA|SELECT)$/i.test(e.target.tagName);
+    if (
+      isVehicleView &&
+      !isInput &&
+      (!dossierModal || !dossierModal.classList.contains('open')) &&
+      (!engPickerModal || !engPickerModal.classList.contains('open'))
+    ) {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        stepVehicleAngle(-1);
+        return;
+      }
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        stepVehicleAngle(1);
         return;
       }
     }

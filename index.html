@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700;1,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap&subset=latin,cyrillic" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261122f" />
+  <link rel="stylesheet" href="styles.css?v=20261122i" />
 </head>
 <body class="dock-is-collapsed is-home-view">
   <!-- Armored Split-Door Intro Overlay (Plays on initial load/refresh) -->
@@ -42,7 +42,7 @@
             <span id="nav-catalog-label">Showroom</span>
             <span class="nav-count-pill" id="nav-catalog-count">15</span>
           </button>
-          <button type="button" class="stage-nav-btn" id="nav-showroom-btn" data-nav="showroom" disabled>
+          <button type="button" class="stage-nav-btn" id="nav-showroom-btn" data-nav="showroom">
             <span id="nav-showroom-label">Vehicle</span>
           </button>
           <div class="nav-compare-wrap" id="nav-compare-wrap">
@@ -248,6 +248,21 @@
         <div class="smash-car-grid" id="smash-car-grid"></div>
       </div>
 
+      <!-- Single-Car Vehicle View (Hero-Only In-Depth Look) -->
+      <div class="vehicle-stage is-hidden" id="vehicle-stage" aria-hidden="true">
+        <div class="vehicle-stage-inner">
+          <div class="vehicle-breadcrumb-bar">
+            <button type="button" class="vehicle-back-btn" id="vehicle-back-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              <span id="vehicle-back-label">All Models</span>
+            </button>
+            <h2 class="vehicle-indepth-title" id="vehicle-indepth-title">IN-DEPTH LOOK</h2>
+            <div class="vehicle-quick-switcher" id="vehicle-quick-switcher"></div>
+          </div>
+          <div class="vehicle-hero-grid" id="vehicle-hero"></div>
+        </div>
+      </div>
+
       <!-- Left Car Visual -->
       <div class="car-viewport viewport-left" id="viewport-left">
         <div class="car-number-watermark" id="watermark-left">#01</div>
@@ -395,7 +410,22 @@
     </button>
   </div>
 
-  <script src="cars-data.js?v=20261122f"></script>
-  <script src="app.js?v=20261122h"></script>
+  <!-- Same-Model Rival Engine Picker Modal -->
+  <div class="engine-picker-modal" id="engine-picker-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="engine-picker-title">
+    <div class="engine-picker-backdrop" id="engine-picker-backdrop"></div>
+    <div class="engine-picker-dialog">
+      <div class="engine-picker-header">
+        <div>
+          <span class="engine-picker-kicker" id="engine-picker-kicker">SAME-MODEL ENGINE DUEL</span>
+          <h2 class="engine-picker-title" id="engine-picker-title">Select Rival Engine</h2>
+        </div>
+        <button type="button" class="engine-picker-close-btn" id="engine-picker-close-btn" aria-label="Close">✕</button>
+      </div>
+      <div class="engine-picker-list" id="engine-picker-list"></div>
+    </div>
+  </div>
+
+  <script src="cars-data.js?v=20261122i"></script>
+  <script src="app.js?v=20261122i"></script>
 </body>
 </html>

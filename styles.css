@@ -69,6 +69,7 @@ html[data-theme="dark"] {
   --catalog-surface-solid: #151b24;
   --catalog-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
   --catalog-modal-shadow: 0 24px 60px rgba(0, 0, 0, 0.72);
+  --paint-glow: rgba(0, 180, 255, 0.14);
 }
 
 /* 2. WHITE MODE (Vibrant Light Theme) */
@@ -3199,6 +3200,40 @@ html[data-theme="light"] .forza-index-block .fib-score {
   border-color: #ef4444;
   color: #ffffff;
   transform: translateX(-50%) scale(1.08);
+}
+
+/* Showroom Card Bottom-Right Tactile Inspect Pill */
+.catalog-inspect-pill {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-left: 3px solid var(--topbar-c1);
+  background: rgba(11, 14, 19, 0.86);
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transform: skewX(-8deg);
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.42);
+  transition: background 0.14s ease, border-color 0.14s ease, color 0.14s ease, transform 0.14s ease;
+}
+
+.catalog-inspect-pill:hover {
+  background: var(--topbar-c1);
+  border-color: var(--topbar-c1);
+  color: var(--topbar-c1-ink);
+  transform: skewX(-8deg) translateY(-1px);
 }
 
 /* Below-Picture Box (Compact: No Select/Showroom Buttons) */
@@ -8211,4 +8246,901 @@ html[data-theme="light-soft"] .dossier-market-table .dossier-tech-val.is-win {
   font-size: 0.96rem;
   font-weight: 800;
   color: var(--text-main);
+}
+
+/* =====================================================
+   SINGLE-CAR VEHICLE STAGE (IN-DEPTH HERO VIEW)
+   ===================================================== */
+.vehicle-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 26;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 28px 32px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--forza-lime) var(--bar-track);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.24s ease, visibility 0s linear 0s;
+}
+
+.vehicle-stage.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  overflow-y: hidden;
+  transition: opacity 0.2s ease, visibility 0s linear 0.2s;
+}
+
+.vehicle-stage-inner {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.vehicle-breadcrumb-bar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+}
+
+.vehicle-back-btn {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 14px;
+  border-radius: 3px;
+  border: 1px solid var(--topbar-border-strong);
+  background: var(--catalog-surface);
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 0.14s ease, background 0.14s ease, color 0.14s ease;
+}
+
+.vehicle-back-btn svg {
+  width: 15px;
+  height: 15px;
+}
+
+.vehicle-back-btn:hover {
+  border-color: var(--p1-accent);
+  background: var(--topbar-hover);
+  color: var(--p1-accent);
+}
+
+.vehicle-indepth-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  text-align: center;
+}
+
+.vehicle-quick-switcher {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+}
+
+.vehicle-jump-wrap {
+  min-width: 225px;
+}
+
+.vehicle-jump-menu {
+  max-height: 340px;
+  overflow-y: auto;
+}
+
+.vehicle-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.52fr) minmax(360px, 1fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+/* Left: Interactive 5-Angle Studio Turntable */
+.vehicle-turntable-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 4px;
+  background: var(--catalog-surface);
+  border: 1.5px solid var(--topbar-border-subtle);
+  border-top: 3px solid var(--p1-accent);
+  overflow: hidden;
+  box-shadow: var(--catalog-shadow);
+  min-height: 465px;
+}
+
+.vehicle-turntable-stage {
+  position: relative;
+  flex: 1;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(ellipse at 50% 60%, var(--paint-glow) 0%, transparent 66%),
+    var(--topbar-inset);
+  cursor: grab;
+  user-select: none;
+  touch-action: pan-y;
+  overflow: hidden;
+  min-height: 390px;
+}
+
+.vehicle-turntable-stage.dragging {
+  cursor: grabbing;
+}
+
+.vehicle-turntable-stage img {
+  width: 100%;
+  height: 100%;
+  max-height: 465px;
+  object-fit: cover;
+  pointer-events: none;
+  transition: opacity 0.16s ease;
+}
+
+.vehicle-turntable-overlay-top {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.vehicle-orbit-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 2px;
+  background: rgba(10, 13, 18, 0.85);
+  border-left: 3px solid var(--forza-lime);
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.vehicle-fullscreen-btn {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  border-radius: 2px;
+  background: rgba(10, 13, 18, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 0.14s ease, color 0.14s ease;
+}
+
+.vehicle-fullscreen-btn:hover {
+  border-color: var(--forza-lime);
+  color: var(--forza-lime);
+}
+
+.vehicle-turntable-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--catalog-surface-solid);
+  border-top: 1px solid var(--topbar-border-subtle);
+  flex-wrap: wrap;
+}
+
+.vehicle-angles-bar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.vehicle-angle-pill {
+  padding: 5px 11px;
+  border-radius: 3px;
+  border: 1px solid var(--topbar-border-subtle);
+  background: var(--topbar-inset);
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 0.14s ease, color 0.14s ease, background 0.14s ease;
+}
+
+.vehicle-angle-pill:hover {
+  color: var(--text-main);
+  border-color: var(--topbar-border-strong);
+}
+
+.vehicle-angle-pill.active {
+  background: var(--p1-accent);
+  border-color: var(--p1-accent);
+  color: var(--p1-badge-text);
+}
+
+.vehicle-drag-hint {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--text-dim);
+}
+
+/* Right: Telemetry & Configurator Rail */
+.vehicle-telemetry-rail {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 22px;
+  border-radius: 4px;
+  background: var(--catalog-surface);
+  border: 1.5px solid var(--topbar-border-subtle);
+  border-top: 3px solid var(--forza-lime);
+  box-shadow: var(--catalog-shadow);
+  overflow: visible;
+}
+
+html[data-theme="light"] .vehicle-telemetry-rail {
+  border-top-color: var(--p1-accent);
+}
+
+.vehicle-rail-watermark-clip {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.vehicle-rail-watermark {
+  position: absolute;
+  right: 12px;
+  top: 4px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-style: italic;
+  font-size: 84px;
+  line-height: 0.9;
+  color: var(--watermark-color);
+  user-select: none;
+}
+
+.vehicle-rail-head {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  z-index: 1;
+}
+
+.vehicle-rail-identity {
+  min-width: 0;
+}
+
+.vehicle-rail-kicker {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--p1-accent);
+}
+
+.vehicle-rail-title {
+  margin: 4px 0 8px;
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 800;
+  font-style: italic;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--text-main);
+}
+
+.vehicle-rail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.vehicle-rail-tag {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 2px;
+  background: var(--topbar-inset);
+  border: 1px solid var(--topbar-border-subtle);
+  color: var(--text-muted);
+}
+
+.vehicle-rail-section-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+
+.engine-config-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 7px;
+  padding-left: 8px;
+  border-left: 3px solid var(--p1-accent);
+}
+
+.engine-config-title {
+  font-family: var(--font-display);
+  font-size: 14.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+}
+
+.engine-config-count {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--p1-accent);
+  text-transform: uppercase;
+}
+
+.engine-custom-wrap {
+  position: relative;
+}
+
+.engine-custom-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 3px;
+  border: 1px solid var(--topbar-border-strong);
+  border-left: 3px solid var(--forza-lime);
+  background: var(--topbar-inset);
+  color: var(--text-main);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.14s ease, background 0.14s ease;
+}
+
+html[data-theme="light"] .engine-custom-trigger {
+  border-left-color: #5a9e00;
+}
+
+.engine-custom-trigger:hover,
+.engine-custom-wrap.open .engine-custom-trigger {
+  border-color: var(--p1-accent);
+  background: var(--topbar-hover);
+}
+
+.engine-trigger-main {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 700;
+  min-width: 0;
+}
+
+.engine-trigger-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.engine-star-lime {
+  color: var(--forza-lime);
+  font-size: 14px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+html[data-theme="light"] .engine-star-lime {
+  color: #5a9e00;
+}
+
+.engine-fuel-tag {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 2px;
+  background: var(--catalog-surface-solid);
+  border: 1px solid var(--topbar-border-subtle);
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.engine-fuel-tag.fuel-hybrid { background: rgba(45, 212, 191, 0.16); border-color: rgba(45, 212, 191, 0.55); color: #2dd4bf; }
+.engine-fuel-tag.fuel-petrol { background: rgba(249, 115, 22, 0.16); border-color: rgba(249, 115, 22, 0.55); color: #fb923c; }
+.engine-fuel-tag.fuel-diesel { background: rgba(34, 197, 94, 0.16); border-color: rgba(34, 197, 94, 0.55); color: #4ade80; }
+
+html[data-theme="light"] .engine-fuel-tag.fuel-hybrid { color: #0f766e; }
+html[data-theme="light"] .engine-fuel-tag.fuel-petrol { color: #c2410c; }
+html[data-theme="light"] .engine-fuel-tag.fuel-diesel { color: #15803d; }
+
+.engine-custom-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 45;
+  max-height: 280px;
+  overflow-y: auto;
+  padding: 6px;
+  border-radius: 3px;
+  background: var(--catalog-surface-solid);
+  border: 1px solid var(--topbar-border-strong);
+  border-top: 2px solid var(--p1-accent);
+  box-shadow: var(--catalog-modal-shadow);
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.engine-custom-wrap.open .engine-custom-menu {
+  display: flex;
+}
+
+.engine-custom-group-box {
+  border-radius: 2px;
+  border: 1px solid var(--topbar-border-subtle);
+  background: var(--topbar-inset);
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.engine-custom-group-box.fuel-hybrid { border-left: 3px solid #2dd4bf; }
+.engine-custom-group-box.fuel-petrol { border-left: 3px solid #f97316; }
+.engine-custom-group-box.fuel-diesel { border-left: 3px solid #22c55e; }
+
+.engine-custom-group {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding: 3px 8px 2px;
+}
+
+.engine-custom-group-box.fuel-hybrid .engine-custom-group { color: #2dd4bf; }
+.engine-custom-group-box.fuel-petrol .engine-custom-group { color: #fb923c; }
+.engine-custom-group-box.fuel-diesel .engine-custom-group { color: #4ade80; }
+
+html[data-theme="light"] .engine-custom-group-box.fuel-hybrid .engine-custom-group { color: #0f766e; }
+html[data-theme="light"] .engine-custom-group-box.fuel-petrol .engine-custom-group { color: #c2410c; }
+html[data-theme="light"] .engine-custom-group-box.fuel-diesel .engine-custom-group { color: #15803d; }
+
+.engine-custom-option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 7px 9px;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  background: transparent;
+  text-align: left;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: background 0.12s ease, border-color 0.12s ease;
+}
+
+.engine-custom-option:hover {
+  background: var(--catalog-surface);
+  border-color: var(--topbar-border-subtle);
+}
+
+.engine-custom-option.selected {
+  background: rgba(0, 180, 255, 0.14);
+  border-color: var(--p1-accent);
+}
+
+.engine-date-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-dim);
+  margin-left: 6px;
+  white-space: nowrap;
+}
+
+.engine-opt-score {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.engine-chevron {
+  font-size: 11px;
+  color: var(--text-dim);
+  transition: transform 0.16s ease;
+  flex-shrink: 0;
+}
+
+.engine-custom-wrap.open .engine-chevron {
+  transform: rotate(180deg);
+  color: var(--p1-accent);
+}
+
+/* OEM Factory Paint Swatches */
+.paint-swatches-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.paint-swatch-btn {
+  width: 30px;
+  height: 24px;
+  border-radius: 2px;
+  border: 2px solid var(--topbar-border-strong);
+  padding: 2px;
+  background: transparent;
+  transform: skewX(-8deg);
+  cursor: pointer;
+  transition: transform 0.14s ease, border-color 0.14s ease;
+}
+
+.paint-swatch-btn span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 1px;
+}
+
+.paint-swatch-btn:hover {
+  transform: skewX(-8deg) scale(1.1);
+}
+
+.paint-swatch-btn.active {
+  border-color: var(--forza-lime);
+  box-shadow: 0 0 0 2px rgba(204, 246, 0, 0.25);
+  transform: skewX(-8deg) scale(1.12);
+}
+
+html[data-theme="light"] .paint-swatch-btn.active {
+  border-color: var(--p1-accent);
+  box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.22);
+}
+
+.paint-active-meta {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+.paint-code-tag {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--p1-accent);
+}
+
+/* Vehicle Split Market Price Card & CTAs */
+.vehicle-rail-price-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 11px 12px;
+  border-radius: 3px;
+  background: var(--topbar-inset);
+  border: 1px solid var(--topbar-border-subtle);
+  border-left: 3px solid var(--win-green);
+}
+
+.rail-price-label {
+  display: block;
+  font-size: 10.5px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+}
+
+.rail-price-value {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.rail-price-value.highlight {
+  color: var(--win-green);
+}
+
+.vehicle-rail-cta-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.vehicle-btn-contender {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 18px;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background: var(--p2-accent);
+  color: var(--p2-badge-text);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 15.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.12s ease, filter 0.14s ease, box-shadow 0.15s ease;
+}
+
+.vehicle-btn-contender:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 18px rgba(255, 140, 0, 0.34);
+}
+
+.vehicle-btn-engines {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 7px 14px;
+  border-radius: 3px;
+  border: 1px solid var(--topbar-border-subtle);
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 0.14s ease, color 0.14s ease, background 0.14s ease;
+}
+
+.vehicle-btn-engines:hover {
+  border-color: var(--p1-accent);
+  color: var(--text-main);
+  background: var(--topbar-inset);
+}
+
+/* Same-Model Rival Engine Picker Modal */
+.engine-picker-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 115;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.engine-picker-modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.engine-picker-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 7, 10, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+.engine-picker-dialog {
+  position: relative;
+  z-index: 2;
+  width: min(94vw, 660px);
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--popover-bg);
+  border: 2px solid var(--p1-accent);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: var(--catalog-modal-shadow);
+  transform: scale(0.96);
+  transition: transform 0.2s ease;
+}
+
+.engine-picker-modal.open .engine-picker-dialog {
+  transform: scale(1);
+}
+
+.engine-picker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  background: var(--hud-bg);
+  border-bottom: 1px solid var(--panel-border);
+}
+
+.engine-picker-kicker {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--p1-accent);
+}
+
+.engine-picker-title {
+  margin: 2px 0 0;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-main);
+}
+
+.engine-picker-close-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 3px;
+  border: 1px solid var(--control-border);
+  background: var(--control-bg);
+  color: var(--text-main);
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.14s ease, color 0.14s ease;
+}
+
+.engine-picker-close-btn:hover {
+  border-color: var(--p1-accent);
+  color: var(--p1-accent);
+}
+
+.engine-picker-list {
+  padding: 14px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+}
+
+.engine-picker-group-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--p1-accent);
+  margin-top: 6px;
+}
+
+.engine-picker-group-label.fuel-hybrid { color: #2dd4bf; }
+.engine-picker-group-label.fuel-petrol { color: #fb923c; }
+.engine-picker-group-label.fuel-diesel { color: #4ade80; }
+
+html[data-theme="light"] .engine-picker-group-label.fuel-hybrid { color: #0f766e; }
+html[data-theme="light"] .engine-picker-group-label.fuel-petrol { color: #c2410c; }
+html[data-theme="light"] .engine-picker-group-label.fuel-diesel { color: #15803d; }
+
+.engine-picker-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 14px;
+  border-radius: 3px;
+  border: 1px solid var(--topbar-border-subtle);
+  background: var(--topbar-inset);
+  color: var(--text-main);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.14s ease, background 0.14s ease;
+}
+
+.engine-picker-row:hover {
+  border-color: var(--p2-accent);
+  background: var(--topbar-hover);
+}
+
+.engine-picker-row.is-current {
+  opacity: 0.48;
+  pointer-events: none;
+}
+
+.engine-picker-name {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  color: var(--text-main);
+}
+
+.engine-picker-sub {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+@media (max-width: 1060px) {
+  .vehicle-hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .vehicle-stage {
+    padding: 14px 14px 24px;
+  }
+
+  .vehicle-breadcrumb-bar {
+    grid-template-columns: 1fr auto;
+  }
+
+  .vehicle-indepth-title {
+    display: none;
+  }
 }
