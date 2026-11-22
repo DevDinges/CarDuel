@@ -6,8 +6,8 @@
   <title>CAR DUEL — Head-to-Head Car Comparison</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Inter:wght@400;500;600;700&display=swap&subset=latin,cyrillic" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261118g" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700;1,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap&subset=latin,cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20261122f" />
 </head>
 <body class="dock-is-collapsed is-home-view">
   <!-- Armored Split-Door Intro Overlay (Plays on initial load/refresh) -->
@@ -33,225 +33,149 @@
     <div class="door-center-seam"></div>
   </div>
 
-  <!-- Top HUD Bar -->
-  <header class="top-hud">
-    <div class="hud-side hud-p1">
-      <span class="player-badge p1-badge">C1</span>
-      <div class="selector-group">
-        <label id="label-contender-1">CONTENDER</label>
-        <div class="car-selector-wrapper" id="car-wrapper-left">
-          <button
-            type="button"
-            class="car-select-btn"
-            id="car-btn-left"
-            aria-expanded="false"
-            aria-label="Select First Car"
-          >
-            <span class="car-btn-text" id="car-pill-left"></span>
-            <span class="car-btn-chevron">▾</span>
+  <!-- Top Navigation Bar (Redesigned 3-Zone Motorsport HUD) -->
+  <header class="topbar" id="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <nav class="stage-nav" aria-label="Primary Views">
+          <button type="button" class="stage-nav-btn" id="nav-catalog-btn" data-nav="catalog">
+            <span id="nav-catalog-label">Showroom</span>
+            <span class="nav-count-pill" id="nav-catalog-count">15</span>
           </button>
-          <div class="engine-dropdown-menu car-dropdown-menu" id="car-dropdown-left" aria-hidden="true"></div>
-        </div>
+          <button type="button" class="stage-nav-btn" id="nav-showroom-btn" data-nav="showroom" disabled>
+            <span id="nav-showroom-label">Vehicle</span>
+          </button>
+          <div class="nav-compare-wrap" id="nav-compare-wrap">
+            <button type="button" class="stage-nav-btn" id="nav-compare-btn" data-nav="compare">
+              <span id="nav-compare-label">Compare</span>
+              <span class="nav-dot-indicator" id="nav-compare-dot" hidden></span>
+            </button>
+            <div class="nav-compare-hint" id="nav-compare-hint" role="status" aria-live="polite" aria-hidden="true"></div>
+          </div>
+        </nav>
       </div>
 
-      <!-- Equalizer Weighting Trigger & Popover (between CONTENDER and THEME) -->
-      <div class="weight-menu-wrapper" id="weight-menu-wrapper">
-        <button
-          type="button"
-          class="weight-menu-toggle-btn"
-          id="weight-menu-toggle-btn"
-          aria-expanded="false"
-          title="Adjust Pillar Weights"
-        >
-          <svg class="weight-menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-            <line x1="4" y1="21" x2="4" y2="14"></line>
-            <line x1="4" y1="10" x2="4" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="12"></line>
-            <line x1="12" y1="8" x2="12" y2="3"></line>
-            <line x1="20" y1="21" x2="20" y2="16"></line>
-            <line x1="20" y1="12" x2="20" y2="3"></line>
-            <circle cx="4" cy="12" r="2" fill="currentColor"></circle>
-            <circle cx="12" cy="10" r="2" fill="currentColor"></circle>
-            <circle cx="20" cy="14" r="2" fill="currentColor"></circle>
+      <div class="topbar-center">
+        <button type="button" class="brand-btn" id="hud-brand-home-btn" title="Return to Homepage">
+          <span class="brand-wordmark">
+            <span class="brand-name">CAR<span class="brand-accent">DUEL</span></span>
+            <span class="brand-sub" id="brand-subtitle">AUTOMOTIVE SHOWROOM</span>
+          </span>
+        </button>
+      </div>
+
+      <div class="topbar-right">
+        <!-- Priority Equalizer Trigger & Popover -->
+        <div class="weight-menu-wrapper" id="weight-menu-wrapper">
+          <button
+            type="button"
+            class="hud-pill-btn"
+            id="weight-menu-toggle-btn"
+            aria-expanded="false"
+            title="Adjust Pillar Weights"
+          >
+            <svg class="hud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line>
+              <line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line>
+              <line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line>
+            </svg>
+            <span id="weight-menu-btn-label">Weights</span>
+            <span class="weights-active-dot" id="weight-active-dot" hidden></span>
+          </button>
+
+          <div class="weight-menu-popover" id="weight-menu-popover" aria-hidden="true">
+            <div class="weight-popover-header">
+              <span id="weight-popover-title">PRIORITY EQUALIZER</span>
+              <div class="weight-popover-actions">
+                <button type="button" class="weight-reset-btn" id="weight-reset-btn" title="Reset all to 3/5">RESET</button>
+                <button type="button" class="weight-popover-close" id="weight-popover-close" title="Close menu">✕</button>
+              </div>
+            </div>
+            <div class="eq-board" id="weight-eq-board">
+              <!-- Rendered dynamically by app.js -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Index Classes Trigger & Popover (Sorted S+ down to F) -->
+        <div class="class-menu-wrapper" id="class-menu-wrapper">
+          <button
+            type="button"
+            class="hud-pill-btn"
+            id="class-menu-toggle-btn"
+            aria-expanded="false"
+          >
+            <svg class="hud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+              <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+              <path d="M4 22h16"></path>
+              <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+              <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+              <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+            </svg>
+            <span id="index-classes-btn-label">Index</span>
+          </button>
+
+          <div class="class-menu-popover" id="class-menu-popover" aria-hidden="true">
+            <div class="class-popover-header">
+              <span id="index-classes-popover-title">INDEX CLASSES</span>
+              <button type="button" class="class-popover-close" id="class-popover-close" title="Close menu">✕</button>
+            </div>
+            <div class="tier-hierarchy-list">
+              <div class="tier-row">
+                <span class="tier-badge-cell class-s-plus">✦ S+</span>
+                <span class="tier-range-cell">9.6 – 10.0</span>
+              </div>
+              <div class="tier-row">
+                <span class="tier-badge-cell class-s">✦ S</span>
+                <span class="tier-range-cell">9.0 – 9.5</span>
+              </div>
+              <div class="tier-row">
+                <span class="tier-badge-cell class-a">A</span>
+                <span class="tier-range-cell">8.0 – 8.9</span>
+              </div>
+              <div class="tier-row">
+                <span class="tier-badge-cell class-b">B</span>
+                <span class="tier-range-cell">7.0 – 7.9</span>
+              </div>
+              <div class="tier-row">
+                <span class="tier-badge-cell class-c">C</span>
+                <span class="tier-range-cell">6.0 – 6.9</span>
+              </div>
+              <div class="tier-row">
+                <span class="tier-badge-cell class-d">D</span>
+                <span class="tier-range-cell">5.0 – 5.9</span>
+              </div>
+              <div class="tier-row">
+                <span class="tier-badge-cell class-f">F</span>
+                <span class="tier-range-cell">0.0 – 4.9</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Segmented Language Switcher -->
+        <div class="lang-switcher" role="group" aria-label="Language">
+          <button type="button" class="lang-btn active" data-lang-choice="en">EN</button>
+          <button type="button" class="lang-btn" data-lang-choice="de">DE</button>
+          <button type="button" class="lang-btn" data-lang-choice="ru">RU</button>
+        </div>
+
+        <!-- 1-Click Dark / Light Theme Switcher -->
+        <button type="button" class="hud-icon-btn" id="theme-toggle-btn" title="Toggle Dark / Light Theme" aria-label="Toggle Dark / Light Theme">
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
           </svg>
-          <span id="weight-menu-btn-label">WEIGHTS</span>
-          <span class="weight-active-dot" id="weight-active-dot" aria-hidden="true"></span>
-          <span class="weight-menu-chevron" id="weight-menu-chevron">▾</span>
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
         </button>
-
-        <div class="weight-menu-popover" id="weight-menu-popover" aria-hidden="true">
-          <div class="weight-popover-header">
-            <span id="weight-popover-title">PRIORITY EQUALIZER</span>
-            <div class="weight-popover-actions">
-              <button type="button" class="weight-reset-btn" id="weight-reset-btn" title="Reset all to 3/5">RESET</button>
-              <button type="button" class="weight-popover-close" id="weight-popover-close" title="Close menu">✕</button>
-            </div>
-          </div>
-          <div class="eq-board" id="weight-eq-board">
-            <!-- Rendered dynamically by app.js -->
-          </div>
-        </div>
       </div>
-    </div>
-
-    <!-- Center Title flanked by Theme Button (Left) and Translation Button (Right) -->
-    <div class="hud-center-cluster">
-      <div class="hud-center-row">
-        <!-- Left of CAR DUEL: Theme Selector Button & Menu (Screenshot 3 Icon) -->
-        <div class="hud-utility-wrapper" id="theme-menu-wrapper">
-          <button
-            type="button"
-            class="hud-utility-btn"
-            id="theme-toggle-btn"
-            aria-expanded="false"
-            title="Change Theme"
-          >
-            <!-- Palette Icon (Screenshot 3) -->
-            <svg class="hud-utility-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10c1.38 0 2.5-1.12 2.5-2.5 0-.61-.23-1.2-.64-1.67-.08-.1-.13-.21-.13-.33 0-.28.22-.5.5-.5H16c3.31 0 6-2.69 6-6 0-4.96-4.49-9-10-9z"/>
-              <circle cx="6.5" cy="11.5" r="1.35" fill="currentColor" stroke="none"/>
-              <circle cx="9.5" cy="7.5" r="1.35" fill="currentColor" stroke="none"/>
-              <circle cx="14.5" cy="7.5" r="1.35" fill="currentColor" stroke="none"/>
-              <circle cx="17.5" cy="11.5" r="1.35" fill="currentColor" stroke="none"/>
-            </svg>
-            <span class="hud-utility-label" id="theme-btn-label">Theme</span>
-            <span class="hud-utility-chevron">▾</span>
-          </button>
-
-          <div class="hud-dropdown-menu theme-dropdown" id="theme-dropdown" aria-hidden="true">
-            <div class="hud-dropdown-title" id="theme-menu-header">SELECT THEME</div>
-            <button type="button" class="hud-dropdown-item active" data-theme-choice="dark">
-              <span class="theme-swatch swatch-dark"></span>
-              <span id="theme-opt-dark">Dark Mode</span>
-            </button>
-            <button type="button" class="hud-dropdown-item" data-theme-choice="dark-soft">
-              <span class="theme-swatch swatch-dark-soft"></span>
-              <span id="theme-opt-dark-soft">Dark Mode (Soft Colors)</span>
-            </button>
-            <button type="button" class="hud-dropdown-item" data-theme-choice="light">
-              <span class="theme-swatch swatch-light"></span>
-              <span id="theme-opt-light">White Mode</span>
-            </button>
-            <button type="button" class="hud-dropdown-item" data-theme-choice="light-soft">
-              <span class="theme-swatch swatch-light-soft"></span>
-              <span id="theme-opt-light-soft">White Mode (Soft Colors)</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Main Brand Title -->
-        <div class="hud-center" id="hud-brand-home-btn" role="button" tabindex="0" title="Return to Homepage">
-          <div class="brand-title">CAR<span>DUEL</span></div>
-          <div class="brand-subtitle" id="brand-subtitle">HEAD-TO-HEAD CAR COMPARISON</div>
-        </div>
-
-        <!-- Right of CAR DUEL: Translation Button & Menu (Screenshot 2 Icon + Flag) -->
-        <div class="hud-utility-wrapper" id="lang-menu-wrapper">
-          <button
-            type="button"
-            class="hud-utility-btn"
-            id="lang-toggle-btn"
-            aria-expanded="false"
-            title="Change Language"
-          >
-            <!-- Google Chrome Translate Symbol (Screenshot 2) -->
-            <svg class="hud-utility-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/>
-            </svg>
-            <span class="lang-flag-box" id="current-lang-flag"></span>
-            <span class="hud-utility-label" id="current-lang-code">EN</span>
-            <span class="hud-utility-chevron">▾</span>
-          </button>
-
-          <div class="hud-dropdown-menu lang-dropdown" id="lang-dropdown" aria-hidden="true">
-            <div class="hud-dropdown-title" id="lang-menu-header">LANGUAGE</div>
-            <button type="button" class="hud-dropdown-item active" data-lang-choice="en">
-              <span class="lang-flag-box" data-flag-render="en"></span>
-              <span>English</span>
-            </button>
-            <button type="button" class="hud-dropdown-item" data-lang-choice="de">
-              <span class="lang-flag-box" data-flag-render="de"></span>
-              <span>Deutsch</span>
-            </button>
-            <button type="button" class="hud-dropdown-item" data-lang-choice="ru">
-              <span class="lang-flag-box" data-flag-render="ru"></span>
-              <span>Русский</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="hud-side hud-p2">
-      <!-- Clickable Menu Trigger for Index (Sorted S+ down to F) -->
-      <div class="class-menu-wrapper" id="class-menu-wrapper">
-        <button
-          type="button"
-          class="class-menu-toggle-btn"
-          id="class-menu-toggle-btn"
-          aria-expanded="false"
-        >
-          <span class="class-menu-icon">🏆</span>
-          <span id="index-classes-btn-label">INDEX</span>
-          <span class="class-menu-chevron" id="class-menu-chevron">▾</span>
-        </button>
-
-        <!-- Collapsible Popover Menu (Vertical Hierarchy S+ -> F) -->
-        <div class="class-menu-popover" id="class-menu-popover" aria-hidden="true">
-          <div class="class-popover-header">
-            <span id="index-classes-popover-title">INDEX CLASSES</span>
-            <button type="button" class="class-popover-close" id="class-popover-close" title="Close menu">✕</button>
-          </div>
-          <div class="tier-hierarchy-list">
-            <div class="tier-row">
-              <span class="tier-badge-cell class-s-plus">✦ S+</span>
-              <span class="tier-range-cell">9.6 – 10.0</span>
-            </div>
-            <div class="tier-row">
-              <span class="tier-badge-cell class-s">✦ S</span>
-              <span class="tier-range-cell">9.0 – 9.5</span>
-            </div>
-            <div class="tier-row">
-              <span class="tier-badge-cell class-a">A</span>
-              <span class="tier-range-cell">8.0 – 8.9</span>
-            </div>
-            <div class="tier-row">
-              <span class="tier-badge-cell class-b">B</span>
-              <span class="tier-range-cell">7.0 – 7.9</span>
-            </div>
-            <div class="tier-row">
-              <span class="tier-badge-cell class-c">C</span>
-              <span class="tier-range-cell">6.0 – 6.9</span>
-            </div>
-            <div class="tier-row">
-              <span class="tier-badge-cell class-d">D</span>
-              <span class="tier-range-cell">5.0 – 5.9</span>
-            </div>
-            <div class="tier-row">
-              <span class="tier-badge-cell class-f">F</span>
-              <span class="tier-range-cell">0.0 – 4.9</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="selector-group align-right">
-        <label id="label-opponent-2">OPPONENT</label>
-        <div class="car-selector-wrapper" id="car-wrapper-right">
-          <button
-            type="button"
-            class="car-select-btn"
-            id="car-btn-right"
-            aria-expanded="false"
-            aria-label="Select Opponent Car"
-          >
-            <span class="car-btn-text" id="car-pill-right"></span>
-            <span class="car-btn-chevron">▾</span>
-          </button>
-          <div class="engine-dropdown-menu car-dropdown-menu engine-dropdown-right" id="car-dropdown-right" aria-hidden="true"></div>
-        </div>
-      </div>
-      <span class="player-badge p2-badge">C2</span>
     </div>
   </header>
 
@@ -288,6 +212,39 @@
           </div>
           <div class="smash-slots-bar" id="smash-slots-bar"></div>
         </div>
+
+        <div class="catalog-controls-bar" id="catalog-controls-bar">
+          <div class="search-field-wrap" id="catalog-search-wrap">
+            <button
+              type="button"
+              class="search-help-btn"
+              id="catalog-search-help-btn"
+              aria-expanded="false"
+              aria-controls="catalog-search-help-popover"
+              aria-label="Search guide &amp; examples"
+            >
+              <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+            <input type="search" id="catalog-search" class="catalog-search-input" placeholder="Search make, model, engine..." autocomplete="off" />
+            <div class="search-help-popover" id="catalog-search-help-popover" role="dialog" aria-hidden="true"></div>
+          </div>
+
+          <div class="catalog-filter-pills" id="catalog-filter-pills" role="tablist" aria-label="Filter by body type"></div>
+
+          <div class="catalog-sort-wrap">
+            <span class="sort-label" id="catalog-sort-label">Sort</span>
+            <div class="sort-custom-wrap" id="catalog-sort-dropdown">
+              <button type="button" class="sort-custom-trigger" id="catalog-sort-trigger" aria-expanded="false">
+                <span id="catalog-sort-current">Unsorted</span>
+                <span class="sort-chevron">▾</span>
+              </button>
+              <div class="sort-custom-menu" id="catalog-sort-menu" role="listbox"></div>
+            </div>
+          </div>
+        </div>
+
         <div class="smash-car-grid" id="smash-car-grid"></div>
       </div>
 
@@ -316,10 +273,6 @@
             <div class="engine-dropdown-menu" id="engine-dropdown-left" aria-hidden="true"></div>
           </div>
         </div>
-        <button type="button" class="change-car-pill change-car-p1" id="change-car-left-btn" title="Change Car 1">
-          <svg class="change-car-svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="4.8" height="4.8" rx="1"/><rect x="9.2" y="2" width="4.8" height="4.8" rx="1"/><rect x="2" y="9.2" width="4.8" height="4.8" rx="1"/><rect x="9.2" y="9.2" width="4.8" height="4.8" rx="1"/></svg>
-          <span class="change-car-label" id="change-car-label-left">CHANGE CAR 1</span>
-        </button>
         <div class="car-image-wrapper" data-side="left">
           <img id="img-left" alt="Left selected car" />
           <button type="button" class="expand-car-btn" id="expand-left-btn" title="View full car picture">
@@ -361,10 +314,6 @@
           </div>
           <span class="caption-tag p2-tag" id="tag-opponent">OPPONENT</span>
         </div>
-        <button type="button" class="change-car-pill change-car-p2" id="change-car-right-btn" title="Change Car 2">
-          <svg class="change-car-svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="4.8" height="4.8" rx="1"/><rect x="9.2" y="2" width="4.8" height="4.8" rx="1"/><rect x="2" y="9.2" width="4.8" height="4.8" rx="1"/><rect x="9.2" y="9.2" width="4.8" height="4.8" rx="1"/></svg>
-          <span class="change-car-label" id="change-car-label-right">CHANGE CAR 2</span>
-        </button>
         <div class="car-image-wrapper" data-side="right">
           <img id="img-right" class="mirrored-car" alt="Right opponent car" />
           <button type="button" class="expand-car-btn" id="expand-right-btn" title="View full car picture">
@@ -446,7 +395,7 @@
     </button>
   </div>
 
-  <script src="cars-data.js?v=20261118g"></script>
-  <script src="app.js?v=20261118g"></script>
+  <script src="cars-data.js?v=20261122f"></script>
+  <script src="app.js?v=20261122h"></script>
 </body>
 </html>

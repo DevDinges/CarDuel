@@ -1,33 +1,22 @@
 // ============================================================================
 // CAR DUEL — Two-Level 5-Pillar Head-to-Head Car Comparison System
-// Full Multi-Language (EN / DE / RU) & 4-Theme Support
+// Full Multi-Language (EN / DE / RU) & Dark/Light Studio Theme Support
 // ============================================================================
-
-const FLAG_SVGS = {
-  en: `<svg viewBox="0 0 21 14" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><rect x="-1" y="-1" width="23" height="16" fill="#012169"/><path d="M0,0 L21,14 M21,0 L0,14" stroke="#ffffff" stroke-width="3"/><path d="M0,0 L21,14 M21,0 L0,14" stroke="#C8102E" stroke-width="1.8"/><path d="M10.5,-1 V15 M-1,7 H22" stroke="#ffffff" stroke-width="4.6"/><path d="M10.5,-1 V15 M-1,7 H22" stroke="#C8102E" stroke-width="2.8"/></svg>`,
-  de: `<svg viewBox="0 0 21 14" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><rect x="-1" y="-1" width="23" height="6" fill="#000000"/><rect x="-1" y="4.66" width="23" height="5" fill="#DD0000"/><rect x="-1" y="9.33" width="23" height="6" fill="#FFCE00"/></svg>`,
-  ru: `<svg viewBox="0 0 21 14" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><rect x="-1" y="-1" width="23" height="6" fill="#ffffff"/><rect x="-1" y="4.66" width="23" height="5" fill="#0039A6"/><rect x="-1" y="9.33" width="23" height="6" fill="#D52B1E"/></svg>`
-};
 
 const UI_TRANSLATIONS = {
   en: {
     code: 'EN',
-    contender1: 'CONTENDER',
     opponentP2: 'OPPONENT',
-    brandSubtitle: 'HEAD-TO-HEAD CAR COMPARISON',
-    themeBtn: 'Theme',
-    selectTheme: 'SELECT THEME',
-    themeDark: 'Dark Mode',
-    themeLight: 'White Mode',
-    themeDarkSoft: 'Dark Mode (Soft Colors)',
-    themeLightSoft: 'White Mode (Soft Colors)',
-    langHeader: 'LANGUAGE',
+    brandSubtitle: 'AUTOMOTIVE SHOWROOM',
+    navShowroom: 'Showroom',
+    navVehicle: 'Vehicle',
+    navCompare: 'Compare',
+    compareNeedTwoCars: 'Select two vehicles first',
+    themeToggleTitle: 'Toggle Dark / Light Theme',
     car1Tag: 'CAR 1',
     opponentTag: 'OPPONENT',
     swapLabel: '⇄ SWAP',
     expandFullCar: 'EXPAND FULL CAR',
-    changeCar1: 'CHANGE CAR 1',
-    changeCar2: 'CHANGE CAR 2',
     closeBtn: '✕ CLOSE',
     statsHeader: 'Stats (5 Pillars)',
     expandAll: '+ Expand All',
@@ -38,9 +27,9 @@ const UI_TRANSLATIONS = {
     estUsedMarket: 'Est. Used Market',
     overallRating: 'Overall Rating',
     classSuffix: '-Class',
-    indexClassesBtn: 'INDEX',
+    indexClassesBtn: 'Index',
     indexClassesTitle: 'INDEX CLASSES',
-    weightMenuBtn: 'WEIGHTS',
+    weightMenuBtn: 'Weights',
     weightPopoverTitle: 'PRIORITY EQUALIZER',
     weightResetBtn: 'RESET',
     weightDefaultLabel: 'Default',
@@ -97,6 +86,8 @@ const UI_TRANSLATIONS = {
     outlookStrong: 'Strong Resale • High Demand',
     outlookEnthusiast: 'Enthusiast Icon • Rising / Firm',
     outlookSteady: 'Steady • Predictable Curve',
+    priceCurveTitle: 'Value & Depreciation Curve',
+    priceCurveHint: 'Hover points or rows to inspect',
     homeKicker: 'AUTOMOTIVE SHOWDOWN',
     homeTitle: 'HEAD-TO-HEAD CAR COMPARISON',
     homeIntro: 'Pick two contenders, choose their engines, and put them head-to-head across {pillars} categories and {ratings} ratings. Adjust your priority weights to match what matters most and find the car that suits you best.',
@@ -106,26 +97,53 @@ const UI_TRANSLATIONS = {
     buyerFitBtn: 'BUYER FIT — WHO IS THIS FOR?',
     buyerFitCategory: 'BUYER FIT & PRACTICAL SUMMARY',
     buyerFitIdealTitle: 'Great Fit For',
-    buyerFitNotIdealTitle: 'Rather Not For'
+    buyerFitNotIdealTitle: 'Rather Not For',
+    searchPlaceholder: 'Search make, model, engine...',
+    filterAll: 'All Models',
+    sortLabel: 'Sort',
+    sortCurated: 'Unsorted',
+    sortScore: 'Highest Rated',
+    sortPrice: 'Lowest Used Price',
+    sortPower: 'Most Power',
+    sortName: 'Name A–Z',
+    lineupAvgTitle: 'Lineup Average',
+    medianUsedPriceTitle: 'Median Used Market Price',
+    engineSingular: 'engine',
+    enginesCount: 'engines',
+    noResults: 'No models match your current filter.',
+    searchHelpTooltip: 'Search methods & examples',
+    searchHelpTitle: 'SEARCH METHODS',
+    searchHelpHint: 'Click any example to try',
+    searchHelpFooter: 'Combine terms freely (e.g. Honda Diesel 2010-2014).',
+    searchMethodBrand: 'Brand / Make',
+    searchMethodModel: 'Model',
+    searchMethodEngine: 'Engine / Code',
+    searchMethodYear: 'Year / Range',
+    searchMethodPower: 'Power',
+    searchMethodPrice: 'Used Price',
+    searchMethodFuel: 'Fuel / Gearbox',
+    searchMethodDrive: 'Drive / Body',
+    searchMethodTier: 'Tier / Combo',
+    searchExPower1: '150+ HP',
+    searchExPower2: '100-150 HP',
+    searchExFuel1: 'Petrol',
+    searchExFuel2: 'Automatic',
+    searchExTier: 'A-Class',
+    searchExCombo: 'Honda Diesel'
   },
   de: {
     code: 'DE',
-    contender1: 'KANDIDAT',
     opponentP2: 'GEGNER',
-    brandSubtitle: 'DIREKTER FAHRZEUGVERGLEICH',
-    themeBtn: 'Design',
-    selectTheme: 'DESIGN WÄHLEN',
-    themeDark: 'Dunkelmodus',
-    themeLight: 'Hellmodus (Weiß)',
-    themeDarkSoft: 'Dunkelmodus (Dezente Farben)',
-    themeLightSoft: 'Hellmodus (Dezente Farben)',
-    langHeader: 'SPRACHE',
+    brandSubtitle: 'AUTOMOBIL-SHOWROOM',
+    navShowroom: 'Showroom',
+    navVehicle: 'Fahrzeug',
+    navCompare: 'Vergleich',
+    compareNeedTwoCars: 'Wähle zuerst zwei Fahrzeuge aus',
+    themeToggleTitle: 'Hell / Dunkel wechseln',
     car1Tag: 'AUTO 1',
     opponentTag: 'GEGNER',
     swapLabel: '⇄ TAUSCH',
     expandFullCar: 'VOLLBILD ANZEIGEN',
-    changeCar1: 'AUTO 1 WECHSELN',
-    changeCar2: 'AUTO 2 WECHSELN',
     closeBtn: '✕ SCHLIESSEN',
     statsHeader: 'Werte (5 Säulen)',
     expandAll: '+ Alle öffnen',
@@ -136,9 +154,9 @@ const UI_TRANSLATIONS = {
     estUsedMarket: 'Gebrauchtmarkt (ca.)',
     overallRating: 'Gesamtwertung',
     classSuffix: '-Klasse',
-    indexClassesBtn: 'INDEX',
+    indexClassesBtn: 'Index',
     indexClassesTitle: 'INDEX-KLASSEN',
-    weightMenuBtn: 'GEWICHTUNG',
+    weightMenuBtn: 'Gewichtung',
     weightPopoverTitle: 'PRIORITÄTEN-EQUALIZER',
     weightResetBtn: 'RESET',
     weightDefaultLabel: 'Standard',
@@ -195,6 +213,8 @@ const UI_TRANSLATIONS = {
     outlookStrong: 'Wertstabil • Hohe Nachfrage',
     outlookEnthusiast: 'Liebhaber-Status • Stabil bis steigend',
     outlookSteady: 'Solide • Planbarer Wertverlauf',
+    priceCurveTitle: 'Wert- & Wertverlustkurve',
+    priceCurveHint: 'Punkte oder Zeilen hovern',
     homeKicker: 'KOPF-AN-KOPF',
     homeTitle: 'WELCHES AUTO PASST ZU DIR?',
     homeIntro: 'Schicke zwei Autos ins direkte Duell über {pillars} Kategorien und {ratings} Einzelwertungen. Gewichte, was für dich zählt, und finde deinen persönlichen Sieger.',
@@ -204,26 +224,53 @@ const UI_TRANSLATIONS = {
     buyerFitBtn: 'FÜR WEN GEEIGNET? • FAZIT',
     buyerFitCategory: 'KAUFBERATUNG & ZIELGRUPPE',
     buyerFitIdealTitle: 'Ideal geeignet für',
-    buyerFitNotIdealTitle: 'Eher nicht geeignet für'
+    buyerFitNotIdealTitle: 'Eher nicht geeignet für',
+    searchPlaceholder: 'Marke, Modell oder Motor suchen...',
+    filterAll: 'Alle Modelle',
+    sortLabel: 'Sortieren',
+    sortCurated: 'Unsortiert',
+    sortScore: 'Beste Wertung',
+    sortPrice: 'Günstigster Gebrauchtpreis',
+    sortPower: 'Meiste Leistung',
+    sortName: 'Name A–Z',
+    lineupAvgTitle: 'Baureihen-Durchschnitt',
+    medianUsedPriceTitle: 'Median-Gebrauchtmarktpreis',
+    engineSingular: 'Motor',
+    enginesCount: 'Motoren',
+    noResults: 'Keine Fahrzeuge entsprechen deiner Suche.',
+    searchHelpTooltip: 'Suchmethoden & Beispiele',
+    searchHelpTitle: 'SUCHMETHODEN',
+    searchHelpHint: 'Beispiel anklicken zum Testen',
+    searchHelpFooter: 'Begriffe frei kombinierbar (z. B. Honda Diesel 2010-2014).',
+    searchMethodBrand: 'Marke',
+    searchMethodModel: 'Modell',
+    searchMethodEngine: 'Motor / Code',
+    searchMethodYear: 'Baujahr / Spanne',
+    searchMethodPower: 'Leistung',
+    searchMethodPrice: 'Gebrauchtpreis',
+    searchMethodFuel: 'Antriebsart / Getr.',
+    searchMethodDrive: 'Antrieb / Karosserie',
+    searchMethodTier: 'Klasse / Kombi',
+    searchExPower1: '150+ PS',
+    searchExPower2: '100-150 PS',
+    searchExFuel1: 'Benzin',
+    searchExFuel2: 'Automatik',
+    searchExTier: 'A-Klasse',
+    searchExCombo: 'Honda Diesel'
   },
   ru: {
     code: 'RU',
-    contender1: 'УЧАСТНИК',
     opponentP2: 'СОПЕРНИК',
-    brandSubtitle: 'ПРЯМОЕ СРАВНЕНИЕ АВТОМОБИЛЕЙ',
-    themeBtn: 'Тема',
-    selectTheme: 'ВЫБЕРИТЕ ТЕМУ',
-    themeDark: 'Тёмная тема',
-    themeLight: 'Светлая тема',
-    themeDarkSoft: 'Тёмная (Мягкие цвета)',
-    themeLightSoft: 'Светлая (Мягкие цвета)',
-    langHeader: 'ЯЗЫК',
+    brandSubtitle: 'АВТОМОБИЛЬНЫЙ ШОУРУМ',
+    navShowroom: 'Шоурум',
+    navVehicle: 'Автомобиль',
+    navCompare: 'Сравнение',
+    compareNeedTwoCars: 'Сначала выберите два автомобиля',
+    themeToggleTitle: 'Сменить тему',
     car1Tag: 'АВТО 1',
     opponentTag: 'СОПЕРНИК',
     swapLabel: '⇄ МЕНЯТЬ',
     expandFullCar: 'ПОЛНОЕ ФОТО',
-    changeCar1: 'СМЕНИТЬ АВТО 1',
-    changeCar2: 'СМЕНИТЬ АВТО 2',
     closeBtn: '✕ ЗАКРЫТЬ',
     statsHeader: 'Статистика (5 категорий)',
     expandAll: '+ Развернуть',
@@ -234,9 +281,9 @@ const UI_TRANSLATIONS = {
     estUsedMarket: 'Рынок б/у (прим.)',
     overallRating: 'Общий рейтинг',
     classSuffix: '-Класс',
-    indexClassesBtn: 'ИНДЕКС',
+    indexClassesBtn: 'Индекс',
     indexClassesTitle: 'КЛАССЫ ИНДЕКСА',
-    weightMenuBtn: 'ВЕСА',
+    weightMenuBtn: 'Веса',
     weightPopoverTitle: 'ЭКВАЛАЙЗЕР ПРИОРИТЕТОВ',
     weightResetBtn: 'СБРОС',
     weightDefaultLabel: 'Стандарт',
@@ -293,6 +340,8 @@ const UI_TRANSLATIONS = {
     outlookStrong: 'Высокая ликвидность • Хороший спрос',
     outlookEnthusiast: 'Культовая модель • Стабильный / рост',
     outlookSteady: 'Умеренное снижение • Предсказуемо',
+    priceCurveTitle: 'Кривая стоимости и амортизации',
+    priceCurveHint: 'Наведите на точки или строки',
     homeKicker: 'АВТОМОБИЛЬНАЯ ДУЭЛЬ',
     homeTitle: 'ПРЯМАЯ ДУЭЛЬ АВТОМОБИЛЕЙ',
     homeIntro: 'Выберите двух претендентов, укажите их двигатели и сравните их лицом к лицу по {pillars} категориям и {ratings} оценкам. Настройте приоритеты под то, что для вас важнее всего, и найдите автомобиль, который подходит именно вам.',
@@ -302,7 +351,40 @@ const UI_TRANSLATIONS = {
     buyerFitBtn: 'КОМУ ПОДОЙДЁТ? • ИТОГ',
     buyerFitCategory: 'КОМУ ПОДОЙДЁТ АВТОМОБИЛЬ',
     buyerFitIdealTitle: 'Отлично подойдёт',
-    buyerFitNotIdealTitle: 'Скорее не подойдёт'
+    buyerFitNotIdealTitle: 'Скорее не подойдёт',
+    searchPlaceholder: 'Поиск марки, модели, мотора...',
+    filterAll: 'Все модели',
+    sortLabel: 'Сортировка',
+    sortCurated: 'Без сортировки',
+    sortScore: 'Лучший рейтинг',
+    sortPrice: 'Ниже цена б/у',
+    sortPower: 'Больше мощность',
+    sortName: 'По алфавиту',
+    lineupAvgTitle: 'Средний рейтинг линейки',
+    medianUsedPriceTitle: 'Медианная цена на рынке б/у',
+    engineSingular: 'мотор',
+    engineFew: 'мотора',
+    enginesCount: 'моторов',
+    noResults: 'По вашему запросу ничего не найдено.',
+    searchHelpTooltip: 'Способы поиска и примеры',
+    searchHelpTitle: 'СПОСОБЫ ПОИСКА',
+    searchHelpHint: 'Нажмите на пример для теста',
+    searchHelpFooter: 'Комбинируйте запросы (напр. Honda Дизель 2010-2014).',
+    searchMethodBrand: 'Марка',
+    searchMethodModel: 'Модель',
+    searchMethodEngine: 'Мотор / Код',
+    searchMethodYear: 'Год / Период',
+    searchMethodPower: 'Мощность',
+    searchMethodPrice: 'Цена б/у',
+    searchMethodFuel: 'Топливо / КПП',
+    searchMethodDrive: 'Привод / Кузов',
+    searchMethodTier: 'Класс / Комбо',
+    searchExPower1: '150+ л.с.',
+    searchExPower2: '100-150 л.с.',
+    searchExFuel1: 'Бензин',
+    searchExFuel2: 'Автомат',
+    searchExTier: 'A-Класс',
+    searchExCombo: 'Honda Дизель'
   }
 };
 
@@ -1664,6 +1746,7 @@ function resolveDynamicDossierNote(rowKey, item, car) {
     }
 
     if (rowKey === 'peakTorque') {
+      const ft = car && car.fuelType;
       const m = rawStr.match(/(\d+)/);
       const nm = m ? parseInt(m[1], 10) : 160;
       if (nm >= 320) {
@@ -1671,6 +1754,9 @@ function resolveDynamicDossierNote(rowKey, item, car) {
       }
       if (nm >= 200) {
         return { negative: false, text: pick({ en: 'Strong, usable mid-range pull that makes highway overtaking relaxed without frequent downshifts.', de: 'Kräftige Mitte für entspanntes Überholen auf Landstraße und Autobahn.', ru: 'Хорошая тяга в среднем диапазоне — уверенные обгоны без лишних переключений.' }) };
+      }
+      if (ft === 'hybrid') {
+        return { negative: false, text: pick({ en: 'Electric motor fills in low-end torque instantly — effortless off the line and in city traffic, with steady, smooth highway acceleration.', de: 'Der E-Motor füllt das Drehmoment untenherum sofort auf — müheloser Antritt im Stadtverkehr und gleichmäßiger Schub auf der Autobahn.', ru: 'Электромотор мгновенно добавляет тягу с низов — лёгкий старт в городе и плавное, ровное ускорение на трассе.' }) };
       }
       return { negative: false, text: pick({ en: 'Modest naturally aspirated torque — smooth around town, rewards a downshift for brisk passing.', de: 'Typisches Saugmotor-Drehmoment — sanft im Alltag, verlangt beim Überholen einen Gang tiefer.', ru: 'Умеренный момент атмосферника — ровно в городе, но для обгона лучше переключиться ниже.' }) };
     }
@@ -2626,7 +2712,10 @@ let duelClashTimer = null;
 let duelSettleTimer = null;
 let activeRosterTarget = 'p1'; // 'p1' (left) or 'p2' (right)
 let currentLang = 'en'; // 'en' | 'de' | 'ru'
-let currentTheme = 'dark'; // 'dark' | 'light' | 'dark-soft' | 'light-soft'
+let currentTheme = 'dark'; // 'dark' | 'light'
+let catalogQuery = '';
+let catalogFilter = 'all';
+let catalogSort = 'curated';
 const expandedPillars = new Set();
 let activeStatsScrollSide = 'left';
 
@@ -3620,6 +3709,8 @@ function bindStatColumnEvents() {
     });
   });
 
+  bindFusedPricePopoverEvents();
+
   // Sync mirrored C1 (left) & C2 (right) custom scrollbars on fused stats list
   const fusedShell = document.querySelector('#stats-center .fused-scroll-shell');
   const fusedList = fusedShell ? fusedShell.querySelector('.fused-stats-list') : null;
@@ -3793,6 +3884,162 @@ function getPriceBreakdownMetrics(car, ui) {
   };
 }
 
+function buildFusedDepMiniGraphHtml(car, m, side, ui) {
+  const isLeft = side === 'left';
+  const sideCls = isLeft ? 'is-c1' : 'is-c2';
+  const sideTag = isLeft ? 'C1' : 'C2';
+  const accentColor = isLeft ? 'var(--p1-accent)' : 'var(--p2-accent)';
+  const gradId = isLeft ? 'fusedDepAreaC1' : 'fusedDepAreaC2';
+
+  const years = String(car.yearMake || '').match(/\d{4}/g);
+  const startYr = years && years.length ? Math.round((Number(years[0]) + Number(years[years.length - 1])) / 2) : 2015;
+  const todayYr = 2026;
+  const age = Math.max(2, todayYr - startYr);
+  const msrp = Math.max(1000, m.msrp);
+  const used = Math.max(500, m.used);
+  const maxVal = Math.ceil((msrp * 1.08) / 5000) * 5000;
+
+  const isEnthusiast = m.retainedPctNum >= 62 || car.id === 'honda-civic-type-r-2015';
+  const isBottomed = !isEnthusiast && Number(m.depPct) >= 72;
+  const isStrong = !isEnthusiast && !isBottomed && m.retainedPctNum >= 40;
+
+  const k = isBottomed ? 3.5 : isStrong ? 2.2 : 2.8;
+  const valueAt = (tFrac) => {
+    if (isEnthusiast) {
+      const dipFloor = Math.min(used * 0.9, msrp * 0.66);
+      const decay = Math.exp(-3.1 * tFrac);
+      const rebound = tFrac > 0.45 ? Math.pow((tFrac - 0.45) / 0.55, 1.5) * (used - dipFloor) : 0;
+      const base = dipFloor + (msrp - dipFloor) * decay;
+      const raw = base + rebound;
+      const rawEnd = dipFloor + (msrp - dipFloor) * Math.exp(-3.1) + (used - dipFloor);
+      return raw + (used - rawEnd) * tFrac;
+    }
+    const ek = Math.exp(-k);
+    const norm = (Math.exp(-k * tFrac) - ek) / (1 - ek);
+    return used + (msrp - used) * norm;
+  };
+
+  let futureVal;
+  if (isEnthusiast) {
+    futureVal = Math.round(used * 1.04);
+  } else {
+    const floorRatio = isBottomed ? 0.14 : isStrong ? 0.18 : 0.15;
+    const floorVal = Math.min(used * 0.78, msrp * floorRatio);
+    const annualRate = 1 - Math.pow(Math.max(0.15, used / msrp), 1 / age);
+    const forwardAnnualRate = Math.min(0.085, Math.max(0.025, annualRate * (isBottomed ? 0.45 : isStrong ? 0.78 : 0.72)));
+    futureVal = Math.round(floorVal + (used - floorVal) * Math.pow(1 - forwardAnnualRate, 3));
+  }
+
+  const padL = 36, padR = 14, padT = 10, padB = 20;
+  const w = 290, h = 114;
+  const plotW = w - padL - padR;
+  const plotH = h - padT - padB;
+  const todayFracX = 0.76;
+  const xFor = (frac) => (padL + frac * plotW).toFixed(1);
+  const yFor = (val) => (padT + (1 - Math.max(0, Math.min(1, val / maxVal))) * plotH).toFixed(1);
+
+  const samples = [];
+  const steps = 14;
+  for (let i = 0; i <= steps; i++) {
+    const tf = i / steps;
+    samples.push({ x: xFor(tf * todayFracX), y: yFor(valueAt(tf)) });
+  }
+
+  const solidPath = samples.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`).join(' ');
+  const areaPath = `${solidPath} L ${samples[steps].x} ${(padT + plotH).toFixed(1)} L ${samples[0].x} ${(padT + plotH).toFixed(1)} Z`;
+
+  const fMidX = xFor(todayFracX + (1 - todayFracX) * 0.5);
+  const fMidY = yFor(used + (futureVal - used) * 0.58);
+  const fEndX = xFor(1.0);
+  const fEndY = yFor(futureVal);
+  const forecastPath = `M ${samples[steps].x} ${samples[steps].y} Q ${fMidX} ${fMidY}, ${fEndX} ${fEndY}`;
+
+  const midT = 0.45;
+  const midCurveX = xFor(midT * todayFracX);
+  const midCurveY = yFor(valueAt(midT));
+
+  const pts = [
+    {
+      key: 'msrp',
+      x: samples[0].x,
+      y: samples[0].y,
+      yr: String(startYr),
+      readout: `${ui.priceMsrpLabel}: ${formatEuroAmount(msrp)}`,
+      color: 'var(--text-main)'
+    },
+    {
+      key: 'depreciation',
+      x: midCurveX,
+      y: midCurveY,
+      yr: String(Math.round(startYr + age * midT)),
+      readout: `${ui.priceDepTotalLabel}: -${formatEuroAmount(m.depTotal)} (-${m.depPct}%)`,
+      color: isLeft ? 'var(--loss-red)' : 'var(--p1-accent)'
+    },
+    {
+      key: 'current',
+      x: samples[steps].x,
+      y: samples[steps].y,
+      yr: String(todayYr),
+      readout: `${ui.priceCurrentLabel}: ${formatEuroAmount(used)} (${m.retainedPct}%)`,
+      color: 'var(--win-green)'
+    },
+    {
+      key: 'outlook',
+      x: fEndX,
+      y: fEndY,
+      yr: String(todayYr + 3),
+      readout: `${ui.priceOutlookLabel} (${todayYr + 3}): ~${formatEuroAmount(futureVal)}`,
+      color: 'var(--forza-lime)'
+    }
+  ];
+
+  const yTicks = [1, 0.5, 0].map((f) => {
+    const val = Math.round((maxVal * f) / 1000) * 1000;
+    const y = yFor(val);
+    return `
+      <line class="fused-dep-grid-line" x1="${padL}" y1="${y}" x2="${w - padR}" y2="${y}"></line>
+      <text class="fused-dep-axis-text" x="${padL - 5}" y="${Number(y) + 3}" text-anchor="end">€${Math.round(val / 1000)}k</text>
+    `;
+  }).join('');
+
+  const svgPointsHtml = pts
+    .map(
+      (pt) => `
+      <g class="fused-dep-point" data-dep-side="${side}" data-dep-key="${pt.key}" data-dep-readout="${escapeHtmlAttr(pt.readout)}">
+        <circle class="fused-dep-ring" cx="${pt.x}" cy="${pt.y}" r="8.5"></circle>
+        <circle class="fused-dep-dot" cx="${pt.x}" cy="${pt.y}" r="4.5" fill="${pt.color}"></circle>
+        <circle cx="${pt.x}" cy="${pt.y}" r="15" fill="transparent"></circle>
+        <text class="fused-dep-axis-text fused-dep-year-text" x="${pt.x}" y="${h - 5}" text-anchor="middle">${pt.yr}</text>
+      </g>
+    `
+    )
+    .join('');
+
+  return `
+    <div class="fused-dep-card ${sideCls}" data-dep-side="${side}">
+      <div class="fused-dep-card-head">
+        <span class="fused-dep-card-car"><span class="fused-dep-dot-badge" aria-hidden="true"></span>${sideTag} · ${car.shortTitle}</span>
+      </div>
+      <div class="fused-dep-readout" data-dep-readout="${side}">${ui.priceCurveHint}</div>
+      <svg class="fused-dep-svg" viewBox="0 0 ${w} ${h}" role="img" aria-label="${escapeHtmlAttr(`${car.shortTitle} — ${ui.priceCurveTitle}`)}">
+        <defs>
+          <linearGradient id="${gradId}" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="${accentColor}" stop-opacity="0.58"></stop>
+            <stop offset="100%" stop-color="${accentColor}" stop-opacity="0"></stop>
+          </linearGradient>
+        </defs>
+        ${yTicks}
+        <path class="fused-dep-area" style="fill:url(#${gradId})" d="${areaPath}"></path>
+        <path class="fused-dep-path" data-dep-curve-path d="${solidPath}"></path>
+        <path class="fused-dep-flow" data-dep-curve-flow d="${solidPath}"></path>
+        <path class="fused-dep-hit" data-dep-side="${side}" data-dep-key="depreciation" data-dep-readout="${escapeHtmlAttr(`${ui.priceDepTotalLabel}: -${formatEuroAmount(m.depTotal)} (-${m.depPct}%)`)}" d="${solidPath}"></path>
+        <path class="fused-dep-forecast" d="${forecastPath}"></path>
+        ${svgPointsHtml}
+      </svg>
+    </div>
+  `;
+}
+
 function buildFusedPriceBreakdownHtml(leftCar, rightCar, ui) {
   const l = getPriceBreakdownMetrics(leftCar, ui);
   const r = getPriceBreakdownMetrics(rightCar, ui);
@@ -3801,50 +4048,140 @@ function buildFusedPriceBreakdownHtml(leftCar, rightCar, ui) {
   const rRetWin = r.retainedPctNum > l.retainedPctNum + 0.05 ? 'is-win' : '';
   const lLossWin = l.annualLoss < r.annualLoss - 5 ? 'is-win' : '';
   const rLossWin = r.annualLoss < l.annualLoss - 5 ? 'is-win' : '';
+  const yrSuffix = currentLang === 'de' ? '/J.' : currentLang === 'ru' ? '/год' : '/yr';
 
   return `
-    <div class="price-popover fused-price-popover" role="dialog" aria-label="${ui.priceTitle}">
+    <div class="price-popover fused-price-popover" role="dialog" aria-label="${ui.priceTitle}" data-fused-dep-scope>
       <div class="fused-price-popover-header">
         <span class="fused-price-car-tag fused-price-car-c1">${leftCar.shortTitle}</span>
         <span class="price-popover-header-title">${ui.priceTitle}</span>
         <span class="fused-price-car-tag fused-price-car-c2">${rightCar.shortTitle}</span>
       </div>
       <div class="fused-price-grid">
-        <div class="fused-price-row">
-          <span class="price-metric-val fused-pm-left">${formatEuroAmount(l.msrp)}</span>
+        <div class="fused-price-row" data-dep-row="msrp">
+          <span class="price-metric-val fused-pm-left" data-dep-val-side="left">${formatEuroAmount(l.msrp)}</span>
           <span class="price-metric-label fused-pm-label">${ui.priceMsrpLabel}</span>
-          <span class="price-metric-val fused-pm-right">${formatEuroAmount(r.msrp)}</span>
+          <span class="price-metric-val fused-pm-right" data-dep-val-side="right">${formatEuroAmount(r.msrp)}</span>
         </div>
-        <div class="fused-price-row">
-          <span class="price-metric-val is-accent fused-pm-left">${formatEuroAmount(l.used)}</span>
-          <span class="price-metric-label fused-pm-label">${ui.priceCurrentLabel}</span>
-          <span class="price-metric-val is-accent fused-pm-right">${formatEuroAmount(r.used)}</span>
-        </div>
-        <div class="fused-price-row">
-          <span class="price-metric-val is-loss fused-pm-left">-${formatEuroAmount(l.depTotal)} (-${l.depPct}%)</span>
+        <div class="fused-price-row" data-dep-row="depreciation">
+          <span class="price-metric-val is-loss fused-pm-left" data-dep-val-side="left">-${formatEuroAmount(l.depTotal)} (-${l.depPct}%)</span>
           <span class="price-metric-label fused-pm-label">${ui.priceDepTotalLabel}</span>
-          <span class="price-metric-val is-loss fused-pm-right">-${formatEuroAmount(r.depTotal)} (-${r.depPct}%)</span>
+          <span class="price-metric-val is-loss fused-pm-right" data-dep-val-side="right">-${formatEuroAmount(r.depTotal)} (-${r.depPct}%)</span>
         </div>
-        <div class="fused-price-row">
-          <span class="price-metric-val ${lRetWin} fused-pm-left">${l.retainedPct}%</span>
-          <span class="price-metric-label fused-pm-label">${ui.priceRetainedLabel}</span>
-          <span class="price-metric-val ${rRetWin} fused-pm-right">${r.retainedPct}%</span>
-        </div>
-        <div class="fused-price-row">
-          <span class="price-metric-val ${lLossWin} fused-pm-left">~${formatEuroAmount(l.annualLoss)}${currentLang === 'de' ? '/J.' : currentLang === 'ru' ? '/год' : '/yr'}</span>
+        <div class="fused-price-row" data-dep-row="depreciation">
+          <span class="price-metric-val ${lLossWin} fused-pm-left" data-dep-val-side="left">~${formatEuroAmount(l.annualLoss)}${yrSuffix}</span>
           <span class="price-metric-label fused-pm-label">${ui.priceAnnualLabel}</span>
-          <span class="price-metric-val ${rLossWin} fused-pm-right">~${formatEuroAmount(r.annualLoss)}${currentLang === 'de' ? '/J.' : currentLang === 'ru' ? '/год' : '/yr'}</span>
+          <span class="price-metric-val ${rLossWin} fused-pm-right" data-dep-val-side="right">~${formatEuroAmount(r.annualLoss)}${yrSuffix}</span>
+        </div>
+        <div class="fused-price-row" data-dep-row="current">
+          <span class="price-metric-val is-accent fused-pm-left" data-dep-val-side="left">${formatEuroAmount(l.used)}</span>
+          <span class="price-metric-label fused-pm-label">${ui.priceCurrentLabel}</span>
+          <span class="price-metric-val is-accent fused-pm-right" data-dep-val-side="right">${formatEuroAmount(r.used)}</span>
+        </div>
+        <div class="fused-price-row" data-dep-row="current">
+          <span class="price-metric-val ${lRetWin} fused-pm-left" data-dep-val-side="left">${l.retainedPct}%</span>
+          <span class="price-metric-label fused-pm-label">${ui.priceRetainedLabel}</span>
+          <span class="price-metric-val ${rRetWin} fused-pm-right" data-dep-val-side="right">${r.retainedPct}%</span>
         </div>
       </div>
-      <div class="fused-price-outlook">
+
+      <div class="fused-dep-section">
+        <div class="fused-dep-section-header">
+          <span class="fused-dep-section-title">${ui.priceCurveTitle}</span>
+          <span class="fused-dep-legend">
+            <span class="fused-dep-legend-item is-c1"><i></i>C1</span>
+            <span class="fused-dep-legend-item is-c2"><i></i>C2</span>
+          </span>
+        </div>
+        <div class="fused-dep-grid">
+          ${buildFusedDepMiniGraphHtml(leftCar, l, 'left', ui)}
+          ${buildFusedDepMiniGraphHtml(rightCar, r, 'right', ui)}
+        </div>
+      </div>
+
+      <hr class="fused-dep-divider" aria-hidden="true" />
+
+      <div class="fused-price-outlook" data-dep-row="outlook">
         <div class="price-outlook-label fused-outlook-title">${ui.priceOutlookLabel}</div>
         <div class="fused-outlook-split">
-          <span class="price-outlook-text fused-outlook-left">${l.outlook}</span>
-          <span class="price-outlook-text fused-outlook-right">${r.outlook}</span>
+          <span class="price-outlook-text fused-outlook-left" data-dep-val-side="left">${l.outlook}</span>
+          <span class="price-outlook-text fused-outlook-right" data-dep-val-side="right">${r.outlook}</span>
         </div>
       </div>
     </div>
   `;
+}
+
+function bindFusedPricePopoverEvents() {
+  const hintText = t().priceCurveHint;
+  document.querySelectorAll('[data-fused-dep-scope]').forEach((scope) => {
+    const setDepHighlight = (key, side) => {
+      const sidesToHighlight = !key ? [] : (side === 'both' ? ['left', 'right'] : [side]);
+
+      scope.querySelectorAll('.fused-dep-point.is-active').forEach((el) => el.classList.remove('is-active'));
+      scope.querySelectorAll('[data-dep-curve-path].is-curve-active, [data-dep-curve-flow].is-curve-active').forEach((el) => el.classList.remove('is-curve-active'));
+      scope.querySelectorAll('[data-dep-row].is-dep-row-active').forEach((el) => el.classList.remove('is-dep-row-active'));
+      scope.querySelectorAll('[data-dep-val-side].is-dep-highlight').forEach((el) => {
+        el.classList.remove('is-dep-highlight', 'is-dep-hl-c1', 'is-dep-hl-c2');
+      });
+
+      ['left', 'right'].forEach((s) => {
+        const readout = scope.querySelector(`[data-dep-readout="${s}"]`);
+        if (!readout) return;
+        if (!key || !sidesToHighlight.includes(s)) {
+          readout.textContent = hintText;
+          readout.classList.remove('is-active');
+        }
+      });
+
+      if (!key) return;
+
+      scope.querySelectorAll(`[data-dep-row="${key}"]`).forEach((row) => {
+        row.classList.add('is-dep-row-active');
+        sidesToHighlight.forEach((s) => {
+          const valCls = s === 'left' ? 'is-dep-hl-c1' : 'is-dep-hl-c2';
+          row.querySelectorAll(`[data-dep-val-side="${s}"]`).forEach((cell) => {
+            cell.classList.add('is-dep-highlight', valCls);
+          });
+        });
+      });
+
+      sidesToHighlight.forEach((s) => {
+        const card = scope.querySelector(`.fused-dep-card[data-dep-side="${s}"]`);
+        if (!card) return;
+        const pt = card.querySelector(`.fused-dep-point[data-dep-key="${key}"]`);
+        if (pt) {
+          pt.classList.add('is-active');
+          const readout = card.querySelector(`[data-dep-readout="${s}"]`);
+          const ptText = pt.getAttribute('data-dep-readout');
+          if (readout && ptText) {
+            readout.textContent = ptText;
+            readout.classList.add('is-active');
+          }
+        }
+        if (key === 'depreciation') {
+          const path = card.querySelector('[data-dep-curve-path]');
+          const flow = card.querySelector('[data-dep-curve-flow]');
+          if (path) path.classList.add('is-curve-active');
+          if (flow) flow.classList.add('is-curve-active');
+        }
+      });
+    };
+
+    scope.querySelectorAll('.fused-dep-point, .fused-dep-hit').forEach((el) => {
+      el.addEventListener('mouseenter', () => {
+        setDepHighlight(el.getAttribute('data-dep-key'), el.getAttribute('data-dep-side'));
+      });
+      el.addEventListener('mouseleave', () => setDepHighlight(null, null));
+    });
+
+    scope.querySelectorAll('[data-dep-row]').forEach((row) => {
+      row.addEventListener('mouseenter', () => {
+        setDepHighlight(row.getAttribute('data-dep-row'), 'both');
+      });
+      row.addEventListener('mouseleave', () => setDepHighlight(null, null));
+    });
+  });
 }
 
 function buildFusedBottomSummaryHtml(leftCar, rightCar, ui) {
@@ -3864,7 +4201,7 @@ function buildFusedBottomSummaryHtml(leftCar, rightCar, ui) {
       <div class="forza-purchase-box fused-summary-row fused-summary-used">
         <span class="fused-sum-val fused-sum-left">${leftCar.estUsedPrice}</span>
         <span class="price-info-anchor fused-price-anchor">
-          <button type="button" class="cr-badge price-info-trigger" title="${ui.priceTitle}" aria-label="${ui.priceTitle}">€</button>
+          <button type="button" class="cr-badge price-info-trigger" aria-label="${ui.priceTitle}">€</button>
           <span class="fused-sum-label fused-used-label">${ui.estUsedMarket}</span>
           ${buildFusedPriceBreakdownHtml(leftCar, rightCar, ui)}
         </span>
@@ -4215,137 +4552,9 @@ function setPopupOpen(btn, menu, isOpen) {
 }
 
 const CAR_TYPE_ORDER = ['subcompact', 'hatchback', 'hot-hatch', 'sedan', 'suv'];
-let carListSortMode = 'byType';
 
 function getCarType(baseCar) {
   return (baseCar && baseCar.carType) || 'hatchback';
-}
-
-function renderCarSelectorSide(side, selectedCarId, selectedEngineId) {
-  const ui = t();
-  const pillSpan = document.getElementById(side === 'left' ? 'car-pill-left' : 'car-pill-right');
-  const dropdown = document.getElementById(side === 'left' ? 'car-dropdown-left' : 'car-dropdown-right');
-  const btn = document.getElementById(side === 'left' ? 'car-btn-left' : 'car-btn-right');
-
-  if (!pillSpan || !dropdown || !btn) return;
-
-  if (selectedCarId) {
-    const activeCar = getCarById(selectedCarId, selectedEngineId);
-    const activePi = calculateOverallIndex(activeCar);
-    pillSpan.textContent = `#${activeCar.number} — ${activeCar.fullName} [${activePi.piClass} ${activePi.piScore}/10]`;
-  } else {
-    pillSpan.textContent = ui.chooseCarPlaceholder;
-  }
-
-  const buildCarOptionHtml = (baseCar) => {
-    const isSelected = baseCar.id === selectedCarId;
-    const engineId = isSelected ? selectedEngineId : baseCar.defaultEngineId;
-    const car = getCarById(baseCar.id, engineId);
-    const { piBadgeText, piScore, piClassCss } = calculateOverallIndex(car);
-
-    return `
-      <button
-        type="button"
-        class="engine-option-btn ${isSelected ? 'active' : ''}"
-        data-car-id="${car.id}"
-      >
-        <div class="engine-option-main">
-          <div class="engine-option-title">
-            <span>#${car.number} — ${car.fullName}</span>
-          </div>
-          <div class="engine-option-sub">${car.engineBadge}</div>
-        </div>
-        <span class="roster-class-pill ${piClassCss} engine-option-pi">${piBadgeText} ${piScore}/10</span>
-      </button>
-    `;
-  };
-
-  let bodyHtml = '';
-  if (carListSortMode === 'unsorted') {
-    const sortedByNumber = [...CAR_ROSTER].sort((a, b) => Number(a.number) - Number(b.number));
-    bodyHtml = `<div class="engine-category-group">${sortedByNumber.map(buildCarOptionHtml).join('')}</div>`;
-  } else {
-    const categories = [
-      { key: 'subcompact', label: ui.carTypeSubcompact },
-      { key: 'hatchback', label: ui.carTypeHatchback },
-      { key: 'hot-hatch', label: ui.carTypeHotHatch },
-      { key: 'sedan', label: ui.carTypeSedan },
-      { key: 'suv', label: ui.carTypeSuv }
-    ];
-
-    bodyHtml = categories
-      .map((cat) => {
-        const carsInCat = CAR_ROSTER
-          .filter((baseCar) => getCarType(baseCar) === cat.key)
-          .sort((a, b) => Number(a.number) - Number(b.number));
-
-        if (carsInCat.length === 0) return '';
-
-        return `
-          <div class="engine-category-group">
-            <div class="engine-category-header car-cat-${cat.key}">
-              <span class="engine-category-dot"></span>
-              <span>${cat.label}</span>
-            </div>
-            ${carsInCat.map(buildCarOptionHtml).join('')}
-          </div>
-        `;
-      })
-      .filter(Boolean)
-      .join('');
-  }
-
-  dropdown.innerHTML = `
-    <div class="engine-dropdown-header car-dropdown-header">
-      <button type="button" class="car-sort-tab ${carListSortMode === 'unsorted' ? 'active' : ''}" data-car-sort="unsorted">${ui.carSortUnsorted}</button>
-      <button type="button" class="car-sort-tab ${carListSortMode === 'byType' ? 'active' : ''}" data-car-sort="byType">${ui.selectCarHeader}</button>
-    </div>
-    ${bodyHtml}
-  `;
-
-  dropdown.querySelectorAll('[data-car-sort]').forEach((sortBtn) => {
-    sortBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const nextMode = sortBtn.getAttribute('data-car-sort');
-      if (nextMode && nextMode !== carListSortMode) {
-        carListSortMode = nextMode;
-        renderDropdowns();
-        setPopupOpen(btn, dropdown, true);
-      }
-    });
-  });
-
-  dropdown.querySelectorAll('.engine-option-btn').forEach((optBtn) => {
-    optBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const wasBothSelected = Boolean(selectedLeftId && selectedRightId);
-      const chosenId = optBtn.getAttribute('data-car-id');
-      if (side === 'left') {
-        selectedLeftId = chosenId;
-        selectedLeftEngineId = getBaseCarById(chosenId).defaultEngineId;
-      } else {
-        selectedRightId = chosenId;
-        selectedRightEngineId = getBaseCarById(chosenId).defaultEngineId;
-      }
-      setPopupOpen(btn, dropdown, false);
-      if (!isHomeView && selectedLeftId && selectedRightId && (!wasBothSelected || smashPickerForceOpen)) {
-        const smashStage = document.getElementById('smash-picker-stage');
-        const fromPicker = Boolean(smashStage && !smashStage.classList.contains('is-hidden'));
-        runDuelEntranceSequence({ fromSmashPicker: fromPicker });
-        return;
-      }
-      if (selectedLeftId && selectedRightId) {
-        smashPickerForceOpen = false;
-      }
-      updateArena();
-    });
-  });
-}
-
-// Render Top Select Dropdowns (Grouped & Sorted by Car Type)
-function renderDropdowns() {
-  renderCarSelectorSide('left', selectedLeftId, selectedLeftEngineId);
-  renderCarSelectorSide('right', selectedRightId, selectedRightEngineId);
 }
 
 function getEngineCategory(eng) {
@@ -4580,20 +4789,27 @@ function applyStaticTranslations() {
   const ui = t();
   document.documentElement.lang = currentLang;
 
-  document.getElementById('label-contender-1').textContent = ui.contender1;
-  document.getElementById('label-opponent-2').textContent = ui.opponentP2;
-  document.getElementById('brand-subtitle').textContent = ui.brandSubtitle;
+  const brandSubtitle = document.getElementById('brand-subtitle');
+  if (brandSubtitle) brandSubtitle.textContent = ui.brandSubtitle;
 
-  document.getElementById('theme-btn-label').textContent = ui.themeBtn;
-  document.getElementById('theme-menu-header').textContent = ui.selectTheme;
-  document.getElementById('theme-opt-dark').textContent = ui.themeDark;
-  document.getElementById('theme-opt-light').textContent = ui.themeLight;
-  document.getElementById('theme-opt-dark-soft').textContent = ui.themeDarkSoft;
-  document.getElementById('theme-opt-light-soft').textContent = ui.themeLightSoft;
+  const navCatalogLabel = document.getElementById('nav-catalog-label');
+  const navCatalogCount = document.getElementById('nav-catalog-count');
+  const navShowroomLabel = document.getElementById('nav-showroom-label');
+  const navCompareLabel = document.getElementById('nav-compare-label');
+  if (navCatalogLabel) navCatalogLabel.textContent = ui.navShowroom;
+  if (navCatalogCount) navCatalogCount.textContent = String(Array.isArray(CAR_ROSTER) ? CAR_ROSTER.length : 0);
+  if (navShowroomLabel) navShowroomLabel.textContent = ui.navVehicle;
+  if (navCompareLabel) navCompareLabel.textContent = ui.navCompare;
 
-  document.getElementById('lang-menu-header').textContent = ui.langHeader;
-  document.getElementById('current-lang-code').textContent = ui.code;
-  document.getElementById('current-lang-flag').innerHTML = FLAG_SVGS[currentLang];
+  const themeToggleBtn = document.getElementById('theme-toggle-btn');
+  if (themeToggleBtn) {
+    themeToggleBtn.title = ui.themeToggleTitle;
+    themeToggleBtn.setAttribute('aria-label', ui.themeToggleTitle);
+  }
+
+  document.querySelectorAll('.lang-btn[data-lang-choice]').forEach((btn) => {
+    btn.classList.toggle('active', btn.getAttribute('data-lang-choice') === currentLang);
+  });
 
   document.getElementById('tag-car-1').textContent = ui.car1Tag;
   document.getElementById('tag-opponent').textContent = ui.opponentTag;
@@ -4601,18 +4817,14 @@ function applyStaticTranslations() {
   if (vsSwapLabelEl) vsSwapLabelEl.textContent = ui.swapLabel;
   document.getElementById('expand-label-left').textContent = ui.expandFullCar;
   document.getElementById('expand-label-right').textContent = ui.expandFullCar;
-  const changeCarLeftLabel = document.getElementById('change-car-label-left');
-  if (changeCarLeftLabel) changeCarLeftLabel.textContent = ui.changeCar1;
-  const changeCarRightLabel = document.getElementById('change-car-label-right');
-  if (changeCarRightLabel) changeCarRightLabel.textContent = ui.changeCar2;
-  const changeCarLeftBtnEl = document.getElementById('change-car-left-btn');
-  if (changeCarLeftBtnEl) changeCarLeftBtnEl.title = ui.changeCar1;
-  const changeCarRightBtnEl = document.getElementById('change-car-right-btn');
-  if (changeCarRightBtnEl) changeCarRightBtnEl.title = ui.changeCar2;
+  const navCompareHint = document.getElementById('nav-compare-hint');
+  if (navCompareHint) navCompareHint.textContent = ui.compareNeedTwoCars;
   document.getElementById('lightbox-close-btn').textContent = ui.closeBtn;
 
-  document.getElementById('index-classes-btn-label').textContent = ui.indexClassesBtn;
-  document.getElementById('index-classes-popover-title').textContent = ui.indexClassesTitle;
+  const indexBtnLabel = document.getElementById('index-classes-btn-label');
+  const indexPopoverTitle = document.getElementById('index-classes-popover-title');
+  if (indexBtnLabel) indexBtnLabel.textContent = ui.indexClassesBtn;
+  if (indexPopoverTitle) indexPopoverTitle.textContent = ui.indexClassesTitle;
 
   const weightBtnLabel = document.getElementById('weight-menu-btn-label');
   const weightPopoverTitle = document.getElementById('weight-popover-title');
@@ -4620,6 +4832,15 @@ function applyStaticTranslations() {
   if (weightBtnLabel) weightBtnLabel.textContent = ui.weightMenuBtn;
   if (weightPopoverTitle) weightPopoverTitle.textContent = ui.weightPopoverTitle;
   if (weightResetBtn) weightResetBtn.textContent = ui.weightResetBtn;
+
+  const catalogSearch = document.getElementById('catalog-search');
+  if (catalogSearch) catalogSearch.placeholder = ui.searchPlaceholder;
+  const catalogSortLabel = document.getElementById('catalog-sort-label');
+  if (catalogSortLabel) catalogSortLabel.textContent = ui.sortLabel;
+  if (typeof renderSearchHelpPopover === 'function') renderSearchHelpPopover();
+  if (typeof renderCatalogFilters === 'function') renderCatalogFilters();
+  if (typeof renderSortDropdown === 'function') renderSortDropdown();
+
   if (typeof renderWeightEqualizer === 'function') renderWeightEqualizer();
   renderHomeLanding();
 }
@@ -5463,6 +5684,448 @@ function getCarThumbSrc(imagePath) {
   return imagePath ? imagePath.replace(/^assets\/([^/]+)\.(png|jpe?g|webp)$/i, 'assets/thumbs/$1.webp') : '';
 }
 
+function getCarTypeLabel(typeKey) {
+  const ui = t();
+  const map = {
+    subcompact: ui.carTypeSubcompact,
+    hatchback: ui.carTypeHatchback,
+    'hot-hatch': ui.carTypeHotHatch,
+    sedan: ui.carTypeSedan,
+    suv: ui.carTypeSuv
+  };
+  return map[typeKey] || typeKey;
+}
+
+function formatEngineCount(count) {
+  const ui = t();
+  if (currentLang === 'ru') {
+    const mod100 = count % 100;
+    const mod10 = count % 10;
+    if (mod10 === 1 && mod100 !== 11) return `${count} ${ui.engineSingular}`;
+    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return `${count} ${ui.engineFew}`;
+    return `${count} ${ui.enginesCount}`;
+  }
+  return `${count} ${count === 1 ? ui.engineSingular : ui.enginesCount}`;
+}
+
+function getCarPowerRange(baseCar) {
+  const hps = (baseCar.engines || []).map((e) => getEngineHp(e)).filter((n) => n > 0);
+  if (!hps.length) return '';
+  const min = Math.min(...hps);
+  const max = Math.max(...hps);
+  const unit = currentLang === 'de' ? 'PS' : currentLang === 'ru' ? 'л.с.' : 'HP';
+  return min === max ? `${min} ${unit}` : `${min}–${max} ${unit}`;
+}
+
+function calculateLineupAverageIndex(baseCar) {
+  const engines = baseCar.engines || [];
+  if (engines.length <= 1) {
+    const single = calculateOverallIndex(getCarById(baseCar.id, baseCar.defaultEngineId));
+    return { ...single, isAverage: false };
+  }
+  const scores = engines.map((eng) => calculateOverallIndex(getCarById(baseCar.id, eng.id)).piNum);
+  const avg = scores.reduce((a, b) => a + b, 0) / scores.length;
+  const piNum = Math.round(avg * 10) / 10;
+  const piScore = piNum === 10 ? '10' : piNum.toFixed(1);
+
+  let piClass = 'F';
+  let piClassCss = 'class-f';
+  if (piNum >= 9.6) { piClass = 'S+'; piClassCss = 'class-s-plus'; }
+  else if (piNum >= 9.0) { piClass = 'S'; piClassCss = 'class-s'; }
+  else if (piNum >= 8.0) { piClass = 'A'; piClassCss = 'class-a'; }
+  else if (piNum >= 7.0) { piClass = 'B'; piClassCss = 'class-b'; }
+  else if (piNum >= 6.0) { piClass = 'C'; piClassCss = 'class-c'; }
+  else if (piNum >= 5.0) { piClass = 'D'; piClassCss = 'class-d'; }
+
+  return {
+    piNum,
+    piScore,
+    piClass,
+    piClassCss,
+    isAverage: true
+  };
+}
+
+function calculateMedianUsedPrice(baseCar) {
+  const engines = baseCar.engines || [];
+  const prices = engines
+    .map((e) => parseEuroPrice(e.estUsedPrice))
+    .filter((n) => n > 0)
+    .sort((a, b) => a - b);
+  if (!prices.length) {
+    const fallback = getCarById(baseCar.id, baseCar.defaultEngineId);
+    return parseEuroPrice(fallback && fallback.estUsedPrice);
+  }
+  const mid = Math.floor(prices.length / 2);
+  if (prices.length % 2 === 1) return prices[mid];
+  return Math.round((prices[mid - 1] + prices[mid]) / 2);
+}
+
+function buildForzaIndexBlock(idx, compact = true) {
+  const ui = t();
+  const avgTag = idx.isAverage ? `<span class="fib-avg-tag" title="${ui.lineupAvgTitle}">Ø</span>` : '';
+  return `
+    <div class="forza-index-block ${compact ? 'compact' : ''}" data-tier="${idx.piClassCss}">
+      <span class="fib-class">${idx.piClass}</span>
+      <span class="fib-score">${avgTag}${idx.piScore}</span>
+    </div>
+  `;
+}
+
+function renderCatalogFilters() {
+  const ui = t();
+  const container = document.getElementById('catalog-filter-pills');
+  if (!container) return;
+
+  const types = [{ key: 'all', label: ui.filterAll }].concat(
+    CAR_TYPE_ORDER.map((k) => ({ key: k, label: getCarTypeLabel(k) }))
+  );
+
+  container.innerHTML = types
+    .map(
+      (item) =>
+        `<button type="button" class="filter-pill-btn ${catalogFilter === item.key ? 'active' : ''}" data-filter="${item.key}">${item.label}</button>`
+    )
+    .join('');
+
+  container.querySelectorAll('[data-filter]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      catalogFilter = btn.getAttribute('data-filter') || 'all';
+      renderCatalogFilters();
+      renderSmashPicker();
+    });
+  });
+}
+
+function renderSortDropdown() {
+  const ui = t();
+  const options = [
+    { val: 'curated', label: ui.sortCurated },
+    { val: 'score-desc', label: ui.sortScore },
+    { val: 'price-asc', label: ui.sortPrice },
+    { val: 'power-desc', label: ui.sortPower },
+    { val: 'name-asc', label: ui.sortName }
+  ];
+  const active = options.find((o) => o.val === catalogSort) || options[0];
+  const curEl = document.getElementById('catalog-sort-current');
+  const menuEl = document.getElementById('catalog-sort-menu');
+  if (curEl) curEl.textContent = active.label;
+  if (!menuEl) return;
+
+  menuEl.innerHTML = options
+    .map(
+      (o) =>
+        `<button type="button" class="sort-custom-option ${o.val === catalogSort ? 'selected' : ''}" data-sort-val="${o.val}">${o.label}</button>`
+    )
+    .join('');
+
+  menuEl.querySelectorAll('[data-sort-val]').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      catalogSort = btn.getAttribute('data-sort-val') || 'curated';
+      const wrap = document.getElementById('catalog-sort-dropdown');
+      const trig = document.getElementById('catalog-sort-trigger');
+      if (wrap) wrap.classList.remove('open');
+      if (trig) trig.setAttribute('aria-expanded', 'false');
+      renderSortDropdown();
+      renderSmashPicker();
+    });
+  });
+}
+
+let searchHelpPinned = false;
+let searchHelpLeaveTimer = null;
+
+function setSearchHelpOpen(isOpen) {
+  const btn = document.getElementById('catalog-search-help-btn');
+  const popover = document.getElementById('catalog-search-help-popover');
+  if (!btn || !popover) return;
+  btn.classList.toggle('is-open', isOpen);
+  btn.setAttribute('aria-expanded', String(isOpen));
+  popover.classList.toggle('open', isOpen);
+  popover.setAttribute('aria-hidden', String(!isOpen));
+}
+
+function closeSearchHelpPopover() {
+  clearTimeout(searchHelpLeaveTimer);
+  searchHelpLeaveTimer = null;
+  searchHelpPinned = false;
+  setSearchHelpOpen(false);
+}
+
+function renderSearchHelpPopover() {
+  const ui = t();
+  const btn = document.getElementById('catalog-search-help-btn');
+  const popover = document.getElementById('catalog-search-help-popover');
+  if (btn) {
+    btn.removeAttribute('title');
+    btn.setAttribute('aria-label', ui.searchHelpTooltip);
+  }
+  if (!popover) return;
+
+  const rows = [
+    { method: ui.searchMethodBrand, examples: ['Toyota', 'Honda'] },
+    { method: ui.searchMethodModel, examples: ['Auris', 'Civic'] },
+    { method: ui.searchMethodEngine, examples: ['1.8', 'K20'] },
+    { method: ui.searchMethodYear, examples: ['2010', '2010-2014'] },
+    { method: ui.searchMethodPower, examples: [ui.searchExPower1, ui.searchExPower2] },
+    { method: ui.searchMethodPrice, examples: ['<8000€', '6000-9000€'] },
+    { method: ui.searchMethodFuel, examples: [ui.searchExFuel1, ui.searchExFuel2] },
+    { method: ui.searchMethodDrive, examples: ['AWD', 'SUV'] },
+    { method: ui.searchMethodTier, examples: [ui.searchExTier, ui.searchExCombo] }
+  ];
+
+  const rowsHtml = rows
+    .map(
+      (r) => `
+        <div class="search-help-row">
+          <span class="search-help-method">${r.method}</span>
+          <div class="search-help-chips">
+            ${r.examples
+              .map(
+                (ex) =>
+                  `<button type="button" class="search-help-chip" data-search-example="${escapeHtmlAttr(ex)}">${escapeHtmlAttr(ex)}</button>`
+              )
+              .join('')}
+          </div>
+        </div>
+      `
+    )
+    .join('');
+
+  popover.innerHTML = `
+    <div class="search-help-header">
+      <span class="search-help-title">${ui.searchHelpTitle}</span>
+      <span class="search-help-sub">${ui.searchHelpHint}</span>
+    </div>
+    <div class="search-help-list">${rowsHtml}</div>
+    <div class="search-help-footer">${ui.searchHelpFooter}</div>
+  `;
+
+  popover.querySelectorAll('.search-help-chip[data-search-example]').forEach((chip) => {
+    chip.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const ex = chip.getAttribute('data-search-example') || '';
+      const searchInput = document.getElementById('catalog-search');
+      catalogQuery = ex;
+      if (searchInput) {
+        searchInput.value = ex;
+        searchInput.focus();
+      }
+      closeSearchHelpPopover();
+      renderSmashPicker();
+    });
+  });
+}
+
+function matchesCatalogQuery(item, rawQuery) {
+  const normalized = String(rawQuery || '')
+    .trim()
+    .toLowerCase()
+    .replace(/(\d)[,.](\d{3})(?!\d)/g, '$1$2')
+    .replace(/€\s*(\d)/g, '€$1')
+    .replace(/(\d)\s*[–—-]\s*(€?\d)/g, '$1-$2')
+    .replace(/([<>]=?)\s*(€?\d)/g, '$1$2')
+    .replace(/(\d+(?:-\d+)?\+?)\s*(hp|ps|л\.с\.|лс|€|eur)(?=\s|$)/gi, '$1$2');
+
+  const tokens = normalized.split(/\s+/).filter(Boolean);
+  if (!tokens.length) return true;
+
+  const ui = t();
+  const { baseCar, idx, medianUsedNum } = item;
+  const fuelLabels = {
+    petrol: ui.engineCategoryPetrol,
+    diesel: ui.engineCategoryDiesel,
+    hybrid: ui.engineCategoryHybrid
+  };
+
+  const years = String(baseCar.yearMake || '').match(/\d{4}/g) || [];
+  const startY = years.length ? Number(years[0]) : 0;
+  const endY = years.length > 1 ? Number(years[years.length - 1]) : startY;
+  const engineHps = (baseCar.engines || []).map((e) => getEngineHp(e)).filter((n) => n > 0);
+
+  const typeLabel = getCarTypeLabel(getCarType(baseCar));
+  const engineHay = (baseCar.engines || [])
+    .map((e) => {
+      const cat = getEngineCategory(e);
+      const subEn = e.engineSubLabel && e.engineSubLabel.en ? e.engineSubLabel.en : '';
+      const subCur = e.engineSubLabel && e.engineSubLabel[currentLang] ? e.engineSubLabel[currentLang] : '';
+      return `${e.engineBadge || ''} ${e.fullName || ''} ${e.fuelType || ''} ${fuelLabels[cat] || ''} ${e.drivetrain || ''} ${subEn} ${subCur}`;
+    })
+    .join(' ');
+  const hay = `${baseCar.fullName} ${getSmashGridLabel(baseCar)} ${baseCar.yearMake} ${baseCar.drivetrain} ${baseCar.carType} ${typeLabel} ${engineHay}`.toLowerCase();
+
+  const testCmp = (actual, op, val) => {
+    if (op === '>') return actual > val;
+    if (op === '>=') return actual >= val;
+    if (op === '<') return actual < val;
+    if (op === '<=') return actual <= val;
+    return actual === val;
+  };
+
+  const tierMap = { а: 'a', в: 'b', с: 'c' };
+
+  return tokens.every((tok) => {
+    const powerMatch = tok.match(/^(>=|<=|>|<)?(\d{2,4})(?:-(\d{2,4}))?(\+)?(?:hp|ps|л\.с\.|лс)$/);
+    if (powerMatch) {
+      const [, op, v1Str, v2Str, plus] = powerMatch;
+      const v1 = Number(v1Str);
+      if (v2Str) {
+        const v2 = Number(v2Str);
+        const lo = Math.min(v1, v2);
+        const hi = Math.max(v1, v2);
+        return engineHps.some((hp) => hp >= lo && hp <= hi);
+      }
+      if (plus) return engineHps.some((hp) => hp >= v1);
+      return engineHps.some((hp) => testCmp(hp, op || '=', v1));
+    }
+
+    const yearRangeMatch = tok.match(/^(19\d{2}|20\d{2})-(19\d{2}|20\d{2})$/);
+    if (yearRangeMatch) {
+      if (!startY) return false;
+      const y1 = Number(yearRangeMatch[1]);
+      const y2 = Number(yearRangeMatch[2]);
+      const lo = Math.min(y1, y2);
+      const hi = Math.max(y1, y2);
+      return startY <= hi && endY >= lo;
+    }
+
+    const yearSingleMatch = tok.match(/^(19\d{2}|20\d{2})$/);
+    if (yearSingleMatch) {
+      const y = Number(yearSingleMatch[1]);
+      return (startY && startY <= y && y <= endY) || hay.includes(tok);
+    }
+
+    const yearCmpMatch = tok.match(/^(>=|<=|>|<)(19\d{2}|20\d{2})$/);
+    if (yearCmpMatch) {
+      if (!startY) return false;
+      const [, op, yStr] = yearCmpMatch;
+      const y = Number(yStr);
+      return op === '>' || op === '>=' ? testCmp(endY, op, y) : testCmp(startY, op, y);
+    }
+
+    const priceMatch = tok.match(/^(>=|<=|>|<)?€?(\d{3,6})(?:-€?(\d{3,6}))?(?:€|eur)$|^(>=|<=|>|<)€(\d{3,6})$|^(>=|<=|>|<)(\d{4,6})$/);
+    if (priceMatch) {
+      const op = priceMatch[1] || priceMatch[4] || priceMatch[6] || '';
+      const v1 = Number(priceMatch[2] || priceMatch[5] || priceMatch[7]);
+      const v2 = priceMatch[3] ? Number(priceMatch[3]) : null;
+      if (v2 !== null) {
+        const lo = Math.min(v1, v2);
+        const hi = Math.max(v1, v2);
+        return medianUsedNum >= lo && medianUsedNum <= hi;
+      }
+      if (op) return testCmp(medianUsedNum, op, v1);
+      return Math.abs(medianUsedNum - v1) <= 500 || hay.includes(tok);
+    }
+
+    const barePowerMatch = tok.match(/^(>=|<=|>|<)(\d{2,3})$|^(\d{2,3})\+$/);
+    if (barePowerMatch) {
+      if (barePowerMatch[3]) {
+        const v = Number(barePowerMatch[3]);
+        return engineHps.some((hp) => hp >= v);
+      }
+      const op = barePowerMatch[1];
+      const v = Number(barePowerMatch[2]);
+      return engineHps.some((hp) => testCmp(hp, op, v));
+    }
+
+    const tierMatch = tok.match(/^(s\+|s|a|b|c|d|f|а|в|с)-(?:class|klasse|класс)$/);
+    if (tierMatch) {
+      const wanted = tierMap[tierMatch[1]] || tierMatch[1];
+      return idx.piClass.toLowerCase() === wanted;
+    }
+
+    if (/^(automatic|auto|automatik|автомат|акпп)$/.test(tok)) {
+      return /(e-?cvt|\bcvt\b|\bdsg\b|s-?tronic|\bdct\b|powershift|multidrive|[4-9]g-?tronic|\b[4-9]-?at\b|automatik|automatic|акпп|вариатор)/i.test(engineHay);
+    }
+
+    if (/^(manual|schalter|schaltgetriebe|механика|мкпп)$/.test(tok)) {
+      return /(\b[5-6]-?mt\b|manual|schaltgetriebe|schalter|мкпп)/i.test(engineHay);
+    }
+
+    return hay.includes(tok);
+  });
+}
+
+function initCatalogControls() {
+  const searchInput = document.getElementById('catalog-search');
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      catalogQuery = e.target.value || '';
+      renderSmashPicker();
+    });
+  }
+
+  const searchWrap = document.getElementById('catalog-search-wrap');
+  const helpBtn = document.getElementById('catalog-search-help-btn');
+  const helpPopover = document.getElementById('catalog-search-help-popover');
+  const sortWrap = document.getElementById('catalog-sort-dropdown');
+  const sortTrigger = document.getElementById('catalog-sort-trigger');
+
+  if (searchWrap && helpBtn && helpPopover) {
+    const cancelLeave = () => {
+      clearTimeout(searchHelpLeaveTimer);
+      searchHelpLeaveTimer = null;
+    };
+
+    const scheduleLeave = () => {
+      if (searchHelpPinned) return;
+      cancelLeave();
+      searchHelpLeaveTimer = setTimeout(() => {
+        if (!searchHelpPinned) setSearchHelpOpen(false);
+      }, 150);
+    };
+
+    const openFromHover = () => {
+      cancelLeave();
+      if (sortWrap) sortWrap.classList.remove('open');
+      if (sortTrigger) sortTrigger.setAttribute('aria-expanded', 'false');
+      setSearchHelpOpen(true);
+    };
+
+    helpBtn.addEventListener('mouseenter', openFromHover);
+    helpPopover.addEventListener('mouseenter', openFromHover);
+    helpBtn.addEventListener('mouseleave', scheduleLeave);
+    helpPopover.addEventListener('mouseleave', scheduleLeave);
+
+    helpBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      cancelLeave();
+      searchHelpPinned = !searchHelpPinned;
+      if (searchHelpPinned) {
+        if (sortWrap) sortWrap.classList.remove('open');
+        if (sortTrigger) sortTrigger.setAttribute('aria-expanded', 'false');
+        setSearchHelpOpen(true);
+      } else {
+        setSearchHelpOpen(false);
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!searchWrap.contains(e.target)) {
+        closeSearchHelpPopover();
+      }
+    });
+  }
+
+  if (sortWrap && sortTrigger) {
+    sortTrigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeSearchHelpPopover();
+      const willOpen = !sortWrap.classList.contains('open');
+      sortWrap.classList.toggle('open', willOpen);
+      sortTrigger.setAttribute('aria-expanded', String(willOpen));
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!sortWrap.contains(e.target)) {
+        sortWrap.classList.remove('open');
+        sortTrigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+}
+
 function renderSmashPicker() {
   const ui = t();
   const titleEl = document.getElementById('smash-title');
@@ -5539,11 +6202,39 @@ function renderSmashPicker() {
     });
   });
 
-  const orderedCars = [...CAR_ROSTER].sort(
-    (a, b) => (a.gridOrder ?? Number(a.number)) - (b.gridOrder ?? Number(b.number))
-  );
+  let items = CAR_ROSTER.map((baseCar) => {
+    const idx = calculateLineupAverageIndex(baseCar);
+    const medianUsedNum = calculateMedianUsedPrice(baseCar);
+    const maxHp = Math.max(...(baseCar.engines || []).map((e) => getEngineHp(e)), 0);
+    return { baseCar, idx, medianUsedNum, maxHp };
+  });
 
-  gridEl.innerHTML = orderedCars.map((baseCar) => {
+  if (catalogFilter !== 'all') {
+    items = items.filter((item) => getCarType(item.baseCar) === catalogFilter);
+  }
+
+  if (catalogQuery.trim()) {
+    items = items.filter((item) => matchesCatalogQuery(item, catalogQuery));
+  }
+
+  if (catalogSort === 'curated') {
+    items.sort((a, b) => (a.baseCar.gridOrder ?? Number(a.baseCar.number)) - (b.baseCar.gridOrder ?? Number(b.baseCar.number)));
+  } else if (catalogSort === 'score-desc') {
+    items.sort((a, b) => b.idx.piNum - a.idx.piNum);
+  } else if (catalogSort === 'price-asc') {
+    items.sort((a, b) => a.medianUsedNum - b.medianUsedNum);
+  } else if (catalogSort === 'power-desc') {
+    items.sort((a, b) => b.maxHp - a.maxHp);
+  } else if (catalogSort === 'name-asc') {
+    items.sort((a, b) => getSmashGridLabel(a.baseCar).localeCompare(getSmashGridLabel(b.baseCar)));
+  }
+
+  if (!items.length) {
+    gridEl.innerHTML = `<div class="catalog-empty-state">${ui.noResults}</div>`;
+    return;
+  }
+
+  gridEl.innerHTML = items.map(({ baseCar, idx, medianUsedNum }) => {
     const isP1 = baseCar.id === selectedLeftId;
     const isP2 = baseCar.id === selectedRightId;
     let stateClass = '';
@@ -5552,23 +6243,33 @@ function renderSmashPicker() {
     else if (isP2) stateClass = 'selected-p2';
 
     const clearTarget = isP1 && isP2 ? 'both' : isP1 ? 'p1' : isP2 ? 'p2' : '';
-    const dotColor = CAR_TYPE_DOT_COLORS[getCarType(baseCar)] || '#38bdf8';
     const mirrorClass = (baseCar.imageFacing || 'right') === 'left' ? 'mirrored-car' : '';
     const thumbSrc = getCarThumbSrc(baseCar.image);
+    const medianPriceStr = formatEuroAmount(medianUsedNum);
+    const powerRange = getCarPowerRange(baseCar);
+    const engineCountStr = formatEngineCount((baseCar.engines || []).length);
 
     return `
       <div role="button" tabindex="0" class="smash-car-tile ${stateClass}" data-smash-car-id="${baseCar.id}">
         <div class="smash-car-thumb-wrap">
           <img class="smash-car-thumb ${mirrorClass}" src="${thumbSrc}" onerror="if(!this.dataset.fb){this.dataset.fb='1';this.src='${baseCar.image}';}" alt="${getSmashGridLabel(baseCar)}" draggable="false" />
-          <div class="smash-car-badges">
-            ${isP1 ? '<span class="mini-p-badge p1-badge">C1</span>' : ''}
-            ${isP2 ? '<span class="mini-p-badge p2-badge">C2</span>' : ''}
+          <div class="catalog-card-badges">
+            <span class="catalog-type-tag">${getCarTypeLabel(getCarType(baseCar))}</span>
+            ${buildForzaIndexBlock(idx, true)}
           </div>
+          ${(isP1 || isP2) ? `<div class="smash-car-badges">${isP1 ? '<span class="mini-p-badge p1-badge">C1</span>' : ''}${isP2 ? '<span class="mini-p-badge p2-badge">C2</span>' : ''}</div>` : ''}
           ${clearTarget ? `<button type="button" class="smash-tile-clear" data-clear-slot="${clearTarget}" title="${ui.smashClearSlot}" aria-label="${ui.smashClearSlot}">✕</button>` : ''}
         </div>
-        <div class="smash-car-nameplate">
-          <span class="smash-car-name">${getSmashGridLabel(baseCar)}</span>
-          <span class="smash-car-type-dot" style="background:${dotColor}"></span>
+        <div class="catalog-card-body">
+          <span class="card-watermark" aria-hidden="true">#${baseCar.number}</span>
+          <div>
+            <div class="catalog-card-kicker">${baseCar.yearMake} · ${baseCar.drivetrain}</div>
+            <h3 class="catalog-card-title">${getSmashGridLabel(baseCar)}</h3>
+          </div>
+          <div class="catalog-card-meta">
+            <span title="${ui.medianUsedPriceTitle}">${ui.estUsedMarket}: <strong class="catalog-price-val">${medianPriceStr}</strong></span>
+            <span>${powerRange} · ${engineCountStr}</span>
+          </div>
         </div>
       </div>
     `;
@@ -5623,6 +6324,71 @@ function renderSmashPicker() {
   });
 }
 
+let compareHintTimer = null;
+let compareShakeTimer = null;
+
+function hideCompareHint() {
+  clearTimeout(compareHintTimer);
+  compareHintTimer = null;
+  const hint = document.getElementById('nav-compare-hint');
+  if (hint) {
+    hint.classList.remove('is-visible');
+    hint.setAttribute('aria-hidden', 'true');
+  }
+}
+
+function triggerCompareGuardFeedback() {
+  const btn = document.getElementById('nav-compare-btn');
+  const hint = document.getElementById('nav-compare-hint');
+  if (btn) {
+    clearTimeout(compareShakeTimer);
+    btn.classList.remove('is-shaking');
+    void btn.offsetWidth;
+    btn.classList.add('is-shaking');
+    compareShakeTimer = setTimeout(() => {
+      btn.classList.remove('is-shaking');
+    }, 400);
+  }
+  if (hint) {
+    hint.textContent = t().compareNeedTwoCars;
+    hint.classList.add('is-visible');
+    hint.setAttribute('aria-hidden', 'false');
+    clearTimeout(compareHintTimer);
+    compareHintTimer = setTimeout(() => {
+      hideCompareHint();
+    }, 2400);
+  }
+}
+
+function syncTopNavState() {
+  const bothSelected = Boolean(selectedLeftId && selectedRightId);
+  const showHome = Boolean(isHomeView);
+  const showSmashGrid = !showHome && (!bothSelected || smashPickerForceOpen);
+  const showDuel = !showHome && bothSelected && !smashPickerForceOpen;
+
+  const navCatalog = document.getElementById('nav-catalog-btn');
+  const navShowroom = document.getElementById('nav-showroom-btn');
+  const navCompare = document.getElementById('nav-compare-btn');
+  const navCompareDot = document.getElementById('nav-compare-dot');
+
+  if (navCatalog) navCatalog.classList.toggle('active', showSmashGrid);
+  if (navShowroom) {
+    navShowroom.disabled = true;
+    navShowroom.classList.remove('active');
+  }
+  if (navCompare) {
+    navCompare.disabled = false;
+    navCompare.classList.toggle('active', showDuel);
+    navCompare.classList.toggle('is-locked', !bothSelected);
+  }
+  if (navCompareDot) {
+    navCompareDot.hidden = !bothSelected;
+  }
+  if (bothSelected) {
+    hideCompareHint();
+  }
+}
+
 function updateArena() {
   const bothSelected = Boolean(selectedLeftId && selectedRightId);
   const showHome = Boolean(isHomeView);
@@ -5653,7 +6419,7 @@ function updateArena() {
   }
 
   applyStaticTranslations();
-  renderDropdowns();
+  syncTopNavState();
   renderSmashPicker();
 
   if (showHome || showSmashGrid || !bothSelected) {
@@ -5733,74 +6499,64 @@ function initEngineSelectorMenus() {
   });
 }
 
-// Initialize Theme & Language Menus in Top HUD
-function initHudUtilityMenus() {
-  // Populate static flag icons inside the language dropdown
-  document.querySelectorAll('[data-flag-render]').forEach((el) => {
-    const code = el.getAttribute('data-flag-render');
-    if (FLAG_SVGS[code]) {
-      el.innerHTML = FLAG_SVGS[code];
-    }
-  });
+// Initialize Top Navigation Bar (Showroom | Vehicle | Compare)
+function initTopNav() {
+  const navCatalog = document.getElementById('nav-catalog-btn');
+  const navCompare = document.getElementById('nav-compare-btn');
+  const compareWrap = document.getElementById('nav-compare-wrap');
 
-  const themeWrapper = document.getElementById('theme-menu-wrapper');
-  const themeBtn = document.getElementById('theme-toggle-btn');
-  const themeDropdown = document.getElementById('theme-dropdown');
-
-  const langWrapper = document.getElementById('lang-menu-wrapper');
-  const langBtn = document.getElementById('lang-toggle-btn');
-  const langDropdown = document.getElementById('lang-dropdown');
-
-  themeBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const open = !themeDropdown.classList.contains('open');
-    setPopupOpen(themeBtn, themeDropdown, open);
-    setPopupOpen(langBtn, langDropdown, false);
-  });
-
-  langBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const open = !langDropdown.classList.contains('open');
-    setPopupOpen(langBtn, langDropdown, open);
-    setPopupOpen(themeBtn, themeDropdown, false);
-  });
-
-  // Theme option clicks
-  themeDropdown.querySelectorAll('[data-theme-choice]').forEach((item) => {
-    item.addEventListener('click', () => {
-      currentTheme = item.getAttribute('data-theme-choice');
-      document.documentElement.setAttribute('data-theme', currentTheme);
-
-      themeDropdown.querySelectorAll('[data-theme-choice]').forEach((btn) => {
-        btn.classList.toggle('active', btn === item);
-      });
-
-      setPopupOpen(themeBtn, themeDropdown, false);
-    });
-  });
-
-  // Language option clicks
-  langDropdown.querySelectorAll('[data-lang-choice]').forEach((item) => {
-    item.addEventListener('click', () => {
-      currentLang = item.getAttribute('data-lang-choice');
-
-      langDropdown.querySelectorAll('[data-lang-choice]').forEach((btn) => {
-        btn.classList.toggle('active', btn === item);
-      });
-
-      setPopupOpen(langBtn, langDropdown, false);
+  if (navCatalog) {
+    navCatalog.addEventListener('click', () => {
+      cancelDuelTransition();
+      closeAllMenusAndModals();
+      isHomeView = false;
+      smashPickerForceOpen = true;
       updateArena();
     });
-  });
+  }
 
-  // Close menus when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!themeWrapper.contains(e.target)) {
-      setPopupOpen(themeBtn, themeDropdown, false);
-    }
-    if (!langWrapper.contains(e.target)) {
-      setPopupOpen(langBtn, langDropdown, false);
-    }
+  if (navCompare) {
+    navCompare.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (!(selectedLeftId && selectedRightId)) {
+        triggerCompareGuardFeedback();
+        return;
+      }
+      hideCompareHint();
+      cancelDuelTransition();
+      closeAllMenusAndModals();
+      isHomeView = false;
+      smashPickerForceOpen = false;
+      updateArena();
+    });
+  }
+
+  if (compareWrap) {
+    document.addEventListener('click', (e) => {
+      if (!compareWrap.contains(e.target)) {
+        hideCompareHint();
+      }
+    });
+  }
+}
+
+// Initialize Theme & Segmented Language Controls in Top HUD
+function initHudUtilityMenus() {
+  const themeBtn = document.getElementById('theme-toggle-btn');
+  if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', currentTheme);
+    });
+  }
+
+  document.querySelectorAll('.lang-btn[data-lang-choice]').forEach((item) => {
+    item.addEventListener('click', () => {
+      const nextLang = item.getAttribute('data-lang-choice');
+      if (!nextLang || nextLang === currentLang) return;
+      currentLang = nextLang;
+      updateArena();
+    });
   });
 }
 
@@ -5810,17 +6566,27 @@ function initClassIndexMenu() {
   const popover = document.getElementById('class-menu-popover');
   const closeBtn = document.getElementById('class-popover-close');
   const wrapper = document.getElementById('class-menu-wrapper');
+  if (!toggleBtn || !popover || !wrapper) return;
 
   toggleBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     const isCurrentlyOpen = popover.classList.contains('open');
+    if (!isCurrentlyOpen) {
+      setPopupOpen(
+        document.getElementById('weight-menu-toggle-btn'),
+        document.getElementById('weight-menu-popover'),
+        false
+      );
+    }
     setPopupOpen(toggleBtn, popover, !isCurrentlyOpen);
   });
 
-  closeBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    setPopupOpen(toggleBtn, popover, false);
-  });
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setPopupOpen(toggleBtn, popover, false);
+    });
+  }
 
   document.addEventListener('click', (e) => {
     if (!wrapper.contains(e.target)) {
@@ -5863,6 +6629,10 @@ function updateWeightEqualizerVisuals() {
   const toggleBtn = document.getElementById('weight-menu-toggle-btn');
   if (toggleBtn) {
     toggleBtn.classList.toggle('has-custom-weights', isCustom);
+  }
+  const activeDot = document.getElementById('weight-active-dot');
+  if (activeDot) {
+    activeDot.hidden = !isCustom;
   }
   const resetBtn = document.getElementById('weight-reset-btn');
   if (resetBtn) {
@@ -6068,6 +6838,13 @@ function initWeightEqualizerMenu() {
   toggleBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     const isCurrentlyOpen = popover.classList.contains('open');
+    if (!isCurrentlyOpen) {
+      setPopupOpen(
+        document.getElementById('class-menu-toggle-btn'),
+        document.getElementById('class-menu-popover'),
+        false
+      );
+    }
     setPopupOpen(toggleBtn, popover, !isCurrentlyOpen);
   });
 
@@ -6095,52 +6872,19 @@ function initWeightEqualizerMenu() {
   });
 }
 
-function initCarSelectorMenus() {
-  const leftWrapper = document.getElementById('car-wrapper-left');
-  const leftBtn = document.getElementById('car-btn-left');
-  const leftDropdown = document.getElementById('car-dropdown-left');
-
-  const rightWrapper = document.getElementById('car-wrapper-right');
-  const rightBtn = document.getElementById('car-btn-right');
-  const rightDropdown = document.getElementById('car-dropdown-right');
-
-  if (!leftBtn || !rightBtn || !leftDropdown || !rightDropdown) return;
-
-  leftBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const open = !leftDropdown.classList.contains('open');
-    setPopupOpen(leftBtn, leftDropdown, open);
-    setPopupOpen(rightBtn, rightDropdown, false);
-  });
-
-  rightBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const open = !rightDropdown.classList.contains('open');
-    setPopupOpen(rightBtn, rightDropdown, open);
-    setPopupOpen(leftBtn, leftDropdown, false);
-  });
-
-  document.addEventListener('click', (e) => {
-    if (leftWrapper && !leftWrapper.contains(e.target)) {
-      setPopupOpen(leftBtn, leftDropdown, false);
-    }
-    if (rightWrapper && !rightWrapper.contains(e.target)) {
-      setPopupOpen(rightBtn, rightDropdown, false);
-    }
-  });
-}
-
 function closeAllMenusAndModals() {
   closeCarLightbox();
   closeStatDossier();
+  closeSearchHelpPopover();
+  hideCompareHint();
   document.querySelectorAll('.price-info-anchor.is-open').forEach((el) => el.classList.remove('is-open'));
+  const sortWrap = document.getElementById('catalog-sort-dropdown');
+  const sortTrig = document.getElementById('catalog-sort-trigger');
+  if (sortWrap) sortWrap.classList.remove('open');
+  if (sortTrig) sortTrig.setAttribute('aria-expanded', 'false');
   [
-    ['car-btn-left', 'car-dropdown-left'],
-    ['car-btn-right', 'car-dropdown-right'],
     ['engine-btn-left', 'engine-dropdown-left'],
     ['engine-btn-right', 'engine-dropdown-right'],
-    ['theme-toggle-btn', 'theme-dropdown'],
-    ['lang-toggle-btn', 'lang-dropdown'],
     ['class-menu-toggle-btn', 'class-menu-popover'],
     ['weight-menu-toggle-btn', 'weight-menu-popover']
   ].forEach(([btnId, menuId]) => {
@@ -6189,8 +6933,9 @@ function initGarageDoorIntro() {
 // Initialize Event Listeners
 function initCarDuel() {
   initGarageDoorIntro();
+  initTopNav();
+  initCatalogControls();
   initHudUtilityMenus();
-  initCarSelectorMenus();
   initEngineSelectorMenus();
   initClassIndexMenu();
   initWeightEqualizerMenu();
@@ -6271,32 +7016,6 @@ function initCarDuel() {
     e.stopPropagation();
     stepLightbox(1);
   });
-
-  // Side-specific Change Car pills above each car photo (swaps only that side in Smash Grid)
-  const changeCarLeftBtn = document.getElementById('change-car-left-btn');
-  if (changeCarLeftBtn) {
-    changeCarLeftBtn.addEventListener('click', () => {
-      cancelDuelTransition();
-      selectedLeftId = null;
-      selectedLeftEngineId = null;
-      activeRosterTarget = 'p1';
-      smashPickerForceOpen = false;
-      closeAllMenusAndModals();
-      updateArena();
-    });
-  }
-  const changeCarRightBtn = document.getElementById('change-car-right-btn');
-  if (changeCarRightBtn) {
-    changeCarRightBtn.addEventListener('click', () => {
-      cancelDuelTransition();
-      selectedRightId = null;
-      selectedRightEngineId = null;
-      activeRosterTarget = 'p2';
-      smashPickerForceOpen = false;
-      closeAllMenusAndModals();
-      updateArena();
-    });
-  }
 
   // Engineering Stat Dossier Modal Close Handlers (Option 1)
   const dossierCloseBtn = document.getElementById('dossier-close-btn');
