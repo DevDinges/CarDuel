@@ -260,6 +260,10 @@
             <div class="vehicle-quick-switcher" id="vehicle-quick-switcher"></div>
           </div>
           <div class="vehicle-hero-grid" id="vehicle-hero"></div>
+          <section class="vehicle-indepth-shell" id="vehicle-indepth-shell" aria-label="Vehicle In-Depth Details">
+            <div class="vehicle-tabs-bar" id="vehicle-tabs-bar" role="tablist"></div>
+            <div class="vehicle-tab-panel" id="vehicle-tab-panel" role="tabpanel"></div>
+          </section>
         </div>
       </div>
 
@@ -267,7 +271,7 @@
       <div class="car-viewport viewport-left" id="viewport-left">
         <div class="car-number-watermark" id="watermark-left">#01</div>
         <div class="viewport-caption">
-          <span class="caption-tag p1-tag" id="tag-car-1">CAR 1</span>
+          <span class="caption-tag p1-tag" id="tag-car-1">C1</span>
           <div class="engine-selector-wrapper" id="engine-wrapper-left">
             <button
               type="button"
@@ -292,6 +296,9 @@
           <img id="img-left" alt="Left selected car" />
           <button type="button" class="expand-car-btn" id="expand-left-btn" title="View full car picture">
             <span class="expand-icon">⛶</span> <span id="expand-label-left">EXPAND FULL CAR</span>
+          </button>
+          <button type="button" class="catalog-inspect-pill duel-indepth-pill duel-indepth-left" id="duel-indepth-left" data-indepth-side="left" aria-label="In-Depth">
+            <span aria-hidden="true">⤢</span> <span id="duel-indepth-label-left">In-Depth</span>
           </button>
         </div>
         <!-- Remarkable Positive & Negative Traits directly under Left Car Picture -->
@@ -327,12 +334,15 @@
             </button>
             <div class="engine-dropdown-menu engine-dropdown-right" id="engine-dropdown-right" aria-hidden="true"></div>
           </div>
-          <span class="caption-tag p2-tag" id="tag-opponent">OPPONENT</span>
+          <span class="caption-tag p2-tag" id="tag-opponent">C2</span>
         </div>
         <div class="car-image-wrapper" data-side="right">
           <img id="img-right" class="mirrored-car" alt="Right opponent car" />
           <button type="button" class="expand-car-btn" id="expand-right-btn" title="View full car picture">
             <span class="expand-icon">⛶</span> <span id="expand-label-right">EXPAND FULL CAR</span>
+          </button>
+          <button type="button" class="catalog-inspect-pill duel-indepth-pill duel-indepth-right" id="duel-indepth-right" data-indepth-side="right" aria-label="In-Depth">
+            <span aria-hidden="true">⤢</span> <span id="duel-indepth-label-right">In-Depth</span>
           </button>
         </div>
         <!-- Remarkable Positive & Negative Traits directly under Right Car Picture -->

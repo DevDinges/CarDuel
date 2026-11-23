@@ -14945,13 +14945,13 @@ const CAR_ROSTER = [
         }
       },
       {
-        id: '2.0-ecoboost',
+        id: '2.0-ecoboost-203',
         specOverrides: {
-          engineName: { en: '2.0L EcoBoost Turbo', de: '2.0L EcoBoost Turbo', ru: '2.0L EcoBoost Турбо' },
+          engineName: { en: '2.0L EcoBoost Turbo (203 HP)', de: '2.0L EcoBoost Turbo (203 PS)', ru: '2.0L EcoBoost Турбо (203 л.с.)' },
           forcedInduction: '@turbo', injection: '@direct', gearbox: '@dsg6Wet', clutchDmf: '@dualClutchWet',
-          towingBraked: '1,600 kg', sprint0100: '7.9 s', topSpeed: '232 km/h', peakTorque: '300 Nm @ 1,750',
+          towingBraked: '1,800 kg', sprint0100: '7.9 s', topSpeed: '232 km/h', peakTorque: '300 Nm @ 1,750',
           passingPunch: { en: 'Very Strong Autobahn', de: 'Sehr starker Durchzug', ru: 'Мощная тяга на трассе' },
-          realWorldFuel: '8.5–9.8 L/100 km', tankRange: '70 L · ~760 km', euroNorm: 'Euro 5',
+          realWorldFuel: '8.5–9.6 L/100 km', tankRange: '70 L · ~770 km', euroNorm: 'Euro 5',
           taxInsurance: '@tierModHigh', timingDrive: '@chain', serviceWear: '@tierModHigh'
         },
         dossierGroup: 'petrol-powershift',
@@ -14959,13 +14959,13 @@ const CAR_ROSTER = [
         isDefault: false,
         fuelType: 'petrol',
         hp: 203,
-        shortTitle: 'MONDEO 2.0 ECOBOOST',
-        fullName: '2012 Ford Mondeo 2.0 EcoBoost',
-        engineBadge: '2.0L EcoBoost • 203 / 240 HP',
+        shortTitle: 'MONDEO 2.0 ECOBOOST 203',
+        fullName: '2012 Ford Mondeo 2.0 EcoBoost (203 HP)',
+        engineBadge: '2.0L EcoBoost • 203 HP',
         engineSubLabel: {
-          en: 'TNBA/TPBA 2.0L Turbo • 6-Speed PowerShift • 300–340 Nm',
-          de: 'TNBA/TPBA 2.0L Turbo • 6-Gang PowerShift • 300–340 Nm',
-          ru: 'TNBA/TPBA 2.0L Турбо • 6-ст. PowerShift • 300–340 Н·м'
+          en: 'TNBA 2.0L Turbo • 6-Speed PowerShift • 300 Nm',
+          de: 'TNBA 2.0L Turbo • 6-Gang PowerShift • 300 Nm',
+          ru: 'TNBA 2.0L Турбо • 6-ст. PowerShift • 300 Н·м'
         },
         rarityLabel: {
           en: 'AUTO EXPRESS',
@@ -14979,27 +14979,27 @@ const CAR_ROSTER = [
         },
         estUsedPrice: '€7,900',
         perkLabel: {
-          en: '✦ 203 or 240 HP Turbo • 7.5–7.9s 0–100 • 1,800 kg Towing',
-          de: '✦ 203 oder 240 PS Turbo • 7,5–7,9s 0–100 • 1.800 kg Anhängelast',
-          ru: '✦ 203 или 240 л.с. Турбо • 7,5–7,9 с до 100 • Прицеп 1 800 кг'
+          en: '✦ 203 HP Turbo • 7.9s 0–100 • 1,800 kg Towing',
+          de: '✦ 203 PS Turbo • 7,9s 0–100 • 1.800 kg Anhängelast',
+          ru: '✦ 203 л.с. Турбо • 7,9 с до 100 • Прицеп 1 800 кг'
         },
         remarkablePositives: {
           en: [
-            'FAST 203 / 240 HP TURBO',
+            'FAST 203 HP TURBO',
             'HUGE 550L SEDAN BOOT',
             'HIGHWAY CRUISER COMFORT',
             '1,800 KG BRAKED TOWING',
             'SHARP MONDEO STEERING'
           ],
           de: [
-            'SCHNELLE 203 / 240 PS TURBO',
+            'SCHNELLER 203 PS TURBO',
             'RIESIGER 550L KOFFERRAUM',
             'HOHER LANGSTRECKEN-KOMFORT',
             '1.800 KG ANHÄNGELAST',
             'PRÄZISE MONDEO-LENKUNG'
           ],
           ru: [
-            'БЫСТРЫЙ ТУРБО 203 / 240 Л.С.',
+            'БЫСТРЫЙ ТУРБО 203 Л.С.',
             'ОГРОМНЫЙ БАГАЖНИК 550 Л',
             'КОМФОРТ НА ДАЛЬНИХ ТРАССАХ',
             'БУКСИРОВКА ДО 1 800 КГ',
@@ -15009,19 +15009,19 @@ const CAR_ROSTER = [
         notableNegatives: {
           en: [
             'RISKY POWERSHIFT AUTO',
-            'THIRSTY 9.6L/100KM',
+            'THIRSTY 9.2L/100KM',
             'VALVE CARBON BUILDUP RISK',
             'WIDE 11.4M TURNING CIRCLE'
           ],
           de: [
             'ANFÄLLIGES POWERSHIFT-GETRIEBE',
-            'HOHER VERBRAUCH (9,6L/100KM)',
+            'HOHER VERBRAUCH (9,2L/100KM)',
             'VERKOKUNG DER EINLASSVENTILE',
             'GROSSER 11,4M WENDEKREIS'
           ],
           ru: [
             'КАПРИЗНЫЙ РОБОТ POWERSHIFT',
-            'ВЫСОКИЙ РАСХОД 9,6 Л/100 КМ',
+            'ВЫСОКИЙ РАСХОД 9,2 Л/100 КМ',
             'НАГАР НА ВПУСКНЫХ КЛАПАНАХ',
             'БОЛЬШОЙ РАЗВОРОТ 11,4 М'
           ]
@@ -15030,33 +15030,33 @@ const CAR_ROSTER = [
           reliabilityQuality: 7.0,
           comfortCabin: 8.0,
           spacePracticality: 8.7,
-          performanceDynamics: 7.9,
-          runningCostsTco: 6.5
+          performanceDynamics: 7.8,
+          runningCostsTco: 6.6
         },
         subStats: {
           powertrainDurability: {
             specBreakdown: {
               engineName: {
                 specs: [
-                  { k: 'fullName', v: { en: '2.0L EcoBoost Inline-4 Turbo (TNBA / TPBA)', de: '2.0L EcoBoost Reihenvierzylinder Turbo (TNBA / TPBA)', ru: '2.0L EcoBoost рядный 4-цил. турбо (TNBA / TPBA)' } },
+                  { k: 'fullName', v: { en: '2.0L EcoBoost Inline-4 Turbo (TNBA)', de: '2.0L EcoBoost Reihenvierzylinder Turbo (TNBA)', ru: '2.0L EcoBoost рядный 4-цил. турбо (TNBA)' } },
                   { k: 'displacement', v: '1,999 cc' },
                   { k: 'cylinders', v: { en: '4 Cylinders · 16V DOHC', de: '4 Zylinder · 16V DOHC', ru: '4 цилиндра · 16V DOHC' } },
-                  { k: 'output', v: { en: '149–176 kW (203 / 240 HP)', de: '149–176 kW (203 / 240 PS)', ru: '149–176 кВт (203 / 240 л.с.)' } },
+                  { k: 'output', v: { en: '149 kW (203 HP)', de: '149 kW (203 PS)', ru: '149 кВт (203 л.с.)' } },
                   { k: 'fuelTiming', v: { en: 'Petrol · Timing Chain', de: 'Benzin · Steuerkette', ru: 'Бензин · Цепь ГРМ' } }
                 ],
-                note: { en: 'Fast 203/240 HP timing-chain turbo; main ownership risk is the PowerShift DCT gearbox rather than the block.', de: 'Schneller Steuerketten-Turbo; Hauptrisiko ist meist das PowerShift-Doppelkupplungsgetriebe.', ru: 'Быстрый цепной турбомотор; главный узел риска — робот PowerShift.' }
+                note: { en: 'Fast 203 HP timing-chain turbo; main ownership risk is the PowerShift DCT gearbox rather than the block.', de: 'Schneller 203-PS-Steuerketten-Turbo; Hauptrisiko ist meist das PowerShift-Doppelkupplungsgetriebe.', ru: 'Быстрый цепной турбомотор (203 л.с.); главный узел риска — робот PowerShift.' }
               },
               forcedInduction: '@turboPetrol', injection: '@directInjPetrol'
             },
-            score: 6.2,
+            score: 6.3,
             badges: {
-              en: ['Check Exhaust Manifold Studs', '203 HP / 240 HP Tunes'],
-              de: ['Krümmerbolzen & Turbo prüfen', '203 PS / 240 PS Stufen'],
-              ru: ['Шпильки коллектора и турбина', 'Версии 203 и 240 л.с.']
+              en: ['Check Exhaust Manifold Studs', '203 HP • 300 Nm Tune'],
+              de: ['Krümmerbolzen & Turbo prüfen', '203 PS • 300 Nm Stufe'],
+              ru: ['Шпильки коллектора и турбина', 'Версия 203 л.с. • 300 Н·м']
             },
             dossier: {
               en: {
-                headline: 'Strong 2.0L Turbo Engine — High Thermal & Exhaust Manifold Repair Risks',
+                headline: 'Strong 2.0L 203 HP Turbo Engine — High Thermal & Exhaust Manifold Repair Risks',
                 lowScoreReasons: [
                   'Integrated Exhaust Manifold / Turbo Cracking: The exhaust manifold and turbocharger are cast as one piece; heat cracks and rattling wastegate flaps require costly full-assembly replacement (€1,500–€2,200).',
                   'Direct-Injection Carbon & Injector/Piston Stress: Extended oil intervals and low-octane fuel promote pre-ignition and carbon buildup, risking costly internal engine wear.'
@@ -15126,7 +15126,7 @@ const CAR_ROSTER = [
                 ]
               },
               de: {
-                headline: 'Kräftiger 2.0-Turbomotor — hohe thermische Belastung an Krümmer & Turbo',
+                headline: 'Kräftiger 2.0-Turbomotor (203 PS) — hohe thermische Belastung an Krümmer & Turbo',
                 lowScoreReasons: [
                   'Risse an Krümmer & Turbolader-Einheit: Abgaskrümmer und Turbogehäuse bilden ein Bauteil — Hitzerisse oder klappernde Wastegate-Klappen erfordern den teuren Kompletttausch (1.500–2.200 €).',
                   'Verkokung & Kolbenbelastung bei Wartungsstau: Überzogene Ölwechsel und schlechter Sprit begünstigen Verkokung sowie Frühzündungen unter Volllast.'
@@ -15196,7 +15196,7 @@ const CAR_ROSTER = [
                 ]
               },
               ru: {
-                headline: 'Мощный 2.0 турбо — высокие риски по трещинам коллектора и турбины',
+                headline: 'Мощный 2.0 турбо (203 л.с.) — высокие риски по трещинам коллектора и турбины',
                 lowScoreReasons: [
                   'Трещины выпускного коллектора и турбины: Коллектор отлит заодно с горячей частью турбины — трещины от перегрева и звон калитки вестгейта требуют замены узла в сборе (€1 500–2 200).',
                   'Риск детонации и нагара на прямом впрыске: Затянутые интервалы масла и низкий октан провоцируют закоксовку и разрушение перегородок поршней.'
@@ -15348,19 +15348,19 @@ const CAR_ROSTER = [
             }
           },
           accelerationOvertaking: {
-            score: 7.6,
+            score: 7.5,
             badges: {
-              en: ['0–100 km/h: 7.5–7.9 s', '232–246 km/h Top Speed'],
-              de: ['0–100 km/h: 7,5–7,9 s', '232–246 km/h Spitze'],
-              ru: ['0–100 км/ч: 7,5–7,9 с', 'Макс. 232–246 км/ч']
+              en: ['0–100 km/h: 7.9 s', '232 km/h Top Speed'],
+              de: ['0–100 km/h: 7,9 s', '232 km/h Spitze'],
+              ru: ['0–100 км/ч: 7,9 с', 'Макс. 232 км/ч']
             }
           },
           midRangeTorquePassing: {
-            score: 7.8,
+            score: 7.7,
             badges: {
-              en: ['300–340 Nm Strong Mid-Range', 'No Downshift Needed To Pass'],
-              de: ['300–340 Nm kräftiger Durchzug', 'Überholen ohne Herunterschalten'],
-              ru: ['300–340 Н·м тяги в середине', 'Уверенный обгон без кикдауна']
+              en: ['300 Nm Strong Mid-Range', 'No Downshift Needed To Pass'],
+              de: ['300 Nm kräftiger Durchzug', 'Überholen ohne Herunterschalten'],
+              ru: ['300 Н·м тяги в середине', 'Уверенный обгон без кикдауна']
             }
           },
           handlingAgility: {
@@ -15380,19 +15380,19 @@ const CAR_ROSTER = [
             }
           },
           efficiencyFuel: {
-            score: 5.9,
+            score: 6.0,
             badges: {
-              en: ['Thirsty (9.6 L/100km)', '179 g/km CO2'],
-              de: ['Durstig (9,6 L/100km)', '179 g/km CO2'],
-              ru: ['Прожорливый (9,6 л/100 км)', '179 г/км CO2']
+              en: ['Thirsty (9.2 L/100km)', '179 g/km CO2'],
+              de: ['Durstig (9,2 L/100km)', '179 g/km CO2'],
+              ru: ['Прожорливый (9,2 л/100 км)', '179 г/км CO2']
             }
           },
           taxInsuranceNorm: {
-            score: 6.7,
+            score: 6.8,
             badges: {
-              en: ['2.0L Turbo Tax • Euro 5', 'Higher 203–240 HP Insurance'],
-              de: ['2.0-Turbosteuer • Euro 5', 'Teurere 203–240-PS-Klasse'],
-              ru: ['Налог за 2,0 турбо • Euro 5', 'Дороже страховка за мощность']
+              en: ['2.0L Turbo Tax • Euro 5', '203 HP Insurance Bracket'],
+              de: ['2.0-Turbosteuer • Euro 5', '203-PS-Versicherungsklasse'],
+              ru: ['Налог за 2,0 турбо • Euro 5', 'Страховка за 203 л.с.']
             }
           },
           maintenanceRepairCosts: {
@@ -15417,6 +15417,483 @@ const CAR_ROSTER = [
               en: ['Steep Initial Drop', 'PowerShift Discounts'],
               de: ['Hoher Wertverlust', 'PowerShift-Abschlag'],
               ru: ['Сильная уценка', 'Скидка из-за PowerShift']
+            }
+          }
+        }
+      },
+      {
+        id: '2.0-ecoboost-240',
+        specOverrides: {
+          engineName: { en: '2.0L EcoBoost Turbo (240 HP)', de: '2.0L EcoBoost Turbo (240 PS)', ru: '2.0L EcoBoost Турбо (240 л.с.)' },
+          forcedInduction: '@turbo', injection: '@direct', gearbox: '@dsg6Wet', clutchDmf: '@dualClutchWet',
+          towingBraked: '1,800 kg', sprint0100: '7.5 s', topSpeed: '246 km/h', peakTorque: '340 Nm @ 1,900',
+          passingPunch: { en: 'Effortless Flagship Pull', de: 'Souveräner Top-Durchzug', ru: 'Мощнейшая тяга на обгонах' },
+          realWorldFuel: '8.9–10.2 L/100 km', tankRange: '70 L · ~730 km', euroNorm: 'Euro 5',
+          taxInsurance: '@tierHigh', timingDrive: '@chain', serviceWear: '@tierModHigh'
+        },
+        dossierGroup: 'petrol-powershift',
+        buyerFitGroup: 'turbo-petrol',
+        isDefault: false,
+        fuelType: 'petrol',
+        hp: 240,
+        shortTitle: 'MONDEO 2.0 ECOBOOST 240',
+        fullName: '2012 Ford Mondeo 2.0 EcoBoost (240 HP)',
+        engineBadge: '2.0L EcoBoost • 240 HP',
+        engineSubLabel: {
+          en: 'TPBA 2.0L Turbo • 6-Speed PowerShift • 340 Nm',
+          de: 'TPBA 2.0L Turbo • 6-Gang PowerShift • 340 Nm',
+          ru: 'TPBA 2.0L Турбо • 6-ст. PowerShift • 340 Н·м'
+        },
+        rarityLabel: {
+          en: 'TOP PETROL',
+          de: 'TOP-BENZINER',
+          ru: 'ТОП-БЕНЗИН'
+        },
+        originalMsrp: {
+          en: '€36,200 New',
+          de: '36.200 € Neu',
+          ru: '€36 200 новый'
+        },
+        estUsedPrice: '€8,900',
+        perkLabel: {
+          en: '✦ 240 HP Flagship Turbo • 7.5s 0–100 • 246 km/h',
+          de: '✦ 240 PS Top-Turbo • 7,5s 0–100 • 246 km/h',
+          ru: '✦ 240 л.с. Топ-Турбо • 7,5 с до 100 • 246 км/ч'
+        },
+        remarkablePositives: {
+          en: [
+            'FAST 240 HP FLAGSHIP TURBO',
+            'HUGE 550L SEDAN BOOT',
+            'HIGHWAY CRUISER COMFORT',
+            '1,800 KG BRAKED TOWING',
+            'SHARP MONDEO STEERING'
+          ],
+          de: [
+            'SCHNELLER 240 PS TOP-TURBO',
+            'RIESIGER 550L KOFFERRAUM',
+            'HOHER LANGSTRECKEN-KOMFORT',
+            '1.800 KG ANHÄNGELAST',
+            'PRÄZISE MONDEO-LENKUNG'
+          ],
+          ru: [
+            'БЫСТРЫЙ ТОП-ТУРБО 240 Л.С.',
+            'ОГРОМНЫЙ БАГАЖНИК 550 Л',
+            'КОМФОРТ НА ДАЛЬНИХ ТРАССАХ',
+            'БУКСИРОВКА ДО 1 800 КГ',
+            'ОСТРОЕ РУЛЕВОЕ УПРАВЛЕНИЕ'
+          ]
+        },
+        notableNegatives: {
+          en: [
+            'RISKY POWERSHIFT AUTO',
+            'THIRSTY 9.8L/100KM',
+            'VALVE CARBON BUILDUP RISK',
+            'WIDE 11.4M TURNING CIRCLE'
+          ],
+          de: [
+            'ANFÄLLIGES POWERSHIFT-GETRIEBE',
+            'HOHER VERBRAUCH (9,8L/100KM)',
+            'VERKOKUNG DER EINLASSVENTILE',
+            'GROSSER 11,4M WENDEKREIS'
+          ],
+          ru: [
+            'КАПРИЗНЫЙ РОБОТ POWERSHIFT',
+            'ВЫСОКИЙ РАСХОД 9,8 Л/100 КМ',
+            'НАГАР НА ВПУСКНЫХ КЛАПАНАХ',
+            'БОЛЬШОЙ РАЗВОРОТ 11,4 М'
+          ]
+        },
+        pillarScores: {
+          reliabilityQuality: 6.9,
+          comfortCabin: 8.0,
+          spacePracticality: 8.7,
+          performanceDynamics: 8.2,
+          runningCostsTco: 6.3
+        },
+        subStats: {
+          powertrainDurability: {
+            specBreakdown: {
+              engineName: {
+                specs: [
+                  { k: 'fullName', v: { en: '2.0L EcoBoost Inline-4 Turbo (TPBA)', de: '2.0L EcoBoost Reihenvierzylinder Turbo (TPBA)', ru: '2.0L EcoBoost рядный 4-цил. турбо (TPBA)' } },
+                  { k: 'displacement', v: '1,999 cc' },
+                  { k: 'cylinders', v: { en: '4 Cylinders · 16V DOHC', de: '4 Zylinder · 16V DOHC', ru: '4 цилиндра · 16V DOHC' } },
+                  { k: 'output', v: { en: '176 kW (240 HP)', de: '176 kW (240 PS)', ru: '176 кВт (240 л.с.)' } },
+                  { k: 'fuelTiming', v: { en: 'Petrol · Timing Chain', de: 'Benzin · Steuerkette', ru: 'Бензин · Цепь ГРМ' } }
+                ],
+                note: { en: 'Top 240 HP timing-chain turbo; extra boost and 340 Nm torque increase thermal stress on the exhaust manifold and PowerShift DCT.', de: 'Stärkster 240-PS-Steuerketten-Turbo; höherer Ladedruck und 340 Nm belasten Krümmer und PowerShift stärker.', ru: 'Топовый цепной турбомотор (240 л.с.); повышенный наддув и 340 Н·м сильнее нагружают коллектор и робот PowerShift.' }
+              },
+              forcedInduction: '@turboPetrol', injection: '@directInjPetrol'
+            },
+            score: 6.0,
+            badges: {
+              en: ['Check Exhaust Manifold Studs', '240 HP • 340 Nm Top Tune'],
+              de: ['Krümmerbolzen & Turbo prüfen', '240 PS • 340 Nm Topstufe'],
+              ru: ['Шпильки коллектора и турбина', 'Топ-версия 240 л.с. • 340 Н·м']
+            },
+            dossier: {
+              en: {
+                headline: 'Potent 2.0L 240 HP Turbo Flagship — Highest Thermal & PowerShift Stress',
+                lowScoreReasons: [
+                  'Integrated Exhaust Manifold / Turbo Cracking: Under 240 HP boost heat, the one-piece cast manifold and turbo housing crack or develop loose wastegate flaps more readily (€1,500–€2,200).',
+                  'High-Boost Carbon & Piston Stress: Running 340 Nm through direct injection demands strict 98-octane fuel and short oil intervals to avoid pre-ignition and intake carbon.'
+                ],
+                strengths: [
+                  'Fastest mainstream Mondeo ever built — effortless 240 HP / 340 Nm autobahn passing punch.',
+                  'Capable of 180,000–220,000 km when warmed gently, run on premium fuel, and maintained on 8,000–10,000 km oil changes.'
+                ],
+                watchouts: [
+                  'Stick strictly to 8,000–10,000 km synthetic oil changes and allow cool-down after hard motorway runs.',
+                  'Watch intake valve buildup, turbo oil-feed lines, and PowerShift clutch engagement at high mileage.'
+                ],
+                beforeYouBuy: [
+                  'Listen to a stone-cold start for chirping or ticking from warped turbo manifold bolts and timing-chain rattle.',
+                  'Verify documented 10,000 km oil changes and check the oil dipstick and coolant bottle for clean fluids.',
+                  'Test full-throttle acceleration through multiple gears for clean 240 HP pull without misfires, boost leaks, or clutch flare.'
+                ],
+                highMileage: [
+                  {
+                    tier: 'orange',
+                    km: '0–50,000 km • 1–3 yrs',
+                    action: 'Annual turbo oil + STRICT PowerShift dual-clutch fluid & filter change at 50–60k km / 3–4 yrs',
+                    cost: '€360–560',
+                    ifIgnored: 'Skipping 4-yr PowerShift oil & filter under 340 Nm overheats wet clutches and destroys mechatronics',
+                    damageCost: '€2,500–4,200'
+                  },
+                  {
+                    tier: 'orange',
+                    km: '50,000–100,000 km • 4–7 yrs',
+                    action: 'Replace hot-running spark plugs (50–60k), flush coolant & check 6-yr heat-aged turbo/coolant hoses',
+                    cost: '€340–540',
+                    ifIgnored: 'Heat-aged plastic/rubber hoses crack & worn plugs trigger high-boost misfires or knock',
+                    damageCost: '€1,500–2,500'
+                  },
+                  {
+                    tier: 'red',
+                    km: '100,000–130,000 km • 7–9 yrs',
+                    action: 'Change PowerShift automatic gearbox oil & external filter',
+                    cost: '€320–480',
+                    ifIgnored: 'Dirty fluid destroys gearbox shift control & wet clutches (components & fluids also degrade over years)',
+                    damageCost: '€2,400–3,800'
+                  },
+                  {
+                    tier: 'orange',
+                    km: '130,000–170,000 km • 9–11 yrs',
+                    action: 'Replace warped exhaust manifold studs, gasket & inspect turbo/wastegate housing',
+                    cost: '€480–800',
+                    ifIgnored: 'Hot exhaust leak warps and cracks the integrated turbocharger housing (seals also harden with age)',
+                    damageCost: '€1,600–2,400'
+                  },
+                  {
+                    tier: 'red',
+                    km: '160,000–200,000 km • 11–13 yrs',
+                    action: 'Rebuild PowerShift wet clutch pack & cracked plastic damper',
+                    cost: '€1,600–2,400',
+                    ifIgnored: '340 Nm load causes odd or even gears to drop out completely (rubber/plastic & seals also harden with age)',
+                    damageCost: '€3,200–4,500'
+                  },
+                  {
+                    tier: 'orange',
+                    km: '200,000–250,000 km • 13–15+ yrs',
+                    action: 'Replace timing chain kit & clean intake valve carbon',
+                    cost: '€750–1,150',
+                    ifIgnored: 'Stretched chain jumps timing and wrecks valves (components & fluids also degrade over years)',
+                    damageCost: '€2,500–3,800'
+                  }
+                ]
+              },
+              de: {
+                headline: 'Starker 2.0-Turbomotor (240 PS) — höchste thermische & PowerShift-Belastung',
+                lowScoreReasons: [
+                  'Risse an Krümmer & Turbolader-Einheit: Bei 240 PS Ladedruck entstehen an der einteiligen Krümmer-Turbo-Einheit leichter Hitzerisse oder klappernde Wastegates (Kompletttausch 1.500–2.200 €).',
+                  'Hohe Ladedruck- & Verkokungsbelastung: 340 Nm erfordern guten Kraftstoff und kurze Ölwechsel-Intervalle, sonst drohen Verkokung und Frühzündungen unter Last.'
+                ],
+                strengths: [
+                  'Schnellster Serien-Mondeo seiner Generation — mühelose 240 PS / 340 Nm auf der Autobahn.',
+                  'Erreicht 180.000–220.000 km bei Warm-/Kaltfahren, gutem Sprit und Ölwechseln alle 8.000–10.000 km.'
+                ],
+                watchouts: [
+                  'Ölwechsel alle 8.000–10.000 km strikt einhalten und Turbo nach zügiger Autobahnfahrt kurz nachlaufen lassen.',
+                  'Einlassventile, Turbo-Leitungen und PowerShift-Schaltverhalten bei höherer Laufleistung genau beobachten.'
+                ],
+                beforeYouBuy: [
+                  'Beim Kaltstart auf Zwitschern oder Tickern am Turbokrümmer sowie ruhigen Kettenlauf achten.',
+                  'Kurze Ölwechsel-Intervalle (ca. 10.000 km) und saubere Flüssigkeiten an Ölstab und Ausgleichsbehälter prüfen.',
+                  'Auf der Autobahn voll durchbeschleunigen — satter 240-PS-Schub ohne Aussetzer, Ladedruckverlust oder Kupplungsrutschen.'
+                ],
+                highMileage: [
+                  {
+                    tier: 'orange',
+                    km: '0–50.000 km • 1–3 J.',
+                    action: 'Jährlich Turbo-Öl + STRENG alle 50–60 Tkm / 3–4 J. PowerShift-Getriebeöl samt Filter wechseln',
+                    cost: '360–560 €',
+                    ifIgnored: 'Ohne 4-J.-PowerShift-Service verbrennen die bei 340 Nm belasteten Nasskupplungen & die Mechatronik',
+                    damageCost: '2.500–4.200 €'
+                  },
+                  {
+                    tier: 'orange',
+                    km: '50.000–100.000 km • 4–7 J.',
+                    action: 'Turbo-Zündkerzen (50–60 Tkm) & Kühlmittel tauschen sowie nach 6 J. hitzegealterte Schläuche prüfen',
+                    cost: '340–540 €',
+                    ifIgnored: 'Hitzegealterte Schläuche reißen; verschlissene Kerzen lösen unter Volllast Klopfen aus',
+                    damageCost: '1.500–2.500 €'
+                  },
+                  {
+                    tier: 'red',
+                    km: '100.000–130.000 km • 7–9 J.',
+                    action: 'PowerShift-Getriebeöl samt äußerem Feinfilter wechseln',
+                    cost: '320–480 €',
+                    ifIgnored: 'Altes Öl zerstört Mechatronik-Steuerung & Nasskupplung (Bauteile & Flüssigkeiten altern auch mit den Jahren)',
+                    damageCost: '2.400–3.800 €'
+                  },
+                  {
+                    tier: 'orange',
+                    km: '130.000–170.000 km • 9–11 J.',
+                    action: 'Verzogene Abgaskrümmer-Bolzen & Dichtung ersetzen sowie Turbogehäuse prüfen',
+                    cost: '480–800 €',
+                    ifIgnored: 'Undichtigkeit verzieht und reißt das integrierte Turbolader-Gehäuse (Dichtungen altern auch zeitlich)',
+                    damageCost: '1.600–2.400 €'
+                  },
+                  {
+                    tier: 'red',
+                    km: '160.000–200.000 km • 11–13 J.',
+                    action: 'PowerShift-Doppelkupplung & brüchigen Kunststoff-Dämpfer überholen',
+                    cost: '1.600–2.400 €',
+                    ifIgnored: 'Bei 340 Nm fallen ganze Ganggruppen bis zum Totalausfall aus (Kunststoff & Dichtungen altern auch zeitlich)',
+                    damageCost: '3.200–4.500 €'
+                  },
+                  {
+                    tier: 'orange',
+                    km: '200.000–250.000 km • 13–15+ J.',
+                    action: 'Steuerkettensatz erneuern & Einlassventile säubern',
+                    cost: '750–1.150 €',
+                    ifIgnored: 'Überspringende Kette zerstört Ventile und Kolben (Bauteile & Flüssigkeiten altern auch mit den Jahren)',
+                    damageCost: '2.500–3.800 €'
+                  }
+                ]
+              },
+              ru: {
+                headline: 'Флагманский 2.0 турбо (240 л.с.) — максимальная термонагрузка и нагрузка на PowerShift',
+                lowScoreReasons: [
+                  'Трещины выпускного коллектора и турбины: При наддуве версии 240 л.с. литой коллектор с турбиной быстрее перегревается, даёт трещины и люфт вестгейта (замена в сборе €1 500–2 200).',
+                  'Риск детонации и нагара под высокой нагрузкой: 340 Н·м и прямой впрыск критичны к 98-му бензину и частым заменам масла для защиты поршней.'
+                ],
+                strengths: [
+                  'Самый быстрый серийный Mondeo — лёгкий трассовый разгон (240 л.с. и 340 Н·м).',
+                  'Проходит 180 000–220 000 км при спокойном прогреве/охлаждении, хорошем топливе и смене масла раз в 8–10 тыс. км.'
+                ],
+                watchouts: [
+                  'Меняйте масло каждые 8 000–10 000 км и давайте турбине остыть после быстрой трассы.',
+                  'На больших пробегах следите за нагаром на клапанах, масляными трубками турбины и работой PowerShift.'
+                ],
+                beforeYouBuy: [
+                  'Послушать холодный пуск на свист или цокот со стороны выпускного коллектора и цепи ГРМ.',
+                  'Убедиться в заменах масла каждые 10 тыс. км и чистоте масла и антифриза.',
+                  'Проверить разгон «в пол» на нескольких передачах: тяга на 240 л.с. должна быть ровной, без провалов и пробуксовки робота.'
+                ],
+                highMileage: [
+                  {
+                    tier: 'orange',
+                    km: '0–50 000 км • 1–3 года',
+                    action: 'Ежегодно масло мотора + СТРОГО менять масло и фильтр робота PowerShift раз в 50–60 тыс. / 3–4 года',
+                    cost: '€360–560',
+                    ifIgnored: 'При моменте 340 Н·м пропуск ТО коробки быстро перегревает сцепления и убивает мехатроник',
+                    damageCost: '€2 500–4 200'
+                  },
+                  {
+                    tier: 'orange',
+                    km: '50 000–100 000 км • 4–7 лет',
+                    action: 'Заменить свечи (50–60 тыс. км), освежить антифриз и проверить стареющие от жара трубки (6 лет)',
+                    cost: '€340–540',
+                    ifIgnored: 'Пересохшие трубки текут, а старые свечи под высоким наддувом вызывают пропуски и детонацию',
+                    damageCost: '€1 500–2 500'
+                  },
+                  {
+                    tier: 'red',
+                    km: '100 000–130 000 км • 7–9 лет',
+                    action: 'Сменить масло и наружный фильтр в роботе PowerShift',
+                    cost: '€320–480',
+                    ifIgnored: 'Грязное масло убивает мехатроник и сцепления коробки (узлы и жидкости также стареют с годами)',
+                    damageCost: '€2 400–3 800'
+                  },
+                  {
+                    tier: 'orange',
+                    km: '130 000–170 000 км • 9–11 лет',
+                    action: 'Заменить шпильки/прокладку выпускного коллектора и проверить горячую часть турбины',
+                    cost: '€480–800',
+                    ifIgnored: 'Прорыв горячих газов коробит и разрушает корпус турбины (уплотнения стареют и по годам)',
+                    damageCost: '€1 600–2 400'
+                  },
+                  {
+                    tier: 'red',
+                    km: '160 000–200 000 км • 11–13 лет',
+                    action: 'Перебрать сцепление и демпфер в коробке PowerShift',
+                    cost: '€1 600–2 400',
+                    ifIgnored: 'Под моментом 340 Н·м пропадает ряд передач и машина встаёт (узлы и жидкости стареют с годами)',
+                    damageCost: '€3 200–4 500'
+                  },
+                  {
+                    tier: 'orange',
+                    km: '200 000–250 000 км • 13–15+ лет',
+                    action: 'Заменить цепь двигателя и почистить впускные клапаны',
+                    cost: '€750–1 150',
+                    ifIgnored: 'Перескок растянутой цепи и поломка головки блока (узлы и жидкости также стареют с годами)',
+                    damageCost: '€2 500–3 800'
+                  }
+                ]
+              }
+            }
+          },
+          transmissionDriveline: {
+            score: 6.2,
+            badges: {
+              en: ['6-Speed PowerShift Wet-DCT', 'Strict 60k km Oil • 340 Nm Load'],
+              de: ['6-Gang PowerShift (DKG)', 'Alle 60.000 km Öl • 340 Nm Last'],
+              ru: ['Робот PowerShift (6 ст.)', 'Масло раз в 60 тыс. • 340 Н·м']
+            }
+          },
+          buildQualityRust: {
+            score: 7.7,
+            badges: {
+              en: ['Solid Crash Structure', 'Check Rear Bushes & Arches'],
+              de: ['Solide Karosseriestruktur', 'Hinterachslager & Radläufe'],
+              ru: ['Крепкая структура кузова', 'Задние рычаги и кромки арок']
+            }
+          },
+          electronicsReliability: {
+            score: 7.6,
+            badges: {
+              en: ['Convers+ Cluster Joints', 'Check Tailgate Wiring Loom'],
+              de: ['Convers+-Lötstellen prüfen', 'Kabelbaum Heckklappe'],
+              ru: ['Пайка приборки Convers+', 'Жгут крышки багажника']
+            }
+          },
+          rideNoiseComfort: {
+            score: 8.7,
+            badges: {
+              en: ['Plush Long-Wheelbase Ride', 'Quiet Cabin & Wide Seats'],
+              de: ['Souveräner Langstreckenkomfort', 'Leise Dämmung & breite Sitze'],
+              ru: ['Плавный трассовый ход', 'Тихий салон и широкие кресла']
+            }
+          },
+          interiorQualityFeatures: {
+            score: 8.2,
+            badges: {
+              en: ['Foamed Dash & Titanium Features', 'Heated Windscreen & Logical UI'],
+              de: ['Geschäumtes Cockpit & Extras', 'Frontscheibenheizung & Logik'],
+              ru: ['Мягкий пластик и оснащение', 'Обогрев лобового и понятный климат']
+            }
+          },
+          visibilityManeuverability: {
+            score: 7.2,
+            badges: {
+              en: ['Large 4.85 m Footprint', '11.4–11.6 m Turn • Sensors Help'],
+              de: ['Große 4,85 m Außenmaße', '11,4–11,6 m Kreis • PDC ratsam'],
+              ru: ['Крупный кузов 4,85 м', 'Разворот 11,4–11,6 м • Нужны датчики']
+            }
+          },
+          safetyProtection: {
+            score: 8.1,
+            badges: {
+              en: ['Euro NCAP 5★ (2007)', '7 Airbags + Knee Airbag'],
+              de: ['Euro NCAP 5★ (2007)', '7 Airbags inkl. Knieairbag'],
+              ru: ['Euro NCAP 5★ (2007)', '7 подушек (вкл. коленную)']
+            }
+          },
+          passengerSpaceErgonomics: {
+            score: 9.3,
+            badges: {
+              en: ['Limousine-Class Rear Legroom', 'Wide 3-Across Bench + ISOFIX'],
+              de: ['Üppige Beinfreiheit im Fond', 'Breite Rückbank & leichtes ISOFIX'],
+              ru: ['Королевский запас для ног', 'Широкий диван и удобный ISOFIX']
+            }
+          },
+          interiorBootSpace: {
+            score: 8.2,
+            badges: {
+              en: ['550L Deep Sedan Boot', 'Narrow 4-Door Trunk Opening'],
+              de: ['550L Stufenheck-Kofferraum', 'Schmale Limousinen-Öffnung'],
+              ru: ['Глубокий багажник 550 л', 'Узкий проём крышки седана']
+            }
+          },
+          payloadTowing: {
+            score: 8.7,
+            badges: {
+              en: ['580 kg Payload', '1,800 kg Braked Tow'],
+              de: ['580 kg Zuladung', '1.800 kg Anhängelast'],
+              ru: ['Нагрузка 580 кг', 'Прицеп до 1 800 кг']
+            }
+          },
+          accelerationOvertaking: {
+            score: 8.1,
+            badges: {
+              en: ['0–100 km/h: 7.5 s', '246 km/h Top Speed'],
+              de: ['0–100 km/h: 7,5 s', '246 km/h Spitze'],
+              ru: ['0–100 км/ч: 7,5 с', 'Макс. 246 км/ч']
+            }
+          },
+          midRangeTorquePassing: {
+            score: 8.2,
+            badges: {
+              en: ['340 Nm Effortless Mid-Range', 'Fast Autobahn Passing Punch'],
+              de: ['340 Nm satter Durchzug', 'Starke Autobahn-Reserve'],
+              ru: ['340 Н·м уверенной тяги', 'Мощный запас на трассе']
+            }
+          },
+          handlingAgility: {
+            score: 8.1,
+            badges: {
+              en: ['Class-Leading Chassis', 'Heavier Front End'],
+              de: ['Klassenbestes Fahrwerk', 'Schwerere Vorderachse'],
+              ru: ['Эталонное шасси', 'Тяжелее передок']
+            }
+          },
+          brakingPerformance: {
+            score: 7.8,
+            badges: {
+              en: ['100–0 km/h: 37.5 m', '300 mm Discs • Good Stability'],
+              de: ['100–0 km/h: 37,5 m', '300 mm Scheiben • Stabil bei Tempo'],
+              ru: ['100–0 км/ч: 37,5 м', '300 мм диски • Стабильны на трассе']
+            }
+          },
+          efficiencyFuel: {
+            score: 5.7,
+            badges: {
+              en: ['Thirsty (9.8 L/100km)', '179 g/km CO2'],
+              de: ['Durstig (9,8 L/100km)', '179 g/km CO2'],
+              ru: ['Прожорливый (9,8 л/100 км)', '179 г/км CO2']
+            }
+          },
+          taxInsuranceNorm: {
+            score: 6.4,
+            badges: {
+              en: ['2.0L Turbo Tax • Euro 5', 'Higher 240 HP Insurance Tier'],
+              de: ['2.0-Turbosteuer • Euro 5', 'Höhere 240-PS-Versicherung'],
+              ru: ['Налог за 2,0 турбо • Euro 5', 'Повышенная страховка за 240 л.с.']
+            }
+          },
+          maintenanceRepairCosts: {
+            repairGuide: {
+              routine: [
+                { when: '60,000 km · 3 yrs', action: { en: 'PowerShift Wet-DCT Fluid & External Filter (Strictly Mandatory)', de: 'PowerShift-Getriebeöl & Filter wechseln (Strikt alle 60.000 km)', ru: 'Масло и фильтр робота PowerShift (строго раз в 60 тыс. км)' }, cost: '€320–480' }
+              ],
+              critical: [
+                { when: '120–180k km · 8–12 yrs', action: { en: 'PowerShift Wet-Clutch Damper Springs & Mechatronics', de: 'PowerShift-Kupplungsdämpfer & Mechatronik', ru: 'Демпфер сцепления и мехатроник PowerShift' }, cost: '€1,600–2,600', risk: { en: 'Harsh shifting, plastic damper fragments & gearbox failure', de: 'Ruckartiges Schalten & kapitaler Getriebeschaden', ru: 'Рывки при переключении и выход КПП из строя' }, damage: '€3,500–5,500' }
+              ]
+            },
+            score: 5.8,
+            badges: {
+              en: ['Costly PowerShift Oil & Clutches', 'High-Boost Turbo & Manifold Costs'],
+              de: ['Teurer PowerShift-Service', 'Hohe Turbo-/Krümmer-Kosten'],
+              ru: ['Дорогое ТО робота PowerShift', 'Дорогие турбина и форсунки']
+            }
+          },
+          depreciationResale: {
+            score: 7.6,
+            badges: {
+              en: ['Rarer 240 HP Flagship', 'PowerShift Discounts'],
+              de: ['Seltener 240-PS-Topmotor', 'PowerShift-Abschlag'],
+              ru: ['Редкий топ-мотор 240 л.с.', 'Скидка из-за PowerShift']
             }
           }
         }

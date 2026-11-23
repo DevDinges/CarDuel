@@ -12,7 +12,7 @@ const UI_TRANSLATIONS = {
     navVehicle: 'Vehicle',
     navCompare: 'Compare',
     compareNeedTwoCars: 'Select two vehicles first',
-    inspectCardBtn: 'Inspect',
+    inspectCardBtn: 'In-Depth',
     backToCatalog: 'All Models',
     inDepthTitle: 'IN-DEPTH LOOK',
     orbitBadge: '360° STUDIO ORBIT',
@@ -28,8 +28,8 @@ const UI_TRANSLATIONS = {
     currentEngineTag: 'CURRENT C1',
     defaultEngineTitle: 'Featured Default Engine',
     themeToggleTitle: 'Toggle Dark / Light Theme',
-    car1Tag: 'CAR 1',
-    opponentTag: 'OPPONENT',
+    car1Tag: 'C1',
+    opponentTag: 'C2',
     swapLabel: '⇄ SWAP',
     expandFullCar: 'EXPAND FULL CAR',
     closeBtn: '✕ CLOSE',
@@ -170,8 +170,8 @@ const UI_TRANSLATIONS = {
     currentEngineTag: 'AKTUELL C1',
     defaultEngineTitle: 'Empfohlener Standard-Motor',
     themeToggleTitle: 'Hell / Dunkel wechseln',
-    car1Tag: 'AUTO 1',
-    opponentTag: 'GEGNER',
+    car1Tag: 'C1',
+    opponentTag: 'C2',
     swapLabel: '⇄ TAUSCH',
     expandFullCar: 'VOLLBILD ANZEIGEN',
     closeBtn: '✕ SCHLIESSEN',
@@ -202,9 +202,9 @@ const UI_TRANSLATIONS = {
     selectCarHeader: 'FAHRZEUG NACH TYP WÄHLEN',
     carSortUnsorted: 'UNSORTIERT',
     carTypeSubcompact: 'Kleinwagen',
-    carTypeHatchback: 'Kompaktwagen (Hatchback)',
+    carTypeHatchback: 'Kompaktwagen (Fließheck)',
     carTypeHotHatch: 'Hot-Hatch',
-    carTypeSedan: 'Limousine (Sedan)',
+    carTypeSedan: 'Limousine (Kombi)',
     carTypeSuv: 'SUV',
     dossierStrengths: 'Stärken & Vorteile',
     dossierWatchouts: 'Schwachstellen & Hinweise',
@@ -312,8 +312,8 @@ const UI_TRANSLATIONS = {
     currentEngineTag: 'ТЕКУЩИЙ C1',
     defaultEngineTitle: 'Базовый рекомендуемый мотор',
     themeToggleTitle: 'Сменить тему',
-    car1Tag: 'АВТО 1',
-    opponentTag: 'СОПЕРНИК',
+    car1Tag: 'C1',
+    opponentTag: 'C2',
     swapLabel: '⇄ МЕНЯТЬ',
     expandFullCar: 'ПОЛНОЕ ФОТО',
     closeBtn: '✕ ЗАКРЫТЬ',
@@ -443,8 +443,81 @@ const PILLAR_ICONS = {
 
 const STAT_PILLARS = [
   {
-    id: 'reliabilityQuality',
+    id: 'performanceDynamics',
     number: '1',
+    label: {
+      en: 'Performance & Dynamics',
+      de: 'Fahrleistung & Dynamik',
+      ru: 'Динамика и управляемость'
+    },
+    subtitle: {
+      en: 'Sprint, Torque, Handling, Brakes',
+      de: 'Sprint, Durchzug, Kurven, Bremsen',
+      ru: 'Разгон, тяга, шасси, тормоза'
+    },
+    unitHint: {
+      en: 'Rates 0–100 sprint, mid-range overtaking torque, cornering composure, and braking distance (average of 4 ratings, max 10.0). Reflects both driving fun and effortless highway reserves.',
+      de: 'Bewertet Sprint (0–100), Durchzug beim Überholen, Kurvenverhalten und Bremsleistung (Schnitt aus 4 Wertungen, max. 10,0). Spiegelt Fahrspaß ebenso wie souveräne Überholreserven wider.',
+      ru: 'Оценивает разгон 0–100, тягу на обгонах, управляемость и эффективность тормозов (среднее из 4 оценок, макс. 10.0). Показывает запас динамики и удовольствие от вождения.'
+    },
+    subRatings: [
+      {
+        key: 'accelerationOvertaking',
+        label: {
+          en: 'Acceleration & Top Speed (0–100)',
+          de: 'Beschleunigung & Höchstgeschwindigkeit',
+          ru: 'Разгон 0–100 км/ч и макс. скорость'
+        },
+        unitHint: {
+          en: '0–100 km/h sprint & top speed (Road-car scale: 10 = ≤4.8 s / 270+ km/h)',
+          de: '0–100 km/h Sprint & Höchstgeschwindigkeit (Pkw-Maßstab: 10 = ≤4,8 s / 270+ km/h)',
+          ru: 'Разгон 0–100 км/ч и макс. скорость (Шкала для авто: 10 = ≤4,8 с / 270+ км/ч)'
+        }
+      },
+      {
+        key: 'midRangeTorquePassing',
+        label: {
+          en: 'Mid-Range Torque & Overtaking (Nm)',
+          de: 'Durchzug & Überholkraft (Nm)',
+          ru: 'Тяга и эластичность (80–120 км/ч)'
+        },
+        unitHint: {
+          en: 'Peak torque (Nm), turbo/diesel passing punch & 80–120 km/h highway elasticity',
+          de: 'Drehmoment (Nm), Elastizität bei 80–120 km/h & Überholreserve ohne Herunterschalten',
+          ru: 'Крутящий момент (Н·м) и уверенность обгонов на трассе (80–120 км/ч)'
+        }
+      },
+      {
+        key: 'handlingAgility',
+        label: {
+          en: 'Handling, Steering & Traction',
+          de: 'Kurvenverhalten, Lenkung & Traktion',
+          ru: 'Управляемость, рулевое и зацеп'
+        },
+        unitHint: {
+          en: 'Cornering composure, steering precision & FWD/RWD/AWD wet/winter traction',
+          de: 'Kurvenstabilität, Lenkpräzision sowie Traktion bei Nässe und Winter (FWD/RWD/AWD)',
+          ru: 'Точность руля, устойчивость в поворотах и зацеп (FWD/RWD/AWD)'
+        }
+      },
+      {
+        key: 'brakingPerformance',
+        label: {
+          en: 'Braking Performance & Fade Resistance',
+          de: 'Bremsleistung & Standfestigkeit',
+          ru: 'Тормозная динамика и выносливость'
+        },
+        unitHint: {
+          en: '100–0 km/h stopping distance, pedal modulation & thermal fade resistance',
+          de: 'Bremsweg 100–0 km/h, Pedaldosierbarkeit & Fading-Resistenz',
+          ru: 'Тормозной путь 100–0 км/ч, информативность педали и стойкость к перегреву'
+        }
+      }
+    ]
+  },
+  {
+    id: 'reliabilityQuality',
+    number: '2',
     label: {
       en: 'Reliability & Durability',
       de: 'Zuverlässigkeit & Haltbarkeit',
@@ -516,8 +589,81 @@ const STAT_PILLARS = [
     ]
   },
   {
+    id: 'runningCostsTco',
+    number: '3',
+    label: {
+      en: 'Running Costs & Value',
+      de: 'Unterhaltskosten & Wert',
+      ru: 'Расходы и ликвидность'
+    },
+    subtitle: {
+      en: 'Fuel, Tax, Insurance, Service, Resale',
+      de: 'Verbrauch, Steuer, Versicherung, Wartung, Wert',
+      ru: 'Расход, налог, страховка, ТО, ликвидность'
+    },
+    unitHint: {
+      en: 'Tracks real-world fuel economy, road tax & insurance tier, routine service costs, and resale value retention (average of 4 ratings, max 10.0). Shows what the car truly costs to own over time.',
+      de: 'Bewertet Praxisverbrauch, Steuer & Versicherung, Wartungs-/Reparaturkosten sowie Werterhalt (Schnitt aus 4 Wertungen, max. 10,0). Zeigt, was das Auto im Alltag langfristig wirklich kostet.',
+      ru: 'Оценивает реальный расход топлива, налоги и страховку, стоимость ТО и сохранность цены (среднее из 4 оценок, макс. 10.0). Показывает реальную стоимость владения авто.'
+    },
+    subRatings: [
+      {
+        key: 'efficiencyFuel',
+        label: {
+          en: 'Real-World Fuel Economy & Range',
+          de: 'Praxisverbrauch & Reichweite',
+          ru: 'Реальный расход топлива и запас хода'
+        },
+        unitHint: {
+          en: 'Real-world mixed fuel consumption (L/100 km) & full-tank driving range',
+          de: 'Realer Kraftstoffverbrauch im Alltag (L/100km) & Tankreichweite',
+          ru: 'Реальный расход топлива в смешанном цикле (л/100 км) и запас хода'
+        }
+      },
+      {
+        key: 'taxInsuranceNorm',
+        label: {
+          en: 'Tax, Insurance & Euro Norm',
+          de: 'Steuer, Versicherung & Umweltnorm',
+          ru: 'Налог, страховка и эко-класс'
+        },
+        unitHint: {
+          en: 'Annual road tax (CO2/displacement), insurance cost tier & Euro emissions zone status',
+          de: 'Steuer & Versicherung (CO2/Hubraum, Tarifniveau) & Euro-Abgasnorm / Umweltzone',
+          ru: 'Ежегодный налог, стоимость страховки и экологический класс Euro'
+        }
+      },
+      {
+        key: 'maintenanceRepairCosts',
+        label: {
+          en: 'Maintenance, Wear Parts & Repairs',
+          de: 'Wartung, Verschleiß & Reparaturkosten',
+          ru: 'Обслуживание, расходники и ремонт'
+        },
+        unitHint: {
+          en: 'Routine service bills, tyres/brakes wear parts & potential major repair costs',
+          de: 'Inspektionskosten, Verschleißteile (Bremsen/Reifen) & mögliche Reparaturrisiken',
+          ru: 'Стоимость планового ТО, расходников и потенциального крупного ремонта'
+        }
+      },
+      {
+        key: 'depreciationResale',
+        label: {
+          en: 'Used Market & Depreciation',
+          de: 'Gebrauchtmarkt & Wertstabilität',
+          ru: 'Вторичный рынок и ликвидность'
+        },
+        unitHint: {
+          en: 'Used market demand, value retention over 3/5+ years & resale liquidity',
+          de: 'Werterhalt, Nachfrage auf dem Gebrauchtwagenmarkt & Wiederverkaufswert',
+          ru: 'Спрос на вторичном рынке, сохранность остаточной стоимости и ликвидность'
+        }
+      }
+    ]
+  },
+  {
     id: 'comfortCabin',
-    number: '2',
+    number: '4',
     label: {
       en: 'Comfort, Cabin & Safety',
       de: 'Komfort, Innenraum & Sicherheit',
@@ -590,7 +736,7 @@ const STAT_PILLARS = [
   },
   {
     id: 'spacePracticality',
-    number: '3',
+    number: '5',
     label: {
       en: 'Space & Practicality',
       de: 'Platzangebot & Alltag',
@@ -644,152 +790,6 @@ const STAT_PILLARS = [
           en: 'Max payload (kg), roof load limit & unbraked/braked trailer towing capacity',
           de: 'Maximale Zuladung (kg), Dachlast sowie ungebremste/gebremste Anhängelast',
           ru: 'Полезная нагрузка (кг), нагрузка на крышу и масса буксируемого прицепа'
-        }
-      }
-    ]
-  },
-  {
-    id: 'performanceDynamics',
-    number: '4',
-    label: {
-      en: 'Performance & Dynamics',
-      de: 'Fahrleistung & Dynamik',
-      ru: 'Динамика и управляемость'
-    },
-    subtitle: {
-      en: 'Sprint, Torque, Handling, Brakes',
-      de: 'Sprint, Durchzug, Kurven, Bremsen',
-      ru: 'Разгон, тяга, шасси, тормоза'
-    },
-    unitHint: {
-      en: 'Rates 0–100 sprint, mid-range overtaking torque, cornering composure, and braking distance (average of 4 ratings, max 10.0). Reflects both driving fun and effortless highway reserves.',
-      de: 'Bewertet Sprint (0–100), Durchzug beim Überholen, Kurvenverhalten und Bremsleistung (Schnitt aus 4 Wertungen, max. 10,0). Spiegelt Fahrspaß ebenso wie souveräne Überholreserven wider.',
-      ru: 'Оценивает разгон 0–100, тягу на обгонах, управляемость и эффективность тормозов (среднее из 4 оценок, макс. 10.0). Показывает запас динамики и удовольствие от вождения.'
-    },
-    subRatings: [
-      {
-        key: 'accelerationOvertaking',
-        label: {
-          en: 'Acceleration & Top Speed (0–100)',
-          de: 'Beschleunigung & Höchstgeschwindigkeit',
-          ru: 'Разгон 0–100 км/ч и макс. скорость'
-        },
-        unitHint: {
-          en: '0–100 km/h sprint & top speed (Road-car scale: 10 = ≤4.8 s / 270+ km/h)',
-          de: '0–100 km/h Sprint & Höchstgeschwindigkeit (Pkw-Maßstab: 10 = ≤4,8 s / 270+ km/h)',
-          ru: 'Разгон 0–100 км/ч и макс. скорость (Шкала для авто: 10 = ≤4,8 с / 270+ км/ч)'
-        }
-      },
-      {
-        key: 'midRangeTorquePassing',
-        label: {
-          en: 'Mid-Range Torque & Overtaking (Nm)',
-          de: 'Durchzug & Überholkraft (Nm)',
-          ru: 'Тяга и эластичность (80–120 км/ч)'
-        },
-        unitHint: {
-          en: 'Peak torque (Nm), turbo/diesel passing punch & 80–120 km/h highway elasticity',
-          de: 'Drehmoment (Nm), Elastizität bei 80–120 km/h & Überholreserve ohne Herunterschalten',
-          ru: 'Крутящий момент (Н·м) и уверенность обгонов на трассе (80–120 км/ч)'
-        }
-      },
-      {
-        key: 'handlingAgility',
-        label: {
-          en: 'Handling, Steering & Traction',
-          de: 'Kurvenverhalten, Lenkung & Traktion',
-          ru: 'Управляемость, рулевое и зацеп'
-        },
-        unitHint: {
-          en: 'Cornering composure, steering precision & FWD/RWD/AWD wet/winter traction',
-          de: 'Kurvenstabilität, Lenkpräzision sowie Traktion bei Nässe und Winter (FWD/RWD/AWD)',
-          ru: 'Точность руля, устойчивость в поворотах и зацеп (FWD/RWD/AWD)'
-        }
-      },
-      {
-        key: 'brakingPerformance',
-        label: {
-          en: 'Braking Performance & Fade Resistance',
-          de: 'Bremsleistung & Standfestigkeit',
-          ru: 'Тормозная динамика и выносливость'
-        },
-        unitHint: {
-          en: '100–0 km/h stopping distance, pedal modulation & thermal fade resistance',
-          de: 'Bremsweg 100–0 km/h, Pedaldosierbarkeit & Fading-Resistenz',
-          ru: 'Тормозной путь 100–0 км/ч, информативность педали и стойкость к перегреву'
-        }
-      }
-    ]
-  },
-  {
-    id: 'runningCostsTco',
-    number: '5',
-    label: {
-      en: 'Running Costs & Value',
-      de: 'Unterhaltskosten & Wert',
-      ru: 'Расходы и ликвидность'
-    },
-    subtitle: {
-      en: 'Fuel, Tax, Insurance, Service, Resale',
-      de: 'Verbrauch, Steuer, Versicherung, Wartung, Wert',
-      ru: 'Расход, налог, страховка, ТО, ликвидность'
-    },
-    unitHint: {
-      en: 'Tracks real-world fuel economy, road tax & insurance tier, routine service costs, and resale value retention (average of 4 ratings, max 10.0). Shows what the car truly costs to own over time.',
-      de: 'Bewertet Praxisverbrauch, Steuer & Versicherung, Wartungs-/Reparaturkosten sowie Werterhalt (Schnitt aus 4 Wertungen, max. 10,0). Zeigt, was das Auto im Alltag langfristig wirklich kostet.',
-      ru: 'Оценивает реальный расход топлива, налоги и страховку, стоимость ТО и сохранность цены (среднее из 4 оценок, макс. 10.0). Показывает реальную стоимость владения авто.'
-    },
-    subRatings: [
-      {
-        key: 'efficiencyFuel',
-        label: {
-          en: 'Real-World Fuel Economy & Range',
-          de: 'Praxisverbrauch & Reichweite',
-          ru: 'Реальный расход топлива и запас хода'
-        },
-        unitHint: {
-          en: 'Real-world mixed fuel consumption (L/100 km) & full-tank driving range',
-          de: 'Realer Kraftstoffverbrauch im Alltag (L/100km) & Tankreichweite',
-          ru: 'Реальный расход топлива в смешанном цикле (л/100 км) и запас хода'
-        }
-      },
-      {
-        key: 'taxInsuranceNorm',
-        label: {
-          en: 'Tax, Insurance & Euro Norm',
-          de: 'Steuer, Versicherung & Umweltnorm',
-          ru: 'Налог, страховка и эко-класс'
-        },
-        unitHint: {
-          en: 'Annual road tax (CO2/displacement), insurance cost tier & Euro emissions zone status',
-          de: 'Steuer & Versicherung (CO2/Hubraum, Tarifniveau) & Euro-Abgasnorm / Umweltzone',
-          ru: 'Ежегодный налог, стоимость страховки и экологический класс Euro'
-        }
-      },
-      {
-        key: 'maintenanceRepairCosts',
-        label: {
-          en: 'Maintenance, Wear Parts & Repairs',
-          de: 'Wartung, Verschleiß & Reparaturkosten',
-          ru: 'Обслуживание, расходники и ремонт'
-        },
-        unitHint: {
-          en: 'Routine service bills, tyres/brakes wear parts & potential major repair costs',
-          de: 'Inspektionskosten, Verschleißteile (Bremsen/Reifen) & mögliche Reparaturrisiken',
-          ru: 'Стоимость планового ТО, расходников и потенциального крупного ремонта'
-        }
-      },
-      {
-        key: 'depreciationResale',
-        label: {
-          en: 'Used Market & Depreciation',
-          de: 'Gebrauchtmarkt & Wertstabilität',
-          ru: 'Вторичный рынок и ликвидность'
-        },
-        unitHint: {
-          en: 'Used market demand, value retention over 3/5+ years & resale liquidity',
-          de: 'Werterhalt, Nachfrage auf dem Gebrauchtwagenmarkt & Wiederverkaufswert',
-          ru: 'Спрос на вторичном рынке, сохранность остаточной стоимости и ликвидность'
         }
       }
     ]
@@ -898,14 +898,14 @@ const SPEC_TOKENS = {
   // Gearboxes
   '@manual5': { en: '5-Speed Manual', de: '5-Gang Schaltgetriebe', ru: '5-ст. Механика' },
   '@manual6': { en: '6-Speed Manual', de: '6-Gang Schaltgetriebe', ru: '6-ст. Механика' },
-  '@eCvt': { en: 'Planetary e-CVT', de: 'Planeten-e-CVT', ru: 'Планетарный e-CVT' },
-  '@cvt': { en: 'CVT Automatic', de: 'CVT-Automatik', ru: 'Вариатор CVT' },
-  '@auto5': { en: '5-Speed Torque Auto', de: '5-Gang Wandler', ru: '5-ст. Автомат' },
-  '@auto6': { en: '6-Speed Torque Auto', de: '6-Gang Wandler', ru: '6-ст. Автомат' },
-  '@auto7': { en: '7-Speed Torque Auto', de: '7-Gang Wandler', ru: '7-ст. Автомат' },
-  '@dsg6Wet': { en: '6-Speed Wet DSG', de: '6-Gang Nass-DSG', ru: '6-ст. Мокрый DSG' },
-  '@dsg7Dry': { en: '7-Speed Dry DSG', de: '7-Gang Trocken-DSG', ru: '7-ст. Сухой DSG' },
-  '@dsg7Wet': { en: '7-Speed Wet DSG', de: '7-Gang Nass-DSG', ru: '7-ст. Мокрый DSG' },
+  '@eCvt': { en: 'Planetary e-CVT (Automatic)', de: 'Planeten-e-CVT (Automatik)', ru: 'Планетарный e-CVT (Автомат)' },
+  '@cvt': { en: 'CVT Automatic', de: 'CVT-Automatik', ru: 'Вариатор CVT (Автомат)' },
+  '@auto5': { en: '5-Speed Torque Auto', de: '5-Gang Wandler-Automatik', ru: '5-ст. Автомат' },
+  '@auto6': { en: '6-Speed Torque Auto', de: '6-Gang Wandler-Automatik', ru: '6-ст. Автомат' },
+  '@auto7': { en: '7-Speed Torque Auto', de: '7-Gang Wandler-Automatik', ru: '7-ст. Автомат' },
+  '@dsg6Wet': { en: '6-Speed Wet DSG (Automatic)', de: '6-Gang Nass-DSG (Automatik)', ru: '6-ст. Мокрый DSG (Автомат)' },
+  '@dsg7Dry': { en: '7-Speed Dry DSG (Automatic)', de: '7-Gang Trocken-DSG (Automatik)', ru: '7-ст. Сухой DSG (Автомат)' },
+  '@dsg7Wet': { en: '7-Speed Wet DSG (Automatic)', de: '7-Gang Nass-DSG (Automatik)', ru: '7-ст. Мокрый DSG (Автомат)' },
 
   // Clutch / DMF
   '@noClutch': { en: '✕ No Clutch / DMF', de: '✕ Ohne Kupplung/ZMS', ru: '✕ Без сцепл. и мах.' },
@@ -2105,6 +2105,11 @@ const SPEC_ROW_HINTS = {
     de: 'Die Getriebebauart entscheidet über Haltbarkeit und Wartungskosten. Planeten-e-CVTs und robuste Schaltgetriebe gelten gebraucht als besonders risikoarm.',
     ru: 'Конструкция КПП напрямую влияет на ресурс и стоимость ремонта. Планетарные e-CVT и проверенная механика — самые надёжные варианты с пробегом.'
   },
+  transmissionType: {
+    en: 'Plainly classifies whether this configuration uses a clutch-pedal Manual gearbox, a self-shifting Automatic (such as Torque Auto, CVT, e-CVT, or DSG), or offers both.',
+    de: 'Zeigt klar, ob diese Motorisierung als Schaltgetriebe (mit Kupplungspedal), als selbstschaltende Automatik (z. B. Wandler, CVT, e-CVT, DSG) oder in beiden Varianten angeboten wird.',
+    ru: 'Наглядно показывает, оснащена ли версия механической КПП с педалью сцепления, автоматической трансмиссией (автомат, вариатор CVT/e-CVT, робот DSG) или доступна с обоими вариантами.'
+  },
   clutchDmf: {
     en: 'Clutch and Dual-Mass Flywheel (DMF) are major wear items on manual/diesel cars. Replacing a DMF + clutch typically costs €1,000–€1,800.',
     de: 'Kupplung und Zweimassenschwungrad (ZMS) sind typische Verschleißteile. Ein Tausch von Kupplung + ZMS kostet bei Gebrauchtwagen oft 1.000–1.800 €.',
@@ -2227,9 +2232,9 @@ const SPEC_ROW_HINTS = {
     ru: 'Пиковый крутящий момент (Н·м) и обороты его достижения. Высокая тяга до 2000 об/мин делает езду лёгкой без раскрутки мотора.'
   },
   passingPunch: {
-    en: 'Real-world mid-range overtaking feel (e.g., 80–120 km/h). Turbocharged and diesel engines pull strongly in-gear; naturally aspirated engines need a downshift.',
-    de: 'Praxis-Durchzug beim Überholen (z. B. 80–120 km/h). Turbos und Diesel ziehen direkt an; Saugmotoren verlangen meist einen Gang tiefer.',
-    ru: 'Реальная эластичность на обгонах (80–120 км/ч). Турбо и дизели тянут сразу, атмосферникам обычно нужно переключиться ниже.'
+    en: 'Real-world mid-range overtaking feel (e.g., 80–120 km/h). Turbocharged and diesel engines pull strongly in-gear; smaller naturally aspirated engines need a downshift.',
+    de: 'Praxis-Durchzug beim Überholen (z. B. 80–120 km/h). Turbos und Diesel ziehen direkt an; kleinere Saugmotoren verlangen meist einen Gang tiefer.',
+    ru: 'Реальная эластичность на обгонах (80–120 км/ч). Турбо и дизели тянут сразу; небольшим атмосферникам обычно нужно переключиться ниже.'
   },
   chassisFeel: {
     en: 'How composed, predictable, and engaging the car feels through corners and quick lane changes.',
@@ -2751,6 +2756,568 @@ let vehicleViewCarId = null;
 let vehicleViewEngineId = null;
 let vehicleViewAngleIdx = 1;
 let vehicleViewPaintIdx = 0;
+let vehicleActiveTab = 'overview';
+let vehicleExpandedPillars = new Set();
+let vehicleReliabilityDepth = 'simple';
+let vehicleAnnualKm = 15000;
+
+const VEHICLE_TABS_I18N = {
+  en: {
+    tabs: {
+      overview: 'Overview & Verdict',
+      ratings: '5-Pillar Rating',
+      specs: 'Technical Specs',
+      trims: 'Trims & Interior',
+      reliability: 'Reliability & Known Issues',
+      costs: 'Running Costs',
+      market: 'Market & Pricing'
+    },
+    comingSoonBadge: 'IN DEVELOPMENT',
+    comingSoonTitle: 'In-Depth Dossier Coming Soon',
+    comingSoonText: 'Full 7-tab telemetry, buyer guide, cost estimator, and market pricing are currently available on the Toyota Auris while we finalize the template.',
+    strengthsTitle: 'Standout Strengths & Trade-Offs',
+    missionTitle: 'Mission Profile',
+    bestRoleLabel: 'Best Role',
+    missionCity: 'City Commute',
+    missionHighway: 'Highway Cruise',
+    missionFamily: 'Family & Cargo',
+    missionFun: 'Driving Fun',
+    missionBudget: 'Budget & Long-Term',
+    pillarsTitle: '5-Pillar Telemetry Overview',
+    clickToExpandHint: 'Click any pillar to inspect its sub-ratings',
+    buyerFitTitle: 'Buyer Fit — Who Is This For?',
+    ratingsTitle: '5-Pillar Rating Breakdown',
+    ratingsHint: 'Click any sub-rating row to open its full Engineering Dossier',
+    expandAll: '+ EXPAND ALL',
+    collapseAll: '− COLLAPSE ALL',
+    totalScoreTitle: 'TOTAL SCORE',
+    totalScoreSub: 'UNWEIGHTED 5-PILLAR BASELINE',
+    specsTitle: 'Complete Technical Specifications',
+    specsHint: 'Hover any value or row for engineering context',
+    secPowertrain: 'Engine & Drivetrain',
+    secPerfChassis: 'Performance & Chassis',
+    secDimSpace: 'Dimensions & Practicality',
+    secComfortSafety: 'Comfort, Safety & Build',
+    secEffOwnership: 'Efficiency & Ownership',
+    trimsBadge: 'PLACEHOLDER',
+    trimsTitle: 'Trims, Equipment & Interior',
+    trimsDesc: 'Detailed trim-level comparisons, standard equipment lists, and interior ergonomics notes will be added here.',
+    relStatsTitle: 'Independent Reliability Track Record',
+    relDepthSimple: 'Simple',
+    relDepthThorough: 'Thorough',
+    relSimpleHint: 'Essential buying verdict & key dealbreaker checks',
+    relThoroughHint: 'Full inspection checklist, weak spots, repair costs & 0–250,000 km roadmap',
+    relVerdictKicker: 'Powertrain Durability Verdict',
+    relBoosters: '+ Score Boosters',
+    relDrags: '− Watch-Outs',
+    relTopChecks: 'Key Dealbreaker Checks Before Buying',
+    relTopIssues: 'Top Known Weak Spots',
+    relExtendedChecks: 'Extended Thorough Inspection Checklist',
+    relRepairTitle: 'Common Repairs & Wear Guide',
+    relRoadmapTitle: '0–250,000 km High-Mileage Service & Risk Roadmap',
+    relRoutineTitle: 'Model-Specific Routine Service',
+    relCriticalTitle: 'Known Weak Spots & Critical Repairs',
+    relNoneCritical: 'No chronic mechanical weak spots recorded for this engine.',
+    relIfIgnored: 'If ignored:',
+    costsEstTitle: 'Estimated Annual Ownership Cost',
+    costsEstHint: 'Estimated European averages based on real-world consumption & selected mileage',
+    costsFuelLabel: 'Fuel',
+    costsTaxLabel: 'Road Tax',
+    costsInsLabel: 'Insurance Est.',
+    costsServiceLabel: 'Routine Service',
+    costsTotalYrLabel: 'Est. Annual Total',
+    costsPerMoLabel: 'Monthly Avg.',
+    costsSavingsLabel: 'vs. Compact Petrol Class Avg.',
+    costsClassAvgLabel: 'Class baseline',
+    costsRatingsTitle: 'Running Costs Sub-Ratings',
+    costsClickDossier: 'Click any card to open its full Dossier',
+    perYr: '/yr',
+    perMo: '/mo',
+    depGraphTitle: 'Value & Depreciation Curve',
+    depGraphHint: 'Hover points or cards to inspect',
+    marketInsightsTitle: 'Market Insights & 3–5 Year Outlook',
+    marketSupplyLabel: 'Current Supply & Demand',
+    marketSweetSpotLabel: 'Buyer Sweet Spot',
+    marketOutlook35Label: '3–5 Year Value Expectation'
+  },
+  de: {
+    tabs: {
+      overview: 'Übersicht & Fazit',
+      ratings: '5-Säulen-Wertung',
+      specs: 'Technische Daten',
+      trims: 'Ausstattung & Interieur',
+      reliability: 'Zuverlässigkeit & Schwachstellen',
+      costs: 'Unterhaltskosten',
+      market: 'Markt & Preise'
+    },
+    comingSoonBadge: 'IN ARBEIT',
+    comingSoonTitle: 'Detail-Dossier folgt in Kürze',
+    comingSoonText: 'Alle 7 Detail-Tabs, Kaufberatung, Kostenrechner und Marktprognose stehen aktuell beim Toyota Auris zur Verfügung, bis das Layout finalisiert ist.',
+    strengthsTitle: 'Stärken & Kompromisse',
+    missionTitle: 'Einsatzprofil',
+    bestRoleLabel: 'Ideal für',
+    missionCity: 'Stadt & Pendeln',
+    missionHighway: 'Autobahn & Reise',
+    missionFamily: 'Familie & Kofferraum',
+    missionFun: 'Fahrspaß',
+    missionBudget: 'Budget & Langzeit',
+    pillarsTitle: '5-Säulen-Übersicht',
+    clickToExpandHint: 'Säule anklicken, um alle Teilwertungen anzuzeigen',
+    buyerFitTitle: 'Kaufberatung — Für wen geeignet?',
+    ratingsTitle: '5-Säulen-Detailwertung',
+    ratingsHint: 'Teilwertung anklicken, um das vollständige Technik-Dossier zu öffnen',
+    expandAll: '+ ALLE AUFKLAPPEN',
+    collapseAll: '− ALLE ZUKLAPPEN',
+    totalScoreTitle: 'GESAMTPUNKTE',
+    totalScoreSub: 'UNGEWICHTETE 5-SÄULEN-BASIS',
+    specsTitle: 'Vollständige Technische Daten',
+    specsHint: 'Für technische Details über Wert oder Zeile fahren',
+    secPowertrain: 'Motor & Antrieb',
+    secPerfChassis: 'Fahrleistung & Fahrwerk',
+    secDimSpace: 'Maße & Alltagsnutzen',
+    secComfortSafety: 'Komfort, Sicherheit & Substanz',
+    secEffOwnership: 'Effizienz & Unterhalt',
+    trimsBadge: 'PLATZHALTER',
+    trimsTitle: 'Ausstattungslinien & Interieur',
+    trimsDesc: 'Detaillierte Ausstattungslinien, Serienumfänge und Material-Hinweise folgen hier in Kürze.',
+    relStatsTitle: 'Unabhängige Zuverlässigkeits-Statistik',
+    relDepthSimple: 'Kompakt',
+    relDepthThorough: 'Gründlich',
+    relSimpleHint: 'Wichtigstes Fazit & Pflicht-Checks beim Kauf',
+    relThoroughHint: 'Erweiterte Checkliste, Schwachstellen, Reparaturkosten & 0–250.000-km-Fahrplan',
+    relVerdictKicker: 'Antriebs-Haltbarkeit im Fazit',
+    relBoosters: '+ Pluspunkte',
+    relDrags: '− Kritikpunkte',
+    relTopChecks: 'Wichtigste K.O.-Checks vor dem Kauf',
+    relTopIssues: 'Häufigste bekannte Schwachstellen',
+    relExtendedChecks: 'Erweiterte Kauf-Checkliste (Gründlich)',
+    relRepairTitle: 'Typische Reparaturen & Verschleißteile',
+    relRoadmapTitle: 'Wartungs- & Risiko-Fahrplan (0–250.000 km)',
+    relRoutineTitle: 'Modellspezifische Routine-Wartung',
+    relCriticalTitle: 'Bekannte Schwachstellen & teure Defekte',
+    relNoneCritical: 'Keine chronischen mechanischen Schwachstellen bei diesem Motor bekannt.',
+    relIfIgnored: 'Bei Ignorieren:',
+    costsEstTitle: 'Geschätzte jährliche Unterhaltskosten',
+    costsEstHint: 'Europäische Richtwerte auf Basis realer Verbräuche & gewählter Fahrleistung',
+    costsFuelLabel: 'Kraftstoff',
+    costsTaxLabel: 'Kfz-Steuer',
+    costsInsLabel: 'Versicherung (ca.)',
+    costsServiceLabel: 'Wartung & Service',
+    costsTotalYrLabel: 'Jährlich gesamt (ca.)',
+    costsPerMoLabel: 'Monatsschnitt',
+    costsSavingsLabel: 'vs. Kompaktklasse-Benziner-Schnitt',
+    costsClassAvgLabel: 'Klassen-Richtwert',
+    costsRatingsTitle: 'Unterhaltskosten im Detail',
+    costsClickDossier: 'Karte anklicken für das vollständige Dossier',
+    perYr: '/J.',
+    perMo: '/Monat',
+    depGraphTitle: 'Wert- & Wertverlustkurve',
+    depGraphHint: 'Punkte oder Karten für Details berühren',
+    marketInsightsTitle: 'Marktlage & 3–5-Jahres-Ausblick',
+    marketSupplyLabel: 'Aktuelles Angebot & Nachfrage',
+    marketSweetSpotLabel: 'Kauf-Sweet-Spot',
+    marketOutlook35Label: 'Werterwartung (3–5 Jahre)'
+  },
+  ru: {
+    tabs: {
+      overview: 'Обзор и вердикт',
+      ratings: 'Оценка (5 категорий)',
+      specs: 'Характеристики',
+      trims: 'Комплектации и салон',
+      reliability: 'Надёжность и болячки',
+      costs: 'Расходы на содержание',
+      market: 'Рынок и цены'
+    },
+    comingSoonBadge: 'В РАЗРАБОТКЕ',
+    comingSoonTitle: 'Подробное досье скоро появится',
+    comingSoonText: 'Полные 7 вкладок с характеристиками, гайдом покупателя, калькулятором расходов и прогнозом рынка сейчас доступны для Toyota Auris.',
+    strengthsTitle: 'Главные плюсы и компромиссы',
+    missionTitle: 'Профиль задач',
+    bestRoleLabel: 'Лучшая роль',
+    missionCity: 'Город и пробки',
+    missionHighway: 'Трасса и круиз',
+    missionFamily: 'Семья и багажник',
+    missionFun: 'Драйв и рулёжка',
+    missionBudget: 'Экономия и ресурс',
+    pillarsTitle: 'Обзор 5 категорий',
+    clickToExpandHint: 'Нажмите на категорию, чтобы открыть детали оценки',
+    buyerFitTitle: 'Кому подойдёт автомобиль?',
+    ratingsTitle: 'Рейтинг по 5 категориям',
+    ratingsHint: 'Нажмите на любой пункт, чтобы открыть полное инженерное досье',
+    expandAll: '+ РАЗВЕРНУТЬ ВСЕ',
+    collapseAll: '− СВЕРНУТЬ ВСЕ',
+    totalScoreTitle: 'ИТОГО БАЛЛОВ',
+    totalScoreSub: 'НЕВЗВЕШЕННАЯ СУММА 5 КАТЕГОРИЙ',
+    specsTitle: 'Полные технические характеристики',
+    specsHint: 'Наведите на значение или строку для пояснения',
+    secPowertrain: 'Двигатель и трансмиссия',
+    secPerfChassis: 'Динамика и шасси',
+    secDimSpace: 'Габариты и практичность',
+    secComfortSafety: 'Комфорт, безопасность и кузов',
+    secEffOwnership: 'Экономичность и ликвидность',
+    trimsBadge: 'ЗАГЛУШКА',
+    trimsTitle: 'Комплектации и интерьер',
+    trimsDesc: 'Подробное сравнение комплектаций, штатного оснащения и отделки салона появится здесь позже.',
+    relStatsTitle: 'Независимая статистика надёжности',
+    relDepthSimple: 'Кратко',
+    relDepthThorough: 'Подробно',
+    relSimpleHint: 'Главный вывод и ключевые проверки перед покупкой',
+    relThoroughHint: 'Расширенный чек-лист осмотра, слабые места, цены ремонта и план 0–250 000 км',
+    relVerdictKicker: 'Вердикт по ресурсу силового агрегата',
+    relBoosters: '+ Что повышает оценку',
+    relDrags: '− На что обратить внимание',
+    relTopChecks: 'Главные проверки перед покупкой',
+    relTopIssues: 'Основные известные слабые места',
+    relExtendedChecks: 'Расширенный чек-лист осмотра (Подробно)',
+    relRepairTitle: 'Типовые работы и известные неисправности',
+    relRoadmapTitle: 'Карта обслуживания и рисков (0–250 000 км)',
+    relRoutineTitle: 'Специфическое плановое ТО',
+    relCriticalTitle: 'Слабые места и критичные ремонты',
+    relNoneCritical: 'Хронических конструктивных проблем у этого двигателя не выявлено.',
+    relIfIgnored: 'Если игнорировать:',
+    costsEstTitle: 'Оценочные годовые расходы',
+    costsEstHint: 'Ориентировочный европейский расчёт по реальному расходу и пробегу',
+    costsFuelLabel: 'Топливо',
+    costsTaxLabel: 'Налог',
+    costsInsLabel: 'Страховка (ориент.)',
+    costsServiceLabel: 'Плановое ТО',
+    costsTotalYrLabel: 'Итого в год (ориент.)',
+    costsPerMoLabel: 'В месяц',
+    costsSavingsLabel: 'vs. средний бензин C-класса',
+    costsClassAvgLabel: 'База класса',
+    costsRatingsTitle: 'Оценки стоимости владения',
+    costsClickDossier: 'Нажмите на карточку, чтобы открыть досье',
+    perYr: '/год',
+    perMo: '/мес.',
+    depGraphTitle: 'Кривая стоимости и амортизации',
+    depGraphHint: 'Наведите на точки или карточки для деталей',
+    marketInsightsTitle: 'Рынок и прогноз цены на 3–5 лет',
+    marketSupplyLabel: 'Спрос и предложение',
+    marketSweetSpotLabel: 'Оптимальный выбор (Sweet Spot)',
+    marketOutlook35Label: 'Прогноз стоимости через 3–5 лет'
+  }
+};
+
+const AURIS_INDEPTH_DATA = {
+  engineCosts: {
+    '1.8-hybrid':     { group: 'hybrid',       avgFuelL100: 4.8, fuelPrice: 1.75, tax: 36,  ins: 580, service: 260 },
+    '1.33-dual-vvti': { group: 'petrol-na',    avgFuelL100: 6.2, fuelPrice: 1.75, tax: 112, ins: 540, service: 290 },
+    '1.6-valvematic': { group: 'petrol-na',    avgFuelL100: 6.8, fuelPrice: 1.75, tax: 136, ins: 590, service: 300 },
+    '1.2-turbo':      { group: 'petrol-turbo', avgFuelL100: 6.2, fuelPrice: 1.75, tax: 88,  ins: 560, service: 330 },
+    '1.4-d4d':        { group: 'diesel',       avgFuelL100: 4.9, fuelPrice: 1.65, tax: 164, ins: 620, service: 350 },
+    '1.6-d4d':        { group: 'diesel',       avgFuelL100: 5.1, fuelPrice: 1.65, tax: 176, ins: 640, service: 380 },
+    '2.0-d4d':        { group: 'diesel',       avgFuelL100: 5.5, fuelPrice: 1.65, tax: 228, ins: 670, service: 390 }
+  },
+  groups: {
+    hybrid: {
+      stats: {
+        en: [
+          { source: 'TÜV Report', value: 'Top 3%', note: 'Minimal drivetrain & brake-wear defects across 6–11 yr inspections' },
+          { source: 'ADAC Pannenstatistik', value: 'Very Low Breakdowns', note: 'Main roadside call-out is simply an aged 12V auxiliary battery' },
+          { source: 'WhatCar? Survey', value: '98.4% Reliability', note: 'Consistently ranks #1–#2 in Used Family Car reliability' }
+        ],
+        de: [
+          { source: 'TÜV-Report', value: 'Top 3 %', note: 'Kaum Mängel an Antrieb und Bremsen selbst bei 6–11 Jahre alten Fahrzeugen' },
+          { source: 'ADAC Pannenstatistik', value: 'Sehr pannensicher', note: 'Häufigste Pannenursache ist lediglich eine schwache 12V-Hilfsbatterie' },
+          { source: 'WhatCar? Umfrage', value: '98,4 % Zuverlässigkeit', note: 'Regelmäßig Platz 1–2 bei gebrauchten Kompaktwagen' }
+        ],
+        ru: [
+          { source: 'Отчёт TÜV', value: 'Топ-3%', note: 'Минимум нареканий по агрегатам и тормозам на осмотрах 6–11 лет' },
+          { source: 'ADAC Pannenstatistik', value: 'Минимум поломок', note: 'Главная причина вызовов эвакуатора — лишь старый 12В аккумулятор' },
+          { source: 'Рейтинг WhatCar?', value: '98,4% надёжности', note: 'Стабильно занимает 1–2 места среди подержанных хэтчбеков C-класса' }
+        ]
+      },
+      extendedChecks: {
+        en: [
+          'Check rear subframe, exhaust heat-shields and rear brake discs for surface corrosion on salt-belt cars.',
+          'Verify smooth electric-to-petrol transitions in slow city traffic with zero shudder under light throttle.',
+          'Confirm both rear-seat hybrid battery intake vents are unobstructed and dust-free.',
+          'Inspect water pump housing and inverter coolant reservoir for pink crust or level drops.'
+        ],
+        de: [
+          'Hinterachsträger, Hitzeschutzbleche und hintere Bremsscheiben auf Winter-Rost oder Riefenbildung prüfen.',
+          'Sanften Übergang zwischen E-Motor und Benziner im Stadtverkehr ohne Ruckeln unter Teillast testen.',
+          'Beide Lüftungsschlitze der Hybridbatterie unter der Rückbank auf freie, staubfreie Luftzufuhr prüfen.',
+          'Wasserpumpe und Ausgleichsbehälter des Inverter-Kühlkreislaufs auf rosa Krusten oder Verlust checken.'
+        ],
+        ru: [
+          'Осмотреть задний подрамник, тепловые экраны и задние тормозные диски на предмет ржавчины от реагентов.',
+          'Проверить плавность перехода с электротяги на бензин в пробке без толчков и вибраций.',
+          'Убедиться, что решётки охлаждения батареи под задним сиденьем не забиты пылью и ворсом.',
+          'Проверить помпы и бачок охлаждения инвертора на наличие подтёков или розового налёта.'
+        ]
+      },
+      savingsNote: {
+        en: 'Zero clutch, starter, alternator, or timing belt bills plus ~4.8 L/100 km real fuel use typically save €450–€750/yr vs. conventional petrol rivals.',
+        de: 'Keine Kosten für Kupplung, Anlasser, Lichtmaschine oder Zahnriemen sowie ca. 4,8 L/100 km sparen oft 450–750 €/Jahr gegenüber klassischen Benzinern.',
+        ru: 'Отсутствие сцепления, стартера, генератора и ремня ГРМ при расходе ~4,8 л/100 км экономит около €450–750 в год по сравнению с обычными бензиновыми конкурентами.'
+      },
+      market: {
+        supplyDemand: {
+          en: 'High used supply, yet clean 2015–2018 facelift hybrids sell within days due to strong commuter and city-zone demand.',
+          de: 'Gutes Marktangebot, doch gepflegte 2015–2018 Facelift-Hybride sind wegen hoher Nachfrage oft in wenigen Tagen verkauft.',
+          ru: 'Предложение хорошее, но ухоженные рестайлинговые гибриды 2015–2018 гг. быстро находят покупателя благодаря высокому спросу в городах.'
+        },
+        sweetSpot: {
+          en: '2016–2018 Facelift (Executive / Design) with 80,000–130,000 km and documented Toyota Hybrid Health Checks (€9,500–€12,200).',
+          de: 'Facelift 2016–2018 (Executive / Edition-S+) mit 80.000–130.000 km und lückenlosem Hybrid-Health-Check (9.500–12.200 €).',
+          ru: 'Рестайлинг 2016–2018 гг. с пробегом 80–130 тыс. км и историей проверки батареи у дилера (€9 500–12 200).'
+        },
+        outlook3to5yr: {
+          en: 'Flattening depreciation floor (~€6,200–€7,400 in 3–5 yrs). Hybrid city compliance keeps Auris Hybrid values noticeably firmer than diesel compacts.',
+          de: 'Sehr flacher Wertverlust-Boden (ca. 6.200–7.400 € in 3–5 Jahren). Umweltzonen-Tauglichkeit hält den Hybrid deutlich stabiler als Diesel.',
+          ru: 'Пологая кривая снижения цены (около €6 200–7 400 через 3–5 лет). Спрос на надёжные гибриды удерживает ликвидность заметно лучше дизелей.'
+        }
+      },
+      watchoutExtra: {
+        en: [
+          'HV NiMH traction battery cells age after ~12–15 years or 200,000+ km (plan ~€1,600–€2,400 for replacement or refurbishment).',
+          'Under-seat battery cooling fan can overheat if the intake grille becomes clogged with dust and lint.'
+        ],
+        de: [
+          'NiMH-Hybridbatterie altert nach ca. 12–15 Jahren bzw. über 200.000 km (ca. 1.600–2.400 € für Tausch oder Aufbereitung einplanen).',
+          'Lüftungsgitter der Batterie unter der Rücksitzbank kann bei starker Verschmutzung zu Überhitzung führen.'
+        ],
+        ru: [
+          'Тяговая NiMH-батарея постепенно деградирует после 12–15 лет или 200+ тыс. км (замена или восстановление около €1 600–2 400).',
+          'Вентилятор охлаждения батареи под задним сиденьем перегревается, если фильтр и решётка забиты пылью.'
+        ]
+      }
+    },
+    'petrol-na': {
+      stats: {
+        en: [
+          { source: 'TÜV Report', value: 'Top 10%', note: 'Simple chain-driven atmospheric petrols with very few mechanical defects' },
+          { source: 'ADAC Pannenstatistik', value: 'Highly Reliable', note: 'Zero turbo, zero dual-mass flywheel & simple port fuel injection' },
+          { source: 'WhatCar? Survey', value: '96.8% Reliability', note: 'Low-cost predictable servicing and rare unplanned garage visits' }
+        ],
+        de: [
+          { source: 'TÜV-Report', value: 'Top 10 %', note: 'Schlichte Sauger mit Steuerkette und sehr geringer Mängelquote' },
+          { source: 'ADAC Pannenstatistik', value: 'Sehr zuverlässig', note: 'Kein Turbolader, kein ZMS und unkomplizierte Saugrohreinspritzung' },
+          { source: 'WhatCar? Umfrage', value: '96,8 % Zuverlässigkeit', note: 'Günstige, planbare Wartung ohne teure Überraschungsreparaturen' }
+        ],
+        ru: [
+          { source: 'Отчёт TÜV', value: 'Топ-10%', note: 'Простые цепные атмосферники с минимальным количеством отказов' },
+          { source: 'ADAC Pannenstatistik', value: 'Высокая надёжность', note: 'Нет турбины, двухмассового маховика и капризного прямого впрыска' },
+          { source: 'Рейтинг WhatCar?', value: '96,8% надёжности', note: 'Недорогое обслуживание и редкие внеплановые визиты на СТО' }
+        ]
+      },
+      extendedChecks: {
+        en: [
+          'Check clutch bite point and listen for Valvematic actuator clicking or timing-chain rattle on cold startup.',
+          'Inspect rear trailing-arm bushes and shock absorbers for leaks on higher-mileage urban examples.',
+          'Verify 10,000–15,000 km oil history (prevents piston-ring carbon on 1.33L city cars).',
+          'Test all 6 manual gears smoothly and confirm A/C compressor blows cold immediately.'
+        ],
+        de: [
+          'Kupplungsdruckpunkt prüfen und beim Kaltstart auf ruhigen Kettenlauf sowie unauffälliges Valvematic-Geräusch achten.',
+          'Hinterachslager und Stoßdämpfer bei höheren Stadt-Laufleistungen auf Ölverlust kontrollieren.',
+          'Ölwechsel-Intervalle (10.000–15.000 km) prüfen — schützt beim 1.33 vor verkokten Kolbenringen.',
+          'Alle 6 Schaltgänge sauber durchschalten und schnelle Kühlleistung der Klimaanlage testen.'
+        ],
+        ru: [
+          'Проверить ход сцепления и послушать холодный пуск на отсутствие стука цепи ГРМ или привода Valvematic.',
+          'Осмотреть задние сайлентблоки и амортизаторы на сухость при городских пробегах.',
+          'Убедиться в замене масла раз в 10–15 тыс. км (критично для чистоты колец на моторе 1.33).',
+          'Проверить чёткость включения всех 6 передач МКПП и быстрое охлаждение кондиционера.'
+        ]
+      },
+      savingsNote: {
+        en: 'Higher fuel burn than the Hybrid, but low buy-in price and zero complex turbo/DPF/battery parts keep surprise repair risk near zero.',
+        de: 'Etwas mehr Verbrauch als der Hybrid, aber günstiger Kaufpreis und fehlende Turbo-/DPF-Teile halten unerwartete Reparaturen extrem niedrig.',
+        ru: 'Расход выше, чем у гибрида, но низкая цена покупки и отсутствие турбины, DPF и батареи сводят риск дорогих поломок к минимуму.'
+      },
+      market: {
+        supplyDemand: {
+          en: 'Steady budget-buyer demand for clean manual 1.6 Valvematic examples; 1.33 models attract entry-level city commuters.',
+          de: 'Stabile Nachfrage nach gepflegten 1.6 Valvematic-Schaltern; der 1.33 ist ein gefragter, günstiger Stadt- und Einstiegswagen.',
+          ru: 'Стабильный спрос на простые атмосферные версии с МКПП; особенно ценят 1.6 Valvematic за баланс цены и простоты.'
+        },
+        sweetSpot: {
+          en: '2014–2017 1.6 Valvematic (6-MT) under 125,000 km with annual oil records (€7,200–€9,000).',
+          de: '2014–2017 1.6 Valvematic (6-Gang) unter 125.000 km mit jährlichen Ölwechseln (7.200–9.000 €).',
+          ru: '2014–2017 гг. 1.6 Valvematic (6-ст. МКПП) с пробегом до 125 000 км и историей ТО (€7 200–9 000).'
+        },
+        outlook3to5yr: {
+          en: 'Gradual drop toward a €4,500–€5,800 budget floor in 3–5 yrs; simple petrol mechanics make resale easy to private buyers.',
+          de: 'Ruhiger Rückgang Richtung 4.500–5.800 € Boden in 3–5 Jahren — einfache Benzintechnik bleibt im Privatverkauf gefragt.',
+          ru: 'Плавное снижение к уровню €4 500–5 800 за 3–5 лет — простой атмосферник всегда легко продать частному покупателю.'
+        }
+      },
+      watchoutExtra: {
+        en: [
+          'Short-trip 1.33L cars with long oil intervals can develop piston-ring oil consumption over higher mileages.',
+          'Modest low-rpm torque requires downshifting for confident highway overtakes or steep motorway grades.'
+        ],
+        de: [
+          'Kurzstrecken-1.33er mit überzogenen Ölwechseln neigen bei hoher Laufleistung zu erhöhtem Ölverbrauch über die Kolbenringe.',
+          'Geringes Drehmoment bei niedrigen Drehzahlen erfordert vor Autobahnsprints oder Steigungen häufiges Herunterschalten.'
+        ],
+        ru: [
+          'На моторах 1.33 после городской езды с редкой заменой масла возможен угар масла из-за залегания колец.',
+          'Невысокая тяга на низах требует активных переключений на пониженную передачу при обгонах на трассе.'
+        ]
+      }
+    },
+    'petrol-turbo': {
+      stats: {
+        en: [
+          { source: 'TÜV Report', value: 'Above Average', note: 'Newer 2015–2018 facelift platform with solid chassis & brake pass rates' },
+          { source: 'ADAC Pannenstatistik', value: 'Solid (Check Plugs/Coils)', note: 'Reliable overall; watch early direct-injection carbon & coil packs' },
+          { source: 'WhatCar? Survey', value: '94.2% Reliability', note: 'Well-sorted small turbo petrol when serviced on strict 10–12k intervals' }
+        ],
+        de: [
+          { source: 'TÜV-Report', value: 'Überdurchschnittlich', note: 'Jüngeres 2015–2018 Facelift-Chassis mit soliden Prüfquoten' },
+          { source: 'ADAC Pannenstatistik', value: 'Solide (Kerzen/Spulen)', note: 'Insgesamt verlässlich; Direkteinspritzung braucht frische Kerzen & Öl' },
+          { source: 'WhatCar? Umfrage', value: '94,2 % Zuverlässigkeit', note: 'Ausgereifter kleiner Turbo bei strengen 10–12-Tkm-Ölwechseln' }
+        ],
+        ru: [
+          { source: 'Отчёт TÜV', value: 'Выше среднего', note: 'Свежий рестайлинг 2015–2018 гг. с крепкой ходовой и тормозами' },
+          { source: 'ADAC Pannenstatistik', value: 'Хорошо (свечи/катушки)', note: 'Надёжен в целом; прямой впрыск любит качественное топливо и масло' },
+          { source: 'Рейтинг WhatCar?', value: '94,2% надёжности', note: 'Удачный малолитражный турбомотор при ТО каждые 10–12 тыс. км' }
+        ]
+      },
+      extendedChecks: {
+        en: [
+          'Verify 10,000–12,000 km synthetic oil history and check for hesitation under full-throttle boost from 1,800 rpm.',
+          'Inspect turbocharger coolant lines and plastic thermostat housing for dried coolant residue.',
+          'On Multidrive S CVT models, test smooth uphill creeping and verify transmission fluid service if past 60k–80k km.',
+          'Listen for intake valve rough idle when cold — direct-injection carbon builds up on short-trip cars.'
+        ],
+        de: [
+          'Kurze 10.000–12.000-km-Ölwechsel prüfen und kräftiges Durchziehen ab 1.800/min ohne Aussetzer testen.',
+          'Kühlmittelschläuche am Turbolader und Thermostatgehäuse auf getrocknete Rückstände kontrollieren.',
+          'Bei Multidrive-S-CVT sanftes Anrollen am Berg prüfen und Getriebeöl-Service ab 60–80 Tkm erfragen.',
+          'Kaltlauf auf ruhigen Leerlauf prüfen — häufiger Kurzstreckenbetrieb fördert Verkokung an den Ventilen.'
+        ],
+        ru: [
+          'Проверить замены масла каждые 10–12 тыс. км и ровный разгон с 1 800 об/мин без провалов и рывков.',
+          'Осмотреть патрубки охлаждения турбины и корпус термостата на отсутствие следов антифриза.',
+          'На версиях с вариатором Multidrive S проверить плавность старта в горку и замену масла в КПП.',
+          'Оценить стабильность холостого хода на холодную — при коротких поездках возможен нагар на впуске.'
+        ]
+      },
+      savingsNote: {
+        en: 'Low Euro 6 road tax (€88/yr) and ~6.2 L/100 km real fuel use keep annual running costs ~€200–€350 below older 1.6–2.0 NA petrol rivals.',
+        de: 'Niedrige Euro-6-Steuer (ca. 88 €/J.) und rund 6,2 L/100 km sparen etwa 200–350 €/Jahr gegenüber älteren Saugmotoren.',
+        ru: 'Низкий налог Euro 6 и расход около 6,2 л/100 км экономят примерно €200–350 в год по сравнению со старыми 1.6–2.0 атмосферниками.'
+      },
+      market: {
+        supplyDemand: {
+          en: 'Lower supply than Hybrid; sought by buyers wanting a newer 2015–2018 petrol Auris with Euro 6 compliance and low tax.',
+          de: 'Seltener als der Hybrid; beliebt bei Käufern, die einen jüngeren Euro-6-Benziner mit kleiner Kfz-Steuer suchen.',
+          ru: 'Встречается реже гибрида; интересен тем, кто ищет свежий рестайлинг 2015–2018 гг. с классом Euro 6 и низким налогом.'
+        },
+        sweetSpot: {
+          en: '2016–2018 1.2 Turbo 6-MT under 100,000 km with full Toyota service history (€9,500–€11,500).',
+          de: '2016–2018 1.2 Turbo (6-Gang) unter 100.000 km mit vollständigem Serviceheft (9.500–11.500 €).',
+          ru: '2016–2018 гг. 1.2 Turbo (6-ст. МКПП) с пробегом до 100 000 км и полной историей ТО (€9 500–11 500).'
+        },
+        outlook3to5yr: {
+          en: 'Moderate depreciation to ~€6,500–€7,800 in 3–5 yrs; younger production year supports resale, though slightly behind the Hybrid.',
+          de: 'Moderater Wertverlust auf ca. 6.500–7.800 € in 3–5 Jahren — junges Baujahr stützt den Preis, knapp hinter dem Hybrid.',
+          ru: 'Умеренное снижение до €6 500–7 800 за 3–5 лет: свежие годы выпуска поддерживают цену чуть ниже уровня гибрида.'
+        }
+      },
+      watchoutExtra: {
+        en: [
+          'Direct-injection intake valves gradually build up carbon on short city commutes — strict 10–12k km oil changes & fresh spark plugs help.',
+          'Plastic thermostat housing & turbo coolant lines can weep coolant past 100,000–130,000 km; check Multidrive S CVT fluid if automatic.'
+        ],
+        de: [
+          'Direkteinspritzung begünstigt bei viel Kurzstrecke Verkokungen an den Einlassventilen — Ölwechsel alle 10–12 Tkm und frische Zündkerzen sind Pflicht.',
+          'Thermostatgehäuse und Turbolader-Kühlmittelschläuche können ab 100–130 Tkm leicht schwitzen; beim Multidrive-S-CVT Ölwechsel prüfen.'
+        ],
+        ru: [
+          'Прямой впрыск при частых коротких поездках приводит к нагару на впускных клапанах — важна замена масла раз в 10–12 тыс. км.',
+          'Корпус термостата и трубки охлаждения турбины к 100–130 тыс. км могут подтекать; на вариаторе проверьте историю замены масла.'
+        ]
+      }
+    },
+    diesel: {
+      stats: {
+        en: [
+          { source: 'TÜV Report', value: 'Solid (High Mileage)', note: '1.4/2.0 Toyota diesels hold up well; watch DPF & EGR on short-trip cars' },
+          { source: 'ADAC Pannenstatistik', value: 'Good Highway Record', note: 'Dependable on long commutes; 1.6 D-4D (BMW N47) needs chain/EGR checks' },
+          { source: 'WhatCar? Survey', value: '91.5% Reliability', note: 'Lower than Auris Hybrid mostly due to DPF, EGR & DMF wear above 150k km' }
+        ],
+        de: [
+          { source: 'TÜV-Report', value: 'Solide (Langstrecke)', note: '1.4/2.0-Diesel sind robust; Kurzstrecken setzen DPF & AGR spürbar zu' },
+          { source: 'ADAC Pannenstatistik', value: 'Gut auf Langstrecke', note: 'Stark auf der Autobahn; beim 1.6 D-4D (N47) Steuerkette & AGR prüfen' },
+          { source: 'WhatCar? Umfrage', value: '91,5 % Zuverlässigkeit', note: 'Etwas hinter dem Hybrid durch DPF-, AGR- & ZMS-Verschleiß ab 150 Tkm' }
+        ],
+        ru: [
+          { source: 'Отчёт TÜV', value: 'Крепкий на трассе', note: 'Дизели 1.4/2.0 надёжны на дальняке; городские пробеги забивают DPF и EGR' },
+          { source: 'ADAC Pannenstatistik', value: 'Надёжен на шоссе', note: 'Хорош для трассы; на 1.6 D-4D (BMW N47) важен осмотр цепи ГРМ и EGR' },
+          { source: 'Рейтинг WhatCar?', value: '91,5% надёжности', note: 'Ниже гибрида из-за ресурса сажевого фильтра, EGR и двухмассового маховика' }
+        ]
+      },
+      extendedChecks: {
+        en: [
+          'Check tailpipe soot, active DPF regeneration history, and verify the car was driven on highways rather than short city hops.',
+          'Listen at idle with clutch pressed vs. released for dual-mass flywheel chatter/knocking.',
+          'On 1.6 D-4D (BMW N47), listen closely near the firewall for timing-chain rattle; on 2.0 D-4D watch injector & head-gasket health.',
+          'Verify clean cold start with zero white/blue smoke and crisp boost delivery from 1,750 rpm.'
+        ],
+        de: [
+          'Auspuffendrohr (Ruß), DPF-Regenerationen und Langstrecken-Nutzung im Vorbesitz prüfen.',
+          'Im Leerlauf Kupplung treten und lösen — auf Klappern des Zweimassenschwungrads achten.',
+          'Beim 1.6 D-4D (BMW N47) an der Spritzwand auf Kettengeräusche hören; beim 2.0 D-4D Injektoren & Kühlwasser prüfen.',
+          'Sauberen Kaltstart ohne Blaurauch und gleichmäßigen Turboschub ab ca. 1.750/min testen.'
+        ],
+        ru: [
+          'Проверить выхлоп на сажу и убедиться, что машина регулярно ездила по трассе (для прожига DPF).',
+          'На холостых выжать и отпустить сцепление — не должно быть стука двухмассового маховика.',
+          'На 1.6 D-4D (BMW N47) послушать цепь со стороны моторного щита; на 2.0 D-4D проверить форсунки и антифриз.',
+          'Проверить чистый холодный пуск без дыма и уверенную тягу турбины с 1 750 об/мин.'
+        ]
+      },
+      savingsNote: {
+        en: 'Low ~4.9–5.5 L/100 km fuel burn pays off above 20,000 km/yr, but higher diesel road tax and DPF/DMF upkeep narrow the savings vs. Auris Hybrid.',
+        de: 'Niedriger Verbrauch (4,9–5,5 L/100 km) lohnt ab >20.000 km/J., doch höhere Steuer und DPF/ZMS reduzieren den Vorteil gegenüber dem Hybrid.',
+        ru: 'Экономичный расход (4,9–5,5 л/100 км) выгоден при пробегах свыше 20 тыс. км/год, но более высокий налог и уход за DPF/маховиком сближают итог с гибридом.'
+      },
+      market: {
+        supplyDemand: {
+          en: 'Lower buyer demand in cities due to Euro 5/diesel restrictions, making clean highway Auris diesels noticeably cheaper to buy upfront.',
+          de: 'Geringere Nachfrage in Großstädten (Euro 5 / Fahrverbote) macht gepflegte Langstrecken-Diesel beim Kaufpreis deutlich günstiger.',
+          ru: 'Сниженный спрос в городах из-за эко-норм делает дизельный Auris ощутимо дешевле при покупке на вторичном рынке.'
+        },
+        sweetSpot: {
+          en: '1.4 D-4D (simple & frugal) or documented Euro 6 1.6 D-4D highway cars around 110,000–150,000 km (€6,800–€8,800).',
+          de: 'Sparsamer 1.4 D-4D oder gepflegter Euro-6 1.6 D-4D mit Langstrecken-Historie (110–150 Tkm, 6.800–8.800 €).',
+          ru: 'Экономичный 1.4 D-4D или ухоженный трассовый 1.6 D-4D (Euro 6) с пробегом 110–150 тыс. км (€6 800–8 800).'
+        },
+        outlook3to5yr: {
+          en: 'Drops faster toward €4,000–€5,400 over 3–5 yrs as urban buyers favor Hybrid/Petrol; best held long-term by high-mileage commuters.',
+          de: 'Fällt in 3–5 Jahren stärker Richtung 4.000–5.400 € — lohnt sich vor allem, wenn man den Wagen als Vielfahrer bis zum Ende nutzt.',
+          ru: 'Дешевеет быстрее до €4 000–5 400 за 3–5 лет из-за перекоса спроса к гибридам и бензину — выгоднее брать для долгих пробегов.'
+        }
+      },
+      watchoutExtra: {
+        en: [
+          'DPF soot and EGR valve clogging accelerate sharply if driven mostly on short urban trips.',
+          'Dual-mass flywheel wear (~150–190k km) and firewall-side timing chain wear on 1.6 D-4D (BMW N47) require careful listening.'
+        ],
+        de: [
+          'DPF-Partikelfilter und AGR-Ventil setzen sich bei häufigem Kurzstreckenbetrieb schnell zu.',
+          'Zweimassenschwungrad ab ca. 150–190 Tkm sowie die rückseitige Steuerkette beim 1.6 D-4D (N47) vor dem Kauf genau prüfen.'
+        ],
+        ru: [
+          'Сажевый фильтр DPF и клапан EGR быстро забиваются при регулярных коротких поездках по городу.',
+          'К 150–190 тыс. км возможен износ двухмассового маховика, а на 1.6 D-4D (BMW N47) важно проверить заднюю цепь ГРМ.'
+        ]
+      }
+    }
+  }
+};
+
+function getAurisEngineData(car) {
+  const id = (car && car.selectedEngineId) || '';
+  const cost = AURIS_INDEPTH_DATA.engineCosts[id] || AURIS_INDEPTH_DATA.engineCosts['1.8-hybrid'];
+  const grp = AURIS_INDEPTH_DATA.groups[cost.group] || AURIS_INDEPTH_DATA.groups.hybrid;
+  return { cost, grp };
+}
 let selectedLeftId = null;
 let selectedRightId = null;
 let selectedLeftEngineId = null;
@@ -2895,7 +3462,8 @@ const ENGINE_DATE_FALLBACKS = {
   'ford-mondeo-2012:1.6-ecoboost': '12/2010–12/2014',
   'ford-mondeo-2012:1.6-tivct': '06/2007–12/2014',
   'ford-mondeo-2012:2.0-duratec': '06/2007–12/2014',
-  'ford-mondeo-2012:2.0-ecoboost': '05/2010–12/2014',
+  'ford-mondeo-2012:2.0-ecoboost-203': '05/2010–12/2014',
+  'ford-mondeo-2012:2.0-ecoboost-240': '09/2010–12/2014',
   'honda-civic-type-r-2015:2.0-vtec-turbo': '07/2015–03/2017'
 };
 
@@ -3861,9 +4429,10 @@ function renderCarTraitsTray(car, elementId) {
 
   const ui = t();
   const side = elementId === 'traits-left' ? 'left' : 'right';
+  const SHOW_DUEL_BUYER_FIT_BTN = false;
   const hasBuyerFit = Boolean(getBuyerFit(car));
 
-  const buyerFitBtnHtml = hasBuyerFit
+  const buyerFitBtnHtml = SHOW_DUEL_BUYER_FIT_BTN && hasBuyerFit
     ? `<div class="traits-buyer-fit-row">
         <button type="button" class="traits-buyer-fit-btn" data-buyer-fit-side="${side}">
           <span class="traits-buyer-fit-meter" aria-hidden="true">
@@ -4811,6 +5380,38 @@ function getEngineHp(eng) {
   return match ? Number(match[1]) : 0;
 }
 
+function getEngineDisplacement(eng) {
+  if (!eng) return 99;
+  const specEngine = eng.specOverrides && eng.specOverrides.engine;
+  const specStr = typeof specEngine === 'string' ? specEngine : (specEngine && specEngine.en) || '';
+  const sources = [eng.engineBadge, eng.id, eng.engineSubLabel && eng.engineSubLabel.en, specStr];
+  for (const src of sources) {
+    if (!src) continue;
+    const m = String(src).match(/(\d+\.\d{1,2})\s*L?\b/i);
+    if (m) return parseFloat(m[1]);
+  }
+  const wltp = String(eng.engineBadge || '').match(/\b(30|35|40)\s+(TFSI|TDI|g-tron|e-tron)/i);
+  if (wltp) {
+    const code = Number(wltp[1]);
+    const kind = wltp[2].toLowerCase();
+    if (kind === 'tdi') return code === 30 ? 1.6 : 2.0;
+    if (kind === 'e-tron') return 1.4;
+    if (kind === 'g-tron') return 1.5;
+    return code === 30 ? 1.0 : code === 35 ? 1.5 : 2.0;
+  }
+  return 99;
+}
+
+function sortEnginesByDisplacement(engines) {
+  return [...(engines || [])].sort((a, b) => {
+    const dispDiff = getEngineDisplacement(a) - getEngineDisplacement(b);
+    if (Math.abs(dispDiff) > 0.001) return dispDiff;
+    const hpDiff = getEngineHp(a) - getEngineHp(b);
+    if (hpDiff !== 0) return hpDiff;
+    return String(a.engineBadge || '').localeCompare(String(b.engineBadge || ''));
+  });
+}
+
 // Render Interactive Engine Selector Button & Dropdown Menu for Left or Right Car
 function renderEngineSelector(side, resolvedCar) {
   const ui = t();
@@ -4832,9 +5433,9 @@ function renderEngineSelector(side, resolvedCar) {
 
   const engineGroupsHtml = categories
     .map((cat) => {
-      const enginesInCat = resolvedCar.engines
-        .filter((eng) => getEngineCategory(eng) === cat.key)
-        .sort((a, b) => getEngineHp(a) - getEngineHp(b));
+      const enginesInCat = sortEnginesByDisplacement(
+        resolvedCar.engines.filter((eng) => getEngineCategory(eng) === cat.key)
+      );
 
       if (enginesInCat.length === 0) return '';
 
@@ -5038,7 +5639,13 @@ function applyStaticTranslations() {
   const navCompareLabel = document.getElementById('nav-compare-label');
   if (navCatalogLabel) navCatalogLabel.textContent = ui.navShowroom;
   if (navCatalogCount) navCatalogCount.textContent = String(Array.isArray(CAR_ROSTER) ? CAR_ROSTER.length : 0);
-  if (navShowroomLabel) navShowroomLabel.textContent = ui.navVehicle;
+  if (navShowroomLabel) {
+    const activeVehicleId = getNavVehicleTargetId();
+    const activeVehicleBase = activeVehicleId ? getBaseCarById(activeVehicleId) : null;
+    navShowroomLabel.textContent = activeVehicleBase
+      ? (activeVehicleBase.gridLabel || activeVehicleBase.shortTitle)
+      : ui.navVehicle;
+  }
   if (navCompareLabel) navCompareLabel.textContent = ui.navCompare;
 
   const themeToggleBtn = document.getElementById('theme-toggle-btn');
@@ -5057,6 +5664,12 @@ function applyStaticTranslations() {
   if (vsSwapLabelEl) vsSwapLabelEl.textContent = ui.swapLabel;
   document.getElementById('expand-label-left').textContent = ui.expandFullCar;
   document.getElementById('expand-label-right').textContent = ui.expandFullCar;
+  ['left', 'right'].forEach((side) => {
+    const labelEl = document.getElementById(`duel-indepth-label-${side}`);
+    const btnEl = document.getElementById(`duel-indepth-${side}`);
+    if (labelEl) labelEl.textContent = ui.inspectCardBtn;
+    if (btnEl) btnEl.setAttribute('aria-label', ui.inspectCardBtn);
+  });
   const navCompareHint = document.getElementById('nav-compare-hint');
   if (navCompareHint) navCompareHint.textContent = ui.compareNeedTwoCars;
   document.getElementById('lightbox-close-btn').textContent = ui.closeBtn;
@@ -5164,7 +5777,7 @@ function openCarLightbox(side, customCar = null, startAngleIdx = null) {
     badge.textContent = `#${baseCar.number} · ${getCarTypeLabel(getCarType(baseCar))}`;
     badge.className = 'lightbox-badge p1-badge';
   } else {
-    badge.textContent = side === 'left' ? ui.car1Tag : ui.opponentP2;
+    badge.textContent = side === 'left' ? ui.car1Tag : ui.opponentTag;
     badge.className = `lightbox-badge ${side === 'left' ? 'p1-badge' : 'p2-badge'}`;
   }
   title.textContent = car.fullName;
@@ -5183,12 +5796,14 @@ function openCarLightbox(side, customCar = null, startAngleIdx = null) {
 
   lightbox.classList.add('open');
   lightbox.setAttribute('aria-hidden', 'false');
+  pushModalHistory('lightbox');
 }
 
-function closeCarLightbox() {
+function closeCarLightbox(skipHistory = false) {
   const lightbox = document.getElementById('car-lightbox');
   lightbox.classList.remove('open');
   lightbox.setAttribute('aria-hidden', 'true');
+  popModalHistory('lightbox', skipHistory);
 }
 
 function getBuyerFit(car) {
@@ -5284,7 +5899,7 @@ function openBuyerFitModal(side) {
       </div>
       <div class="buyer-fit-hero-content">
         <div class="buyer-fit-hero-meta">
-          <span class="mini-p-badge ${side === 'left' ? 'p1-badge' : 'p2-badge'}">${side === 'left' ? 'C1' : 'C2'}</span>
+          <span class="mini-p-badge ${side === 'right' ? 'p2-badge' : 'p1-badge'}">${side === 'vehicle' ? `#${currentCar.number}` : side === 'left' ? 'C1' : 'C2'}</span>
           <span class="buyer-fit-hero-car">${currentCar.fullName}</span>
           <span class="buyer-fit-hero-engine">${currentCar.engineBadge}</span>
         </div>
@@ -5323,6 +5938,7 @@ function openBuyerFitModal(side) {
 
   modal.classList.add('open');
   modal.setAttribute('aria-hidden', 'false');
+  pushModalHistory('dossier');
 }
 
 let activeDossierStatKey = null;
@@ -5404,14 +6020,18 @@ function openStatDossier(statKey, side) {
   modal.classList.remove('buyer-fit-mode');
 
   const currentCar =
-    side === 'left'
-      ? (selectedLeftId ? getCarById(selectedLeftId, selectedLeftEngineId) : null)
-      : (selectedRightId ? getCarById(selectedRightId, selectedRightEngineId) : null);
+    side === 'vehicle'
+      ? (vehicleViewCarId ? getCarById(vehicleViewCarId, vehicleViewEngineId) : null)
+      : side === 'left'
+        ? (selectedLeftId ? getCarById(selectedLeftId, selectedLeftEngineId) : null)
+        : (selectedRightId ? getCarById(selectedRightId, selectedRightEngineId) : null);
   if (!currentCar) return;
   const oppCar =
-    side === 'left'
-      ? (selectedRightId ? getCarById(selectedRightId, selectedRightEngineId) : null)
-      : (selectedLeftId ? getCarById(selectedLeftId, selectedLeftEngineId) : null);
+    side === 'vehicle'
+      ? null
+      : side === 'left'
+        ? (selectedRightId ? getCarById(selectedRightId, selectedRightEngineId) : null)
+        : (selectedLeftId ? getCarById(selectedLeftId, selectedLeftEngineId) : null);
 
   // Find pillar and subRating definition
   let foundPillar = null;
@@ -5788,7 +6408,7 @@ function openStatDossier(statKey, side) {
     <!-- Hero Car & Rating Strip -->
     <div class="dossier-car-hero">
       <div class="dossier-car-info">
-        <span class="mini-p-badge ${side === 'left' ? 'p1-badge' : 'p2-badge'}">${side === 'left' ? 'C1' : 'C2'}</span>
+        <span class="mini-p-badge ${side === 'right' ? 'p2-badge' : 'p1-badge'}">${side === 'vehicle' ? `#${currentCar.number}` : side === 'left' ? 'C1' : 'C2'}</span>
         <div class="dossier-car-text">
           <div class="dossier-car-name">${currentCar.fullName}</div>
           <div class="dossier-engine-badge">${currentCar.engineBadge}</div>
@@ -5843,13 +6463,15 @@ function openStatDossier(statKey, side) {
   body.scrollTop = 0;
   modal.classList.add('open');
   modal.setAttribute('aria-hidden', 'false');
+  pushModalHistory('dossier');
 }
 
-function closeStatDossier() {
+function closeStatDossier(skipHistory = false) {
   const modal = document.getElementById('stat-dossier-modal');
   if (!modal) return;
   modal.classList.remove('open');
   modal.setAttribute('aria-hidden', 'true');
+  popModalHistory('dossier', skipHistory);
 }
 
 // Synchronize the height of both car traits trays so the car with the most lines below it
@@ -6429,6 +7051,8 @@ function renderSmashPicker() {
 
   const clearSlotSelection = (slot) => {
     cancelDuelTransition();
+    const prevLeftId = selectedLeftId;
+    const prevRightId = selectedRightId;
     if (slot === 'p1') {
       selectedLeftId = null;
       selectedLeftEngineId = null;
@@ -6443,6 +7067,16 @@ function renderSmashPicker() {
       selectedRightId = null;
       selectedRightEngineId = null;
       activeRosterTarget = 'p1';
+    }
+    if (
+      slot === 'both' ||
+      (slot === 'p1' && vehicleViewCarId === prevLeftId) ||
+      (slot === 'p2' && vehicleViewCarId === prevRightId)
+    ) {
+      vehicleViewCarId = selectedLeftId || selectedRightId || null;
+      vehicleViewEngineId = selectedLeftId
+        ? selectedLeftEngineId
+        : (selectedRightId ? selectedRightEngineId : null);
     }
     smashPickerForceOpen = false;
     updateArena();
@@ -6552,10 +7186,16 @@ function renderSmashPicker() {
       if (activeRosterTarget === 'p1') {
         selectedLeftId = chosenId;
         selectedLeftEngineId = baseCar.defaultEngineId;
+        vehicleViewCarId = chosenId;
+        vehicleViewEngineId = baseCar.defaultEngineId;
         if (!selectedRightId) activeRosterTarget = 'p2';
       } else {
         selectedRightId = chosenId;
         selectedRightEngineId = baseCar.defaultEngineId;
+        if (!vehicleViewCarId) {
+          vehicleViewCarId = chosenId;
+          vehicleViewEngineId = baseCar.defaultEngineId;
+        }
         if (!selectedLeftId) activeRosterTarget = 'p1';
       }
 
@@ -6603,7 +7243,7 @@ function openVehicleView(carId, engineId = null) {
   vehicleViewAngleIdx = fsIdx >= 0 ? fsIdx : 0;
 
   cancelDuelTransition();
-  closeAllMenusAndModals();
+  closeAllMenusAndModals(true);
   isHomeView = false;
   isVehicleView = true;
   smashPickerForceOpen = false;
@@ -6637,7 +7277,7 @@ function buildVehicleEngineDropdownHtml(baseCar, selectedEngineId) {
   const menuHtml = ['hybrid', 'petrol', 'diesel']
     .filter((cat) => groups[cat] && groups[cat].length)
     .map((cat) => {
-      const opts = groups[cat]
+      const opts = sortEnginesByDisplacement(groups[cat])
         .map((eng) => {
           const isSel = eng.id === activeEng.id;
           const isDefault = eng.id === baseCar.defaultEngineId;
@@ -6723,7 +7363,7 @@ function openEnginePickerModal(carId, currentEngineId) {
   listEl.innerHTML = ['hybrid', 'petrol', 'diesel']
     .filter((cat) => groups[cat] && groups[cat].length)
     .map((cat) => {
-      const rows = groups[cat]
+      const rows = sortEnginesByDisplacement(groups[cat])
         .map((eng) => {
           const resolved = getCarById(carId, eng.id);
           const idx = calculateOverallIndex(resolved);
@@ -6750,7 +7390,7 @@ function openEnginePickerModal(carId, currentEngineId) {
     btn.addEventListener('click', () => {
       const pickedEngId = btn.getAttribute('data-pick-engine');
       if (!pickedEngId || pickedEngId === currentEngineId) return;
-      closeEnginePickerModal();
+      closeEnginePickerModal(true);
       selectedLeftId = carId;
       selectedLeftEngineId = currentEngineId;
       selectedRightId = carId;
@@ -6766,14 +7406,16 @@ function openEnginePickerModal(carId, currentEngineId) {
   if (modal) {
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');
+    pushModalHistory('engine-picker');
   }
 }
 
-function closeEnginePickerModal() {
+function closeEnginePickerModal(skipHistory = false) {
   const modal = document.getElementById('engine-picker-modal');
   if (!modal) return;
   modal.classList.remove('open');
   modal.setAttribute('aria-hidden', 'true');
+  popModalHistory('engine-picker', skipHistory);
 }
 
 function renderVehicleView() {
@@ -6981,7 +7623,7 @@ function renderVehicleView() {
   if (compareBtn) {
     compareBtn.addEventListener('click', () => {
       cancelDuelTransition();
-      closeAllMenusAndModals();
+      closeAllMenusAndModals(true);
       selectedLeftId = car.id;
       selectedLeftEngineId = car.selectedEngineId;
       selectedRightId = null;
@@ -7000,6 +7642,966 @@ function renderVehicleView() {
   if (cmpEngBtn) {
     cmpEngBtn.addEventListener('click', () => {
       openEnginePickerModal(car.id, car.selectedEngineId);
+    });
+  }
+
+  renderVehicleInDepthTabs(car);
+}
+
+function buildVehiclePipBar(score, { variant = 'lime', compact = false } = {}) {
+  const s = Math.max(0, Math.min(10, Number(score) || 0));
+  const segClass =
+    variant === 'win'
+      ? 'is-win'
+      : variant === 'c1'
+        ? 'is-c1'
+        : variant === 'warn'
+          ? 'is-warn'
+          : variant === 'tier'
+            ? 'is-tier'
+            : 'is-lime';
+  const pips = Array.from({ length: 10 }, (_, idx) => {
+    const pct = Math.round(Math.max(0, Math.min(1, s - idx)) * 100);
+    return `<span class="v-pip"><span class="v-pip-fill ${segClass}" style="width:${pct}%"></span></span>`;
+  }).join('');
+  return `<div class="v-pip-bar ${compact ? 'compact' : ''}">${pips}</div>`;
+}
+
+function computeVehicleMissionProfile(car, vt) {
+  const sub = (k) => (car.subStats && car.subStats[k] ? Number(car.subStats[k].score) : 7.0);
+  const clamp = (v) => Math.max(1.0, Math.min(9.9, Math.round(v * 10) / 10));
+  const fuel = getEngineCategory(car);
+  const cityAdj = fuel === 'diesel' ? -1.6 : fuel === 'hybrid' ? 0.45 : 0;
+  const hwyAdj = fuel === 'diesel' ? 0.45 : fuel === 'hybrid' ? -0.15 : 0;
+
+  const roles = [
+    { key: 'city', label: vt.missionCity, score: clamp(sub('visibilityManeuverability') * 0.45 + sub('efficiencyFuel') * 0.35 + sub('rideNoiseComfort') * 0.2 + cityAdj) },
+    { key: 'highway', label: vt.missionHighway, score: clamp(sub('rideNoiseComfort') * 0.4 + sub('midRangeTorquePassing') * 0.35 + sub('safetyProtection') * 0.25 + hwyAdj) },
+    { key: 'family', label: vt.missionFamily, score: clamp(sub('interiorBootSpace') * 0.4 + sub('passengerSpaceErgonomics') * 0.35 + sub('payloadTowing') * 0.25) },
+    { key: 'fun', label: vt.missionFun, score: clamp(sub('handlingAgility') * 0.4 + sub('accelerationOvertaking') * 0.35 + sub('brakingPerformance') * 0.25) },
+    { key: 'budget', label: vt.missionBudget, score: clamp(sub('powertrainDurability') * 0.35 + sub('maintenanceRepairCosts') * 0.35 + sub('depreciationResale') * 0.3) }
+  ];
+  const best = roles.reduce((a, b) => (b.score > a.score ? b : a), roles[0]);
+  return { roles, best };
+}
+
+function buildVehicleTabOverviewHtml(car, vt) {
+  const ui = t();
+  const bf = getBuyerFit(car);
+  const { roles, best } = computeVehicleMissionProfile(car, vt);
+
+  const missionHtml = `
+    <div class="v-mission-box">
+      <div class="v-mission-head">
+        <h3>${vt.missionTitle}</h3>
+        <span class="v-mission-role-pill">${vt.bestRoleLabel}: ${best.label}</span>
+      </div>
+      ${bf && bf.summary ? `<p class="v-mission-verdict">${bf.summary}</p>` : ''}
+      <div class="v-mission-bars">
+        ${roles
+          .map(
+            (r) => `
+          <div class="v-mission-row">
+            <span class="v-mission-label">${r.label}</span>
+            ${buildVehiclePipBar(r.score, { variant: r.key === best.key ? 'win' : 'c1', compact: true })}
+            <span class="v-mission-val">${r.score.toFixed(1)}</span>
+          </div>
+        `
+          )
+          .join('')}
+      </div>
+    </div>
+  `;
+
+  const renderFitCards = (items, kind) =>
+    items
+      .map((raw) => {
+        const { title, desc } = splitBuyerFitPoint(raw);
+        const icon = kind === 'ideal' ? '✔' : '✖';
+        return `
+        <div class="buyer-fit-item is-${kind}">
+          <span class="buyer-fit-item-badge" aria-hidden="true">${icon}</span>
+          <div class="buyer-fit-item-text">
+            <div class="buyer-fit-item-title">${title}</div>
+            ${desc ? `<div class="buyer-fit-item-desc">${desc}</div>` : ''}
+          </div>
+        </div>`;
+      })
+      .join('');
+
+  const buyerFitHtml = bf
+    ? `
+      <div class="v-overview-buyerfit">
+        <h3 class="v-sub-heading">${vt.buyerFitTitle}</h3>
+        <div class="buyer-fit-columns">
+          <div class="buyer-fit-col is-ideal">
+            <div class="buyer-fit-col-header">
+              <div class="buyer-fit-col-title-wrap">
+                <span class="buyer-fit-col-dot" aria-hidden="true"></span>
+                <span class="buyer-fit-col-title">${ui.buyerFitIdealTitle}</span>
+              </div>
+              <span class="buyer-fit-col-count">${(bf.idealFor || []).length}</span>
+            </div>
+            <div class="buyer-fit-items-list">${renderFitCards(bf.idealFor || [], 'ideal')}</div>
+          </div>
+          <div class="buyer-fit-col is-skip">
+            <div class="buyer-fit-col-header">
+              <div class="buyer-fit-col-title-wrap">
+                <span class="buyer-fit-col-dot" aria-hidden="true"></span>
+                <span class="buyer-fit-col-title">${ui.buyerFitNotIdealTitle}</span>
+              </div>
+              <span class="buyer-fit-col-count">${(bf.notIdealFor || []).length}</span>
+            </div>
+            <div class="buyer-fit-items-list">${renderFitCards(bf.notIdealFor || [], 'skip')}</div>
+          </div>
+        </div>
+      </div>
+    `
+    : '';
+
+  const pillarsHtml = STAT_PILLARS.map((p) => {
+    const score = getPillarScore(car, p);
+    const pNum = String(p.number).padStart(2, '0');
+    return `
+      <button type="button" class="v-pillar-bar-item" data-v-jump-pillar="${p.id}">
+        <div class="v-pillar-bar-head">
+          <span class="v-pillar-bar-name">
+            <span class="pillar-icon-plain">${PILLAR_ICONS[p.id] || ''}</span>
+            <span class="v-pillar-num">${pNum} //</span>
+            <span>${p.label[currentLang] || p.label.en}</span>
+          </span>
+          <span class="v-pillar-bar-score">${score.toFixed(1)}</span>
+        </div>
+        ${buildVehiclePipBar(score, { variant: 'lime' })}
+      </button>
+    `;
+  }).join('');
+
+  return `
+    <div class="v-overview-grid">
+      <div class="v-ed-card">
+        ${missionHtml}
+        ${buyerFitHtml}
+      </div>
+      <div class="v-ed-card v-overview-pillars-card">
+        <h3>${vt.pillarsTitle}</h3>
+        <p class="v-card-hint">${vt.clickToExpandHint}</p>
+        <div class="v-pillar-overview-list">${pillarsHtml}</div>
+      </div>
+    </div>
+  `;
+}
+
+function buildVehicleTabRatingsHtml(car, vt) {
+  const ui = t();
+  const allExpanded = vehicleExpandedPillars.size === STAT_PILLARS.length;
+  const totalScore = getCarTotalPillarScore(car);
+  const totalAvg = totalScore / STAT_PILLARS.length;
+  const idx = calculateOverallIndex(car);
+
+  const pillarsHtml = STAT_PILLARS.map((pillar) => {
+    const pScore = getPillarScore(car, pillar);
+    const pNum = String(pillar.number).padStart(2, '0');
+    const isExpanded = vehicleExpandedPillars.has(pillar.id);
+    const barVar = pScore >= 8.5 ? 'win' : pScore < 7.0 ? 'warn' : 'c1';
+    const tagsHtml = (pillar.subtitle[currentLang] || pillar.subtitle.en)
+      .split(/\s*[,&•]\s*/)
+      .filter(Boolean)
+      .map((tag) => `<span class="pillar-sub-tag">${tag.trim()}</span>`)
+      .join('');
+
+    const subsHtml = pillar.subRatings
+      .map((sub) => {
+        const subObj = (car.subStats && car.subStats[sub.key]) || { score: 0, badges: {} };
+        const sVal = Number(subObj.score || 0);
+        const sVar = sVal >= 8.5 ? 'win' : sVal < 7.0 ? 'warn' : 'c1';
+        const badges = (subObj.badges && (subObj.badges[currentLang] || subObj.badges.en)) || [];
+        const hasDossier = Boolean(getSubStatDossier(car, sub.key) || (car.specs && SUB_STAT_SPEC_ROWS[sub.key]));
+        const scoreStr = sVal >= 9.6 ? `✦ ${sVal.toFixed(1)}` : sVal.toFixed(1);
+        return `
+          <button type="button" class="v-subrating-row ${hasDossier ? 'has-dossier' : ''}" data-v-dossier-stat="${sub.key}">
+            <div class="v-subrating-main">
+              <div class="v-subrating-title-wrap">
+                <span class="v-subrating-name">${sub.label[currentLang] || sub.label.en}</span>
+                ${badges.length ? `<div class="v-subrating-badges">${badges.slice(0, 2).map((b) => `<span class="v-mini-badge">${b}</span>`).join('')}</div>` : ''}
+              </div>
+              <div class="v-subrating-meter">
+                ${buildVehiclePipBar(sVal, { variant: sVar, compact: true })}
+                <span class="v-subrating-score ${sVal >= 9.6 ? 'score-s-plus' : ''}">${scoreStr}</span>
+                <span class="v-subrating-arrow" aria-hidden="true">›</span>
+              </div>
+            </div>
+          </button>
+        `;
+      })
+      .join('');
+
+    return `
+      <div class="pillar-cluster v-pillar-cluster ${isExpanded ? 'expanded' : ''}">
+        <button type="button" class="pillar-cluster-header v-pillar-header" data-v-pillar-toggle="${pillar.id}" aria-expanded="${isExpanded}">
+          <div class="v-pillar-header-top">
+            <div class="v-pillar-header-left">
+              <span class="pillar-icon-plain">${PILLAR_ICONS[pillar.id] || ''}</span>
+              <span class="v-pillar-header-title"><span class="pillar-num-accent">${pNum} //</span> ${pillar.label[currentLang] || pillar.label.en}</span>
+              <span class="accordion-chevron">▸</span>
+            </div>
+            <div class="v-pillar-header-score">${pScore.toFixed(1)}</div>
+          </div>
+          <div class="v-pillar-header-sub">${tagsHtml}</div>
+          ${buildVehiclePipBar(pScore, { variant: barVar })}
+        </button>
+        <div class="pillar-sub-list v-pillar-sub-list">${subsHtml}</div>
+      </div>
+    `;
+  }).join('');
+
+  return `
+    <div class="v-ratings-toolbar">
+      <div>
+        <h3 class="v-section-heading">${vt.ratingsTitle}</h3>
+        <p class="v-card-hint" style="margin:2px 0 0;">${vt.ratingsHint}</p>
+      </div>
+      <button type="button" class="expand-all-btn" id="v-expand-all-btn">${allExpanded ? vt.collapseAll : vt.expandAll}</button>
+    </div>
+    <div class="v-ratings-accordion">${pillarsHtml}</div>
+    <div class="v-total-score-card" data-tier="${idx.piClassCss}">
+      <div class="v-total-score-top">
+        <div>
+          <span class="v-total-score-title"><span class="pillar-num-accent">Σ //</span> ${vt.totalScoreTitle}</span>
+          <span class="v-total-score-sub">${vt.totalScoreSub}</span>
+        </div>
+        <span class="v-total-score-val">${totalScore.toFixed(1)}<span class="v-total-score-denom">/50</span></span>
+      </div>
+      ${buildVehiclePipBar(totalAvg, { variant: 'tier' })}
+    </div>
+  `;
+}
+
+function getTransmissionTypeSpec(gearboxRaw) {
+  if (gearboxRaw == null) return null;
+  const resolved = resolveSpecEntry(gearboxRaw);
+  const en = typeof resolved === 'string' ? resolved : (resolved.en || '');
+  if (!en) return null;
+  const hasManual = /\b(?:manual|5-mt|6-mt|5mt|6mt)\b/i.test(en);
+  const hasAuto = /\b(?:auto|automatic|e-?cvt|cvt|dsg|s-tronic|7g(?:-?tronic)?|powershift|tiptronic|steptronic|multidrive|\d-?at)\b/i.test(en);
+  if (hasManual && hasAuto) {
+    return { en: 'Manual / Automatic', de: 'Schaltgetriebe / Automatik', ru: 'Механика / Автомат' };
+  }
+  if (hasAuto) {
+    return { en: 'Automatic', de: 'Automatik', ru: 'Автомат' };
+  }
+  return { en: 'Manual', de: 'Schaltgetriebe', ru: 'Механика' };
+}
+
+function buildVehicleTabSpecsHtml(car, vt) {
+  const rowLabelMap = {
+    transmissionType: { en: 'Transmission Type', de: 'Getriebeart', ru: 'Тип КПП' }
+  };
+  Object.values(SUB_STAT_SPEC_ROWS).forEach((arr) => {
+    arr.forEach((r) => {
+      rowLabelMap[r.key] = r.label;
+    });
+  });
+
+  const sections = [
+    { title: vt.secPowertrain, keys: ['engineName', 'forcedInduction', 'injection', 'gearbox', 'transmissionType', 'clutchDmf', 'driveline', 'timingDrive'] },
+    { title: vt.secPerfChassis, keys: ['sprint0100', 'topSpeed', 'peakTorque', 'passingPunch', 'chassisFeel', 'tractionDiff', 'braking1000', 'brakeSetup', 'suspensionWear'] },
+    { title: vt.secDimSpace, keys: ['rearRoom', 'isofixEntry', 'bootVolume', 'seatUtility', 'payloadRoof', 'towingBraked', 'turningCircle', 'visibility'] },
+    { title: vt.secComfortSafety, keys: ['rideTuning', 'highwayNoise', 'cabinMaterials', 'controls', 'euroNcap', 'safetyTech', 'rustProtection', 'starterAlternator', 'electronicsRisk'] },
+    { title: vt.secEffOwnership, keys: ['realWorldFuel', 'tankRange', 'euroNorm', 'taxInsurance', 'serviceWear', 'valueRetention', 'resaleDemand'] }
+  ];
+
+  const cardsHtml = sections
+    .map((sec) => {
+      const rowsHtml = sec.keys
+        .map((rowKey) => {
+          const raw =
+            rowKey === 'transmissionType'
+              ? getTransmissionTypeSpec(car.specs && car.specs.gearbox)
+              : (car.specs ? car.specs[rowKey] : null);
+          if (raw == null) return '';
+          const lblObj = rowLabelMap[rowKey];
+          const lbl = lblObj ? (lblObj[currentLang] || lblObj.en) : rowKey;
+          const valHtml = formatPowerUnit(resolveLocalizedSpecVal(raw));
+          const plainVal = resolvePlainSpecText(raw);
+          const negCls = /^0\s*kg/i.test(plainVal) ? 'is-negative' : '';
+          const tipBody = getSpecValueTooltip(rowKey, raw);
+          const tipAttrs = tipBody
+            ? `data-tip-title="${escapeHtmlAttr(`${lbl}: ${plainVal}`)}" data-tip-body="${escapeHtmlAttr(tipBody)}"`
+            : '';
+          return `
+            <div class="v-spec-row ${tipBody ? 'has-tip' : ''}" ${tipAttrs}>
+              <span class="v-spec-k">${lbl}</span>
+              <span class="v-spec-v ${negCls}">${valHtml}</span>
+            </div>
+          `;
+        })
+        .filter(Boolean)
+        .join('');
+      return `
+        <div class="v-spec-group-card">
+          <h4 class="v-spec-group-title">${sec.title}</h4>
+          <div class="v-spec-rows-list">${rowsHtml}</div>
+        </div>
+      `;
+    })
+    .join('');
+
+  return `
+    <div class="v-section-header">
+      <h3 class="v-section-heading">${vt.specsTitle}</h3>
+      <span class="v-card-hint" style="margin:0;">${vt.specsHint}</span>
+    </div>
+    <div class="v-specs-grid">${cardsHtml}</div>
+  `;
+}
+
+function buildVehicleTabTrimsHtml(car, vt) {
+  return `
+    <div class="v-placeholder-card">
+      <span class="v-placeholder-badge">${vt.trimsBadge}</span>
+      <h3>${vt.trimsTitle}</h3>
+      <p>${vt.trimsDesc}</p>
+    </div>
+  `;
+}
+
+function buildVehicleTabReliabilityHtml(car, vt) {
+  const ui = t();
+  const { grp } = getAurisEngineData(car);
+  const stats = (grp && grp.stats && (grp.stats[currentLang] || grp.stats.en)) || [];
+  const extChecks = (grp && grp.extendedChecks && (grp.extendedChecks[currentLang] || grp.extendedChecks.en)) || [];
+
+  const ptSub = car.subStats && car.subStats.powertrainDurability;
+  const ptScore = ptSub ? Number(ptSub.score || 0) : 0;
+  const ptDossier = getSubStatDossier(car, 'powertrainDurability') || {};
+  const ptBadges = (ptSub && ptSub.badges && (ptSub.badges[currentLang] || ptSub.badges.en)) || [];
+  const watchoutExtras = (grp && grp.watchoutExtra && (grp.watchoutExtra[currentLang] || grp.watchoutExtra.en)) || [];
+
+  const boosters = [...(ptDossier.strengths || [])];
+  if (ptBadges[0] && boosters.length < 3) boosters.push(ptBadges[0]);
+  const drags = [...new Set([...(ptDossier.lowScoreReasons || []), ...(ptDossier.watchouts || []), ...watchoutExtras])];
+
+  const beforeBuy = Array.isArray(ptDossier.beforeYouBuy) ? ptDossier.beforeYouBuy : [];
+  const highMileage = Array.isArray(ptDossier.highMileage) ? ptDossier.highMileage : [];
+  const guide = car.subStats?.maintenanceRepairCosts?.repairGuide;
+  const pick = (v) => (v == null ? '' : typeof v === 'string' ? v : (v[currentLang] || v.en || ''));
+
+  const statsStripHtml = `
+    <div class="v-rel-stats-wrap">
+      <h3 class="v-section-heading">${vt.relStatsTitle}</h3>
+      <div class="v-rel-stats-grid">
+        ${stats
+          .map(
+            (st) => `
+          <div class="v-rel-stat-card">
+            <span class="v-rel-stat-source">${st.source}</span>
+            <span class="v-rel-stat-value">${st.value}</span>
+            <p class="v-rel-stat-note">${st.note}</p>
+          </div>
+        `
+          )
+          .join('')}
+      </div>
+    </div>
+  `;
+
+  const depthToggleHtml = `
+    <div class="v-depth-bar">
+      <div class="v-depth-pills" role="group" aria-label="Detail Depth">
+        <button type="button" class="v-depth-btn ${vehicleReliabilityDepth === 'simple' ? 'active' : ''}" data-v-rel-depth="simple">${vt.relDepthSimple}</button>
+        <button type="button" class="v-depth-btn ${vehicleReliabilityDepth === 'thorough' ? 'active' : ''}" data-v-rel-depth="thorough">${vt.relDepthThorough}</button>
+      </div>
+      <span class="v-card-hint" style="margin:0;">${vehicleReliabilityDepth === 'simple' ? vt.relSimpleHint : vt.relThoroughHint}</span>
+    </div>
+  `;
+
+  const verdictCardHtml = `
+    <div class="v-rel-verdict-card ${ptScore < 7.0 ? 'is-caution' : ''}">
+      <div class="v-rel-verdict-top">
+        <div>
+          <span class="v-rel-kicker">${vt.relVerdictKicker}</span>
+          <h3 class="v-rel-headline">${ptDossier.headline || formatPowerUnit(car.engineBadge)}</h3>
+        </div>
+        <span class="v-rel-score-badge ${ptScore < 7.0 ? 'is-caution' : ''}">${ptScore.toFixed(1)} / 10</span>
+      </div>
+      <div class="v-rel-drivers-grid">
+        <div class="v-rel-driver-col">
+          <span class="v-rel-driver-head is-pos">${vt.relBoosters}</span>
+          ${boosters.slice(0, 3).map((x) => `<div class="v-rel-driver-tile is-pos">✓ ${x}</div>`).join('')}
+        </div>
+        <div class="v-rel-driver-col">
+          <span class="v-rel-driver-head is-warn">${vt.relDrags}</span>
+          ${drags.slice(0, 3).map((x) => `<div class="v-rel-driver-tile is-warn">⚠ ${x}</div>`).join('')}
+        </div>
+      </div>
+    </div>
+  `;
+
+  const routine = guide && Array.isArray(guide.routine) ? guide.routine : [];
+  const critical = guide && Array.isArray(guide.critical) ? guide.critical : [];
+
+  let depthContentHtml = '';
+  if (vehicleReliabilityDepth === 'simple') {
+    depthContentHtml = `
+      <div class="v-ed-card v-rel-checks-solo">
+        <h3>${vt.relTopChecks}</h3>
+        <ul class="v-check-list">
+          ${beforeBuy.map((item) => `<li><span class="v-check-box" aria-hidden="true">☐</span><span>${item}</span></li>`).join('')}
+        </ul>
+      </div>
+    `;
+  } else {
+    const knownWeakSpots = [
+      ...new Set([
+        ...(ptDossier.watchouts || []),
+        ...watchoutExtras,
+        ...critical.map((c) => `${pick(c.action)} (${pick(c.when)})`)
+      ])
+    ].slice(0, 5);
+    const repairsHtml =
+      routine.length || critical.length
+        ? `
+      <div class="v-rg-wrap">
+        <h3 class="v-section-heading">${vt.relRepairTitle}</h3>
+        <div class="v-rg-grid">
+          <div class="v-rg-section is-routine">
+            <div class="v-rg-head">
+              <span>${vt.relRoutineTitle}</span>
+              <span class="v-rg-count">${routine.length}</span>
+            </div>
+            ${routine
+              .map(
+                (item) => `
+              <div class="v-rg-row">
+                <div class="v-rg-row-top">
+                  <span class="v-rg-when">${pick(item.when)}</span>
+                  <span class="v-rg-cost">${pick(item.cost)}</span>
+                </div>
+                <div class="v-rg-action">${pick(item.action)}</div>
+              </div>
+            `
+              )
+              .join('')}
+          </div>
+          <div class="v-rg-section is-critical">
+            <div class="v-rg-head">
+              <span>${vt.relCriticalTitle}</span>
+              <span class="v-rg-count">${critical.length}</span>
+            </div>
+            ${
+              critical.length
+                ? critical
+                    .map(
+                      (item) => `
+                  <div class="v-rg-row">
+                    <div class="v-rg-row-top">
+                      <span class="v-rg-when is-crit">${pick(item.when)}</span>
+                      <span class="v-rg-cost">${pick(item.cost)}</span>
+                    </div>
+                    <div class="v-rg-action">${pick(item.action)}</div>
+                    ${
+                      item.risk
+                        ? `<div class="v-rg-risk">
+                            <span>↳ <strong>${vt.relIfIgnored}</strong> ${pick(item.risk)}</span>
+                            ${item.damage ? `<span class="v-rg-damage">${pick(item.damage)}</span>` : ''}
+                          </div>`
+                        : ''
+                    }
+                  </div>
+                `
+                    )
+                    .join('')
+                : `<div class="v-rg-empty">${vt.relNoneCritical}</div>`
+            }
+          </div>
+        </div>
+      </div>
+    `
+        : '';
+
+    const roadmapHtml = highMileage.length
+      ? `
+      <div class="v-roadmap-wrap">
+        <div class="v-roadmap-head">
+          <h3 class="v-section-heading">${vt.relRoadmapTitle}</h3>
+          <div class="hm-tier-legend">
+            <span class="hm-tier-chip is-yellow">! ${ui.dossierTierYellow}</span>
+            <span class="hm-tier-chip is-orange">⚠ ${ui.dossierTierOrange}</span>
+            <span class="hm-tier-chip is-red">❗ ${ui.dossierTierRed}</span>
+          </div>
+        </div>
+        <ul class="dossier-hm-list">
+          ${highMileage
+            .map((hm) => {
+              const tier = hm.tier === 'red' || hm.tier === 'orange' ? hm.tier : 'yellow';
+              const symbol = tier === 'red' ? '❗' : tier === 'orange' ? '⚠' : '!';
+              return `
+            <li class="dossier-hm-item tier-${tier}">
+              <span class="hm-status-badge tier-${tier}" aria-hidden="true">${symbol}</span>
+              <div class="hm-content">
+                <div class="hm-step-top">
+                  <span class="hm-km-pill">${hm.km}</span>
+                  <span class="hm-arrow">➔</span>
+                  <span class="hm-action-text">${hm.action}</span>
+                  <span class="hm-cost-pill">${hm.cost}</span>
+                </div>
+                <div class="hm-step-consequence">
+                  <span class="hm-arrow-sub">↳ ${ui.dossierIfIgnored}</span>
+                  <span class="hm-risk-text">${hm.ifIgnored}</span>
+                  <span class="hm-damage-pill">${hm.damageCost}</span>
+                </div>
+              </div>
+            </li>
+          `;
+            })
+            .join('')}
+        </ul>
+      </div>
+    `
+      : '';
+
+    depthContentHtml = `
+      <div class="v-rel-simple-grid">
+        <div class="v-ed-card">
+          <h3>${vt.relTopChecks}</h3>
+          <ul class="v-check-list">
+            ${beforeBuy.map((item) => `<li><span class="v-check-box" aria-hidden="true">☐</span><span>${item}</span></li>`).join('')}
+          </ul>
+          <div class="v-check-divider"></div>
+          <h4 class="v-check-subhead">${vt.relExtendedChecks}</h4>
+          <ul class="v-check-list">
+            ${extChecks.map((item) => `<li><span class="v-check-box" aria-hidden="true">☐</span><span>${item}</span></li>`).join('')}
+          </ul>
+        </div>
+        <div class="v-ed-card">
+          <h3>${vt.relTopIssues}</h3>
+          <ul class="v-issue-list">
+            ${knownWeakSpots.map((item) => `<li><span class="v-issue-icon" aria-hidden="true">⚠</span><span>${item}</span></li>`).join('')}
+          </ul>
+        </div>
+      </div>
+      ${repairsHtml}
+      ${roadmapHtml}
+    `;
+  }
+
+  return `
+    <div class="v-reliability-layout">
+      ${statsStripHtml}
+      ${depthToggleHtml}
+      ${verdictCardHtml}
+      ${depthContentHtml}
+    </div>
+  `;
+}
+
+function buildVehicleTabCostsHtml(car, vt) {
+  const { cost, grp } = getAurisEngineData(car);
+  const km = vehicleAnnualKm;
+  const fuelYr = Math.round((km / 100) * cost.avgFuelL100 * cost.fuelPrice);
+  const scaleFactor = 0.4 + 0.6 * (km / 15000);
+  const serviceYr = Math.round(cost.service * scaleFactor);
+  const totalYr = fuelYr + cost.tax + cost.ins + serviceYr;
+  const perMo = Math.round(totalYr / 12);
+  const classFuelYr = Math.round((km / 100) * 7.0 * 1.75);
+  const classServiceYr = Math.round(320 * scaleFactor);
+  const classBaseline = classFuelYr + 120 + 600 + classServiceYr;
+  const savingsYr = classBaseline - totalYr;
+  const savingsNote = (grp && grp.savingsNote && (grp.savingsNote[currentLang] || grp.savingsNote.en)) || '';
+
+  const tcoPillar = STAT_PILLARS.find((p) => p.id === 'runningCostsTco');
+  const subCardsHtml = (tcoPillar ? tcoPillar.subRatings : [])
+    .map((sub) => {
+      const subObj = car.subStats && car.subStats[sub.key];
+      const score = subObj ? Number(subObj.score) : 0;
+      const badges = (subObj && subObj.badges && (subObj.badges[currentLang] || subObj.badges.en)) || [];
+      return `
+        <button type="button" class="v-cost-rating-card" data-v-dossier-stat="${sub.key}">
+          <div class="v-pillar-bar-head">
+            <span class="v-cost-rating-name">${sub.label[currentLang] || sub.label.en}</span>
+            <span class="v-pillar-bar-score">${score.toFixed(1)}</span>
+          </div>
+          ${buildVehiclePipBar(score, { variant: score >= 8.5 ? 'win' : score < 7.0 ? 'warn' : 'c1', compact: true })}
+          ${badges.length ? `<div class="v-cost-rating-badges">${badges.join(' · ')}</div>` : ''}
+        </button>
+      `;
+    })
+    .join('');
+
+  return `
+    <div class="v-costs-layout">
+      <div class="v-ed-card v-cost-estimator-card">
+        <div class="v-cost-est-top">
+          <div>
+            <h3>${vt.costsEstTitle}</h3>
+            <p class="v-card-hint" style="margin:2px 0 0;">${vt.costsEstHint}</p>
+          </div>
+          <div class="v-km-pills" role="group" aria-label="Annual Mileage">
+            ${[10000, 15000, 20000]
+              .map(
+                (val) =>
+                  `<button type="button" class="v-km-btn ${km === val ? 'active' : ''}" data-v-annual-km="${val}">${val.toLocaleString('en-US')} km${vt.perYr}</button>`
+              )
+              .join('')}
+          </div>
+        </div>
+
+        <div class="v-cost-kpi-row">
+          <div class="v-cost-kpi">
+            <span class="v-cost-kpi-label">${vt.costsFuelLabel} (${cost.avgFuelL100.toFixed(1)} L/100)</span>
+            <span class="v-cost-kpi-val">${formatEuroAmount(fuelYr)}${vt.perYr}</span>
+          </div>
+          <div class="v-cost-kpi">
+            <span class="v-cost-kpi-label">${vt.costsTaxLabel}</span>
+            <span class="v-cost-kpi-val">${formatEuroAmount(cost.tax)}${vt.perYr}</span>
+          </div>
+          <div class="v-cost-kpi">
+            <span class="v-cost-kpi-label">${vt.costsInsLabel}</span>
+            <span class="v-cost-kpi-val">${formatEuroAmount(cost.ins)}${vt.perYr}</span>
+          </div>
+          <div class="v-cost-kpi">
+            <span class="v-cost-kpi-label">${vt.costsServiceLabel}</span>
+            <span class="v-cost-kpi-val">${formatEuroAmount(serviceYr)}${vt.perYr}</span>
+          </div>
+          <div class="v-cost-kpi is-total">
+            <span class="v-cost-kpi-label">${vt.costsTotalYrLabel}</span>
+            <span class="v-cost-kpi-val is-accent">${formatEuroAmount(totalYr)}${vt.perYr} <small>(~${formatEuroAmount(perMo)}${vt.perMo})</small></span>
+          </div>
+        </div>
+
+        <div class="v-cost-savings-banner ${savingsYr >= 0 ? 'is-pos' : 'is-warn'}">
+          <div class="v-cost-savings-head">
+            <span class="v-cost-savings-badge">${savingsYr >= 0 ? `+${formatEuroAmount(savingsYr)}${vt.perYr}` : `−${formatEuroAmount(Math.abs(savingsYr))}${vt.perYr}`}</span>
+            <strong>${vt.costsSavingsLabel}</strong>
+            <span class="v-cost-savings-base">(${vt.costsClassAvgLabel}: ~${formatEuroAmount(classBaseline)}${vt.perYr} @ ${km.toLocaleString('en-US')} km)</span>
+          </div>
+          ${savingsNote ? `<p class="v-cost-savings-note">${savingsNote}</p>` : ''}
+        </div>
+      </div>
+
+      <div class="v-costs-ratings-section">
+        <div class="v-section-header">
+          <h3 class="v-section-heading">${vt.costsRatingsTitle}</h3>
+          <span class="v-card-hint" style="margin:0;">${vt.costsClickDossier}</span>
+        </div>
+        <div class="v-costs-ratings-grid">${subCardsHtml}</div>
+      </div>
+    </div>
+  `;
+}
+
+function buildVehicleTabMarketHtml(car, vt) {
+  const ui = t();
+  const m = getPriceBreakdownMetrics(car, ui);
+  const { grp } = getAurisEngineData(car);
+  const market = (grp && grp.market) || {};
+  const pick = (v) => (v == null ? '' : typeof v === 'string' ? v : (v[currentLang] || v.en || ''));
+
+  const years = String(car.yearMake || '').match(/\d{4}/g);
+  const startYr = years && years.length ? Math.round((Number(years[0]) + Number(years[years.length - 1])) / 2) : 2015;
+  const todayYr = 2026;
+  const age = Math.max(2, todayYr - startYr);
+  const msrp = Math.max(1000, m.msrp);
+  const used = Math.max(500, m.used);
+  const maxVal = Math.ceil((msrp * 1.08) / 5000) * 5000;
+
+  const isEnthusiast = m.retainedPctNum >= 62 || car.id === 'honda-civic-type-r-2015';
+  const isBottomed = !isEnthusiast && Number(m.depPct) >= 72;
+  const isStrong = !isEnthusiast && !isBottomed && m.retainedPctNum >= 40;
+  const k = isBottomed ? 3.5 : isStrong ? 2.2 : 2.8;
+  const valueAt = (tFrac) => {
+    const ek = Math.exp(-k);
+    const norm = (Math.exp(-k * tFrac) - ek) / (1 - ek);
+    return used + (msrp - used) * norm;
+  };
+
+  const floorRatio = isBottomed ? 0.14 : isStrong ? 0.18 : 0.15;
+  const floorVal = Math.min(used * 0.78, msrp * floorRatio);
+  const annualRate = 1 - Math.pow(Math.max(0.15, used / msrp), 1 / age);
+  const forwardAnnualRate = Math.min(0.085, Math.max(0.025, annualRate * (isBottomed ? 0.45 : isStrong ? 0.78 : 0.72)));
+  const futureVal = Math.round(floorVal + (used - floorVal) * Math.pow(1 - forwardAnnualRate, 3));
+
+  const padL = 52, padR = 24, padT = 22, padB = 30;
+  const w = 460, h = 215;
+  const plotW = w - padL - padR;
+  const plotH = h - padT - padB;
+  const todayFracX = 0.76;
+  const xFor = (frac) => (padL + frac * plotW).toFixed(1);
+  const yFor = (val) => (padT + (1 - Math.max(0, Math.min(1, val / maxVal))) * plotH).toFixed(1);
+
+  const samples = [];
+  const steps = 14;
+  for (let i = 0; i <= steps; i++) {
+    const tf = i / steps;
+    samples.push({ x: xFor(tf * todayFracX), y: yFor(valueAt(tf)) });
+  }
+  const solidPath = samples.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`).join(' ');
+  const areaPath = `${solidPath} L ${samples[steps].x} ${(padT + plotH).toFixed(1)} L ${samples[0].x} ${(padT + plotH).toFixed(1)} Z`;
+
+  const fMidX = xFor(todayFracX + (1 - todayFracX) * 0.5);
+  const fMidY = yFor(used + (futureVal - used) * 0.58);
+  const fEndX = xFor(1.0);
+  const fEndY = yFor(futureVal);
+  const forecastPath = `M ${samples[steps].x} ${samples[steps].y} Q ${fMidX} ${fMidY}, ${fEndX} ${fEndY}`;
+
+  const midT = 0.45;
+  const pts = [
+    { key: 'msrp', x: samples[0].x, y: samples[0].y, yr: `${startYr}`, readout: `${ui.priceMsrpLabel}: ${formatEuroAmount(msrp)}`, color: 'var(--text-main)' },
+    { key: 'depreciation', x: xFor(midT * todayFracX), y: yFor(valueAt(midT)), yr: `${Math.round(startYr + age * midT)}`, readout: `${ui.priceDepTotalLabel}: −${formatEuroAmount(m.depTotal)} (${m.depPct}%)`, color: 'var(--p2-accent)' },
+    { key: 'current', x: samples[steps].x, y: samples[steps].y, yr: `${todayYr}`, readout: `${ui.priceCurrentLabel}: ${formatEuroAmount(used)} (${m.retainedPct}%)`, color: 'var(--win-green)' },
+    { key: 'outlook', x: fEndX, y: fEndY, yr: `${todayYr + 3}`, readout: `${ui.priceOutlookLabel} (${todayYr + 3}): ~${formatEuroAmount(futureVal)}`, prefix: `${ui.priceOutlookLabel} (${todayYr + 3}): `, highlightVal: `~${formatEuroAmount(futureVal)}`, color: 'var(--forza-lime)' }
+  ];
+
+  const yTicks = [1, 0.5, 0].map((f) => {
+    const val = Math.round((maxVal * f) / 1000) * 1000;
+    const y = yFor(val);
+    return `
+      <line class="fused-dep-grid-line" x1="${padL}" y1="${y}" x2="${w - padR}" y2="${y}"></line>
+      <text class="fused-dep-axis-text" x="${padL - 8}" y="${Number(y) + 3}" text-anchor="end">€${Math.round(val / 1000)}k</text>
+    `;
+  }).join('');
+
+  const svgPointsHtml = pts
+    .map(
+      (pt) => `
+      <g class="fused-dep-point" data-v-dep-key="${pt.key}" data-v-dep-readout="${escapeHtmlAttr(pt.readout)}"${pt.highlightVal ? ` data-v-dep-prefix="${escapeHtmlAttr(pt.prefix)}" data-v-dep-val="${escapeHtmlAttr(pt.highlightVal)}"` : ''}>
+        <circle class="fused-dep-ring" cx="${pt.x}" cy="${pt.y}" r="10"></circle>
+        <circle class="fused-dep-dot" cx="${pt.x}" cy="${pt.y}" r="5.5" fill="${pt.color}"></circle>
+        <circle cx="${pt.x}" cy="${pt.y}" r="18" fill="transparent"></circle>
+        <text class="fused-dep-axis-text fused-dep-year-text" x="${pt.x}" y="${h - 8}" text-anchor="middle">${pt.yr}</text>
+      </g>
+    `
+    )
+    .join('');
+
+  return `
+    <div class="v-market-hero-grid" data-v-dep-scope>
+      <div class="v-dep-graph-card">
+        <div class="v-dep-graph-head">
+          <span class="v-dep-graph-title">${vt.depGraphTitle}</span>
+          <span class="v-dep-hover-readout" data-v-dep-readout-el>${vt.depGraphHint}</span>
+        </div>
+        <div class="v-dep-svg-wrap">
+          <svg class="v-dep-svg" viewBox="0 0 ${w} ${h}" role="img" aria-label="${vt.depGraphTitle}">
+            <defs>
+              <linearGradient id="vehicleDepAreaGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="var(--p1-accent)" stop-opacity="0.6"></stop>
+                <stop offset="100%" stop-color="var(--p1-accent)" stop-opacity="0"></stop>
+              </linearGradient>
+            </defs>
+            ${yTicks}
+            <path class="fused-dep-area" style="fill:url(#vehicleDepAreaGrad)" d="${areaPath}"></path>
+            <path class="v-dep-path" data-v-dep-curve-path d="${solidPath}"></path>
+            <path class="fused-dep-flow" data-v-dep-curve-flow d="${solidPath}"></path>
+            <path class="fused-dep-hit" data-v-dep-curve="depreciation" d="${solidPath}"></path>
+            <path class="fused-dep-forecast" d="${forecastPath}"></path>
+            ${svgPointsHtml}
+          </svg>
+        </div>
+      </div>
+
+      <div class="v-market-stats-grid">
+        <div class="v-market-kpi-card" data-v-dep-card="msrp">
+          <span class="v-market-kpi-label">${ui.priceMsrpLabel}</span>
+          <span class="v-market-kpi-val">${formatEuroAmount(m.msrp)}</span>
+        </div>
+        <div class="v-market-kpi-card" data-v-dep-card="current">
+          <span class="v-market-kpi-label">${ui.priceCurrentLabel}</span>
+          <span class="v-market-kpi-val is-pos">${formatEuroAmount(m.used)}</span>
+        </div>
+        <div class="v-market-kpi-card" data-v-dep-card="depreciation">
+          <span class="v-market-kpi-label">${ui.priceDepTotalLabel}</span>
+          <span class="v-market-kpi-val is-warn">−${formatEuroAmount(m.depTotal)} (${m.depPct}%)</span>
+        </div>
+        <div class="v-market-kpi-card" data-v-dep-card="current">
+          <span class="v-market-kpi-label">${ui.priceRetainedLabel}</span>
+          <span class="v-market-kpi-val">${m.retainedPct}%</span>
+        </div>
+        <div class="v-market-kpi-card" data-v-dep-card="depreciation">
+          <span class="v-market-kpi-label">${ui.priceAnnualLabel}</span>
+          <span class="v-market-kpi-val">~${formatEuroAmount(Math.round(m.annualLoss))}${vt.perYr}</span>
+        </div>
+        <div class="v-market-kpi-card" data-v-dep-card="outlook">
+          <span class="v-market-kpi-label">${ui.priceOutlookLabel}</span>
+          <span class="v-market-kpi-val is-text">${m.outlook}</span>
+          <span class="v-market-kpi-est">${todayYr + 3}: <strong class="v-market-kpi-est-num">~${formatEuroAmount(futureVal)}</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="v-ed-card v-market-outlook-card">
+      <h3>${vt.marketInsightsTitle}</h3>
+      <div class="v-market-outlook-rows">
+        <div class="v-market-outlook-item">
+          <span class="v-market-outlook-k">${vt.marketSupplyLabel}</span>
+          <p class="v-market-outlook-v">${pick(market.supplyDemand)}</p>
+        </div>
+        <div class="v-market-outlook-item">
+          <span class="v-market-outlook-k">${vt.marketSweetSpotLabel}</span>
+          <p class="v-market-outlook-v">${pick(market.sweetSpot)}</p>
+        </div>
+        <div class="v-market-outlook-item">
+          <span class="v-market-outlook-k">${vt.marketOutlook35Label}</span>
+          <p class="v-market-outlook-v">${pick(market.outlook3to5yr)}</p>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderVehicleInDepthTabs(car) {
+  const shell = document.getElementById('vehicle-indepth-shell');
+  const tabsBar = document.getElementById('vehicle-tabs-bar');
+  const panel = document.getElementById('vehicle-tab-panel');
+  if (!shell || !tabsBar || !panel || !car) return;
+
+  const vt = VEHICLE_TABS_I18N[currentLang] || VEHICLE_TABS_I18N.en;
+
+  if (car.id !== 'toyota-auris-2014') {
+    tabsBar.hidden = true;
+    tabsBar.innerHTML = '';
+    panel.innerHTML = `
+      <div class="v-placeholder-card is-compact">
+        <span class="v-placeholder-badge">${vt.comingSoonBadge}</span>
+        <h3>${vt.comingSoonTitle}</h3>
+        <p>${vt.comingSoonText}</p>
+      </div>
+    `;
+    return;
+  }
+
+  const tabDefs = [
+    { id: 'overview', label: vt.tabs.overview },
+    { id: 'ratings', label: vt.tabs.ratings },
+    { id: 'specs', label: vt.tabs.specs },
+    { id: 'trims', label: vt.tabs.trims },
+    { id: 'reliability', label: vt.tabs.reliability },
+    { id: 'costs', label: vt.tabs.costs },
+    { id: 'market', label: vt.tabs.market }
+  ];
+
+  tabsBar.hidden = false;
+  tabsBar.innerHTML = tabDefs
+    .map(
+      (tb) =>
+        `<button type="button" class="v-tab-btn ${vehicleActiveTab === tb.id ? 'active' : ''}" data-v-tab="${tb.id}" role="tab" aria-selected="${vehicleActiveTab === tb.id}">${tb.label}</button>`
+    )
+    .join('');
+
+  tabsBar.querySelectorAll('[data-v-tab]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      vehicleActiveTab = btn.getAttribute('data-v-tab');
+      renderVehicleInDepthTabs(car);
+    });
+  });
+
+  if (vehicleActiveTab === 'overview') {
+    panel.innerHTML = buildVehicleTabOverviewHtml(car, vt);
+    panel.querySelectorAll('[data-v-jump-pillar]').forEach((el) => {
+      el.addEventListener('click', () => {
+        const pid = el.getAttribute('data-v-jump-pillar');
+        vehicleActiveTab = 'ratings';
+        if (pid) vehicleExpandedPillars.add(pid);
+        renderVehicleInDepthTabs(car);
+      });
+    });
+  } else if (vehicleActiveTab === 'ratings') {
+    panel.innerHTML = buildVehicleTabRatingsHtml(car, vt);
+    const expAllBtn = document.getElementById('v-expand-all-btn');
+    if (expAllBtn) {
+      expAllBtn.addEventListener('click', () => {
+        if (vehicleExpandedPillars.size === STAT_PILLARS.length) {
+          vehicleExpandedPillars.clear();
+        } else {
+          STAT_PILLARS.forEach((p) => vehicleExpandedPillars.add(p.id));
+        }
+        renderVehicleInDepthTabs(car);
+      });
+    }
+    panel.querySelectorAll('[data-v-pillar-toggle]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const pid = btn.getAttribute('data-v-pillar-toggle');
+        if (vehicleExpandedPillars.has(pid)) vehicleExpandedPillars.delete(pid);
+        else vehicleExpandedPillars.add(pid);
+        renderVehicleInDepthTabs(car);
+      });
+    });
+    panel.querySelectorAll('[data-v-dossier-stat]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        openStatDossier(btn.getAttribute('data-v-dossier-stat'), 'vehicle');
+      });
+    });
+  } else if (vehicleActiveTab === 'specs') {
+    panel.innerHTML = buildVehicleTabSpecsHtml(car, vt);
+  } else if (vehicleActiveTab === 'trims') {
+    panel.innerHTML = buildVehicleTabTrimsHtml(car, vt);
+  } else if (vehicleActiveTab === 'reliability') {
+    panel.innerHTML = buildVehicleTabReliabilityHtml(car, vt);
+    panel.querySelectorAll('[data-v-rel-depth]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        vehicleReliabilityDepth = btn.getAttribute('data-v-rel-depth');
+        renderVehicleInDepthTabs(car);
+      });
+    });
+  } else if (vehicleActiveTab === 'costs') {
+    panel.innerHTML = buildVehicleTabCostsHtml(car, vt);
+    panel.querySelectorAll('[data-v-annual-km]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        vehicleAnnualKm = Number(btn.getAttribute('data-v-annual-km')) || 15000;
+        renderVehicleInDepthTabs(car);
+      });
+    });
+    panel.querySelectorAll('[data-v-dossier-stat]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        openStatDossier(btn.getAttribute('data-v-dossier-stat'), 'vehicle');
+      });
+    });
+  } else if (vehicleActiveTab === 'market') {
+    panel.innerHTML = buildVehicleTabMarketHtml(car, vt);
+    panel.querySelectorAll('[data-v-dep-scope]').forEach((scope) => {
+      const readout = scope.querySelector('[data-v-dep-readout-el]');
+      const curvePath = scope.querySelector('[data-v-dep-curve-path]');
+      const curveFlow = scope.querySelector('[data-v-dep-curve-flow]');
+      const setHighlight = (key) => {
+        const isCurve = key === 'depreciation';
+        if (curvePath) curvePath.classList.toggle('is-curve-active', isCurve);
+        if (curveFlow) curveFlow.classList.toggle('is-curve-active', isCurve);
+        const activePoint = key ? scope.querySelector(`[data-v-dep-key="${key}"]`) : null;
+        scope.querySelectorAll('[data-v-dep-key]').forEach((g) => {
+          const match = key && g.getAttribute('data-v-dep-key') === key;
+          g.classList.toggle('is-active', Boolean(match));
+        });
+        scope.querySelectorAll('[data-v-dep-card]').forEach((c) => {
+          c.classList.toggle('is-linked-hover', Boolean(key && c.getAttribute('data-v-dep-card') === key));
+        });
+        if (readout) {
+          readout.classList.toggle('is-highlighted', Boolean(key));
+          if (activePoint) {
+            const prefix = activePoint.getAttribute('data-v-dep-prefix');
+            const val = activePoint.getAttribute('data-v-dep-val');
+            if (prefix && val) {
+              readout.innerHTML = `${escapeHtmlAttr(prefix)}<span class="v-dep-est-highlight">${escapeHtmlAttr(val)}</span>`;
+            } else {
+              readout.textContent = activePoint.getAttribute('data-v-dep-readout') || vt.depGraphHint;
+            }
+          } else {
+            readout.textContent = vt.depGraphHint;
+          }
+        }
+      };
+      scope.querySelectorAll('[data-v-dep-key]').forEach((g) => {
+        g.addEventListener('mouseenter', () => setHighlight(g.getAttribute('data-v-dep-key')));
+        g.addEventListener('mouseleave', () => setHighlight(null));
+      });
+      scope.querySelectorAll('[data-v-dep-curve]').forEach((c) => {
+        c.addEventListener('mouseenter', () => setHighlight('depreciation'));
+        c.addEventListener('mouseleave', () => setHighlight(null));
+      });
+      scope.querySelectorAll('[data-v-dep-card]').forEach((c) => {
+        c.addEventListener('mouseenter', () => setHighlight(c.getAttribute('data-v-dep-card')));
+        c.addEventListener('mouseleave', () => setHighlight(null));
+      });
     });
   }
 }
@@ -7040,6 +8642,143 @@ function triggerCompareGuardFeedback() {
   }
 }
 
+let isRestoringHistory = false;
+let lastHistoryKey = '';
+
+function getCurrentHistorySnapshot(modal = null) {
+  const bothSelected = Boolean(selectedLeftId && selectedRightId);
+  const view = isHomeView
+    ? 'home'
+    : isVehicleView
+      ? 'vehicle'
+      : bothSelected && !smashPickerForceOpen
+        ? 'compare'
+        : 'showroom';
+  return {
+    carDuelHistory: true,
+    view,
+    modal: modal || null,
+    vehicleViewCarId,
+    vehicleViewEngineId,
+    selectedLeftId,
+    selectedLeftEngineId,
+    selectedRightId,
+    selectedRightEngineId,
+    smashPickerForceOpen: view === 'showroom' && bothSelected
+  };
+}
+
+function getHistoryStateKey(snap) {
+  if (!snap) return '';
+  let base = snap.view || 'showroom';
+  if (snap.view === 'vehicle') {
+    base = `vehicle:${snap.vehicleViewCarId || ''}`;
+  } else if (snap.view === 'compare') {
+    base = `compare:${snap.selectedLeftId || ''}+${snap.selectedRightId || ''}`;
+  }
+  return snap.modal ? `${base}|modal:${snap.modal}` : base;
+}
+
+function buildHistoryHash(snap) {
+  if (!snap) return '#home';
+  if (snap.view === 'home') return '#home';
+  if (snap.view === 'vehicle') return `#vehicle/${snap.vehicleViewCarId || ''}`;
+  if (snap.view === 'compare') return `#compare/${snap.selectedLeftId || ''}+${snap.selectedRightId || ''}`;
+  return '#showroom';
+}
+
+function syncBrowserHistory() {
+  if (isRestoringHistory || !window.history || typeof window.history.pushState !== 'function') return;
+  const snap = getCurrentHistorySnapshot(null);
+  const key = getHistoryStateKey(snap);
+  const hash = buildHistoryHash(snap);
+  const replacingModal = Boolean(window.history.state && window.history.state.carDuelHistory && window.history.state.modal);
+  try {
+    if (!lastHistoryKey || key === lastHistoryKey || replacingModal) {
+      window.history.replaceState(snap, '', hash);
+    } else {
+      window.history.pushState(snap, '', hash);
+    }
+    lastHistoryKey = key;
+  } catch {}
+}
+
+function pushModalHistory(modalName) {
+  if (isRestoringHistory || !window.history || typeof window.history.pushState !== 'function') return;
+  const cur = window.history.state;
+  if (cur && cur.carDuelHistory && cur.modal === modalName) return;
+  const snap = getCurrentHistorySnapshot(modalName);
+  try {
+    window.history.pushState(snap, '', buildHistoryHash(snap));
+    lastHistoryKey = getHistoryStateKey(snap);
+  } catch {}
+}
+
+function popModalHistory(modalName, skipHistory = false) {
+  if (skipHistory === true || isRestoringHistory || !window.history) return;
+  const cur = window.history.state;
+  if (cur && cur.carDuelHistory && cur.modal === modalName) {
+    try {
+      window.history.back();
+    } catch {}
+  }
+}
+
+function restoreHistoryState(event) {
+  isRestoringHistory = true;
+  try {
+    const st = event && event.state;
+    if (!st || !st.carDuelHistory) {
+      closeAllMenusAndModals(true);
+      return;
+    }
+
+    const currentBaseKey = getHistoryStateKey(getCurrentHistorySnapshot(null));
+    const targetKey = getHistoryStateKey(st);
+    closeAllMenusAndModals(true);
+
+    if (!st.modal && targetKey === currentBaseKey) {
+      lastHistoryKey = targetKey;
+      return;
+    }
+
+    cancelDuelTransition();
+    selectedLeftId = st.selectedLeftId || null;
+    selectedLeftEngineId = st.selectedLeftEngineId || null;
+    selectedRightId = st.selectedRightId || null;
+    selectedRightEngineId = st.selectedRightEngineId || null;
+    vehicleViewCarId = st.vehicleViewCarId || null;
+    vehicleViewEngineId = st.vehicleViewEngineId || null;
+
+    if (st.view === 'home') {
+      isHomeView = true;
+      isVehicleView = false;
+      smashPickerForceOpen = false;
+    } else if (st.view === 'vehicle') {
+      isHomeView = false;
+      isVehicleView = true;
+      smashPickerForceOpen = false;
+    } else if (st.view === 'compare' && selectedLeftId && selectedRightId) {
+      isHomeView = false;
+      isVehicleView = false;
+      smashPickerForceOpen = false;
+    } else {
+      isHomeView = false;
+      isVehicleView = false;
+      smashPickerForceOpen = Boolean(selectedLeftId && selectedRightId);
+    }
+
+    lastHistoryKey = getHistoryStateKey(getCurrentHistorySnapshot(null));
+    updateArena();
+  } finally {
+    isRestoringHistory = false;
+  }
+}
+
+function getNavVehicleTargetId() {
+  return vehicleViewCarId || selectedLeftId || selectedRightId || null;
+}
+
 function syncTopNavState() {
   const bothSelected = Boolean(selectedLeftId && selectedRightId);
   const showHome = Boolean(isHomeView);
@@ -7049,13 +8788,22 @@ function syncTopNavState() {
 
   const navCatalog = document.getElementById('nav-catalog-btn');
   const navShowroom = document.getElementById('nav-showroom-btn');
+  const navShowroomLabel = document.getElementById('nav-showroom-label');
   const navCompare = document.getElementById('nav-compare-btn');
   const navCompareDot = document.getElementById('nav-compare-dot');
 
+  const activeVehicleId = getNavVehicleTargetId();
+  const activeVehicleBase = activeVehicleId ? getBaseCarById(activeVehicleId) : null;
+
   if (navCatalog) navCatalog.classList.toggle('active', showSmashGrid);
   if (navShowroom) {
-    navShowroom.disabled = false;
+    navShowroom.disabled = !activeVehicleBase;
     navShowroom.classList.toggle('active', showVehicle);
+  }
+  if (navShowroomLabel) {
+    navShowroomLabel.textContent = activeVehicleBase
+      ? (activeVehicleBase.gridLabel || activeVehicleBase.shortTitle)
+      : t().navVehicle;
   }
   if (navCompare) {
     navCompare.disabled = false;
@@ -7107,6 +8855,7 @@ function updateArena() {
 
   applyStaticTranslations();
   syncTopNavState();
+  syncBrowserHistory();
   renderSmashPicker();
 
   if (showVehicle) {
@@ -7204,7 +8953,7 @@ function initTopNav() {
   if (navCatalog) {
     navCatalog.addEventListener('click', () => {
       cancelDuelTransition();
-      closeAllMenusAndModals();
+      closeAllMenusAndModals(true);
       isHomeView = false;
       isVehicleView = false;
       smashPickerForceOpen = true;
@@ -7214,14 +8963,16 @@ function initTopNav() {
 
   if (navShowroom) {
     navShowroom.addEventListener('click', () => {
-      openVehicleView(vehicleViewCarId || selectedLeftId || (CAR_ROSTER[0] && CAR_ROSTER[0].id));
+      const targetId = getNavVehicleTargetId();
+      if (!targetId) return;
+      openVehicleView(targetId);
     });
   }
 
   if (vehicleBackBtn) {
     vehicleBackBtn.addEventListener('click', () => {
       cancelDuelTransition();
-      closeAllMenusAndModals();
+      closeAllMenusAndModals(true);
       isHomeView = false;
       isVehicleView = false;
       smashPickerForceOpen = true;
@@ -7238,7 +8989,7 @@ function initTopNav() {
       }
       hideCompareHint();
       cancelDuelTransition();
-      closeAllMenusAndModals();
+      closeAllMenusAndModals(true);
       isHomeView = false;
       isVehicleView = false;
       smashPickerForceOpen = false;
@@ -7587,10 +9338,10 @@ function initWeightEqualizerMenu() {
   });
 }
 
-function closeAllMenusAndModals() {
-  closeCarLightbox();
-  closeStatDossier();
-  closeEnginePickerModal();
+function closeAllMenusAndModals(skipHistory = false) {
+  closeCarLightbox(skipHistory);
+  closeStatDossier(skipHistory);
+  closeEnginePickerModal(skipHistory);
   closeSearchHelpPopover();
   hideCompareHint();
   document.querySelectorAll('.price-info-anchor.is-open').forEach((el) => el.classList.remove('is-open'));
@@ -7691,7 +9442,7 @@ function initCarDuel() {
       activeRosterTarget = 'p1';
       const smashStage = document.getElementById('smash-picker-stage');
       if (smashStage) smashStage.scrollTop = 0;
-      closeAllMenusAndModals();
+      closeAllMenusAndModals(true);
       updateArena();
     };
     brandHomeBtn.addEventListener('click', goHome);
@@ -7738,14 +9489,28 @@ function initCarDuel() {
 
   // Expand full car picture buttons & image wrappers
   document.querySelectorAll('.car-image-wrapper').forEach((wrapper) => {
-    wrapper.addEventListener('click', () => {
+    wrapper.addEventListener('click', (e) => {
+      if (e.target.closest('.duel-indepth-pill')) return;
       const side = wrapper.getAttribute('data-side');
       openCarLightbox(side);
     });
   });
 
-  document.getElementById('lightbox-close-btn').addEventListener('click', closeCarLightbox);
-  document.getElementById('lightbox-backdrop').addEventListener('click', closeCarLightbox);
+  // Compare-tab left/right In-Depth pills -> open active contender + engine in Vehicle Stage
+  document.querySelectorAll('[data-indepth-side]').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const side = btn.getAttribute('data-indepth-side');
+      if (side === 'left' && selectedLeftId) {
+        openVehicleView(selectedLeftId, selectedLeftEngineId);
+      } else if (side === 'right' && selectedRightId) {
+        openVehicleView(selectedRightId, selectedRightEngineId);
+      }
+    });
+  });
+
+  document.getElementById('lightbox-close-btn').addEventListener('click', () => closeCarLightbox());
+  document.getElementById('lightbox-backdrop').addEventListener('click', () => closeCarLightbox());
   document.getElementById('lightbox-prev-btn').addEventListener('click', (e) => {
     e.stopPropagation();
     stepLightbox(-1);
@@ -7758,13 +9523,13 @@ function initCarDuel() {
   // Engineering Stat Dossier Modal Close Handlers (Option 1)
   const dossierCloseBtn = document.getElementById('dossier-close-btn');
   const dossierBackdrop = document.getElementById('stat-dossier-backdrop');
-  if (dossierCloseBtn) dossierCloseBtn.addEventListener('click', closeStatDossier);
-  if (dossierBackdrop) dossierBackdrop.addEventListener('click', closeStatDossier);
+  if (dossierCloseBtn) dossierCloseBtn.addEventListener('click', () => closeStatDossier());
+  if (dossierBackdrop) dossierBackdrop.addEventListener('click', () => closeStatDossier());
 
   const engPickerCloseBtn = document.getElementById('engine-picker-close-btn');
   const engPickerBackdrop = document.getElementById('engine-picker-backdrop');
-  if (engPickerCloseBtn) engPickerCloseBtn.addEventListener('click', closeEnginePickerModal);
-  if (engPickerBackdrop) engPickerBackdrop.addEventListener('click', closeEnginePickerModal);
+  if (engPickerCloseBtn) engPickerCloseBtn.addEventListener('click', () => closeEnginePickerModal());
+  if (engPickerBackdrop) engPickerBackdrop.addEventListener('click', () => closeEnginePickerModal());
 
   const dossierPrevBtn = document.getElementById('dossier-nav-prev');
   const dossierNextBtn = document.getElementById('dossier-nav-next');
@@ -7809,14 +9574,14 @@ function initCarDuel() {
       }
       if (e.key === 'ArrowLeft') {
         e.preventDefault();
-        if (activeDossierStatKey && activeDossierSide !== 'left') {
+        if (activeDossierSide !== 'vehicle' && activeDossierStatKey && activeDossierSide !== 'left') {
           openStatDossier(activeDossierStatKey, 'left');
         }
         return;
       }
       if (e.key === 'ArrowRight') {
         e.preventDefault();
-        if (activeDossierStatKey && activeDossierSide !== 'right') {
+        if (activeDossierSide !== 'vehicle' && activeDossierStatKey && activeDossierSide !== 'right') {
           openStatDossier(activeDossierStatKey, 'right');
         }
         return;
@@ -7847,6 +9612,7 @@ function initCarDuel() {
   });
 
   window.addEventListener('resize', syncCarViewportAlignment);
+  window.addEventListener('popstate', restoreHistoryState);
 
   initSpecHoverTooltip();
   updateArena();
