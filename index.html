@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700;1,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap&subset=latin,cyrillic" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261122i" />
+  <link rel="stylesheet" href="styles.css?v=20261125j" />
 </head>
 <body class="dock-is-collapsed is-home-view">
   <!-- Armored Split-Door Intro Overlay (Plays on initial load/refresh) -->
@@ -185,6 +185,22 @@
     <section class="versus-arena" id="versus-arena">
       <!-- Homepage Landing Stage (Shown on initial load) -->
       <div class="home-landing-stage" id="home-landing-stage" aria-hidden="false">
+        <div class="home-dev-banner" id="home-dev-banner" role="region" aria-label="Development Notice">
+          <div class="home-dev-banner-inner">
+            <div class="home-dev-banner-content">
+              <span class="home-dev-badge" id="home-dev-badge">DEV</span>
+              <span class="home-dev-notice" id="home-dev-notice">This site is under active development — new features roll out every other day.</span>
+              <span class="home-dev-sep" aria-hidden="true">•</span>
+              <span class="home-dev-commit-wrap" id="home-dev-commit-wrap">
+                <a class="home-dev-commit-link" href="https://github.com/DevDinges/CarDuel/commits/main/" target="_blank" rel="noopener noreferrer">
+                  <span>View Changelog</span>
+                  <span class="home-dev-commit-arrow" aria-hidden="true">↗</span>
+                </a>
+              </span>
+            </div>
+            <button type="button" class="home-dev-close" id="home-dev-close" title="Dismiss notice" aria-label="Dismiss notice">✕</button>
+          </div>
+        </div>
         <div class="home-bg-marquee" id="home-bg-marquee" aria-hidden="true"></div>
         <div class="home-hero-card">
           <div class="home-kicker-pill" id="home-kicker">AUTOMOTIVE SHOWDOWN</div>
@@ -231,7 +247,19 @@
             <div class="search-help-popover" id="catalog-search-help-popover" role="dialog" aria-hidden="true"></div>
           </div>
 
-          <div class="catalog-filter-pills" id="catalog-filter-pills" role="tablist" aria-label="Filter by body type"></div>
+          <div class="catalog-brand-wrap">
+            <div class="sort-custom-wrap brand-custom-wrap" id="catalog-brand-dropdown">
+              <button type="button" class="sort-custom-trigger brand-custom-trigger" id="catalog-brand-trigger" aria-label="Brand" aria-expanded="false">
+                <span id="catalog-brand-current">All Brands</span>
+                <span class="sort-chevron">▾</span>
+              </button>
+              <div class="sort-custom-menu brand-custom-menu" id="catalog-brand-menu" role="listbox"></div>
+            </div>
+          </div>
+
+          <div class="catalog-filter-pills-wrap" id="catalog-filter-pills-wrap">
+            <div class="catalog-filter-pills" id="catalog-filter-pills" role="tablist" aria-label="Filter by body type"></div>
+          </div>
 
           <div class="catalog-sort-wrap">
             <span class="sort-label" id="catalog-sort-label">Sort</span>

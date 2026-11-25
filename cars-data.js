@@ -75003,5 +75003,6 @@ const CAR_AVAILABLE_ANGLES = {
 
 const CAR_MIRRORED_ANGLES = {
   'toyota-auris-2014': { sideRear: true },
+  'peugeot-308-gti-2019': { frontSide: true, side: true, sideRear: true },
   'honda-jazz-2011': { sideRear: true }
 };

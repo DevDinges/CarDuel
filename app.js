@@ -109,12 +109,19 @@ const UI_TRANSLATIONS = {
     homeStartBtn: 'CHOOSE YOUR CONTENDERS',
     homeRosterMeta: '{cars} Vehicles • Multiple Engine Variants • Custom Priority Weights',
     homeBrandTooltip: 'Return to Homepage',
+    homeDevBadge: 'DEV',
+    homeDevNotice: 'This site is under active development — new features roll out every other day.',
+    homeDevLatestLabel: 'Latest update',
+    homeDevChangelog: 'View Changelog',
+    homeDevClose: 'Dismiss notice',
     buyerFitBtn: 'BUYER FIT — WHO IS THIS FOR?',
     buyerFitCategory: 'BUYER FIT & PRACTICAL SUMMARY',
     buyerFitIdealTitle: 'Great Fit For',
     buyerFitNotIdealTitle: 'Rather Not For',
     searchPlaceholder: 'Search make, model, engine...',
     filterAll: 'All Models',
+    brandLabel: 'Brand',
+    brandAll: 'All Brands',
     sortLabel: 'Sort',
     sortCurated: 'Unsorted',
     sortScore: 'Highest Rated',
@@ -251,12 +258,19 @@ const UI_TRANSLATIONS = {
     homeStartBtn: 'MODELLE WÄHLEN',
     homeRosterMeta: '{cars} FAHRZEUGE • MEHRERE MOTORISIERUNGEN • EIGENE GEWICHTUNG',
     homeBrandTooltip: 'Zurück zur Startseite',
+    homeDevBadge: 'DEV',
+    homeDevNotice: 'Diese Seite befindet sich in aktiver Entwicklung — alle paar Tage erscheinen neue Funktionen.',
+    homeDevLatestLabel: 'Letztes Update',
+    homeDevChangelog: 'Changelog ansehen',
+    homeDevClose: 'Hinweis schließen',
     buyerFitBtn: 'FÜR WEN GEEIGNET? • FAZIT',
     buyerFitCategory: 'KAUFBERATUNG & ZIELGRUPPE',
     buyerFitIdealTitle: 'Ideal geeignet für',
     buyerFitNotIdealTitle: 'Eher nicht geeignet für',
     searchPlaceholder: 'Marke, Modell oder Motor suchen...',
     filterAll: 'Alle Modelle',
+    brandLabel: 'Marke',
+    brandAll: 'Alle Marken',
     sortLabel: 'Sortieren',
     sortCurated: 'Unsortiert',
     sortScore: 'Beste Wertung',
@@ -393,12 +407,19 @@ const UI_TRANSLATIONS = {
     homeStartBtn: 'ВЫБЕРИТЕ АВТОМОБИЛИ',
     homeRosterMeta: '{cars} автомобилей • Разные двигатели • Настройка приоритетов',
     homeBrandTooltip: 'Вернуться на главную',
+    homeDevBadge: 'DEV',
+    homeDevNotice: 'Сайт активно развивается — новые функции выходят каждые пару дней.',
+    homeDevLatestLabel: 'Последнее обновление',
+    homeDevChangelog: 'История изменений',
+    homeDevClose: 'Скрыть уведомление',
     buyerFitBtn: 'КОМУ ПОДОЙДЁТ? • ИТОГ',
     buyerFitCategory: 'КОМУ ПОДОЙДЁТ АВТОМОБИЛЬ',
     buyerFitIdealTitle: 'Отлично подойдёт',
     buyerFitNotIdealTitle: 'Скорее не подойдёт',
     searchPlaceholder: 'Поиск марки, модели, мотора...',
     filterAll: 'Все модели',
+    brandLabel: 'Марка',
+    brandAll: 'Все марки',
     sortLabel: 'Сортировка',
     sortCurated: 'Без сортировки',
     sortScore: 'Лучший рейтинг',
@@ -2756,7 +2777,7 @@ let vehicleViewCarId = null;
 let vehicleViewEngineId = null;
 let vehicleViewAngleIdx = 1;
 let vehicleViewPaintIdx = 0;
-let vehicleActiveTab = 'overview';
+let vehicleActiveTab = null;
 let vehicleExpandedPillars = new Set();
 let vehicleReliabilityDepth = 'simple';
 let vehicleAnnualKm = 15000;
@@ -2802,6 +2823,19 @@ const VEHICLE_TABS_I18N = {
     trimsBadge: 'PLACEHOLDER',
     trimsTitle: 'Trims, Equipment & Interior',
     trimsDesc: 'Detailed trim-level comparisons, standard equipment lists, and interior ergonomics notes will be added here.',
+    trimsSectionTitle: 'EU / DE Trim Levels (E180)',
+    trimsSectionHint: 'Used-market price gaps reflect comparable mileage and 2015+ facelift condition',
+    trimsSweetSpotBadge: 'Sweet Spot',
+    trimsMatrixTitle: 'Equipment Comparison Matrix',
+    trimsMatrixFeatureCol: 'Feature / Equipment',
+    trimsLegendStd: 'Standard',
+    trimsLegendOpt: 'Optional / Package',
+    trimsLegendNone: 'Not available',
+    trimsInteriorTitle: 'Interior Quality & Ergonomics',
+    trimsInteriorKicker: 'Cabin Craft',
+    trimsEngineCabinTitle: 'Selected Powertrain Cabin Notes',
+    trimsFaceliftTitle: '2015 Facelift (E180 II) Cabin Upgrades',
+    trimsFaceliftKicker: '2015+ Refresh',
     relStatsTitle: 'Independent Reliability Track Record',
     relDepthSimple: 'Simple',
     relDepthThorough: 'Thorough',
@@ -2880,6 +2914,19 @@ const VEHICLE_TABS_I18N = {
     trimsBadge: 'PLATZHALTER',
     trimsTitle: 'Ausstattungslinien & Interieur',
     trimsDesc: 'Detaillierte Ausstattungslinien, Serienumfänge und Material-Hinweise folgen hier in Kürze.',
+    trimsSectionTitle: 'EU / DE Ausstattungslinien (E180)',
+    trimsSectionHint: 'Preisunterschiede beziehen sich auf vergleichbare Laufleistung & Facelift-Zustand',
+    trimsSweetSpotBadge: 'Sweet Spot',
+    trimsMatrixTitle: 'Ausstattungs-Matrix im Vergleich',
+    trimsMatrixFeatureCol: 'Ausstattung / Merkmal',
+    trimsLegendStd: 'Serie',
+    trimsLegendOpt: 'Optional / Paket',
+    trimsLegendNone: 'Nicht verfügbar',
+    trimsInteriorTitle: 'Innenraumqualität & Ergonomie',
+    trimsInteriorKicker: 'Cockpit & Haptik',
+    trimsEngineCabinTitle: 'Cockpit-Hinweise zur gewählten Motorisierung',
+    trimsFaceliftTitle: 'Facelift-Upgrades ab 2015 (E180 II)',
+    trimsFaceliftKicker: 'Facelift 2015+',
     relStatsTitle: 'Unabhängige Zuverlässigkeits-Statistik',
     relDepthSimple: 'Kompakt',
     relDepthThorough: 'Gründlich',
@@ -2958,6 +3005,19 @@ const VEHICLE_TABS_I18N = {
     trimsBadge: 'ЗАГЛУШКА',
     trimsTitle: 'Комплектации и интерьер',
     trimsDesc: 'Подробное сравнение комплектаций, штатного оснащения и отделки салона появится здесь позже.',
+    trimsSectionTitle: 'Европейские комплектации (E180)',
+    trimsSectionHint: 'Разница в цене на вторичке указана при сопоставимом пробеге и состоянии',
+    trimsSweetSpotBadge: 'Sweet Spot',
+    trimsMatrixTitle: 'Сводная матрица оснащения',
+    trimsMatrixFeatureCol: 'Опция / оборудование',
+    trimsLegendStd: 'В базе',
+    trimsLegendOpt: 'Опция / пакет',
+    trimsLegendNone: 'Недоступно',
+    trimsInteriorTitle: 'Качество салона и эргономика',
+    trimsInteriorKicker: 'Салон и эргономика',
+    trimsEngineCabinTitle: 'Особенности салона для выбранного мотора',
+    trimsFaceliftTitle: 'Обновления салона рестайлинга 2015 (E180 II)',
+    trimsFaceliftKicker: 'Рестайлинг 2015+',
     relStatsTitle: 'Независимая статистика надёжности',
     relDepthSimple: 'Кратко',
     relDepthThorough: 'Подробно',
@@ -3331,6 +3391,7 @@ let activeRosterTarget = 'p1'; // 'p1' (left) or 'p2' (right)
 let currentLang = 'en'; // 'en' | 'de' | 'ru'
 let currentTheme = 'dark'; // 'dark' | 'light'
 let catalogQuery = '';
+let catalogBrand = 'all';
 let catalogFilter = 'all';
 let catalogSort = 'curated';
 const expandedPillars = new Set();
@@ -5086,7 +5147,6 @@ function buildFusedStatConsoleHtml(leftCar, rightCar) {
 
         let subDetailHtml = '';
         if (hasStructuredSpecs) {
-          const dossierHintText = SPEC_DOSSIER_HINT[currentLang] || SPEC_DOSSIER_HINT.en;
           const rowsMarkup = specRowDefs
             .map((row) => {
               const lRaw = leftCar.specs[row.key];
@@ -5095,24 +5155,16 @@ function buildFusedStatConsoleHtml(leftCar, rightCar) {
               const rSpecHtml = resolveLocalizedSpecVal(rRaw);
 
               const rowHint = SPEC_ROW_HINTS[row.key] ? (SPEC_ROW_HINTS[row.key][currentLang] || SPEC_ROW_HINTS[row.key].en) : '';
-              const lTipBody = getSpecValueTooltip(row.key, lRaw);
-              const rTipBody = getSpecValueTooltip(row.key, rRaw);
 
               const rowLabelTipAttrs = rowHint
                 ? `data-tip-title="${escapeHtmlAttr(row.label[currentLang])}" data-tip-body="${escapeHtmlAttr(rowHint)}"`
                 : '';
-              const lTipAttrs = lTipBody
-                ? `data-tip-title="${escapeHtmlAttr(resolvePlainSpecText(lRaw))}" data-tip-body="${escapeHtmlAttr(lTipBody)}" ${leftHasDossier ? `data-tip-hint="${escapeHtmlAttr(dossierHintText)}"` : ''}`
-                : '';
-              const rTipAttrs = rTipBody
-                ? `data-tip-title="${escapeHtmlAttr(resolvePlainSpecText(rRaw))}" data-tip-body="${escapeHtmlAttr(rTipBody)}" ${rightHasDossier ? `data-tip-hint="${escapeHtmlAttr(dossierHintText)}"` : ''}`
-                : '';
 
               return `
                 <div class="fused-spec-row">
-                  <div class="fused-spec-val fused-spec-left ${leftHasDossier ? 'has-dossier' : ''}" ${leftHasDossier ? `data-dossier-stat="${sub.key}" data-side="left"` : ''} ${lTipAttrs}><span class="fused-spec-text">${lSpecHtml}</span></div>
+                  <div class="fused-spec-val fused-spec-left ${leftHasDossier ? 'has-dossier' : ''}" ${leftHasDossier ? `data-dossier-stat="${sub.key}" data-side="left"` : ''}><span class="fused-spec-text">${lSpecHtml}</span></div>
                   <div class="fused-spec-label ${rowHint ? 'has-tip' : ''}" ${rowLabelTipAttrs}>${row.label[currentLang]}</div>
-                  <div class="fused-spec-val fused-spec-right ${rightHasDossier ? 'has-dossier' : ''}" ${rightHasDossier ? `data-dossier-stat="${sub.key}" data-side="right"` : ''} ${rTipAttrs}><span class="fused-spec-text">${rSpecHtml}</span></div>
+                  <div class="fused-spec-val fused-spec-right ${rightHasDossier ? 'has-dossier' : ''}" ${rightHasDossier ? `data-dossier-stat="${sub.key}" data-side="right"` : ''}><span class="fused-spec-text">${rSpecHtml}</span></div>
                 </div>
               `;
             })
@@ -5522,9 +5574,143 @@ function renderVerdictBanner() {
   }
 }
 
+const GITHUB_COMMIT_API_URL = 'https://api.github.com/repos/DevDinges/CarDuel/commits/main';
+const GITHUB_COMMITS_WEB_URL = 'https://github.com/DevDinges/CarDuel/commits/main/';
+const HOME_DEV_COMMIT_CACHE_KEY = 'carduel_latest_commit_v1';
+const HOME_DEV_COMMIT_CACHE_TTL_MS = 15 * 60 * 1000;
+const HOME_DEV_DISMISSED_KEY = 'carduel_home_dev_banner_dismissed';
+
+let latestRepoCommit = null;
+
+function formatHomeDevCommitDate(dateIso) {
+  if (!dateIso) return '';
+  const dt = new Date(dateIso);
+  if (Number.isNaN(dt.getTime())) return '';
+  const locale = currentLang === 'de' ? 'de-DE' : currentLang === 'ru' ? 'ru-RU' : 'en-US';
+  try {
+    return new Intl.DateTimeFormat(locale, {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    }).format(dt);
+  } catch {
+    return dt.toISOString().slice(0, 10);
+  }
+}
+
+function renderHomeDevBanner() {
+  const ui = t();
+  const badgeEl = document.getElementById('home-dev-badge');
+  const noticeEl = document.getElementById('home-dev-notice');
+  const closeBtn = document.getElementById('home-dev-close');
+  const commitWrap = document.getElementById('home-dev-commit-wrap');
+  const bannerEl = document.getElementById('home-dev-banner');
+
+  if (bannerEl && ui.homeDevBadge) {
+    bannerEl.setAttribute('aria-label', ui.homeDevBadge);
+  }
+  if (badgeEl) badgeEl.textContent = ui.homeDevBadge;
+  if (noticeEl) noticeEl.textContent = ui.homeDevNotice;
+  if (closeBtn) {
+    closeBtn.title = ui.homeDevClose;
+    closeBtn.setAttribute('aria-label', ui.homeDevClose);
+  }
+  if (!commitWrap) return;
+
+  if (latestRepoCommit && latestRepoCommit.title) {
+    const formattedDate = formatHomeDevCommitDate(latestRepoCommit.dateIso);
+    const metaLabel = formattedDate
+      ? `${ui.homeDevLatestLabel} (${formattedDate}):`
+      : `${ui.homeDevLatestLabel}:`;
+    const safeTitle = escapeHtmlAttr(latestRepoCommit.title);
+    commitWrap.innerHTML = `
+      <span class="home-dev-commit-meta">${escapeHtmlAttr(metaLabel)}</span>
+      <a class="home-dev-commit-link" href="${GITHUB_COMMITS_WEB_URL}" target="_blank" rel="noopener noreferrer" title="${safeTitle}">
+        <span class="home-dev-commit-title">&ldquo;${safeTitle}&rdquo;</span>
+        <span class="home-dev-commit-arrow" aria-hidden="true">↗</span>
+      </a>
+    `;
+  } else {
+    commitWrap.innerHTML = `
+      <a class="home-dev-commit-link" href="${GITHUB_COMMITS_WEB_URL}" target="_blank" rel="noopener noreferrer">
+        <span>${escapeHtmlAttr(ui.homeDevChangelog)}</span>
+        <span class="home-dev-commit-arrow" aria-hidden="true">↗</span>
+      </a>
+    `;
+  }
+}
+
+async function initHomeDevBanner() {
+  const bannerEl = document.getElementById('home-dev-banner');
+  const closeBtn = document.getElementById('home-dev-close');
+  if (!bannerEl) return;
+
+  try {
+    if (sessionStorage.getItem(HOME_DEV_DISMISSED_KEY) === '1') {
+      bannerEl.classList.add('is-dismissed');
+      bannerEl.setAttribute('aria-hidden', 'true');
+    }
+  } catch {}
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      bannerEl.classList.add('is-dismissed');
+      bannerEl.setAttribute('aria-hidden', 'true');
+      try {
+        sessionStorage.setItem(HOME_DEV_DISMISSED_KEY, '1');
+      } catch {}
+    });
+  }
+
+  let cacheFresh = false;
+  try {
+    const rawCache = localStorage.getItem(HOME_DEV_COMMIT_CACHE_KEY);
+    if (rawCache) {
+      const parsed = JSON.parse(rawCache);
+      if (parsed && parsed.title) {
+        latestRepoCommit = {
+          title: String(parsed.title),
+          dateIso: parsed.dateIso ? String(parsed.dateIso) : ''
+        };
+        if (typeof parsed.fetchedAt === 'number' && Date.now() - parsed.fetchedAt < HOME_DEV_COMMIT_CACHE_TTL_MS) {
+          cacheFresh = true;
+        }
+      }
+    }
+  } catch {}
+
+  renderHomeDevBanner();
+  if (cacheFresh) return;
+
+  try {
+    const res = await fetch(GITHUB_COMMIT_API_URL, {
+      headers: { Accept: 'application/vnd.github+json' }
+    });
+    if (!res.ok) return;
+    const data = await res.json();
+    const rawMsg = data && data.commit && data.commit.message ? String(data.commit.message) : '';
+    const title = rawMsg.split(/\r?\n/)[0].trim();
+    const dateIso =
+      (data && data.commit && data.commit.committer && data.commit.committer.date) ||
+      (data && data.commit && data.commit.author && data.commit.author.date) ||
+      '';
+    if (!title) return;
+
+    latestRepoCommit = { title, dateIso };
+    try {
+      localStorage.setItem(
+        HOME_DEV_COMMIT_CACHE_KEY,
+        JSON.stringify({ title, dateIso, fetchedAt: Date.now() })
+      );
+    } catch {}
+    renderHomeDevBanner();
+  } catch {}
+}
+
 // Render Homepage Hero Content & 5-Pillar Strip
 function renderHomeLanding() {
   const ui = t();
+  renderHomeDevBanner();
   const kickerEl = document.getElementById('home-kicker');
   const titleEl = document.getElementById('home-title');
   const introEl = document.getElementById('home-intro');
@@ -5688,9 +5874,12 @@ function applyStaticTranslations() {
 
   const catalogSearch = document.getElementById('catalog-search');
   if (catalogSearch) catalogSearch.placeholder = ui.searchPlaceholder;
+  const catalogBrandTrigger = document.getElementById('catalog-brand-trigger');
+  if (catalogBrandTrigger) catalogBrandTrigger.setAttribute('aria-label', ui.brandLabel);
   const catalogSortLabel = document.getElementById('catalog-sort-label');
   if (catalogSortLabel) catalogSortLabel.textContent = ui.sortLabel;
   if (typeof renderSearchHelpPopover === 'function') renderSearchHelpPopover();
+  if (typeof renderBrandDropdown === 'function') renderBrandDropdown();
   if (typeof renderCatalogFilters === 'function') renderCatalogFilters();
   if (typeof renderSortDropdown === 'function') renderSortDropdown();
 
@@ -6647,6 +6836,94 @@ function buildForzaIndexBlock(idx, compact = true) {
   `;
 }
 
+const BRAND_UPPERCASE_ACRONYMS = new Set(['BMW', 'VW', 'MG', 'BYD', 'GWM', 'GMC']);
+
+function getCarBrand(car) {
+  const raw = String((car && car.yearMake) || '')
+    .replace(/^\d{4}(?:\s*[-–—]\s*\d{4})?\s+/, '')
+    .trim();
+  if (!raw) return '';
+  return raw
+    .split(/\s+/)
+    .map((word) =>
+      word
+        .split('-')
+        .map((part) => {
+          const upper = part.toUpperCase();
+          if (BRAND_UPPERCASE_ACRONYMS.has(upper)) return upper;
+          return part.charAt(0).toUpperCase() + part.slice(1).toLowerCase();
+        })
+        .join('-')
+    )
+    .join(' ');
+}
+
+function getCatalogBrands() {
+  const counts = new Map();
+  (CAR_ROSTER || []).forEach((car) => {
+    const label = getCarBrand(car);
+    if (!label) return;
+    const key = label.toLowerCase();
+    const existing = counts.get(key);
+    if (existing) {
+      existing.count += 1;
+    } else {
+      counts.set(key, { key, label, count: 1 });
+    }
+  });
+  return Array.from(counts.values()).sort((a, b) => a.label.localeCompare(b.label));
+}
+
+function renderBrandDropdown() {
+  const ui = t();
+  const brands = getCatalogBrands();
+  const active = brands.find((b) => b.key === catalogBrand) || null;
+  if (catalogBrand !== 'all' && !active) {
+    catalogBrand = 'all';
+  }
+  const curEl = document.getElementById('catalog-brand-current');
+  const menuEl = document.getElementById('catalog-brand-menu');
+  if (curEl) curEl.textContent = active ? active.label : ui.brandAll;
+  if (!menuEl) return;
+
+  const totalCount = Array.isArray(CAR_ROSTER) ? CAR_ROSTER.length : 0;
+  const options = [{ key: 'all', label: ui.brandAll, count: totalCount }].concat(brands);
+
+  menuEl.innerHTML = options
+    .map(
+      (b) => `
+        <button type="button" class="sort-custom-option brand-custom-option ${catalogBrand === b.key ? 'selected' : ''}" data-brand-val="${escapeHtmlAttr(b.key)}">
+          <span>${escapeHtmlAttr(b.label)}</span>
+          <span class="brand-option-count">${b.count}</span>
+        </button>
+      `
+    )
+    .join('');
+
+  menuEl.querySelectorAll('[data-brand-val]').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      catalogBrand = btn.getAttribute('data-brand-val') || 'all';
+      const wrap = document.getElementById('catalog-brand-dropdown');
+      const trig = document.getElementById('catalog-brand-trigger');
+      if (wrap) wrap.classList.remove('open');
+      if (trig) trig.setAttribute('aria-expanded', 'false');
+      renderBrandDropdown();
+      renderSmashPicker();
+    });
+  });
+}
+
+function syncFilterPillsScrollFades() {
+  const wrap = document.getElementById('catalog-filter-pills-wrap');
+  const scroller = document.getElementById('catalog-filter-pills');
+  if (!wrap || !scroller) return;
+  const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+  const hasOverflow = maxScroll > 2;
+  wrap.classList.toggle('has-scroll-left', hasOverflow && scroller.scrollLeft > 2);
+  wrap.classList.toggle('has-scroll-right', hasOverflow && scroller.scrollLeft < maxScroll - 2);
+}
+
 function renderCatalogFilters() {
   const ui = t();
   const container = document.getElementById('catalog-filter-pills');
@@ -6670,6 +6947,8 @@ function renderCatalogFilters() {
       renderSmashPicker();
     });
   });
+
+  requestAnimationFrame(syncFilterPillsScrollFades);
 }
 
 function renderSortDropdown() {
@@ -6793,6 +7072,8 @@ function renderSearchHelpPopover() {
   });
 }
 
+const ENGINE_BRAND_STRIP_RE = /\b(?:bmw|volvo|psa|renault|mercedes(?:-benz)?|audi|toyota|honda|ford|peugeot|citro[eë]n|mazda|kia|hyundai|vw|volkswagen|skoda|škoda|seat|opel|vauxhall|nissan|subaru|suzuki|fiat|alfa(?:\s+romeo)?|porsche|lexus|mini|mitsubishi|chrysler|chevrolet|jaguar|land\s+rover|saab|dacia)\b/gi;
+
 function matchesCatalogQuery(item, rawQuery) {
   const normalized = String(rawQuery || '')
     .trim()
@@ -6823,8 +7104,12 @@ function matchesCatalogQuery(item, rawQuery) {
   const engineHay = (baseCar.engines || [])
     .map((e) => {
       const cat = getEngineCategory(e);
-      const subEn = e.engineSubLabel && e.engineSubLabel.en ? e.engineSubLabel.en : '';
-      const subCur = e.engineSubLabel && e.engineSubLabel[currentLang] ? e.engineSubLabel[currentLang] : '';
+      const subEn = e.engineSubLabel && e.engineSubLabel.en
+        ? e.engineSubLabel.en.replace(ENGINE_BRAND_STRIP_RE, ' ')
+        : '';
+      const subCur = e.engineSubLabel && e.engineSubLabel[currentLang]
+        ? e.engineSubLabel[currentLang].replace(ENGINE_BRAND_STRIP_RE, ' ')
+        : '';
       return `${e.engineBadge || ''} ${e.fullName || ''} ${e.fuelType || ''} ${fuelLabels[cat] || ''} ${e.drivetrain || ''} ${subEn} ${subCur}`;
     })
     .join(' ');
@@ -6934,8 +7219,21 @@ function initCatalogControls() {
   const searchWrap = document.getElementById('catalog-search-wrap');
   const helpBtn = document.getElementById('catalog-search-help-btn');
   const helpPopover = document.getElementById('catalog-search-help-popover');
+  const brandWrap = document.getElementById('catalog-brand-dropdown');
+  const brandTrigger = document.getElementById('catalog-brand-trigger');
   const sortWrap = document.getElementById('catalog-sort-dropdown');
   const sortTrigger = document.getElementById('catalog-sort-trigger');
+  const filterPills = document.getElementById('catalog-filter-pills');
+
+  const closeBrandMenu = () => {
+    if (brandWrap) brandWrap.classList.remove('open');
+    if (brandTrigger) brandTrigger.setAttribute('aria-expanded', 'false');
+  };
+
+  const closeSortMenu = () => {
+    if (sortWrap) sortWrap.classList.remove('open');
+    if (sortTrigger) sortTrigger.setAttribute('aria-expanded', 'false');
+  };
 
   if (searchWrap && helpBtn && helpPopover) {
     const cancelLeave = () => {
@@ -6953,8 +7251,8 @@ function initCatalogControls() {
 
     const openFromHover = () => {
       cancelLeave();
-      if (sortWrap) sortWrap.classList.remove('open');
-      if (sortTrigger) sortTrigger.setAttribute('aria-expanded', 'false');
+      closeBrandMenu();
+      closeSortMenu();
       setSearchHelpOpen(true);
     };
 
@@ -6968,8 +7266,8 @@ function initCatalogControls() {
       cancelLeave();
       searchHelpPinned = !searchHelpPinned;
       if (searchHelpPinned) {
-        if (sortWrap) sortWrap.classList.remove('open');
-        if (sortTrigger) sortTrigger.setAttribute('aria-expanded', 'false');
+        closeBrandMenu();
+        closeSortMenu();
         setSearchHelpOpen(true);
       } else {
         setSearchHelpOpen(false);
@@ -6983,10 +7281,28 @@ function initCatalogControls() {
     });
   }
 
+  if (brandWrap && brandTrigger) {
+    brandTrigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeSearchHelpPopover();
+      closeSortMenu();
+      const willOpen = !brandWrap.classList.contains('open');
+      brandWrap.classList.toggle('open', willOpen);
+      brandTrigger.setAttribute('aria-expanded', String(willOpen));
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!brandWrap.contains(e.target)) {
+        closeBrandMenu();
+      }
+    });
+  }
+
   if (sortWrap && sortTrigger) {
     sortTrigger.addEventListener('click', (e) => {
       e.stopPropagation();
       closeSearchHelpPopover();
+      closeBrandMenu();
       const willOpen = !sortWrap.classList.contains('open');
       sortWrap.classList.toggle('open', willOpen);
       sortTrigger.setAttribute('aria-expanded', String(willOpen));
@@ -6994,10 +7310,25 @@ function initCatalogControls() {
 
     document.addEventListener('click', (e) => {
       if (!sortWrap.contains(e.target)) {
-        sortWrap.classList.remove('open');
-        sortTrigger.setAttribute('aria-expanded', 'false');
+        closeSortMenu();
       }
     });
+  }
+
+  if (filterPills) {
+    filterPills.addEventListener('scroll', syncFilterPillsScrollFades, { passive: true });
+    filterPills.addEventListener(
+      'wheel',
+      (e) => {
+        if (filterPills.scrollWidth <= filterPills.clientWidth) return;
+        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+          e.preventDefault();
+          filterPills.scrollBy({ left: e.deltaY, behavior: 'auto' });
+        }
+      },
+      { passive: false }
+    );
+    window.addEventListener('resize', syncFilterPillsScrollFades);
   }
 }
 
@@ -7098,6 +7429,10 @@ function renderSmashPicker() {
 
   if (catalogFilter !== 'all') {
     items = items.filter((item) => getCarType(item.baseCar) === catalogFilter);
+  }
+
+  if (catalogBrand !== 'all') {
+    items = items.filter((item) => getCarBrand(item.baseCar).toLowerCase() === catalogBrand);
   }
 
   if (catalogQuery.trim()) {
@@ -7244,6 +7579,10 @@ function openVehicleView(carId, engineId = null) {
 
   cancelDuelTransition();
   closeAllMenusAndModals(true);
+  const wasInVehicleView = isVehicleView;
+  if (!wasInVehicleView) {
+    vehicleActiveTab = null;
+  }
   isHomeView = false;
   isVehicleView = true;
   smashPickerForceOpen = false;
@@ -7685,6 +8024,24 @@ function computeVehicleMissionProfile(car, vt) {
   return { roles, best };
 }
 
+function getScoreTierMeta(score, includeTierLetter = false) {
+  const val = Number(score || 0);
+  const numStr = val.toFixed(1);
+  if (val >= 9.6) {
+    return {
+      cls: 'score-s-plus',
+      text: includeTierLetter ? `✦ S+ · ${numStr}` : `✦ ${numStr}`
+    };
+  }
+  if (val >= 9.0) {
+    return {
+      cls: 'score-s',
+      text: includeTierLetter ? `✦ S · ${numStr}` : `✦ ${numStr}`
+    };
+  }
+  return { cls: '', text: numStr };
+}
+
 function buildVehicleTabOverviewHtml(car, vt) {
   const ui = t();
   const bf = getBuyerFit(car);
@@ -7762,6 +8119,7 @@ function buildVehicleTabOverviewHtml(car, vt) {
   const pillarsHtml = STAT_PILLARS.map((p) => {
     const score = getPillarScore(car, p);
     const pNum = String(p.number).padStart(2, '0');
+    const sMeta = getScoreTierMeta(score, true);
     return `
       <button type="button" class="v-pillar-bar-item" data-v-jump-pillar="${p.id}">
         <div class="v-pillar-bar-head">
@@ -7770,7 +8128,7 @@ function buildVehicleTabOverviewHtml(car, vt) {
             <span class="v-pillar-num">${pNum} //</span>
             <span>${p.label[currentLang] || p.label.en}</span>
           </span>
-          <span class="v-pillar-bar-score">${score.toFixed(1)}</span>
+          <span class="v-pillar-bar-score ${sMeta.cls}">${sMeta.text}</span>
         </div>
         ${buildVehiclePipBar(score, { variant: 'lime' })}
       </button>
@@ -7817,7 +8175,7 @@ function buildVehicleTabRatingsHtml(car, vt) {
         const sVar = sVal >= 8.5 ? 'win' : sVal < 7.0 ? 'warn' : 'c1';
         const badges = (subObj.badges && (subObj.badges[currentLang] || subObj.badges.en)) || [];
         const hasDossier = Boolean(getSubStatDossier(car, sub.key) || (car.specs && SUB_STAT_SPEC_ROWS[sub.key]));
-        const scoreStr = sVal >= 9.6 ? `✦ ${sVal.toFixed(1)}` : sVal.toFixed(1);
+        const sMeta = getScoreTierMeta(sVal, false);
         return `
           <button type="button" class="v-subrating-row ${hasDossier ? 'has-dossier' : ''}" data-v-dossier-stat="${sub.key}">
             <div class="v-subrating-main">
@@ -7827,7 +8185,7 @@ function buildVehicleTabRatingsHtml(car, vt) {
               </div>
               <div class="v-subrating-meter">
                 ${buildVehiclePipBar(sVal, { variant: sVar, compact: true })}
-                <span class="v-subrating-score ${sVal >= 9.6 ? 'score-s-plus' : ''}">${scoreStr}</span>
+                <span class="v-subrating-score ${sMeta.cls}">${sMeta.text}</span>
                 <span class="v-subrating-arrow" aria-hidden="true">›</span>
               </div>
             </div>
@@ -7835,6 +8193,8 @@ function buildVehicleTabRatingsHtml(car, vt) {
         `;
       })
       .join('');
+
+    const pMeta = getScoreTierMeta(pScore, true);
 
     return `
       <div class="pillar-cluster v-pillar-cluster ${isExpanded ? 'expanded' : ''}">
@@ -7845,7 +8205,7 @@ function buildVehicleTabRatingsHtml(car, vt) {
               <span class="v-pillar-header-title"><span class="pillar-num-accent">${pNum} //</span> ${pillar.label[currentLang] || pillar.label.en}</span>
               <span class="accordion-chevron">▸</span>
             </div>
-            <div class="v-pillar-header-score">${pScore.toFixed(1)}</div>
+            <div class="v-pillar-header-score ${pMeta.cls}">${pMeta.text}</div>
           </div>
           <div class="v-pillar-header-sub">${tagsHtml}</div>
           ${buildVehiclePipBar(pScore, { variant: barVar })}
@@ -7904,11 +8264,11 @@ function buildVehicleTabSpecsHtml(car, vt) {
   });
 
   const sections = [
-    { title: vt.secPowertrain, keys: ['engineName', 'forcedInduction', 'injection', 'gearbox', 'transmissionType', 'clutchDmf', 'driveline', 'timingDrive'] },
-    { title: vt.secPerfChassis, keys: ['sprint0100', 'topSpeed', 'peakTorque', 'passingPunch', 'chassisFeel', 'tractionDiff', 'braking1000', 'brakeSetup', 'suspensionWear'] },
-    { title: vt.secDimSpace, keys: ['rearRoom', 'isofixEntry', 'bootVolume', 'seatUtility', 'payloadRoof', 'towingBraked', 'turningCircle', 'visibility'] },
-    { title: vt.secComfortSafety, keys: ['rideTuning', 'highwayNoise', 'cabinMaterials', 'controls', 'euroNcap', 'safetyTech', 'rustProtection', 'starterAlternator', 'electronicsRisk'] },
-    { title: vt.secEffOwnership, keys: ['realWorldFuel', 'tankRange', 'euroNorm', 'taxInsurance', 'serviceWear', 'valueRetention', 'resaleDemand'] }
+    { cat: 'powertrain', title: vt.secPowertrain, keys: ['engineName', 'forcedInduction', 'injection', 'gearbox', 'transmissionType', 'clutchDmf', 'driveline', 'timingDrive'] },
+    { cat: 'perf', title: vt.secPerfChassis, keys: ['sprint0100', 'topSpeed', 'peakTorque', 'passingPunch', 'chassisFeel', 'tractionDiff', 'braking1000', 'brakeSetup', 'suspensionWear'] },
+    { cat: 'dim', title: vt.secDimSpace, keys: ['rearRoom', 'isofixEntry', 'bootVolume', 'seatUtility', 'payloadRoof', 'towingBraked', 'turningCircle', 'visibility'] },
+    { cat: 'comfort', title: vt.secComfortSafety, keys: ['rideTuning', 'highwayNoise', 'cabinMaterials', 'controls', 'euroNcap', 'safetyTech', 'rustProtection', 'starterAlternator', 'electronicsRisk'] },
+    { cat: 'eff', title: vt.secEffOwnership, keys: ['realWorldFuel', 'tankRange', 'euroNorm', 'taxInsurance', 'serviceWear', 'valueRetention', 'resaleDemand'] }
   ];
 
   const cardsHtml = sections
@@ -7939,7 +8299,7 @@ function buildVehicleTabSpecsHtml(car, vt) {
         .filter(Boolean)
         .join('');
       return `
-        <div class="v-spec-group-card">
+        <div class="v-spec-group-card" data-spec-cat="${sec.cat}">
           <h4 class="v-spec-group-title">${sec.title}</h4>
           <div class="v-spec-rows-list">${rowsHtml}</div>
         </div>
@@ -7956,12 +8316,258 @@ function buildVehicleTabSpecsHtml(car, vt) {
   `;
 }
 
+const AURIS_TRIMS_DATA = {
+  trims: [
+    {
+      id: 'base',
+      tierClass: 'tier-bronze',
+      tier: { en: 'Entry Level', de: 'Einstieg', ru: 'Базовая' },
+      name: { en: 'Base / Cool', de: 'Basis / Cool', ru: 'Base / Cool' },
+      delta: { en: '-€800 – €1,200', de: '-800 – 1.200 €', ru: '-€800 – €1 200' },
+      isSweetSpot: false,
+      summary: {
+        en: 'Fleet-spec starter trim focused strictly on reliability and low buy-in price.',
+        de: 'Schlanke Einstiegs- und Flottenausstattung mit Fokus auf niedrigen Einstiegspreis.',
+        ru: 'Базовая версия для автопарков с акцентом на минимальную цену входа.'
+      },
+      highlights: {
+        en: ['15" / 16" steel wheels with covers', 'Manual A/C & basic audio', 'Halogen headlights & fabric seats'],
+        de: ['15"/16"-Stahlfelgen mit Radkappen', 'Manuelle Klimaanlage & Basis-Radio', 'Halogen-Scheinwerfer & Stoffsitze'],
+        ru: ['Штампованные диски 15"/16"', 'Ручной кондиционер и базовое аудио', 'Галогеновые фары и тканевый салон']
+      }
+    },
+    {
+      id: 'comfort',
+      tierClass: 'tier-silver',
+      tier: { en: 'Core Daily', de: 'Solide Mitte', ru: 'Оптимум база' },
+      name: { en: 'Comfort', de: 'Comfort', ru: 'Comfort' },
+      delta: { en: 'Baseline', de: 'Preis-Basis', ru: 'База цены' },
+      isSweetSpot: false,
+      summary: {
+        en: 'Most common European trim covering everyday climate, alloy, and screen essentials.',
+        de: 'Meistverkaufte EU-Ausstattung mit allen wichtigen Komfort- und Alltags-Extras.',
+        ru: 'Самая распространённая европейская версия со всем необходимым на каждый день.'
+      },
+      highlights: {
+        en: ['16" alloy wheels & auto climate', 'Toyota Touch 2 (7") + rear camera', 'Multifunction wheel & Bluetooth'],
+        de: ['16"-Leichtmetallfelgen & Klimaautomatik', 'Toyota Touch 2 (7") + Rückfahrkamera', 'Multifunktionslenkrad & Bluetooth'],
+        ru: ['Литые диски 16" и климат-контроль', 'Toyota Touch 2 (7") + камера заднего вида', 'Мультируль и Bluetooth']
+      }
+    },
+    {
+      id: 'edition-s',
+      tierClass: 'tier-gold',
+      tier: { en: 'Recommended', de: 'Empfehlung', ru: 'Рекомендуем' },
+      name: { en: 'Edition-S / Design', de: 'Edition-S / Design', ru: 'Edition-S / Design' },
+      delta: { en: '+€500 – €900', de: '+500 – 900 €', ru: '+€500 – €900' },
+      isSweetSpot: true,
+      summary: {
+        en: 'Best used-market value — adds key comfort options and sharper looks without Executive markup.',
+        de: 'Bestes Preis-Leistungs-Verhältnis — wichtige Komfort-Extras ohne den vollen Executive-Aufpreis.',
+        ru: 'Лучшее соотношение цены и оснащения на вторичке без переплаты за топ-версию.'
+      },
+      highlights: {
+        en: ['17" two-tone alloys & privacy glass', 'Heated front seats & cruise control', 'Leather steering wheel & sportier trim'],
+        de: ['17"-Zweifarbfelgen & Privacy-Verglasung', 'Sitzheizung vorn & Tempomat', 'Lederlenkrad & sportlichere Dekore'],
+        ru: ['Двухцветные диски 17" и тонировка', 'Подогрев сидений и круиз-контроль', 'Кожаный руль и более выразительный декор']
+      }
+    },
+    {
+      id: 'executive',
+      tierClass: 'tier-diamond',
+      tier: { en: 'Top Spec', de: 'Top-Modell', ru: 'Топ-версия' },
+      name: { en: 'Executive', de: 'Executive', ru: 'Executive' },
+      delta: { en: '+€1,000 – €1,600', de: '+1.000 – 1.600 €', ru: '+€1 000 – €1 600' },
+      isSweetSpot: false,
+      summary: {
+        en: 'Flagship Auris spec bringing Bi-LED lighting, keyless entry, and upgraded cabin materials.',
+        de: 'Voll ausgestattete Top-Linie mit Bi-LED-Licht, Smart-Key und aufgewerteten Sitzbezügen.',
+        ru: 'Максимальная комплектация с Bi-LED-оптикой, бесключевым доступом и улучшенной отделкой.'
+      },
+      highlights: {
+        en: ['Bi-LED headlights & Smart Entry', 'Half-leather / Alcantara bolsters', 'Dual-zone climate & SIPA self-park'],
+        de: ['Bi-LED-Scheinwerfer & Smart-Key', 'Teilleder / Alcantara-Sitzwangen', '2-Zonen-Klima & Einparkautomatik (SIPA)'],
+        ru: ['Фары Bi-LED и бесключевой доступ', 'Комбинированный салон кожа/алькантара', '2-зонный климат и автопарковщик SIPA']
+      }
+    }
+  ],
+  matrix: [
+    { feature: { en: 'Toyota Touch 2 (7") + Rear Camera', de: 'Toyota Touch 2 (7") + Rückfahrkamera', ru: 'Toyota Touch 2 (7") + камера' }, vals: ['no', 'std', 'std', 'std'] },
+    { feature: { en: 'Bi-LED Headlights', de: 'Bi-LED-Scheinwerfer', ru: 'Светодиодные фары Bi-LED' }, vals: ['no', 'no', 'opt', 'std'] },
+    { feature: { en: 'Heated Front Seats', de: 'Sitzheizung vorn', ru: 'Подогрев передних сидений' }, vals: ['no', 'opt', 'std', 'std'] },
+    { feature: { en: 'Dual-Zone Auto Climate', de: '2-Zonen-Klimaautomatik', ru: '2-зонный климат-контроль' }, vals: ['no', 'std', 'std', 'std'] },
+    { feature: { en: 'Smart Entry & Push-Button Start', de: 'Smart-Key & Startknopf', ru: 'Бесключевой доступ и кнопка старта' }, vals: ['no', 'opt', 'opt', 'std'] },
+    { feature: { en: 'Parking Sensors & Self-Park (SIPA)', de: 'Parksensoren & Einparkhilfe (SIPA)', ru: 'Парктроники и автопарковщик (SIPA)' }, vals: ['no', 'opt', 'opt', 'std'] },
+    { feature: { en: 'Toyota Safety Sense (2015+ Facelift)', de: 'Toyota Safety Sense (ab Facelift 2015)', ru: 'Toyota Safety Sense (рестайлинг 2015+)' }, vals: ['opt', 'opt', 'std', 'std'] },
+    { feature: { en: 'Panoramic Skyview Glass Roof', de: 'Panorama-Glasdach (Skyview)', ru: 'Панорамная крыша Skyview' }, vals: ['no', 'opt', 'opt', 'opt'] }
+  ],
+  interiorNotes: {
+    en: [
+      'Logical physical climate knobs and clear steering-wheel buttons keep eyes on the road.',
+      'Harder lower door plastics are durable and rattle-resistant, even on 150,000+ km cars.',
+      '360 L luggage capacity with a flat load floor and well-shaped rear bench for two adults.'
+    ],
+    de: [
+      'Logische Drehregler für Klima und klare Lenkradtasten ermöglichen blinde Bedienung.',
+      'Robuste, klapperfreie Kunststoffe im unteren Türbereich halten auch über 150.000 km sauber.',
+      '360 Liter Kofferraum mit ebener Ladefläche und gut nutzbarer Rückbank für zwei Erwachsene.'
+    ],
+    ru: [
+      'Удобные физические регуляторы климата и понятные кнопки на руле не отвлекают от дороги.',
+      'Жёсткий пластик в нижней части дверей износостоек и почти не скрипит даже после 150 000 км.',
+      'Багажник объёмом 360 л с ровным полом и достойным запасом места на втором ряду для двоих взрослых.'
+    ]
+  },
+  cabinByPowertrain: {
+    hybrid: {
+      en: '1.8 HSD Hybrid cabin features the signature blue shift-by-wire joystick, EV / ECO / PWR drive mode buttons, a Hybrid System Indicator instead of a rev counter, and an under-seat battery preserving the full 360 L cargo space.',
+      de: 'Der 1.8 HSD Hybrid bietet den blauen Shift-by-Wire-Joystick, EV / ECO / PWR-Tasten, eine Hybrid-Systemanzeige statt Drehzahlmesser sowie die Batterie unter der Rückbank — ohne Verlust beim 360-Liter-Kofferraum.',
+      ru: 'Гибрид 1.8 HSD отличается фирменным синим джойстиком e-CVT, кнопками EV / ECO / PWR, экономайзером вместо тахометра и батареей под задним диваном без ущерба для багажника (360 л).'
+    },
+    conventional: {
+      en: 'Petrol and Diesel models use a conventional mechanical gear lever (5/6-speed manual or Multidrive S selector) paired with an analog tachometer and a slightly lower-mounted center console storage tray.',
+      de: 'Benziner und Diesel nutzen einen klassischen Schalthebel (5/6-Gang-Schaltgetriebe bzw. Multidrive S) mit analogem Drehzahlmesser und etwas tiefer gesetzter Ablage in der Mittelkonsole.',
+      ru: 'Бензиновые и дизельные версии оснащаются классическим рычагом КПП (5/6-ст. МКПП или вариатор), аналоговым тахометром и более глубокой нишей на центральной консоли.'
+    }
+  },
+  faceliftUpgrades: {
+    en: [
+      'Redesigned 2015+ dashboard swaps flat vertical plastic for softer-touch trim and cleaner silver accents.',
+      'Upgraded 4.2" colour TFT driver display between the dials and flush capacitive-edge Toyota Touch 2 unit.',
+      'Noticeably thicker firewall & wheel-arch sound insulation cuts motorway wind and tyre roar.',
+      'Available Toyota Safety Sense adds autonomous pre-collision braking, lane alert, and road-sign assist.'
+    ],
+    de: [
+      'Überarbeitetes Armaturenbrett ab 2015 mit weicheren Oberflächen, klareren Zierleisten und neuer Mittelkonsole.',
+      'Schärferes 4,2"-TFT-Farbdisplay zwischen den Rundinstrumenten sowie bündiges Toyota Touch 2 Infotainment.',
+      'Spürbar verbesserte Stirnwand- und Radhausdämmung senkt Wind- und Abrollgeräusche auf der Autobahn.',
+      'Optionales Toyota Safety Sense ergänzt Notbremsassistent, Spurhaltewarner und Verkehrszeichenerkennung.'
+    ],
+    ru: [
+      'Обновлённая передняя панель 2015+ получила более мягкую отделку, аккуратные вставки и новую консоль.',
+      'Цветной экран 4,2" на приборной панели и обновлённая мультимедиа Toyota Touch 2 с сенсорной рамкой.',
+      'Усиленная шумоизоляция моторного щита и колёсных арок заметно снизила гул на трассе.',
+      'Появился комплекс Toyota Safety Sense: автоторможение, контроль полосы и распознавание знаков.'
+    ]
+  }
+};
+
 function buildVehicleTabTrimsHtml(car, vt) {
+  if (car.id !== 'toyota-auris-2014') {
+    return `
+      <div class="v-placeholder-card">
+        <span class="v-placeholder-badge">${vt.trimsBadge}</span>
+        <h3>${vt.trimsTitle}</h3>
+        <p>${vt.trimsDesc}</p>
+      </div>
+    `;
+  }
+
+  const pick = (v) => (v == null ? '' : typeof v === 'string' ? v : (v[currentLang] || v.en || ''));
+  const lang = currentLang === 'de' || currentLang === 'ru' ? currentLang : 'en';
+  const cat = getEngineCategory(car);
+  const cabinKey = cat === 'hybrid' ? 'hybrid' : 'conventional';
+
+  const trimCardsHtml = AURIS_TRIMS_DATA.trims
+    .map(
+      (tr) => `
+      <div class="v-trim-card ${tr.tierClass} ${tr.isSweetSpot ? 'is-sweet-spot' : ''}">
+        <div class="v-trim-card-head">
+          <span class="v-trim-tier-tag">${pick(tr.tier)}</span>
+          ${tr.isSweetSpot ? `<span class="v-trim-sweet-pill">${vt.trimsSweetSpotBadge}</span>` : ''}
+        </div>
+        <h4 class="v-trim-name">${pick(tr.name)}</h4>
+        <span class="v-trim-delta">${pick(tr.delta)}</span>
+        <p class="v-trim-summary">${pick(tr.summary)}</p>
+        <ul class="v-trim-highlights">
+          ${(tr.highlights[lang] || tr.highlights.en)
+            .map((hl) => `<li><span class="v-trim-bullet" aria-hidden="true">▸</span><span>${hl}</span></li>`)
+            .join('')}
+        </ul>
+      </div>
+    `
+    )
+    .join('');
+
+  const cellHtml = (code) => {
+    if (code === 'std') return `<span class="v-tm-std" aria-label="${vt.trimsLegendStd}">✓</span>`;
+    if (code === 'opt') return `<span class="v-tm-opt">${vt.trimsLegendOpt.split(' / ')[0]}</span>`;
+    return `<span class="v-tm-no" aria-label="${vt.trimsLegendNone}">—</span>`;
+  };
+
+  const matrixRowsHtml = AURIS_TRIMS_DATA.matrix
+    .map(
+      (row) => `
+      <tr>
+        <td>${pick(row.feature)}</td>
+        ${row.vals.map((v) => `<td>${cellHtml(v)}</td>`).join('')}
+      </tr>
+    `
+    )
+    .join('');
+
   return `
-    <div class="v-placeholder-card">
-      <span class="v-placeholder-badge">${vt.trimsBadge}</span>
-      <h3>${vt.trimsTitle}</h3>
-      <p>${vt.trimsDesc}</p>
+    <div class="v-trims-layout">
+      <div class="v-section-header">
+        <h3 class="v-section-heading">${vt.trimsSectionTitle}</h3>
+        <span class="v-card-hint" style="margin:0;">${vt.trimsSectionHint}</span>
+      </div>
+
+      <div class="v-trims-cards-grid">${trimCardsHtml}</div>
+
+      <div class="v-ed-card">
+        <div class="v-trim-matrix-head">
+          <h3 style="margin:0;">${vt.trimsMatrixTitle}</h3>
+          <div class="v-trim-matrix-legend">
+            <span><strong class="v-tm-std">✓</strong> ${vt.trimsLegendStd}</span>
+            <span><span class="v-tm-opt">${vt.trimsLegendOpt.split(' / ')[0]}</span> ${vt.trimsLegendOpt}</span>
+            <span><span class="v-tm-no">—</span> ${vt.trimsLegendNone}</span>
+          </div>
+        </div>
+        <div class="v-trim-matrix-wrap">
+          <table class="v-trim-matrix-table">
+            <thead>
+              <tr>
+                <th>${vt.trimsMatrixFeatureCol}</th>
+                ${AURIS_TRIMS_DATA.trims
+                  .map((tr) => `<th class="${tr.tierClass} ${tr.isSweetSpot ? 'is-sweet-spot' : ''}">${pick(tr.name)}</th>`)
+                  .join('')}
+              </tr>
+            </thead>
+            <tbody>${matrixRowsHtml}</tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="v-interior-grid">
+        <div class="v-ed-card v-interior-card">
+          <div class="v-interior-card-head">
+            <h3>${vt.trimsInteriorTitle}</h3>
+            <span class="v-interior-kicker">${vt.trimsInteriorKicker}</span>
+          </div>
+          <ul class="v-interior-list">
+            ${(AURIS_TRIMS_DATA.interiorNotes[lang] || AURIS_TRIMS_DATA.interiorNotes.en)
+              .map((note) => `<li><span class="v-interior-icon" aria-hidden="true">◆</span><span>${note}</span></li>`)
+              .join('')}
+          </ul>
+          <div class="v-interior-engine-box ${cabinKey === 'hybrid' ? 'is-hybrid' : ''}">
+            <span class="v-interior-engine-kicker">${vt.trimsEngineCabinTitle}</span>
+            <p class="v-interior-engine-text">${pick(AURIS_TRIMS_DATA.cabinByPowertrain[cabinKey])}</p>
+          </div>
+        </div>
+
+        <div class="v-ed-card v-interior-card is-facelift">
+          <div class="v-interior-card-head">
+            <h3>${vt.trimsFaceliftTitle}</h3>
+            <span class="v-interior-kicker">${vt.trimsFaceliftKicker}</span>
+          </div>
+          <ul class="v-interior-list">
+            ${(AURIS_TRIMS_DATA.faceliftUpgrades[lang] || AURIS_TRIMS_DATA.faceliftUpgrades.en)
+              .map((up) => `<li><span class="v-interior-icon" aria-hidden="true">✦</span><span>${up}</span></li>`)
+              .join('')}
+          </ul>
+        </div>
+      </div>
     </div>
   `;
 }
@@ -7987,20 +8593,24 @@ function buildVehicleTabReliabilityHtml(car, vt) {
   const guide = car.subStats?.maintenanceRepairCosts?.repairGuide;
   const pick = (v) => (v == null ? '' : typeof v === 'string' ? v : (v[currentLang] || v.en || ''));
 
+  const defaultStatTone =
+    ptScore >= 8.5 ? 'is-great' : ptScore >= 7.0 ? 'is-solid' : ptScore >= 5.5 ? 'is-caution' : 'is-poor';
+
   const statsStripHtml = `
     <div class="v-rel-stats-wrap">
       <h3 class="v-section-heading">${vt.relStatsTitle}</h3>
       <div class="v-rel-stats-grid">
         ${stats
-          .map(
-            (st) => `
-          <div class="v-rel-stat-card">
+          .map((st) => {
+            const toneCls = st.tone ? `is-${st.tone}` : defaultStatTone;
+            return `
+          <div class="v-rel-stat-card ${toneCls}">
             <span class="v-rel-stat-source">${st.source}</span>
             <span class="v-rel-stat-value">${st.value}</span>
             <p class="v-rel-stat-note">${st.note}</p>
           </div>
-        `
-          )
+        `;
+          })
           .join('')}
       </div>
     </div>
@@ -8052,13 +8662,6 @@ function buildVehicleTabReliabilityHtml(car, vt) {
       </div>
     `;
   } else {
-    const knownWeakSpots = [
-      ...new Set([
-        ...(ptDossier.watchouts || []),
-        ...watchoutExtras,
-        ...critical.map((c) => `${pick(c.action)} (${pick(c.when)})`)
-      ])
-    ].slice(0, 5);
     const repairsHtml =
       routine.length || critical.length
         ? `
@@ -8168,16 +8771,11 @@ function buildVehicleTabReliabilityHtml(car, vt) {
           <ul class="v-check-list">
             ${beforeBuy.map((item) => `<li><span class="v-check-box" aria-hidden="true">☐</span><span>${item}</span></li>`).join('')}
           </ul>
-          <div class="v-check-divider"></div>
-          <h4 class="v-check-subhead">${vt.relExtendedChecks}</h4>
-          <ul class="v-check-list">
-            ${extChecks.map((item) => `<li><span class="v-check-box" aria-hidden="true">☐</span><span>${item}</span></li>`).join('')}
-          </ul>
         </div>
         <div class="v-ed-card">
-          <h3>${vt.relTopIssues}</h3>
-          <ul class="v-issue-list">
-            ${knownWeakSpots.map((item) => `<li><span class="v-issue-icon" aria-hidden="true">⚠</span><span>${item}</span></li>`).join('')}
+          <h3>${vt.relExtendedChecks}</h3>
+          <ul class="v-check-list">
+            ${extChecks.map((item) => `<li><span class="v-check-box" aria-hidden="true">☐</span><span>${item}</span></li>`).join('')}
           </ul>
         </div>
       </div>
@@ -8204,6 +8802,15 @@ function buildVehicleTabCostsHtml(car, vt) {
   const serviceYr = Math.round(cost.service * scaleFactor);
   const totalYr = fuelYr + cost.tax + cost.ins + serviceYr;
   const perMo = Math.round(totalYr / 12);
+  const shareDenom = totalYr > 0 ? totalYr : 1;
+  const fuelWidth = ((fuelYr / shareDenom) * 100).toFixed(1);
+  const taxWidth = ((cost.tax / shareDenom) * 100).toFixed(1);
+  const insWidth = ((cost.ins / shareDenom) * 100).toFixed(1);
+  const serviceWidth = ((serviceYr / shareDenom) * 100).toFixed(1);
+  const fuelPct = Math.round((fuelYr / shareDenom) * 100);
+  const taxPct = Math.round((cost.tax / shareDenom) * 100);
+  const insPct = Math.round((cost.ins / shareDenom) * 100);
+  const servicePct = Math.max(0, 100 - fuelPct - taxPct - insPct);
   const classFuelYr = Math.round((km / 100) * 7.0 * 1.75);
   const classServiceYr = Math.round(320 * scaleFactor);
   const classBaseline = classFuelYr + 120 + 600 + classServiceYr;
@@ -8248,26 +8855,48 @@ function buildVehicleTabCostsHtml(car, vt) {
         </div>
 
         <div class="v-cost-kpi-row">
-          <div class="v-cost-kpi">
-            <span class="v-cost-kpi-label">${vt.costsFuelLabel} (${cost.avgFuelL100.toFixed(1)} L/100)</span>
+          <div class="v-cost-kpi is-fuel">
+            <div class="v-cost-kpi-top">
+              <span class="v-cost-kpi-label">${vt.costsFuelLabel} (${cost.avgFuelL100.toFixed(1)} L/100)</span>
+              <span class="v-cost-kpi-pct">${fuelPct}%</span>
+            </div>
             <span class="v-cost-kpi-val">${formatEuroAmount(fuelYr)}${vt.perYr}</span>
           </div>
-          <div class="v-cost-kpi">
-            <span class="v-cost-kpi-label">${vt.costsTaxLabel}</span>
+          <div class="v-cost-kpi is-tax">
+            <div class="v-cost-kpi-top">
+              <span class="v-cost-kpi-label">${vt.costsTaxLabel}</span>
+              <span class="v-cost-kpi-pct">${taxPct}%</span>
+            </div>
             <span class="v-cost-kpi-val">${formatEuroAmount(cost.tax)}${vt.perYr}</span>
           </div>
-          <div class="v-cost-kpi">
-            <span class="v-cost-kpi-label">${vt.costsInsLabel}</span>
+          <div class="v-cost-kpi is-ins">
+            <div class="v-cost-kpi-top">
+              <span class="v-cost-kpi-label">${vt.costsInsLabel}</span>
+              <span class="v-cost-kpi-pct">${insPct}%</span>
+            </div>
             <span class="v-cost-kpi-val">${formatEuroAmount(cost.ins)}${vt.perYr}</span>
           </div>
-          <div class="v-cost-kpi">
-            <span class="v-cost-kpi-label">${vt.costsServiceLabel}</span>
+          <div class="v-cost-kpi is-service">
+            <div class="v-cost-kpi-top">
+              <span class="v-cost-kpi-label">${vt.costsServiceLabel}</span>
+              <span class="v-cost-kpi-pct">${servicePct}%</span>
+            </div>
             <span class="v-cost-kpi-val">${formatEuroAmount(serviceYr)}${vt.perYr}</span>
           </div>
           <div class="v-cost-kpi is-total">
             <span class="v-cost-kpi-label">${vt.costsTotalYrLabel}</span>
-            <span class="v-cost-kpi-val is-accent">${formatEuroAmount(totalYr)}${vt.perYr} <small>(~${formatEuroAmount(perMo)}${vt.perMo})</small></span>
+            <div class="v-cost-kpi-total-row">
+              <span class="v-cost-kpi-val is-accent">${formatEuroAmount(totalYr)}${vt.perYr}</span>
+              <span class="v-cost-kpi-mo-pill">~${formatEuroAmount(perMo)}${vt.perMo}</span>
+            </div>
           </div>
+        </div>
+
+        <div class="v-cost-share-bar" aria-hidden="true">
+          <span class="v-cost-share-seg is-fuel" style="width:${fuelWidth}%;" title="${escapeHtmlAttr(`${vt.costsFuelLabel}: ${formatEuroAmount(fuelYr)}${vt.perYr} (${fuelPct}%)`)}"></span>
+          <span class="v-cost-share-seg is-tax" style="width:${taxWidth}%;" title="${escapeHtmlAttr(`${vt.costsTaxLabel}: ${formatEuroAmount(cost.tax)}${vt.perYr} (${taxPct}%)`)}"></span>
+          <span class="v-cost-share-seg is-ins" style="width:${insWidth}%;" title="${escapeHtmlAttr(`${vt.costsInsLabel}: ${formatEuroAmount(cost.ins)}${vt.perYr} (${insPct}%)`)}"></span>
+          <span class="v-cost-share-seg is-service" style="width:${serviceWidth}%;" title="${escapeHtmlAttr(`${vt.costsServiceLabel}: ${formatEuroAmount(serviceYr)}${vt.perYr} (${servicePct}%)`)}"></span>
         </div>
 
         <div class="v-cost-savings-banner ${savingsYr >= 0 ? 'is-pos' : 'is-warn'}">
@@ -8349,7 +8978,7 @@ function buildVehicleTabMarketHtml(car, vt) {
   const pts = [
     { key: 'msrp', x: samples[0].x, y: samples[0].y, yr: `${startYr}`, readout: `${ui.priceMsrpLabel}: ${formatEuroAmount(msrp)}`, color: 'var(--text-main)' },
     { key: 'depreciation', x: xFor(midT * todayFracX), y: yFor(valueAt(midT)), yr: `${Math.round(startYr + age * midT)}`, readout: `${ui.priceDepTotalLabel}: −${formatEuroAmount(m.depTotal)} (${m.depPct}%)`, color: 'var(--p2-accent)' },
-    { key: 'current', x: samples[steps].x, y: samples[steps].y, yr: `${todayYr}`, readout: `${ui.priceCurrentLabel}: ${formatEuroAmount(used)} (${m.retainedPct}%)`, color: 'var(--win-green)' },
+    { key: 'current', x: samples[steps].x, y: samples[steps].y, yr: `${todayYr}`, readout: `${ui.priceCurrentLabel}: ~${formatEuroAmount(used)} (${m.retainedPct}%)`, color: 'var(--win-green)' },
     { key: 'outlook', x: fEndX, y: fEndY, yr: `${todayYr + 3}`, readout: `${ui.priceOutlookLabel} (${todayYr + 3}): ~${formatEuroAmount(futureVal)}`, prefix: `${ui.priceOutlookLabel} (${todayYr + 3}): `, highlightVal: `~${formatEuroAmount(futureVal)}`, color: 'var(--forza-lime)' }
   ];
 
@@ -8408,7 +9037,7 @@ function buildVehicleTabMarketHtml(car, vt) {
         </div>
         <div class="v-market-kpi-card" data-v-dep-card="current">
           <span class="v-market-kpi-label">${ui.priceCurrentLabel}</span>
-          <span class="v-market-kpi-val is-pos">${formatEuroAmount(m.used)}</span>
+          <span class="v-market-kpi-val is-pos">~${formatEuroAmount(m.used)}</span>
         </div>
         <div class="v-market-kpi-card" data-v-dep-card="depreciation">
           <span class="v-market-kpi-label">${ui.priceDepTotalLabel}</span>
@@ -8438,11 +9067,11 @@ function buildVehicleTabMarketHtml(car, vt) {
           <p class="v-market-outlook-v">${pick(market.supplyDemand)}</p>
         </div>
         <div class="v-market-outlook-item">
-          <span class="v-market-outlook-k">${vt.marketSweetSpotLabel}</span>
+          <span class="v-market-outlook-k is-sweet-spot">${vt.marketSweetSpotLabel}</span>
           <p class="v-market-outlook-v">${pick(market.sweetSpot)}</p>
         </div>
         <div class="v-market-outlook-item">
-          <span class="v-market-outlook-k">${vt.marketOutlook35Label}</span>
+          <span class="v-market-outlook-k is-forecast">${vt.marketOutlook35Label}</span>
           <p class="v-market-outlook-v">${pick(market.outlook3to5yr)}</p>
         </div>
       </div>
@@ -8461,6 +9090,7 @@ function renderVehicleInDepthTabs(car) {
   if (car.id !== 'toyota-auris-2014') {
     tabsBar.hidden = true;
     tabsBar.innerHTML = '';
+    panel.hidden = false;
     panel.innerHTML = `
       <div class="v-placeholder-card is-compact">
         <span class="v-placeholder-badge">${vt.comingSoonBadge}</span>
@@ -8491,10 +9121,19 @@ function renderVehicleInDepthTabs(car) {
 
   tabsBar.querySelectorAll('[data-v-tab]').forEach((btn) => {
     btn.addEventListener('click', () => {
-      vehicleActiveTab = btn.getAttribute('data-v-tab');
+      const nextTab = btn.getAttribute('data-v-tab');
+      vehicleActiveTab = vehicleActiveTab === nextTab ? null : nextTab;
       renderVehicleInDepthTabs(car);
     });
   });
+
+  if (!vehicleActiveTab) {
+    panel.hidden = true;
+    panel.innerHTML = '';
+    return;
+  }
+
+  panel.hidden = false;
 
   if (vehicleActiveTab === 'overview') {
     panel.innerHTML = buildVehicleTabOverviewHtml(car, vt);
@@ -9345,6 +9984,10 @@ function closeAllMenusAndModals(skipHistory = false) {
   closeSearchHelpPopover();
   hideCompareHint();
   document.querySelectorAll('.price-info-anchor.is-open').forEach((el) => el.classList.remove('is-open'));
+  const brandWrap = document.getElementById('catalog-brand-dropdown');
+  const brandTrig = document.getElementById('catalog-brand-trigger');
+  if (brandWrap) brandWrap.classList.remove('open');
+  if (brandTrig) brandTrig.setAttribute('aria-expanded', 'false');
   const sortWrap = document.getElementById('catalog-sort-dropdown');
   const sortTrig = document.getElementById('catalog-sort-trigger');
   if (sortWrap) sortWrap.classList.remove('open');
@@ -9615,6 +10258,7 @@ function initCarDuel() {
   window.addEventListener('popstate', restoreHistoryState);
 
   initSpecHoverTooltip();
+  initHomeDevBanner();
   updateArena();
 }
 
