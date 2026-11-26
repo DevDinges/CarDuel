@@ -1,37 +1,38 @@
-# CarDuel — Project Invariants & Schema
+# AutoDuel — Project Invariants & Schema
 
 ## 1. Architecture & UI Invariants
-- **Zero-Build Static App:** Always keep `index.html`, `styles.css`, `cars-data.js`, `app.js`, and `assets/*.png` dependency-free with relative paths; never hardcode `C:\`, `D:\`, `file:///`, or commit `backups/` / `.env*`.
-- **Data/Logic Split:** Always keep `CAR_ROSTER`, `CAR_AVAILABLE_ANGLES`, and `CAR_MIRRORED_ANGLES` in `cars-data.js` (loaded via `<script>` before `app.js`); never redefine them in `app.js`. `STAT_PILLARS`, `UI_TRANSLATIONS`, `CAR_TYPE_ORDER`, and `CAR_TYPE_DOT_COLORS` stay in `app.js`.
-- **Top HUD & Equalizer:** Always keep `.topbar` as a full-width `1fr auto 1fr` row: `[Showroom | Vehicle | Compare]` triple nav box on the left (`Vehicle` opens `#vehicle-stage` single-car Hero inspection), centered `CARDUEL` + `AUTOMOTIVE SHOWROOM` brand (no `CD` badge), and `[Weights] [Index] [EN|DE|RU] [Theme]` on the right (`Weights` & `Index` open right-aligned dropdown popovers); on Homepage Landing (`body.is-home-view`), hide `.topbar-left`, `Weights`, and `Index` so only centered `CARDUEL` + language + theme remain.
-- **3-Column Fused Console:** Always render the duel as `[Car 1] | [Fused Center Console (#stats-center)] | [Car 2]` with mirrored top matchup banner, 5-pillar accordion + `Σ // TOTAL SCORE`, and Forza-native bottom summary + centered `€` popover; never restore `fighter-dock`, legacy 2-column `#stats-left` / `#stats-right`, or `CHANGE CAR 1` / `CHANGE CAR 2` arena pills.
+- **Zero-Build Static App:** Always keep `index.html`, `css/*.css` (`tokens-base.css`, `home-catalog.css`, `duel-arena.css`, `modals-popovers.css`, `vehicle-indepth.css`), `data/manifest.js`, `data/cars/*.js`, `js/*.js` (`i18n-schema.js`, `state-and-scoring.js`, `home-catalog.js`, `duel-arena.js`, `vehicle-indepth.js`, `app.js`), `scripts/build-manifest.ps1`, `scripts/process-assets.ps1`, `validate.ps1`, and `assets/*.webp` dependency-free with relative paths; never hardcode `C:\`, `D:\`, `file:///`, or commit `backups/` / `assets/raw/` / `.env*`.
+- **Data/Logic Split & Lazy Hydration:** Always load `data/manifest.js` (auto-generated lightweight `CAR_ROSTER` stubs + `LEGACY_CAR_ID_MAP` + `CAR_AVAILABLE_ANGLES` + `CAR_MIRRORED_ANGLES` + `ENGINE_DATE_FALLBACKS`) -> `js/*.js` in dependency order; full per-car dossiers, `paints`, and `inDepth` live in self-contained `data/cars/<id>.js` files hydrated on demand via `registerAutoDuelVehicle(...)`. Never redefine those data globals or hardcode roster car IDs in `js/*.js`. `STAT_PILLARS`, `UI_TRANSLATIONS`, `CAR_TYPE_ORDER`, and `SHARED_BUYER_FIT_CARDS` live in `js/i18n-schema.js`.
+- **Top HUD & Equalizer:** Always keep `.topbar` as a full-width `1fr auto 1fr` row: `[Showroom | Vehicle | Compare]` triple nav box on the left (`Vehicle` opens `#vehicle-stage` single-car Hero inspection), centered `AUTODUEL` + `AUTOMOTIVE SHOWROOM` brand (no `CD` badge), and `[Weights] [Index] [EN|DE|RU] [Theme]` on the right (`Weights` & `Index` open right-aligned dropdown popovers); on Homepage Landing (`body.is-home-view`), hide `.topbar-left`, `Weights`, and `Index` so only centered `AUTODUEL` + language + theme remain.
+- **3-Column Fused Console:** Always render the duel as `[Car 1] | [Fused Center Console (#stats-center)] | [Car 2]` with mirrored top matchup banner, 5-pillar accordion + `Σ // TOTAL SCORE`, and Forza-native bottom summary + centered `€` popover; keep symmetrical single-car `.swap-car-btn` buttons (`#swap-car-left-btn` / `#swap-car-right-btn`) next to each side's engine selector, and never restore `fighter-dock` or legacy 2-column `#stats-left` / `#stats-right`.
 - **Unified Dossiers & Navigation:** Always render Engineering Dossiers inside `.dossier-datasheet-box` with 4-way arrow-key navigation (`↑`/`↓` across 19 ratings, `←`/`→` switching `C1`/`C2`), a 2-section `5.3` `repairGuide` (`routine[]` + `critical[]`, excluding generic engine oil/brakes/tyres), and the `5.4` Market & Depreciation sheet.
 - **Smash Picker Grid:** Always boot with `selectedLeftId = null` and `selectedRightId = null` (`.awaiting-selection` hides stat columns until both contenders are picked); use a `max-width: 1440px` controls bar (search + body-type filter pills + sort dropdown) and 3-column showcase grid (2 under `900px`) defaulted to `gridOrder` with right-facing `car.image`, top-left category tag, top-right lineup-average (`Ø`) Forza ranking badge, top-center `C1`/`C2`, bottom-center `✕` selection clear button, bottom-right `Inspect` pill opening `#vehicle-stage`, and a compact below-photo box (`yearMake · drivetrain`, `gridLabel`, `#` watermark, median `Est. Used Market` across all engines, HP range & engine count).
 - **Arena & Popovers:** Never let `#` watermarks clip `CAR 1` / `OPPONENT` or engine dropdowns; use `~` for stat ties, shortened Opponent column headers (`Opp` / `Geg.` / `Соп.`), and the green `€` badge popover for Market & Depreciation.
-- **Themes & Labels:** Always style with CSS variables from `styles.css` supporting the 2-mode Dark/Light toggle (`dark`, `light`) in the Top HUD; always label contenders **`C1`** / **`C2`** (never `P1` / `P2`).
+- **Themes & Labels:** Always style with CSS variables from `css/tokens-base.css` supporting the 2-mode Dark/Light toggle (`dark`, `light`) in the Top HUD; always label contenders **`C1`** / **`C2`** (never `P1` / `P2`).
 - **Trilingual (`en` / `de` / `ru`):** Always translate every UI label, tooltip, badge, trait, and dossier into `en`, `de`, and `ru`; in German, always use **`Kofferraum`** (never `Boot`), **`Sportfahrwerk`** (never `Track`, and never leak `Sportfahrwerk` into English), **`Steuer & Versicherung`** (never `Typ`), **`Reihenvierzylinder`** (never `Inline-4`), and **`Sauger`** (never `NA`).
 
 ## 2. Current Roster (`CAR_ROSTER` — 15 Cars, 75 Assets)
-1. `#01` `toyota-auris-2014` (`hatchback`, `gridOrder: 1`) — `Toyota Auris`
-2. `#02` `honda-civic-2014` (`hatchback`, `gridOrder: 2`) — `Honda Civic`
-3. `#06` `honda-civic-type-r-2015` (`hot-hatch`, `gridOrder: 3`) — `Civic Type-R`
-4. `#04` `peugeot-308-gti-2019` (`hot-hatch`, `gridOrder: 4`) — `308 GTi`
-5. `#05` `ford-mondeo-2012` (`sedan`, `gridOrder: 5`) — `Ford Mondeo`
-6. `#03` `honda-crv-2010` (`suv`, `gridOrder: 6`) — `Honda CR-V`
-7. `#07` `honda-accord-2011` (`sedan`, `gridOrder: 7`) — `Honda Accord`
-8. `#08` `honda-jazz-2011` (`subcompact`, `gridOrder: 8`) — `Honda Jazz`
-9. `#09` `mercedes-c-class-2011` (`sedan`, `gridOrder: 9`) — `Mercedes C-Class`
-10. `#10` `toyota-rav4-2010` (`suv`, `gridOrder: 10`) — `Toyota RAV4`
-11. `#11` `kia-sportage-2014` (`suv`, `gridOrder: 11`) — `Kia Sportage`
-12. `#12` `mazda-6-2010` (`sedan`, `gridOrder: 12`) — `Mazda 6`
-13. `#13` `toyota-avensis-2012` (`sedan`, `gridOrder: 13`) — `Toyota Avensis`
-14. `#14` `audi-a3-8p-2010` (`hatchback`, `gridOrder: 14`) — `Audi A3 (8P)`
-15. `#15` `audi-a3-8v-2016` (`hatchback`, `gridOrder: 15`) — `Audi A3 (8V)`
+1. `#01` `toyota-auris-e180` (`hatchback`, `gridOrder: 1`) — `Toyota Auris`
+2. `#02` `honda-civic-fk` (`hatchback`, `gridOrder: 2`) — `Honda Civic`
+3. `#06` `honda-civic-type-r-fk2` (`hot-hatch`, `gridOrder: 3`) — `Civic Type-R`
+4. `#04` `peugeot-308-gti-t9` (`hot-hatch`, `gridOrder: 4`) — `308 GTi`
+5. `#05` `ford-mondeo-ba7` (`sedan`, `gridOrder: 5`) — `Ford Mondeo`
+6. `#03` `honda-crv-re` (`suv`, `gridOrder: 6`) — `Honda CR-V`
+7. `#07` `honda-accord-cu` (`sedan`, `gridOrder: 7`) — `Honda Accord`
+8. `#08` `honda-jazz-ge` (`subcompact`, `gridOrder: 8`) — `Honda Jazz`
+9. `#09` `mercedes-c-class-w204` (`sedan`, `gridOrder: 9`) — `Mercedes C-Class`
+10. `#10` `toyota-rav4-xa30` (`suv`, `gridOrder: 10`) — `Toyota RAV4`
+11. `#11` `kia-sportage-sl` (`suv`, `gridOrder: 11`) — `Kia Sportage`
+12. `#12` `mazda-6-gh` (`sedan`, `gridOrder: 12`) — `Mazda 6`
+13. `#13` `toyota-avensis-t27` (`sedan`, `gridOrder: 13`) — `Toyota Avensis`
+14. `#14` `audi-a3-8p` (`hatchback`, `gridOrder: 14`) — `Audi A3 (8P)`
+15. `#15` `audi-a3-8v` (`hatchback`, `gridOrder: 15`) — `Audi A3 (8V)`
 
-## 3. Vehicle Schema & Asset Invariants (`cars-data.js`)
-- **Metadata:** Always set `id` (`<brand>-<model>-<year>`), zero-padded `number`, `carType` (`subcompact | hatchback | hot-hatch | sedan | suv`), `gridOrder`, `gridLabel`, `yearMake`, `shortTitle`, and `fullName`.
+## 3. Vehicle Schema & Asset Invariants (`data/cars/<id>.js`)
+- **Metadata:** Always set `id` (`<brand>-<model>-<chassis>`), zero-padded `number`, `carType` (`subcompact | hatchback | hot-hatch | sedan | suv`), `gridOrder`, `gridLabel`, `yearMake`, `shortTitle`, and `fullName`. Use `data/cars/_template.js` + `.agents/skills/add-car/SKILL.md` (`/add-car`), get the next free slot via `powershell -ExecutionPolicy Bypass -File ./scripts/build-manifest.ps1 -NextSlot`, and rebuild `data/manifest.js` via `powershell -ExecutionPolicy Bypass -File ./scripts/build-manifest.ps1` after any `data/cars/*.js` change.
 - **Engines:** Always set `fuelType` (`petrol | diesel | hybrid`) and numeric `hp` on every engine; keep trait wording non-technical.
-- **All 19 `subStats` Keys (Required on Every Engine):**
+- **All 19 `subStats` Keys & Calibrated `0–10` Rubric (Required on Every Engine):**
+  - Intra-pillar `100%` weights live on `STAT_PILLARS[].subRatings[].weight` (`30/30/25/15`, `45/25/15/15`, `35/30/20/15`, `30/25/25/20`, `40/40/20`). Score `0.0–10.0` across the full rubric (`6.0–7.4` = class average, `2.0–4.4` = major `€3k–€6k` failure risk, `9.5–10.0` = benchmark) and never embed `(X.X/10)` in headlines:
   - `reliabilityQuality`: `powertrainDurability`, `transmissionDriveline`, `buildQualityRust`, `electronicsReliability`
   - `comfortCabin`: `rideNoiseComfort`, `interiorQualityFeatures`, `visibilityManeuverability`, `safetyProtection`
   - `spacePracticality`: `passengerSpaceErgonomics`, `interiorBootSpace`, `payloadTowing`
@@ -42,4 +43,5 @@
 - **Dossier & Insurance Hygiene:** Never use country-specific insurance acronyms (`KH/TK/VK`) — keep cost phrasing universal; never put positive specs, generic filler, or brand/origin-specific claims (e.g., Japanese Denso) in shared presets applied to unrelated makes.
 - **Buyer Fit Tone & Accuracy:** Keep `buyerFit.summary` concise and neutral, and write `idealFor` / `notIdealFor` in personal `"you"` tone (`Title: explanation`); never share engine-specific awards (e.g., `TÜV Top 3%`) or hardcoded used-price comparisons across unrelated powertrain groups.
 - **Powertrain Dossier (`subStats.powertrainDurability.dossier`):** Always include `en`, `de`, and `ru` with `headline`, `strengths[]`, `watchouts[]`, `beforeYouBuy[]` (3 plain-language checks, no OBD/engine codes), and `highMileage[]` (6 milestones `0–250,000 km`: `{ tier: 'yellow' | 'orange' | 'red', km, action, cost, ifIgnored, damageCost }`).
-- **5-Angle Showroom Assets (`assets/`) & Thumbnails (`assets/thumbs/`):** Always provide `<id>.png` (front-side 3/4 facing right), `<id>-front.png`, `<id>-side.png` (facing right), `<id>-side-rear.png`, and `<id>-rear.png`, plus a ~600px-wide WebP thumbnail `assets/thumbs/<id>.webp` (~82% quality) generated from `<id>.png`; register `'<id>': ['front', 'frontSide', 'side', 'sideRear', 'rear']` in `CAR_AVAILABLE_ANGLES` and mirror exceptions in `imageFacing: 'left'` or `CAR_MIRRORED_ANGLES`.
+- **5-Angle Showroom Assets (`assets/`) & Thumbnails (`assets/thumbs/`):** Always provide `1376×768` WebP renders (`<id>.webp` front-side 3/4 facing right, `<id>-front.webp`, `<id>-side.webp` facing right, `<id>-side-rear.webp`, `<id>-rear.webp` at ~88% quality) plus a `600px`-wide WebP thumbnail `assets/thumbs/<id>.webp` (~82% quality) generated via `scripts/process-assets.ps1`; register `'<id>': ['front', 'frontSide', 'side', 'sideRear', 'rear']` in `CAR_AVAILABLE_ANGLES` and mirror exceptions in `imageFacing: 'left'` or `CAR_MIRRORED_ANGLES`.
+- **Gearboxes, Trims & OEM Paints (V1.0):** Define `sharedGearboxes` + `engines[].gearboxes[]` (`category: 'manual' | 'automatic'`, 2-line OEM `subLabel` = `OEM Code · Architecture` with zero service-interval/fluff tails, single-variant `specOverrides` with no `MT/AT` dual strings, trilingual `dossier` & `repairGuideExtra`); author `trimsData.trims` with `2–12` European trims (`id`, `tierClass` `tier-1..tier-10`, automotive-only `tier`, `name`, `delta`, `isSweetSpot`, `summary`, `highlights`) and `'std' | 'opt' | 'no'` `matrix` values; and list all authentic OEM factory colors in `paints` (`>= 5`; `7+` triggers the horizontal slider).

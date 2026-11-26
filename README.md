@@ -1,39 +1,54 @@
-# CARDUEL — Head-to-Head Car Comparison
+# AUTODUEL — Head-to-Head Car Comparison
 
-An interactive head-to-head vehicle comparison web application built with vanilla HTML, CSS, and JavaScript—developed iteratively using AI coding agents governed by structured rule files (`AGENTS.md` & `GEMINI.md`).
+[![Validate Roster & Schema](https://github.com/DevDinges/AutoDuel/actions/workflows/validate.yml/badge.svg)](https://github.com/DevDinges/AutoDuel/actions/workflows/validate.yml)
+**[Launch Live Demo](https://devdinges.github.io/AutoDuel/)**
 
-**[Launch Live Demo](https://devdinges.github.io/CarDuel/)**
+An interactive head-to-head vehicle comparison and used-car ownership intelligence web application built with zero-build vanilla HTML5, modular CSS3, and modular ES6+ JavaScript — governed by repository invariants (`AGENTS.md`, `GEMINI.md`) and an automated schema/asset CI gate (`validate.ps1`).
 
-## Core Features
+---
 
-- **Contender Grid & Dual-Stage Arena:** Select two vehicles to compare against each other in a side-by-side comparison stage (or pit two engine configurations of the same model against each other)
-- **5-Pillar Evaluation System (19 Sub-Categories):** Weighted sub-ratings across:
-   1. **Reliability & Durability** (Engine, Gearbox/Clutch, Rust/Chassis, Electrics)
-   2. **Comfort, Cabin & Safety** (Ride/NVH, Materials/Controls, Visibility, Euro NCAP Safety)
-   3. **Space & Practicality** (Passenger Room, Boot Volume, Payload/Towing)
-   4. **Performance & Dynamics** (0–100 km/h Sprint, Mid-Range Torque, Handling, Braking)
-   5. **Running Costs & Value** (Real-World Fuel Economy, Tax/Insurance, Maintenance, Resale)
-- **Priority Equalizer & Dealbreaker Logic:** Weight sliders (`0.25×` to `2.0×`) dynamically recalculate overall scores (`0.0–10.0`) and `F` to `S+` index tiers including an automatic dealbreaker penalty for critical mechanical/maintenance scores below `6.5`.
-- **Engineering Dossiers (`i`) & Buyer Fit:** Clickable inspection checklists (`Before You Buy`), `0–250,000 km` service roadmaps and personalized `Buyer Fit` recommendations.
-- **Market & Depreciation Breakdown (`€`):** Interactive popover calculating total depreciation (`€` and `%`), retained value, annual loss, and resale outlook from original MSRP vs. current used market estimates.
-- **5-Angle Showroom Lightbox:** Inspect Front, Front-Side, Side, Side-Rear, and Rear view for every car.
-- **Trilingual & Multi-Theme:** Switching between **English (`EN`)**, **German (`DE`)**, and **Russian (`RU`)**, with 4 UI themes (`Dark`, `Dark Soft`, `Light`, `Light Soft`).
+## Core Features (Release 1.0)
 
-## How It Is Built
+- **Showroom Contender Grid:** Instant search across make, model, engine code, gearbox type (`Automatic` / `Manual` / `DSG` / `e-CVT`), HP/price/year ranges, and powertrain attributes, paired with body-type filter pills, sort modes, lineup-average (`Ø`) Forza index badges, and quick `C1`/`C2` lock-in or single-car `Inspect`.
+- **3-Column Fused Compare Arena:** Side-by-side contender viewports (`Car 1` | `Fused Center Console` | `Car 2`) with dedicated Engine and `Manual` / `Automatic` Gearbox selectors covering `5` pillars, `19` sub-ratings, and `40` technical spec rows — including same-model engine duels.
+- **Priority Equalizer & Weighted Pillars (`0.25×`–`2.0×`):** Intra-pillar weights reflect real ownership stakes (e.g., Engine `45%` & Gearbox `25%` inside Reliability; Maintenance/Repair `35%` & Fuel `30%` inside Running Costs), while interactive pillar sliders dynamically recalculate the exact `1×` weighted 5-pillar average (`0.0–10.0`) and `F` to `S+` index classes (zero hidden penalties).
+- **Single-Car Vehicle Stage (`360° Studio`):** 5-angle interactive turntable (`Front`, `Front-Side`, `Side`, `Side-Rear`, `Rear`), `5–12` OEM factory paint slider with ambient studio glow, Engine & Gearbox selectors (`121` engines / `192` engine-gearbox pairings), and a **7-Tab In-Depth Ownership Dossier** (`Overview & Verdict`, `5-Pillar Rating`, `Technical Specs`, `Trims & Interior` with `2–12` trim 10-tier palette + sticky matrix, `Reliability & Issues`, `Running Costs`, `Market & Pricing`).
+- **Engineering Dossiers & Market Curves (`€`):** 4-way keyboard-navigable datasheets (`↑`/`↓` across 19 sub-ratings, `←`/`→` switching `C1`/`C2`), `Before You Buy` checklists, `0–250,000 km` service roadmaps, `routine`/`critical` repair guides, Buyer Fit cards, and interactive MSRP-to-used depreciation curves.
+- **Trilingual & Dual Studio Themes:** Seamless switching across **English (`EN`)**, **German (`DE`)**, and **Russian (`RU`)**, styled in `Dark` and `Light` CSS-token themes with fluid `clamp(...)` viewport scaling.
 
-* **Pure HTML, CSS & JavaScript (No Build Tools):** Runs directly in any browser without frameworks, package managers, or build steps—hosted statically on GitHub Pages, **[see Live Demo](https://devdinges.github.io/CarDuel/)**
-* **Separation of Data & Logic:** All vehicle specs, engine variants, and image angle mappings are stored separately in `cars-data.js`, while the rating calculations, UI state, and page rendering live in `app.js`.
-* **Reusable Data Structure (No Copy-Paste Bloat):** Instead of duplicating identical text across 15 cars, 50+ engines, and 3 languages, shared vehicle info (`sharedDossiers`), engine-group notes (`dossierGroups`), and buyer-fit points (`sharedBuyerFit`) are stored once and referenced by key.
+---
 
+## Architecture & Lazy Data Hydration
+
+AutoDuel runs as a **zero-build static bundle** with strict separation between application logic and vehicle data:
+
+```mermaid
+flowchart LR
+  HTML["index.html"] --> CSS["5 CSS Modules (css/*.css)"]
+  HTML --> MANIFEST["data/manifest.js (CAR_ROSTER Stubs)"]
+  MANIFEST --> JS["6 JS Modules (js/*.js)"]
+  JS -->|On-demand script load| CAR["data/cars/<id>.js -> registerAutoDuelVehicle(...)"]
+  CAR --> WEBP["5-Angle Studio WebPs & Thumbs (assets/*.webp)"]
+```
+
+- **Modular Runtime:** `index.html` loads `css/*.css` (`tokens-base.css`, `home-catalog.css`, `duel-arena.css`, `modals-popovers.css`, `vehicle-indepth.css`), auto-generated catalog stubs (`data/manifest.js`), and ordered `js/*.js` modules (`i18n-schema.js`, `state-and-scoring.js`, `home-catalog.js`, `duel-arena.js`, `vehicle-indepth.js`, `app.js`).
+- **On-Demand Vehicle Hydration:** Full per-car specs, OEM paints, and 7-tab `inDepth` dossiers live in self-contained `data/cars/<id>.js` files and hydrate lazily when a vehicle is selected or inspected.
+- **DRY Schema & Asset Factory:**
+  - `data/cars/_template.js` + `.agents/skills/add-car/SKILL.md` standardize vehicle authoring around shared `SPEC_TOKENS`, `SPEC_DOSSIER_PRESETS`, `DOSSIER_TECH_LABELS`, and `SHARED_BUYER_FIT_CARDS`.
+  - `scripts/process-assets.ps1` converts studio renders into `1376×768` WebP angle sets and `600px` WebP thumbnails (`RIFF/WEBP`), archiving originals out of git.
+  - `scripts/build-manifest.ps1` deterministically regenerates `data/manifest.js` (`SHA-256` content hash) and supports `-NextSlot` & `-Check`.
+  - `validate.ps1` + `.github/workflows/validate.yml` enforce delimiter balance, Node `--check` JS syntax, load order, zero symbol collisions, full v2 car/engine schema (`40` specs, `19` sub-stats, `@tokens`, `BuyerFit`), valid WebP headers, manifest parity, and translation hygiene on every push and PR.
+
+---
 
 ## Working with AI Agents (`AGENTS.md` & `GEMINI.md`)
 
-I build and expand this project with **Antigravity** and **Gemini 4 (Hydrogen / Argon)** using two rule files inside the repository to keep the code clean and consistent:
+- **[`AGENTS.md`](./AGENTS.md) — Project Invariants & Schema:** Locks down the zero-build static architecture, `C1`/`C2` labels, `Dark`/`Light` CSS-token themes, `EN`/`DE`/`RU` translation rules, DRY dossier/buyer-fit schema, `19` required `subStats`, and `5`-angle WebP + thumbnail layout.
+- **[`GEMINI.md`](./GEMINI.md) — Execution Protocol & Tooling:** Enforces a structured Pre-Execution Gate before multi-file edits, DRY shared-base / delta-override authoring, `/add-car` onboarding, and full verification via `./validate.ps1`.
 
-* **[`AGENTS.md`](./AGENTS.md) — Project Rules & Data Structure:** Defines fixed UI rules (layout structure, `C1`/`C2` labels, 4 color themes, English/German/Russian translations) and the exact fields required for every car (19 sub-ratings and 5 camera angles).
-* **[`GEMINI.md`](./GEMINI.md) — Step-by-Step Workflow & Checks:** Instructs the agent to outline its plan before editing multiple files, avoid duplicate data, and verify with a PowerShell script that all brackets and braces in `cars-data.js` and `app.js` match properly.
+---
 
-## Included Vehicle Roster (15 Models • 75 Assets)
+## Included Vehicle Roster (15 Models • 121 Engines • 75 Studio WebPs + 15 Thumbs)
 
 | # | Model | Body Type | Powertrains Covered |
 | :--- | :--- | :--- | :--- |
@@ -42,25 +57,42 @@ I build and expand this project with **Antigravity** and **Gemini 4 (Hydrogen / 
 | **03** | **2006–2012 Honda CR-V (RE)** | SUV | `2.0 i-VTEC`, `2.4 i-VTEC`, `2.2 i-CTDI`, `2.2 i-DTEC` |
 | **04** | **2015–2020 Peugeot 308 GTi (T9)** | Hot-Hatch | `1.6 THP GTi (263 HP)` |
 | **05** | **2007–2014 Ford Mondeo (BA7)** | Sedan | `1.6 / 2.0 / 2.3 Duratec`, `1.6 / 2.0 EcoBoost`, `2.5T`, `1.6 / 1.8 / 2.0 / 2.2 TDCi` |
-| **06** | **2015–2017 Honda Civic Type R (FK)** | Hot-Hatch | `2.0 VTEC Turbo (310 HP)` |
+| **06** | **2015–2017 Honda Civic Type R (FK2)** | Hot-Hatch | `2.0 VTEC Turbo (310 HP)` |
 | **07** | **2008–2015 Honda Accord (CU)** | Sedan | `2.0 i-VTEC`, `2.4 i-VTEC`, `2.2 i-DTEC` |
 | **08** | **2008–2015 Honda Jazz (GE)** | Subcompact | `1.2 i-VTEC`, `1.3 i-VTEC`, `1.3 IMA Hybrid` |
 | **09** | **2007–2015 Mercedes-Benz C-Class (W204)** | Sedan | `C 180–350 Kompressor/CGI/V6`, `C 180–350 CDI` |
-| **10** | **2006–2013 Toyota RAV4 (CA30W)** | SUV | `2.0 VVT-i`, `2.0 Valvematic`, `2.2 D-4D`, `2.2 D-CAT` |
+| **10** | **2006–2013 Toyota RAV4 (XA30)** | SUV | `2.0 VVT-i`, `2.0 Valvematic`, `2.2 D-4D`, `2.2 D-CAT` |
 | **11** | **2010–2015 Kia Sportage (SL)** | SUV | `1.6 GDI`, `2.0 CVVT`, `2.0 GDI`, `1.7 CRDi`, `2.0 CRDi (136/184 HP)` |
 | **12** | **2008–2012 Mazda 6 (GH)** | Sedan | `1.8 / 2.0 / 2.5 MZR`, `2.0 MZR-DISI`, `2.0 / 2.2 MZR-CD` |
 | **13** | **2008–2018 Toyota Avensis (T27)** | Sedan | `1.6 / 1.8 / 2.0 Valvematic`, `1.6 / 2.0 / 2.2 D-4D`, `2.2 D-CAT` |
 | **14** | **2003–2013 Audi A3 Sportback (8P)** | Hatchback | `1.2–2.0 TFSI / FSI`, `1.6 / 1.9 / 2.0 TDI (PD & CR)` |
 | **15** | **2012–2020 Audi A3 Sportback (8V)** | Hatchback | `1.0–2.0 TFSI`, `g-tron`, `e-tron PHEV`, `1.6 / 2.0 TDI` |
 
-## Running Locally
+---
 
-No build step or package manager required — open `index.html` directly in any modern browser or serve the folder with any static HTTP server.
+## Running & Validating Locally
 
-## Changelog*
-* **v6 (22.11.2026):** Integration of design-overhaul branch: Single-car Vehicle Stage, Additions to Showroom, Value Graph
-* **v5 (19.11.2026):** Major Overhaul of the Duel-Site, merging of stat-boxes, info-dossier 2.0 
-* **v4 (17.11.2026):** New Homepage, animated background marquee, various new animations, 'Buyer Fit' for quick personalized guidance, extended "i"-dossier for all categories 
+Serve the repository root with any static HTTP server (e.g., Python `http.server`, VS Code Live Server, or PowerShell `HttpListener`) so on-demand `data/cars/<id>.js` script hydration works without `file://` restrictions, and run the validation suite after any edit:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File ./validate.ps1
+```
+
+To rebuild `data/manifest.js` or query the next available vehicle slot after adding a car:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File ./scripts/build-manifest.ps1
+powershell -ExecutionPolicy Bypass -File ./scripts/build-manifest.ps1 -NextSlot
+```
+
+---
+
+## Changelog
+
+* **v7 — Release 1.0 (26.11.2026):** Modular zero-build CSS/JS split, per-car lazy hydration + manifest pipeline, complete 15-car / 121-engine / 192-gearbox-pairing 7-tab Vehicle Stage, dedicated Manual/Automatic gearbox selector, unlimited `2–12` trim 10-tier palette + sticky comparison matrix, expanded `5–12` OEM paint slider, WebP studio asset pipeline, pure 1× weighted scoring, and hardened `/add-car` + GitHub Actions CI validation.
+* **v6 (22.11.2026):** Integration of design-overhaul branch: Single-car Vehicle Stage, Additions to Showroom, Value Graph.
+* **v5 (19.11.2026):** Major overhaul of the Duel stage, fused center console, Info-Dossier 2.0.
+* **v4 (17.11.2026):** New Homepage, animated background marquee, 'Buyer Fit' guidance, extended Engineering Dossiers across all categories.
 * **v3 (15.11.2026):** Interactive Priority Equalizer sliders, high-mileage repair roadmaps (`0–250,000 km`), `Before You Buy` checklists, and expanded vehicle roster.
 * **v2 (14.11.2026):** Comprehensive homepage redesign, Smash-style contender selection grid, and additional models.
 * **v1 (13.11.2026):** Initial release and GitHub Pages deployment.

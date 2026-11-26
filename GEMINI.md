@@ -29,16 +29,14 @@ When the gate triggers, output **only** this compact block before touching any f
 
 ## 2. Tech Stack, Tooling & Verification
 
-- **Stack:** Zero-build vanilla HTML5 (`index.html`), CSS3 (`styles.css`), and JavaScript (`cars-data.js` roster data loaded before `app.js` logic) with local static images (`assets/*.png`).
+- **Stack:** Zero-build vanilla HTML5 (`index.html`), modular CSS3 (`css/*.css`), modular JavaScript (`data/manifest.js` auto-generated catalog stubs loaded before ordered `js/*.js` modules, with full per-car telemetry/dossiers in `data/cars/<id>.js` loaded lazily on demand), and local static WebP images (`assets/*.webp` + `assets/thumbs/*.webp` generated via `scripts/process-assets.ps1`).
 - **Package Manager / Bundler:** None. Do not introduce `npm`, `pnpm`, or external runtime dependencies unless explicitly requested.
 - **OS & Shell:** Windows PowerShell (portable across PC & laptop via GitHub Desktop / Git). Always use relative paths (`assets/...`) in source code—never hardcode `C:\`, `D:\`, or `file:///`.
-- **Domain & Styling Conventions:** Follow `AGENTS.md` for HUD layout, Smash-style selection grid, `C1`/`C2` labels, 4 CSS-variable themes (`dark`, `dark-soft`, `light`, `light-soft`), mandatory `en`/`de`/`ru` translations, all 19 `subStats` keys, and 5-angle showroom assets.
-- **CSS Variable Hygiene:** Always verify CSS custom properties against `:root` in `styles.css` (`--font-display`, `--control-bg`, `--text-main`, `--panel-border`, `--p1-accent`, `--p2-accent`); never invent aliases like `--font-heading`, `--bg-panel`, or `--text-primary`.
-- **Post-Batch Data Audit:** After any `cars-data.js` edit, always verify delimiter balance (`0/0/0`), all 40 `SUB_STAT_SPEC_ROWS` keys across all 121 engines, `0` unknown `@tokens`/`@presets`, `0` missing `DOSSIER_TECH_LABELS`, and `0` English `Sportfahrwerk` leaks.
+- **Domain & Styling Conventions:** Follow `AGENTS.md` for HUD layout, Smash-style selection grid, `C1`/`C2` labels, 2 CSS-variable themes (`dark`, `light`), mandatory `en`/`de`/`ru` translations, all 19 `subStats` keys, and 5-angle showroom assets.
+- **CSS Variable Hygiene:** Always verify CSS custom properties against `:root` in `css/tokens-base.css` (`--font-display`, `--control-bg`, `--text-main`, `--panel-border`, `--p1-accent`, `--p2-accent`); never invent aliases like `--font-heading`, `--bg-panel`, or `--text-primary`.
+- **Post-Batch Data Audit & `/add-car`:** Author new vehicles from `data/cars/_template.js` following `.agents/skills/add-car/SKILL.md` (`build-manifest.ps1 -NextSlot` -> `process-assets.ps1 -CarId <id>` -> `build-manifest.ps1` -> `validate.ps1`). After any `data/cars/*.js` edit, regenerate `data/manifest.js` (`powershell -ExecutionPolicy Bypass -File ./scripts/build-manifest.ps1`) and run `./validate.ps1` to verify delimiter balance (`0/0/0`), manifest parity, HTML load order, zero duplicate globals, zero cross-module symbol collisions, zero hardcoded roster IDs in `js/*.js`, deep v2 car/engine schema (`40` specs, `19` subStats, `@tokens`, `BuyerFit`), all 5 WebP angles (`RIFF/WEBP`) + WebP thumb + `CAR_AVAILABLE_ANGLES` + OEM `paints` per car, and `0` English `Sportfahrwerk`, German `Boot`/`Inline-4`/`NA`/`Track`, or `KH/TK/VK` leaks.
 - **Standard Verification Command (PowerShell):**
   ```powershell
-  foreach($f in './cars-data.js','./app.js'){ $c = Get-Content -Raw $f; $b=0; $sq=0; $p=0
-  foreach($ch in $c.ToCharArray()){ if($ch -eq '{'){$b++} elseif($ch -eq '}'){$b--} elseif($ch -eq '['){$sq++} elseif($ch -eq ']'){$sq--} elseif($ch -eq '('){$p++} elseif($ch -eq ')'){$p--} }
-  Write-Output "$f -> Braces: $b, Brackets: $sq, Parens: $p" }
+  powershell -ExecutionPolicy Bypass -File ./validate.ps1
   ```
-  *(Run inside the `CarDuel` repository root; all three counts must equal `0` for each file.)*
+  *(Run inside the `AutoDuel` repository root; must exit `0`.)*

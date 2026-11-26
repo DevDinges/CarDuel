@@ -1,0 +1,28 @@
+name: Validate Roster & Schema
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Schema, Asset & JS Syntax Gate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js for JS syntax check
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run AutoDuel validation suite (pwsh)
+        shell: pwsh
+        run: ./validate.ps1

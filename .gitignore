@@ -1,5 +1,6 @@
-# Local backup snapshots
+# Local backup snapshots & raw staging renders
 backups/
+assets/raw/
 
 # Environment & secrets
 .env

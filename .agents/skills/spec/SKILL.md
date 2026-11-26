@@ -2,14 +2,14 @@
 name: spec
 description: >-
   Converts a raw voice-dictated brain dump or rough feature idea into a
-  compact, structured CarDuel feature specification and feeds it directly into
+  compact, structured AutoDuel feature specification and feeds it directly into
   the GEMINI.md Assumptions & Clarification Gate. Trigger this skill when the
   user invokes /spec or pastes a raw, unstructured, or voice-dictated prompt.
 ---
 
 # Spec (`/spec`)
 
-Transform raw, stream-of-consciousness or voice-dictated user requests into a crisp CarDuel specification before touching any code.
+Transform raw, stream-of-consciousness or voice-dictated user requests into a crisp AutoDuel specification before touching any code.
 
 ## Step 1: Clean & Structure Raw Input
 
@@ -20,7 +20,7 @@ Transform raw, stream-of-consciousness or voice-dictated user requests into a cr
 
 Render the cleaned specification using this exact 4-part template (strictly capped at **25 lines total**):
 
-1. **Goal (1 sentence):** What user-visible behavior or data changes in CarDuel.
+1. **Goal (1 sentence):** What user-visible behavior or data changes in AutoDuel.
 2. **Inputs & State:** Exact `CAR_ROSTER` / `subStats` / `dossier` fields, `UI_TRANSLATIONS` keys (`en` / `de` / `ru`), CSS variables/selectors in `styles.css`, or DOM elements in `index.html` / `app.js` affected.
 3. **Acceptance Criteria (3–5 bullets):** Concrete, deterministic conditions that `verify-loop` (Stage A syntax, Stage B schema/Desktop `1440x900` browser assertions, Stage C path integrity) will verify.
 4. **Out of Scope (1–2 bullets):** Explicit non-goals to prevent scope creep or unintended layout/roster changes.

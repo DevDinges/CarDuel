@@ -1,0 +1,1952 @@
+/* ============================================================================
+   AUTO DUEL — Modals, Popovers, Lightbox & Unified Engineering Dossiers
+   ============================================================================ */
+
+/* =====================================================
+   CLICKABLE INDEX CLASS MENU
+   ===================================================== */
+
+/* Clickable Index Classes Menu Wrapper & Vertical Hierarchy Popover */
+.class-menu-wrapper {
+  position: relative;
+  flex-shrink: 0;
+  transition: opacity 0.22s ease, visibility 0.22s ease;
+}
+
+.class-menu-popover {
+  position: absolute;
+  top: calc(100% + 10px);
+  bottom: auto;
+  right: 0;
+  background: var(--popover-bg);
+  border: 1.5px solid var(--forza-lime);
+  border-radius: 5px;
+  padding: 12px 14px;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(12px);
+  z-index: 80;
+  min-width: 240px;
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.class-menu-popover.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.class-popover-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  padding: 0 22px 6px;
+  border-bottom: 1px solid var(--row-divider);
+  text-align: center;
+}
+
+.class-popover-close {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-65%);
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.class-popover-close:hover {
+  color: var(--text-main);
+}
+
+/* Vertical Hierarchy Tier List (S+ down to F) */
+.tier-hierarchy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.tier-row {
+  display: grid;
+  grid-template-columns: 74px 1fr;
+  align-items: center;
+  background: var(--badge-pill-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.tier-badge-cell {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+.tier-range-cell {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-main);
+  padding: 4px 12px;
+  text-align: right;
+  letter-spacing: 0.04em;
+}
+
+.roster-class-pill {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0 5px;
+  border-radius: 2px;
+  line-height: 1.3;
+}
+
+.mini-p-badge {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 2px;
+  text-align: center;
+}
+
+/* =====================================================
+   FULL-PICTURE CAR LIGHTBOX OVERLAY
+   ===================================================== */
+.car-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease;
+}
+
+.car-lightbox.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 8, 12, 0.88);
+  backdrop-filter: blur(10px);
+}
+
+.lightbox-content {
+  position: relative;
+  z-index: 2;
+  width: min(92vw, 1140px);
+  background: var(--popover-bg);
+  border: 2px solid var(--control-border);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.85);
+  transform: scale(0.96);
+  transition: transform 0.22s ease;
+}
+
+.car-lightbox.open .lightbox-content {
+  transform: scale(1);
+}
+
+.lightbox-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: var(--hud-bg);
+  border-bottom: 1px solid var(--panel-border);
+}
+
+.lightbox-title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lightbox-badge {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 3px 9px;
+  border-radius: 2px;
+}
+
+.lightbox-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-main);
+}
+
+.lightbox-spec {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  background: var(--badge-pill-bg);
+  padding: 3px 10px;
+  border-radius: 2px;
+}
+
+.lightbox-close-btn {
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--control-border);
+  padding: 6px 14px;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.lightbox-close-btn:hover {
+  border-color: var(--forza-lime);
+  color: var(--forza-lime);
+}
+
+.lightbox-image-frame {
+  position: relative;
+  width: 100%;
+  max-height: 78vh;
+  background: #090b0f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.lightbox-image-frame img {
+  width: 100%;
+  height: auto;
+  max-height: 78vh;
+  object-fit: contain;
+  display: block;
+}
+
+.lightbox-image-frame img.mirrored-car {
+  transform: scaleX(-1);
+}
+
+.lightbox-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 46px;
+  height: 64px;
+  border-radius: 6px;
+  background: rgba(12, 15, 20, 0.72);
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  font-size: 2rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: background 0.16s ease, border-color 0.16s ease, color 0.16s ease, transform 0.16s ease;
+}
+
+.lightbox-prev-btn {
+  left: 16px;
+}
+
+.lightbox-next-btn {
+  right: 16px;
+}
+
+.lightbox-nav-btn:hover {
+  background: var(--forza-lime);
+  border-color: var(--forza-lime);
+  color: var(--forza-lime-text);
+  transform: translateY(-50%) scale(1.06);
+}
+
+.lightbox-angle-bar {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(12, 15, 20, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  padding: 6px 14px;
+  backdrop-filter: blur(8px);
+}
+
+.lightbox-angle-label {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.lightbox-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lightbox-dot-btn {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.lightbox-dot-btn.active {
+  background: var(--forza-lime);
+  transform: scale(1.3);
+}
+
+/* =====================================================
+   INTERACTIVE SUB-STAT DOSSIER TRIGGER BUTTON (Option 1)
+   ===================================================== */
+.stat-info-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: var(--control-bg);
+  color: var(--forza-lime);
+  border: 1.5px solid rgba(204, 246, 0, 0.45);
+  cursor: pointer;
+  margin-left: 6px;
+  line-height: 1;
+  transition: background 0.16s ease, color 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
+  vertical-align: middle;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.stat-info-icon {
+  width: 12px;
+  height: 12px;
+  display: block;
+}
+
+.stat-info-btn:hover {
+  background: var(--forza-lime);
+  color: var(--forza-lime-text);
+  border-color: var(--forza-lime);
+  box-shadow: 0 0 10px rgba(204, 246, 0, 0.45);
+  transform: scale(1.15);
+}
+
+.sub-stat-row.has-dossier {
+  cursor: pointer;
+  transition: background 0.14s ease, border-color 0.14s ease;
+}
+
+.sub-stat-row.has-dossier:hover {
+  background: var(--badge-pill-bg);
+  border-left-color: var(--forza-lime);
+}
+
+.sub-stat-row.has-dossier:hover .stat-info-btn {
+  background: var(--forza-lime);
+  color: var(--forza-lime-text);
+  border-color: var(--forza-lime);
+}
+
+/* =====================================================
+   STAT ENGINEERING DOSSIER MODAL OVERLAY (Option 1)
+   ===================================================== */
+.stat-dossier-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease;
+  padding: 16px;
+}
+
+.stat-dossier-modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.stat-dossier-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 7, 10, 0.88);
+  backdrop-filter: blur(12px);
+}
+
+.stat-dossier-dialog {
+  position: relative;
+  z-index: 2;
+  width: min(95vw, 940px);
+  max-height: 90vh;
+  background: var(--popover-bg);
+  border: 2px solid var(--forza-lime);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.85), 0 0 24px rgba(204, 246, 0, 0.2);
+  transform: scale(0.96);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stat-dossier-modal.open .stat-dossier-dialog {
+  transform: scale(1);
+}
+
+.stat-dossier-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: var(--hud-bg);
+  border-bottom: 1.5px solid var(--panel-border);
+  flex-shrink: 0;
+}
+
+.stat-dossier-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stat-dossier-category {
+  font-family: var(--font-display);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.stat-dossier-title {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--text-main);
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.dossier-close-btn {
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--control-border);
+  padding: 6px 14px;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.dossier-close-btn:hover {
+  border-color: var(--forza-lime);
+  color: var(--forza-lime);
+  background: var(--badge-pill-bg);
+}
+
+.stat-dossier-body {
+  padding: 16px 20px 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.stat-dossier-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.stat-dossier-body::-webkit-scrollbar-track {
+  background: var(--bar-track);
+}
+
+.stat-dossier-body::-webkit-scrollbar-thumb {
+  background: var(--forza-lime);
+  border-radius: 3px;
+}
+
+/* Dossier Car Identity Hero Bar */
+.dossier-car-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--dock-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 4px;
+}
+
+.dossier-car-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dossier-car-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dossier-car-name {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--text-main);
+  text-transform: uppercase;
+}
+
+.dossier-engine-badge {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--forza-lime);
+  letter-spacing: 0.03em;
+}
+
+.dossier-rating-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dossier-score-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 3px;
+  background: var(--control-bg);
+  border: 1.5px solid var(--control-border);
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.dossier-score-chip.is-s-plus {
+  border-color: #3db821;
+}
+
+.dossier-score-chip.is-s {
+  border-color: #4b74e0;
+}
+
+/* Headline Banner */
+.dossier-headline-box {
+  background: rgba(204, 246, 0, 0.08);
+  border-left: 3px solid var(--forza-lime);
+  padding: 8px 14px;
+  border-radius: 0 4px 4px 0;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--text-main);
+}
+
+/* Dossier Dual Cards Grid */
+.dossier-sections-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .dossier-sections-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dossier-card {
+  background: var(--sub-row-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 4px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dossier-card-title {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.dossier-card-title.strengths-title {
+  color: var(--forza-lime);
+}
+
+.dossier-card-title.watchouts-title {
+  color: var(--rarity-legendary);
+}
+
+.dossier-card.critical-flaws-card {
+  border: 1.5px solid rgba(255, 100, 90, 0.48);
+  border-left: 4px solid var(--loss-red);
+  background: rgba(255, 100, 90, 0.06);
+}
+
+.dossier-card-title.critical-flaws-title {
+  color: var(--loss-red);
+}
+
+.dossier-card-title.contrast-title {
+  color: var(--text-main);
+}
+
+.dossier-bullets-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dossier-bullet-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.84rem;
+  line-height: 1.42;
+  color: var(--text-main);
+}
+
+.dossier-bullet-item .bullet-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.dossier-bullet-item.strength .bullet-icon {
+  color: var(--forza-lime);
+}
+
+.dossier-bullet-item.watchout .bullet-icon {
+  color: var(--rarity-legendary);
+}
+
+.dossier-bullet-item.critical-flaw .bullet-icon {
+  color: var(--loss-red);
+}
+
+.dossier-score-denom {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+/* ============================================================================
+   BUYER FIT MODAL OVERHAUL (.stat-dossier-modal.buyer-fit-mode)
+   ============================================================================ */
+.stat-dossier-modal.buyer-fit-mode .stat-dossier-content {
+  border: 1px solid var(--panel-border);
+  border-radius: 10px;
+  background: var(--dock-bg);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.65);
+  overflow: hidden;
+}
+
+.stat-dossier-modal.buyer-fit-mode .stat-dossier-header {
+  background: var(--header-card-bg);
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--panel-border);
+}
+
+.stat-dossier-modal.buyer-fit-mode .stat-dossier-body {
+  padding: 18px 20px 22px;
+  gap: 16px;
+}
+
+.buyer-fit-hero {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  align-items: center;
+  gap: 18px;
+  padding: 14px 18px;
+  border-radius: 8px;
+  background: var(--stats-card-bg);
+  border: 1px solid var(--panel-border);
+}
+
+.buyer-fit-hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 92px;
+  border-radius: 6px;
+  background: radial-gradient(circle at 50% 62%, rgba(204, 246, 0, 0.14), transparent 72%);
+  overflow: hidden;
+}
+
+.buyer-fit-hero-img {
+  max-width: 100%;
+  max-height: 86px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.45));
+}
+
+.buyer-fit-hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.buyer-fit-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.buyer-fit-hero-car {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.buyer-fit-hero-engine {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--badge-pill-bg);
+  border: 1px solid var(--badge-pill-border);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--forza-lime);
+}
+
+.buyer-fit-verdict {
+  font-family: var(--font-display);
+  font-size: 1.24rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  color: var(--text-main);
+}
+
+.buyer-fit-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.buyer-fit-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 8px;
+  background: var(--sub-row-bg);
+  border: 1px solid var(--panel-border);
+}
+
+.buyer-fit-col.is-ideal {
+  border-top: 3px solid var(--forza-lime);
+}
+
+.buyer-fit-col.is-skip {
+  border-top: 3px solid var(--loss-red);
+}
+
+.buyer-fit-col-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--row-divider);
+}
+
+.buyer-fit-col-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.buyer-fit-col-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.buyer-fit-col.is-ideal .buyer-fit-col-dot {
+  background: var(--forza-lime);
+  box-shadow: 0 0 8px var(--forza-lime);
+}
+
+.buyer-fit-col.is-skip .buyer-fit-col-dot {
+  background: var(--loss-red);
+  box-shadow: 0 0 8px var(--loss-red);
+}
+
+.buyer-fit-col-title {
+  font-family: var(--font-display);
+  font-size: 0.96rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.buyer-fit-col.is-ideal .buyer-fit-col-title {
+  color: var(--forza-lime);
+}
+
+.buyer-fit-col.is-skip .buyer-fit-col-title {
+  color: var(--loss-red);
+}
+
+.buyer-fit-col-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--badge-pill-bg);
+  border: 1px solid var(--badge-pill-border);
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--text-muted);
+}
+
+.buyer-fit-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.buyer-fit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: var(--sub-list-bg);
+  border: 1px solid var(--panel-border);
+}
+
+.buyer-fit-item-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 1px;
+  font-size: 0.68rem;
+  font-weight: 900;
+}
+
+.buyer-fit-item.is-ideal .buyer-fit-item-badge {
+  background: rgba(204, 246, 0, 0.16);
+  color: var(--forza-lime);
+  border: 1px solid rgba(204, 246, 0, 0.35);
+}
+
+.buyer-fit-item.is-skip .buyer-fit-item-badge {
+  background: rgba(255, 100, 90, 0.16);
+  color: var(--loss-red);
+  border: 1px solid rgba(255, 100, 90, 0.35);
+}
+
+.buyer-fit-item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.buyer-fit-item-title {
+  font-family: var(--font-display);
+  font-size: 0.96rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  color: var(--text-main);
+}
+
+.buyer-fit-item-desc {
+  font-size: 0.81rem;
+  line-height: 1.42;
+  color: var(--text-muted);
+}
+
+@media (max-width: 760px) {
+  .buyer-fit-hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .buyer-fit-hero-meta {
+    justify-content: center;
+  }
+
+  .buyer-fit-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Before You Buy & Click-to-Expand Service, Repair & Cost Roadmap (0–250k km & Part Aging) */
+.dossier-buyer-guide-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dossier-card.before-buy-card {
+  border-color: rgba(27, 143, 216, 0.35);
+}
+
+.dossier-roadmap-accordion {
+  display: flex;
+  flex-direction: column;
+  background: var(--sub-row-bg);
+  border: 1.5px solid rgba(16, 185, 129, 0.42);
+  border-left: 4px solid #10b981;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.dossier-roadmap-toggle-btn {
+  width: 100%;
+  background: rgba(16, 185, 129, 0.07);
+  border: none;
+  padding: 11px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.16s ease;
+}
+
+.dossier-roadmap-toggle-btn:hover {
+  background: rgba(16, 185, 129, 0.14);
+}
+
+.dossier-roadmap-toggle-btn.open {
+  border-bottom: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.roadmap-toggle-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.roadmap-toggle-cta {
+  padding: 4px 10px;
+  border-radius: 3px;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #34d399;
+  white-space: nowrap;
+}
+
+html[data-theme="light"] .roadmap-toggle-cta,
+html[data-theme="light"] .dossier-card-title.high-mileage-title {
+  color: #047857;
+}
+
+.dossier-roadmap-drawer {
+  display: none;
+  padding: 12px 14px;
+}
+
+.dossier-roadmap-drawer.open {
+  display: block;
+}
+
+.hm-tier-legend {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.hm-tier-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hm-tier-chip.is-yellow {
+  background: rgba(234, 179, 8, 0.16);
+  border: 1px solid rgba(234, 179, 8, 0.45);
+  color: #facc15;
+}
+
+.hm-tier-chip.is-orange {
+  background: rgba(249, 115, 22, 0.16);
+  border: 1px solid rgba(249, 115, 22, 0.5);
+  color: #fb923c;
+}
+
+.hm-tier-chip.is-red {
+  background: rgba(239, 68, 68, 0.16);
+  border: 1px solid rgba(239, 68, 68, 0.55);
+  color: #ff645a;
+}
+
+.dossier-card-title.before-buy-title {
+  color: var(--rarity-dependable);
+}
+
+.dossier-card-title.high-mileage-title {
+  color: #34d399;
+}
+
+.buyer-check-box {
+  flex-shrink: 0;
+  margin-top: 1px;
+  font-size: 0.96rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--rarity-dependable);
+}
+
+.dossier-hm-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dossier-hm-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 7px 9px;
+  border-radius: 4px;
+  background: var(--badge-pill-bg);
+  border: 1px solid var(--panel-border);
+  border-left-width: 3px;
+}
+
+.dossier-hm-item.tier-yellow {
+  border-left-color: #eab308;
+}
+
+.dossier-hm-item.tier-orange {
+  border-left-color: #f97316;
+}
+
+.dossier-hm-item.tier-red {
+  border-left-color: #ef4444;
+  background: rgba(239, 68, 68, 0.06);
+}
+
+.hm-status-badge {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+  font-family: var(--font-display);
+  font-size: 0.86rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.hm-status-badge.tier-yellow {
+  background: rgba(234, 179, 8, 0.2);
+  border: 1px solid rgba(234, 179, 8, 0.55);
+  color: #facc15;
+}
+
+.hm-status-badge.tier-orange {
+  background: rgba(249, 115, 22, 0.2);
+  border: 1px solid rgba(249, 115, 22, 0.6);
+  color: #fb923c;
+}
+
+.hm-status-badge.tier-red {
+  background: rgba(239, 68, 68, 0.22);
+  border: 1px solid rgba(239, 68, 68, 0.65);
+  color: #ff645a;
+}
+
+html[data-theme="light"] .hm-tier-chip.is-yellow,
+html[data-theme="light"] .hm-status-badge.tier-yellow {
+  color: #a16207;
+}
+
+html[data-theme="light"] .hm-tier-chip.is-orange,
+html[data-theme="light"] .hm-status-badge.tier-orange {
+  color: #c2410c;
+}
+
+html[data-theme="light"] .hm-tier-chip.is-red,
+html[data-theme="light"] .hm-status-badge.tier-red {
+  color: #dc2626;
+}
+
+.hm-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hm-step-top,
+.hm-step-consequence {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.hm-km-pill {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: var(--control-bg);
+  border: 1px solid var(--badge-pill-border);
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  color: var(--text-main);
+  white-space: nowrap;
+}
+
+.hm-arrow,
+.hm-arrow-sub {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.hm-action-text {
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--text-main);
+}
+
+.hm-cost-pill {
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: 3px;
+  background: rgba(93, 255, 126, 0.14);
+  border: 1px solid rgba(93, 255, 126, 0.4);
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--win-green);
+  white-space: nowrap;
+}
+
+html[data-theme="light"] .hm-cost-pill {
+  background: rgba(22, 163, 74, 0.12);
+  border-color: rgba(22, 163, 74, 0.4);
+  color: #15803d;
+}
+
+.hm-step-consequence {
+  padding-left: 4px;
+}
+
+.hm-risk-text {
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: var(--text-muted);
+}
+
+.hm-damage-pill {
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: 3px;
+  background: rgba(255, 100, 90, 0.14);
+  border: 1px solid rgba(255, 100, 90, 0.45);
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--loss-red);
+  white-space: nowrap;
+}
+
+html[data-theme="light"] .hm-damage-pill {
+  color: #b91c1c;
+}
+
+/* Opponent Comparison Card in Dossier */
+.dossier-contrast-card {
+  background: var(--hud-bg);
+  border: 1px dashed var(--control-border);
+  border-radius: 4px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dossier-contrast-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.dossier-contrast-car-name {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.dossier-contrast-body {
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: var(--text-sub);
+}
+
+/* ==========================================================================
+   Priority Equalizer (Pillar Weighting Menu)
+   ========================================================================== */
+.weight-menu-wrapper {
+  position: relative;
+  flex-shrink: 0;
+  transition: opacity 0.22s ease, visibility 0.22s ease;
+}
+
+.weight-menu-popover {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: auto;
+  right: 0;
+  transform: translateY(-8px);
+  background: var(--popover-bg);
+  border: 1.5px solid var(--forza-lime);
+  border-radius: 6px;
+  padding: 14px 16px 14px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(12px);
+  z-index: 80;
+  width: 468px;
+  max-width: 92vw;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.weight-menu-popover.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.weight-popover-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--panel-border);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--forza-lime);
+}
+
+.weight-popover-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.weight-reset-btn,
+.weight-popover-close {
+  background: var(--control-bg);
+  color: var(--text-muted);
+  border: 1px solid var(--control-border);
+  border-radius: 3px;
+  padding: 2px 8px;
+  font-family: var(--font-display);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.weight-popover-close {
+  padding: 2px 7px;
+  line-height: 1.1;
+}
+
+.weight-reset-btn.has-custom-weights {
+  border-color: var(--forza-lime);
+}
+
+.weight-reset-btn:hover,
+.weight-popover-close:hover {
+  border-color: var(--forza-lime);
+  color: var(--forza-lime);
+}
+
+.eq-board {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.eq-scale-header {
+  display: grid;
+  grid-template-columns: 182px 1fr 52px;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 2px;
+}
+
+.eq-scale-ticks {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  user-select: none;
+}
+
+.eq-scale-ticks span.eq-axis-mid {
+  color: var(--text-main);
+  font-size: 1.08rem;
+  line-height: 1.1;
+}
+
+.eq-rows-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.eq-vcurve-svg {
+  position: absolute;
+  left: 192px;
+  top: 0;
+  width: calc(100% - 192px - 62px);
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.eq-curve-line {
+  fill: none;
+  stroke: var(--forza-lime);
+  stroke-width: 1.8;
+  stroke-opacity: 0.55;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.eq-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 182px 1fr 52px;
+  align-items: center;
+  gap: 10px;
+  height: 32px;
+  z-index: 2;
+}
+
+.eq-row-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+
+.eq-col-icon {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--forza-lime);
+  transition: color 0.15s ease;
+}
+
+.eq-col-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.eq-col-name {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.15;
+  color: var(--text-main);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.eq-h-track-wrap {
+  position: relative;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  touch-action: none;
+  user-select: none;
+}
+
+.eq-h-rail {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 5px;
+  border-radius: 999px;
+  background: var(--bar-track);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.eq-h-fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: var(--forza-lime);
+  border-radius: 999px;
+  opacity: 0.85;
+  transition: left 0.12s ease, width 0.12s ease, opacity 0.12s ease;
+}
+
+.eq-row.is-reduced .eq-h-fill {
+  opacity: 0.45;
+}
+
+.eq-h-ticks {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+}
+
+.eq-snap-tick {
+  width: 1.5px;
+  height: 10px;
+  background: var(--panel-border);
+  opacity: 0.7;
+}
+
+.eq-snap-tick.is-mid {
+  height: 15px;
+  background: var(--text-muted);
+  opacity: 0.9;
+}
+
+.eq-h-thumb {
+  position: absolute;
+  top: 50%;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--forza-lime);
+  border: 2px solid var(--popover-bg);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.45);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: left 0.12s ease, transform 0.12s ease;
+  z-index: 3;
+}
+
+.eq-row:hover .eq-h-thumb {
+  transform: translate(-50%, -50%) scale(1.14);
+}
+
+.eq-h-range {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.eq-row-mult {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+  text-align: right;
+  transition: color 0.15s ease;
+}
+
+.eq-row.is-boosted .eq-row-mult {
+  color: var(--forza-lime);
+}
+
+.eq-row.is-reduced .eq-row-mult {
+  opacity: 0.7;
+}
+
+.eq-hint-bar {
+  margin-top: 6px;
+  padding-top: 9px;
+  border-top: 1px solid var(--panel-border);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  opacity: 0.85;
+  text-align: center;
+  line-height: 1.3;
+}
+
+
+
+
+/* Floating Centered Up / Down Dossier Navigation Pills */
+.stat-dossier-modal {
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stat-dossier-modal:not(.buyer-fit-mode) .stat-dossier-dialog {
+  max-height: 80vh;
+}
+
+.dossier-nav-pill {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: var(--popover-bg);
+  border: 1.5px solid var(--panel-border);
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.55);
+  transition: border-color 0.16s ease, color 0.16s ease, transform 0.16s ease, box-shadow 0.16s ease;
+  flex-shrink: 0;
+}
+
+.dossier-nav-pill:hover {
+  border-color: var(--forza-lime);
+  color: var(--forza-lime);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.65), 0 0 12px color-mix(in srgb, var(--forza-lime) 28%, transparent);
+}
+
+.dossier-nav-prev:hover {
+  transform: translateY(-2px);
+}
+
+.dossier-nav-next:hover {
+  transform: translateY(2px);
+}
+
+.dossier-nav-arrow {
+  color: var(--forza-lime);
+  font-size: 0.74rem;
+  line-height: 1;
+}
+
+.dossier-nav-pill.is-hidden {
+  display: none;
+}
+/* Harmonize Service & Repair Roadmap Accordion with Unified Datasheet Box */
+.dossier-datasheet-box,
+.dossier-datasheet-roadmap {
+  flex-shrink: 0;
+}
+
+.dossier-datasheet-roadmap {
+  background: var(--stats-card-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.dossier-datasheet-roadmap .dossier-roadmap-toggle-btn {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 11px 14px;
+}
+
+.dossier-datasheet-roadmap .dossier-roadmap-toggle-btn.open {
+  border-bottom: 1px solid var(--row-divider);
+}
+
+.dossier-datasheet-roadmap .dossier-roadmap-drawer.open {
+  padding: 10px 14px 12px;
+}
+/* Redesigned 2-Section 15-Year / 250,000 km Service & Repair Guide */
+.rg-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.rg-toggle-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  min-width: 0;
+}
+
+.rg-toggle-title {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--forza-lime);
+}
+
+.rg-count-pills {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rg-count-pill {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 3px;
+}
+
+.rg-count-pill.is-routine {
+  background: color-mix(in srgb, var(--p1-accent) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--p1-accent) 45%, transparent);
+  color: var(--p1-accent);
+}
+
+.rg-count-pill.is-critical {
+  background: color-mix(in srgb, var(--loss-red) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--loss-red) 45%, transparent);
+  color: var(--loss-red-soft, #ff6b6b);
+}
+
+.dossier-repair-guide .rg-drawer.open {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px 16px 14px;
+}
+
+.rg-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rg-section-head {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.rg-section-head.is-routine {
+  color: var(--p1-accent);
+}
+
+.rg-section-head.is-critical {
+  color: var(--p2-accent);
+}
+
+.rg-rows-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rg-row-routine {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 10px;
+  border-radius: 4px;
+  background: var(--header-card-bg);
+  border: 1px solid var(--panel-border);
+  border-left: 2.5px solid var(--p1-accent);
+}
+
+.rg-row-critical {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  background: var(--header-card-bg);
+  border: 1px solid var(--panel-border);
+  border-left: 2.5px solid var(--loss-red);
+}
+
+.rg-row-critical .rg-row {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.rg-when {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.rg-when.is-crit {
+  color: var(--p2-accent);
+}
+
+.rg-action {
+  font-family: var(--font-body);
+  font-size: 0.81rem;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.35;
+}
+
+.rg-cost {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 3px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  background: color-mix(in srgb, var(--win-green) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--win-green) 42%, transparent);
+  color: var(--win-green);
+}
+
+.rg-cost.is-crit {
+  background: color-mix(in srgb, var(--p2-accent) 16%, transparent);
+  border-color: color-mix(in srgb, var(--p2-accent) 45%, transparent);
+  color: var(--p2-accent);
+}
+
+.rg-risk-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 7px;
+  padding-top: 4px;
+  border-top: 1px solid color-mix(in srgb, var(--row-divider) 65%, transparent);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  line-height: 1.35;
+}
+
+.rg-risk-prefix {
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.rg-risk-text {
+  color: var(--text-muted);
+  flex: 1;
+  min-width: 180px;
+}
+
+.rg-damage-pill {
+  font-family: var(--font-display);
+  font-size: 0.76rem;
+  font-weight: 800;
+  padding: 1px 7px;
+  border-radius: 3px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  background: color-mix(in srgb, var(--loss-red) 18%, transparent);
+  border: 1px solid color-mix(in srgb, var(--loss-red) 48%, transparent);
+  color: var(--loss-red-soft, #ff6b6b);
+}
+
+.rg-empty-note {
+  font-size: 0.79rem;
+  color: var(--text-muted);
+  padding: 6px 8px;
+}
+/* Negative Red X Callout (e.g. 0 kg No Towing / Relaxed Economy Pace) */
+.dossier-sheet-note.is-negative {
+  background: color-mix(in srgb, var(--loss-red) 11%, transparent);
+  border-left-color: var(--loss-red);
+}
+
+.dossier-sheet-note.is-negative .dossier-sheet-note-icon {
+  color: var(--loss-red-soft, #ff6b6b);
+}
+
+/* Redesigned 5.4 Used Market & Depreciation Datasheet (€ Popover Styling) */
+.dossier-market-table .dossier-tech-val {
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.dossier-market-table .dossier-tech-val.is-accent {
+  color: var(--forza-lime);
+}
+
+.dossier-market-table .dossier-tech-val.is-loss {
+  color: var(--loss-red-soft, #ff7b7b);
+}
+
+.dossier-market-table .dossier-tech-val.is-win {
+  color: #2EE56B;
+}
+
+html[data-theme="light"] .dossier-market-table .dossier-tech-val.is-win {
+  color: var(--win-green);
+}
+
+.dossier-market-outlook {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.dossier-market-outlook-label {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.dossier-market-outlook-val {
+  font-family: var(--font-display);
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
