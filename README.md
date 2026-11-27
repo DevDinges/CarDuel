@@ -1,10 +1,9 @@
 # AUTODUEL — Head-to-Head Car Comparison
 
-[![Validate Roster & Schema](https://github.com/DevDinges/AutoDuel/actions/workflows/validate.yml/badge.svg)](https://github.com/DevDinges/AutoDuel/actions/workflows/validate.yml)
 **[Launch Live Demo](https://devdinges.github.io/AutoDuel/)**
 
-An interactive head-to-head vehicle comparison and used-car ownership web application built with zero-build vanilla HTML, CSS, and JavaScript.
-
+An interactive head-to-head vehicle comparison and used-car ownership web application built with zero-build vanilla HTML, CSS, and JavaScript.  
+Its purpose is to give the user a quick, intuitive and reliable comparison of two cars (or the same car with a different engine) in a versus/duel design style, covering all interesting categories in a simple five-pillar system with further sub-categories for thorough details. The new "In-Depth Look" provides a detailed single-car outlook on the chosen vehicle with technical specs, trims, OEM paints, institutional data from TÜV, ADAC, WhatCar and more.
 ---
 
 ## Core Features (Release 1.0)
@@ -78,7 +77,7 @@ No build step or package manager required — open `index.html` directly in any 
 
 ## Changelog
 
-* **v7 — Release 1.0 (26.11.2026):** Modular zero-build CSS/JS split, per-car lazy hydration + manifest pipeline, complete 15-car / 121-engine / 192-gearbox-pairing 7-tab Vehicle Stage, dedicated Manual/Automatic gearbox selector, trim 10-tier palette + sticky comparison matrix, expanded OEM paint slider, WebP studio asset pipeline, pure 1× weighted scoring, and hardened `/add-car` + GitHub Actions CI validation.
+* **v1.0 (26.11.2026):** **Release: 1.0:** Modular zero-build CSS/JS split, per-car lazy hydration + manifest pipeline, complete 15-car / 121-engine / 192-gearbox-pairing 7-tab Vehicle Stage, dedicated Manual/Automatic gearbox selector, trim 10-tier palette + sticky comparison matrix, expanded OEM paint slider, WebP studio asset pipeline, pure 1× weighted scoring, and hardened `/add-car` + GitHub Actions CI validation.
 * **v0.7 (25.11.2026):** Pre-release to V1.0: 7-Tab In-Depth Look, trims and equipment matrix, yearly cost calculation with updated value curve 
 * **v0.6 (22.11.2026):** Integration of design-overhaul branch: Single-car Vehicle Stage, Additions to Showroom, Value Graph
 * **v0.5 (19.11.2026):** Major Overhaul of the Duel-Site, merging of stat-boxes, info-dossier 2.0 
