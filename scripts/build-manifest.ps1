@@ -164,7 +164,7 @@ if (-not (Test-Path -LiteralPath $carsDir)) {
   throw "Missing directory: $carsDir"
 }
 
-$carFiles = @(Get-ChildItem -LiteralPath $carsDir -Filter '*.js' -File | Where-Object { -not $_.Name.StartsWith('_') } | Sort-Object Name)
+$carFiles = @(Get-ChildItem -LiteralPath $carsDir -Filter '*.js' -File | Where-Object { -not $_.Name.StartsWith('_') } | Sort-Object { $_.Name } -CaseSensitive)
 if ($carFiles.Count -eq 0) {
   throw "No vehicle files found in $carsDir"
 }
@@ -197,7 +197,8 @@ foreach ($cf in $carFiles) {
     $defGbId = if ($ep.ContainsKey('defaultGearboxId')) { $ep['defaultGearboxId'].Trim("'", '"') } else { '' }
     $defSharedGb = $null
     $defEngGb = $null
-    $gbTokens = New-Object 'System.Collections.Generic.HashSet[string]' ([System.StringComparer]::OrdinalIgnoreCase)
+    $gbTokens = New-Object System.Collections.Generic.List[string]
+    $gbSeen = New-Object 'System.Collections.Generic.HashSet[string]' ([System.StringComparer]::OrdinalIgnoreCase)
     if ($ep.ContainsKey('gearboxes')) {
       $gbList = [JsManifestParser]::ParseArrayObjects($ep['gearboxes'])
       foreach ($gbRaw in $gbList) {
@@ -210,13 +211,24 @@ foreach ($cf in $carFiles) {
           $defEngGb = $gp
         }
         foreach ($srcObj in @($sgObj, $gp)) {
-          if ($srcObj.ContainsKey('category')) { [void]$gbTokens.Add($srcObj['category'].Trim("'", '"')) }
-          if ($srcObj.ContainsKey('id')) { [void]$gbTokens.Add($srcObj['id'].Trim("'", '"')) }
+          if ($srcObj.ContainsKey('category')) {
+            $tv = $srcObj['category'].Trim("'", '"')
+            if ($tv -and $gbSeen.Add($tv)) { $gbTokens.Add($tv) }
+          }
+          if ($srcObj.ContainsKey('id')) {
+            $tv = $srcObj['id'].Trim("'", '"')
+            if ($tv -and $gbSeen.Add($tv)) { $gbTokens.Add($tv) }
+          }
           foreach ($lk in @('label', 'shortLabel', 'subLabel')) {
             if ($srcObj.ContainsKey($lk)) {
               $lo = [JsManifestParser]::ParseObject($srcObj[$lk])
-              if ($lo.ContainsKey('en')) { [void]$gbTokens.Add($lo['en'].Trim("'", '"')) }
-              elseif (-not $srcObj[$lk].StartsWith('{')) { [void]$gbTokens.Add($srcObj[$lk].Trim("'", '"')) }
+              if ($lo.ContainsKey('en')) {
+                $tv = $lo['en'].Trim("'", '"')
+                if ($tv -and $gbSeen.Add($tv)) { $gbTokens.Add($tv) }
+              } elseif (-not $srcObj[$lk].StartsWith('{')) {
+                $tv = $srcObj[$lk].Trim("'", '"')
+                if ($tv -and $gbSeen.Add($tv)) { $gbTokens.Add($tv) }
+              }
             }
           }
         }
@@ -377,6 +389,17 @@ if ($Check) {
   $expectedNorm = $manifestText.Replace("`r`n", "`n")
   if ($existingNorm -ne $expectedNorm) {
     Write-Host "FAIL: data/manifest.js is stale (run scripts/build-manifest.ps1)" -ForegroundColor Red
+    $exLines = $existingNorm -split "`n"
+    $epLines = $expectedNorm -split "`n"
+    $maxL = [Math]::Min($exLines.Length, $epLines.Length)
+    for ($li = 0; $li -lt $maxL; $li++) {
+      if ($exLines[$li] -ne $epLines[$li]) {
+        Write-Host ("  First diff at line {0}:" -f ($li + 1)) -ForegroundColor Yellow
+        Write-Host ("    existing: {0}" -f $exLines[$li]) -ForegroundColor Yellow
+        Write-Host ("    expected: {0}" -f $epLines[$li]) -ForegroundColor Yellow
+        break
+      }
+    }
     exit 1
   }
   Write-Host "PASS: data/manifest.js is up to date ($($sortedCars.Count) cars, version $versionHash)" -ForegroundColor Green
