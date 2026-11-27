@@ -1625,7 +1625,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.3,
+            score: 8.5,
             badges: {
               en: ['519L Long Sedan Boot', 'Narrower Trunk Opening vs Liftback'],
               de: ['519L großer Stufenheck-Kofferraum', 'Kleinere Klappe als Fließheck'],
@@ -1649,7 +1649,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 7.6,
+            score: 7.4,
             badges: {
               en: ['100–0 km/h: 36.8 m', '299 mm Discs • Linear Pedal'],
               de: ['100–0 km/h: 36,8 m', '299 mm Scheiben • Lineares Pedal'],
@@ -1881,7 +1881,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 5.9,
+            score: 6.4,
             badges: {
               en: ['0–100 km/h: 10.0 s', '217 km/h Top Speed'],
               de: ['0–100 km/h: 10,0 s', '217 km/h Spitze'],
@@ -1889,7 +1889,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 6.0,
+            score: 5.0,
             badges: {
               en: ['193 Nm • Clean Linear Pull', 'Direct Injection Sharper Mid-Range'],
               de: ['193 Nm • Sauberer Durchzug', 'DISI ab 3.000 U/min spritzig'],
@@ -1897,7 +1897,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 7.0,
+            score: 6.1,
             badges: {
               en: ['7.5 L/100km', '159 g/km CO2 (Euro 5)'],
               de: ['7,5 L/100km', '159 g/km CO2 (Euro 5)'],
@@ -1931,7 +1931,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 8.0,
+            score: 7.0,
             badges: {
               en: ['Sought-After 2010+ Facelift', 'Clean Rust-Free Cars Hold Value'],
               de: ['Gefragtes 2010+-Facelift', 'Rostfreie Exemplare sehr begehrt'],
@@ -2101,7 +2101,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.3,
+            score: 8.5,
             badges: {
               en: ['519L Long Sedan Boot', 'Narrower Trunk Opening vs Liftback'],
               de: ['519L großer Stufenheck-Kofferraum', 'Kleinere Klappe als Fließheck'],
@@ -2109,7 +2109,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 7.7,
+            score: 7.8,
             badges: {
               en: ['515 kg Payload', '1,500 kg Braked Towing'],
               de: ['515 kg Zuladung', '1,500 kg Anhängelast'],
@@ -2125,7 +2125,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 7.6,
+            score: 7.4,
             badges: {
               en: ['100–0 km/h: 36.8 m', '299 mm Discs • Linear Pedal'],
               de: ['100–0 km/h: 36,8 m', '299 mm Scheiben • Lineares Pedal'],
@@ -2358,7 +2358,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 4.9,
+            score: 5.3,
             badges: {
               en: ['0–100 km/h: 11.3 s', '200 km/h Top Speed'],
               de: ['0–100 km/h: 11,3 s', '200 km/h Spitze'],
@@ -2366,7 +2366,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 4.7,
+            score: 4.5,
             badges: {
               en: ['165 Nm • Needs High Revs', 'Relaxed Pace When Loaded'],
               de: ['165 Nm • Drehzahl nötig', 'Gemütlich voll beladen'],
@@ -2374,7 +2374,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 7.2,
+            score: 6.2,
             badges: {
               en: ['7.4 L/100km', '152–159 g/km CO2'],
               de: ['7,4 L/100km', '152–159 g/km CO2'],
@@ -2408,7 +2408,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 7.2,
+            score: 7.0,
             badges: {
               en: ['Budget Midsize Value Buy', 'Overshadowed By 2.0 MZR'],
               de: ['Günstiger Mittelklasse-Einstieg', '2.0er auf dem Markt beliebter'],
@@ -2603,7 +2603,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.3,
+            score: 8.5,
             badges: {
               en: ['519L Long Sedan Boot', 'Narrower Trunk Opening vs Liftback'],
               de: ['519L großer Stufenheck-Kofferraum', 'Kleinere Klappe als Fließheck'],
@@ -2611,7 +2611,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 8.0,
+            score: 7.9,
             badges: {
               en: ['535 kg Payload', '1,500 kg Braked Towing'],
               de: ['535 kg Zuladung', '1,500 kg Anhängelast'],
@@ -2627,7 +2627,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 7.6,
+            score: 7.4,
             badges: {
               en: ['100–0 km/h: 36.8 m', '299 mm Discs • Linear Pedal'],
               de: ['100–0 km/h: 36,8 m', '299 mm Scheiben • Lineares Pedal'],
@@ -2858,7 +2858,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 5.9,
+            score: 6.3,
             badges: {
               en: ['0–100 km/h: 9.9 s (6-MT)', '214 km/h Top Speed'],
               de: ['0–100 km/h: 9,9 s (6-Gang)', '214 km/h Spitze'],
@@ -2866,7 +2866,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 5.6,
+            score: 5.1,
             badges: {
               en: ['184 Nm • Rev-Happy Character', 'Slower With 5-Speed Auto'],
               de: ['184 Nm • Drehfreudig', 'Mit 5-Automatik etwas ruhiger'],
@@ -2874,7 +2874,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 6.4,
+            score: 5.8,
             badges: {
               en: ['7.8 L/100km', '166–182 g/km CO2'],
               de: ['7,8 L/100km', '166–182 g/km CO2'],
@@ -2908,7 +2908,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 6.9,
+            score: 7.0,
             badges: {
               en: ['Good Pre-Facelift Value', 'Check Steering & Rust History'],
               de: ['Solider Gebrauchtwert', 'Gepflegte rostarme Wagen gefragt'],
@@ -3078,7 +3078,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.3,
+            score: 8.5,
             badges: {
               en: ['519L Long Sedan Boot', 'Narrower Trunk Opening vs Liftback'],
               de: ['519L großer Stufenheck-Kofferraum', 'Kleinere Klappe als Fließheck'],
@@ -3102,7 +3102,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 7.6,
+            score: 7.4,
             badges: {
               en: ['100–0 km/h: 36.8 m', '299 mm Discs • Linear Pedal'],
               de: ['100–0 km/h: 36,8 m', '299 mm Scheiben • Lineares Pedal'],
@@ -3334,7 +3334,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 7.6,
+            score: 7.7,
             badges: {
               en: ['0–100 km/h: 8.0 s', '220 km/h Top Speed'],
               de: ['0–100 km/h: 8,0 s', '220 km/h Spitze'],
@@ -3342,7 +3342,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 7.0,
+            score: 5.7,
             badges: {
               en: ['226 Nm Instant Throttle', 'Linear Big-Capacity Pull'],
               de: ['226 Nm spontanes Ansprechen', 'Kräftiger Großvolumen-Schub'],
@@ -3350,7 +3350,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 5.2,
+            score: 5.3,
             badges: {
               en: ['Thirsty (8.3 L/100km)', '192 g/km CO2'],
               de: ['Durstig (8,3 L/100km)', '192 g/km CO2'],
@@ -3384,7 +3384,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 8.4,
+            score: 7.0,
             badges: {
               en: ['Cult Rare 2.5 Enthusiast Trim', 'Clean Cars Hold Strong Money'],
               de: ['Gesuchter seltener 2.5-Sauger', 'Sehr wertstabil bei Pflege'],
@@ -3553,7 +3553,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.3,
+            score: 8.5,
             badges: {
               en: ['519L Long Sedan Boot', 'Narrower Trunk Opening vs Liftback'],
               de: ['519L großer Stufenheck-Kofferraum', 'Kleinere Klappe als Fließheck'],
@@ -3561,7 +3561,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 8.1,
+            score: 8.2,
             badges: {
               en: ['540 kg Payload', '1,600 kg Braked Towing'],
               de: ['540 kg Zuladung', '1,600 kg Anhängelast'],
@@ -3577,7 +3577,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 7.6,
+            score: 7.4,
             badges: {
               en: ['100–0 km/h: 36.8 m', '299 mm Discs • Linear Pedal'],
               de: ['100–0 km/h: 36,8 m', '299 mm Scheiben • Lineares Pedal'],
@@ -3819,7 +3819,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 5.4,
+            score: 5.9,
             badges: {
               en: ['0–100 km/h: 10.5 s', '204 km/h Top Speed'],
               de: ['0–100 km/h: 10,5 s', '204 km/h Spitze'],
@@ -3827,7 +3827,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 8.0,
+            score: 8.1,
             badges: {
               en: ['330 Nm @ 2,000 rpm', 'Strong Mid-Range Pull'],
               de: ['330 Nm bei 2.000 U/min', 'Kräftiger Turbo-Schub'],
@@ -3835,7 +3835,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 8.0,
+            score: 7.5,
             badges: {
               en: ['6.1 L/100km', '149 g/km CO2 (Euro 4)'],
               de: ['6,1 L/100km', '149 g/km CO2 (Euro 4)'],
@@ -3869,7 +3869,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 5.3,
+            score: 7.0,
             badges: {
               en: ['Cheap Used Buy Price', 'Buyers Shy Away From Early DPF'],
               de: ['Sehr günstiger Einkaufspreis', 'Vorsicht vor ungepflegten Euro-4'],
@@ -4039,7 +4039,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.3,
+            score: 8.5,
             badges: {
               en: ['519L Long Sedan Boot', 'Narrower Trunk Opening vs Liftback'],
               de: ['519L großer Stufenheck-Kofferraum', 'Kleinere Klappe als Fließheck'],
@@ -4063,7 +4063,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 7.6,
+            score: 7.4,
             badges: {
               en: ['100–0 km/h: 36.8 m', '299 mm Discs • Linear Pedal'],
               de: ['100–0 km/h: 36,8 m', '299 mm Scheiben • Lineares Pedal'],
@@ -4293,7 +4293,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 5.3,
+            score: 5.7,
             badges: {
               en: ['0–100 km/h: 10.7 s', '198 km/h Top Speed'],
               de: ['0–100 km/h: 10,7 s', '198 km/h Spitze'],
@@ -4309,7 +4309,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 8.8,
+            score: 8.0,
             badges: {
               en: ['5.6 L/100km', '133–138 g/km CO2 (Euro 5)'],
               de: ['5,6 L/100km', '133–138 g/km CO2 (Euro 5)'],
@@ -4343,7 +4343,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 6.3,
+            score: 7.0,
             badges: {
               en: ['Chain History Drives Value', 'Discounts Without Proof'],
               de: ['Ketten-Historie bestimmt Preis', 'Abschlag ohne Nachweise'],
@@ -4513,7 +4513,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.3,
+            score: 8.5,
             badges: {
               en: ['519L Long Sedan Boot', 'Narrower Trunk Opening vs Liftback'],
               de: ['519L großer Stufenheck-Kofferraum', 'Kleinere Klappe als Fließheck'],
@@ -4537,7 +4537,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 7.6,
+            score: 7.4,
             badges: {
               en: ['100–0 km/h: 36.8 m', '299 mm Discs • Linear Pedal'],
               de: ['100–0 km/h: 36,8 m', '299 mm Scheiben • Lineares Pedal'],
@@ -4770,7 +4770,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 6.7,
+            score: 6.9,
             badges: {
               en: ['0–100 km/h: 9.0 s', '212 km/h Top Speed'],
               de: ['0–100 km/h: 9,0 s', '212 km/h Spitze'],
@@ -4778,7 +4778,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 8.8,
+            score: 8.6,
             badges: {
               en: ['360 Nm @ 1,800 rpm', 'Effortless Highway Passing'],
               de: ['360 Nm ab 1.800 U/min', 'Müheloses Überholen auf Autobahn'],
@@ -4786,7 +4786,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 8.3,
+            score: 7.7,
             badges: {
               en: ['5.9 L/100km', '139–144 g/km CO2 (Euro 5)'],
               de: ['5,9 L/100km', '139–144 g/km CO2 (Euro 5)'],
@@ -4820,7 +4820,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 6.9,
+            score: 7.0,
             badges: {
               en: ['Chain History Drives Value', 'Discounts Without Proof'],
               de: ['Ketten-Historie bestimmt Preis', 'Abschlag ohne Nachweise'],
@@ -4990,7 +4990,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.3,
+            score: 8.5,
             badges: {
               en: ['519L Long Sedan Boot', 'Narrower Trunk Opening vs Liftback'],
               de: ['519L großer Stufenheck-Kofferraum', 'Kleinere Klappe als Fließheck'],
@@ -5014,7 +5014,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 7.6,
+            score: 7.4,
             badges: {
               en: ['100–0 km/h: 36.8 m', '299 mm Discs • Linear Pedal'],
               de: ['100–0 km/h: 36,8 m', '299 mm Scheiben • Lineares Pedal'],
@@ -5247,7 +5247,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 7.1,
+            score: 7.3,
             badges: {
               en: ['0–100 km/h: 8.5 s', '218 km/h Top Speed'],
               de: ['0–100 km/h: 8,5 s', '218 km/h Spitze'],
@@ -5255,7 +5255,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 9.0,
+            score: 9.2,
             badges: {
               en: ['400 Nm @ 1,800 rpm', 'Effortless Highway Passing'],
               de: ['400 Nm ab 1.800 U/min', 'Müheloses Überholen auf Autobahn'],
@@ -5263,7 +5263,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 7.8,
+            score: 7.4,
             badges: {
               en: ['6.2 L/100km', '142–149 g/km CO2 (Euro 5)'],
               de: ['6,2 L/100km', '142–149 g/km CO2 (Euro 5)'],
@@ -5297,7 +5297,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 7.2,
+            score: 7.0,
             badges: {
               en: ['Chain History Drives Value', 'Discounts Without Proof'],
               de: ['Ketten-Historie bestimmt Preis', 'Abschlag ohne Nachweise'],
@@ -5316,7 +5316,7 @@ registerAutoDuelVehicle({
     { name: 'Aluminium Metallic', code: '38P', hex: '#b4bcc4', glow: 'rgba(180, 188, 196, 0.16)' },
     { name: 'Graphite Mica', code: '36C', hex: '#4e545c', glow: 'rgba(78, 84, 92, 0.18)' },
     { name: 'True Red', code: 'A4A', hex: '#c21e26', glow: 'rgba(194, 30, 38, 0.2)' },
-    { name: 'Stormy Blue Mica', code: '35J', hex: '#263f62', glow: 'rgba(38, 63, 98, 0.2)' },
+    { name: 'Stormy Blue Mica', code: '35J', hex: '#263f62', glow: 'rgba(38, 63, 98, 0.2)', isDefault: true },
     { name: 'Brilliant Carbon Grey', code: '38J', hex: '#636970', glow: 'rgba(99, 105, 112, 0.18)' },
     { name: 'Lilac Silver', code: '32S', hex: '#9fa4ac', glow: 'rgba(159, 164, 172, 0.16)' },
     { name: 'Clearwater Blue', code: '40B', hex: '#4b7aa3', glow: 'rgba(75, 122, 163, 0.2)' },

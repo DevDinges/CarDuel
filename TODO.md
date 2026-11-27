@@ -21,8 +21,15 @@ Use the `GEMINI.md` Pre-Execution Gate (assumptions / questions / plan) before s
 ---
 
 ## Deferred / Revisit Later
-- [ ] **Dynamic Car Body Recoloring (Item 2a):** Body-panel mask / `<canvas>` recoloring when clicking an OEM paint swatch (currently using expanded OEM swatches + studio ambient glow).
+- [ ] **Dynamic Car Body Recoloring (Item 2a):** Deferred/scrapped for 2D studio photos (using plain OEM Factory Paint Palette + ambient studio glow).
 - [ ] **Interior View (`≥ 2` pictures per car, Front/Rear):** Add an Interior gallery/toggle in `#vehicle-stage` (`assets/<id>-interior-front.webp`, `assets/<id>-interior-rear.webp` via `scripts/process-assets.ps1`) once interior photos are ready.
+
+---
+
+## Upcoming Homepage Modes (Under Development)
+- [ ] **Enthusiast-Car Showdown:** Dedicated enthusiast/performance car duel mode (left racing-red homepage box).
+- [ ] **Top 10 Ranking:** Ranked Top 10 vehicle leaderboard across categories and custom priority weights (center gold homepage box).
+- [ ] **Car Suggestion:** Guided car recommendation / finder flow based on user priorities and budget (right dark-grey homepage box).
 
 ---
 

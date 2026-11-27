@@ -1507,7 +1507,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 9.6,
+            score: 7.6,
             badges: {
               en: ['477L Boot (1,378L Max)', 'Fold-Up Magic Seats'],
               de: ['477L Kofferraum (1.378L Max)', 'Magic Seats Rückbank'],
@@ -1515,7 +1515,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 9.0,
+            score: 7.1,
             badges: {
               en: ['490 kg Payload', '500 / 1,400 kg Towing'],
               de: ['490 kg Zuladung', '500 / 1.400 kg Zuglast'],
@@ -1523,7 +1523,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 6.4,
+            score: 6.7,
             badges: {
               en: ['0–100 km/h: 9.1 s', '215 km/h Top Speed'],
               de: ['0–100 km/h: 9,1 s', '215 km/h Spitze'],
@@ -1531,7 +1531,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 5.1,
+            score: 4.7,
             badges: {
               en: ['174 Nm • High-Rev Delivery', 'Needs Downshifts To Pass'],
               de: ['174 Nm • Drehzahl nötig', 'Herunterschalten zum Überholen'],
@@ -1547,7 +1547,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 8.0,
+            score: 7.7,
             badges: {
               en: ['100–0 km/h: 35.8 m', 'Crisp Pedal • Low Fade'],
               de: ['100–0 km/h: 35,8 m', 'Direktes Pedal • Standfest'],
@@ -1555,7 +1555,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 7.3,
+            score: 6.4,
             badges: {
               en: ['6.3 L/100km', 'ECON Eco Mode'],
               de: ['6,3 L/100km', 'ECON-Sparmodus'],
@@ -1996,7 +1996,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 9.6,
+            score: 7.6,
             badges: {
               en: ['477L Boot (1,378L Max)', 'Fold-Up Magic Seats'],
               de: ['477L Kofferraum (1.378L Max)', 'Magic Seats Rückbank'],
@@ -2004,7 +2004,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 8.4,
+            score: 6.3,
             badges: {
               en: ['495 kg Payload', '500 / 1,200 kg Towing'],
               de: ['495 kg Zuladung', '500 / 1.200 kg Zuglast'],
@@ -2012,7 +2012,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 3.4,
+            score: 3.8,
             badges: {
               en: ['0–100 km/h: 13.4 s', '187 km/h Top Speed'],
               de: ['0–100 km/h: 13,4 s', '187 km/h Spitze'],
@@ -2020,7 +2020,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 4.1,
+            score: 3.9,
             badges: {
               en: ['127 Nm • Light City Tune', 'Plan Highway Overtakes Ahead'],
               de: ['127 Nm • Stadt-Auslegung', 'Überholmanöver gut planen'],
@@ -2036,7 +2036,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 8.0,
+            score: 7.7,
             badges: {
               en: ['100–0 km/h: 35.8 m', 'Crisp Pedal • Low Fade'],
               de: ['100–0 km/h: 35,8 m', 'Direktes Pedal • Standfest'],
@@ -2044,7 +2044,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 8.2,
+            score: 7.2,
             badges: {
               en: ['5.9 L/100km', 'ECON + Idle Stop'],
               de: ['5,9 L/100km', 'ECON & Start-Stopp'],
@@ -2483,7 +2483,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 9.6,
+            score: 7.6,
             badges: {
               en: ['477L Boot (1,378L Max)', 'Fold-Up Magic Seats'],
               de: ['477L Kofferraum (1.378L Max)', 'Magic Seats Rückbank'],
@@ -2491,7 +2491,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 9.0,
+            score: 7.1,
             badges: {
               en: ['490 kg Payload', '500 / 1,400 kg Towing'],
               de: ['490 kg Zuladung', '500 / 1.400 kg Zuglast'],
@@ -2499,7 +2499,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 5.2,
+            score: 5.9,
             badges: {
               en: ['0–100 km/h: 10.5 s', '207 km/h Top Speed'],
               de: ['0–100 km/h: 10,5 s', '207 km/h Spitze'],
@@ -2507,7 +2507,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 8.3,
+            score: 7.6,
             badges: {
               en: ['300 Nm Strong Mid-Range', 'No Downshift Needed To Pass'],
               de: ['300 Nm kräftiger Durchzug', 'Überholen ohne Herunterschalten'],
@@ -2523,7 +2523,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 8.0,
+            score: 7.7,
             badges: {
               en: ['100–0 km/h: 35.8 m', 'Crisp Pedal • Low Fade'],
               de: ['100–0 km/h: 35,8 m', 'Direktes Pedal • Standfest'],
@@ -2531,7 +2531,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 9.6,
+            score: 8.7,
             badges: {
               en: ['Efficient (4.3 L/100km)', '1,100+ km Tank Range'],
               de: ['Sparsam (4,3 L/100km)', '1.100+ km Reichweite'],
@@ -2974,7 +2974,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 9.6,
+            score: 7.6,
             badges: {
               en: ['477L Boot (1,378L Max)', 'Fold-Up Magic Seats'],
               de: ['477L Kofferraum (1.378L Max)', 'Magic Seats Rückbank'],
@@ -2982,7 +2982,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 9.2,
+            score: 7.3,
             badges: {
               en: ['500 kg Payload', '500 / 1,500 kg Towing'],
               de: ['500 kg Zuladung', '500 / 1.500 kg Zuglast'],
@@ -2990,7 +2990,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 7.0,
+            score: 7.3,
             badges: {
               en: ['0–100 km/h: 8.5 s', '217 km/h Top Speed'],
               de: ['0–100 km/h: 8,5 s', '217 km/h Spitze'],
@@ -2998,7 +2998,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 9.0,
+            score: 8.4,
             badges: {
               en: ['350 Nm Strong Mid-Range', 'No Downshift Needed To Pass'],
               de: ['350 Nm kräftiger Durchzug', 'Überholen ohne Herunterschalten'],
@@ -3014,7 +3014,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 8.0,
+            score: 7.7,
             badges: {
               en: ['100–0 km/h: 35.8 m', 'Crisp Pedal • Low Fade'],
               de: ['100–0 km/h: 35,8 m', 'Direktes Pedal • Standfest'],
@@ -3022,7 +3022,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 9.1,
+            score: 7.8,
             badges: {
               en: ['Efficient (5.1 L/100km)', '950+ km Tank Range'],
               de: ['Sparsam (5,1 L/100km)', '950+ km Reichweite'],
@@ -3075,7 +3075,7 @@ registerAutoDuelVehicle({
     { name: 'Polished Metal Metallic', code: 'NH-737M', hex: '#5b6168', glow: 'rgba(91, 97, 104, 0.18)' },
     { name: 'Alabaster Silver', code: 'NH-700M', hex: '#b4bcc4', glow: 'rgba(180, 188, 196, 0.16)' },
     { name: 'Milano Red', code: 'R-81', hex: '#c81c24', glow: 'rgba(200, 28, 36, 0.2)' },
-    { name: 'Passion Red Pearl', code: 'R-543P', hex: '#8f1b24', glow: 'rgba(143, 27, 36, 0.2)' },
+    { name: 'Passion Red Pearl', code: 'R-543P', hex: '#8f1b24', glow: 'rgba(143, 27, 36, 0.2)', isDefault: true },
     { name: 'Brilliant Sporty Blue', code: 'B-593M', hex: '#1b5eb8', glow: 'rgba(27, 94, 184, 0.2)' },
     { name: 'Twilight Blue', code: 'B-578M', hex: '#283e56', glow: 'rgba(40, 62, 86, 0.2)' },
     { name: 'Urban Titanium', code: 'YR-578M', hex: '#6c6861', glow: 'rgba(108, 104, 97, 0.18)' },

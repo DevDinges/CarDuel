@@ -110,7 +110,14 @@ let smashLockInTimer = null;
 let duelClashTimer = null;
 let duelSettleTimer = null;
 let activeRosterTarget = 'p1'; // 'p1' (left) or 'p2' (right)
-let currentLang = 'en'; // 'en' | 'de' | 'ru'
+const LANG_STORAGE_KEY = 'autoduel_lang';
+let currentLang = (() => {
+  try {
+    const saved = localStorage.getItem(LANG_STORAGE_KEY);
+    if (saved === 'en' || saved === 'de' || saved === 'ru') return saved;
+  } catch {}
+  return 'de';
+})(); // 'en' | 'de' | 'ru'
 let currentTheme = 'dark'; // 'dark' | 'light'
 let catalogQuery = '';
 let catalogBrand = 'all';
@@ -214,10 +221,66 @@ function needsVehicleHydration(id) {
   return Boolean(normId) && !isVehicleHydrated(normId) && !_vehicleLoadFailed.has(normId);
 }
 
+// Shared Engine Library (data/engines/<ref>.js): engine-owned data (durability dossier,
+// torque, induction, injection, timing drive) that is identical in every car using the engine.
+const ENGINE_LIBRARY = {};
+const _engineLoadPromises = new Map();
+
+window.registerAutoDuelEngine = function registerAutoDuelEngine(def) {
+  const eng = def && def.definition && Array.isArray(def.definition.engines) ? def.definition.engines[0] : null;
+  if (!def || !def.id || !eng) return;
+  ENGINE_LIBRARY[def.id] = eng;
+};
+
+function collectEngineRefs(roster) {
+  const refs = ((roster && roster.engines) || []).map((eng) => eng && eng.engineRef).filter(Boolean);
+  return Array.from(new Set(refs));
+}
+
+// Merge shared engine data into a hydrated roster in place. Engine-owned keys always win over
+// anything a car file declares, so the same engine can never show different values per car.
+function applyEngineRefs(roster) {
+  if (!roster || !Array.isArray(roster.engines)) return;
+  roster.engines = roster.engines.map((eng) => {
+    if (!eng || !eng.engineRef || eng._engineMerged) return eng;
+    const lib = ENGINE_LIBRARY[eng.engineRef];
+    if (!lib) {
+      console.error('Missing shared engine:', eng.engineRef);
+      return eng;
+    }
+    return {
+      ...eng,
+      specOverrides: { ...(eng.specOverrides || {}), ...(lib.specOverrides || {}) },
+      subStats: { ...(eng.subStats || {}), ...(lib.subStats || {}) },
+      _engineMerged: true
+    };
+  });
+}
+
+function ensureEngineLoaded(ref) {
+  if (!ref || ENGINE_LIBRARY[ref]) return Promise.resolve();
+  if (_engineLoadPromises.has(ref)) return _engineLoadPromises.get(ref);
+  const p = new Promise((resolve) => {
+    const script = document.createElement('script');
+    const ver = typeof CAR_DATA_VERSION !== 'undefined' ? CAR_DATA_VERSION : '1';
+    script.src = `data/engines/${encodeURIComponent(ref)}.js?v=${encodeURIComponent(ver)}`;
+    script.async = true;
+    script.onload = () => resolve();
+    script.onerror = () => {
+      console.error('Failed to load shared engine:', ref);
+      resolve();
+    };
+    document.head.appendChild(script);
+  });
+  _engineLoadPromises.set(ref, p);
+  return p;
+}
+
 window.registerAutoDuelVehicle = function registerAutoDuelVehicle(def) {
   if (!def || !def.roster || !def.roster.id) return;
   const id = def.roster.id;
-  def.roster._hydrated = true;
+  // Cars that reference shared engines stay un-hydrated until those engines are merged in.
+  def.roster._hydrated = collectEngineRefs(def.roster).length === 0;
 
   if (typeof CAR_ROSTER !== 'undefined') {
     const idx = CAR_ROSTER.findIndex((car) => car.id === id);
@@ -257,12 +320,20 @@ function ensureVehicleLoaded(id) {
     script.src = `data/cars/${encodeURIComponent(normId)}.js?v=${encodeURIComponent(ver)}`;
     script.async = true;
     script.onload = () => {
-      if (!isVehicleHydrated(normId)) {
-        _vehicleLoadFailed.add(normId);
-        _vehicleLoadPromises.delete(normId);
-        console.error('Failed to hydrate vehicle:', normId);
-      }
-      resolve();
+      const entry = CAR_ROSTER.find((car) => car.id === normId);
+      const refs = entry ? collectEngineRefs(entry) : [];
+      Promise.all(refs.map(ensureEngineLoaded)).then(() => {
+        if (entry && entry._hydrated === false) {
+          applyEngineRefs(entry);
+          entry._hydrated = true;
+        }
+        if (!isVehicleHydrated(normId)) {
+          _vehicleLoadFailed.add(normId);
+          _vehicleLoadPromises.delete(normId);
+          console.error('Failed to hydrate vehicle:', normId);
+        }
+        resolve();
+      });
     };
     script.onerror = () => {
       _vehicleLoadFailed.add(normId);
@@ -459,8 +530,8 @@ const WEIGHT_LEVEL_MULTIPLIERS = {
   1: 0.25,
   2: 0.6,
   3: 1.0,
-  4: 1.5,
-  5: 2.0
+  4: 2.0,
+  5: 3.0
 };
 
 const DEFAULT_PILLAR_WEIGHTS = {
@@ -639,13 +710,11 @@ function getPriceBreakdownMetrics(car, ui) {
   const ageYears = Math.max(1, 2026 - avgYear);
   const annualLoss = depTotal / ageYears;
 
+  const resaleScore = (car.subStats && car.subStats.depreciationResale && Number(car.subStats.depreciationResale.score)) || 7.0;
   let outlook = ui.outlookSteady;
-  if (depPctNum >= 72) {
+  if (depPctNum >= 68) {
     outlook = ui.outlookFloor;
-  } else if (
-    (car.subStats && car.subStats.depreciationResale && car.subStats.depreciationResale.score >= 8.0) ||
-    retainedPctNum >= 40
-  ) {
+  } else if (resaleScore >= 8.2 && retainedPctNum >= 45) {
     outlook = ui.outlookStrong;
   }
 

@@ -227,9 +227,9 @@ registerAutoDuelVehicle({
 
         // 1.8 Hybrid Cards
         hybridCity: {
-          en: 'You commute in city traffic: You\'ll glide through stop-and-go streets in near-silent EV mode at around 4.1 L/100 km — and you never have to plug it in.',
-          de: 'Du pendelst im Stadtverkehr: Du gleitest im Stop-and-Go fast lautlos im EV-Modus mit rund 4,1 L/100 km — ganz ohne jemals ein Ladekabel einzustecken.',
-          ru: 'Ты ездишь по городским пробкам: Ты плавно катишься в тихом EV-режиме с расходом около 4,1 л/100 км — и при этом никаких проводов и розеток.'
+          en: 'You commute in city traffic: You\'ll glide through stop-and-go streets in near-silent EV mode at around 4.5 L/100 km — and you never have to plug it in.',
+          de: 'Du pendelst im Stadtverkehr: Du gleitest im Stop-and-Go fast lautlos im EV-Modus mit rund 4,5 L/100 km — ganz ohne jemals ein Ladekabel einzustecken.',
+          ru: 'Ты ездишь по городским пробкам: Ты плавно катишься в тихом EV-режиме с расходом около 4,5 л/100 км — и при этом никаких проводов и розеток.'
         },
         hybridNoWearParts: {
           en: 'You hate surprise repair bills: With TÜV Top 3% reliability and no clutch, turbo, starter motor, or alternator, there are simply fewer parts that can break on you.',
@@ -1362,28 +1362,28 @@ registerAutoDuelVehicle({
         },
         estUsedPrice: '€9,400',
         perkLabel: {
-          en: '✦ TÜV Top 3% Reliability • 4.1 L/100km Economy',
-          de: '✦ TÜV Top 3% Zuverlässigkeit • Sparsam (4,1 L/100km)',
-          ru: '✦ Надёжность Топ 3% TÜV • Расход 4,1 л/100 км'
+          en: '✦ TÜV Top 3% Reliability • ~4.8 L/100km Economy',
+          de: '✦ TÜV Top 3% Zuverlässigkeit • Sparsam (~4,8 L/100km)',
+          ru: '✦ Надёжность Топ 3% TÜV • Расход ~4,8 л/100 км'
         },
         remarkablePositives: {
           en: [
             'TÜV TOP 3% RELIABILITY',
-            'EFFICIENT 4.1 L/100KM',
+            'EFFICIENT ~4.8 L/100KM',
             'LOW RUNNING COSTS',
             'FEWER PARTS THAT CAN BREAK',
             'SILENT EV CITY DRIVING'
           ],
           de: [
             'TÜV TOP 3% ZUVERLÄSSIGKEIT',
-            'SPARSAM: 4,1 L/100KM',
+            'SPARSAM: ~4,8 L/100KM',
             'NIEDRIGE HALTUNGSKOSTEN',
             'WENIGER VERSCHLEISSTEILE',
             'LAUTLOSES EV-STADTFAHREN'
           ],
           ru: [
             'НАДЁЖНОСТЬ ТОП 3% TÜV',
-            'РАСХОД 4,1 Л/100 КМ',
+            'РАСХОД ~4,8 Л/100 КМ',
             'ДЕШЁВОЕ ОБСЛУЖИВАНИЕ',
             'МЕНЬШЕ ДЕТАЛЕЙ ДЛЯ ПОЛОМОК',
             'ТИХИЙ EV-РЕЖИМ В ГОРОДЕ'
@@ -1710,7 +1710,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 6.1,
+            score: 6.3,
             badges: {
               en: ['360L Boot (1,200L Max)', 'Two-Level Split Boot Floor'],
               de: ['360L Kofferraum (1.200L Max)', 'Zweistufiger Ladeboden'],
@@ -1718,7 +1718,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 6.4,
+            score: 4.6,
             badges: {
               en: ['425 kg Payload', '385 / 385 kg Towing'],
               de: ['425 kg Zuladung', '385 / 385 kg Zuglast'],
@@ -1761,7 +1761,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 5.0,
+            score: 5.3,
             badges: {
               en: ['0–100 km/h: 10.9 s', '180 km/h Top Speed'],
               de: ['0–100 km/h: 10,9 s', '180 km/h Spitze'],
@@ -1873,11 +1873,11 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 9.7,
+            score: 8.4,
             badges: {
-              en: ['Efficient (4.1 L/100km)', 'Silent EV City Mode'],
-              de: ['Sparsam (4,1 L/100km)', 'Lautloser EV-Modus'],
-              ru: ['Экономичный (4,1 л/100 км)', 'EV-режим в городе']
+              en: ['4.5–5.2 L/100km', 'Silent EV City Mode'],
+              de: ['4,5–5,2 L/100km', 'Lautloser EV-Modus'],
+              ru: ['4,5–5,2 л/100 км', 'EV-режим в городе']
             }
           },
           taxInsuranceNorm: {
@@ -2272,7 +2272,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 6.1,
+            score: 6.3,
             badges: {
               en: ['360L Boot (1,200L Max)', 'Two-Level Split Boot Floor'],
               de: ['360L Kofferraum (1.200L Max)', 'Zweistufiger Ladeboden'],
@@ -2280,7 +2280,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 7.7,
+            score: 6.5,
             badges: {
               en: ['485 kg Payload', '450 / 1,000 kg Towing'],
               de: ['485 kg Zuladung', '450 / 1.000 kg Zuglast'],
@@ -2323,7 +2323,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 3.9,
+            score: 4.1,
             badges: {
               en: ['0–100 km/h: 12.6 s', '175 km/h Top Speed'],
               de: ['0–100 km/h: 12,6 s', '175 km/h Spitze'],
@@ -2399,7 +2399,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 7.9,
+            score: 7.1,
             badges: {
               en: ['6.1 L/100km', 'Stop & Start System'],
               de: ['6,1 L/100km', 'Start-Stopp-System'],
@@ -2818,7 +2818,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 6.1,
+            score: 6.3,
             badges: {
               en: ['360L Boot (1,200L Max)', 'Two-Level Split Boot Floor'],
               de: ['360L Kofferraum (1.200L Max)', 'Zweistufiger Ladeboden'],
@@ -2826,7 +2826,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 8.6,
+            score: 6.5,
             badges: {
               en: ['520 kg Payload', '450 / 1,300 kg Towing'],
               de: ['520 kg Zuladung', '450 / 1.300 kg Zuglast'],
@@ -2834,7 +2834,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 5.7,
+            score: 6.2,
             badges: {
               en: ['0–100 km/h: 10.0 s', '200 km/h Top Speed'],
               de: ['0–100 km/h: 10,0 s', '200 km/h Spitze'],
@@ -2842,7 +2842,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 4.8,
+            score: 4.5,
             badges: {
               en: ['160 Nm • High-Rev Delivery', 'Needs Downshifts To Pass'],
               de: ['160 Nm • Drehzahl nötig', 'Herunterschalten zum Überholen'],
@@ -2866,7 +2866,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 7.0,
+            score: 6.5,
             badges: {
               en: ['6.6 L/100km', 'Valvematic Lift'],
               de: ['6,6 L/100km', 'Valvematic-System'],
@@ -3221,7 +3221,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 6.1,
+            score: 6.3,
             badges: {
               en: ['360L Boot (1,200L Max)', 'Two-Level Split Boot Floor'],
               de: ['360L Kofferraum (1.200L Max)', 'Zweistufiger Ladeboden'],
@@ -3229,7 +3229,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 7.9,
+            score: 5.9,
             badges: {
               en: ['505 kg Payload', '450 / 1,000 kg Towing'],
               de: ['505 kg Zuladung', '450 / 1.000 kg Zuglast'],
@@ -3272,7 +3272,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 4.0,
+            score: 4.3,
             badges: {
               en: ['0–100 km/h: 12.5 s', '180 km/h Top Speed'],
               de: ['0–100 km/h: 12,5 s', '180 km/h Spitze'],
@@ -3280,7 +3280,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 6.7,
+            score: 6.0,
             badges: {
               en: ['205 Nm Early Turbo Spool', 'Modest Top-End Passing Reserve'],
               de: ['205 Nm früher Turbo-Schub', 'Mäßige Reserve über 130 km/h'],
@@ -3348,7 +3348,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 9.3,
+            score: 8.4,
             badges: {
               en: ['Efficient (4.7 L/100km)', '1,000+ km Tank Range'],
               de: ['Sparsam (4,7 L/100km)', '1.000+ km Reichweite'],
@@ -3661,7 +3661,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 6.1,
+            score: 6.3,
             badges: {
               en: ['360L Boot (1,200L Max)', 'Two-Level Split Boot Floor'],
               de: ['360L Kofferraum (1.200L Max)', 'Zweistufiger Ladeboden'],
@@ -3669,7 +3669,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 9.2,
+            score: 6.9,
             badges: {
               en: ['535 kg Payload', '450 / 1,500 kg Towing'],
               de: ['535 kg Zuladung', '450 / 1.500 kg Zuglast'],
@@ -3712,7 +3712,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 5.7,
+            score: 6.2,
             badges: {
               en: ['0–100 km/h: 10.0 s', '200 km/h Top Speed'],
               de: ['0–100 km/h: 10,0 s', '200 km/h Spitze'],
@@ -3720,7 +3720,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 8.4,
+            score: 7.7,
             badges: {
               en: ['310 Nm Strong Mid-Range', 'No Downshift Needed To Pass'],
               de: ['310 Nm kräftiger Durchzug', 'Überholen ohne Herunterschalten'],
@@ -3744,7 +3744,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 8.8,
+            score: 7.7,
             badges: {
               en: ['Efficient (5.3 L/100km)', '940+ km Tank Range'],
               de: ['Sparsam (5,3 L/100km)', '940+ km Reichweite'],
@@ -4246,7 +4246,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 6.1,
+            score: 6.3,
             badges: {
               en: ['360L Boot (1,199L Max)', 'Flat Fold-Down Cargo Floor'],
               de: ['360L Kofferraum (1.199L Max)', 'Ebener Ladeboden umgeklappt'],
@@ -4254,7 +4254,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 6.8,
+            score: 6.5,
             badges: {
               en: ['515 kg Payload', '1,300 kg Braked Tow'],
               de: ['515 kg Zuladung', '1.300 kg Anhängelast'],
@@ -4262,7 +4262,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 5.5,
+            score: 6.1,
             badges: {
               en: ['0–100 km/h: 10.1 s', '200 km/h Top Speed'],
               de: ['0–100 km/h: 10,1 s', '200 km/h Spitze'],
@@ -4270,7 +4270,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 6.5,
+            score: 5.7,
             badges: {
               en: ['185 Nm Early Turbo Spool', 'Modest Top-End Passing Reserve'],
               de: ['185 Nm früher Turbo-Schub', 'Mäßige Reserve über 130 km/h'],
@@ -4294,7 +4294,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 8.4,
+            score: 7.0,
             badges: {
               en: ['6.5 L/100km', '106–112 g/km CO2'],
               de: ['6,5 L/100km', '106–112 g/km CO2'],
@@ -4772,7 +4772,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 6.1,
+            score: 6.3,
             badges: {
               en: ['360L Boot (1,199L Max)', 'Flat Fold-Down Cargo Floor'],
               de: ['360L Kofferraum (1.199L Max)', 'Ebener Ladeboden umgeklappt'],
@@ -4780,7 +4780,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 7.2,
+            score: 6.5,
             badges: {
               en: ['515 kg Payload', '1,300 kg Braked Tow'],
               de: ['515 kg Zuladung', '1.300 kg Anhängelast'],
@@ -4788,7 +4788,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 5.2,
+            score: 5.8,
             badges: {
               en: ['0–100 km/h: 10.5 s', '195 km/h Top Speed'],
               de: ['0–100 km/h: 10,5 s', '195 km/h Spitze'],
@@ -4796,7 +4796,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 7.9,
+            score: 7.1,
             badges: {
               en: ['270 Nm Boost From Low RPM', 'Easy Highway Overtaking'],
               de: ['270 Nm früher Schub', 'Guter Durchzug auf Autobahn'],
@@ -4820,7 +4820,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 9.3,
+            score: 8.2,
             badges: {
               en: ['Efficient (5.4 L/100km)', '104–108 g/km CO2'],
               de: ['Sparsam (5,4 L/100km)', '104–108 g/km CO2'],
@@ -4912,7 +4912,7 @@ registerAutoDuelVehicle({
   angles: ['front', 'frontSide', 'side', 'sideRear', 'rear'],
   mirroredAngles: { sideRear: true },
   paints: [
-    { name: 'Pure White', code: '040', hex: '#f4f6f9', glow: 'rgba(244, 246, 249, 0.16)' },
+    { name: 'Pure White', code: '040', hex: '#f4f6f9', glow: 'rgba(244, 246, 249, 0.16)', isDefault: true },
     { name: 'Pearl White', code: '070', hex: '#eceef2', glow: 'rgba(236, 238, 242, 0.16)' },
     { name: 'Silver Metallic', code: '1F7', hex: '#b6bec8', glow: 'rgba(182, 190, 200, 0.16)' },
     { name: 'Granite Grey', code: '1G3', hex: '#545b63', glow: 'rgba(84, 91, 99, 0.18)' },

@@ -1162,7 +1162,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.4,
+            score: 6.9,
             badges: {
               en: ['420L Boot (1,228L Max)', 'Large Hot-Hatch Boot'],
               de: ['420L Kofferraum (1.228L Max)', 'Groß für 263-PS-Sportler'],
@@ -1170,7 +1170,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 4.2,
+            score: 3.2,
             badges: {
               en: ['470 kg Payload', '0 / 0 kg Towing'],
               de: ['470 kg Zuladung', '0 / 0 kg Anhängelast'],
@@ -1186,7 +1186,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 9.3,
+            score: 7.9,
             badges: {
               en: ['340 Nm Strong Mid-Range', 'No Downshift Needed To Pass'],
               de: ['340 Nm kräftiger Durchzug', 'Überholen ohne Herunterschalten'],
@@ -1202,7 +1202,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 9.5,
+            score: 9.2,
             badges: {
               en: ['100–0 km/h: 33.2 m', '380 mm Alcon 4-Pot Calipers'],
               de: ['100–0 km/h: 33,2 m', '380 mm Alcon 4-Kolben-Anlage'],
@@ -1210,7 +1210,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 8.3,
+            score: 4.4,
             badges: {
               en: ['7.4 L/100km', 'Light 1.6L Efficiency'],
               de: ['7,4 L/100km', 'Sparsamer 1.6L Turbo'],
@@ -1244,7 +1244,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 8.4,
+            score: 7.9,
             badges: {
               en: ['Final Pure-ICE GTi', '2019 Collector Status'],
               de: ['Letzter Verbrenner-GTi', '2019er Sammlerstatus'],
@@ -1263,7 +1263,7 @@ registerAutoDuelVehicle({
     { name: 'Bianca White', code: 'EWP', hex: '#f5f6f8', glow: 'rgba(245, 246, 248, 0.16)' },
     { name: 'Artense Grey', code: 'KCA', hex: '#9ea5ad', glow: 'rgba(158, 165, 173, 0.16)' },
     { name: 'Hurricane Grey', code: 'VL', hex: '#4f555c', glow: 'rgba(79, 85, 92, 0.18)' },
-    { name: 'Ultimate Red', code: 'EGD', hex: '#c71d28', glow: 'rgba(199, 29, 40, 0.22)' },
+    { name: 'Ultimate Red', code: 'EGD', hex: '#c71d28', glow: 'rgba(199, 29, 40, 0.22)', isDefault: true },
     { name: 'Magnetic Blue', code: 'EGQ', hex: '#1c539e', glow: 'rgba(28, 83, 158, 0.2)' },
     { name: 'Coupe Franche (Red / Black)', code: 'KTV-EGD', hex: '#961923', glow: 'rgba(199, 29, 40, 0.22)' }
   ],

@@ -1702,7 +1702,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.6,
+            score: 8.3,
             badges: {
               en: ['465–564L Boot (1,353L Max)', 'Full-Size Spare Option'],
               de: ['465–564L Kofferraum (1.353L)', 'Wahlweise vollwertiges Reserverad'],
@@ -1710,7 +1710,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 6.6,
+            score: 6.5,
             badges: {
               en: ['450 kg Payload', '1,200 kg Braked Towing'],
               de: ['450 kg Zuladung', '1.200 kg Anhängelast'],
@@ -1726,7 +1726,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 6.2,
+            score: 6.9,
             badges: {
               en: ['100–0 km/h: 37.8 m', 'Predictable • Warms on Descents'],
               de: ['100–0 km/h: 37,8 m', 'Gut dosierbar • Bergab durchschnittlich'],
@@ -1959,7 +1959,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 4.9,
+            score: 5.2,
             badges: {
               en: ['0–100 km/h: 11.1 s', '178 km/h Top Speed'],
               de: ['0–100 km/h: 11,1 s', '178 km/h Spitze'],
@@ -1967,7 +1967,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 4.6,
+            score: 4.5,
             badges: {
               en: ['165 Nm • Needs Downshifts', 'Short Lower Gears Help City'],
               de: ['165 Nm • Drehzahl nötig', 'Kurz übersetzt für die Stadt'],
@@ -1975,7 +1975,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 6.8,
+            score: 6.0,
             badges: {
               en: ['7.6 L/100km', '158 g/km CO2 (Euro 5)'],
               de: ['7,6 L/100km', '158 g/km CO2 (Euro 5)'],
@@ -2189,7 +2189,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.6,
+            score: 8.3,
             badges: {
               en: ['465–564L Boot (1,353L Max)', 'Full-Size Spare Option'],
               de: ['465–564L Kofferraum (1.353L)', 'Wahlweise vollwertiges Reserverad'],
@@ -2197,7 +2197,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 8.6,
+            score: 8.3,
             badges: {
               en: ['490 kg Payload', '1,900 kg Towing (MT)'],
               de: ['490 kg Zuladung', '1.900 kg Anhängelast (Schalter)'],
@@ -2213,7 +2213,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 6.2,
+            score: 6.9,
             badges: {
               en: ['100–0 km/h: 37.8 m', 'Predictable • Warms on Descents'],
               de: ['100–0 km/h: 37,8 m', 'Gut dosierbar • Bergab durchschnittlich'],
@@ -2455,7 +2455,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 5.3,
+            score: 5.7,
             badges: {
               en: ['0–100 km/h: 10.4 s', '184 km/h Top Speed'],
               de: ['0–100 km/h: 10,4 s', '184 km/h Spitze'],
@@ -2463,7 +2463,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 5.2,
+            score: 5.0,
             badges: {
               en: ['194 Nm @ 4,600 rpm', 'Auto Hunts Up Hills'],
               de: ['194 Nm bei 4.600 U/min', 'Automatik schaltet am Berg runter'],
@@ -2505,7 +2505,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 6.5,
+            score: 8.6,
             badges: {
               en: ['AWD Petrol Demand', 'Bore-Check Reputation Discount'],
               de: ['Allrad-Benziner gesucht', 'Abschlag wegen Motor-Ruf'],
@@ -2694,7 +2694,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.6,
+            score: 8.3,
             badges: {
               en: ['465–564L Boot (1,353L Max)', 'Full-Size Spare Option'],
               de: ['465–564L Kofferraum (1.353L)', 'Wahlweise vollwertiges Reserverad'],
@@ -2702,7 +2702,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 8.6,
+            score: 8.3,
             badges: {
               en: ['495 kg Payload', '1,900 kg Towing (6-MT)'],
               de: ['495 kg Zuladung', '1.900 kg Anhängelast (6-Gang)'],
@@ -2718,7 +2718,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 6.2,
+            score: 6.9,
             badges: {
               en: ['100–0 km/h: 37.8 m', 'Predictable • Warms on Descents'],
               de: ['100–0 km/h: 37,8 m', 'Gut dosierbar • Bergab durchschnittlich'],
@@ -2948,7 +2948,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 5.4,
+            score: 5.7,
             badges: {
               en: ['0–100 km/h: 10.4 s', '185 km/h Top Speed'],
               de: ['0–100 km/h: 10,4 s', '185 km/h Spitze'],
@@ -2956,7 +2956,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 5.6,
+            score: 5.4,
             badges: {
               en: ['205 Nm @ 4,000 rpm', 'Livelier With 6-Speed Box'],
               de: ['205 Nm bei 4.000 U/min', 'Spritziger dank 6-Gang'],
@@ -2998,7 +2998,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 8.1,
+            score: 8.6,
             badges: {
               en: ['Desirable 2014+ Facelift Trim', 'Stronger Resale Than Pre-FL'],
               de: ['Beliebtes 2014+-Facelift', 'Wertstabiler als Vor-Facelift'],
@@ -3170,7 +3170,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.6,
+            score: 8.3,
             badges: {
               en: ['465–564L Boot (1,353L Max)', 'Full-Size Spare Option'],
               de: ['465–564L Kofferraum (1.353L)', 'Wahlweise vollwertiges Reserverad'],
@@ -3178,7 +3178,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 7.0,
+            score: 6.7,
             badges: {
               en: ['470 kg Payload', '1,200 kg Braked Towing'],
               de: ['470 kg Zuladung', '1.200 kg Anhängelast'],
@@ -3194,7 +3194,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 6.2,
+            score: 6.9,
             badges: {
               en: ['100–0 km/h: 37.8 m', 'Predictable • Warms on Descents'],
               de: ['100–0 km/h: 37,8 m', 'Gut dosierbar • Bergab durchschnittlich'],
@@ -3426,7 +3426,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 4.5,
+            score: 4.4,
             badges: {
               en: ['0–100 km/h: 12.3 s', '173 km/h Top Speed'],
               de: ['0–100 km/h: 12,3 s', '173 km/h Spitze'],
@@ -3434,7 +3434,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 6.6,
+            score: 6.9,
             badges: {
               en: ['260 Nm From 1,250 rpm', 'Fades Above 120 km/h'],
               de: ['260 Nm ab 1.250 U/min', 'Zäher über 120 km/h'],
@@ -3442,7 +3442,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 8.6,
+            score: 7.8,
             badges: {
               en: ['5.8 L/100km', '135 g/km CO2 (Euro 5)'],
               de: ['5,8 L/100km', '135 g/km CO2 (Euro 5)'],
@@ -3476,7 +3476,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 8.8,
+            score: 8.6,
             badges: {
               en: ['Top Used Commuter Favourite', 'Strong Frugal SUV Demand'],
               de: ['Gefragtester Spar-SUV', 'Hohe Nachfrage als Alltagswagen'],
@@ -3693,7 +3693,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.6,
+            score: 8.3,
             badges: {
               en: ['465–564L Boot (1,353L Max)', 'Full-Size Spare Option'],
               de: ['465–564L Kofferraum (1.353L)', 'Wahlweise vollwertiges Reserverad'],
@@ -3701,7 +3701,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 9.2,
+            score: 8.7,
             badges: {
               en: ['515 kg Payload', '2,000 kg Towing (MT)'],
               de: ['515 kg Zuladung', '2.000 kg Anhängelast (Schalter)'],
@@ -3717,7 +3717,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 6.2,
+            score: 6.9,
             badges: {
               en: ['100–0 km/h: 37.8 m', 'Predictable • Warms on Descents'],
               de: ['100–0 km/h: 37,8 m', 'Gut dosierbar • Bergab durchschnittlich'],
@@ -3949,7 +3949,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 5.1,
+            score: 5.4,
             badges: {
               en: ['0–100 km/h: 10.8 s', '182 km/h Top Speed'],
               de: ['0–100 km/h: 10,8 s', '182 km/h Spitze'],
@@ -3957,7 +3957,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 7.7,
+            score: 7.9,
             badges: {
               en: ['320 Nm @ 1,800 rpm', 'Effortless Highway & Hill Pull'],
               de: ['320 Nm bei 1.800 U/min', 'Souveräner Autobahn-Durchzug'],
@@ -3965,7 +3965,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 7.4,
+            score: 7.0,
             badges: {
               en: ['6.6 L/100km', '149–162 g/km CO2'],
               de: ['6,6 L/100km', '149–162 g/km CO2'],
@@ -3999,7 +3999,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 8.7,
+            score: 8.6,
             badges: {
               en: ['Sweet-Spot AWD Towing Choice', 'Strong European Resale'],
               de: ['Bester Zug- & Allrad-Diesel', 'Sehr stabiler Wiederverkauf'],
@@ -4208,7 +4208,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.6,
+            score: 8.3,
             badges: {
               en: ['465–564L Boot (1,353L Max)', 'Full-Size Spare Option'],
               de: ['465–564L Kofferraum (1.353L)', 'Wahlweise vollwertiges Reserverad'],
@@ -4216,7 +4216,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 9.2,
+            score: 8.6,
             badges: {
               en: ['510 kg Payload', '2,000 kg Towing (6-MT)'],
               de: ['510 kg Zuladung', '2.000 kg Anhängelast (6-Gang)'],
@@ -4232,7 +4232,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 6.2,
+            score: 6.9,
             badges: {
               en: ['100–0 km/h: 37.8 m', 'Predictable • Warms on Descents'],
               de: ['100–0 km/h: 37,8 m', 'Gut dosierbar • Bergab durchschnittlich'],
@@ -4463,7 +4463,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 5.9,
+            score: 6.2,
             badges: {
               en: ['0–100 km/h: 9.8 s', '195 km/h Top Speed'],
               de: ['0–100 km/h: 9,8 s', '195 km/h Spitze'],
@@ -4471,7 +4471,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 8.7,
+            score: 8.9,
             badges: {
               en: ['383 Nm @ 1,800 rpm', 'Strong Fast-Lane Muscle'],
               de: ['383 Nm bei 1.800 U/min', 'Sehr starker Überhol-Durchzug'],
@@ -4479,7 +4479,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 6.7,
+            score: 6.8,
             badges: {
               en: ['6.8 L/100km', '161–171 g/km CO2'],
               de: ['6,8 L/100km', '161–171 g/km CO2'],
@@ -4513,7 +4513,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 8.4,
+            score: 8.6,
             badges: {
               en: ['Sought-After Top-Trim AWD', 'Higher Running-Cost Caution'],
               de: ['Begehrtes Top-Allradmodell', 'Etwas höhere Unterhaltskosten'],
@@ -4532,7 +4532,7 @@ registerAutoDuelVehicle({
     { name: 'Machine Silver', code: '3D', hex: '#b4bcc5', glow: 'rgba(180, 188, 197, 0.16)' },
     { name: 'Sirius Silver', code: 'AA3', hex: '#9fa6ae', glow: 'rgba(159, 166, 174, 0.16)' },
     { name: 'Dark Gun Metal', code: 'E5B', hex: '#4c525a', glow: 'rgba(76, 82, 90, 0.18)' },
-    { name: 'Sand Track', code: 'D5U', hex: '#7b7164', glow: 'rgba(123, 113, 100, 0.18)' },
+    { name: 'Sand Track', code: 'D5U', hex: '#7b7164', glow: 'rgba(123, 113, 100, 0.18)', isDefault: true },
     { name: 'Techno Orange', code: 'AA1', hex: '#c85826', glow: 'rgba(200, 88, 38, 0.22)' },
     { name: 'Phoenix Silver', code: 'K3R', hex: '#727981', glow: 'rgba(114, 121, 129, 0.18)' },
     { name: 'Planet Blue', code: 'D7U', hex: '#2a4a75', glow: 'rgba(42, 74, 117, 0.2)' },

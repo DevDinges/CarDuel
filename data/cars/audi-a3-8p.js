@@ -2532,7 +2532,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 5.9,
+            score: 6.2,
             badges: {
               en: ['370 L Boot (1,100 L Folded)', 'Quattro Models Drop to 302 L'],
               de: ['370 L Kofferraum (1.100 L umgeklappt)', 'Quattro-Modelle nur 302 L'],
@@ -2540,7 +2540,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 6.6,
+            score: 7.1,
             badges: {
               en: ['520–560 kg Payload • 75 kg Roof', '1,200–1,600 kg Braked Towing'],
               de: ['520–560 kg Zuladung • 75 kg Dachlast', '1.200–1.600 kg Anhängelast gebremst'],
@@ -2548,7 +2548,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 5.4,
+            score: 5.7,
             badges: {
               en: ['0–100 km/h: 10.6 s • 192 km/h', 'Lively Below 80 km/h'],
               de: ['0–100 km/h: 10,6 s • 192 km/h', 'Spritzig bis 80 km/h'],
@@ -2556,7 +2556,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 6.4,
+            score: 5.5,
             badges: {
               en: ['175 Nm @ 1,550 rpm', 'Good Low-End City Pull'],
               de: ['175 Nm ab 1.550 U/min', 'Guter Durchzug im Stadtverkehr'],
@@ -2580,7 +2580,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 8.2,
+            score: 7.4,
             badges: {
               en: ['5.9–6.4 L/100km', 'Efficient Light Turbo'],
               de: ['5,9–6,4 L/100km', 'Sparsamer Klein-Turbo'],
@@ -2614,7 +2614,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 7.8,
+            score: 8.6,
             badges: {
               en: ['Strong Audi Badge Resale Demand', 'Bottomed Out • Steady Value'],
               de: ['Hohe Nachfrage nach Audi-Modellen', 'Wertverlust größtenteils abgeschlossen'],
@@ -3007,7 +3007,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 5.9,
+            score: 6.2,
             badges: {
               en: ['370 L Boot (1,100 L Folded)', 'Quattro Models Drop to 302 L'],
               de: ['370 L Kofferraum (1.100 L umgeklappt)', 'Quattro-Modelle nur 302 L'],
@@ -3015,7 +3015,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 6.6,
+            score: 7.1,
             badges: {
               en: ['520–560 kg Payload • 75 kg Roof', '1,200–1,600 kg Braked Towing'],
               de: ['520–560 kg Zuladung • 75 kg Dachlast', '1.200–1.600 kg Anhängelast gebremst'],
@@ -3023,7 +3023,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 6.4,
+            score: 6.6,
             badges: {
               en: ['0–100 km/h: 9.4 s • 203 km/h', 'Confident Daily Pace'],
               de: ['0–100 km/h: 9,4 s • 203 km/h', 'Flott genug für die Autobahn'],
@@ -3031,7 +3031,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 6.9,
+            score: 5.9,
             badges: {
               en: ['200 Nm @ 1,500 rpm', 'Flat Turbo Torque Band'],
               de: ['200 Nm ab 1.500 U/min', 'Breites Drehmomentband'],
@@ -3055,7 +3055,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 7.9,
+            score: 7.0,
             badges: {
               en: ['6.4–6.9 L/100km', 'Good Petrol Economy'],
               de: ['6,4–6,9 L/100km', 'Guter Alltagsverbrauch'],
@@ -3089,7 +3089,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 7.8,
+            score: 8.6,
             badges: {
               en: ['Strong Audi Badge Resale Demand', 'Bottomed Out • Steady Value'],
               de: ['Hohe Nachfrage nach Audi-Modellen', 'Wertverlust größtenteils abgeschlossen'],
@@ -3454,7 +3454,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 5.9,
+            score: 6.2,
             badges: {
               en: ['370 L Boot (1,100 L Folded)', 'Quattro Models Drop to 302 L'],
               de: ['370 L Kofferraum (1.100 L umgeklappt)', 'Quattro-Modelle nur 302 L'],
@@ -3462,7 +3462,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 6.6,
+            score: 7.1,
             badges: {
               en: ['520–560 kg Payload • 75 kg Roof', '1,200–1,600 kg Braked Towing'],
               de: ['520–560 kg Zuladung • 75 kg Dachlast', '1.200–1.600 kg Anhängelast gebremst'],
@@ -3470,7 +3470,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 4.4,
+            score: 4.7,
             badges: {
               en: ['0–100 km/h: 11.9 s • 185 km/h', 'Unrushed Highway Pace'],
               de: ['0–100 km/h: 11,9 s • 185 km/h', 'Gemütliches Reisetempo'],
@@ -3478,7 +3478,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 5.2,
+            score: 4.5,
             badges: {
               en: ['148 Nm @ 3,800 rpm', 'Needs Downshifts to Overtake'],
               de: ['148 Nm bei 3.800 U/min', 'Zum Überholen herunterschalten'],
@@ -3502,7 +3502,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 6.6,
+            score: 6.0,
             badges: {
               en: ['7.3–7.9 L/100km', 'Thirsty on Motorway'],
               de: ['7,3–7,9 L/100km', 'Auf Autobahn etwas durstig'],
@@ -3535,7 +3535,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 7.8,
+            score: 8.6,
             badges: {
               en: ['Strong Audi Badge Resale Demand', 'Bottomed Out • Steady Value'],
               de: ['Hohe Nachfrage nach Audi-Modellen', 'Wertverlust größtenteils abgeschlossen'],
@@ -3908,7 +3908,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 5.9,
+            score: 6.2,
             badges: {
               en: ['370 L Boot (1,100 L Folded)', 'Quattro Models Drop to 302 L'],
               de: ['370 L Kofferraum (1.100 L umgeklappt)', 'Quattro-Modelle nur 302 L'],
@@ -3916,7 +3916,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 6.6,
+            score: 7.1,
             badges: {
               en: ['520–560 kg Payload • 75 kg Roof', '1,200–1,600 kg Braked Towing'],
               de: ['520–560 kg Zuladung • 75 kg Dachlast', '1.200–1.600 kg Anhängelast gebremst'],
@@ -3924,7 +3924,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 5.1,
+            score: 5.5,
             badges: {
               en: ['0–100 km/h: 10.9 s • 196 km/h', 'Slightly Quicker Than 1.6 MPI'],
               de: ['0–100 km/h: 10,9 s • 196 km/h', 'Etwas flotter als 1.6 MPI'],
@@ -3932,7 +3932,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 5.5,
+            score: 4.6,
             badges: {
               en: ['155 Nm @ 4,000 rpm', 'Must Be Revved Hard'],
               de: ['155 Nm bei 4.000 U/min', 'Braucht Drehzahl'],
@@ -3956,7 +3956,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 7.0,
+            score: 6.5,
             badges: {
               en: ['6.8–7.4 L/100km', 'Prefers 98 RON Fuel'],
               de: ['6,8–7,4 L/100km', 'Empfiehlt Super Plus 98'],
@@ -3988,7 +3988,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 7.8,
+            score: 8.6,
             badges: {
               en: ['Strong Audi Badge Resale Demand', 'Bottomed Out • Steady Value'],
               de: ['Hohe Nachfrage nach Audi-Modellen', 'Wertverlust größtenteils abgeschlossen'],
@@ -4384,7 +4384,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 5.9,
+            score: 6.2,
             badges: {
               en: ['370 L Boot (1,100 L Folded)', 'Quattro Models Drop to 302 L'],
               de: ['370 L Kofferraum (1.100 L umgeklappt)', 'Quattro-Modelle nur 302 L'],
@@ -4392,7 +4392,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 6.6,
+            score: 7.5,
             badges: {
               en: ['520–560 kg Payload • 75 kg Roof', '1,200–1,600 kg Braked Towing'],
               de: ['520–560 kg Zuladung • 75 kg Dachlast', '1.200–1.600 kg Anhängelast gebremst'],
@@ -4400,7 +4400,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 8.0,
+            score: 7.9,
             badges: {
               en: ['0–100 km/h: 7.7 s • 222 km/h', 'Quick Mid-Size Hatch'],
               de: ['0–100 km/h: 7,7 s • 222 km/h', 'Flotter Kompakter'],
@@ -4408,7 +4408,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 7.7,
+            score: 6.7,
             badges: {
               en: ['250 Nm @ 1,500 rpm', 'Instant Mid-Range Surge'],
               de: ['250 Nm ab 1.500 U/min', 'Kräftiger Durchzug'],
@@ -4432,7 +4432,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 6.8,
+            score: 5.8,
             badges: {
               en: ['7.4–Thirsty (8.2 L/100km)', 'Plus Oil Top-Ups if Unfixed'],
               de: ['7,4–Durstig (8,2 L/100km)', 'Plus Ölverbrauch ohne Überholung'],
@@ -4466,7 +4466,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 5.6,
+            score: 8.6,
             badges: {
               en: ['Strong Audi Badge Resale Demand', 'Bottomed Out • Steady Value'],
               de: ['Hohe Nachfrage nach Audi-Modellen', 'Wertverlust größtenteils abgeschlossen'],
@@ -4849,7 +4849,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 5.9,
+            score: 6.2,
             badges: {
               en: ['370 L Boot (1,100 L Folded)', 'Quattro Models Drop to 302 L'],
               de: ['370 L Kofferraum (1.100 L umgeklappt)', 'Quattro-Modelle nur 302 L'],
@@ -4857,7 +4857,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 6.6,
+            score: 7.5,
             badges: {
               en: ['520–560 kg Payload • 75 kg Roof', '1,200–1,600 kg Braked Towing'],
               de: ['520–560 kg Zuladung • 75 kg Dachlast', '1.200–1.600 kg Anhängelast gebremst'],
@@ -4865,7 +4865,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 6.6,
+            score: 6.8,
             badges: {
               en: ['0–100 km/h: 9.1 s • 211 km/h', 'Needs Revs Above 3,500 rpm'],
               de: ['0–100 km/h: 9,1 s • 211 km/h', 'Braucht Drehzahl ab 3.500 U/min'],
@@ -4873,7 +4873,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 6.4,
+            score: 5.3,
             badges: {
               en: ['200 Nm @ 3,500 rpm', 'Linear NA Torque'],
               de: ['200 Nm bei 3.500 U/min', 'Gleichmäßiger Sauger'],
@@ -4897,7 +4897,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 6.0,
+            score: 5.4,
             badges: {
               en: ['7.8–Thirsty (8.6 L/100km)', 'Prefers 98 RON Fuel'],
               de: ['7,8–Durstig (8,6 L/100km)', 'Empfiehlt Super Plus 98'],
@@ -4930,7 +4930,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 7.8,
+            score: 8.6,
             badges: {
               en: ['Strong Audi Badge Resale Demand', 'Bottomed Out • Steady Value'],
               de: ['Hohe Nachfrage nach Audi-Modellen', 'Wertverlust größtenteils abgeschlossen'],
@@ -5326,7 +5326,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 5.9,
+            score: 6.2,
             badges: {
               en: ['370 L Boot (1,100 L Folded)', 'Quattro Models Drop to 302 L'],
               de: ['370 L Kofferraum (1.100 L umgeklappt)', 'Quattro-Modelle nur 302 L'],
@@ -5334,7 +5334,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 6.6,
+            score: 7.5,
             badges: {
               en: ['520–560 kg Payload • 75 kg Roof', '1,200–1,600 kg Braked Towing'],
               de: ['520–560 kg Zuladung • 75 kg Dachlast', '1.200–1.600 kg Anhängelast gebremst'],
@@ -5342,7 +5342,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 8.8,
+            score: 8.6,
             badges: {
               en: ['0–100 km/h: 6.9 s • 238 km/h', 'True Warm-Hatch Speed'],
               de: ['0–100 km/h: 6,9 s • 238 km/h', 'Echtes GTI-Tempo'],
@@ -5350,7 +5350,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 8.4,
+            score: 7.2,
             badges: {
               en: ['280 Nm @ 1,800 rpm', 'Effortless Pulling Power'],
               de: ['280 Nm ab 1.800 U/min', 'Druck in jeder Lebenslage'],
@@ -5374,7 +5374,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 5.6,
+            score: 4.7,
             badges: {
               en: ['8.3–Thirsty (9.5 L/100km)', 'Likes 98 RON Fuel'],
               de: ['8,3–Durstig (9,5 L/100km)', 'Bevorzugt Super Plus 98'],
@@ -5408,7 +5408,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 6.4,
+            score: 8.6,
             badges: {
               en: ['Strong Audi Badge Resale Demand', 'Bottomed Out • Steady Value'],
               de: ['Hohe Nachfrage nach Audi-Modellen', 'Wertverlust größtenteils abgeschlossen'],
@@ -5770,7 +5770,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 5.9,
+            score: 6.2,
             badges: {
               en: ['370 L Boot (1,100 L Folded)', 'Quattro Models Drop to 302 L'],
               de: ['370 L Kofferraum (1.100 L umgeklappt)', 'Quattro-Modelle nur 302 L'],
@@ -5778,7 +5778,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 6.6,
+            score: 7.3,
             badges: {
               en: ['520–560 kg Payload • 75 kg Roof', '1,200–1,600 kg Braked Towing'],
               de: ['520–560 kg Zuladung • 75 kg Dachlast', '1.200–1.600 kg Anhängelast gebremst'],
@@ -5786,7 +5786,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 4.2,
+            score: 4.5,
             badges: {
               en: ['0–100 km/h: 12.2 s • 180 km/h', 'Built for Cruise Efficiency'],
               de: ['0–100 km/h: 12,2 s • 180 km/h', 'Für sparsames Gleiten gebaut'],
@@ -5794,7 +5794,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 6.5,
+            score: 6.4,
             badges: {
               en: ['230 Nm @ 1,500 rpm', 'Decent Low-End Pull'],
               de: ['230 Nm ab 1.500 U/min', 'Ordentlicher Antritt untenrum'],
@@ -5818,7 +5818,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 9.2,
+            score: 9.0,
             badges: {
               en: ['4.4–Efficient (4.9 L/100km)', '1,100+ km Tank Range'],
               de: ['4,4–Sparsam (4,9 L/100km)', 'Über 1.100 km Reichweite'],
@@ -5852,7 +5852,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 7.8,
+            score: 8.6,
             badges: {
               en: ['Strong Audi Badge Resale Demand', 'Bottomed Out • Steady Value'],
               de: ['Hohe Nachfrage nach Audi-Modellen', 'Wertverlust größtenteils abgeschlossen'],
@@ -6247,7 +6247,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 5.9,
+            score: 6.2,
             badges: {
               en: ['370 L Boot (1,100 L Folded)', 'Quattro Models Drop to 302 L'],
               de: ['370 L Kofferraum (1.100 L umgeklappt)', 'Quattro-Modelle nur 302 L'],
@@ -6255,7 +6255,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 6.6,
+            score: 7.5,
             badges: {
               en: ['520–560 kg Payload • 75 kg Roof', '1,200–1,600 kg Braked Towing'],
               de: ['520–560 kg Zuladung • 75 kg Dachlast', '1.200–1.600 kg Anhängelast gebremst'],
@@ -6263,7 +6263,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 4.8,
+            score: 5.1,
             badges: {
               en: ['0–100 km/h: 11.4 s • 194 km/h', 'Adequate Highway Merge'],
               de: ['0–100 km/h: 11,4 s • 194 km/h', 'Ausreichend für Überland'],
@@ -6271,7 +6271,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 7.0,
+            score: 6.7,
             badges: {
               en: ['250 Nm @ 1,500 rpm', 'Stronger Mid-Range Than 1.6 Petrol'],
               de: ['250 Nm ab 1.500 U/min', 'Kräftiger als 1.6 Benziner'],
@@ -6295,7 +6295,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 9.2,
+            score: 8.9,
             badges: {
               en: ['4.5–Efficient (5.0 L/100km)', 'Top Commuter Economy'],
               de: ['4,5–Sparsam (5,0 L/100km)', 'Top-Pendlerverbrauch'],
@@ -6329,7 +6329,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 7.8,
+            score: 8.6,
             badges: {
               en: ['Strong Audi Badge Resale Demand', 'Bottomed Out • Steady Value'],
               de: ['Hohe Nachfrage nach Audi-Modellen', 'Wertverlust größtenteils abgeschlossen'],
@@ -6712,7 +6712,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 5.9,
+            score: 6.2,
             badges: {
               en: ['370 L Boot (1,100 L Folded)', 'Quattro Models Drop to 302 L'],
               de: ['370 L Kofferraum (1.100 L umgeklappt)', 'Quattro-Modelle nur 302 L'],
@@ -6720,7 +6720,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 6.6,
+            score: 7.5,
             badges: {
               en: ['520–560 kg Payload • 75 kg Roof', '1,200–1,600 kg Braked Towing'],
               de: ['520–560 kg Zuladung • 75 kg Dachlast', '1.200–1.600 kg Anhängelast gebremst'],
@@ -6728,7 +6728,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 4.8,
+            score: 5.1,
             badges: {
               en: ['0–100 km/h: 11.4 s • 187 km/h', 'Feels Faster Than Paper'],
               de: ['0–100 km/h: 11,4 s • 187 km/h', 'Fühlt sich kräftiger an als 105 PS'],
@@ -6736,7 +6736,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 7.3,
+            score: 6.7,
             badges: {
               en: ['250 Nm @ 1,900 rpm', 'Signature PD Mid-Range Punch'],
               de: ['250 Nm bei 1.900 U/min', 'Typischer PD-Schub'],
@@ -6760,7 +6760,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 8.8,
+            score: 8.5,
             badges: {
               en: ['4.8–Efficient (5.4 L/100km)', 'Very Thrifty Everywhere'],
               de: ['4,8–Sparsam (5,4 L/100km)', 'Überall extrem sparsam'],
@@ -6794,7 +6794,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 7.8,
+            score: 8.6,
             badges: {
               en: ['Strong Audi Badge Resale Demand', 'Bottomed Out • Steady Value'],
               de: ['Hohe Nachfrage nach Audi-Modellen', 'Wertverlust größtenteils abgeschlossen'],
@@ -7191,7 +7191,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 5.9,
+            score: 6.2,
             badges: {
               en: ['370 L Boot (1,100 L Folded)', 'Quattro Models Drop to 302 L'],
               de: ['370 L Kofferraum (1.100 L umgeklappt)', 'Quattro-Modelle nur 302 L'],
@@ -7199,7 +7199,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 6.6,
+            score: 7.8,
             badges: {
               en: ['520–560 kg Payload • 75 kg Roof', '1,200–1,600 kg Braked Towing'],
               de: ['520–560 kg Zuladung • 75 kg Dachlast', '1.200–1.600 kg Anhängelast gebremst'],
@@ -7207,7 +7207,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 6.3,
+            score: 6.6,
             badges: {
               en: ['0–100 km/h: 9.5 s • 207 km/h', 'Strong Highway Overtaker'],
               de: ['0–100 km/h: 9,5 s • 207 km/h', 'Souverän auf der Autobahn'],
@@ -7215,7 +7215,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 8.2,
+            score: 7.9,
             badges: {
               en: ['320 Nm @ 1,750 rpm', 'Punchy PD Surge'],
               de: ['320 Nm ab 1.750 U/min', 'Kräftiger PD-Punch'],
@@ -7239,7 +7239,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 8.4,
+            score: 8.0,
             badges: {
               en: ['5.3–5.9 L/100km', 'Very Efficient 2.0L'],
               de: ['5,3–5,9 L/100km', 'Sparsamer 2.0L'],
@@ -7273,7 +7273,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 6.0,
+            score: 8.6,
             badges: {
               en: ['Strong Audi Badge Resale Demand', 'Bottomed Out • Steady Value'],
               de: ['Hohe Nachfrage nach Audi-Modellen', 'Wertverlust größtenteils abgeschlossen'],
@@ -7662,7 +7662,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 5.9,
+            score: 6.2,
             badges: {
               en: ['370 L Boot (1,100 L Folded)', 'Quattro Models Drop to 302 L'],
               de: ['370 L Kofferraum (1.100 L umgeklappt)', 'Quattro-Modelle nur 302 L'],
@@ -7670,7 +7670,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 6.6,
+            score: 8.0,
             badges: {
               en: ['520–560 kg Payload • 75 kg Roof', '1,200–1,600 kg Braked Towing'],
               de: ['520–560 kg Zuladung • 75 kg Dachlast', '1.200–1.600 kg Anhängelast gebremst'],
@@ -7678,7 +7678,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 6.6,
+            score: 6.8,
             badges: {
               en: ['0–100 km/h: 9.1 s • 209 km/h', 'Brisk Everyday Acceleration'],
               de: ['0–100 km/h: 9,1 s • 209 km/h', 'Flottes Autobahntempo'],
@@ -7686,7 +7686,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 8.3,
+            score: 7.9,
             badges: {
               en: ['320 Nm @ 1,750 rpm', 'Effortless 6th-Gear Passing'],
               de: ['320 Nm ab 1.750 U/min', 'Müheloses Überholen im 6. Gang'],
@@ -7710,7 +7710,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 8.6,
+            score: 8.2,
             badges: {
               en: ['5.1–5.7 L/100km', '1,000+ km Highway Range'],
               de: ['5,1–5,7 L/100km', 'Über 1.000 km Reichweite'],
@@ -7744,7 +7744,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 7.8,
+            score: 8.6,
             badges: {
               en: ['Strong Audi Badge Resale Demand', 'Bottomed Out • Steady Value'],
               de: ['Hohe Nachfrage nach Audi-Modellen', 'Wertverlust größtenteils abgeschlossen'],
@@ -8140,7 +8140,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 5.9,
+            score: 6.2,
             badges: {
               en: ['370 L Boot (1,100 L Folded)', 'Quattro Models Drop to 302 L'],
               de: ['370 L Kofferraum (1.100 L umgeklappt)', 'Quattro-Modelle nur 302 L'],
@@ -8148,7 +8148,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 6.6,
+            score: 8.0,
             badges: {
               en: ['520–560 kg Payload • 75 kg Roof', '1,200–1,600 kg Braked Towing'],
               de: ['520–560 kg Zuladung • 75 kg Dachlast', '1.200–1.600 kg Anhängelast gebremst'],
@@ -8156,7 +8156,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 7.4,
+            score: 7.5,
             badges: {
               en: ['0–100 km/h: 8.2 s • 222 km/h', 'Rapid Diesel Hatch'],
               de: ['0–100 km/h: 8,2 s • 222 km/h', 'Sehr flotter Diesel'],
@@ -8164,7 +8164,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 8.6,
+            score: 8.4,
             badges: {
               en: ['350 Nm @ 1,750 rpm', 'Huge Mid-Range Surge'],
               de: ['350 Nm ab 1.750 U/min', 'Mächtiger Zwischenspurt'],
@@ -8188,7 +8188,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 7.9,
+            score: 7.5,
             badges: {
               en: ['5.8–6.4 L/100km', 'Efficient For 170 HP'],
               de: ['5,8–6,4 L/100km', 'Sparsam für 170 PS'],
@@ -8222,7 +8222,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 6.0,
+            score: 8.6,
             badges: {
               en: ['Strong Audi Badge Resale Demand', 'Bottomed Out • Steady Value'],
               de: ['Hohe Nachfrage nach Audi-Modellen', 'Wertverlust größtenteils abgeschlossen'],
@@ -8614,7 +8614,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 5.9,
+            score: 6.2,
             badges: {
               en: ['370 L Boot (1,100 L Folded)', 'Quattro Models Drop to 302 L'],
               de: ['370 L Kofferraum (1.100 L umgeklappt)', 'Quattro-Modelle nur 302 L'],
@@ -8622,7 +8622,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 6.6,
+            score: 8.0,
             badges: {
               en: ['520–560 kg Payload • 75 kg Roof', '1,200–1,600 kg Braked Towing'],
               de: ['520–560 kg Zuladung • 75 kg Dachlast', '1.200–1.600 kg Anhängelast gebremst'],
@@ -8630,7 +8630,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 7.4,
+            score: 7.5,
             badges: {
               en: ['0–100 km/h: 8.2 s • 224 km/h', 'Effortless Autobahn Cruiser'],
               de: ['0–100 km/h: 8,2 s • 224 km/h', 'Souveräner Autobahn-Gleiter'],
@@ -8638,7 +8638,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 8.8,
+            score: 8.4,
             badges: {
               en: ['350 Nm @ 1,750 rpm', 'GTI-Rivaling Mid-Range'],
               de: ['350 Nm ab 1.750 U/min', 'Durchzug auf GTI-Niveau'],
@@ -8662,7 +8662,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 8.2,
+            score: 7.9,
             badges: {
               en: ['5.4–6.0 L/100km', 'Great Power-to-Fuel Ratio'],
               de: ['5,4–6,0 L/100km', 'Top Verhältnis aus Kraft & Verbrauch'],
@@ -8696,7 +8696,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 7.8,
+            score: 8.6,
             badges: {
               en: ['Strong Audi Badge Resale Demand', 'Bottomed Out • Steady Value'],
               de: ['Hohe Nachfrage nach Audi-Modellen', 'Wertverlust größtenteils abgeschlossen'],
@@ -8715,7 +8715,7 @@ registerAutoDuelVehicle({
     { name: 'Ice Silver Metallic', code: 'LX7W', hex: '#b8c0c8', glow: 'rgba(184, 192, 200, 0.16)' },
     { name: 'Lava Grey Pearl', code: 'LZ7L', hex: '#494e56', glow: 'rgba(73, 78, 86, 0.18)' },
     { name: 'Ibis White', code: 'LY9C', hex: '#f1f3f6', glow: 'rgba(241, 243, 246, 0.16)' },
-    { name: 'Brilliant Red', code: 'LY3J', hex: '#c41d24', glow: 'rgba(196, 29, 36, 0.2)' },
+    { name: 'Brilliant Red', code: 'LY3J', hex: '#c41d24', glow: 'rgba(196, 29, 36, 0.2)', isDefault: true },
     { name: 'Scuba Blue Metallic', code: 'LX5Q', hex: '#214b80', glow: 'rgba(33, 75, 128, 0.2)' },
     { name: 'Mauritius Blue', code: 'LZ5C', hex: '#1f365c', glow: 'rgba(31, 54, 92, 0.2)' },
     { name: 'Monsoon Grey', code: 'LX7R', hex: '#636971', glow: 'rgba(99, 105, 113, 0.18)' },

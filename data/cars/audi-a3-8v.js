@@ -1866,6 +1866,7 @@ registerAutoDuelVehicle({
     },    engines: [
       {
         id: '1.4-g-tron',
+        engineRef: 'vag-1.4-tgi-110',
         defaultGearboxId: 'mq250-6mt-sc',
         gearboxes: [
           { id: 'mq250-6mt-sc', isDefault: true },
@@ -1954,228 +1955,18 @@ registerAutoDuelVehicle({
         },
         specOverrides: {
           engineName: { en: '1.4L I4 TFSI g-tron (CNG)', de: '1.4L Reihenvierzylinder g-tron', ru: '1.4L R4 TFSI g-tron (CNG)' },
-          forcedInduction: '@turbo', injection: '@direct', timingDrive: '@belt',
-          gearbox: '@manual6', clutchDmf: '@singleClutch', towingBraked: '1,300 kg',
-          sprint0100: '10.8 s', topSpeed: '197 km/h', peakTorque: '200 Nm @ 1,500 rpm',
-          passingPunch: { en: 'Ultra-Cheap CNG Cruise', de: 'Extrem günstig auf Erdgas', ru: 'Сверхдешёвый ход на метане' },
-          realWorldFuel: '3.5 kg CNG / 5.2 L', tankRange: '14.4 kg + 50 L (~1,150 km)', euroNorm: 'Euro 6 (CNG/Petrol)', taxInsurance: '@tierVeryLow', serviceWear: '@tierMod'
+          gearbox: '@manual6',
+          clutchDmf: '@singleClutch',
+          towingBraked: '1,300 kg',
+          sprint0100: '10.8 s',
+          topSpeed: '197 km/h',
+          realWorldFuel: '3.5 kg CNG / 5.2 L',
+          tankRange: '14.4 kg + 50 L (~1,150 km)',
+          euroNorm: 'Euro 6 (CNG/Petrol)',
+          taxInsurance: '@tierVeryLow',
+          serviceWear: '@tierMod'
         },
         subStats: {
-          powertrainDurability: {
-            score: 7.6,
-            badges: {
-              en: ['Belt EA211 Much Tougher Than 8P', 'Watch Plastic Water Pump Housing'],
-              de: ['EA211-Zahnriemen deutlich robuster', 'Wasserpumpen-Gehäuse prüfen'],
-              ru: ['Ременной EA211 намного надёжнее', 'Проверить корпус помпы']
-            },
-            specBreakdown: {
-              engineName: { specs: [{ k: 'engineCode', v: 'CPWA (EA211) · 1,395 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium · Bi-Fuel CNG + Petrol (Belt)', de: 'Reihenvierzylinder Alu · Bivalent Erdgas + Benzin (Riemen)', ru: 'Рядный 4-цил. алюминий · Битопливный метан + бензин' } }], note: { en: 'Pennies-per-km commuting on CNG with full 50 L petrol backup; requires 4-year composite tank inspection and loses ~100 L boot depth.', de: 'Extrem günstige Kilometerkosten auf Erdgas plus voller 50-L-Benzintank; alle 4 Jahre Gastank-Prüfung nötig.', ru: 'Копеечная стоимость километра на метане плюс полный бензобак 50 л; раз в 4 года нужна поверка баллонов.' } },
-              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
-            },
-            dossier: {
-              en: {
-                headline: 'Modern MQB 1.4 TFSI g-tron— solves the 8P timing-chain/oil issues with crisp efficiency.',
-                strengths: [
-                  'Much higher reliability than 2007–2011 8P TFSI engines.',
-                  'Refined, quiet and frugal in everyday driving.',
-                  'Reaches 200,000–250,000 km when oil, cooling, and timing care stay strictly on schedule.'
-                ],
-                watchouts: [
-                  'Plastic water-pump / thermostat housing seepage.',
-                  'Follow annual 10,000–15,000 km synthetic oil intervals and inspect coolant hoses for age seepage.'
-                ],
-                beforeYouBuy: [
-                  'Inspect underbonnet for pink coolant crust around thermostat/pump.',
-                  'Check full service history (15,000 km oil changes best).',
-                  'Listen to a stone-cold start for steady idle and zero metallic timing-chain rattle.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–50,000 km / 4 yrs',
-                    action: 'Annual oil/filter service (15,000 km max) & cabin/air filters',
-                    cost: '€130–€200',
-                    ifIgnored: 'Sludge buildup and premature cam lobe wear',
-                    damageCost: '€800–€1,400'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '60,000–90,000 km / 5–7 yrs',
-                    action: 'Replace spark plugs, ignition coils & age-hardened coolant hoses',
-                    cost: '€220–€380',
-                    ifIgnored: 'Misfires damage catalytic converter; old hoses split',
-                    damageCost: '€900–€1,500'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '180,000–210,000 km / 6–8 yrs',
-                    action: 'Timing belt, water pump & thermostat housing replacement',
-                    cost: '€520–€820',
-                    ifIgnored: 'Aged rubber belt snaps and bends valves',
-                    damageCost: '€2,500–€4,000'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130,000–170,000 km / 8–10 yrs',
-                    action: 'Clutch kit / dry-DSG clutch pack & crankcase breather valve service',
-                    cost: '€650–€1,300',
-                    ifIgnored: 'Slipping clutch or vacuum leaks cause rough idle',
-                    damageCost: '€1,400–€2,200'
-                  },
-                  {
-                    tier: 'red',
-                    km: '170,000–210,000 km / 10–12 yrs',
-                    action: 'Exhaust flexi-pipe, catalytic converter & camshaft seal refresh',
-                    cost: '€450–€950',
-                    ifIgnored: 'Oil leaks onto exhaust and failed emissions test',
-                    damageCost: '€1,200–€1,900'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210,000–250,000 km / 12+ yrs',
-                    action: 'Overhaul front wishbone bushings, dampers & engine mounts',
-                    cost: '€750–€1,300',
-                    ifIgnored: 'Vague steering and tire wear',
-                    damageCost: '€1,300–€2,000'
-                  }
-                ]
-              },
-              de: {
-                headline: 'Moderner MQB 1.4 TFSI g-tron— löst die alten 8P-Schwächen mit hoher Effizienz.',
-                strengths: [
-                  'Deutlich zuverlässiger als die alten 8P-TFSI.',
-                  'Leise und sparsam im Alltag.',
-                  'Hält 200.000–250.000 km bei strikter Öl-, Kühlungs- und Steuerzeiten-Pflege.'
-                ],
-                watchouts: [
-                  'Undichtigkeiten am Kunststoff-Thermostatgehäuse.',
-                  'Jährliche Ölwechsel (10.000–15.000 km) einhalten und Kühlerschläuche auf Alterungsrisse prüfen.'
-                ],
-                beforeYouBuy: [
-                  'Kühlmittelreste am Thermostat-/Pumpengehäuse suchen.',
-                  'Regelmäßige Ölwechsel prüfen.',
-                  'Beim Kaltstart auf ruhigen Leerlauf ohne metallisches Steuerketten-Rasseln achten.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–50.000 km / 4 J.',
-                    action: 'Jährlicher Öl- & Filterservice (max. 15.000 km)',
-                    cost: '130–200 €',
-                    ifIgnored: 'Ölschlamm und erhöhter Nockenwellen-Verschleiß',
-                    damageCost: '800–1.400 €'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '60.000–90.000 km / 5–7 J.',
-                    action: 'Zündkerzen, Zündspulen & gealterte Kühlerschläuche ersetzen',
-                    cost: '220–380 €',
-                    ifIgnored: 'Zündaussetzer schädigen Katalysator; spröde Schläuche platzen',
-                    damageCost: '900–1.500 €'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '180.000–210.000 km / 6–8 J.',
-                    action: 'Zahnriemen-Wechsel inkl. Wasserpumpe & Thermostatgehäuse',
-                    cost: '520–820 €',
-                    ifIgnored: 'Alternder Zahnriemen reißt und verursacht Motorschaden',
-                    damageCost: '2.500–4.000 €'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130.000–170.000 km / 8–10 J.',
-                    action: 'Kupplungssatz / Trocken-DSG-Kupplung & Entlüftungsventil erneuern',
-                    cost: '650–1.300 €',
-                    ifIgnored: 'Rutschende Kupplung oder unrunder Leerlauf',
-                    damageCost: '1.400–2.200 €'
-                  },
-                  {
-                    tier: 'red',
-                    km: '170.000–210.000 km / 10–12 J.',
-                    action: 'Flexrohr, Katalysator & Nockenwellen-Dichtungen erneuern',
-                    cost: '450–950 €',
-                    ifIgnored: 'Ölverlust und nicht bestandene AU',
-                    damageCost: '1.200–1.900 €'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210.000–250.000 km / 12+ J.',
-                    action: 'Querlenkerbuchsen, Stoßdämpfer & Motorlager überholen',
-                    cost: '750–1.300 €',
-                    ifIgnored: 'Schwammiges Fahrverhalten & Reifenverschleiß',
-                    damageCost: '1.300–2.000 €'
-                  }
-                ]
-              },
-              ru: {
-                headline: 'Современный 1.4 TFSI g-tron на MQB— избавлен от детских болезней A3 8P.',
-                strengths: [
-                  'Заметно надёжнее старых TFSI на поколении 8P.',
-                  'Тихий, плавный и экономичный.',
-                  'Проходит 200 000–250 000 км при строгом контроле масла, охлаждения и ГРМ.'
-                ],
-                watchouts: [
-                  'Подтекания пластикового корпуса термостата/помпы.',
-                  'Соблюдайте замену масла раз в 10 000–15 000 км и проверяйте патрубки охлаждения на утечки.'
-                ],
-                beforeYouBuy: [
-                  'Осмотреть корпус помпы на розовый налёт антифриза.',
-                  'Убедиться в регулярной замене масла.',
-                  'Послушать запуск на холодную— холостой ход должен быть ровным без металлического звона цепи.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–50 000 км / 4 года',
-                    action: 'Ежегодная замена масла (раз в 10–15 тыс. км) и фильтров',
-                    cost: '€130–€200',
-                    ifIgnored: 'Нагар и ускоренный износ распредвалов',
-                    damageCost: '€800–€1 400'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '60 000–90 000 км / 5–7 лет',
-                    action: 'Замена свечей, катушек зажигания и стареющих патрубков охлаждения',
-                    cost: '€220–€380',
-                    ifIgnored: 'Пропуски сжигают катализатор; старые шланги лопаются',
-                    damageCost: '€900–€1 500'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '180 000–210 000 km / 6–8 лет',
-                    action: 'Замена ремня ГРМ, водяной помпы и корпуса термостата',
-                    cost: '€520–€820',
-                    ifIgnored: 'Обрыв ремня от возраста или пробега гнёт клапаны',
-                    damageCost: '€2 500–€4 000'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130 000–170 000 км / 8–10 лет',
-                    action: 'Замена сцепления / фрикционов сухой DSG и клапана ВКГ',
-                    cost: '€650–€1 300',
-                    ifIgnored: 'Пробуксовка сцепления и подсос воздуха',
-                    damageCost: '€1 400–€2 200'
-                  },
-                  {
-                    tier: 'red',
-                    km: '170 000–210 000 км / 10–12 лет',
-                    action: 'Замена гофры выхлопа, катализатора и сальников распредвала',
-                    cost: '€450–€950',
-                    ifIgnored: 'Течи масла и проблемы с выхлопом на техосмотре',
-                    damageCost: '€1 200–€1 900'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210 000–250 000 км / 12+ лет',
-                    action: 'Переборка сайлентблоков рычагов, амортизаторов и опор',
-                    cost: '€750–€1 300',
-                    ifIgnored: 'Разболтанная подвеска и износ шин',
-                    damageCost: '€1 300–€2 000'
-                  }
-                ]
-              }
-            }
-          },
           transmissionDriveline: {
             score: 7.6,
             badges: {
@@ -2267,14 +2058,6 @@ registerAutoDuelVehicle({
               ru: ['0–100 км/ч: 10.8 с • 197 км/ч', 'Бодрый отклик турбины']
             }
           },
-          midRangeTorquePassing: {
-            score: 7.0,
-            badges: {
-              en: ['200 Nm Turbo Torque', 'Clean Mid-Range Passing'],
-              de: ['200 Nm Drehmoment', 'Sauberer Durchzug'],
-              ru: ['200 Н·м крутящего момента', 'Уверенные обгоны']
-            }
-          },
           handlingAgility: {
             score: 8.1,
             badges: {
@@ -2336,6 +2119,7 @@ registerAutoDuelVehicle({
       },
       {
         id: '1.0-tfsi',
+        engineRef: 'vag-1.0-tsi-115',
         defaultGearboxId: 'mq250-6mt-sc',
         gearboxes: [
           { id: 'mq250-6mt-sc', isDefault: true },
@@ -2420,228 +2204,18 @@ registerAutoDuelVehicle({
         },
         specOverrides: {
           engineName: { en: '1.0L I3 TFSI Turbo (Belt)', de: '1.0L Dreizylinder TFSI (Riemen)', ru: '1.0L R3 TFSI Турбо (Ремень)' },
-          forcedInduction: '@turbo', injection: '@direct', timingDrive: '@belt',
-          gearbox: '@manual6', clutchDmf: '@singleClutch', towingBraked: '1,300 kg',
-          sprint0100: '9.9 s', topSpeed: '206 km/h', peakTorque: '200 Nm @ 2,000 rpm',
-          passingPunch: { en: 'Lively Light-Nose Turbo', de: 'Spritziger leichter 3-Zyl.', ru: 'Живой лёгкий 3-цил. турбо' },
-          realWorldFuel: '5.6 L/100km', tankRange: '50 L (~890 km)', euroNorm: 'Euro 6 (Petrol)', taxInsurance: '@tierVeryLow', serviceWear: '@tierLow'
+          gearbox: '@manual6',
+          clutchDmf: '@singleClutch',
+          towingBraked: '1,300 kg',
+          sprint0100: '9.9 s',
+          topSpeed: '206 km/h',
+          realWorldFuel: '5.6 L/100km',
+          tankRange: '50 L (~890 km)',
+          euroNorm: 'Euro 6 (Petrol)',
+          taxInsurance: '@tierVeryLow',
+          serviceWear: '@tierLow'
         },
         subStats: {
-          powertrainDurability: {
-            score: 7.9,
-            badges: {
-              en: ['Belt EA211 Much Tougher Than 8P', 'Watch Plastic Water Pump Housing'],
-              de: ['EA211-Zahnriemen deutlich robuster', 'Wasserpumpen-Gehäuse prüfen'],
-              ru: ['Ременной EA211 намного надёжнее', 'Проверить корпус помпы']
-            },
-            specBreakdown: {
-              engineName: { specs: [{ k: 'engineCode', v: 'CHZD (EA211) · 999 cc' }, { k: 'architecture', v: { en: 'Inline-3 Aluminium · Turbo + Long-Life Timing Belt', de: 'Dreizylinder Alu · Turbo + Longlife-Zahnriemen', ru: 'Рядный 3-цил. алюминий · Турбо + ремень ГРМ' } }], note: { en: 'Surprisingly refined and brisk 3-cylinder EA211 with zero simplex-chain issues and low road tax; stick to 6-MT for peak simplicity.', de: 'Überraschend kultivierter, flotter EA211-Dreizylinder ohne Kettenprobleme; mit 6-Gang sehr sorgenfrei.', ru: 'Удивительно тихий и бодрый 3-цилиндровый EA211 без проблем с цепью; с 6-МКПП максимально надёжен.' } },
-              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
-            },
-            dossier: {
-              en: {
-                headline: 'Modern MQB 1.0 TFSI— solves the 8P timing-chain/oil issues with crisp efficiency.',
-                strengths: [
-                  'Much higher reliability than 2007–2011 8P TFSI engines.',
-                  'Refined, quiet and frugal in everyday driving.',
-                  'Capable of 240,000–280,000+ km with timely 10,000–15,000 km oil changes.'
-                ],
-                watchouts: [
-                  'Plastic water-pump / thermostat housing seepage.',
-                  'Follow annual 10,000–15,000 km synthetic oil intervals and inspect coolant hoses for age seepage.'
-                ],
-                beforeYouBuy: [
-                  'Inspect underbonnet for pink coolant crust around thermostat/pump.',
-                  'Check full service history (15,000 km oil changes best).',
-                  'Listen to a stone-cold start for steady idle and zero metallic timing-chain rattle.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–50,000 km / 4 yrs',
-                    action: 'Annual oil/filter service (15,000 km max) & cabin/air filters',
-                    cost: '€130–€200',
-                    ifIgnored: 'Sludge buildup and premature cam lobe wear',
-                    damageCost: '€800–€1,400'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '60,000–90,000 km / 5–7 yrs',
-                    action: 'Replace spark plugs, ignition coils & age-hardened coolant hoses',
-                    cost: '€220–€380',
-                    ifIgnored: 'Misfires damage catalytic converter; old hoses split',
-                    damageCost: '€900–€1,500'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '180,000–210,000 km / 6–8 yrs',
-                    action: 'Timing belt, water pump & thermostat housing replacement',
-                    cost: '€520–€820',
-                    ifIgnored: 'Aged rubber belt snaps and bends valves',
-                    damageCost: '€2,500–€4,000'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130,000–170,000 km / 8–10 yrs',
-                    action: 'Clutch kit / dry-DSG clutch pack & crankcase breather valve service',
-                    cost: '€650–€1,300',
-                    ifIgnored: 'Slipping clutch or vacuum leaks cause rough idle',
-                    damageCost: '€1,400–€2,200'
-                  },
-                  {
-                    tier: 'red',
-                    km: '170,000–210,000 km / 10–12 yrs',
-                    action: 'Exhaust flexi-pipe, catalytic converter & camshaft seal refresh',
-                    cost: '€450–€950',
-                    ifIgnored: 'Oil leaks onto exhaust and failed emissions test',
-                    damageCost: '€1,200–€1,900'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210,000–250,000 km / 12+ yrs',
-                    action: 'Overhaul front wishbone bushings, dampers & engine mounts',
-                    cost: '€750–€1,300',
-                    ifIgnored: 'Vague steering and tire wear',
-                    damageCost: '€1,300–€2,000'
-                  }
-                ]
-              },
-              de: {
-                headline: 'Moderner MQB 1.0 TFSI— löst die alten 8P-Schwächen mit hoher Effizienz.',
-                strengths: [
-                  'Deutlich zuverlässiger als die alten 8P-TFSI.',
-                  'Leise und sparsam im Alltag.',
-                  'Erreicht bei Ölwechseln alle 10.000–15.000 km rund 240.000–280.000+ km.'
-                ],
-                watchouts: [
-                  'Undichtigkeiten am Kunststoff-Thermostatgehäuse.',
-                  'Jährliche Ölwechsel (10.000–15.000 km) einhalten und Kühlerschläuche auf Alterungsrisse prüfen.'
-                ],
-                beforeYouBuy: [
-                  'Kühlmittelreste am Thermostat-/Pumpengehäuse suchen.',
-                  'Regelmäßige Ölwechsel prüfen.',
-                  'Beim Kaltstart auf ruhigen Leerlauf ohne metallisches Steuerketten-Rasseln achten.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–50.000 km / 4 J.',
-                    action: 'Jährlicher Öl- & Filterservice (max. 15.000 km)',
-                    cost: '130–200 €',
-                    ifIgnored: 'Ölschlamm und erhöhter Nockenwellen-Verschleiß',
-                    damageCost: '800–1.400 €'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '60.000–90.000 km / 5–7 J.',
-                    action: 'Zündkerzen, Zündspulen & gealterte Kühlerschläuche ersetzen',
-                    cost: '220–380 €',
-                    ifIgnored: 'Zündaussetzer schädigen Katalysator; spröde Schläuche platzen',
-                    damageCost: '900–1.500 €'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '180.000–210.000 km / 6–8 J.',
-                    action: 'Zahnriemen-Wechsel inkl. Wasserpumpe & Thermostatgehäuse',
-                    cost: '520–820 €',
-                    ifIgnored: 'Alternder Zahnriemen reißt und verursacht Motorschaden',
-                    damageCost: '2.500–4.000 €'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130.000–170.000 km / 8–10 J.',
-                    action: 'Kupplungssatz / Trocken-DSG-Kupplung & Entlüftungsventil erneuern',
-                    cost: '650–1.300 €',
-                    ifIgnored: 'Rutschende Kupplung oder unrunder Leerlauf',
-                    damageCost: '1.400–2.200 €'
-                  },
-                  {
-                    tier: 'red',
-                    km: '170.000–210.000 km / 10–12 J.',
-                    action: 'Flexrohr, Katalysator & Nockenwellen-Dichtungen erneuern',
-                    cost: '450–950 €',
-                    ifIgnored: 'Ölverlust und nicht bestandene AU',
-                    damageCost: '1.200–1.900 €'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210.000–250.000 km / 12+ J.',
-                    action: 'Querlenkerbuchsen, Stoßdämpfer & Motorlager überholen',
-                    cost: '750–1.300 €',
-                    ifIgnored: 'Schwammiges Fahrverhalten & Reifenverschleiß',
-                    damageCost: '1.300–2.000 €'
-                  }
-                ]
-              },
-              ru: {
-                headline: 'Современный 1.0 TFSI на MQB— избавлен от детских болезней A3 8P.',
-                strengths: [
-                  'Заметно надёжнее старых TFSI на поколении 8P.',
-                  'Тихий, плавный и экономичный.',
-                  'Способен пройти 240 000–280 000+ км при замене масла каждые 10 000–15 000 км.'
-                ],
-                watchouts: [
-                  'Подтекания пластикового корпуса термостата/помпы.',
-                  'Соблюдайте замену масла раз в 10 000–15 000 км и проверяйте патрубки охлаждения на утечки.'
-                ],
-                beforeYouBuy: [
-                  'Осмотреть корпус помпы на розовый налёт антифриза.',
-                  'Убедиться в регулярной замене масла.',
-                  'Послушать запуск на холодную— холостой ход должен быть ровным без металлического звона цепи.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–50 000 км / 4 года',
-                    action: 'Ежегодная замена масла (раз в 10–15 тыс. км) и фильтров',
-                    cost: '€130–€200',
-                    ifIgnored: 'Нагар и ускоренный износ распредвалов',
-                    damageCost: '€800–€1 400'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '60 000–90 000 км / 5–7 лет',
-                    action: 'Замена свечей, катушек зажигания и стареющих патрубков охлаждения',
-                    cost: '€220–€380',
-                    ifIgnored: 'Пропуски сжигают катализатор; старые шланги лопаются',
-                    damageCost: '€900–€1 500'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '180 000–210 000 km / 6–8 лет',
-                    action: 'Замена ремня ГРМ, водяной помпы и корпуса термостата',
-                    cost: '€520–€820',
-                    ifIgnored: 'Обрыв ремня от возраста или пробега гнёт клапаны',
-                    damageCost: '€2 500–€4 000'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130 000–170 000 км / 8–10 лет',
-                    action: 'Замена сцепления / фрикционов сухой DSG и клапана ВКГ',
-                    cost: '€650–€1 300',
-                    ifIgnored: 'Пробуксовка сцепления и подсос воздуха',
-                    damageCost: '€1 400–€2 200'
-                  },
-                  {
-                    tier: 'red',
-                    km: '170 000–210 000 км / 10–12 лет',
-                    action: 'Замена гофры выхлопа, катализатора и сальников распредвала',
-                    cost: '€450–€950',
-                    ifIgnored: 'Течи масла и проблемы с выхлопом на техосмотре',
-                    damageCost: '€1 200–€1 900'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210 000–250 000 км / 12+ лет',
-                    action: 'Переборка сайлентблоков рычагов, амортизаторов и опор',
-                    cost: '€750–€1 300',
-                    ifIgnored: 'Разболтанная подвеска и износ шин',
-                    damageCost: '€1 300–€2 000'
-                  }
-                ]
-              }
-            }
-          },
           transmissionDriveline: {
             score: 7.6,
             badges: {
@@ -2733,14 +2307,6 @@ registerAutoDuelVehicle({
               ru: ['0–100 км/ч: 9.9 с • 206 км/ч', 'Бодрый отклик турбины']
             }
           },
-          midRangeTorquePassing: {
-            score: 7.0,
-            badges: {
-              en: ['200 Nm Turbo Torque', 'Clean Mid-Range Passing'],
-              de: ['200 Nm Drehmoment', 'Sauberer Durchzug'],
-              ru: ['200 Н·м крутящего момента', 'Уверенные обгоны']
-            }
-          },
           handlingAgility: {
             score: 8.1,
             badges: {
@@ -2803,6 +2369,7 @@ registerAutoDuelVehicle({
       },
       {
         id: '1.2-tfsi-105',
+        engineRef: 'vag-1.2-tsi-105',
         defaultGearboxId: 'mq250-6mt-sc',
         gearboxes: [
           { id: 'mq250-6mt-sc', isDefault: true },
@@ -2895,228 +2462,18 @@ registerAutoDuelVehicle({
         },
         specOverrides: {
           engineName: { en: '1.2L I4 TFSI 105 (Belt)', de: '1.2L Reihenvierzylinder 105 PS', ru: '1.2L R4 TFSI 105 (Ремень)' },
-          forcedInduction: '@turbo', injection: '@direct', timingDrive: '@belt',
-          gearbox: '@manual6', clutchDmf: '@singleClutch', towingBraked: '1,300 kg',
-          sprint0100: '10.3 s', topSpeed: '193 km/h', peakTorque: '175 Nm @ 1,400 rpm',
-          passingPunch: { en: 'Smooth City Turbo Pull', de: 'Ruhiger Stadt-Turbo', ru: 'Плавная городская тяга' },
-          realWorldFuel: '5.9 L/100km', tankRange: '50 L (~845 km)', euroNorm: 'Euro 5/6 (Petrol)', taxInsurance: '@tierLow', serviceWear: '@tierLow'
+          gearbox: '@manual6',
+          clutchDmf: '@singleClutch',
+          towingBraked: '1,300 kg',
+          sprint0100: '10.3 s',
+          topSpeed: '193 km/h',
+          realWorldFuel: '5.9 L/100km',
+          tankRange: '50 L (~845 km)',
+          euroNorm: 'Euro 5/6 (Petrol)',
+          taxInsurance: '@tierLow',
+          serviceWear: '@tierLow'
         },
         subStats: {
-          powertrainDurability: {
-            score: 7.9,
-            badges: {
-              en: ['Belt EA211 Much Tougher Than 8P', 'Watch Plastic Water Pump Housing'],
-              de: ['EA211-Zahnriemen deutlich robuster', 'Wasserpumpen-Gehäuse prüfen'],
-              ru: ['Ременной EA211 намного надёжнее', 'Проверить корпус помпы']
-            },
-            specBreakdown: {
-              engineName: { specs: [{ k: 'engineCode', v: 'CJZA (EA211) · 1,197 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium 16V · Belt-Driven (Fixed 8P Chain!)', de: 'Reihenvierzylinder Alu 16V · Zahnriemen (löst 8P-Kette!)', ru: 'Рядный 4-цил. 16V · Ремень ГРМ (исправил цепь 8P!)' } }], note: { en: 'Completely redesigned belt-driven EA211 — solves the old 8P simplex-chain problem completely while staying whisper-quiet.', de: 'Komplett neu konstruierter EA211 mit Zahnriemen — behebt das alte 8P-Kettenproblem endgültig.', ru: 'Полностью новый ременной EA211 — окончательно решил проблему цепи ГРМ старого 8P.' } },
-              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
-            },
-            dossier: {
-              en: {
-                headline: 'Modern MQB 1.2 TFSI (105)— solves the 8P timing-chain/oil issues with crisp efficiency.',
-                strengths: [
-                  'Much higher reliability than 2007–2011 8P TFSI engines.',
-                  'Refined, quiet and frugal in everyday driving.',
-                  'Capable of 240,000–280,000+ km with timely 10,000–15,000 km oil changes.'
-                ],
-                watchouts: [
-                  'Plastic water-pump / thermostat housing seepage.',
-                  'Follow annual 10,000–15,000 km synthetic oil intervals and inspect coolant hoses for age seepage.'
-                ],
-                beforeYouBuy: [
-                  'Inspect underbonnet for pink coolant crust around thermostat/pump.',
-                  'Check full service history (15,000 km oil changes best).',
-                  'Listen to a stone-cold start for steady idle and zero metallic timing-chain rattle.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–50,000 km / 4 yrs',
-                    action: 'Annual oil/filter service (15,000 km max) & cabin/air filters',
-                    cost: '€130–€200',
-                    ifIgnored: 'Sludge buildup and premature cam lobe wear',
-                    damageCost: '€800–€1,400'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '60,000–90,000 km / 5–7 yrs',
-                    action: 'Replace spark plugs, ignition coils & age-hardened coolant hoses',
-                    cost: '€220–€380',
-                    ifIgnored: 'Misfires damage catalytic converter; old hoses split',
-                    damageCost: '€900–€1,500'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '180,000–210,000 km / 6–8 yrs',
-                    action: 'Timing belt, water pump & thermostat housing replacement',
-                    cost: '€520–€820',
-                    ifIgnored: 'Aged rubber belt snaps and bends valves',
-                    damageCost: '€2,500–€4,000'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130,000–170,000 km / 8–10 yrs',
-                    action: 'Clutch kit / dry-DSG clutch pack & crankcase breather valve service',
-                    cost: '€650–€1,300',
-                    ifIgnored: 'Slipping clutch or vacuum leaks cause rough idle',
-                    damageCost: '€1,400–€2,200'
-                  },
-                  {
-                    tier: 'red',
-                    km: '170,000–210,000 km / 10–12 yrs',
-                    action: 'Exhaust flexi-pipe, catalytic converter & camshaft seal refresh',
-                    cost: '€450–€950',
-                    ifIgnored: 'Oil leaks onto exhaust and failed emissions test',
-                    damageCost: '€1,200–€1,900'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210,000–250,000 km / 12+ yrs',
-                    action: 'Overhaul front wishbone bushings, dampers & engine mounts',
-                    cost: '€750–€1,300',
-                    ifIgnored: 'Vague steering and tire wear',
-                    damageCost: '€1,300–€2,000'
-                  }
-                ]
-              },
-              de: {
-                headline: 'Moderner MQB 1.2 TFSI (105)— löst die alten 8P-Schwächen mit hoher Effizienz.',
-                strengths: [
-                  'Deutlich zuverlässiger als die alten 8P-TFSI.',
-                  'Leise und sparsam im Alltag.',
-                  'Erreicht bei Ölwechseln alle 10.000–15.000 km rund 240.000–280.000+ km.'
-                ],
-                watchouts: [
-                  'Undichtigkeiten am Kunststoff-Thermostatgehäuse.',
-                  'Jährliche Ölwechsel (10.000–15.000 km) einhalten und Kühlerschläuche auf Alterungsrisse prüfen.'
-                ],
-                beforeYouBuy: [
-                  'Kühlmittelreste am Thermostat-/Pumpengehäuse suchen.',
-                  'Regelmäßige Ölwechsel prüfen.',
-                  'Beim Kaltstart auf ruhigen Leerlauf ohne metallisches Steuerketten-Rasseln achten.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–50.000 km / 4 J.',
-                    action: 'Jährlicher Öl- & Filterservice (max. 15.000 km)',
-                    cost: '130–200 €',
-                    ifIgnored: 'Ölschlamm und erhöhter Nockenwellen-Verschleiß',
-                    damageCost: '800–1.400 €'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '60.000–90.000 km / 5–7 J.',
-                    action: 'Zündkerzen, Zündspulen & gealterte Kühlerschläuche ersetzen',
-                    cost: '220–380 €',
-                    ifIgnored: 'Zündaussetzer schädigen Katalysator; spröde Schläuche platzen',
-                    damageCost: '900–1.500 €'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '180.000–210.000 km / 6–8 J.',
-                    action: 'Zahnriemen-Wechsel inkl. Wasserpumpe & Thermostatgehäuse',
-                    cost: '520–820 €',
-                    ifIgnored: 'Alternder Zahnriemen reißt und verursacht Motorschaden',
-                    damageCost: '2.500–4.000 €'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130.000–170.000 km / 8–10 J.',
-                    action: 'Kupplungssatz / Trocken-DSG-Kupplung & Entlüftungsventil erneuern',
-                    cost: '650–1.300 €',
-                    ifIgnored: 'Rutschende Kupplung oder unrunder Leerlauf',
-                    damageCost: '1.400–2.200 €'
-                  },
-                  {
-                    tier: 'red',
-                    km: '170.000–210.000 km / 10–12 J.',
-                    action: 'Flexrohr, Katalysator & Nockenwellen-Dichtungen erneuern',
-                    cost: '450–950 €',
-                    ifIgnored: 'Ölverlust und nicht bestandene AU',
-                    damageCost: '1.200–1.900 €'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210.000–250.000 km / 12+ J.',
-                    action: 'Querlenkerbuchsen, Stoßdämpfer & Motorlager überholen',
-                    cost: '750–1.300 €',
-                    ifIgnored: 'Schwammiges Fahrverhalten & Reifenverschleiß',
-                    damageCost: '1.300–2.000 €'
-                  }
-                ]
-              },
-              ru: {
-                headline: 'Современный 1.2 TFSI (105) на MQB— избавлен от детских болезней A3 8P.',
-                strengths: [
-                  'Заметно надёжнее старых TFSI на поколении 8P.',
-                  'Тихий, плавный и экономичный.',
-                  'Способен пройти 240 000–280 000+ км при замене масла каждые 10 000–15 000 км.'
-                ],
-                watchouts: [
-                  'Подтекания пластикового корпуса термостата/помпы.',
-                  'Соблюдайте замену масла раз в 10 000–15 000 км и проверяйте патрубки охлаждения на утечки.'
-                ],
-                beforeYouBuy: [
-                  'Осмотреть корпус помпы на розовый налёт антифриза.',
-                  'Убедиться в регулярной замене масла.',
-                  'Послушать запуск на холодную— холостой ход должен быть ровным без металлического звона цепи.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–50 000 км / 4 года',
-                    action: 'Ежегодная замена масла (раз в 10–15 тыс. км) и фильтров',
-                    cost: '€130–€200',
-                    ifIgnored: 'Нагар и ускоренный износ распредвалов',
-                    damageCost: '€800–€1 400'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '60 000–90 000 км / 5–7 лет',
-                    action: 'Замена свечей, катушек зажигания и стареющих патрубков охлаждения',
-                    cost: '€220–€380',
-                    ifIgnored: 'Пропуски сжигают катализатор; старые шланги лопаются',
-                    damageCost: '€900–€1 500'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '180 000–210 000 km / 6–8 лет',
-                    action: 'Замена ремня ГРМ, водяной помпы и корпуса термостата',
-                    cost: '€520–€820',
-                    ifIgnored: 'Обрыв ремня от возраста или пробега гнёт клапаны',
-                    damageCost: '€2 500–€4 000'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130 000–170 000 км / 8–10 лет',
-                    action: 'Замена сцепления / фрикционов сухой DSG и клапана ВКГ',
-                    cost: '€650–€1 300',
-                    ifIgnored: 'Пробуксовка сцепления и подсос воздуха',
-                    damageCost: '€1 400–€2 200'
-                  },
-                  {
-                    tier: 'red',
-                    km: '170 000–210 000 км / 10–12 лет',
-                    action: 'Замена гофры выхлопа, катализатора и сальников распредвала',
-                    cost: '€450–€950',
-                    ifIgnored: 'Течи масла и проблемы с выхлопом на техосмотре',
-                    damageCost: '€1 200–€1 900'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210 000–250 000 км / 12+ лет',
-                    action: 'Переборка сайлентблоков рычагов, амортизаторов и опор',
-                    cost: '€750–€1 300',
-                    ifIgnored: 'Разболтанная подвеска и износ шин',
-                    damageCost: '€1 300–€2 000'
-                  }
-                ]
-              }
-            }
-          },
           transmissionDriveline: {
             score: 7.6,
             badges: {
@@ -3208,14 +2565,6 @@ registerAutoDuelVehicle({
               ru: ['0–100 км/ч: 10.3 с • 193 км/ч', 'Бодрый отклик турбины']
             }
           },
-          midRangeTorquePassing: {
-            score: 6.7,
-            badges: {
-              en: ['175 Nm Turbo Torque', 'Clean Mid-Range Passing'],
-              de: ['175 Nm Drehmoment', 'Sauberer Durchzug'],
-              ru: ['175 Н·м крутящего момента', 'Уверенные обгоны']
-            }
-          },
           handlingAgility: {
             score: 8.1,
             badges: {
@@ -3278,6 +2627,7 @@ registerAutoDuelVehicle({
       },
       {
         id: '1.2-tfsi-110',
+        engineRef: 'vag-1.2-tsi-110',
         defaultGearboxId: 'mq250-6mt-sc',
         gearboxes: [
           { id: 'mq250-6mt-sc', isDefault: true },
@@ -3370,228 +2720,18 @@ registerAutoDuelVehicle({
         },
         specOverrides: {
           engineName: { en: '1.2L I4 TFSI 110 (Belt)', de: '1.2L Reihenvierzylinder 110 PS', ru: '1.2L R4 TFSI 110 (Ремень)' },
-          forcedInduction: '@turbo', injection: '@direct', timingDrive: '@belt',
-          gearbox: '@manual6', clutchDmf: '@singleClutch', towingBraked: '1,300 kg',
-          sprint0100: '9.9 s', topSpeed: '198 km/h', peakTorque: '175 Nm @ 1,400 rpm',
-          passingPunch: { en: 'Crisp Everyday 4-Cyl', de: 'Ruhiger Alltags-4-Zylinder', ru: 'Мягкая 4-цилиндровая тяга' },
-          realWorldFuel: '5.8 L/100km', tankRange: '50 L (~860 km)', euroNorm: 'Euro 6 (Petrol)', taxInsurance: '@tierLow', serviceWear: '@tierLow'
+          gearbox: '@manual6',
+          clutchDmf: '@singleClutch',
+          towingBraked: '1,300 kg',
+          sprint0100: '9.9 s',
+          topSpeed: '198 km/h',
+          realWorldFuel: '5.8 L/100km',
+          tankRange: '50 L (~860 km)',
+          euroNorm: 'Euro 6 (Petrol)',
+          taxInsurance: '@tierLow',
+          serviceWear: '@tierLow'
         },
         subStats: {
-          powertrainDurability: {
-            score: 7.9,
-            badges: {
-              en: ['Belt EA211 Much Tougher Than 8P', 'Watch Plastic Water Pump Housing'],
-              de: ['EA211-Zahnriemen deutlich robuster', 'Wasserpumpen-Gehäuse prüfen'],
-              ru: ['Ременной EA211 намного надёжнее', 'Проверить корпус помпы']
-            },
-            specBreakdown: {
-              engineName: { specs: [{ k: 'engineCode', v: 'CYVB (EA211) · 1,197 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium 16V · Euro 6 Belt-Driven Turbo', de: 'Reihenvierzylinder Alu 16V · Euro-6-Zahnriemen-Turbo', ru: 'Рядный 4-цил. 16V · Euro 6 с ремнём ГРМ' } }], note: { en: 'Updated Euro 6 version of the reliable 1.2 EA211; silky 4-cylinder refinement and low running costs for urban and commuter driving.', de: 'Überarbeiteter Euro-6-EA211 mit feiner Vierzylinder-Laufruhe und sehr günstigen Unterhaltskosten.', ru: 'Обновлённый Euro 6 мотор 1.2 EA211 — тихий, надёжный и очень экономичный.' } },
-              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
-            },
-            dossier: {
-              en: {
-                headline: 'Modern MQB 1.2 TFSI (110)— solves the 8P timing-chain/oil issues with crisp efficiency.',
-                strengths: [
-                  'Much higher reliability than 2007–2011 8P TFSI engines.',
-                  'Refined, quiet and frugal in everyday driving.',
-                  'Capable of 240,000–280,000+ km with timely 10,000–15,000 km oil changes.'
-                ],
-                watchouts: [
-                  'Plastic water-pump / thermostat housing seepage.',
-                  'Follow annual 10,000–15,000 km synthetic oil intervals and inspect coolant hoses for age seepage.'
-                ],
-                beforeYouBuy: [
-                  'Inspect underbonnet for pink coolant crust around thermostat/pump.',
-                  'Check full service history (15,000 km oil changes best).',
-                  'Listen to a stone-cold start for steady idle and zero metallic timing-chain rattle.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–50,000 km / 4 yrs',
-                    action: 'Annual oil/filter service (15,000 km max) & cabin/air filters',
-                    cost: '€130–€200',
-                    ifIgnored: 'Sludge buildup and premature cam lobe wear',
-                    damageCost: '€800–€1,400'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '60,000–90,000 km / 5–7 yrs',
-                    action: 'Replace spark plugs, ignition coils & age-hardened coolant hoses',
-                    cost: '€220–€380',
-                    ifIgnored: 'Misfires damage catalytic converter; old hoses split',
-                    damageCost: '€900–€1,500'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '180,000–210,000 km / 6–8 yrs',
-                    action: 'Timing belt, water pump & thermostat housing replacement',
-                    cost: '€520–€820',
-                    ifIgnored: 'Aged rubber belt snaps and bends valves',
-                    damageCost: '€2,500–€4,000'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130,000–170,000 km / 8–10 yrs',
-                    action: 'Clutch kit / dry-DSG clutch pack & crankcase breather valve service',
-                    cost: '€650–€1,300',
-                    ifIgnored: 'Slipping clutch or vacuum leaks cause rough idle',
-                    damageCost: '€1,400–€2,200'
-                  },
-                  {
-                    tier: 'red',
-                    km: '170,000–210,000 km / 10–12 yrs',
-                    action: 'Exhaust flexi-pipe, catalytic converter & camshaft seal refresh',
-                    cost: '€450–€950',
-                    ifIgnored: 'Oil leaks onto exhaust and failed emissions test',
-                    damageCost: '€1,200–€1,900'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210,000–250,000 km / 12+ yrs',
-                    action: 'Overhaul front wishbone bushings, dampers & engine mounts',
-                    cost: '€750–€1,300',
-                    ifIgnored: 'Vague steering and tire wear',
-                    damageCost: '€1,300–€2,000'
-                  }
-                ]
-              },
-              de: {
-                headline: 'Moderner MQB 1.2 TFSI (110)— löst die alten 8P-Schwächen mit hoher Effizienz.',
-                strengths: [
-                  'Deutlich zuverlässiger als die alten 8P-TFSI.',
-                  'Leise und sparsam im Alltag.',
-                  'Erreicht bei Ölwechseln alle 10.000–15.000 km rund 240.000–280.000+ km.'
-                ],
-                watchouts: [
-                  'Undichtigkeiten am Kunststoff-Thermostatgehäuse.',
-                  'Jährliche Ölwechsel (10.000–15.000 km) einhalten und Kühlerschläuche auf Alterungsrisse prüfen.'
-                ],
-                beforeYouBuy: [
-                  'Kühlmittelreste am Thermostat-/Pumpengehäuse suchen.',
-                  'Regelmäßige Ölwechsel prüfen.',
-                  'Beim Kaltstart auf ruhigen Leerlauf ohne metallisches Steuerketten-Rasseln achten.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–50.000 km / 4 J.',
-                    action: 'Jährlicher Öl- & Filterservice (max. 15.000 km)',
-                    cost: '130–200 €',
-                    ifIgnored: 'Ölschlamm und erhöhter Nockenwellen-Verschleiß',
-                    damageCost: '800–1.400 €'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '60.000–90.000 km / 5–7 J.',
-                    action: 'Zündkerzen, Zündspulen & gealterte Kühlerschläuche ersetzen',
-                    cost: '220–380 €',
-                    ifIgnored: 'Zündaussetzer schädigen Katalysator; spröde Schläuche platzen',
-                    damageCost: '900–1.500 €'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '180.000–210.000 km / 6–8 J.',
-                    action: 'Zahnriemen-Wechsel inkl. Wasserpumpe & Thermostatgehäuse',
-                    cost: '520–820 €',
-                    ifIgnored: 'Alternder Zahnriemen reißt und verursacht Motorschaden',
-                    damageCost: '2.500–4.000 €'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130.000–170.000 km / 8–10 J.',
-                    action: 'Kupplungssatz / Trocken-DSG-Kupplung & Entlüftungsventil erneuern',
-                    cost: '650–1.300 €',
-                    ifIgnored: 'Rutschende Kupplung oder unrunder Leerlauf',
-                    damageCost: '1.400–2.200 €'
-                  },
-                  {
-                    tier: 'red',
-                    km: '170.000–210.000 km / 10–12 J.',
-                    action: 'Flexrohr, Katalysator & Nockenwellen-Dichtungen erneuern',
-                    cost: '450–950 €',
-                    ifIgnored: 'Ölverlust und nicht bestandene AU',
-                    damageCost: '1.200–1.900 €'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210.000–250.000 km / 12+ J.',
-                    action: 'Querlenkerbuchsen, Stoßdämpfer & Motorlager überholen',
-                    cost: '750–1.300 €',
-                    ifIgnored: 'Schwammiges Fahrverhalten & Reifenverschleiß',
-                    damageCost: '1.300–2.000 €'
-                  }
-                ]
-              },
-              ru: {
-                headline: 'Современный 1.2 TFSI (110) на MQB— избавлен от детских болезней A3 8P.',
-                strengths: [
-                  'Заметно надёжнее старых TFSI на поколении 8P.',
-                  'Тихий, плавный и экономичный.',
-                  'Способен пройти 240 000–280 000+ км при замене масла каждые 10 000–15 000 км.'
-                ],
-                watchouts: [
-                  'Подтекания пластикового корпуса термостата/помпы.',
-                  'Соблюдайте замену масла раз в 10 000–15 000 км и проверяйте патрубки охлаждения на утечки.'
-                ],
-                beforeYouBuy: [
-                  'Осмотреть корпус помпы на розовый налёт антифриза.',
-                  'Убедиться в регулярной замене масла.',
-                  'Послушать запуск на холодную— холостой ход должен быть ровным без металлического звона цепи.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–50 000 км / 4 года',
-                    action: 'Ежегодная замена масла (раз в 10–15 тыс. км) и фильтров',
-                    cost: '€130–€200',
-                    ifIgnored: 'Нагар и ускоренный износ распредвалов',
-                    damageCost: '€800–€1 400'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '60 000–90 000 км / 5–7 лет',
-                    action: 'Замена свечей, катушек зажигания и стареющих патрубков охлаждения',
-                    cost: '€220–€380',
-                    ifIgnored: 'Пропуски сжигают катализатор; старые шланги лопаются',
-                    damageCost: '€900–€1 500'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '180 000–210 000 km / 6–8 лет',
-                    action: 'Замена ремня ГРМ, водяной помпы и корпуса термостата',
-                    cost: '€520–€820',
-                    ifIgnored: 'Обрыв ремня от возраста или пробега гнёт клапаны',
-                    damageCost: '€2 500–€4 000'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130 000–170 000 км / 8–10 лет',
-                    action: 'Замена сцепления / фрикционов сухой DSG и клапана ВКГ',
-                    cost: '€650–€1 300',
-                    ifIgnored: 'Пробуксовка сцепления и подсос воздуха',
-                    damageCost: '€1 400–€2 200'
-                  },
-                  {
-                    tier: 'red',
-                    km: '170 000–210 000 км / 10–12 лет',
-                    action: 'Замена гофры выхлопа, катализатора и сальников распредвала',
-                    cost: '€450–€950',
-                    ifIgnored: 'Течи масла и проблемы с выхлопом на техосмотре',
-                    damageCost: '€1 200–€1 900'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210 000–250 000 км / 12+ лет',
-                    action: 'Переборка сайлентблоков рычагов, амортизаторов и опор',
-                    cost: '€750–€1 300',
-                    ifIgnored: 'Разболтанная подвеска и износ шин',
-                    damageCost: '€1 300–€2 000'
-                  }
-                ]
-              }
-            }
-          },
           transmissionDriveline: {
             score: 7.6,
             badges: {
@@ -3683,14 +2823,6 @@ registerAutoDuelVehicle({
               ru: ['0–100 км/ч: 9.9 с • 198 км/ч', 'Бодрый отклик турбины']
             }
           },
-          midRangeTorquePassing: {
-            score: 6.7,
-            badges: {
-              en: ['175 Nm Turbo Torque', 'Clean Mid-Range Passing'],
-              de: ['175 Nm Drehmoment', 'Sauberer Durchzug'],
-              ru: ['175 Н·м крутящего момента', 'Уверенные обгоны']
-            }
-          },
           handlingAgility: {
             score: 8.1,
             badges: {
@@ -3753,6 +2885,7 @@ registerAutoDuelVehicle({
       },
       {
         id: '1.4-tfsi-122',
+        engineRef: 'vag-1.4-tsi-125',
         defaultGearboxId: 'mq250-6mt-sc',
         gearboxes: [
           { id: 'mq250-6mt-sc', isDefault: true },
@@ -3837,228 +2970,18 @@ registerAutoDuelVehicle({
         },
         specOverrides: {
           engineName: { en: '1.4L I4 TFSI 125 (Belt)', de: '1.4L Reihenvierzylinder 125 PS', ru: '1.4L R4 TFSI 125 (Ремень)' },
-          forcedInduction: '@turbo', injection: '@direct', timingDrive: '@belt',
-          gearbox: '@manual6', clutchDmf: '@singleClutch', towingBraked: '1,400 kg',
-          sprint0100: '9.3 s', topSpeed: '206 km/h', peakTorque: '200 Nm @ 1,400 rpm',
-          passingPunch: { en: 'Balanced 200 Nm Punch', de: 'Ausgewogene 200 Nm', ru: 'Сбалансированные 200 Н·м' },
-          realWorldFuel: '6.0 L/100km', tankRange: '50 L (~830 km)', euroNorm: 'Euro 5/6 (Petrol)', taxInsurance: '@tierLowMod', serviceWear: '@tierLow'
+          gearbox: '@manual6',
+          clutchDmf: '@singleClutch',
+          towingBraked: '1,400 kg',
+          sprint0100: '9.3 s',
+          topSpeed: '206 km/h',
+          realWorldFuel: '6.0 L/100km',
+          tankRange: '50 L (~830 km)',
+          euroNorm: 'Euro 5/6 (Petrol)',
+          taxInsurance: '@tierLowMod',
+          serviceWear: '@tierLow'
         },
         subStats: {
-          powertrainDurability: {
-            score: 7.9,
-            badges: {
-              en: ['Belt EA211 Much Tougher Than 8P', 'Watch Plastic Water Pump Housing'],
-              de: ['EA211-Zahnriemen deutlich robuster', 'Wasserpumpen-Gehäuse prüfen'],
-              ru: ['Ременной EA211 намного надёжнее', 'Проверить корпус помпы']
-            },
-            specBreakdown: {
-              engineName: { specs: [{ k: 'engineCode', v: 'CMBA / CZCA (EA211) · 1,395 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium · Belt-Driven + Multi-Link Rear Axle', de: 'Reihenvierzylinder Alu · Zahnriemen + Mehrlenker-Hinterachse', ru: 'Рядный 4-цил. алюминий · Ремень ГРМ + многорычажка сзади' } }], note: { en: 'The reliability sweet spot of the A3 8V: belt-driven EA211, no cylinder-deactivation complexity, and gains independent multi-link rear suspension.', de: 'Der Zuverlässigkeits-Sweetspot im A3 8V: EA211 mit Zahnriemen, ohne COD-Technik und ab hier mit Mehrlenker-Hinterachse.', ru: 'Оптимальный по надёжности мотор A3 8V: ременной EA211 без усложнений и уже с задней многорычажкой.' } },
-              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
-            },
-            dossier: {
-              en: {
-                headline: 'Modern MQB 1.4 TFSI (122/125)— solves the 8P timing-chain/oil issues with crisp efficiency.',
-                strengths: [
-                  'Much higher reliability than 2007–2011 8P TFSI engines.',
-                  'Refined, quiet and frugal in everyday driving.',
-                  'Capable of 240,000–280,000+ km with timely 10,000–15,000 km oil changes.'
-                ],
-                watchouts: [
-                  'Plastic water-pump / thermostat housing seepage.',
-                  'Follow annual 10,000–15,000 km synthetic oil intervals and inspect coolant hoses for age seepage.'
-                ],
-                beforeYouBuy: [
-                  'Inspect underbonnet for pink coolant crust around thermostat/pump.',
-                  'Check full service history (15,000 km oil changes best).',
-                  'Listen to a stone-cold start for steady idle and zero metallic timing-chain rattle.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–50,000 km / 4 yrs',
-                    action: 'Annual oil/filter service (15,000 km max) & cabin/air filters',
-                    cost: '€130–€200',
-                    ifIgnored: 'Sludge buildup and premature cam lobe wear',
-                    damageCost: '€800–€1,400'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '60,000–90,000 km / 5–7 yrs',
-                    action: 'Replace spark plugs, ignition coils & age-hardened coolant hoses',
-                    cost: '€220–€380',
-                    ifIgnored: 'Misfires damage catalytic converter; old hoses split',
-                    damageCost: '€900–€1,500'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '180,000–210,000 km / 6–8 yrs',
-                    action: 'Timing belt, water pump & thermostat housing replacement',
-                    cost: '€520–€820',
-                    ifIgnored: 'Aged rubber belt snaps and bends valves',
-                    damageCost: '€2,500–€4,000'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130,000–170,000 km / 8–10 yrs',
-                    action: 'Clutch kit / dry-DSG clutch pack & crankcase breather valve service',
-                    cost: '€650–€1,300',
-                    ifIgnored: 'Slipping clutch or vacuum leaks cause rough idle',
-                    damageCost: '€1,400–€2,200'
-                  },
-                  {
-                    tier: 'red',
-                    km: '170,000–210,000 km / 10–12 yrs',
-                    action: 'Exhaust flexi-pipe, catalytic converter & camshaft seal refresh',
-                    cost: '€450–€950',
-                    ifIgnored: 'Oil leaks onto exhaust and failed emissions test',
-                    damageCost: '€1,200–€1,900'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210,000–250,000 km / 12+ yrs',
-                    action: 'Overhaul front wishbone bushings, dampers & engine mounts',
-                    cost: '€750–€1,300',
-                    ifIgnored: 'Vague steering and tire wear',
-                    damageCost: '€1,300–€2,000'
-                  }
-                ]
-              },
-              de: {
-                headline: 'Moderner MQB 1.4 TFSI (122/125)— löst die alten 8P-Schwächen mit hoher Effizienz.',
-                strengths: [
-                  'Deutlich zuverlässiger als die alten 8P-TFSI.',
-                  'Leise und sparsam im Alltag.',
-                  'Erreicht bei Ölwechseln alle 10.000–15.000 km rund 240.000–280.000+ km.'
-                ],
-                watchouts: [
-                  'Undichtigkeiten am Kunststoff-Thermostatgehäuse.',
-                  'Jährliche Ölwechsel (10.000–15.000 km) einhalten und Kühlerschläuche auf Alterungsrisse prüfen.'
-                ],
-                beforeYouBuy: [
-                  'Kühlmittelreste am Thermostat-/Pumpengehäuse suchen.',
-                  'Regelmäßige Ölwechsel prüfen.',
-                  'Beim Kaltstart auf ruhigen Leerlauf ohne metallisches Steuerketten-Rasseln achten.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–50.000 km / 4 J.',
-                    action: 'Jährlicher Öl- & Filterservice (max. 15.000 km)',
-                    cost: '130–200 €',
-                    ifIgnored: 'Ölschlamm und erhöhter Nockenwellen-Verschleiß',
-                    damageCost: '800–1.400 €'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '60.000–90.000 km / 5–7 J.',
-                    action: 'Zündkerzen, Zündspulen & gealterte Kühlerschläuche ersetzen',
-                    cost: '220–380 €',
-                    ifIgnored: 'Zündaussetzer schädigen Katalysator; spröde Schläuche platzen',
-                    damageCost: '900–1.500 €'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '180.000–210.000 km / 6–8 J.',
-                    action: 'Zahnriemen-Wechsel inkl. Wasserpumpe & Thermostatgehäuse',
-                    cost: '520–820 €',
-                    ifIgnored: 'Alternder Zahnriemen reißt und verursacht Motorschaden',
-                    damageCost: '2.500–4.000 €'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130.000–170.000 km / 8–10 J.',
-                    action: 'Kupplungssatz / Trocken-DSG-Kupplung & Entlüftungsventil erneuern',
-                    cost: '650–1.300 €',
-                    ifIgnored: 'Rutschende Kupplung oder unrunder Leerlauf',
-                    damageCost: '1.400–2.200 €'
-                  },
-                  {
-                    tier: 'red',
-                    km: '170.000–210.000 km / 10–12 J.',
-                    action: 'Flexrohr, Katalysator & Nockenwellen-Dichtungen erneuern',
-                    cost: '450–950 €',
-                    ifIgnored: 'Ölverlust und nicht bestandene AU',
-                    damageCost: '1.200–1.900 €'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210.000–250.000 km / 12+ J.',
-                    action: 'Querlenkerbuchsen, Stoßdämpfer & Motorlager überholen',
-                    cost: '750–1.300 €',
-                    ifIgnored: 'Schwammiges Fahrverhalten & Reifenverschleiß',
-                    damageCost: '1.300–2.000 €'
-                  }
-                ]
-              },
-              ru: {
-                headline: 'Современный 1.4 TFSI (122/125) на MQB— избавлен от детских болезней A3 8P.',
-                strengths: [
-                  'Заметно надёжнее старых TFSI на поколении 8P.',
-                  'Тихий, плавный и экономичный.',
-                  'Способен пройти 240 000–280 000+ км при замене масла каждые 10 000–15 000 км.'
-                ],
-                watchouts: [
-                  'Подтекания пластикового корпуса термостата/помпы.',
-                  'Соблюдайте замену масла раз в 10 000–15 000 км и проверяйте патрубки охлаждения на утечки.'
-                ],
-                beforeYouBuy: [
-                  'Осмотреть корпус помпы на розовый налёт антифриза.',
-                  'Убедиться в регулярной замене масла.',
-                  'Послушать запуск на холодную— холостой ход должен быть ровным без металлического звона цепи.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–50 000 км / 4 года',
-                    action: 'Ежегодная замена масла (раз в 10–15 тыс. км) и фильтров',
-                    cost: '€130–€200',
-                    ifIgnored: 'Нагар и ускоренный износ распредвалов',
-                    damageCost: '€800–€1 400'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '60 000–90 000 км / 5–7 лет',
-                    action: 'Замена свечей, катушек зажигания и стареющих патрубков охлаждения',
-                    cost: '€220–€380',
-                    ifIgnored: 'Пропуски сжигают катализатор; старые шланги лопаются',
-                    damageCost: '€900–€1 500'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '180 000–210 000 km / 6–8 лет',
-                    action: 'Замена ремня ГРМ, водяной помпы и корпуса термостата',
-                    cost: '€520–€820',
-                    ifIgnored: 'Обрыв ремня от возраста или пробега гнёт клапаны',
-                    damageCost: '€2 500–€4 000'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130 000–170 000 км / 8–10 лет',
-                    action: 'Замена сцепления / фрикционов сухой DSG и клапана ВКГ',
-                    cost: '€650–€1 300',
-                    ifIgnored: 'Пробуксовка сцепления и подсос воздуха',
-                    damageCost: '€1 400–€2 200'
-                  },
-                  {
-                    tier: 'red',
-                    km: '170 000–210 000 км / 10–12 лет',
-                    action: 'Замена гофры выхлопа, катализатора и сальников распредвала',
-                    cost: '€450–€950',
-                    ifIgnored: 'Течи масла и проблемы с выхлопом на техосмотре',
-                    damageCost: '€1 200–€1 900'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210 000–250 000 км / 12+ лет',
-                    action: 'Переборка сайлентблоков рычагов, амортизаторов и опор',
-                    cost: '€750–€1 300',
-                    ifIgnored: 'Разболтанная подвеска и износ шин',
-                    damageCost: '€1 300–€2 000'
-                  }
-                ]
-              }
-            }
-          },
           transmissionDriveline: {
             score: 7.6,
             badges: {
@@ -4150,14 +3073,6 @@ registerAutoDuelVehicle({
               ru: ['0–100 км/ч: 9.3 с • 206 км/ч', 'Бодрый отклик турбины']
             }
           },
-          midRangeTorquePassing: {
-            score: 7.0,
-            badges: {
-              en: ['200 Nm Turbo Torque', 'Clean Mid-Range Passing'],
-              de: ['200 Nm Drehmoment', 'Sauberer Durchzug'],
-              ru: ['200 Н·м крутящего момента', 'Уверенные обгоны']
-            }
-          },
           handlingAgility: {
             score: 8.1,
             badges: {
@@ -4220,6 +3135,7 @@ registerAutoDuelVehicle({
       },
       {
         id: '1.4-tfsi-140',
+        engineRef: 'vag-1.4-tsi-140',
         defaultGearboxId: 'mq250-6mt-sc',
         gearboxes: [
           { id: 'mq250-6mt-sc', isDefault: true },
@@ -4304,228 +3220,18 @@ registerAutoDuelVehicle({
         },
         specOverrides: {
           engineName: { en: '1.4L I4 TFSI 140 (Belt)', de: '1.4L Reihenvierzylinder 140 PS', ru: '1.4L R4 TFSI 140 (Ремень)' },
-          forcedInduction: '@turbo', injection: '@direct', timingDrive: '@belt',
-          gearbox: '@manual6', clutchDmf: '@singleClutch', towingBraked: '1,500 kg',
-          sprint0100: '8.4 s', topSpeed: '213 km/h', peakTorque: '250 Nm @ 1,500 rpm',
-          passingPunch: { en: 'Brisk 250 Nm Mid-Range', de: 'Flotte 250 Nm ab 1.500/min', ru: 'Бодрые 250 Н·м с низов' },
-          realWorldFuel: '6.1 L/100km', tankRange: '50 L (~820 km)', euroNorm: 'Euro 5/6 (Petrol)', taxInsurance: '@tierLowMod', serviceWear: '@tierLowMod'
+          gearbox: '@manual6',
+          clutchDmf: '@singleClutch',
+          towingBraked: '1,500 kg',
+          sprint0100: '8.4 s',
+          topSpeed: '213 km/h',
+          realWorldFuel: '6.1 L/100km',
+          tankRange: '50 L (~820 km)',
+          euroNorm: 'Euro 5/6 (Petrol)',
+          taxInsurance: '@tierLowMod',
+          serviceWear: '@tierLowMod'
         },
         subStats: {
-          powertrainDurability: {
-            score: 7.9,
-            badges: {
-              en: ['Belt EA211 Much Tougher Than 8P', 'Watch Plastic Water Pump Housing'],
-              de: ['EA211-Zahnriemen deutlich robuster', 'Wasserpumpen-Gehäuse prüfen'],
-              ru: ['Ременной EA211 намного надёжнее', 'Проверить корпус помпы']
-            },
-            specBreakdown: {
-              engineName: { specs: [{ k: 'engineCode', v: 'CPTA / CHPA (EA211) · 1,395 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium · 250 Nm Belt-Driven Turbo', de: 'Reihenvierzylinder Alu · 250-Nm-Zahnriemen-Turbo', ru: 'Рядный 4-цил. алюминий · 250 Н·м с ремнём ГРМ' } }], note: { en: 'Punchy 8.4 s acceleration with 250 Nm from 1,500 rpm and ~6.1 L/100km; pair with 6-MT to avoid the DQ200 250 Nm ceiling.', de: 'Flotte 8,4 s mit 250 Nm ab 1.500/min bei ~6,1 L Verbrauch; ideal mit 6-Gang-Schalter.', ru: 'Отличная динамика (8,4 с, 250 Н·м) при расходе 6,1 л; с 6-МКПП полностью лишён рисков сухого DSG.' } },
-              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
-            },
-            dossier: {
-              en: {
-                headline: 'Modern MQB 1.4 TFSI (140)— solves the 8P timing-chain/oil issues with crisp efficiency.',
-                strengths: [
-                  'Much higher reliability than 2007–2011 8P TFSI engines.',
-                  'Refined, quiet and frugal in everyday driving.',
-                  'Capable of 240,000–280,000+ km with timely 10,000–15,000 km oil changes.'
-                ],
-                watchouts: [
-                  'Plastic water-pump / thermostat housing seepage.',
-                  'Follow annual 10,000–15,000 km synthetic oil intervals and inspect coolant hoses for age seepage.'
-                ],
-                beforeYouBuy: [
-                  'Inspect underbonnet for pink coolant crust around thermostat/pump.',
-                  'Check full service history (15,000 km oil changes best).',
-                  'Listen to a stone-cold start for steady idle and zero metallic timing-chain rattle.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–50,000 km / 4 yrs',
-                    action: 'Annual oil/filter service (15,000 km max) & cabin/air filters',
-                    cost: '€130–€200',
-                    ifIgnored: 'Sludge buildup and premature cam lobe wear',
-                    damageCost: '€800–€1,400'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '60,000–90,000 km / 5–7 yrs',
-                    action: 'Replace spark plugs, ignition coils & age-hardened coolant hoses',
-                    cost: '€220–€380',
-                    ifIgnored: 'Misfires damage catalytic converter; old hoses split',
-                    damageCost: '€900–€1,500'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '180,000–210,000 km / 6–8 yrs',
-                    action: 'Timing belt, water pump & thermostat housing replacement',
-                    cost: '€520–€820',
-                    ifIgnored: 'Aged rubber belt snaps and bends valves',
-                    damageCost: '€2,500–€4,000'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130,000–170,000 km / 8–10 yrs',
-                    action: 'Clutch kit / dry-DSG clutch pack & crankcase breather valve service',
-                    cost: '€650–€1,300',
-                    ifIgnored: 'Slipping clutch or vacuum leaks cause rough idle',
-                    damageCost: '€1,400–€2,200'
-                  },
-                  {
-                    tier: 'red',
-                    km: '170,000–210,000 km / 10–12 yrs',
-                    action: 'Exhaust flexi-pipe, catalytic converter & camshaft seal refresh',
-                    cost: '€450–€950',
-                    ifIgnored: 'Oil leaks onto exhaust and failed emissions test',
-                    damageCost: '€1,200–€1,900'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210,000–250,000 km / 12+ yrs',
-                    action: 'Overhaul front wishbone bushings, dampers & engine mounts',
-                    cost: '€750–€1,300',
-                    ifIgnored: 'Vague steering and tire wear',
-                    damageCost: '€1,300–€2,000'
-                  }
-                ]
-              },
-              de: {
-                headline: 'Moderner MQB 1.4 TFSI (140)— löst die alten 8P-Schwächen mit hoher Effizienz.',
-                strengths: [
-                  'Deutlich zuverlässiger als die alten 8P-TFSI.',
-                  'Leise und sparsam im Alltag.',
-                  'Erreicht bei Ölwechseln alle 10.000–15.000 km rund 240.000–280.000+ km.'
-                ],
-                watchouts: [
-                  'Undichtigkeiten am Kunststoff-Thermostatgehäuse.',
-                  'Jährliche Ölwechsel (10.000–15.000 km) einhalten und Kühlerschläuche auf Alterungsrisse prüfen.'
-                ],
-                beforeYouBuy: [
-                  'Kühlmittelreste am Thermostat-/Pumpengehäuse suchen.',
-                  'Regelmäßige Ölwechsel prüfen.',
-                  'Beim Kaltstart auf ruhigen Leerlauf ohne metallisches Steuerketten-Rasseln achten.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–50.000 km / 4 J.',
-                    action: 'Jährlicher Öl- & Filterservice (max. 15.000 km)',
-                    cost: '130–200 €',
-                    ifIgnored: 'Ölschlamm und erhöhter Nockenwellen-Verschleiß',
-                    damageCost: '800–1.400 €'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '60.000–90.000 km / 5–7 J.',
-                    action: 'Zündkerzen, Zündspulen & gealterte Kühlerschläuche ersetzen',
-                    cost: '220–380 €',
-                    ifIgnored: 'Zündaussetzer schädigen Katalysator; spröde Schläuche platzen',
-                    damageCost: '900–1.500 €'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '180.000–210.000 km / 6–8 J.',
-                    action: 'Zahnriemen-Wechsel inkl. Wasserpumpe & Thermostatgehäuse',
-                    cost: '520–820 €',
-                    ifIgnored: 'Alternder Zahnriemen reißt und verursacht Motorschaden',
-                    damageCost: '2.500–4.000 €'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130.000–170.000 km / 8–10 J.',
-                    action: 'Kupplungssatz / Trocken-DSG-Kupplung & Entlüftungsventil erneuern',
-                    cost: '650–1.300 €',
-                    ifIgnored: 'Rutschende Kupplung oder unrunder Leerlauf',
-                    damageCost: '1.400–2.200 €'
-                  },
-                  {
-                    tier: 'red',
-                    km: '170.000–210.000 km / 10–12 J.',
-                    action: 'Flexrohr, Katalysator & Nockenwellen-Dichtungen erneuern',
-                    cost: '450–950 €',
-                    ifIgnored: 'Ölverlust und nicht bestandene AU',
-                    damageCost: '1.200–1.900 €'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210.000–250.000 km / 12+ J.',
-                    action: 'Querlenkerbuchsen, Stoßdämpfer & Motorlager überholen',
-                    cost: '750–1.300 €',
-                    ifIgnored: 'Schwammiges Fahrverhalten & Reifenverschleiß',
-                    damageCost: '1.300–2.000 €'
-                  }
-                ]
-              },
-              ru: {
-                headline: 'Современный 1.4 TFSI (140) на MQB— избавлен от детских болезней A3 8P.',
-                strengths: [
-                  'Заметно надёжнее старых TFSI на поколении 8P.',
-                  'Тихий, плавный и экономичный.',
-                  'Способен пройти 240 000–280 000+ км при замене масла каждые 10 000–15 000 км.'
-                ],
-                watchouts: [
-                  'Подтекания пластикового корпуса термостата/помпы.',
-                  'Соблюдайте замену масла раз в 10 000–15 000 км и проверяйте патрубки охлаждения на утечки.'
-                ],
-                beforeYouBuy: [
-                  'Осмотреть корпус помпы на розовый налёт антифриза.',
-                  'Убедиться в регулярной замене масла.',
-                  'Послушать запуск на холодную— холостой ход должен быть ровным без металлического звона цепи.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–50 000 км / 4 года',
-                    action: 'Ежегодная замена масла (раз в 10–15 тыс. км) и фильтров',
-                    cost: '€130–€200',
-                    ifIgnored: 'Нагар и ускоренный износ распредвалов',
-                    damageCost: '€800–€1 400'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '60 000–90 000 км / 5–7 лет',
-                    action: 'Замена свечей, катушек зажигания и стареющих патрубков охлаждения',
-                    cost: '€220–€380',
-                    ifIgnored: 'Пропуски сжигают катализатор; старые шланги лопаются',
-                    damageCost: '€900–€1 500'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '180 000–210 000 km / 6–8 лет',
-                    action: 'Замена ремня ГРМ, водяной помпы и корпуса термостата',
-                    cost: '€520–€820',
-                    ifIgnored: 'Обрыв ремня от возраста или пробега гнёт клапаны',
-                    damageCost: '€2 500–€4 000'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130 000–170 000 км / 8–10 лет',
-                    action: 'Замена сцепления / фрикционов сухой DSG и клапана ВКГ',
-                    cost: '€650–€1 300',
-                    ifIgnored: 'Пробуксовка сцепления и подсос воздуха',
-                    damageCost: '€1 400–€2 200'
-                  },
-                  {
-                    tier: 'red',
-                    km: '170 000–210 000 км / 10–12 лет',
-                    action: 'Замена гофры выхлопа, катализатора и сальников распредвала',
-                    cost: '€450–€950',
-                    ifIgnored: 'Течи масла и проблемы с выхлопом на техосмотре',
-                    damageCost: '€1 200–€1 900'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210 000–250 000 км / 12+ лет',
-                    action: 'Переборка сайлентблоков рычагов, амортизаторов и опор',
-                    cost: '€750–€1 300',
-                    ifIgnored: 'Разболтанная подвеска и износ шин',
-                    damageCost: '€1 300–€2 000'
-                  }
-                ]
-              }
-            }
-          },
           transmissionDriveline: {
             score: 7.6,
             badges: {
@@ -4617,14 +3323,6 @@ registerAutoDuelVehicle({
               ru: ['0–100 км/ч: 8.4 с • 213 км/ч', 'Бодрый отклик турбины']
             }
           },
-          midRangeTorquePassing: {
-            score: 7.6,
-            badges: {
-              en: ['250 Nm Turbo Torque', 'Clean Mid-Range Passing'],
-              de: ['250 Nm Drehmoment', 'Sauberer Durchzug'],
-              ru: ['250 Н·м крутящего момента', 'Уверенные обгоны']
-            }
-          },
           handlingAgility: {
             score: 8.1,
             badges: {
@@ -4687,6 +3385,7 @@ registerAutoDuelVehicle({
       },
       {
         id: '1.4-tfsi-cod',
+        engineRef: 'vag-1.4-tsi-150-cod',
         defaultGearboxId: 'mq250-6mt-sc',
         gearboxes: [
           { id: 'mq250-6mt-sc', isDefault: true },
@@ -4771,228 +3470,18 @@ registerAutoDuelVehicle({
         },
         specOverrides: {
           engineName: { en: '1.4L I4 TFSI COD 150 (Belt)', de: '1.4L Reihenvierzylinder COD 150', ru: '1.4L R4 TFSI COD 150 (Ремень)' },
-          forcedInduction: '@turbo', injection: '@direct', timingDrive: '@belt',
-          gearbox: '@manual6', clutchDmf: '@singleClutch', towingBraked: '1,500 kg',
-          sprint0100: '8.2 s', topSpeed: '220 km/h', peakTorque: '250 Nm @ 1,500 rpm',
-          passingPunch: { en: 'Quick 150 HP + 2-Cyl Cruise', de: 'Flotte 150 PS + 2-Zyl.-Modus', ru: 'Быстрые 150 л.с. + COD' },
-          realWorldFuel: '5.9 L/100km', tankRange: '50 L (~845 km)', euroNorm: 'Euro 6 (Petrol)', taxInsurance: '@tierLowMod', serviceWear: '@tierLowMod'
+          gearbox: '@manual6',
+          clutchDmf: '@singleClutch',
+          towingBraked: '1,500 kg',
+          sprint0100: '8.2 s',
+          topSpeed: '220 km/h',
+          realWorldFuel: '5.9 L/100km',
+          tankRange: '50 L (~845 km)',
+          euroNorm: 'Euro 6 (Petrol)',
+          taxInsurance: '@tierLowMod',
+          serviceWear: '@tierLowMod'
         },
         subStats: {
-          powertrainDurability: {
-            score: 7.9,
-            badges: {
-              en: ['Belt EA211 Much Tougher Than 8P', 'Watch Plastic Water Pump Housing'],
-              de: ['EA211-Zahnriemen deutlich robuster', 'Wasserpumpen-Gehäuse prüfen'],
-              ru: ['Ременной EA211 намного надёжнее', 'Проверить корпус помпы']
-            },
-            specBreakdown: {
-              engineName: { specs: [{ k: 'engineCode', v: 'CZEA (EA211 COD) · 1,395 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium · Cylinder-on-Demand + Timing Belt', de: 'Reihenvierzylinder Alu · Zylinderabschaltung (COD) + Riemen', ru: 'Рядный 4-цил. алюминий · Отключение цилиндров COD + ремень' } }], note: { en: 'Seamless 2-cylinder cruising saves fuel on highways while delivering 8.2 s sprint punch; one of the best all-round petrols in the 8V.', de: 'Unmerkliche Zylinderabschaltung spart auf der Autobahn Sprit bei 8,2 s Sprint — einer der besten 8V-Benziner.', ru: 'Незаметное отключение двух цилиндров экономит топливо на трассе при разгоне 8,2 с — отличный универсал.' } },
-              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
-            },
-            dossier: {
-              en: {
-                headline: 'Modern MQB 1.4 TFSI COD (150)— solves the 8P timing-chain/oil issues with crisp efficiency.',
-                strengths: [
-                  'Much higher reliability than 2007–2011 8P TFSI engines.',
-                  'Refined, quiet and frugal in everyday driving.',
-                  'Capable of 240,000–280,000+ km with timely 10,000–15,000 km oil changes.'
-                ],
-                watchouts: [
-                  'Plastic water-pump / thermostat housing seepage.',
-                  'Follow annual 10,000–15,000 km synthetic oil intervals and inspect coolant hoses for age seepage.'
-                ],
-                beforeYouBuy: [
-                  'Inspect underbonnet for pink coolant crust around thermostat/pump.',
-                  'Check full service history (15,000 km oil changes best).',
-                  'Listen to a stone-cold start for steady idle and zero metallic timing-chain rattle.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–50,000 km / 4 yrs',
-                    action: 'Annual oil/filter service (15,000 km max) & cabin/air filters',
-                    cost: '€130–€200',
-                    ifIgnored: 'Sludge buildup and premature cam lobe wear',
-                    damageCost: '€800–€1,400'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '60,000–90,000 km / 5–7 yrs',
-                    action: 'Replace spark plugs, ignition coils & age-hardened coolant hoses',
-                    cost: '€220–€380',
-                    ifIgnored: 'Misfires damage catalytic converter; old hoses split',
-                    damageCost: '€900–€1,500'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '180,000–210,000 km / 6–8 yrs',
-                    action: 'Timing belt, water pump & thermostat housing replacement',
-                    cost: '€520–€820',
-                    ifIgnored: 'Aged rubber belt snaps and bends valves',
-                    damageCost: '€2,500–€4,000'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130,000–170,000 km / 8–10 yrs',
-                    action: 'Clutch kit / dry-DSG clutch pack & crankcase breather valve service',
-                    cost: '€650–€1,300',
-                    ifIgnored: 'Slipping clutch or vacuum leaks cause rough idle',
-                    damageCost: '€1,400–€2,200'
-                  },
-                  {
-                    tier: 'red',
-                    km: '170,000–210,000 km / 10–12 yrs',
-                    action: 'Exhaust flexi-pipe, catalytic converter & camshaft seal refresh',
-                    cost: '€450–€950',
-                    ifIgnored: 'Oil leaks onto exhaust and failed emissions test',
-                    damageCost: '€1,200–€1,900'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210,000–250,000 km / 12+ yrs',
-                    action: 'Overhaul front wishbone bushings, dampers & engine mounts',
-                    cost: '€750–€1,300',
-                    ifIgnored: 'Vague steering and tire wear',
-                    damageCost: '€1,300–€2,000'
-                  }
-                ]
-              },
-              de: {
-                headline: 'Moderner MQB 1.4 TFSI COD (150)— löst die alten 8P-Schwächen mit hoher Effizienz.',
-                strengths: [
-                  'Deutlich zuverlässiger als die alten 8P-TFSI.',
-                  'Leise und sparsam im Alltag.',
-                  'Erreicht bei Ölwechseln alle 10.000–15.000 km rund 240.000–280.000+ km.'
-                ],
-                watchouts: [
-                  'Undichtigkeiten am Kunststoff-Thermostatgehäuse.',
-                  'Jährliche Ölwechsel (10.000–15.000 km) einhalten und Kühlerschläuche auf Alterungsrisse prüfen.'
-                ],
-                beforeYouBuy: [
-                  'Kühlmittelreste am Thermostat-/Pumpengehäuse suchen.',
-                  'Regelmäßige Ölwechsel prüfen.',
-                  'Beim Kaltstart auf ruhigen Leerlauf ohne metallisches Steuerketten-Rasseln achten.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–50.000 km / 4 J.',
-                    action: 'Jährlicher Öl- & Filterservice (max. 15.000 km)',
-                    cost: '130–200 €',
-                    ifIgnored: 'Ölschlamm und erhöhter Nockenwellen-Verschleiß',
-                    damageCost: '800–1.400 €'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '60.000–90.000 km / 5–7 J.',
-                    action: 'Zündkerzen, Zündspulen & gealterte Kühlerschläuche ersetzen',
-                    cost: '220–380 €',
-                    ifIgnored: 'Zündaussetzer schädigen Katalysator; spröde Schläuche platzen',
-                    damageCost: '900–1.500 €'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '180.000–210.000 km / 6–8 J.',
-                    action: 'Zahnriemen-Wechsel inkl. Wasserpumpe & Thermostatgehäuse',
-                    cost: '520–820 €',
-                    ifIgnored: 'Alternder Zahnriemen reißt und verursacht Motorschaden',
-                    damageCost: '2.500–4.000 €'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130.000–170.000 km / 8–10 J.',
-                    action: 'Kupplungssatz / Trocken-DSG-Kupplung & Entlüftungsventil erneuern',
-                    cost: '650–1.300 €',
-                    ifIgnored: 'Rutschende Kupplung oder unrunder Leerlauf',
-                    damageCost: '1.400–2.200 €'
-                  },
-                  {
-                    tier: 'red',
-                    km: '170.000–210.000 km / 10–12 J.',
-                    action: 'Flexrohr, Katalysator & Nockenwellen-Dichtungen erneuern',
-                    cost: '450–950 €',
-                    ifIgnored: 'Ölverlust und nicht bestandene AU',
-                    damageCost: '1.200–1.900 €'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210.000–250.000 km / 12+ J.',
-                    action: 'Querlenkerbuchsen, Stoßdämpfer & Motorlager überholen',
-                    cost: '750–1.300 €',
-                    ifIgnored: 'Schwammiges Fahrverhalten & Reifenverschleiß',
-                    damageCost: '1.300–2.000 €'
-                  }
-                ]
-              },
-              ru: {
-                headline: 'Современный 1.4 TFSI COD (150) на MQB— избавлен от детских болезней A3 8P.',
-                strengths: [
-                  'Заметно надёжнее старых TFSI на поколении 8P.',
-                  'Тихий, плавный и экономичный.',
-                  'Способен пройти 240 000–280 000+ км при замене масла каждые 10 000–15 000 км.'
-                ],
-                watchouts: [
-                  'Подтекания пластикового корпуса термостата/помпы.',
-                  'Соблюдайте замену масла раз в 10 000–15 000 км и проверяйте патрубки охлаждения на утечки.'
-                ],
-                beforeYouBuy: [
-                  'Осмотреть корпус помпы на розовый налёт антифриза.',
-                  'Убедиться в регулярной замене масла.',
-                  'Послушать запуск на холодную— холостой ход должен быть ровным без металлического звона цепи.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–50 000 км / 4 года',
-                    action: 'Ежегодная замена масла (раз в 10–15 тыс. км) и фильтров',
-                    cost: '€130–€200',
-                    ifIgnored: 'Нагар и ускоренный износ распредвалов',
-                    damageCost: '€800–€1 400'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '60 000–90 000 км / 5–7 лет',
-                    action: 'Замена свечей, катушек зажигания и стареющих патрубков охлаждения',
-                    cost: '€220–€380',
-                    ifIgnored: 'Пропуски сжигают катализатор; старые шланги лопаются',
-                    damageCost: '€900–€1 500'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '180 000–210 000 km / 6–8 лет',
-                    action: 'Замена ремня ГРМ, водяной помпы и корпуса термостата',
-                    cost: '€520–€820',
-                    ifIgnored: 'Обрыв ремня от возраста или пробега гнёт клапаны',
-                    damageCost: '€2 500–€4 000'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130 000–170 000 км / 8–10 лет',
-                    action: 'Замена сцепления / фрикционов сухой DSG и клапана ВКГ',
-                    cost: '€650–€1 300',
-                    ifIgnored: 'Пробуксовка сцепления и подсос воздуха',
-                    damageCost: '€1 400–€2 200'
-                  },
-                  {
-                    tier: 'red',
-                    km: '170 000–210 000 км / 10–12 лет',
-                    action: 'Замена гофры выхлопа, катализатора и сальников распредвала',
-                    cost: '€450–€950',
-                    ifIgnored: 'Течи масла и проблемы с выхлопом на техосмотре',
-                    damageCost: '€1 200–€1 900'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210 000–250 000 км / 12+ лет',
-                    action: 'Переборка сайлентблоков рычагов, амортизаторов и опор',
-                    cost: '€750–€1 300',
-                    ifIgnored: 'Разболтанная подвеска и износ шин',
-                    damageCost: '€1 300–€2 000'
-                  }
-                ]
-              }
-            }
-          },
           transmissionDriveline: {
             score: 7.6,
             badges: {
@@ -5084,14 +3573,6 @@ registerAutoDuelVehicle({
               ru: ['0–100 км/ч: 8.2 с • 220 км/ч', 'Бодрый отклик турбины']
             }
           },
-          midRangeTorquePassing: {
-            score: 7.6,
-            badges: {
-              en: ['250 Nm Turbo Torque', 'Clean Mid-Range Passing'],
-              de: ['250 Nm Drehmoment', 'Sauberer Durchzug'],
-              ru: ['250 Н·м крутящего момента', 'Уверенные обгоны']
-            }
-          },
           handlingAgility: {
             score: 8.1,
             badges: {
@@ -5154,6 +3635,7 @@ registerAutoDuelVehicle({
       },
       {
         id: '1.5-tfsi-cod',
+        engineRef: 'vag-1.5-tsi-150-cod',
         defaultGearboxId: 'mq250-6mt-sc',
         gearboxes: [
           { id: 'mq250-6mt-sc', isDefault: true },
@@ -5238,228 +3720,18 @@ registerAutoDuelVehicle({
         },
         specOverrides: {
           engineName: { en: '1.5L I4 TFSI Evo 150 (Belt)', de: '1.5L Reihenvierzylinder Evo 150', ru: '1.5L R4 TFSI Evo 150 (Ремень)' },
-          forcedInduction: '@turbo', injection: '@direct', timingDrive: '@belt',
-          gearbox: '@manual6', clutchDmf: '@singleClutch', towingBraked: '1,500 kg',
-          sprint0100: '8.2 s', topSpeed: '220 km/h', peakTorque: '250 Nm @ 1,500 rpm',
-          passingPunch: { en: 'Refined 250 Nm Evo Turbo', de: 'Kultivierter 250-Nm-Evo', ru: 'Эластичный 250-Н·м Evo' },
-          realWorldFuel: '5.8 L/100km', tankRange: '50 L (~860 km)', euroNorm: 'Euro 6d-TEMP (Petrol)', taxInsurance: '@tierLowMod', serviceWear: '@tierLowMod'
+          gearbox: '@manual6',
+          clutchDmf: '@singleClutch',
+          towingBraked: '1,500 kg',
+          sprint0100: '8.2 s',
+          topSpeed: '220 km/h',
+          realWorldFuel: '5.8 L/100km',
+          tankRange: '50 L (~860 km)',
+          euroNorm: 'Euro 6d-TEMP (Petrol)',
+          taxInsurance: '@tierLowMod',
+          serviceWear: '@tierLowMod'
         },
         subStats: {
-          powertrainDurability: {
-            score: 7.9,
-            badges: {
-              en: ['Belt EA211 Much Tougher Than 8P', 'Watch Plastic Water Pump Housing'],
-              de: ['EA211-Zahnriemen deutlich robuster', 'Wasserpumpen-Gehäuse prüfen'],
-              ru: ['Ременной EA211 намного надёжнее', 'Проверить корпус помпы']
-            },
-            specBreakdown: {
-              engineName: { specs: [{ k: 'engineCode', v: 'DADA (EA211 Evo) · 1,498 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium · Miller-Cycle VGT Turbo + COD (Belt)', de: 'Reihenvierzylinder Alu · Miller-Zyklus + VTG-Turbo + COD', ru: 'Рядный 4-цил. алюминий · Цикл Миллера + VGT-турбо + COD' } }], note: { en: 'Modern EA211 Evo with variable-geometry turbo and 5.8 L/100km real economy; verify latest ECU update for smooth cold-start 1st-gear pull-away.', de: 'Moderner EA211 Evo mit VTG-Lader und 5,8 L Verbrauch; Software-Update gegen leichtes Kaltstart-Känguru prüfen.', ru: 'Современный EA211 Evo с турбиной VGT и расходом 5,8 л; проверьте обновление ПО для плавного холодного старта.' } },
-              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
-            },
-            dossier: {
-              en: {
-                headline: 'Modern MQB 1.5 TFSI COD— solves the 8P timing-chain/oil issues with crisp efficiency.',
-                strengths: [
-                  'Much higher reliability than 2007–2011 8P TFSI engines.',
-                  'Refined, quiet and frugal in everyday driving.',
-                  'Capable of 240,000–280,000+ km with timely 10,000–15,000 km oil changes.'
-                ],
-                watchouts: [
-                  'Plastic water-pump / thermostat housing seepage.',
-                  'Follow annual 10,000–15,000 km synthetic oil intervals and inspect coolant hoses for age seepage.'
-                ],
-                beforeYouBuy: [
-                  'Inspect underbonnet for pink coolant crust around thermostat/pump.',
-                  'Check full service history (15,000 km oil changes best).',
-                  'Listen to a stone-cold start for steady idle and zero metallic timing-chain rattle.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–50,000 km / 4 yrs',
-                    action: 'Annual oil/filter service (15,000 km max) & cabin/air filters',
-                    cost: '€130–€200',
-                    ifIgnored: 'Sludge buildup and premature cam lobe wear',
-                    damageCost: '€800–€1,400'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '60,000–90,000 km / 5–7 yrs',
-                    action: 'Replace spark plugs, ignition coils & age-hardened coolant hoses',
-                    cost: '€220–€380',
-                    ifIgnored: 'Misfires damage catalytic converter; old hoses split',
-                    damageCost: '€900–€1,500'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '180,000–210,000 km / 6–8 yrs',
-                    action: 'Timing belt, water pump & thermostat housing replacement',
-                    cost: '€520–€820',
-                    ifIgnored: 'Aged rubber belt snaps and bends valves',
-                    damageCost: '€2,500–€4,000'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130,000–170,000 km / 8–10 yrs',
-                    action: 'Clutch kit / dry-DSG clutch pack & crankcase breather valve service',
-                    cost: '€650–€1,300',
-                    ifIgnored: 'Slipping clutch or vacuum leaks cause rough idle',
-                    damageCost: '€1,400–€2,200'
-                  },
-                  {
-                    tier: 'red',
-                    km: '170,000–210,000 km / 10–12 yrs',
-                    action: 'Exhaust flexi-pipe, catalytic converter & camshaft seal refresh',
-                    cost: '€450–€950',
-                    ifIgnored: 'Oil leaks onto exhaust and failed emissions test',
-                    damageCost: '€1,200–€1,900'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210,000–250,000 km / 12+ yrs',
-                    action: 'Overhaul front wishbone bushings, dampers & engine mounts',
-                    cost: '€750–€1,300',
-                    ifIgnored: 'Vague steering and tire wear',
-                    damageCost: '€1,300–€2,000'
-                  }
-                ]
-              },
-              de: {
-                headline: 'Moderner MQB 1.5 TFSI COD— löst die alten 8P-Schwächen mit hoher Effizienz.',
-                strengths: [
-                  'Deutlich zuverlässiger als die alten 8P-TFSI.',
-                  'Leise und sparsam im Alltag.',
-                  'Erreicht bei Ölwechseln alle 10.000–15.000 km rund 240.000–280.000+ km.'
-                ],
-                watchouts: [
-                  'Undichtigkeiten am Kunststoff-Thermostatgehäuse.',
-                  'Jährliche Ölwechsel (10.000–15.000 km) einhalten und Kühlerschläuche auf Alterungsrisse prüfen.'
-                ],
-                beforeYouBuy: [
-                  'Kühlmittelreste am Thermostat-/Pumpengehäuse suchen.',
-                  'Regelmäßige Ölwechsel prüfen.',
-                  'Beim Kaltstart auf ruhigen Leerlauf ohne metallisches Steuerketten-Rasseln achten.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–50.000 km / 4 J.',
-                    action: 'Jährlicher Öl- & Filterservice (max. 15.000 km)',
-                    cost: '130–200 €',
-                    ifIgnored: 'Ölschlamm und erhöhter Nockenwellen-Verschleiß',
-                    damageCost: '800–1.400 €'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '60.000–90.000 km / 5–7 J.',
-                    action: 'Zündkerzen, Zündspulen & gealterte Kühlerschläuche ersetzen',
-                    cost: '220–380 €',
-                    ifIgnored: 'Zündaussetzer schädigen Katalysator; spröde Schläuche platzen',
-                    damageCost: '900–1.500 €'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '180.000–210.000 km / 6–8 J.',
-                    action: 'Zahnriemen-Wechsel inkl. Wasserpumpe & Thermostatgehäuse',
-                    cost: '520–820 €',
-                    ifIgnored: 'Alternder Zahnriemen reißt und verursacht Motorschaden',
-                    damageCost: '2.500–4.000 €'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130.000–170.000 km / 8–10 J.',
-                    action: 'Kupplungssatz / Trocken-DSG-Kupplung & Entlüftungsventil erneuern',
-                    cost: '650–1.300 €',
-                    ifIgnored: 'Rutschende Kupplung oder unrunder Leerlauf',
-                    damageCost: '1.400–2.200 €'
-                  },
-                  {
-                    tier: 'red',
-                    km: '170.000–210.000 km / 10–12 J.',
-                    action: 'Flexrohr, Katalysator & Nockenwellen-Dichtungen erneuern',
-                    cost: '450–950 €',
-                    ifIgnored: 'Ölverlust und nicht bestandene AU',
-                    damageCost: '1.200–1.900 €'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210.000–250.000 km / 12+ J.',
-                    action: 'Querlenkerbuchsen, Stoßdämpfer & Motorlager überholen',
-                    cost: '750–1.300 €',
-                    ifIgnored: 'Schwammiges Fahrverhalten & Reifenverschleiß',
-                    damageCost: '1.300–2.000 €'
-                  }
-                ]
-              },
-              ru: {
-                headline: 'Современный 1.5 TFSI COD на MQB— избавлен от детских болезней A3 8P.',
-                strengths: [
-                  'Заметно надёжнее старых TFSI на поколении 8P.',
-                  'Тихий, плавный и экономичный.',
-                  'Способен пройти 240 000–280 000+ км при замене масла каждые 10 000–15 000 км.'
-                ],
-                watchouts: [
-                  'Подтекания пластикового корпуса термостата/помпы.',
-                  'Соблюдайте замену масла раз в 10 000–15 000 км и проверяйте патрубки охлаждения на утечки.'
-                ],
-                beforeYouBuy: [
-                  'Осмотреть корпус помпы на розовый налёт антифриза.',
-                  'Убедиться в регулярной замене масла.',
-                  'Послушать запуск на холодную— холостой ход должен быть ровным без металлического звона цепи.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–50 000 км / 4 года',
-                    action: 'Ежегодная замена масла (раз в 10–15 тыс. км) и фильтров',
-                    cost: '€130–€200',
-                    ifIgnored: 'Нагар и ускоренный износ распредвалов',
-                    damageCost: '€800–€1 400'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '60 000–90 000 км / 5–7 лет',
-                    action: 'Замена свечей, катушек зажигания и стареющих патрубков охлаждения',
-                    cost: '€220–€380',
-                    ifIgnored: 'Пропуски сжигают катализатор; старые шланги лопаются',
-                    damageCost: '€900–€1 500'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '180 000–210 000 km / 6–8 лет',
-                    action: 'Замена ремня ГРМ, водяной помпы и корпуса термостата',
-                    cost: '€520–€820',
-                    ifIgnored: 'Обрыв ремня от возраста или пробега гнёт клапаны',
-                    damageCost: '€2 500–€4 000'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130 000–170 000 км / 8–10 лет',
-                    action: 'Замена сцепления / фрикционов сухой DSG и клапана ВКГ',
-                    cost: '€650–€1 300',
-                    ifIgnored: 'Пробуксовка сцепления и подсос воздуха',
-                    damageCost: '€1 400–€2 200'
-                  },
-                  {
-                    tier: 'red',
-                    km: '170 000–210 000 км / 10–12 лет',
-                    action: 'Замена гофры выхлопа, катализатора и сальников распредвала',
-                    cost: '€450–€950',
-                    ifIgnored: 'Течи масла и проблемы с выхлопом на техосмотре',
-                    damageCost: '€1 200–€1 900'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210 000–250 000 км / 12+ лет',
-                    action: 'Переборка сайлентблоков рычагов, амортизаторов и опор',
-                    cost: '€750–€1 300',
-                    ifIgnored: 'Разболтанная подвеска и износ шин',
-                    damageCost: '€1 300–€2 000'
-                  }
-                ]
-              }
-            }
-          },
           transmissionDriveline: {
             score: 7.6,
             badges: {
@@ -5549,14 +3821,6 @@ registerAutoDuelVehicle({
               en: ['0–100 km/h: 8.2 s • 220 km/h', 'Lively Turbo Response'],
               de: ['0–100 km/h: 8.2 s • 220 km/h', 'Spritziger Turbo'],
               ru: ['0–100 км/ч: 8.2 с • 220 км/ч', 'Бодрый отклик турбины']
-            }
-          },
-          midRangeTorquePassing: {
-            score: 7.6,
-            badges: {
-              en: ['250 Nm Turbo Torque', 'Clean Mid-Range Passing'],
-              de: ['250 Nm Drehmoment', 'Sauberer Durchzug'],
-              ru: ['250 Н·м крутящего момента', 'Уверенные обгоны']
             }
           },
           handlingAgility: {
@@ -7015,6 +5279,7 @@ registerAutoDuelVehicle({
       },
       {
         id: '1.6-tdi-105',
+        engineRef: 'vag-1.6-tdi-105',
         defaultGearboxId: 'mq250-6mt-dmf',
         gearboxes: [
           { id: 'mq250-6mt-dmf', isDefault: true },
@@ -7107,228 +5372,18 @@ registerAutoDuelVehicle({
         },
         specOverrides: {
           engineName: { en: '1.6L I4 TDI 105 (EA288 Belt)', de: '1.6L Reihenvierzylinder 105 TDI', ru: '1.6L R4 TDI 105 (EA288 Ремень)' },
-          forcedInduction: '@turbo', injection: '@commonRail', timingDrive: '@belt',
-          gearbox: '@manual6', clutchDmf: '@clutchDmf', towingBraked: '1,500 kg',
-          sprint0100: '10.7 s', topSpeed: '195 km/h', peakTorque: '250 Nm @ 1,500 rpm',
-          passingPunch: { en: 'Frugal 1,100 km Commuter', de: 'Sparsamer 1.100-km-Pendler', ru: 'Экономичные 250 Н·м' },
-          realWorldFuel: '4.5 L/100km', tankRange: '50 L (~1,110 km)', euroNorm: 'Euro 5 (Diesel)', taxInsurance: '@tierLow', serviceWear: '@tierLowMod'
+          gearbox: '@manual6',
+          clutchDmf: '@clutchDmf',
+          towingBraked: '1,500 kg',
+          sprint0100: '10.7 s',
+          topSpeed: '195 km/h',
+          realWorldFuel: '4.5 L/100km',
+          tankRange: '50 L (~1,110 km)',
+          euroNorm: 'Euro 5 (Diesel)',
+          taxInsurance: '@tierLow',
+          serviceWear: '@tierLowMod'
         },
         subStats: {
-          powertrainDurability: {
-            score: 7.8,
-            badges: {
-              en: ['Proven EA288 Common-Rail', '210k Belt • Watch Water Pump'],
-              de: ['Bewährter EA288 Common-Rail', '210 Tkm Riemen • Wasserpumpe prüfen'],
-              ru: ['Надёжный EA288 Common-Rail', 'Ремень 210 тыс. • Контроль помпы']
-            },
-            specBreakdown: {
-              engineName: { specs: [{ k: 'engineCode', v: 'CLHA (EA288) · 1,598 cc' }, { k: 'architecture', v: { en: 'Inline-4 Cast-Iron Common-Rail · 210k Timing Belt', de: 'Reihenvierzylinder Common-Rail · 210-Tkm-Zahnriemen', ru: 'Рядный 4-цил. Common-Rail · Ремень ГРМ 210 тыс. км' } }], note: { en: 'Clean-sheet EA288 replacement for the 8P diesel: quieter, smoother, and 1,100+ km per tank; watch the switchable water pump.', de: 'Komplett neuer EA288-Diesel: leiser, sparsamer (1.100+ km Reichweite) und robuster; auf die schaltbare Wasserpumpe achten.', ru: 'Новое поколение дизеля EA288: тише, экономичнее (1 100+ км на баке) и надёжнее; следите за шторкой помпы.' } },
-              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
-            },
-            dossier: {
-              en: {
-                headline: 'Refined EA288 1.6 TDI (105)— built for high-mileage highway cruising with minimal drama.',
-                strengths: [
-                  '210,000 km timing belt interval and strong 300k+ km block.',
-                  'Real 4.5–5.3 L/100km highway fuel economy.',
-                  'Capable of 240,000–280,000+ km with timely 10,000–15,000 km oil changes.'
-                ],
-                watchouts: [
-                  'Switchable water-pump sleeve sticking / weeping.',
-                  'DPF / AdBlue / EGR issues if driven only in city traffic.'
-                ],
-                beforeYouBuy: [
-                  'Check coolant level and ask if water pump was replaced.',
-                  'Verify highway use & DPF/AdBlue warning-free dash.',
-                  'Start the engine cold and verify smooth idle with no injector knock or blue-grey smoke.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–60,000 km / 4 yrs',
-                    action: 'Annual 15,000 km oil & filter service plus brake fluid every 2 yrs',
-                    cost: '€160–€240',
-                    ifIgnored: 'Long-life 30,000 km intervals carbonize turbo oil feed lines',
-                    damageCost: '€1,100–€1,800'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '80,000–120,000 km / 6–8 yrs',
-                    action: 'Replace coolant thermostat, glow plugs & inspect rubber boost hoses',
-                    cost: '€250–€450',
-                    ifIgnored: 'Cracked hoses or stuck thermostat block DPF regeneration',
-                    damageCost: '€900–€1,600'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130,000–170,000 km / 8–10 yrs',
-                    action: 'Dual-mass flywheel, clutch & EGR cooler / valve clean or replace',
-                    cost: '€950–€1,550',
-                    ifIgnored: 'Failing flywheel damages gearbox input bearing; clogged EGR stalls car',
-                    damageCost: '€2,000–€3,000'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '210,000 km / 7–10 yrs',
-                    action: 'Full timing belt, water pump & auxiliary belt kit replacement',
-                    cost: '€650–€950',
-                    ifIgnored: 'Belt snap bends valves and destroys cylinder head',
-                    damageCost: '€3,000–€5,000'
-                  },
-                  {
-                    tier: 'red',
-                    km: '190,000–240,000 km / 10+ yrs',
-                    action: 'Professional DPF cleaning/replacement & injector seal / high-pressure pump check',
-                    cost: '€600–€1,400',
-                    ifIgnored: 'Fuel dilution in oil ruins turbocharger and main bearings',
-                    damageCost: '€2,500–€4,500'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210,000–250,000 km / 12+ yrs',
-                    action: 'Overhaul front/rear suspension bushings, dampers & engine mounts',
-                    cost: '€850–€1,450',
-                    ifIgnored: 'Worn bushings ruin tires and cause MOT failure',
-                    damageCost: '€1,500–€2,400'
-                  }
-                ]
-              },
-              de: {
-                headline: 'Kultivierter EA288 1.6 TDI (105)— gemacht für entspannte Langstrecken bei niedrigem Verbrauch.',
-                strengths: [
-                  '210.000 km Zahnriemenintervall und extrem haltbarer Block.',
-                  'Nur 4,5–Sparsam (5,3 L/100km).',
-                  'Erreicht bei Ölwechseln alle 10.000–15.000 km rund 240.000–280.000+ km.'
-                ],
-                watchouts: [
-                  'Undichte/klemmende schaltbare Wasserpumpe.',
-                  'DPF / AdBlue / AGR bei reiner Kurzstrecke.'
-                ],
-                beforeYouBuy: [
-                  'Kühlmittelstand & Wasserpumpen-Tausch prüfen.',
-                  'Langstrecken-Historie & AdBlue-System checken.',
-                  'Kalten Motor starten und auf ruhigen Leerlauf ohne Injektor-Nageln oder blauen Rauch achten.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–60.000 km / 4 J.',
-                    action: 'Jährlicher Öl- & Filterwechsel (max. 15.000 km) + Bremsflüssigkeit alle 2 J.',
-                    cost: '160–240 €',
-                    ifIgnored: 'Longlife-30.000-km-Intervalle verkoken Turbo-Ölleitungen',
-                    damageCost: '1.100–1.800 €'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '80.000–120.000 km / 6–8 J.',
-                    action: 'Thermostat, Glühkerzen & alternde Ladedruckschläuche prüfen/tauschen',
-                    cost: '250–450 €',
-                    ifIgnored: 'Offenes Thermostat verhindert DPF-Regeneration',
-                    damageCost: '900–1.600 €'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130.000–170.000 km / 8–10 J.',
-                    action: 'Zweimassenschwungrad, Kupplung sowie AGR-Ventil/Kühler erneuern',
-                    cost: '950–1.550 €',
-                    ifIgnored: 'Defektes ZMS schädigt Getriebelager; verstopftes AGR legt Motor lahm',
-                    damageCost: '2.000–3.000 €'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '210.000 km / 7–10 J.',
-                    action: 'Zahnriemen-Satz inkl. Wasserpumpe & Keilrippenriemen wechseln',
-                    cost: '650–950 €',
-                    ifIgnored: 'Riemenriss führt zum kapitalen Motorschaden',
-                    damageCost: '3.000–5.000 €'
-                  },
-                  {
-                    tier: 'red',
-                    km: '190.000–240.000 km / 10+ J.',
-                    action: 'DPF-Reinigung/-Tausch, Injektor-Dichtungen & Hochdruckpumpe prüfen',
-                    cost: '600–1.400 €',
-                    ifIgnored: 'Ölverdünnung zerstört Turbolader und Kurbelwellenlager',
-                    damageCost: '2.500–4.500 €'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210.000–250.000 km / 12+ J.',
-                    action: 'Fahrwerkslager, Stoßdämpfer & Motorlager komplett überholen',
-                    cost: '850–1.450 €',
-                    ifIgnored: 'Ausgeschlagene Achsen, ungleicher Reifenabrieb & TÜV-Mängel',
-                    damageCost: '1.500–2.400 €'
-                  }
-                ]
-              },
-              ru: {
-                headline: 'Тихий и ресурсный дизель EA288 1.6 TDI (105)— создан для уверенных поездок по трассе.',
-                strengths: [
-                  'Ресурсный блок и ремень на 210 тыс. км.',
-                  'Реальный расход 4,5–5,3 л/100 км.',
-                  'Способен пройти 240 000–280 000+ км при замене масла каждые 10 000–15 000 км.'
-                ],
-                watchouts: [
-                  'Подтекание или клин регулируемой помпы.',
-                  'Загрязнение DPF/EGR при езде только по городу.'
-                ],
-                beforeYouBuy: [
-                  'Проверить уровень антифриза и замену помпы.',
-                  'Уточнить историю трассовых пробегов и AdBlue.',
-                  'Запустить дизель на холодную— работа должна быть ровной без стука форсунок и дыма.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–60 000 км / 4 года',
-                    action: 'Ежегодная замена масла (раз в 10–15 тыс. км) и тормозной жидкости раз в 2 года',
-                    cost: '€160–€240',
-                    ifIgnored: 'Интервалы 30 тыс. км закоксовывают маслоподачу турбины',
-                    damageCost: '€1 100–€1 800'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '80 000–120 000 км / 6–8 лет',
-                    action: 'Замена термостата, свечей накала и проверка резиновых патрубков наддува',
-                    cost: '€250–€450',
-                    ifIgnored: 'Недогрев двигателя срывает прожиг сажевого фильтра',
-                    damageCost: '€900–€1 600'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130 000–170 000 км / 8–10 лет',
-                    action: 'Замена двухмассового маховика, сцепления и чистка/замена клапана EGR',
-                    cost: '€950–€1 550',
-                    ifIgnored: 'Разбитый маховик губит подшипник КПП; клин EGR душит мотор',
-                    damageCost: '€2 000–€3 000'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '210 000 km / 7–10 лет',
-                    action: 'Замена комплекта ремня ГРМ, помпы и приводного ремня',
-                    cost: '€650–€950',
-                    ifIgnored: 'Обрыв ремня загибает клапаны и ломает ГБЦ',
-                    damageCost: '€3 000–€5 000'
-                  },
-                  {
-                    tier: 'red',
-                    km: '190 000–240 000 km / 10+ лет',
-                    action: 'Промывка/замена DPF, проверка форсунок и ТНВД на стружку',
-                    cost: '€600–€1 400',
-                    ifIgnored: 'Разжижение масла топливом или стружка убивают мотор',
-                    damageCost: '€2 500–€4 500'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210 000–250 000 км / 12+ лет',
-                    action: 'Переборка сайлентблоков подвески, амортизаторов и опор двигателя',
-                    cost: '€850–€1 450',
-                    ifIgnored: 'Люфты в шасси, жор резины и непрохождение ТО',
-                    damageCost: '€1 500–€2 400'
-                  }
-                ]
-              }
-            }
-          },
           transmissionDriveline: {
             score: 7.6,
             badges: {
@@ -7420,14 +5475,6 @@ registerAutoDuelVehicle({
               ru: ['0–100 км/ч: 10.7 с • 195 км/ч', 'Уверенный разгон']
             }
           },
-          midRangeTorquePassing: {
-            score: 7.2,
-            badges: {
-              en: ['250 Nm Common-Rail Torque', 'Strong Highway Overtaking'],
-              de: ['250 Nm Drehmoment', 'Souveräner Durchzug'],
-              ru: ['250 Н·м крутящего момента', 'Лёгкие обгоны на трассе']
-            }
-          },
           handlingAgility: {
             score: 8.1,
             badges: {
@@ -7490,6 +5537,7 @@ registerAutoDuelVehicle({
       },
       {
         id: '1.6-tdi-110',
+        engineRef: 'vag-1.6-tdi-110',
         defaultGearboxId: 'mq250-6mt-dmf',
         gearboxes: [
           { id: 'mq250-6mt-dmf', isDefault: true },
@@ -7582,228 +5630,18 @@ registerAutoDuelVehicle({
         },
         specOverrides: {
           engineName: { en: '1.6L I4 TDI 110 (EA288 Belt)', de: '1.6L Reihenvierzylinder 110 TDI', ru: '1.6L R4 TDI 110 (EA288 Ремень)' },
-          forcedInduction: '@turbo', injection: '@commonRail', timingDrive: '@belt',
-          gearbox: '@manual6', clutchDmf: '@clutchDmf', towingBraked: '1,500 kg',
-          sprint0100: '10.5 s', topSpeed: '200 km/h', peakTorque: '250 Nm @ 1,500 rpm',
-          passingPunch: { en: 'Ultra-Thrifty Highway Cruise', de: 'Extrem sparsamer Gleiter', ru: 'Сверхэкономичный крейсер' },
-          realWorldFuel: '4.4 L/100km', tankRange: '50 L (~1,135 km)', euroNorm: 'Euro 6 (Diesel)', taxInsurance: '@tierLow', serviceWear: '@tierLowMod'
+          gearbox: '@manual6',
+          clutchDmf: '@clutchDmf',
+          towingBraked: '1,500 kg',
+          sprint0100: '10.5 s',
+          topSpeed: '200 km/h',
+          realWorldFuel: '4.4 L/100km',
+          tankRange: '50 L (~1,135 km)',
+          euroNorm: 'Euro 6 (Diesel)',
+          taxInsurance: '@tierLow',
+          serviceWear: '@tierLowMod'
         },
         subStats: {
-          powertrainDurability: {
-            score: 7.8,
-            badges: {
-              en: ['Proven EA288 Common-Rail', '210k Belt • Watch Water Pump'],
-              de: ['Bewährter EA288 Common-Rail', '210 Tkm Riemen • Wasserpumpe prüfen'],
-              ru: ['Надёжный EA288 Common-Rail', 'Ремень 210 тыс. • Контроль помпы']
-            },
-            specBreakdown: {
-              engineName: { specs: [{ k: 'engineCode', v: 'CRKB / CXXB (EA288) · 1,598 cc' }, { k: 'architecture', v: { en: 'Inline-4 Common-Rail Euro 6 · 6-MT or Dry 7-DSG', de: 'Reihenvierzylinder Common-Rail Euro 6 · 6-Gang / 7-DSG', ru: 'Рядный 4-цил. Common-Rail Euro 6 · 6-МКПП / 7-DSG' } }], note: { en: 'Euro 6 economy king (4.4 L/100km real-world) with a 6-speed manual option; great for high-mileage commuters who prefer low bills over speed.', de: 'Euro-6-Sparmeister (4,4 L real) mit 6-Gang-Schalter; ideal für Vielfahrer mit Fokus auf minimale Kraftstoffkosten.', ru: 'Чемпион экономичности Euro 6 (4,4 л/100 км) с 6-МКПП — отличный выбор для больших трассовых пробегов.' } },
-              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
-            },
-            dossier: {
-              en: {
-                headline: 'Refined EA288 1.6 TDI ultra (110)— built for high-mileage highway cruising with minimal drama.',
-                strengths: [
-                  '210,000 km timing belt interval and strong 300k+ km block.',
-                  'Real 4.5–5.3 L/100km highway fuel economy.',
-                  'Capable of 240,000–280,000+ km with timely 10,000–15,000 km oil changes.'
-                ],
-                watchouts: [
-                  'Switchable water-pump sleeve sticking / weeping.',
-                  'DPF / AdBlue / EGR issues if driven only in city traffic.'
-                ],
-                beforeYouBuy: [
-                  'Check coolant level and ask if water pump was replaced.',
-                  'Verify highway use & DPF/AdBlue warning-free dash.',
-                  'Start the engine cold and verify smooth idle with no injector knock or blue-grey smoke.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–60,000 km / 4 yrs',
-                    action: 'Annual 15,000 km oil & filter service plus brake fluid every 2 yrs',
-                    cost: '€160–€240',
-                    ifIgnored: 'Long-life 30,000 km intervals carbonize turbo oil feed lines',
-                    damageCost: '€1,100–€1,800'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '80,000–120,000 km / 6–8 yrs',
-                    action: 'Replace coolant thermostat, glow plugs & inspect rubber boost hoses',
-                    cost: '€250–€450',
-                    ifIgnored: 'Cracked hoses or stuck thermostat block DPF regeneration',
-                    damageCost: '€900–€1,600'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130,000–170,000 km / 8–10 yrs',
-                    action: 'Dual-mass flywheel, clutch & EGR cooler / valve clean or replace',
-                    cost: '€950–€1,550',
-                    ifIgnored: 'Failing flywheel damages gearbox input bearing; clogged EGR stalls car',
-                    damageCost: '€2,000–€3,000'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '210,000 km / 7–10 yrs',
-                    action: 'Full timing belt, water pump & auxiliary belt kit replacement',
-                    cost: '€650–€950',
-                    ifIgnored: 'Belt snap bends valves and destroys cylinder head',
-                    damageCost: '€3,000–€5,000'
-                  },
-                  {
-                    tier: 'red',
-                    km: '190,000–240,000 km / 10+ yrs',
-                    action: 'Professional DPF cleaning/replacement & injector seal / high-pressure pump check',
-                    cost: '€600–€1,400',
-                    ifIgnored: 'Fuel dilution in oil ruins turbocharger and main bearings',
-                    damageCost: '€2,500–€4,500'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210,000–250,000 km / 12+ yrs',
-                    action: 'Overhaul front/rear suspension bushings, dampers & engine mounts',
-                    cost: '€850–€1,450',
-                    ifIgnored: 'Worn bushings ruin tires and cause MOT failure',
-                    damageCost: '€1,500–€2,400'
-                  }
-                ]
-              },
-              de: {
-                headline: 'Kultivierter EA288 1.6 TDI ultra (110)— gemacht für entspannte Langstrecken bei niedrigem Verbrauch.',
-                strengths: [
-                  '210.000 km Zahnriemenintervall und extrem haltbarer Block.',
-                  'Nur 4,5–Sparsam (5,3 L/100km).',
-                  'Erreicht bei Ölwechseln alle 10.000–15.000 km rund 240.000–280.000+ km.'
-                ],
-                watchouts: [
-                  'Undichte/klemmende schaltbare Wasserpumpe.',
-                  'DPF / AdBlue / AGR bei reiner Kurzstrecke.'
-                ],
-                beforeYouBuy: [
-                  'Kühlmittelstand & Wasserpumpen-Tausch prüfen.',
-                  'Langstrecken-Historie & AdBlue-System checken.',
-                  'Kalten Motor starten und auf ruhigen Leerlauf ohne Injektor-Nageln oder blauen Rauch achten.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–60.000 km / 4 J.',
-                    action: 'Jährlicher Öl- & Filterwechsel (max. 15.000 km) + Bremsflüssigkeit alle 2 J.',
-                    cost: '160–240 €',
-                    ifIgnored: 'Longlife-30.000-km-Intervalle verkoken Turbo-Ölleitungen',
-                    damageCost: '1.100–1.800 €'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '80.000–120.000 km / 6–8 J.',
-                    action: 'Thermostat, Glühkerzen & alternde Ladedruckschläuche prüfen/tauschen',
-                    cost: '250–450 €',
-                    ifIgnored: 'Offenes Thermostat verhindert DPF-Regeneration',
-                    damageCost: '900–1.600 €'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130.000–170.000 km / 8–10 J.',
-                    action: 'Zweimassenschwungrad, Kupplung sowie AGR-Ventil/Kühler erneuern',
-                    cost: '950–1.550 €',
-                    ifIgnored: 'Defektes ZMS schädigt Getriebelager; verstopftes AGR legt Motor lahm',
-                    damageCost: '2.000–3.000 €'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '210.000 km / 7–10 J.',
-                    action: 'Zahnriemen-Satz inkl. Wasserpumpe & Keilrippenriemen wechseln',
-                    cost: '650–950 €',
-                    ifIgnored: 'Riemenriss führt zum kapitalen Motorschaden',
-                    damageCost: '3.000–5.000 €'
-                  },
-                  {
-                    tier: 'red',
-                    km: '190.000–240.000 km / 10+ J.',
-                    action: 'DPF-Reinigung/-Tausch, Injektor-Dichtungen & Hochdruckpumpe prüfen',
-                    cost: '600–1.400 €',
-                    ifIgnored: 'Ölverdünnung zerstört Turbolader und Kurbelwellenlager',
-                    damageCost: '2.500–4.500 €'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210.000–250.000 km / 12+ J.',
-                    action: 'Fahrwerkslager, Stoßdämpfer & Motorlager komplett überholen',
-                    cost: '850–1.450 €',
-                    ifIgnored: 'Ausgeschlagene Achsen, ungleicher Reifenabrieb & TÜV-Mängel',
-                    damageCost: '1.500–2.400 €'
-                  }
-                ]
-              },
-              ru: {
-                headline: 'Тихий и ресурсный дизель EA288 1.6 TDI ultra (110)— создан для уверенных поездок по трассе.',
-                strengths: [
-                  'Ресурсный блок и ремень на 210 тыс. км.',
-                  'Реальный расход 4,5–5,3 л/100 км.',
-                  'Способен пройти 240 000–280 000+ км при замене масла каждые 10 000–15 000 км.'
-                ],
-                watchouts: [
-                  'Подтекание или клин регулируемой помпы.',
-                  'Загрязнение DPF/EGR при езде только по городу.'
-                ],
-                beforeYouBuy: [
-                  'Проверить уровень антифриза и замену помпы.',
-                  'Уточнить историю трассовых пробегов и AdBlue.',
-                  'Запустить дизель на холодную— работа должна быть ровной без стука форсунок и дыма.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–60 000 км / 4 года',
-                    action: 'Ежегодная замена масла (раз в 10–15 тыс. км) и тормозной жидкости раз в 2 года',
-                    cost: '€160–€240',
-                    ifIgnored: 'Интервалы 30 тыс. км закоксовывают маслоподачу турбины',
-                    damageCost: '€1 100–€1 800'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '80 000–120 000 км / 6–8 лет',
-                    action: 'Замена термостата, свечей накала и проверка резиновых патрубков наддува',
-                    cost: '€250–€450',
-                    ifIgnored: 'Недогрев двигателя срывает прожиг сажевого фильтра',
-                    damageCost: '€900–€1 600'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130 000–170 000 км / 8–10 лет',
-                    action: 'Замена двухмассового маховика, сцепления и чистка/замена клапана EGR',
-                    cost: '€950–€1 550',
-                    ifIgnored: 'Разбитый маховик губит подшипник КПП; клин EGR душит мотор',
-                    damageCost: '€2 000–€3 000'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '210 000 km / 7–10 лет',
-                    action: 'Замена комплекта ремня ГРМ, помпы и приводного ремня',
-                    cost: '€650–€950',
-                    ifIgnored: 'Обрыв ремня загибает клапаны и ломает ГБЦ',
-                    damageCost: '€3 000–€5 000'
-                  },
-                  {
-                    tier: 'red',
-                    km: '190 000–240 000 km / 10+ лет',
-                    action: 'Промывка/замена DPF, проверка форсунок и ТНВД на стружку',
-                    cost: '€600–€1 400',
-                    ifIgnored: 'Разжижение масла топливом или стружка убивают мотор',
-                    damageCost: '€2 500–€4 500'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210 000–250 000 км / 12+ лет',
-                    action: 'Переборка сайлентблоков подвески, амортизаторов и опор двигателя',
-                    cost: '€850–€1 450',
-                    ifIgnored: 'Люфты в шасси, жор резины и непрохождение ТО',
-                    damageCost: '€1 500–€2 400'
-                  }
-                ]
-              }
-            }
-          },
           transmissionDriveline: {
             score: 7.6,
             badges: {
@@ -7895,14 +5733,6 @@ registerAutoDuelVehicle({
               ru: ['0–100 км/ч: 10.5 с • 200 км/ч', 'Уверенный разгон']
             }
           },
-          midRangeTorquePassing: {
-            score: 7.2,
-            badges: {
-              en: ['250 Nm Common-Rail Torque', 'Strong Highway Overtaking'],
-              de: ['250 Nm Drehmoment', 'Souveräner Durchzug'],
-              ru: ['250 Н·м крутящего момента', 'Лёгкие обгоны на трассе']
-            }
-          },
           handlingAgility: {
             score: 8.1,
             badges: {
@@ -7965,6 +5795,7 @@ registerAutoDuelVehicle({
       },
       {
         id: '1.6-tdi-115',
+        engineRef: 'vag-1.6-tdi-115',
         defaultGearboxId: 'mq250-6mt-dmf',
         gearboxes: [
           { id: 'mq250-6mt-dmf', isDefault: true },
@@ -8057,228 +5888,18 @@ registerAutoDuelVehicle({
         },
         specOverrides: {
           engineName: { en: '1.6L I4 TDI 115 (EA288 Belt)', de: '1.6L Reihenvierzylinder 115 TDI', ru: '1.6L R4 TDI 115 (EA288 Ремень)' },
-          forcedInduction: '@turbo', injection: '@commonRail', timingDrive: '@belt',
-          gearbox: '@manual6', clutchDmf: '@clutchDmf', towingBraked: '1,500 kg',
-          sprint0100: '10.2 s', topSpeed: '202 km/h', peakTorque: '250 Nm @ 1,500 rpm',
-          passingPunch: { en: 'Calm 250 Nm Facelift TDI', de: 'Ruhige 250 Nm (Facelift)', ru: 'Ровная тяга 250 Н·м' },
-          realWorldFuel: '4.5 L/100km', tankRange: '50 L (~1,110 km)', euroNorm: 'Euro 6 (Diesel)', taxInsurance: '@tierLow', serviceWear: '@tierLowMod'
+          gearbox: '@manual6',
+          clutchDmf: '@clutchDmf',
+          towingBraked: '1,500 kg',
+          sprint0100: '10.2 s',
+          topSpeed: '202 km/h',
+          realWorldFuel: '4.5 L/100km',
+          tankRange: '50 L (~1,110 km)',
+          euroNorm: 'Euro 6 (Diesel)',
+          taxInsurance: '@tierLow',
+          serviceWear: '@tierLowMod'
         },
         subStats: {
-          powertrainDurability: {
-            score: 7.8,
-            badges: {
-              en: ['Proven EA288 Common-Rail', '210k Belt • Watch Water Pump'],
-              de: ['Bewährter EA288 Common-Rail', '210 Tkm Riemen • Wasserpumpe prüfen'],
-              ru: ['Надёжный EA288 Common-Rail', 'Ремень 210 тыс. • Контроль помпы']
-            },
-            specBreakdown: {
-              engineName: { specs: [{ k: 'engineCode', v: 'DDYA (EA288 Facelift) · 1,598 cc' }, { k: 'architecture', v: { en: 'Inline-4 Common-Rail Euro 6 · Facelift Refinement', de: 'Reihenvierzylinder Common-Rail Euro 6 · Facelift-Stand', ru: 'Рядный 4-цил. Common-Rail Euro 6 · Рестайлинг' } }], note: { en: '2016+ facelift 1.6 TDI with cleaner Euro 6 emissions and effortless 1,100+ km highway range.', de: 'Facelift-1.6-TDI ab 2016 mit sauberer Euro-6-Norm und über 1.100 km Reichweite.', ru: 'Рестайлинговый 1.6 TDI (2016+) с чистым Euro 6 и запасом хода более 1 100 км.' } },
-              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
-            },
-            dossier: {
-              en: {
-                headline: 'Refined EA288 1.6 TDI (115)— built for high-mileage highway cruising with minimal drama.',
-                strengths: [
-                  '210,000 km timing belt interval and strong 300k+ km block.',
-                  'Real 4.5–5.3 L/100km highway fuel economy.',
-                  'Capable of 240,000–280,000+ km with timely 10,000–15,000 km oil changes.'
-                ],
-                watchouts: [
-                  'Switchable water-pump sleeve sticking / weeping.',
-                  'DPF / AdBlue / EGR issues if driven only in city traffic.'
-                ],
-                beforeYouBuy: [
-                  'Check coolant level and ask if water pump was replaced.',
-                  'Verify highway use & DPF/AdBlue warning-free dash.',
-                  'Start the engine cold and verify smooth idle with no injector knock or blue-grey smoke.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–60,000 km / 4 yrs',
-                    action: 'Annual 15,000 km oil & filter service plus brake fluid every 2 yrs',
-                    cost: '€160–€240',
-                    ifIgnored: 'Long-life 30,000 km intervals carbonize turbo oil feed lines',
-                    damageCost: '€1,100–€1,800'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '80,000–120,000 km / 6–8 yrs',
-                    action: 'Replace coolant thermostat, glow plugs & inspect rubber boost hoses',
-                    cost: '€250–€450',
-                    ifIgnored: 'Cracked hoses or stuck thermostat block DPF regeneration',
-                    damageCost: '€900–€1,600'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130,000–170,000 km / 8–10 yrs',
-                    action: 'Dual-mass flywheel, clutch & EGR cooler / valve clean or replace',
-                    cost: '€950–€1,550',
-                    ifIgnored: 'Failing flywheel damages gearbox input bearing; clogged EGR stalls car',
-                    damageCost: '€2,000–€3,000'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '210,000 km / 7–10 yrs',
-                    action: 'Full timing belt, water pump & auxiliary belt kit replacement',
-                    cost: '€650–€950',
-                    ifIgnored: 'Belt snap bends valves and destroys cylinder head',
-                    damageCost: '€3,000–€5,000'
-                  },
-                  {
-                    tier: 'red',
-                    km: '190,000–240,000 km / 10+ yrs',
-                    action: 'Professional DPF cleaning/replacement & injector seal / high-pressure pump check',
-                    cost: '€600–€1,400',
-                    ifIgnored: 'Fuel dilution in oil ruins turbocharger and main bearings',
-                    damageCost: '€2,500–€4,500'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210,000–250,000 km / 12+ yrs',
-                    action: 'Overhaul front/rear suspension bushings, dampers & engine mounts',
-                    cost: '€850–€1,450',
-                    ifIgnored: 'Worn bushings ruin tires and cause MOT failure',
-                    damageCost: '€1,500–€2,400'
-                  }
-                ]
-              },
-              de: {
-                headline: 'Kultivierter EA288 1.6 TDI (115)— gemacht für entspannte Langstrecken bei niedrigem Verbrauch.',
-                strengths: [
-                  '210.000 km Zahnriemenintervall und extrem haltbarer Block.',
-                  'Nur 4,5–Sparsam (5,3 L/100km).',
-                  'Erreicht bei Ölwechseln alle 10.000–15.000 km rund 240.000–280.000+ km.'
-                ],
-                watchouts: [
-                  'Undichte/klemmende schaltbare Wasserpumpe.',
-                  'DPF / AdBlue / AGR bei reiner Kurzstrecke.'
-                ],
-                beforeYouBuy: [
-                  'Kühlmittelstand & Wasserpumpen-Tausch prüfen.',
-                  'Langstrecken-Historie & AdBlue-System checken.',
-                  'Kalten Motor starten und auf ruhigen Leerlauf ohne Injektor-Nageln oder blauen Rauch achten.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–60.000 km / 4 J.',
-                    action: 'Jährlicher Öl- & Filterwechsel (max. 15.000 km) + Bremsflüssigkeit alle 2 J.',
-                    cost: '160–240 €',
-                    ifIgnored: 'Longlife-30.000-km-Intervalle verkoken Turbo-Ölleitungen',
-                    damageCost: '1.100–1.800 €'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '80.000–120.000 km / 6–8 J.',
-                    action: 'Thermostat, Glühkerzen & alternde Ladedruckschläuche prüfen/tauschen',
-                    cost: '250–450 €',
-                    ifIgnored: 'Offenes Thermostat verhindert DPF-Regeneration',
-                    damageCost: '900–1.600 €'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130.000–170.000 km / 8–10 J.',
-                    action: 'Zweimassenschwungrad, Kupplung sowie AGR-Ventil/Kühler erneuern',
-                    cost: '950–1.550 €',
-                    ifIgnored: 'Defektes ZMS schädigt Getriebelager; verstopftes AGR legt Motor lahm',
-                    damageCost: '2.000–3.000 €'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '210.000 km / 7–10 J.',
-                    action: 'Zahnriemen-Satz inkl. Wasserpumpe & Keilrippenriemen wechseln',
-                    cost: '650–950 €',
-                    ifIgnored: 'Riemenriss führt zum kapitalen Motorschaden',
-                    damageCost: '3.000–5.000 €'
-                  },
-                  {
-                    tier: 'red',
-                    km: '190.000–240.000 km / 10+ J.',
-                    action: 'DPF-Reinigung/-Tausch, Injektor-Dichtungen & Hochdruckpumpe prüfen',
-                    cost: '600–1.400 €',
-                    ifIgnored: 'Ölverdünnung zerstört Turbolader und Kurbelwellenlager',
-                    damageCost: '2.500–4.500 €'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210.000–250.000 km / 12+ J.',
-                    action: 'Fahrwerkslager, Stoßdämpfer & Motorlager komplett überholen',
-                    cost: '850–1.450 €',
-                    ifIgnored: 'Ausgeschlagene Achsen, ungleicher Reifenabrieb & TÜV-Mängel',
-                    damageCost: '1.500–2.400 €'
-                  }
-                ]
-              },
-              ru: {
-                headline: 'Тихий и ресурсный дизель EA288 1.6 TDI (115)— создан для уверенных поездок по трассе.',
-                strengths: [
-                  'Ресурсный блок и ремень на 210 тыс. км.',
-                  'Реальный расход 4,5–5,3 л/100 км.',
-                  'Способен пройти 240 000–280 000+ км при замене масла каждые 10 000–15 000 км.'
-                ],
-                watchouts: [
-                  'Подтекание или клин регулируемой помпы.',
-                  'Загрязнение DPF/EGR при езде только по городу.'
-                ],
-                beforeYouBuy: [
-                  'Проверить уровень антифриза и замену помпы.',
-                  'Уточнить историю трассовых пробегов и AdBlue.',
-                  'Запустить дизель на холодную— работа должна быть ровной без стука форсунок и дыма.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–60 000 км / 4 года',
-                    action: 'Ежегодная замена масла (раз в 10–15 тыс. км) и тормозной жидкости раз в 2 года',
-                    cost: '€160–€240',
-                    ifIgnored: 'Интервалы 30 тыс. км закоксовывают маслоподачу турбины',
-                    damageCost: '€1 100–€1 800'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '80 000–120 000 км / 6–8 лет',
-                    action: 'Замена термостата, свечей накала и проверка резиновых патрубков наддува',
-                    cost: '€250–€450',
-                    ifIgnored: 'Недогрев двигателя срывает прожиг сажевого фильтра',
-                    damageCost: '€900–€1 600'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130 000–170 000 км / 8–10 лет',
-                    action: 'Замена двухмассового маховика, сцепления и чистка/замена клапана EGR',
-                    cost: '€950–€1 550',
-                    ifIgnored: 'Разбитый маховик губит подшипник КПП; клин EGR душит мотор',
-                    damageCost: '€2 000–€3 000'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '210 000 km / 7–10 лет',
-                    action: 'Замена комплекта ремня ГРМ, помпы и приводного ремня',
-                    cost: '€650–€950',
-                    ifIgnored: 'Обрыв ремня загибает клапаны и ломает ГБЦ',
-                    damageCost: '€3 000–€5 000'
-                  },
-                  {
-                    tier: 'red',
-                    km: '190 000–240 000 km / 10+ лет',
-                    action: 'Промывка/замена DPF, проверка форсунок и ТНВД на стружку',
-                    cost: '€600–€1 400',
-                    ifIgnored: 'Разжижение масла топливом или стружка убивают мотор',
-                    damageCost: '€2 500–€4 500'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210 000–250 000 км / 12+ лет',
-                    action: 'Переборка сайлентблоков подвески, амортизаторов и опор двигателя',
-                    cost: '€850–€1 450',
-                    ifIgnored: 'Люфты в шасси, жор резины и непрохождение ТО',
-                    damageCost: '€1 500–€2 400'
-                  }
-                ]
-              }
-            }
-          },
           transmissionDriveline: {
             score: 7.6,
             badges: {
@@ -8370,14 +5991,6 @@ registerAutoDuelVehicle({
               ru: ['0–100 км/ч: 10.2 с • 202 км/ч', 'Уверенный разгон']
             }
           },
-          midRangeTorquePassing: {
-            score: 7.2,
-            badges: {
-              en: ['250 Nm Common-Rail Torque', 'Strong Highway Overtaking'],
-              de: ['250 Nm Drehmoment', 'Souveräner Durchzug'],
-              ru: ['250 Н·м крутящего момента', 'Лёгкие обгоны на трассе']
-            }
-          },
           handlingAgility: {
             score: 8.1,
             badges: {
@@ -8440,6 +6053,7 @@ registerAutoDuelVehicle({
       },
       {
         id: '2.0-tdi-150',
+        engineRef: 'vag-2.0-tdi-150',
         defaultGearboxId: 'mq350-6mt-dmf',
         gearboxes: [
           { id: 'mq350-6mt-dmf', isDefault: true },
@@ -8532,228 +6146,18 @@ registerAutoDuelVehicle({
         },
         specOverrides: {
           engineName: { en: '2.0L I4 TDI 150 (EA288 Belt)', de: '2.0L Reihenvierzylinder 150 TDI', ru: '2.0L R4 TDI 150 (EA288 Ремень)' },
-          forcedInduction: '@turbo', injection: '@commonRail', timingDrive: '@belt',
-          gearbox: '@manual6', clutchDmf: '@clutchDmf', towingBraked: '1,600 kg',
-          sprint0100: '8.6 s', topSpeed: '218 km/h', peakTorque: '340 Nm @ 1,750 rpm',
-          passingPunch: { en: 'Effortless 340 Nm Autobahn', de: 'Souveräne 340 Nm (Autobahn)', ru: 'Уверенные 340 Н·м на трассе' },
-          realWorldFuel: '4.9 L/100km', tankRange: '50 L (~1,020 km)', euroNorm: 'Euro 6 (Diesel)', taxInsurance: '@tierMod', serviceWear: '@tierLowMod'
+          gearbox: '@manual6',
+          clutchDmf: '@clutchDmf',
+          towingBraked: '1,600 kg',
+          sprint0100: '8.6 s',
+          topSpeed: '218 km/h',
+          realWorldFuel: '4.9 L/100km',
+          tankRange: '50 L (~1,020 km)',
+          euroNorm: 'Euro 6 (Diesel)',
+          taxInsurance: '@tierMod',
+          serviceWear: '@tierLowMod'
         },
         subStats: {
-          powertrainDurability: {
-            score: 8.4,
-            badges: {
-              en: ['Proven EA288 Common-Rail', '210k Belt • Watch Water Pump'],
-              de: ['Bewährter EA288 Common-Rail', '210 Tkm Riemen • Wasserpumpe prüfen'],
-              ru: ['Надёжный EA288 Common-Rail', 'Ремень 210 тыс. • Контроль помпы']
-            },
-            specBreakdown: {
-              engineName: { specs: [{ k: 'engineCode', v: 'CRBC / CRLB (EA288) · 1,968 cc' }, { k: 'architecture', v: { en: 'Inline-4 Cast-Iron Common-Rail · Tough Wet DSG + Multi-Link', de: 'Reihenvierzylinder Common-Rail · Robustes nasses DSG', ru: 'Рядный 4-цил. Common-Rail · Крепкий мокрый DSG' } }], note: { en: 'The #1 high-mileage champion of the A3 8V: 340 Nm effortless pull, 4.9 L/100km, tough wet 6-DSG, and multi-link rear suspension.', de: 'Der absolute Langstrecken-Favorit im A3 8V: 340 Nm, 4,9 L Verbrauch, robustes nasses DSG und Mehrlenker-Hinterachse.', ru: 'Главный фаворит для дальних дорог: 340 Н·м, расход 4,9 л, крепкий мокрый DSG и задняя многорычажка.' } },
-              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
-            },
-            dossier: {
-              en: {
-                headline: 'Refined EA288 2.0 TDI (150)— built for high-mileage highway cruising with minimal drama.',
-                strengths: [
-                  '210,000 km timing belt interval and strong 300k+ km block.',
-                  'Real 4.5–5.3 L/100km highway fuel economy.',
-                  'Capable of 240,000–280,000+ km with timely 10,000–15,000 km oil changes.'
-                ],
-                watchouts: [
-                  'Switchable water-pump sleeve sticking / weeping.',
-                  'DPF / AdBlue / EGR issues if driven only in city traffic.'
-                ],
-                beforeYouBuy: [
-                  'Check coolant level and ask if water pump was replaced.',
-                  'Verify highway use & DPF/AdBlue warning-free dash.',
-                  'Start the engine cold and verify smooth idle with no injector knock or blue-grey smoke.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–60,000 km / 4 yrs',
-                    action: 'Annual 15,000 km oil & filter service plus brake fluid every 2 yrs',
-                    cost: '€160–€240',
-                    ifIgnored: 'Long-life 30,000 km intervals carbonize turbo oil feed lines',
-                    damageCost: '€1,100–€1,800'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '80,000–120,000 km / 6–8 yrs',
-                    action: 'Replace coolant thermostat, glow plugs & inspect rubber boost hoses',
-                    cost: '€250–€450',
-                    ifIgnored: 'Cracked hoses or stuck thermostat block DPF regeneration',
-                    damageCost: '€900–€1,600'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130,000–170,000 km / 8–10 yrs',
-                    action: 'Dual-mass flywheel, clutch & EGR cooler / valve clean or replace',
-                    cost: '€950–€1,550',
-                    ifIgnored: 'Failing flywheel damages gearbox input bearing; clogged EGR stalls car',
-                    damageCost: '€2,000–€3,000'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '210,000 km / 7–10 yrs',
-                    action: 'Full timing belt, water pump & auxiliary belt kit replacement',
-                    cost: '€650–€950',
-                    ifIgnored: 'Belt snap bends valves and destroys cylinder head',
-                    damageCost: '€3,000–€5,000'
-                  },
-                  {
-                    tier: 'red',
-                    km: '190,000–240,000 km / 10+ yrs',
-                    action: 'Professional DPF cleaning/replacement & injector seal / high-pressure pump check',
-                    cost: '€600–€1,400',
-                    ifIgnored: 'Fuel dilution in oil ruins turbocharger and main bearings',
-                    damageCost: '€2,500–€4,500'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210,000–250,000 km / 12+ yrs',
-                    action: 'Overhaul front/rear suspension bushings, dampers & engine mounts',
-                    cost: '€850–€1,450',
-                    ifIgnored: 'Worn bushings ruin tires and cause MOT failure',
-                    damageCost: '€1,500–€2,400'
-                  }
-                ]
-              },
-              de: {
-                headline: 'Kultivierter EA288 2.0 TDI (150)— gemacht für entspannte Langstrecken bei niedrigem Verbrauch.',
-                strengths: [
-                  '210.000 km Zahnriemenintervall und extrem haltbarer Block.',
-                  'Nur 4,5–Sparsam (5,3 L/100km).',
-                  'Erreicht bei Ölwechseln alle 10.000–15.000 km rund 240.000–280.000+ km.'
-                ],
-                watchouts: [
-                  'Undichte/klemmende schaltbare Wasserpumpe.',
-                  'DPF / AdBlue / AGR bei reiner Kurzstrecke.'
-                ],
-                beforeYouBuy: [
-                  'Kühlmittelstand & Wasserpumpen-Tausch prüfen.',
-                  'Langstrecken-Historie & AdBlue-System checken.',
-                  'Kalten Motor starten und auf ruhigen Leerlauf ohne Injektor-Nageln oder blauen Rauch achten.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–60.000 km / 4 J.',
-                    action: 'Jährlicher Öl- & Filterwechsel (max. 15.000 km) + Bremsflüssigkeit alle 2 J.',
-                    cost: '160–240 €',
-                    ifIgnored: 'Longlife-30.000-km-Intervalle verkoken Turbo-Ölleitungen',
-                    damageCost: '1.100–1.800 €'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '80.000–120.000 km / 6–8 J.',
-                    action: 'Thermostat, Glühkerzen & alternde Ladedruckschläuche prüfen/tauschen',
-                    cost: '250–450 €',
-                    ifIgnored: 'Offenes Thermostat verhindert DPF-Regeneration',
-                    damageCost: '900–1.600 €'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130.000–170.000 km / 8–10 J.',
-                    action: 'Zweimassenschwungrad, Kupplung sowie AGR-Ventil/Kühler erneuern',
-                    cost: '950–1.550 €',
-                    ifIgnored: 'Defektes ZMS schädigt Getriebelager; verstopftes AGR legt Motor lahm',
-                    damageCost: '2.000–3.000 €'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '210.000 km / 7–10 J.',
-                    action: 'Zahnriemen-Satz inkl. Wasserpumpe & Keilrippenriemen wechseln',
-                    cost: '650–950 €',
-                    ifIgnored: 'Riemenriss führt zum kapitalen Motorschaden',
-                    damageCost: '3.000–5.000 €'
-                  },
-                  {
-                    tier: 'red',
-                    km: '190.000–240.000 km / 10+ J.',
-                    action: 'DPF-Reinigung/-Tausch, Injektor-Dichtungen & Hochdruckpumpe prüfen',
-                    cost: '600–1.400 €',
-                    ifIgnored: 'Ölverdünnung zerstört Turbolader und Kurbelwellenlager',
-                    damageCost: '2.500–4.500 €'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210.000–250.000 km / 12+ J.',
-                    action: 'Fahrwerkslager, Stoßdämpfer & Motorlager komplett überholen',
-                    cost: '850–1.450 €',
-                    ifIgnored: 'Ausgeschlagene Achsen, ungleicher Reifenabrieb & TÜV-Mängel',
-                    damageCost: '1.500–2.400 €'
-                  }
-                ]
-              },
-              ru: {
-                headline: 'Тихий и ресурсный дизель EA288 2.0 TDI (150)— создан для уверенных поездок по трассе.',
-                strengths: [
-                  'Ресурсный блок и ремень на 210 тыс. км.',
-                  'Реальный расход 4,5–5,3 л/100 км.',
-                  'Способен пройти 240 000–280 000+ км при замене масла каждые 10 000–15 000 км.'
-                ],
-                watchouts: [
-                  'Подтекание или клин регулируемой помпы.',
-                  'Загрязнение DPF/EGR при езде только по городу.'
-                ],
-                beforeYouBuy: [
-                  'Проверить уровень антифриза и замену помпы.',
-                  'Уточнить историю трассовых пробегов и AdBlue.',
-                  'Запустить дизель на холодную— работа должна быть ровной без стука форсунок и дыма.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–60 000 км / 4 года',
-                    action: 'Ежегодная замена масла (раз в 10–15 тыс. км) и тормозной жидкости раз в 2 года',
-                    cost: '€160–€240',
-                    ifIgnored: 'Интервалы 30 тыс. км закоксовывают маслоподачу турбины',
-                    damageCost: '€1 100–€1 800'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '80 000–120 000 км / 6–8 лет',
-                    action: 'Замена термостата, свечей накала и проверка резиновых патрубков наддува',
-                    cost: '€250–€450',
-                    ifIgnored: 'Недогрев двигателя срывает прожиг сажевого фильтра',
-                    damageCost: '€900–€1 600'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130 000–170 000 км / 8–10 лет',
-                    action: 'Замена двухмассового маховика, сцепления и чистка/замена клапана EGR',
-                    cost: '€950–€1 550',
-                    ifIgnored: 'Разбитый маховик губит подшипник КПП; клин EGR душит мотор',
-                    damageCost: '€2 000–€3 000'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '210 000 km / 7–10 лет',
-                    action: 'Замена комплекта ремня ГРМ, помпы и приводного ремня',
-                    cost: '€650–€950',
-                    ifIgnored: 'Обрыв ремня загибает клапаны и ломает ГБЦ',
-                    damageCost: '€3 000–€5 000'
-                  },
-                  {
-                    tier: 'red',
-                    km: '190 000–240 000 km / 10+ лет',
-                    action: 'Промывка/замена DPF, проверка форсунок и ТНВД на стружку',
-                    cost: '€600–€1 400',
-                    ifIgnored: 'Разжижение масла топливом или стружка убивают мотор',
-                    damageCost: '€2 500–€4 500'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210 000–250 000 км / 12+ лет',
-                    action: 'Переборка сайлентблоков подвески, амортизаторов и опор двигателя',
-                    cost: '€850–€1 450',
-                    ifIgnored: 'Люфты в шасси, жор резины и непрохождение ТО',
-                    damageCost: '€1 500–€2 400'
-                  }
-                ]
-              }
-            }
-          },
           transmissionDriveline: {
             score: 8.4,
             badges: {
@@ -8843,14 +6247,6 @@ registerAutoDuelVehicle({
               en: ['0–100 km/h: 8.6 s • 218 km/h', 'Effortless Speed'],
               de: ['0–100 km/h: 8.6 s • 218 km/h', 'Souveräner Vortrieb'],
               ru: ['0–100 км/ч: 8.6 с • 218 км/ч', 'Уверенный разгон']
-            }
-          },
-          midRangeTorquePassing: {
-            score: 8.1,
-            badges: {
-              en: ['340 Nm Common-Rail Torque', 'Strong Highway Overtaking'],
-              de: ['340 Nm Drehmoment', 'Souveräner Durchzug'],
-              ru: ['340 Н·м крутящего момента', 'Лёгкие обгоны на трассе']
             }
           },
           handlingAgility: {
@@ -9857,6 +7253,7 @@ registerAutoDuelVehicle({
       },
       {
         id: '30-g-tron',
+        engineRef: 'vag-1.5-tgi-130',
         defaultGearboxId: 'mq250-6mt-sc',
         gearboxes: [
           { id: 'mq250-6mt-sc', isDefault: true },
@@ -9945,228 +7342,18 @@ registerAutoDuelVehicle({
         },
         specOverrides: {
           engineName: { en: '1.5L I4 30 g-tron (CNG)', de: '1.5L Reihenvierzylinder 30 g-tron', ru: '1.5L R4 30 g-tron (CNG)' },
-          forcedInduction: '@turbo', injection: '@direct', timingDrive: '@belt',
-          gearbox: '@manual6', clutchDmf: '@singleClutch', towingBraked: '1,300 kg',
-          sprint0100: '9.4 s', topSpeed: '211 km/h', peakTorque: '200 Nm @ 1,400 rpm',
-          passingPunch: { en: 'Livelier 1.5 CNG Commuter', de: 'Flotterer 1.5-Erdgas-Pendler', ru: 'Бодрый 1.5 метановый ход' },
-          realWorldFuel: '3.5 kg CNG / 5.2 L', tankRange: '17.3 kg + 9 L (~490 km CNG)', euroNorm: 'Euro 6d-TEMP (CNG)', taxInsurance: '@tierVeryLow', serviceWear: '@tierMod'
+          gearbox: '@manual6',
+          clutchDmf: '@singleClutch',
+          towingBraked: '1,300 kg',
+          sprint0100: '9.4 s',
+          topSpeed: '211 km/h',
+          realWorldFuel: '3.5 kg CNG / 5.2 L',
+          tankRange: '17.3 kg + 9 L (~490 km CNG)',
+          euroNorm: 'Euro 6d-TEMP (CNG)',
+          taxInsurance: '@tierVeryLow',
+          serviceWear: '@tierMod'
         },
         subStats: {
-          powertrainDurability: {
-            score: 7.6,
-            badges: {
-              en: ['Belt EA211 Much Tougher Than 8P', 'Watch Plastic Water Pump Housing'],
-              de: ['EA211-Zahnriemen deutlich robuster', 'Wasserpumpen-Gehäuse prüfen'],
-              ru: ['Ременной EA211 намного надёжнее', 'Проверить корпус помпы']
-            },
-            specBreakdown: {
-              engineName: { specs: [{ k: 'engineCode', v: 'DHFA (EA211 Evo TGI) · 1,498 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium · Larger 17.3 kg CNG Tanks + 9 L Reserve', de: 'Reihenvierzylinder Alu · 17,3 kg CNG-Tanks + 9-L-Reservetank', ru: 'Рядный 4-цил. алюминий · 17,3 кг метана + 9 л резервный бак' } }], note: { en: 'Faster 131 HP 1.5 TGI with bigger 17.3 kg CNG tanks (~400+ km on gas), but note the tiny 9 L petrol reserve tank — only buy if CNG stations are near you.', de: 'Flotterer 131-PS-1.5-TGI mit größerem 17,3-kg-Gastank, aber winzigem 9-L-Benzin-Reservetank — nur mit guter CNG-Tankstellen-Dichte sinnvoll.', ru: 'Более бодрый 131-сильный 1.5 TGI с увеличенным запасом метана, но крошечным 9-литровым бензобаком — берите только при наличии АГНКС рядом.' } },
-              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
-            },
-            dossier: {
-              en: {
-                headline: 'Modern MQB 30 g-tron— solves the 8P timing-chain/oil issues with crisp efficiency.',
-                strengths: [
-                  'Much higher reliability than 2007–2011 8P TFSI engines.',
-                  'Refined, quiet and frugal in everyday driving.',
-                  'Reaches 200,000–250,000 km when oil, cooling, and timing care stay strictly on schedule.'
-                ],
-                watchouts: [
-                  'Plastic water-pump / thermostat housing seepage.',
-                  'Follow annual 10,000–15,000 km synthetic oil intervals and inspect coolant hoses for age seepage.'
-                ],
-                beforeYouBuy: [
-                  'Inspect underbonnet for pink coolant crust around thermostat/pump.',
-                  'Check full service history (15,000 km oil changes best).',
-                  'Listen to a stone-cold start for steady idle and zero metallic timing-chain rattle.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–50,000 km / 4 yrs',
-                    action: 'Annual oil/filter service (15,000 km max) & cabin/air filters',
-                    cost: '€130–€200',
-                    ifIgnored: 'Sludge buildup and premature cam lobe wear',
-                    damageCost: '€800–€1,400'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '60,000–90,000 km / 5–7 yrs',
-                    action: 'Replace spark plugs, ignition coils & age-hardened coolant hoses',
-                    cost: '€220–€380',
-                    ifIgnored: 'Misfires damage catalytic converter; old hoses split',
-                    damageCost: '€900–€1,500'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '180,000–210,000 km / 6–8 yrs',
-                    action: 'Timing belt, water pump & thermostat housing replacement',
-                    cost: '€520–€820',
-                    ifIgnored: 'Aged rubber belt snaps and bends valves',
-                    damageCost: '€2,500–€4,000'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130,000–170,000 km / 8–10 yrs',
-                    action: 'Clutch kit / dry-DSG clutch pack & crankcase breather valve service',
-                    cost: '€650–€1,300',
-                    ifIgnored: 'Slipping clutch or vacuum leaks cause rough idle',
-                    damageCost: '€1,400–€2,200'
-                  },
-                  {
-                    tier: 'red',
-                    km: '170,000–210,000 km / 10–12 yrs',
-                    action: 'Exhaust flexi-pipe, catalytic converter & camshaft seal refresh',
-                    cost: '€450–€950',
-                    ifIgnored: 'Oil leaks onto exhaust and failed emissions test',
-                    damageCost: '€1,200–€1,900'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210,000–250,000 km / 12+ yrs',
-                    action: 'Overhaul front wishbone bushings, dampers & engine mounts',
-                    cost: '€750–€1,300',
-                    ifIgnored: 'Vague steering and tire wear',
-                    damageCost: '€1,300–€2,000'
-                  }
-                ]
-              },
-              de: {
-                headline: 'Moderner MQB 30 g-tron— löst die alten 8P-Schwächen mit hoher Effizienz.',
-                strengths: [
-                  'Deutlich zuverlässiger als die alten 8P-TFSI.',
-                  'Leise und sparsam im Alltag.',
-                  'Hält 200.000–250.000 km bei strikter Öl-, Kühlungs- und Steuerzeiten-Pflege.'
-                ],
-                watchouts: [
-                  'Undichtigkeiten am Kunststoff-Thermostatgehäuse.',
-                  'Jährliche Ölwechsel (10.000–15.000 km) einhalten und Kühlerschläuche auf Alterungsrisse prüfen.'
-                ],
-                beforeYouBuy: [
-                  'Kühlmittelreste am Thermostat-/Pumpengehäuse suchen.',
-                  'Regelmäßige Ölwechsel prüfen.',
-                  'Beim Kaltstart auf ruhigen Leerlauf ohne metallisches Steuerketten-Rasseln achten.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–50.000 km / 4 J.',
-                    action: 'Jährlicher Öl- & Filterservice (max. 15.000 km)',
-                    cost: '130–200 €',
-                    ifIgnored: 'Ölschlamm und erhöhter Nockenwellen-Verschleiß',
-                    damageCost: '800–1.400 €'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '60.000–90.000 km / 5–7 J.',
-                    action: 'Zündkerzen, Zündspulen & gealterte Kühlerschläuche ersetzen',
-                    cost: '220–380 €',
-                    ifIgnored: 'Zündaussetzer schädigen Katalysator; spröde Schläuche platzen',
-                    damageCost: '900–1.500 €'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '180.000–210.000 km / 6–8 J.',
-                    action: 'Zahnriemen-Wechsel inkl. Wasserpumpe & Thermostatgehäuse',
-                    cost: '520–820 €',
-                    ifIgnored: 'Alternder Zahnriemen reißt und verursacht Motorschaden',
-                    damageCost: '2.500–4.000 €'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130.000–170.000 km / 8–10 J.',
-                    action: 'Kupplungssatz / Trocken-DSG-Kupplung & Entlüftungsventil erneuern',
-                    cost: '650–1.300 €',
-                    ifIgnored: 'Rutschende Kupplung oder unrunder Leerlauf',
-                    damageCost: '1.400–2.200 €'
-                  },
-                  {
-                    tier: 'red',
-                    km: '170.000–210.000 km / 10–12 J.',
-                    action: 'Flexrohr, Katalysator & Nockenwellen-Dichtungen erneuern',
-                    cost: '450–950 €',
-                    ifIgnored: 'Ölverlust und nicht bestandene AU',
-                    damageCost: '1.200–1.900 €'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210.000–250.000 km / 12+ J.',
-                    action: 'Querlenkerbuchsen, Stoßdämpfer & Motorlager überholen',
-                    cost: '750–1.300 €',
-                    ifIgnored: 'Schwammiges Fahrverhalten & Reifenverschleiß',
-                    damageCost: '1.300–2.000 €'
-                  }
-                ]
-              },
-              ru: {
-                headline: 'Современный 30 g-tron на MQB— избавлен от детских болезней A3 8P.',
-                strengths: [
-                  'Заметно надёжнее старых TFSI на поколении 8P.',
-                  'Тихий, плавный и экономичный.',
-                  'Проходит 200 000–250 000 км при строгом контроле масла, охлаждения и ГРМ.'
-                ],
-                watchouts: [
-                  'Подтекания пластикового корпуса термостата/помпы.',
-                  'Соблюдайте замену масла раз в 10 000–15 000 км и проверяйте патрубки охлаждения на утечки.'
-                ],
-                beforeYouBuy: [
-                  'Осмотреть корпус помпы на розовый налёт антифриза.',
-                  'Убедиться в регулярной замене масла.',
-                  'Послушать запуск на холодную— холостой ход должен быть ровным без металлического звона цепи.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–50 000 км / 4 года',
-                    action: 'Ежегодная замена масла (раз в 10–15 тыс. км) и фильтров',
-                    cost: '€130–€200',
-                    ifIgnored: 'Нагар и ускоренный износ распредвалов',
-                    damageCost: '€800–€1 400'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '60 000–90 000 км / 5–7 лет',
-                    action: 'Замена свечей, катушек зажигания и стареющих патрубков охлаждения',
-                    cost: '€220–€380',
-                    ifIgnored: 'Пропуски сжигают катализатор; старые шланги лопаются',
-                    damageCost: '€900–€1 500'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '180 000–210 000 km / 6–8 лет',
-                    action: 'Замена ремня ГРМ, водяной помпы и корпуса термостата',
-                    cost: '€520–€820',
-                    ifIgnored: 'Обрыв ремня от возраста или пробега гнёт клапаны',
-                    damageCost: '€2 500–€4 000'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130 000–170 000 км / 8–10 лет',
-                    action: 'Замена сцепления / фрикционов сухой DSG и клапана ВКГ',
-                    cost: '€650–€1 300',
-                    ifIgnored: 'Пробуксовка сцепления и подсос воздуха',
-                    damageCost: '€1 400–€2 200'
-                  },
-                  {
-                    tier: 'red',
-                    km: '170 000–210 000 км / 10–12 лет',
-                    action: 'Замена гофры выхлопа, катализатора и сальников распредвала',
-                    cost: '€450–€950',
-                    ifIgnored: 'Течи масла и проблемы с выхлопом на техосмотре',
-                    damageCost: '€1 200–€1 900'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210 000–250 000 км / 12+ лет',
-                    action: 'Переборка сайлентблоков рычагов, амортизаторов и опор',
-                    cost: '€750–€1 300',
-                    ifIgnored: 'Разболтанная подвеска и износ шин',
-                    damageCost: '€1 300–€2 000'
-                  }
-                ]
-              }
-            }
-          },
           transmissionDriveline: {
             score: 7.6,
             badges: {
@@ -10258,14 +7445,6 @@ registerAutoDuelVehicle({
               ru: ['0–100 км/ч: 9.4 с • 211 км/ч', 'Бодрый отклик турбины']
             }
           },
-          midRangeTorquePassing: {
-            score: 7.0,
-            badges: {
-              en: ['200 Nm Turbo Torque', 'Clean Mid-Range Passing'],
-              de: ['200 Nm Drehmoment', 'Sauberer Durchzug'],
-              ru: ['200 Н·м крутящего момента', 'Уверенные обгоны']
-            }
-          },
           handlingAgility: {
             score: 8.1,
             badges: {
@@ -10327,6 +7506,7 @@ registerAutoDuelVehicle({
       },
       {
         id: '35-tfsi',
+        engineRef: 'vag-1.5-tsi-150-cod',
         defaultGearboxId: 'mq250-6mt-sc',
         gearboxes: [
           { id: 'mq250-6mt-sc', isDefault: true },
@@ -10411,228 +7591,18 @@ registerAutoDuelVehicle({
         },
         specOverrides: {
           engineName: { en: '1.5L I4 35 TFSI (WLTP Belt)', de: '1.5L Reihenvierzylinder 35 TFSI', ru: '1.5L R4 35 TFSI (WLTP Ремень)' },
-          forcedInduction: '@turbo', injection: '@direct', timingDrive: '@belt',
-          gearbox: '@manual6', clutchDmf: '@singleClutch', towingBraked: '1,500 kg',
-          sprint0100: '8.2 s', topSpeed: '220 km/h', peakTorque: '250 Nm @ 1,500 rpm',
-          passingPunch: { en: 'Polished 150 HP All-Rounder', de: 'Ausgereifter 150-PS-Allrounder', ru: 'Отличный 150-сильный универсал' },
-          realWorldFuel: '5.9 L/100km', tankRange: '50 L (~845 km)', euroNorm: 'Euro 6d-TEMP (OPF)', taxInsurance: '@tierLowMod', serviceWear: '@tierLowMod'
+          gearbox: '@manual6',
+          clutchDmf: '@singleClutch',
+          towingBraked: '1,500 kg',
+          sprint0100: '8.2 s',
+          topSpeed: '220 km/h',
+          realWorldFuel: '5.9 L/100km',
+          tankRange: '50 L (~845 km)',
+          euroNorm: 'Euro 6d-TEMP (OPF)',
+          taxInsurance: '@tierLowMod',
+          serviceWear: '@tierLowMod'
         },
         subStats: {
-          powertrainDurability: {
-            score: 7.9,
-            badges: {
-              en: ['Belt EA211 Much Tougher Than 8P', 'Watch Plastic Water Pump Housing'],
-              de: ['EA211-Zahnriemen deutlich robuster', 'Wasserpumpen-Gehäuse prüfen'],
-              ru: ['Ременной EA211 намного надёжнее', 'Проверить корпус помпы']
-            },
-            specBreakdown: {
-              engineName: { specs: [{ k: 'engineCode', v: 'DADA / DPCA (EA211 Evo) · 1,498 cc' }, { k: 'architecture', v: { en: 'Inline-4 Aluminium · Euro 6d-TEMP + COD + Timing Belt', de: 'Reihenvierzylinder Alu · Euro 6d-TEMP + COD + Zahnriemen', ru: 'Рядный 4-цил. алюминий · Euro 6d-TEMP + COD + ремень' } }], note: { en: 'Late-production 2018–2020 1.5 TFSI Evo with refined ECU calibration, low fuel use, and crisp 8.2 s performance.', de: 'Späte 2018–2020er Baujahre des 1.5 TFSI Evo mit ausgereifter Abstimmung, 8,2 s Sprint und geringem Verbrauch.', ru: 'Поздний 1.5 TFSI Evo (2018–2020) с доработанной прошивкой, низким расходом и уверенным разгоном 8,2 с.' } },
-              forcedInduction: '@turboPetrol', injection: '@directInjPetrol', timingDrive: '@timingDynamic'
-            },
-            dossier: {
-              en: {
-                headline: 'Modern MQB 35 TFSI— solves the 8P timing-chain/oil issues with crisp efficiency.',
-                strengths: [
-                  'Much higher reliability than 2007–2011 8P TFSI engines.',
-                  'Refined, quiet and frugal in everyday driving.',
-                  'Capable of 240,000–280,000+ km with timely 10,000–15,000 km oil changes.'
-                ],
-                watchouts: [
-                  'Plastic water-pump / thermostat housing seepage.',
-                  'Follow annual 10,000–15,000 km synthetic oil intervals and inspect coolant hoses for age seepage.'
-                ],
-                beforeYouBuy: [
-                  'Inspect underbonnet for pink coolant crust around thermostat/pump.',
-                  'Check full service history (15,000 km oil changes best).',
-                  'Listen to a stone-cold start for steady idle and zero metallic timing-chain rattle.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–50,000 km / 4 yrs',
-                    action: 'Annual oil/filter service (15,000 km max) & cabin/air filters',
-                    cost: '€130–€200',
-                    ifIgnored: 'Sludge buildup and premature cam lobe wear',
-                    damageCost: '€800–€1,400'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '60,000–90,000 km / 5–7 yrs',
-                    action: 'Replace spark plugs, ignition coils & age-hardened coolant hoses',
-                    cost: '€220–€380',
-                    ifIgnored: 'Misfires damage catalytic converter; old hoses split',
-                    damageCost: '€900–€1,500'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '180,000–210,000 km / 6–8 yrs',
-                    action: 'Timing belt, water pump & thermostat housing replacement',
-                    cost: '€520–€820',
-                    ifIgnored: 'Aged rubber belt snaps and bends valves',
-                    damageCost: '€2,500–€4,000'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130,000–170,000 km / 8–10 yrs',
-                    action: 'Clutch kit / dry-DSG clutch pack & crankcase breather valve service',
-                    cost: '€650–€1,300',
-                    ifIgnored: 'Slipping clutch or vacuum leaks cause rough idle',
-                    damageCost: '€1,400–€2,200'
-                  },
-                  {
-                    tier: 'red',
-                    km: '170,000–210,000 km / 10–12 yrs',
-                    action: 'Exhaust flexi-pipe, catalytic converter & camshaft seal refresh',
-                    cost: '€450–€950',
-                    ifIgnored: 'Oil leaks onto exhaust and failed emissions test',
-                    damageCost: '€1,200–€1,900'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210,000–250,000 km / 12+ yrs',
-                    action: 'Overhaul front wishbone bushings, dampers & engine mounts',
-                    cost: '€750–€1,300',
-                    ifIgnored: 'Vague steering and tire wear',
-                    damageCost: '€1,300–€2,000'
-                  }
-                ]
-              },
-              de: {
-                headline: 'Moderner MQB 35 TFSI— löst die alten 8P-Schwächen mit hoher Effizienz.',
-                strengths: [
-                  'Deutlich zuverlässiger als die alten 8P-TFSI.',
-                  'Leise und sparsam im Alltag.',
-                  'Erreicht bei Ölwechseln alle 10.000–15.000 km rund 240.000–280.000+ km.'
-                ],
-                watchouts: [
-                  'Undichtigkeiten am Kunststoff-Thermostatgehäuse.',
-                  'Jährliche Ölwechsel (10.000–15.000 km) einhalten und Kühlerschläuche auf Alterungsrisse prüfen.'
-                ],
-                beforeYouBuy: [
-                  'Kühlmittelreste am Thermostat-/Pumpengehäuse suchen.',
-                  'Regelmäßige Ölwechsel prüfen.',
-                  'Beim Kaltstart auf ruhigen Leerlauf ohne metallisches Steuerketten-Rasseln achten.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–50.000 km / 4 J.',
-                    action: 'Jährlicher Öl- & Filterservice (max. 15.000 km)',
-                    cost: '130–200 €',
-                    ifIgnored: 'Ölschlamm und erhöhter Nockenwellen-Verschleiß',
-                    damageCost: '800–1.400 €'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '60.000–90.000 km / 5–7 J.',
-                    action: 'Zündkerzen, Zündspulen & gealterte Kühlerschläuche ersetzen',
-                    cost: '220–380 €',
-                    ifIgnored: 'Zündaussetzer schädigen Katalysator; spröde Schläuche platzen',
-                    damageCost: '900–1.500 €'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '180.000–210.000 km / 6–8 J.',
-                    action: 'Zahnriemen-Wechsel inkl. Wasserpumpe & Thermostatgehäuse',
-                    cost: '520–820 €',
-                    ifIgnored: 'Alternder Zahnriemen reißt und verursacht Motorschaden',
-                    damageCost: '2.500–4.000 €'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130.000–170.000 km / 8–10 J.',
-                    action: 'Kupplungssatz / Trocken-DSG-Kupplung & Entlüftungsventil erneuern',
-                    cost: '650–1.300 €',
-                    ifIgnored: 'Rutschende Kupplung oder unrunder Leerlauf',
-                    damageCost: '1.400–2.200 €'
-                  },
-                  {
-                    tier: 'red',
-                    km: '170.000–210.000 km / 10–12 J.',
-                    action: 'Flexrohr, Katalysator & Nockenwellen-Dichtungen erneuern',
-                    cost: '450–950 €',
-                    ifIgnored: 'Ölverlust und nicht bestandene AU',
-                    damageCost: '1.200–1.900 €'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210.000–250.000 km / 12+ J.',
-                    action: 'Querlenkerbuchsen, Stoßdämpfer & Motorlager überholen',
-                    cost: '750–1.300 €',
-                    ifIgnored: 'Schwammiges Fahrverhalten & Reifenverschleiß',
-                    damageCost: '1.300–2.000 €'
-                  }
-                ]
-              },
-              ru: {
-                headline: 'Современный 35 TFSI на MQB— избавлен от детских болезней A3 8P.',
-                strengths: [
-                  'Заметно надёжнее старых TFSI на поколении 8P.',
-                  'Тихий, плавный и экономичный.',
-                  'Способен пройти 240 000–280 000+ км при замене масла каждые 10 000–15 000 км.'
-                ],
-                watchouts: [
-                  'Подтекания пластикового корпуса термостата/помпы.',
-                  'Соблюдайте замену масла раз в 10 000–15 000 км и проверяйте патрубки охлаждения на утечки.'
-                ],
-                beforeYouBuy: [
-                  'Осмотреть корпус помпы на розовый налёт антифриза.',
-                  'Убедиться в регулярной замене масла.',
-                  'Послушать запуск на холодную— холостой ход должен быть ровным без металлического звона цепи.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–50 000 км / 4 года',
-                    action: 'Ежегодная замена масла (раз в 10–15 тыс. км) и фильтров',
-                    cost: '€130–€200',
-                    ifIgnored: 'Нагар и ускоренный износ распредвалов',
-                    damageCost: '€800–€1 400'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '60 000–90 000 км / 5–7 лет',
-                    action: 'Замена свечей, катушек зажигания и стареющих патрубков охлаждения',
-                    cost: '€220–€380',
-                    ifIgnored: 'Пропуски сжигают катализатор; старые шланги лопаются',
-                    damageCost: '€900–€1 500'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '180 000–210 000 km / 6–8 лет',
-                    action: 'Замена ремня ГРМ, водяной помпы и корпуса термостата',
-                    cost: '€520–€820',
-                    ifIgnored: 'Обрыв ремня от возраста или пробега гнёт клапаны',
-                    damageCost: '€2 500–€4 000'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130 000–170 000 км / 8–10 лет',
-                    action: 'Замена сцепления / фрикционов сухой DSG и клапана ВКГ',
-                    cost: '€650–€1 300',
-                    ifIgnored: 'Пробуксовка сцепления и подсос воздуха',
-                    damageCost: '€1 400–€2 200'
-                  },
-                  {
-                    tier: 'red',
-                    km: '170 000–210 000 км / 10–12 лет',
-                    action: 'Замена гофры выхлопа, катализатора и сальников распредвала',
-                    cost: '€450–€950',
-                    ifIgnored: 'Течи масла и проблемы с выхлопом на техосмотре',
-                    damageCost: '€1 200–€1 900'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210 000–250 000 км / 12+ лет',
-                    action: 'Переборка сайлентблоков рычагов, амортизаторов и опор',
-                    cost: '€750–€1 300',
-                    ifIgnored: 'Разболтанная подвеска и износ шин',
-                    damageCost: '€1 300–€2 000'
-                  }
-                ]
-              }
-            }
-          },
           transmissionDriveline: {
             score: 7.6,
             badges: {
@@ -10722,14 +7692,6 @@ registerAutoDuelVehicle({
               en: ['0–100 km/h: 8.2 s • 220 km/h', 'Lively Turbo Response'],
               de: ['0–100 km/h: 8.2 s • 220 km/h', 'Spritziger Turbo'],
               ru: ['0–100 км/ч: 8.2 с • 220 км/ч', 'Бодрый отклик турбины']
-            }
-          },
-          midRangeTorquePassing: {
-            score: 7.6,
-            badges: {
-              en: ['250 Nm Turbo Torque', 'Clean Mid-Range Passing'],
-              de: ['250 Nm Drehmoment', 'Sauberer Durchzug'],
-              ru: ['250 Н·м крутящего момента', 'Уверенные обгоны']
             }
           },
           handlingAgility: {
@@ -12164,6 +9126,7 @@ registerAutoDuelVehicle({
       },
       {
         id: '35-tdi',
+        engineRef: 'vag-2.0-tdi-150',
         defaultGearboxId: 'mq350-6mt-dmf',
         gearboxes: [
           { id: 'mq350-6mt-dmf', isDefault: true },
@@ -12256,228 +9219,18 @@ registerAutoDuelVehicle({
         },
         specOverrides: {
           engineName: { en: '2.0L I4 35 TDI (150 HP SCR)', de: '2.0L Reihenvierzylinder 35 TDI', ru: '2.0L R4 35 TDI (150 л.с. SCR)' },
-          forcedInduction: '@turbo', injection: '@commonRail', timingDrive: '@belt',
-          gearbox: '@manual6', clutchDmf: '@clutchDmf', towingBraked: '1,600 kg',
-          sprint0100: '8.1 s', topSpeed: '218 km/h', peakTorque: '340 Nm @ 1,750 rpm',
-          passingPunch: { en: 'Effortless 340 Nm + Wet 7-DSG', de: 'Souveräne 340 Nm + Nasses DSG', ru: 'Уверенные 340 Н·м + мокрый DSG' },
-          realWorldFuel: '5.0 L/100km', tankRange: '50 L (~1,000 km)', euroNorm: 'Euro 6d-TEMP (SCR)', taxInsurance: '@tierMod', serviceWear: '@tierLowMod'
+          gearbox: '@manual6',
+          clutchDmf: '@clutchDmf',
+          towingBraked: '1,600 kg',
+          sprint0100: '8.1 s',
+          topSpeed: '218 km/h',
+          realWorldFuel: '5.0 L/100km',
+          tankRange: '50 L (~1,000 km)',
+          euroNorm: 'Euro 6d-TEMP (SCR)',
+          taxInsurance: '@tierMod',
+          serviceWear: '@tierLowMod'
         },
         subStats: {
-          powertrainDurability: {
-            score: 8.4,
-            badges: {
-              en: ['Proven EA288 Common-Rail', '210k Belt • Watch Water Pump'],
-              de: ['Bewährter EA288 Common-Rail', '210 Tkm Riemen • Wasserpumpe prüfen'],
-              ru: ['Надёжный EA288 Common-Rail', 'Ремень 210 тыс. • Контроль помпы']
-            },
-            specBreakdown: {
-              engineName: { specs: [{ k: 'engineCode', v: 'DFGA (EA288 SCR) · 1,968 cc' }, { k: 'architecture', v: { en: 'Inline-4 Common-Rail · AdBlue SCR + Wet 7-DSG (DQ381)', de: 'Reihenvierzylinder Common-Rail · AdBlue + Nasses 7-DSG (DQ381)', ru: 'Рядный 4-цил. Common-Rail · AdBlue + мокрый 7-DSG (DQ381)' } }], note: { en: 'The ultimate late-model A3 8V diesel: Euro 6d-TEMP AdBlue, tough wet 7-speed DQ381 DSG, 8.1 s pace, and 1,000 km per tank.', de: 'Der ausgereifteste A3-8V-Diesel: Euro 6d-TEMP mit AdBlue, robustes nasses 7-Gang-DSG und 1.000 km Reichweite.', ru: 'Самый зрелый дизель A3 8V: Euro 6d-TEMP с AdBlue, крепкий мокрый 7-DSG DQ381 и 1 000 км на одном баке.' } },
-              forcedInduction: '@turboDiesel', injection: '@commonRailDi', timingDrive: '@timingDynamic'
-            },
-            dossier: {
-              en: {
-                headline: 'Refined EA288 35 TDI— built for high-mileage highway cruising with minimal drama.',
-                strengths: [
-                  '210,000 km timing belt interval and strong 300k+ km block.',
-                  'Real 4.5–5.3 L/100km highway fuel economy.',
-                  'Capable of 240,000–280,000+ km with timely 10,000–15,000 km oil changes.'
-                ],
-                watchouts: [
-                  'Switchable water-pump sleeve sticking / weeping.',
-                  'DPF / AdBlue / EGR issues if driven only in city traffic.'
-                ],
-                beforeYouBuy: [
-                  'Check coolant level and ask if water pump was replaced.',
-                  'Verify highway use & DPF/AdBlue warning-free dash.',
-                  'Start the engine cold and verify smooth idle with no injector knock or blue-grey smoke.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–60,000 km / 4 yrs',
-                    action: 'Annual 15,000 km oil & filter service plus brake fluid every 2 yrs',
-                    cost: '€160–€240',
-                    ifIgnored: 'Long-life 30,000 km intervals carbonize turbo oil feed lines',
-                    damageCost: '€1,100–€1,800'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '80,000–120,000 km / 6–8 yrs',
-                    action: 'Replace coolant thermostat, glow plugs & inspect rubber boost hoses',
-                    cost: '€250–€450',
-                    ifIgnored: 'Cracked hoses or stuck thermostat block DPF regeneration',
-                    damageCost: '€900–€1,600'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130,000–170,000 km / 8–10 yrs',
-                    action: 'Dual-mass flywheel, clutch & EGR cooler / valve clean or replace',
-                    cost: '€950–€1,550',
-                    ifIgnored: 'Failing flywheel damages gearbox input bearing; clogged EGR stalls car',
-                    damageCost: '€2,000–€3,000'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '210,000 km / 7–10 yrs',
-                    action: 'Full timing belt, water pump & auxiliary belt kit replacement',
-                    cost: '€650–€950',
-                    ifIgnored: 'Belt snap bends valves and destroys cylinder head',
-                    damageCost: '€3,000–€5,000'
-                  },
-                  {
-                    tier: 'red',
-                    km: '190,000–240,000 km / 10+ yrs',
-                    action: 'Professional DPF cleaning/replacement & injector seal / high-pressure pump check',
-                    cost: '€600–€1,400',
-                    ifIgnored: 'Fuel dilution in oil ruins turbocharger and main bearings',
-                    damageCost: '€2,500–€4,500'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210,000–250,000 km / 12+ yrs',
-                    action: 'Overhaul front/rear suspension bushings, dampers & engine mounts',
-                    cost: '€850–€1,450',
-                    ifIgnored: 'Worn bushings ruin tires and cause MOT failure',
-                    damageCost: '€1,500–€2,400'
-                  }
-                ]
-              },
-              de: {
-                headline: 'Kultivierter EA288 35 TDI— gemacht für entspannte Langstrecken bei niedrigem Verbrauch.',
-                strengths: [
-                  '210.000 km Zahnriemenintervall und extrem haltbarer Block.',
-                  'Nur 4,5–Sparsam (5,3 L/100km).',
-                  'Erreicht bei Ölwechseln alle 10.000–15.000 km rund 240.000–280.000+ km.'
-                ],
-                watchouts: [
-                  'Undichte/klemmende schaltbare Wasserpumpe.',
-                  'DPF / AdBlue / AGR bei reiner Kurzstrecke.'
-                ],
-                beforeYouBuy: [
-                  'Kühlmittelstand & Wasserpumpen-Tausch prüfen.',
-                  'Langstrecken-Historie & AdBlue-System checken.',
-                  'Kalten Motor starten und auf ruhigen Leerlauf ohne Injektor-Nageln oder blauen Rauch achten.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–60.000 km / 4 J.',
-                    action: 'Jährlicher Öl- & Filterwechsel (max. 15.000 km) + Bremsflüssigkeit alle 2 J.',
-                    cost: '160–240 €',
-                    ifIgnored: 'Longlife-30.000-km-Intervalle verkoken Turbo-Ölleitungen',
-                    damageCost: '1.100–1.800 €'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '80.000–120.000 km / 6–8 J.',
-                    action: 'Thermostat, Glühkerzen & alternde Ladedruckschläuche prüfen/tauschen',
-                    cost: '250–450 €',
-                    ifIgnored: 'Offenes Thermostat verhindert DPF-Regeneration',
-                    damageCost: '900–1.600 €'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130.000–170.000 km / 8–10 J.',
-                    action: 'Zweimassenschwungrad, Kupplung sowie AGR-Ventil/Kühler erneuern',
-                    cost: '950–1.550 €',
-                    ifIgnored: 'Defektes ZMS schädigt Getriebelager; verstopftes AGR legt Motor lahm',
-                    damageCost: '2.000–3.000 €'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '210.000 km / 7–10 J.',
-                    action: 'Zahnriemen-Satz inkl. Wasserpumpe & Keilrippenriemen wechseln',
-                    cost: '650–950 €',
-                    ifIgnored: 'Riemenriss führt zum kapitalen Motorschaden',
-                    damageCost: '3.000–5.000 €'
-                  },
-                  {
-                    tier: 'red',
-                    km: '190.000–240.000 km / 10+ J.',
-                    action: 'DPF-Reinigung/-Tausch, Injektor-Dichtungen & Hochdruckpumpe prüfen',
-                    cost: '600–1.400 €',
-                    ifIgnored: 'Ölverdünnung zerstört Turbolader und Kurbelwellenlager',
-                    damageCost: '2.500–4.500 €'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210.000–250.000 km / 12+ J.',
-                    action: 'Fahrwerkslager, Stoßdämpfer & Motorlager komplett überholen',
-                    cost: '850–1.450 €',
-                    ifIgnored: 'Ausgeschlagene Achsen, ungleicher Reifenabrieb & TÜV-Mängel',
-                    damageCost: '1.500–2.400 €'
-                  }
-                ]
-              },
-              ru: {
-                headline: 'Тихий и ресурсный дизель EA288 35 TDI— создан для уверенных поездок по трассе.',
-                strengths: [
-                  'Ресурсный блок и ремень на 210 тыс. км.',
-                  'Реальный расход 4,5–5,3 л/100 км.',
-                  'Способен пройти 240 000–280 000+ км при замене масла каждые 10 000–15 000 км.'
-                ],
-                watchouts: [
-                  'Подтекание или клин регулируемой помпы.',
-                  'Загрязнение DPF/EGR при езде только по городу.'
-                ],
-                beforeYouBuy: [
-                  'Проверить уровень антифриза и замену помпы.',
-                  'Уточнить историю трассовых пробегов и AdBlue.',
-                  'Запустить дизель на холодную— работа должна быть ровной без стука форсунок и дыма.'
-                ],
-                highMileage: [
-                  {
-                    tier: 'yellow',
-                    km: '0–60 000 км / 4 года',
-                    action: 'Ежегодная замена масла (раз в 10–15 тыс. км) и тормозной жидкости раз в 2 года',
-                    cost: '€160–€240',
-                    ifIgnored: 'Интервалы 30 тыс. км закоксовывают маслоподачу турбины',
-                    damageCost: '€1 100–€1 800'
-                  },
-                  {
-                    tier: 'yellow',
-                    km: '80 000–120 000 км / 6–8 лет',
-                    action: 'Замена термостата, свечей накала и проверка резиновых патрубков наддува',
-                    cost: '€250–€450',
-                    ifIgnored: 'Недогрев двигателя срывает прожиг сажевого фильтра',
-                    damageCost: '€900–€1 600'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '130 000–170 000 км / 8–10 лет',
-                    action: 'Замена двухмассового маховика, сцепления и чистка/замена клапана EGR',
-                    cost: '€950–€1 550',
-                    ifIgnored: 'Разбитый маховик губит подшипник КПП; клин EGR душит мотор',
-                    damageCost: '€2 000–€3 000'
-                  },
-                  {
-                    tier: 'orange',
-                    km: '210 000 km / 7–10 лет',
-                    action: 'Замена комплекта ремня ГРМ, помпы и приводного ремня',
-                    cost: '€650–€950',
-                    ifIgnored: 'Обрыв ремня загибает клапаны и ломает ГБЦ',
-                    damageCost: '€3 000–€5 000'
-                  },
-                  {
-                    tier: 'red',
-                    km: '190 000–240 000 km / 10+ лет',
-                    action: 'Промывка/замена DPF, проверка форсунок и ТНВД на стружку',
-                    cost: '€600–€1 400',
-                    ifIgnored: 'Разжижение масла топливом или стружка убивают мотор',
-                    damageCost: '€2 500–€4 500'
-                  },
-                  {
-                    tier: 'red',
-                    km: '210 000–250 000 км / 12+ лет',
-                    action: 'Переборка сайлентблоков подвески, амортизаторов и опор двигателя',
-                    cost: '€850–€1 450',
-                    ifIgnored: 'Люфты в шасси, жор резины и непрохождение ТО',
-                    damageCost: '€1 500–€2 400'
-                  }
-                ]
-              }
-            }
-          },
           transmissionDriveline: {
             score: 8.4,
             badges: {
@@ -12567,14 +9320,6 @@ registerAutoDuelVehicle({
               en: ['0–100 km/h: 8.1 s • 218 km/h', 'Effortless Speed'],
               de: ['0–100 km/h: 8.1 s • 218 km/h', 'Souveräner Vortrieb'],
               ru: ['0–100 км/ч: 8.1 с • 218 км/ч', 'Уверенный разгон']
-            }
-          },
-          midRangeTorquePassing: {
-            score: 8.1,
-            badges: {
-              en: ['340 Nm Common-Rail Torque', 'Strong Highway Overtaking'],
-              de: ['340 Nm Drehmoment', 'Souveräner Durchzug'],
-              ru: ['340 Н·м крутящего момента', 'Лёгкие обгоны на трассе']
             }
           },
           handlingAgility: {
@@ -13093,7 +9838,7 @@ registerAutoDuelVehicle({
   angles: ['front', 'frontSide', 'side', 'sideRear', 'rear'],
   mirroredAngles: null,
   paints: [
-    { name: 'Glacier White Metallic', code: 'LS9R', hex: '#eef1f6', glow: 'rgba(238, 241, 246, 0.16)' },
+    { name: 'Glacier White Metallic', code: 'LS9R', hex: '#eef1f6', glow: 'rgba(238, 241, 246, 0.16)', isDefault: true },
     { name: 'Ibis White', code: 'LY9C', hex: '#f4f6f8', glow: 'rgba(244, 246, 248, 0.16)' },
     { name: 'Mythos Black Metallic', code: 'LY9T', hex: '#17191e', glow: 'rgba(64, 74, 88, 0.18)' },
     { name: 'Brilliant Black', code: 'LY9B', hex: '#14161a', glow: 'rgba(60, 70, 84, 0.18)' },

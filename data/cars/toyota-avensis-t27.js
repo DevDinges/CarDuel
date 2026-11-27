@@ -1731,7 +1731,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.4,
+            score: 7.9,
             badges: {
               en: ['509L Sedan Boot', 'Split-Folding Rear Seats'],
               de: ['509L Kofferraum', 'Geteilt umklappbare Rückbank'],
@@ -1739,7 +1739,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 7.0,
+            score: 7.2,
             badges: {
               en: ['520 kg Payload', '1,300 kg Braked Towing'],
               de: ['520 kg Zuladung', '1.300 kg Anhängelast'],
@@ -1747,7 +1747,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 4.9,
+            score: 5.4,
             badges: {
               en: ['0–100 km/h: 11.0 s', '195 km/h Top Speed'],
               de: ['0–100 km/h: 11,0 s', '195 km/h Spitze'],
@@ -1755,7 +1755,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 4.1,
+            score: 4.5,
             badges: {
               en: ['160 Nm', 'Needs Revs To Overtake'],
               de: ['160 Nm', 'Drehzahl zum Überholen nötig'],
@@ -1771,7 +1771,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 7.6,
+            score: 7.2,
             badges: {
               en: ['100–0 km/h: 36.9 m', '295 mm Discs • Steady Stopper'],
               de: ['100–0 km/h: 36,9 m', '295 mm Scheiben • Solide Bremsleistung'],
@@ -1779,7 +1779,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 7.3,
+            score: 6.4,
             badges: {
               en: ['7.2 L/100km', '142 g/km CO2 (Euro 5)'],
               de: ['7,2 L/100km', '142 g/km CO2 (Euro 5)'],
@@ -1814,7 +1814,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 7.8,
+            score: 8.2,
             badges: {
               en: ['Trusted Reliable Toyota Name', 'Low-Risk Used Buy'],
               de: ['Vertrauenswürdiger Toyota-Name', 'Gebrauchtkauf mit wenig Risiko'],
@@ -2211,7 +2211,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.4,
+            score: 7.9,
             badges: {
               en: ['509L Sedan Boot', 'Split-Folding Rear Seats'],
               de: ['509L Kofferraum', 'Geteilt umklappbare Rückbank'],
@@ -2219,7 +2219,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 7.9,
+            score: 7.7,
             badges: {
               en: ['530 kg Payload', '1,500 kg Braked Towing'],
               de: ['530 kg Zuladung', '1.500 kg Anhängelast'],
@@ -2227,7 +2227,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 5.7,
+            score: 5.9,
             badges: {
               en: ['0–100 km/h: 10.4 s', '200 km/h Top Speed'],
               de: ['0–100 km/h: 10,4 s', '200 km/h Spitze'],
@@ -2235,7 +2235,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 5.1,
+            score: 5.0,
             badges: {
               en: ['180 Nm', 'Relaxed Pull From 2,500 rpm'],
               de: ['180 Nm', 'Entspannter Zug ab 2.500 U/min'],
@@ -2251,7 +2251,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 7.6,
+            score: 7.2,
             badges: {
               en: ['100–0 km/h: 36.9 m', '295 mm Discs • Steady Stopper'],
               de: ['100–0 km/h: 36,9 m', '295 mm Scheiben • Solide Bremsleistung'],
@@ -2259,7 +2259,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 6.8,
+            score: 6.2,
             badges: {
               en: ['7.4 L/100km', '148–153 g/km CO2 (Euro 5)'],
               de: ['7,4 L/100km', '148–153 g/km CO2 (Euro 5)'],
@@ -2294,7 +2294,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 8.6,
+            score: 8.2,
             badges: {
               en: ['Trusted Reliable Toyota Name', 'Low-Risk Used Buy'],
               de: ['Vertrauenswürdiger Toyota-Name', 'Gebrauchtkauf mit wenig Risiko'],
@@ -2692,7 +2692,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.4,
+            score: 7.9,
             badges: {
               en: ['509L Sedan Boot', 'Split-Folding Rear Seats'],
               de: ['509L Kofferraum', 'Geteilt umklappbare Rückbank'],
@@ -2700,7 +2700,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 7.9,
+            score: 7.7,
             badges: {
               en: ['530 kg Payload', '1,500 kg Braked Towing'],
               de: ['530 kg Zuladung', '1.500 kg Anhängelast'],
@@ -2708,7 +2708,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 5.9,
+            score: 6.3,
             badges: {
               en: ['0–100 km/h: 9.8 s', '205 km/h Top Speed'],
               de: ['0–100 km/h: 9,8 s', '205 km/h Spitze'],
@@ -2716,7 +2716,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 5.5,
+            score: 5.3,
             badges: {
               en: ['196 Nm', 'Smooth Linear Delivery'],
               de: ['196 Nm', 'Gleichmäßige Kraftentfaltung'],
@@ -2732,7 +2732,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 7.6,
+            score: 7.2,
             badges: {
               en: ['100–0 km/h: 36.9 m', '295 mm Discs • Steady Stopper'],
               de: ['100–0 km/h: 36,9 m', '295 mm Scheiben • Solide Bremsleistung'],
@@ -2740,7 +2740,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 6.2,
+            score: 5.8,
             badges: {
               en: ['7.8 L/100km', '155–159 g/km CO2 (Euro 5)'],
               de: ['7,8 L/100km', '155–159 g/km CO2 (Euro 5)'],
@@ -2775,7 +2775,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 6.9,
+            score: 8.2,
             badges: {
               en: ['Trusted Reliable Toyota Name', 'Low-Risk Used Buy'],
               de: ['Vertrauenswürdiger Toyota-Name', 'Gebrauchtkauf mit wenig Risiko'],
@@ -3159,7 +3159,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.4,
+            score: 7.9,
             badges: {
               en: ['509L Sedan Boot', 'Split-Folding Rear Seats'],
               de: ['509L Kofferraum', 'Geteilt umklappbare Rückbank'],
@@ -3167,7 +3167,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 7.9,
+            score: 7.6,
             badges: {
               en: ['520 kg Payload', '1,500 kg Braked Towing'],
               de: ['520 kg Zuladung', '1.500 kg Anhängelast'],
@@ -3175,7 +3175,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 4.3,
+            score: 4.7,
             badges: {
               en: ['0–100 km/h: 12.0 s', '190 km/h Top Speed'],
               de: ['0–100 km/h: 12,0 s', '190 km/h Spitze'],
@@ -3183,7 +3183,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 6.2,
+            score: 7.1,
             badges: {
               en: ['270 Nm', 'Good Pull From 1,750 rpm'],
               de: ['270 Nm', 'Guter Zug ab 1.750 U/min'],
@@ -3199,7 +3199,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 7.6,
+            score: 7.2,
             badges: {
               en: ['100–0 km/h: 36.9 m', '295 mm Discs • Steady Stopper'],
               de: ['100–0 km/h: 36,9 m', '295 mm Scheiben • Solide Bremsleistung'],
@@ -3207,7 +3207,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 9.3,
+            score: 8.6,
             badges: {
               en: ['Efficient (5.0 L/100km)', '109–112 g/km CO2 (Euro 6)'],
               de: ['Sparsam (5,0 L/100km)', '109–112 g/km CO2 (Euro 6)'],
@@ -3241,7 +3241,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 8.4,
+            score: 8.2,
             badges: {
               en: ['Youngest Avensis Holds Value Best', 'Euro 6 Future-Proof'],
               de: ['Jüngster Avensis behält Wert am besten', 'Euro 6 zukunftssicher'],
@@ -3616,7 +3616,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.4,
+            score: 7.9,
             badges: {
               en: ['509L Sedan Boot', 'Split-Folding Rear Seats'],
               de: ['509L Kofferraum', 'Geteilt umklappbare Rückbank'],
@@ -3624,7 +3624,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 7.9,
+            score: 7.7,
             badges: {
               en: ['530 kg Payload', '1,500 kg Braked Towing'],
               de: ['530 kg Zuladung', '1.500 kg Anhängelast'],
@@ -3632,7 +3632,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 5.4,
+            score: 5.9,
             badges: {
               en: ['0–100 km/h: 10.5 s', '200 km/h Top Speed'],
               de: ['0–100 km/h: 10,5 s', '200 km/h Spitze'],
@@ -3640,7 +3640,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 7.6,
+            score: 7.7,
             badges: {
               en: ['310 Nm', 'Pull From 1,600 rpm'],
               de: ['310 Nm', 'Zug ab 1.600 U/min'],
@@ -3656,7 +3656,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 7.6,
+            score: 7.2,
             badges: {
               en: ['100–0 km/h: 36.9 m', '295 mm Discs • Steady Stopper'],
               de: ['100–0 km/h: 36,9 m', '295 mm Scheiben • Solide Bremsleistung'],
@@ -3664,7 +3664,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 8.2,
+            score: 7.7,
             badges: {
               en: ['5.9 L/100km', '129–138 g/km CO2 (Euro 5)'],
               de: ['5,9 L/100km', '129–138 g/km CO2 (Euro 5)'],
@@ -3698,7 +3698,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 5.2,
+            score: 8.2,
             badges: {
               en: ['Diesel Buyers Want Service Proof', 'Strong Fleet-Car Demand'],
               de: ['Diesel-Käufer wollen Servicebelege', 'Gefragter Flottenwagen'],
@@ -4073,7 +4073,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.4,
+            score: 7.9,
             badges: {
               en: ['509L Sedan Boot', 'Split-Folding Rear Seats'],
               de: ['509L Kofferraum', 'Geteilt umklappbare Rückbank'],
@@ -4081,7 +4081,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 7.9,
+            score: 7.7,
             badges: {
               en: ['530 kg Payload', '1,500 kg Braked Towing'],
               de: ['530 kg Zuladung', '1.500 kg Anhängelast'],
@@ -4089,7 +4089,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 5.3,
+            score: 5.7,
             badges: {
               en: ['0–100 km/h: 10.7 s', '200 km/h Top Speed'],
               de: ['0–100 km/h: 10,7 s', '200 km/h Spitze'],
@@ -4097,7 +4097,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 7.6,
+            score: 7.7,
             badges: {
               en: ['310 Nm', 'Pull From 1,600 rpm'],
               de: ['310 Nm', 'Zug ab 1.600 U/min'],
@@ -4113,7 +4113,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 7.6,
+            score: 7.2,
             badges: {
               en: ['100–0 km/h: 36.9 m', '295 mm Discs • Steady Stopper'],
               de: ['100–0 km/h: 36,9 m', '295 mm Scheiben • Solide Bremsleistung'],
@@ -4121,7 +4121,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 8.4,
+            score: 7.9,
             badges: {
               en: ['5.7 L/100km', '124–132 g/km CO2 (Euro 5)'],
               de: ['5,7 L/100km', '124–132 g/km CO2 (Euro 5)'],
@@ -4155,7 +4155,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 6.2,
+            score: 8.2,
             badges: {
               en: ['Diesel Buyers Want Service Proof', 'Strong Fleet-Car Demand'],
               de: ['Diesel-Käufer wollen Servicebelege', 'Gefragter Flottenwagen'],
@@ -4538,7 +4538,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.4,
+            score: 7.9,
             badges: {
               en: ['509L Sedan Boot', 'Split-Folding Rear Seats'],
               de: ['509L Kofferraum', 'Geteilt umklappbare Rückbank'],
@@ -4546,7 +4546,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 7.9,
+            score: 7.7,
             badges: {
               en: ['530 kg Payload', '1,500 kg Braked Towing'],
               de: ['530 kg Zuladung', '1.500 kg Anhängelast'],
@@ -4554,7 +4554,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 6.0,
+            score: 6.4,
             badges: {
               en: ['0–100 km/h: 9.7 s', '210 km/h Top Speed'],
               de: ['0–100 km/h: 9,7 s', '210 km/h Spitze'],
@@ -4562,7 +4562,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 8.2,
+            score: 7.9,
             badges: {
               en: ['320 Nm', 'Strong Pull From 1,750 rpm'],
               de: ['320 Nm', 'Starker Zug ab 1.750 U/min'],
@@ -4578,7 +4578,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 7.6,
+            score: 7.2,
             badges: {
               en: ['100–0 km/h: 36.9 m', '295 mm Discs • Steady Stopper'],
               de: ['100–0 km/h: 36,9 m', '295 mm Scheiben • Solide Bremsleistung'],
@@ -4586,7 +4586,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 8.8,
+            score: 8.1,
             badges: {
               en: ['Efficient (5.5 L/100km)', '112–119 g/km CO2 (Euro 6)'],
               de: ['Sparsam (5,5 L/100km)', '112–119 g/km CO2 (Euro 6)'],
@@ -4620,7 +4620,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 8.7,
+            score: 8.2,
             badges: {
               en: ['Youngest Avensis Holds Value Best', 'Euro 6 Future-Proof'],
               de: ['Jüngster Avensis behält Wert am besten', 'Euro 6 zukunftssicher'],
@@ -5039,7 +5039,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.4,
+            score: 7.9,
             badges: {
               en: ['509L Sedan Boot', 'Split-Folding Rear Seats'],
               de: ['509L Kofferraum', 'Geteilt umklappbare Rückbank'],
@@ -5047,7 +5047,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 8.6,
+            score: 8.3,
             badges: {
               en: ['530 kg Payload', '1,800 kg Braked Towing'],
               de: ['530 kg Zuladung', '1.800 kg Anhängelast'],
@@ -5055,7 +5055,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 6.2,
+            score: 6.5,
             badges: {
               en: ['0–100 km/h: 9.5 s', '205 km/h Top Speed'],
               de: ['0–100 km/h: 9,5 s', '205 km/h Spitze'],
@@ -5063,7 +5063,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 8.6,
+            score: 8.2,
             badges: {
               en: ['340 Nm', 'Pull From 1,400 rpm'],
               de: ['340 Nm', 'Zug ab 1.400 U/min'],
@@ -5079,7 +5079,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 7.6,
+            score: 7.2,
             badges: {
               en: ['100–0 km/h: 36.9 m', '295 mm Discs • Steady Stopper'],
               de: ['100–0 km/h: 36,9 m', '295 mm Scheiben • Solide Bremsleistung'],
@@ -5121,7 +5121,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 5.5,
+            score: 8.2,
             badges: {
               en: ['Diesel Buyers Want Service Proof', 'Strong Fleet-Car Demand'],
               de: ['Diesel-Käufer wollen Servicebelege', 'Gefragter Flottenwagen'],
@@ -5540,7 +5540,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.4,
+            score: 7.9,
             badges: {
               en: ['509L Sedan Boot', 'Split-Folding Rear Seats'],
               de: ['509L Kofferraum', 'Geteilt umklappbare Rückbank'],
@@ -5548,7 +5548,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 8.6,
+            score: 8.3,
             badges: {
               en: ['530 kg Payload', '1,800 kg Braked Towing'],
               de: ['530 kg Zuladung', '1.800 kg Anhängelast'],
@@ -5556,7 +5556,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 7.2,
+            score: 7.4,
             badges: {
               en: ['0–100 km/h: 8.4 s', '220 km/h Top Speed'],
               de: ['0–100 km/h: 8,4 s', '220 km/h Spitze'],
@@ -5564,7 +5564,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 9.0,
+            score: 9.2,
             badges: {
               en: ['400 Nm', 'Massive Pull From 1,500 rpm'],
               de: ['400 Nm', 'Gewaltiger Zug ab 1.500 U/min'],
@@ -5580,7 +5580,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 7.6,
+            score: 7.2,
             badges: {
               en: ['100–0 km/h: 36.9 m', '295 mm Discs • Steady Stopper'],
               de: ['100–0 km/h: 36,9 m', '295 mm Scheiben • Solide Bremsleistung'],
@@ -5622,7 +5622,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 5.8,
+            score: 8.2,
             badges: {
               en: ['Diesel Buyers Want Service Proof', 'Strong Fleet-Car Demand'],
               de: ['Diesel-Käufer wollen Servicebelege', 'Gefragter Flottenwagen'],
@@ -5641,7 +5641,7 @@ registerAutoDuelVehicle({
     { name: 'Night Sky Black', code: '209', hex: '#181b20', glow: 'rgba(66, 76, 92, 0.18)' },
     { name: 'Pure White', code: '040', hex: '#f2f4f7', glow: 'rgba(242, 244, 247, 0.16)' },
     { name: 'Pearl White', code: '070', hex: '#eceef2', glow: 'rgba(236, 238, 242, 0.16)' },
-    { name: 'Dark Steel Blue', code: '8T5', hex: '#283c58', glow: 'rgba(40, 60, 88, 0.2)' },
+    { name: 'Dark Steel Blue', code: '8T5', hex: '#283c58', glow: 'rgba(40, 60, 88, 0.2)', isDefault: true },
     { name: 'Tokyo Red', code: '3R3', hex: '#a42029', glow: 'rgba(164, 32, 41, 0.2)' },
     { name: 'Champagne Gold', code: '4T8', hex: '#9a8f7a', glow: 'rgba(154, 143, 122, 0.18)' },
     { name: 'Slate Grey', code: '1H2', hex: '#444b53', glow: 'rgba(68, 75, 83, 0.18)' }

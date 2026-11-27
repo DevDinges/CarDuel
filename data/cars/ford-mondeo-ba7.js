@@ -2150,7 +2150,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.1,
+            score: 8.2,
             badges: {
               en: ['550L Deep Sedan Boot', 'Narrow 4-Door Trunk Opening'],
               de: ['550L Stufenheck-Kofferraum', 'Schmale Limousinen-Öffnung'],
@@ -2158,7 +2158,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 8.5,
+            score: 8.0,
             badges: {
               en: ['585 kg Payload', '1,600 kg Braked Tow'],
               de: ['585 kg Zuladung', '1.600 kg Anhängelast'],
@@ -2166,7 +2166,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 6.2,
+            score: 6.7,
             badges: {
               en: ['0–100 km/h: 9.3 s', '215 km/h Top Speed'],
               de: ['0–100 km/h: 9,3 s', '215 km/h Spitze'],
@@ -2174,7 +2174,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 6.7,
+            score: 6.6,
             badges: {
               en: ['240 Nm Boost From Low RPM', 'Easy Highway Overtaking'],
               de: ['240 Nm früher Schub', 'Guter Durchzug auf Autobahn'],
@@ -2190,7 +2190,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 7.4,
+            score: 7.7,
             badges: {
               en: ['100–0 km/h: 37.5 m', '300 mm Discs • Good Stability'],
               de: ['100–0 km/h: 37,5 m', '300 mm Scheiben • Stabil bei Tempo'],
@@ -2198,7 +2198,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 7.6,
+            score: 5.2,
             badges: {
               en: ['7.7 L/100km', '149 g/km CO2'],
               de: ['7,7 L/100km', '149 g/km CO2'],
@@ -2231,7 +2231,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 7.6,
+            score: 7.0,
             badges: {
               en: ['High Value Used Buy', 'Affordable Entry Price'],
               de: ['Viel Auto fürs Geld', 'Günstiger Einstiegspreis'],
@@ -2619,7 +2619,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.1,
+            score: 8.2,
             badges: {
               en: ['550L Deep Sedan Boot', 'Narrow 4-Door Trunk Opening'],
               de: ['550L Stufenheck-Kofferraum', 'Schmale Limousinen-Öffnung'],
@@ -2627,7 +2627,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 6.6,
+            score: 6.9,
             badges: {
               en: ['590 kg Payload', '1,100 kg Braked Tow'],
               de: ['590 kg Zuladung', '1.100 kg Anhängelast'],
@@ -2635,7 +2635,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 4.2,
+            score: 4.6,
             badges: {
               en: ['0–100 km/h: 12.3 s', '195 km/h Top Speed'],
               de: ['0–100 km/h: 12,3 s', '195 km/h Spitze'],
@@ -2643,7 +2643,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 4.3,
+            score: 4.5,
             badges: {
               en: ['160 Nm • High-Rev Delivery', 'Needs Downshifts To Pass'],
               de: ['160 Nm • Drehzahl nötig', 'Herunterschalten zum Überholen'],
@@ -2659,7 +2659,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 7.4,
+            score: 7.7,
             badges: {
               en: ['100–0 km/h: 37.5 m', '300 mm Discs • Good Stability'],
               de: ['100–0 km/h: 37,5 m', '300 mm Scheiben • Stabil bei Tempo'],
@@ -2667,7 +2667,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 7.2,
+            score: 5.3,
             badges: {
               en: ['Thirsty (8.0 L/100km)', '159 g/km CO2'],
               de: ['Durstig (8,0 L/100km)', '159 g/km CO2'],
@@ -2700,7 +2700,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 7.4,
+            score: 7.0,
             badges: {
               en: ['Lowest Entry Price', 'Sought by Budget Buyers'],
               de: ['Günstigster Einstieg', 'Beliebt bei Sparfüchsen'],
@@ -3091,7 +3091,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.1,
+            score: 8.2,
             badges: {
               en: ['550L Deep Sedan Boot', 'Narrow 4-Door Trunk Opening'],
               de: ['550L Stufenheck-Kofferraum', 'Schmale Limousinen-Öffnung'],
@@ -3099,7 +3099,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 8.3,
+            score: 7.5,
             badges: {
               en: ['595 kg Payload', '1,600 kg Braked Tow'],
               de: ['595 kg Zuladung', '1.600 kg Anhängelast'],
@@ -3107,7 +3107,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 5.8,
+            score: 6.3,
             badges: {
               en: ['0–100 km/h: 9.9 s', '210 km/h Top Speed'],
               de: ['0–100 km/h: 9,9 s', '210 km/h Spitze'],
@@ -3115,7 +3115,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 4.8,
+            score: 4.9,
             badges: {
               en: ['185 Nm • High-Rev Delivery', 'Needs Downshifts To Pass'],
               de: ['185 Nm • Drehzahl nötig', 'Herunterschalten zum Überholen'],
@@ -3131,7 +3131,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 7.4,
+            score: 7.7,
             badges: {
               en: ['100–0 km/h: 37.5 m', '300 mm Discs • Good Stability'],
               de: ['100–0 km/h: 37,5 m', '300 mm Scheiben • Stabil bei Tempo'],
@@ -3139,7 +3139,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 6.4,
+            score: 4.6,
             badges: {
               en: ['Thirsty (8.6 L/100km)', '179 g/km CO2'],
               de: ['Durstig (8,6 L/100km)', '179 g/km CO2'],
@@ -3171,7 +3171,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 8.3,
+            score: 7.0,
             badges: {
               en: ['Strong Used Demand', 'Valued for Reliability'],
               de: ['Gefragter Gebrauchter', 'Beliebt für Zuverlässigkeit'],
@@ -3570,7 +3570,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.1,
+            score: 8.2,
             badges: {
               en: ['550L Deep Sedan Boot', 'Narrow 4-Door Trunk Opening'],
               de: ['550L Stufenheck-Kofferraum', 'Schmale Limousinen-Öffnung'],
@@ -3578,7 +3578,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 8.8,
+            score: 8.4,
             badges: {
               en: ['580 kg Payload', '1,800 kg Braked Tow'],
               de: ['580 kg Zuladung', '1.800 kg Anhängelast'],
@@ -3586,7 +3586,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 7.6,
+            score: 7.9,
             badges: {
               en: ['0–100 km/h: 7.9 s', '232 km/h Top Speed'],
               de: ['0–100 km/h: 7,9 s', '232 km/h Spitze'],
@@ -3594,7 +3594,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 7.7,
+            score: 7.6,
             badges: {
               en: ['300 Nm Strong Mid-Range', 'No Downshift Needed To Pass'],
               de: ['300 Nm kräftiger Durchzug', 'Überholen ohne Herunterschalten'],
@@ -3610,7 +3610,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 7.4,
+            score: 7.7,
             badges: {
               en: ['100–0 km/h: 37.5 m', '300 mm Discs • Good Stability'],
               de: ['100–0 km/h: 37,5 m', '300 mm Scheiben • Stabil bei Tempo'],
@@ -3618,7 +3618,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 5.2,
+            score: 4.0,
             badges: {
               en: ['Thirsty (9.2 L/100km)', '179 g/km CO2'],
               de: ['Durstig (9,2 L/100km)', '179 g/km CO2'],
@@ -3650,7 +3650,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 5.4,
+            score: 7.0,
             badges: {
               en: ['Steep Initial Drop', 'PowerShift Discounts'],
               de: ['Hoher Wertverlust', 'PowerShift-Abschlag'],
@@ -4049,7 +4049,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.1,
+            score: 8.2,
             badges: {
               en: ['550L Deep Sedan Boot', 'Narrow 4-Door Trunk Opening'],
               de: ['550L Stufenheck-Kofferraum', 'Schmale Limousinen-Öffnung'],
@@ -4057,7 +4057,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 8.8,
+            score: 8.4,
             badges: {
               en: ['580 kg Payload', '1,800 kg Braked Tow'],
               de: ['580 kg Zuladung', '1.800 kg Anhängelast'],
@@ -4065,7 +4065,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 8.4,
+            score: 8.3,
             badges: {
               en: ['0–100 km/h: 7.5 s', '246 km/h Top Speed'],
               de: ['0–100 km/h: 7,5 s', '246 km/h Spitze'],
@@ -4073,7 +4073,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 8.4,
+            score: 8.2,
             badges: {
               en: ['340 Nm Effortless Mid-Range', 'Fast Autobahn Passing Punch'],
               de: ['340 Nm satter Durchzug', 'Starke Autobahn-Reserve'],
@@ -4089,7 +4089,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 7.4,
+            score: 7.7,
             badges: {
               en: ['100–0 km/h: 37.5 m', '300 mm Discs • Good Stability'],
               de: ['100–0 km/h: 37,5 m', '300 mm Scheiben • Stabil bei Tempo'],
@@ -4097,7 +4097,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 4.8,
+            score: 3.4,
             badges: {
               en: ['Thirsty (9.8 L/100km)', '179 g/km CO2'],
               de: ['Durstig (9,8 L/100km)', '179 g/km CO2'],
@@ -4129,7 +4129,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 5.4,
+            score: 7.0,
             badges: {
               en: ['Rarer 240 HP Flagship', 'PowerShift Discounts'],
               de: ['Seltener 240-PS-Topmotor', 'PowerShift-Abschlag'],
@@ -4517,7 +4517,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.1,
+            score: 8.2,
             badges: {
               en: ['550L Deep Sedan Boot', 'Narrow 4-Door Trunk Opening'],
               de: ['550L Stufenheck-Kofferraum', 'Schmale Limousinen-Öffnung'],
@@ -4525,7 +4525,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 8.3,
+            score: 8.0,
             badges: {
               en: ['580 kg Payload', '1,600 kg Braked Tow'],
               de: ['580 kg Zuladung', '1.600 kg Anhängelast'],
@@ -4533,7 +4533,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 5.2,
+            score: 5.9,
             badges: {
               en: ['0–100 km/h: 10.5 s', '207 km/h Top Speed'],
               de: ['0–100 km/h: 10,5 s', '207 km/h Spitze'],
@@ -4541,7 +4541,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 5.2,
+            score: 5.3,
             badges: {
               en: ['208 Nm • High-Rev Delivery', 'Needs Downshifts To Pass'],
               de: ['208 Nm • Drehzahl nötig', 'Herunterschalten zum Überholen'],
@@ -4557,7 +4557,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 7.4,
+            score: 7.7,
             badges: {
               en: ['100–0 km/h: 37.5 m', '300 mm Discs • Good Stability'],
               de: ['100–0 km/h: 37,5 m', '300 mm Scheiben • Stabil bei Tempo'],
@@ -4565,7 +4565,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 4.2,
+            score: 2.8,
             badges: {
               en: ['Thirsty (10.2 L/100km)', '223 g/km CO2'],
               de: ['Durstig (10,2 L/100km)', '223 g/km CO2'],
@@ -4597,7 +4597,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 7.4,
+            score: 7.0,
             badges: {
               en: ['Rare Reliable Auto', 'Pre-2010 Age Factor'],
               de: ['Seltene Top-Automatik', 'Alter vor 2010'],
@@ -4993,7 +4993,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.1,
+            score: 8.2,
             badges: {
               en: ['550L Deep Sedan Boot', 'Narrow 4-Door Trunk Opening'],
               de: ['550L Stufenheck-Kofferraum', 'Schmale Limousinen-Öffnung'],
@@ -5001,7 +5001,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 8.8,
+            score: 8.4,
             badges: {
               en: ['575 kg Payload', '1,800 kg Braked Tow'],
               de: ['575 kg Zuladung', '1.800 kg Anhängelast'],
@@ -5009,7 +5009,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 7.9,
+            score: 8.3,
             badges: {
               en: ['0–100 km/h: 7.5 s', '245 km/h Top Speed'],
               de: ['0–100 km/h: 7,5 s', '245 km/h Spitze'],
@@ -5033,7 +5033,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 7.4,
+            score: 7.7,
             badges: {
               en: ['100–0 km/h: 37.5 m', '300 mm Discs • Good Stability'],
               de: ['100–0 km/h: 37,5 m', '300 mm Scheiben • Stabil bei Tempo'],
@@ -5041,7 +5041,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 3.7,
+            score: 2.5,
             badges: {
               en: ['Thirsty (10.8 L/100km)', '222 g/km CO2'],
               de: ['Durstig (10,8 L/100km)', '222 g/km CO2'],
@@ -5073,7 +5073,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 8.6,
+            score: 7.0,
             badges: {
               en: ['Enthusiast Collector Value', 'Rare 5-Cyl Sedan'],
               de: ['Liebhaber-Wertstabilität', 'Seltener 5-Zylinder'],
@@ -5468,7 +5468,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.1,
+            score: 8.2,
             badges: {
               en: ['550L Deep Sedan Boot', 'Narrow 4-Door Trunk Opening'],
               de: ['550L Stufenheck-Kofferraum', 'Schmale Limousinen-Öffnung'],
@@ -5476,7 +5476,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 7.0,
+            score: 7.1,
             badges: {
               en: ['590 kg Payload', '1,300 kg Braked Tow'],
               de: ['590 kg Zuladung', '1.300 kg Anhängelast'],
@@ -5484,7 +5484,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 4.4,
+            score: 4.8,
             badges: {
               en: ['0–100 km/h: 11.9 s', '190 km/h Top Speed'],
               de: ['0–100 km/h: 11,9 s', '190 km/h Spitze'],
@@ -5508,7 +5508,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 7.4,
+            score: 7.7,
             badges: {
               en: ['100–0 km/h: 37.5 m', '300 mm Discs • Good Stability'],
               de: ['100–0 km/h: 37,5 m', '300 mm Scheiben • Stabil bei Tempo'],
@@ -5516,7 +5516,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 9.3,
+            score: 8.0,
             badges: {
               en: ['Efficient (5.4 L/100km)', '109–114 g/km CO2'],
               de: ['Sparsam (5,4 L/100km)', '109–114 g/km CO2'],
@@ -5548,7 +5548,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 7.4,
+            score: 7.0,
             badges: {
               en: ['Low Running Costs', 'Budget Commuter Pick'],
               de: ['Geringer Unterhalt', 'Beliebter Pendler-Diesel'],
@@ -5937,7 +5937,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.1,
+            score: 8.2,
             badges: {
               en: ['550L Deep Sedan Boot', 'Narrow 4-Door Trunk Opening'],
               de: ['550L Stufenheck-Kofferraum', 'Schmale Limousinen-Öffnung'],
@@ -5953,7 +5953,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 4.8,
+            score: 5.9,
             badges: {
               en: ['0–100 km/h: 10.5–12.3 s', '185–200 km/h Top Speed'],
               de: ['0–100 km/h: 10,5–12,3 s', '185–200 km/h Spitze'],
@@ -5961,7 +5961,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 7.6,
+            score: 7.9,
             badges: {
               en: ['280–320 Nm Strong Mid-Range', 'No Downshift Needed To Pass'],
               de: ['280–320 Nm kräftiger Durchzug', 'Überholen ohne Herunterschalten'],
@@ -5977,7 +5977,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 7.4,
+            score: 7.7,
             badges: {
               en: ['100–0 km/h: 37.5 m', '300 mm Discs • Good Stability'],
               de: ['100–0 km/h: 37,5 m', '300 mm Scheiben • Stabil bei Tempo'],
@@ -5985,7 +5985,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 8.4,
+            score: 7.1,
             badges: {
               en: ['6.3 L/100km', '154 g/km CO2'],
               de: ['6,3 L/100km', '154 g/km CO2'],
@@ -6017,7 +6017,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 7.2,
+            score: 7.0,
             badges: {
               en: ['Very Cheap Used Buy', 'Pre-2008 Age Factor'],
               de: ['Sehr günstiger Preis', 'Frühes Baujahr 2007'],
@@ -6445,7 +6445,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.1,
+            score: 8.2,
             badges: {
               en: ['550L Deep Sedan Boot', 'Narrow 4-Door Trunk Opening'],
               de: ['550L Stufenheck-Kofferraum', 'Schmale Limousinen-Öffnung'],
@@ -6453,7 +6453,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 8.8,
+            score: 8.4,
             badges: {
               en: ['590 kg Payload', '1,800 kg Braked Tow'],
               de: ['590 kg Zuladung', '1.800 kg Anhängelast'],
@@ -6461,7 +6461,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 6.0,
+            score: 6.6,
             badges: {
               en: ['0–100 km/h: 8.9–10.9 s', '192–215 km/h Top Speed'],
               de: ['0–100 km/h: 8,9–10,9 s', '192–215 km/h Spitze'],
@@ -6469,7 +6469,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 7.9,
+            score: 8.2,
             badges: {
               en: ['300–340 Nm Strong Mid-Range', 'No Downshift Needed To Pass'],
               de: ['300–340 Nm kräftiger Durchzug', 'Überholen ohne Herunterschalten'],
@@ -6485,7 +6485,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 7.4,
+            score: 7.7,
             badges: {
               en: ['100–0 km/h: 37.5 m', '300 mm Discs • Good Stability'],
               de: ['100–0 km/h: 37,5 m', '300 mm Scheiben • Stabil bei Tempo'],
@@ -6493,7 +6493,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 8.6,
+            score: 7.3,
             badges: {
               en: ['6.4 L/100km', '139–156 g/km CO2'],
               de: ['6,4 L/100km', '139–156 g/km CO2'],
@@ -6526,7 +6526,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 8.4,
+            score: 7.0,
             badges: {
               en: ['Highest Used Demand', 'Easy Parts & Resale'],
               de: ['Gefragtester Mondeo', 'Leichter Wiederverkauf'],
@@ -6938,7 +6938,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.1,
+            score: 8.2,
             badges: {
               en: ['550L Deep Sedan Boot', 'Narrow 4-Door Trunk Opening'],
               de: ['550L Stufenheck-Kofferraum', 'Schmale Limousinen-Öffnung'],
@@ -6946,7 +6946,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 9.1,
+            score: 8.8,
             badges: {
               en: ['590 kg Payload', 'Up to 2,000 kg Tow'],
               de: ['590 kg Zuladung', 'Bis 2.000 kg Anhängelast'],
@@ -6954,7 +6954,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 7.1,
+            score: 7.7,
             badges: {
               en: ['0–100 km/h: 8.1–8.7 s', '223–230 km/h Top Speed'],
               de: ['0–100 km/h: 8,1–8,7 s', '223–230 km/h Spitze'],
@@ -6962,7 +6962,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 9.0,
+            score: 9.5,
             badges: {
               en: ['400–420 Nm Strong Mid-Range', 'No Downshift Needed To Pass'],
               de: ['400–420 Nm kräftiger Durchzug', 'Überholen ohne Herunterschalten'],
@@ -6978,7 +6978,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 7.4,
+            score: 7.7,
             badges: {
               en: ['100–0 km/h: 37.5 m', '300 mm Discs • Good Stability'],
               de: ['100–0 km/h: 37,5 m', '300 mm Scheiben • Stabil bei Tempo'],
@@ -6986,7 +6986,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 7.6,
+            score: 6.4,
             badges: {
               en: ['7.2 L/100km', '165–179 g/km CO2'],
               de: ['7,2 L/100km', '165–179 g/km CO2'],
@@ -7018,7 +7018,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 8.3,
+            score: 7.0,
             badges: {
               en: ['Sought-After 200 HP', 'Strong Towing Demand'],
               de: ['Gesuchter 200-PS-Diesel', 'Beliebt als Zugfahrzeug'],
@@ -7039,7 +7039,7 @@ registerAutoDuelVehicle({
     { name: 'Midnight Sky', code: 'BCTA', hex: '#38414d', glow: 'rgba(56, 65, 77, 0.18)' },
     { name: 'Lunar Sky', code: 'CCTA', hex: '#7c766d', glow: 'rgba(124, 118, 109, 0.18)' },
     { name: 'Hypnotic Silver', code: '8CQA', hex: '#9fa6ae', glow: 'rgba(159, 166, 174, 0.16)' },
-    { name: 'Ink Blue', code: '8CZA', hex: '#1e3554', glow: 'rgba(30, 53, 84, 0.2)' },
+    { name: 'Ink Blue', code: '8CZA', hex: '#1e3554', glow: 'rgba(30, 53, 84, 0.2)', isDefault: true },
     { name: 'Tango Red', code: '6DYE', hex: '#9b232a', glow: 'rgba(155, 35, 42, 0.2)' },
     { name: 'Chill Metallic', code: '8CUA', hex: '#888378', glow: 'rgba(136, 131, 120, 0.18)' }
   ],

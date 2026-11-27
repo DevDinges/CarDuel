@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="de" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,11 +7,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700;1,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap&subset=latin,cyrillic" rel="stylesheet">
-  <link rel="stylesheet" href="css/tokens-base.css?v=20261126v10" />
-  <link rel="stylesheet" href="css/home-catalog.css?v=20261126v10" />
-  <link rel="stylesheet" href="css/duel-arena.css?v=20261126v10" />
-  <link rel="stylesheet" href="css/modals-popovers.css?v=20261126v10" />
-  <link rel="stylesheet" href="css/vehicle-indepth.css?v=20261126v10" />
+  <link rel="stylesheet" href="css/tokens-base.css?v=20261127v19" />
+  <link rel="stylesheet" href="css/home-catalog.css?v=20261127v19" />
+  <link rel="stylesheet" href="css/duel-arena.css?v=20261127v19" />
+  <link rel="stylesheet" href="css/modals-popovers.css?v=20261127v19" />
+  <link rel="stylesheet" href="css/vehicle-indepth.css?v=20261127v19" />
 </head>
 <body class="is-home-view">
   <!-- Armored Split-Door Intro Overlay (Plays on initial load/refresh) -->
@@ -189,8 +189,8 @@
 
         <!-- Segmented Language Switcher -->
         <div class="lang-switcher" role="group" aria-label="Language">
-          <button type="button" class="lang-btn active" data-lang-choice="en">EN</button>
-          <button type="button" class="lang-btn" data-lang-choice="de">DE</button>
+          <button type="button" class="lang-btn" data-lang-choice="en">EN</button>
+          <button type="button" class="lang-btn active" data-lang-choice="de">DE</button>
           <button type="button" class="lang-btn" data-lang-choice="ru">RU</button>
         </div>
 
@@ -235,19 +235,71 @@
           </div>
         </div>
         <div class="home-bg-marquee" id="home-bg-marquee" aria-hidden="true"></div>
-        <div class="home-hero-card">
-          <div class="home-kicker-pill" id="home-kicker">AUTOMOTIVE SHOWDOWN</div>
-          <h1 class="home-hero-title" id="home-title">HEAD-TO-HEAD CAR COMPARISON</h1>
-          <p class="home-hero-intro" id="home-intro">
-            Pick two contenders, choose their engines, and put them head-to-head across 5 categories and 19 ratings. Adjust your priority weights to match what matters most and find the car that suits you best.
-          </p>
-          <div class="home-pillars-strip" id="home-pillars-strip"></div>
-          <div class="home-cta-wrap">
-            <button type="button" class="home-start-btn" id="home-start-btn">
-              <span class="home-start-btn-text" id="home-start-btn-text">CHOOSE YOUR CONTENDERS</span>
-              <span class="home-start-btn-arrow" aria-hidden="true">➔</span>
-            </button>
-            <span class="home-roster-meta" id="home-roster-meta">15 Vehicles • Multiple Engine Variants • Custom Priority Weights</span>
+        <div class="home-hero-stack">
+          <div class="home-hero-card">
+            <h1 class="home-hero-title" id="home-title">AUTO<span class="brand-accent">DUEL</span></h1>
+            <p class="home-hero-intro" id="home-intro">
+              Pick two contenders, choose their engines, and put them head-to-head across 5 categories and 19 ratings. Adjust your priority weights to match what matters most and find the car that suits you best.
+            </p>
+            <div class="home-pillars-strip" id="home-pillars-strip"></div>
+            <div class="home-cta-wrap">
+              <button type="button" class="home-start-btn" id="home-start-btn">
+                <span class="home-start-btn-text" id="home-start-btn-text">CHOOSE YOUR CONTENDERS</span>
+                <span class="home-start-btn-arrow" aria-hidden="true">➔</span>
+              </button>
+              <span class="home-roster-meta" id="home-roster-meta">15 FAHRZEUGE • 121 MOTORISIERUNGEN • EIGENE GEWICHTUNG</span>
+            </div>
+          </div>
+
+          <div class="home-upcoming-section" aria-label="Upcoming Modes">
+            <div class="home-upcoming-label" id="home-upcoming-label">IN ENTWICKLUNG</div>
+            <div class="home-upcoming-grid">
+              <div class="home-upcoming-card is-enthusiast" aria-disabled="true">
+                <span class="home-upcoming-icon" aria-hidden="true">
+                  <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 27V5" />
+                    <path d="M6 6h17l-2.5 5L23 16H6" />
+                    <path d="M12 6v10" />
+                    <path d="M17.5 6v10" />
+                    <path d="M6 11h14.5" />
+                  </svg>
+                </span>
+                <span class="home-upcoming-title" id="home-upcoming-enthusiast">ENTHUSIASTEN-DUELL</span>
+              </div>
+
+              <div class="home-upcoming-card is-ranking" aria-disabled="true">
+                <span class="home-upcoming-icon" aria-hidden="true">
+                  <svg viewBox="0 0 36 34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" y1="30" x2="32" y2="30" />
+                    <path d="M6 30v-6h6v6" />
+                    <path d="M13 30V18h10v12" />
+                    <path d="M24 30v-8h6v8" />
+                    <polygon points="18,4 19.7,7.7 23.8,8.2 20.8,11.1 21.6,15.1 18,13.1 14.4,15.1 15.2,11.1 12.2,8.2 16.3,7.7" />
+                    <line x1="8" y1="5" x2="10.5" y2="6.5" />
+                    <line x1="6.5" y1="9.5" x2="9.5" y2="9.5" />
+                    <line x1="8" y1="14" x2="10.5" y2="12.5" />
+                    <line x1="28" y1="5" x2="25.5" y2="6.5" />
+                    <line x1="29.5" y1="9.5" x2="26.5" y2="9.5" />
+                    <line x1="28" y1="14" x2="25.5" y2="12.5" />
+                  </svg>
+                </span>
+                <span class="home-upcoming-title" id="home-upcoming-ranking">TOP-10-RANKING</span>
+              </div>
+
+              <div class="home-upcoming-card is-suggestion" aria-disabled="true">
+                <span class="home-upcoming-icon" aria-hidden="true">
+                  <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="16" cy="16" r="10.5" />
+                    <polygon points="19.5,12.5 14.2,14.2 12.5,19.5 17.8,17.8" />
+                    <line x1="16" y1="3" x2="16" y2="5.5" />
+                    <line x1="16" y1="26.5" x2="16" y2="29" />
+                    <line x1="3" y1="16" x2="5.5" y2="16" />
+                    <line x1="26.5" y1="16" x2="29" y2="16" />
+                  </svg>
+                </span>
+                <span class="home-upcoming-title" id="home-upcoming-suggestion">FAHRZEUG-EMPFEHLUNG</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -535,12 +587,12 @@
     </div>
   </div>
 
-  <script src="data/manifest.js?v=20261126v10"></script>
-  <script src="js/i18n-schema.js?v=20261126v10"></script>
-  <script src="js/state-and-scoring.js?v=20261126v10"></script>
-  <script src="js/home-catalog.js?v=20261126v10"></script>
-  <script src="js/duel-arena.js?v=20261126v10"></script>
-  <script src="js/vehicle-indepth.js?v=20261126v10"></script>
-  <script src="js/app.js?v=20261126v10"></script>
+  <script src="data/manifest.js?v=20261127v19"></script>
+  <script src="js/i18n-schema.js?v=20261127v19"></script>
+  <script src="js/state-and-scoring.js?v=20261127v19"></script>
+  <script src="js/home-catalog.js?v=20261127v19"></script>
+  <script src="js/duel-arena.js?v=20261127v19"></script>
+  <script src="js/vehicle-indepth.js?v=20261127v19"></script>
+  <script src="js/app.js?v=20261127v19"></script>
 </body>
 </html>

@@ -152,14 +152,20 @@ function renderHomeLanding() {
   const ui = t();
   renderHomeDevBanner();
   const kickerEl = document.getElementById('home-kicker');
-  const titleEl = document.getElementById('home-title');
   const introEl = document.getElementById('home-intro');
   const startTextEl = document.getElementById('home-start-btn-text');
   const metaEl = document.getElementById('home-roster-meta');
+  const upcomingLabelEl = document.getElementById('home-upcoming-label');
+  const upcomingEnthusiastEl = document.getElementById('home-upcoming-enthusiast');
+  const upcomingRankingEl = document.getElementById('home-upcoming-ranking');
+  const upcomingSuggestionEl = document.getElementById('home-upcoming-suggestion');
   const pillarsStrip = document.getElementById('home-pillars-strip');
   const brandHomeBtn = document.getElementById('hud-brand-home-btn');
 
   const carCount = Array.isArray(CAR_ROSTER) ? CAR_ROSTER.length : 0;
+  const engineCount = Array.isArray(CAR_ROSTER)
+    ? CAR_ROSTER.reduce((sum, c) => sum + (Array.isArray(c.engines) ? c.engines.length : 0), 0)
+    : 0;
   const pillarCount = Array.isArray(STAT_PILLARS) ? STAT_PILLARS.length : 0;
   const ratingCount = Array.isArray(STAT_PILLARS)
     ? STAT_PILLARS.reduce((sum, p) => sum + (Array.isArray(p.subRatings) ? p.subRatings.length : 0), 0)
@@ -168,14 +174,18 @@ function renderHomeLanding() {
   const formatCounts = (str) =>
     String(str || '')
       .replace(/\{cars\}/g, carCount)
+      .replace(/\{engines\}/g, engineCount)
       .replace(/\{pillars\}/g, pillarCount)
       .replace(/\{ratings\}/g, ratingCount);
 
   if (kickerEl) kickerEl.textContent = formatCounts(ui.homeKicker);
-  if (titleEl) titleEl.textContent = ui.homeTitle;
   if (introEl) introEl.textContent = formatCounts(ui.homeIntro);
   if (startTextEl) startTextEl.textContent = ui.homeStartBtn;
   if (metaEl) metaEl.textContent = formatCounts(ui.homeRosterMeta);
+  if (upcomingLabelEl) upcomingLabelEl.textContent = ui.homeUpcomingLabel;
+  if (upcomingEnthusiastEl) upcomingEnthusiastEl.textContent = ui.homeUpcomingEnthusiast;
+  if (upcomingRankingEl) upcomingRankingEl.textContent = ui.homeUpcomingRanking;
+  if (upcomingSuggestionEl) upcomingSuggestionEl.textContent = ui.homeUpcomingSuggestion;
   if (brandHomeBtn) brandHomeBtn.title = ui.homeBrandTooltip;
 
   if (pillarsStrip) {

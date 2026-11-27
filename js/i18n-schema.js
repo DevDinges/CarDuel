@@ -115,7 +115,11 @@ const UI_TRANSLATIONS = {
     homeTitle: 'HEAD-TO-HEAD CAR COMPARISON',
     homeIntro: 'Pick two contenders, choose their engines, and put them head-to-head across {pillars} categories and {ratings} ratings. Adjust your priority weights to match what matters most and find the car that suits you best.',
     homeStartBtn: 'CHOOSE YOUR CONTENDERS',
-    homeRosterMeta: '{cars} Vehicles • Multiple Engine Variants • Custom Priority Weights',
+    homeRosterMeta: '{cars} Vehicles • {engines} Engine Variants • Custom Priority Weights',
+    homeUpcomingLabel: 'IN DEVELOPMENT',
+    homeUpcomingEnthusiast: 'ENTHUSIAST-CAR SHOWDOWN',
+    homeUpcomingRanking: 'TOP 10 RANKING',
+    homeUpcomingSuggestion: 'CAR SUGGESTION',
     homeBrandTooltip: 'Return to Homepage',
     homeDevBadge: 'DEV',
     homeDevNotice: '(Under active development) Version 1.0 — new features roll out every other day.',
@@ -277,7 +281,11 @@ const UI_TRANSLATIONS = {
     homeTitle: 'WELCHES AUTO PASST ZU DIR?',
     homeIntro: 'Schicke zwei Autos ins direkte Duell über {pillars} Kategorien und {ratings} Einzelwertungen. Gewichte, was für dich zählt, und finde deinen persönlichen Sieger.',
     homeStartBtn: 'MODELLE WÄHLEN',
-    homeRosterMeta: '{cars} FAHRZEUGE • MEHRERE MOTORISIERUNGEN • EIGENE GEWICHTUNG',
+    homeRosterMeta: '{cars} FAHRZEUGE • {engines} MOTORISIERUNGEN • EIGENE GEWICHTUNG',
+    homeUpcomingLabel: 'IN ENTWICKLUNG',
+    homeUpcomingEnthusiast: 'ENTHUSIASTEN-DUELL',
+    homeUpcomingRanking: 'TOP-10-RANKING',
+    homeUpcomingSuggestion: 'FAHRZEUG-EMPFEHLUNG',
     homeBrandTooltip: 'Zurück zur Startseite',
     homeDevBadge: 'DEV',
     homeDevNotice: '(In aktiver Entwicklung) Version 1.0 — alle paar Tage erscheinen neue Funktionen.',
@@ -439,7 +447,11 @@ const UI_TRANSLATIONS = {
     homeTitle: 'ПРЯМАЯ ДУЭЛЬ АВТОМОБИЛЕЙ',
     homeIntro: 'Выберите двух претендентов, укажите их двигатели и сравните их лицом к лицу по {pillars} категориям и {ratings} оценкам. Настройте приоритеты под то, что для вас важнее всего, и найдите автомобиль, который подходит именно вам.',
     homeStartBtn: 'ВЫБЕРИТЕ АВТОМОБИЛИ',
-    homeRosterMeta: '{cars} автомобилей • Разные двигатели • Настройка приоритетов',
+    homeRosterMeta: '{cars} автомобилей • {engines} двигателей • Настройка приоритетов',
+    homeUpcomingLabel: 'В РАЗРАБОТКЕ',
+    homeUpcomingEnthusiast: 'ДУЭЛЬ ЭНТУЗИАСТОВ',
+    homeUpcomingRanking: 'ТОП-10 РЕЙТИНГ',
+    homeUpcomingSuggestion: 'ПОДБОР АВТО',
     homeBrandTooltip: 'Вернуться на главную',
     homeDevBadge: 'DEV',
     homeDevNotice: '(В активной разработке) Версия 1.0 — новые функции выходят каждые пару дней.',
@@ -1561,9 +1573,9 @@ const SPEC_DOSSIER_PRESETS = {
       { k: 'timingSystem', v: '{specs.timingDrive}' }
     ],
     note: {
-      en: 'Timing chains avoid fixed €600–€900 belt changes when engine oil is refreshed on time.',
-      de: 'Steuerketten sparen planmäßige 600–900 € Zahnriemenwechsel bei pünktlicher Ölpflege.',
-      ru: 'Цепь ГРМ избавляет от плановой замены ремня (€600–900) при своевременной замене масла.'
+      en: 'Check timing drive above: belt-driven engines need scheduled kit replacement (typically 120–210k km / 8–10 yrs), while chain-driven units depend on regular 10–15k km oil changes.',
+      de: 'Steuerungsart oben beachten: Zahnriemen-Motoren benötigen planmäßige Wechsel (meist 120–210 Tkm / 8–10 Jahre), Steuerketten brauchen konsequente 10–15 Tkm Ölwechsel.',
+      ru: 'Учитывайте тип привода ГРМ выше: ременные моторы требуют плановой замены комплекта (120–210 тыс. км / 8–10 лет), а цепные зависят от частой замены масла каждые 10–15 тыс. км.'
     }
   },
   '@serviceDynamic': {

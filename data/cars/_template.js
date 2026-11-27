@@ -12,6 +12,7 @@ registerAutoDuelVehicle({
     shortTitle: 'MODEL (CHASSIS)',
     fullName: '2015-2020 Brand Model (Chassis)',
     rarityClass: 'rarity-common', // 'rarity-legendary' | 'rarity-epic' | 'rarity-dependable' | 'rarity-common'
+    rarityLabel: { en: 'ALL-ROUNDER', de: 'ALLROUNDER', ru: 'УНИВЕРСАЛ' },
     drivetrain: 'FWD', // 'FWD' | 'RWD' | 'AWD'
     image: 'assets/<brand>-<model>-<chassis>.webp',
     defaultEngineId: '1.6-petrol',
@@ -46,7 +47,18 @@ registerAutoDuelVehicle({
 
     // Chassis-shared engineering datasheet presets (use SPEC_DOSSIER_PRESETS + DOSSIER_TECH_LABELS keys)
     sharedDossierBreakdowns: {
-      transmissionDriveline: { gearbox: '@gbManual6Toyota', clutchDmf: '@clutchSingle', driveline: '@driveFwd' },
+      transmissionDriveline: {
+        gearbox: {
+          specs: [
+            { k: 'architecture', v: { en: 'OEM 6-Speed Synchronized Manual', de: 'OEM 6-Gang-Schaltgetriebe', ru: 'OEM 6-ст. синхрон. МКПП' } },
+            { k: 'gearsStages', v: { en: '6 Forward + Reverse', de: '6 Vorwärts + Rückwärts', ru: '6 вперёд + задняя' } },
+            { k: 'fluidService', v: { en: '75W Gear Oil (~100,000–120,000 km)', de: '75W Getriebeöl (~100.000–120.000 km)', ru: 'Масло 75W (~100–120 тыс. км)' } }
+          ],
+          note: { en: 'Proven manual gearbox with low upkeep costs.', de: 'Bewährtes Schaltgetriebe mit geringen Unterhaltskosten.', ru: 'Проверенная механика с недорогим обслуживанием.' }
+        },
+        clutchDmf: '@clutchSingle',
+        driveline: '@driveFwd'
+      },
       buildQualityRust: { rustProtection: '@rustGalvanized12y', suspensionWear: '@suspMultiLink' },
       electronicsReliability: { starterAlternator: '@starterStandard12v', electronicsRisk: '@elecSimpleEps' },
       rideNoiseComfort: {
@@ -205,6 +217,7 @@ registerAutoDuelVehicle({
       }
     },
 
+    // Same engine in 2+ cars? Put it once in data/engines/<ref>.js and add engineRef: '<ref>' to the engine entry (see AGENTS.md).
     engines: [
       {
         id: '1.6-petrol',
@@ -217,7 +230,7 @@ registerAutoDuelVehicle({
             specOverrides: {
               sprint0100: '11.2 s',
               topSpeed: '190 km/h',
-              realWorldFuel: '7.1 L/100km (~€12.20/100km)'
+              realWorldFuel: '7.1 L/100km'
             }
           }
         ],
@@ -257,7 +270,7 @@ registerAutoDuelVehicle({
           topSpeed: '195 km/h',
           peakTorque: '155 Nm @ 4,200 rpm',
           passingPunch: { en: 'Smooth · Needs Downshifts', de: 'Gleichmäßig · Braucht Drehzahl', ru: 'Ровная · Нужны обороты' },
-          realWorldFuel: '6.6 L/100km (~€11.50/100km)',
+          realWorldFuel: '6.6 L/100km',
           tankRange: '50 L (~750 km)',
           euroNorm: 'Euro 6',
           taxInsurance: '@tierLowMod',
@@ -386,9 +399,9 @@ registerAutoDuelVehicle({
   },
   angles: ['front', 'frontSide', 'side', 'sideRear', 'rear'],
   mirroredAngles: null,
-  // All authentic OEM factory colors (>= 5; 7+ triggers horizontal slider with ‹/› arrows)
+  // All authentic OEM factory colors (>= 5; 7+ triggers horizontal slider with ‹/› arrows; mark exactly one paint with isDefault: true matching the default frontSide showroom photo)
   paints: [
-    { name: 'Glacier White Metallic', code: 'OEM-W1', hex: '#e9ecef', glow: 'rgba(226, 232, 240, 0.16)' },
+    { name: 'Glacier White Metallic', code: 'OEM-W1', hex: '#e9ecef', glow: 'rgba(226, 232, 240, 0.16)', isDefault: true },
     { name: 'Pure Solid White', code: 'OEM-W2', hex: '#f4f6f9', glow: 'rgba(244, 246, 249, 0.16)' },
     { name: 'Magnetic Silver Metallic', code: 'OEM-S1', hex: '#b6bec8', glow: 'rgba(182, 190, 200, 0.16)' },
     { name: 'Graphite Grey Metallic', code: 'OEM-G1', hex: '#545b63', glow: 'rgba(84, 91, 99, 0.18)' },

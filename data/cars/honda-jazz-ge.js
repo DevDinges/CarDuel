@@ -1520,7 +1520,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 9.1,
+            score: 6.8,
             badges: {
               en: ['399L Boot + 1,321L Max', 'Fold-Up Magic Seats'],
               de: ['399L Kofferraum (1.321L Max)', 'Geniale Magic Seats'],
@@ -1528,7 +1528,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 6.6,
+            score: 5.6,
             badges: {
               en: ['1,000 kg Braked Tow', '420 kg Subcompact Payload'],
               de: ['1.000 kg Anhängelast', '420 kg Zuladung'],
@@ -1536,7 +1536,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 4.0,
+            score: 4.2,
             badges: {
               en: ['0–100 km/h: 12.6 s', '177 km/h Top Speed'],
               de: ['0–100 km/h: 12,6 s', '177 km/h Spitze'],
@@ -1544,7 +1544,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 4.3,
+            score: 3.7,
             badges: {
               en: ['114 Nm • Light City Tune', 'Plan Highway Overtakes Ahead'],
               de: ['114 Nm • Stadt-Auslegung', 'Überholmanöver gut planen'],
@@ -1560,7 +1560,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 6.7,
+            score: 7.1,
             badges: {
               en: ['100–0 km/h: 37.8 m', 'Light Curb Weight • 4-Wheel Discs'],
               de: ['100–0 km/h: 37,8 m', 'Geringes Gewicht • 4× Scheiben'],
@@ -1568,7 +1568,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 8.9,
+            score: 7.5,
             badges: {
               en: ['5.6 L/100km', '123 g/km CO2'],
               de: ['5,6 L/100km', '123 g/km CO2'],
@@ -1601,7 +1601,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 9.2,
+            score: 9.4,
             badges: {
               en: ['Strong Used Jazz Demand', 'Minimal Value Drop'],
               de: ['Hohe Gebrauchtnachfrage', 'Sehr wertstabil'],
@@ -2009,7 +2009,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 9.1,
+            score: 6.8,
             badges: {
               en: ['399L Boot + 1,321L Max', 'Fold-Up Magic Seats'],
               de: ['399L Kofferraum (1.321L Max)', 'Geniale Magic Seats'],
@@ -2017,7 +2017,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 6.6,
+            score: 5.6,
             badges: {
               en: ['1,000 kg Braked Tow', '425 kg Subcompact Payload'],
               de: ['1.000 kg Anhängelast', '425 kg Zuladung'],
@@ -2025,7 +2025,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 4.8,
+            score: 5.0,
             badges: {
               en: ['0–100 km/h: 11.4 s', '182 km/h Top Speed'],
               de: ['0–100 km/h: 11,4 s', '182 km/h Spitze'],
@@ -2033,7 +2033,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 4.7,
+            score: 3.9,
             badges: {
               en: ['127 Nm • Light City Tune', 'Plan Highway Overtakes Ahead'],
               de: ['127 Nm • Stadt-Auslegung', 'Überholmanöver gut planen'],
@@ -2049,7 +2049,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 6.7,
+            score: 7.1,
             badges: {
               en: ['100–0 km/h: 37.8 m', 'Light Curb Weight • 4-Wheel Discs'],
               de: ['100–0 km/h: 37,8 m', 'Geringes Gewicht • 4× Scheiben'],
@@ -2057,7 +2057,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 8.8,
+            score: 7.4,
             badges: {
               en: ['5.8 L/100km', '126 g/km CO2'],
               de: ['5,8 L/100km', '126 g/km CO2'],
@@ -2090,7 +2090,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 9.2,
+            score: 9.4,
             badges: {
               en: ['High Used Jazz Demand', 'Minimal Value Drop'],
               de: ['Hohe Gebrauchtnachfrage', 'Sehr wertstabil'],
@@ -2475,7 +2475,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 7.6,
+            score: 6.0,
             badges: {
               en: ['300L Boot (Battery Under Floor)', 'Magic Seats Retained'],
               de: ['300L Kofferraum (Akku unter Boden)', 'Magic Seats erhalten'],
@@ -2483,7 +2483,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 4.2,
+            score: 2.8,
             badges: {
               en: ['0 kg Towing Limit', '370 kg Payload'],
               de: ['0 kg Anhängelast', '370 kg Zuladung'],
@@ -2533,7 +2533,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 4.4,
+            score: 4.5,
             badges: {
               en: ['0–100 km/h: 12.1 s', '175 km/h Top Speed'],
               de: ['0–100 km/h: 12,1 s', '175 km/h Spitze'],
@@ -2557,7 +2557,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 6.7,
+            score: 7.2,
             badges: {
               en: ['100–0 km/h: 37.8 m', 'Light Curb Weight • 4-Wheel Discs'],
               de: ['100–0 km/h: 37,8 m', 'Geringes Gewicht • 4× Scheiben'],
@@ -2565,7 +2565,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 9.4,
+            score: 8.3,
             badges: {
               en: ['Efficient (4.8 L/100km)', '104 g/km CO2'],
               de: ['Sparsam (4,8 L/100km)', '104 g/km CO2'],
@@ -2598,7 +2598,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 8.8,
+            score: 9.4,
             badges: {
               en: ['High City Hybrid Demand', 'Strong Resale Value'],
               de: ['Hohe Hybrid-Nachfrage', 'Guter Werterhalt'],
@@ -2618,7 +2618,7 @@ registerAutoDuelVehicle({
     { name: 'Taffeta White', code: 'NH-578', hex: '#f1f3f6', glow: 'rgba(241, 243, 246, 0.16)' },
     { name: 'Milano Red', code: 'R-81', hex: '#c81c24', glow: 'rgba(200, 28, 36, 0.2)' },
     { name: 'Polished Metal Metallic', code: 'NH-737M', hex: '#5b6168', glow: 'rgba(91, 97, 104, 0.18)' },
-    { name: 'Cerulean Blue', code: 'B-549M', hex: '#4e7da8', glow: 'rgba(78, 125, 168, 0.2)' },
+    { name: 'Cerulean Blue', code: 'B-549M', hex: '#4e7da8', glow: 'rgba(78, 125, 168, 0.2)', isDefault: true },
     { name: 'Urban Titanium', code: 'YR-578M', hex: '#6c6861', glow: 'rgba(108, 104, 97, 0.18)' },
     { name: 'Fresh Lime Metallic', code: 'G-531M', hex: '#869a47', glow: 'rgba(134, 154, 71, 0.2)' },
     { name: 'Deep Violet Pearl', code: 'RP-43P', hex: '#3e2d49', glow: 'rgba(62, 45, 73, 0.2)' }

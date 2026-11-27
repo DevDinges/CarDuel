@@ -1148,7 +1148,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 8.8,
+            score: 7.9,
             badges: {
               en: ['498L Boot (1,427L Max)', 'Huge Hot-Hatch Practicality'],
               de: ['498L Kofferraum (1.427L Max)', 'Riesig für einen Hot-Hatch'],
@@ -1156,7 +1156,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 3.2,
+            score: 2.2,
             badges: {
               en: ['410 kg Payload', '0 / 0 kg Towing'],
               de: ['410 kg Zuladung', '0 / 0 kg Anhängelast'],
@@ -1164,7 +1164,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 9.5,
+            score: 9.7,
             badges: {
               en: ['0–100 km/h: 5.7 s', '270 km/h Top Speed'],
               de: ['0–100 km/h: 5,7 s', '270 km/h Spitze'],
@@ -1172,7 +1172,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 9.3,
+            score: 8.9,
             badges: {
               en: ['400 Nm Strong Mid-Range', 'No Downshift Needed To Pass'],
               de: ['400 Nm kräftiger Durchzug', 'Überholen ohne Herunterschalten'],
@@ -1188,7 +1188,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 9.5,
+            score: 9.4,
             badges: {
               en: ['100–0 km/h: 34.5 m', '350 mm Brembo 4-Pot • Track Ready'],
               de: ['100–0 km/h: 34,5 m', '350 mm Brembo 4-Kolben • Rennstrecke'],
@@ -1196,7 +1196,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 5.0,
+            score: 3.1,
             badges: {
               en: ['Thirsty (9.8 L/100km)', '170 g/km CO2'],
               de: ['Durstig (9,8 L/100km)', '170 g/km CO2'],
@@ -1230,7 +1230,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 9.3,
+            score: 8.7,
             badges: {
               en: ['Collector Type R Status', 'Strong Value Retention'],
               de: ['Sammler-Status Type R', 'Sehr wertstabil'],
@@ -1244,7 +1244,7 @@ registerAutoDuelVehicle({
   angles: ['front', 'frontSide', 'side', 'sideRear', 'rear'],
   mirroredAngles: null,
   paints: [
-    { name: 'Championship White', code: 'NH-0', hex: '#f3f1e8', glow: 'rgba(243, 241, 232, 0.18)' },
+    { name: 'Championship White', code: 'NH-0', hex: '#f3f1e8', glow: 'rgba(243, 241, 232, 0.18)', isDefault: true },
     { name: 'Milano Red', code: 'R-81', hex: '#ca1d24', glow: 'rgba(202, 29, 36, 0.22)' },
     { name: 'Crystal Black Pearl', code: 'NH-731P', hex: '#16181d', glow: 'rgba(64, 74, 88, 0.18)' },
     { name: 'Polished Metal Metallic', code: 'NH-737M', hex: '#5b6168', glow: 'rgba(91, 97, 104, 0.18)' },

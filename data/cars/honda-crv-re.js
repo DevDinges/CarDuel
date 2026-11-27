@@ -1640,7 +1640,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 9.7,
+            score: 8.5,
             badges: {
               en: ['556L Boot (1,532L Max)', 'Sliding Rear + Shelf'],
               de: ['556L Kofferraum (1.532L Max)', 'Schiebebank & Doppelboden'],
@@ -1648,7 +1648,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 9.2,
+            score: 7.8,
             badges: {
               en: ['535 kg Payload', '600 / 1,600 kg Towing'],
               de: ['535 kg Zuladung', '600 / 1.600 kg Zuglast'],
@@ -1656,7 +1656,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 5.5,
+            score: 5.9,
             badges: {
               en: ['0–100 km/h: 10.2 s', '190 km/h Top Speed'],
               de: ['0–100 km/h: 10,2 s', '190 km/h Spitze'],
@@ -1664,7 +1664,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 4.7,
+            score: 5.0,
             badges: {
               en: ['192 Nm • High-Rev Delivery', 'Needs Downshifts To Pass'],
               de: ['192 Nm • Drehzahl nötig', 'Herunterschalten zum Überholen'],
@@ -1680,7 +1680,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 6.0,
+            score: 6.8,
             badges: {
               en: ['100–0 km/h: 37.2 m', 'SUV Mass • Soft Initial Bite'],
               de: ['100–0 km/h: 37,2 m', 'SUV-Gewicht • Weiches Ansprechen'],
@@ -1688,7 +1688,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 5.8,
+            score: 4.6,
             badges: {
               en: ['Thirsty (8.4 L/100km)', 'SUV Aero & AWD Drag'],
               de: ['Durstig (8,4 L/100km)', 'SUV-Luftwiderstand'],
@@ -1721,7 +1721,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 9.2,
+            score: 9.4,
             badges: {
               en: ['High Used SUV Demand', 'Rock-Solid Resale'],
               de: ['Extrem gefragtes SUV', 'Starker Werterhalt'],
@@ -2111,7 +2111,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 9.7,
+            score: 8.5,
             badges: {
               en: ['556L Boot (1,532L Max)', 'Sliding Rear + Shelf'],
               de: ['556L Kofferraum (1.532L Max)', 'Schiebebank & Doppelboden'],
@@ -2119,7 +2119,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 9.0,
+            score: 7.5,
             badges: {
               en: ['525 kg Payload', '600 / 1,500 kg Towing'],
               de: ['525 kg Zuladung', '600 / 1.500 kg Zuglast'],
@@ -2127,7 +2127,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 5.1,
+            score: 5.3,
             badges: {
               en: ['0–100 km/h: 10.0 s', '190 km/h Top Speed'],
               de: ['0–100 km/h: 10,0 s', '190 km/h Spitze'],
@@ -2135,7 +2135,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 5.2,
+            score: 5.4,
             badges: {
               en: ['220 Nm Smooth Linear Pull', 'Strongest Above 3,500 RPM'],
               de: ['220 Nm linearer Sauger', 'Am stärksten ab 3.500/min'],
@@ -2151,7 +2151,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 6.0,
+            score: 6.8,
             badges: {
               en: ['100–0 km/h: 37.2 m', 'SUV Mass • Soft Initial Bite'],
               de: ['100–0 km/h: 37,2 m', 'SUV-Gewicht • Weiches Ansprechen'],
@@ -2159,7 +2159,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 4.6,
+            score: 3.1,
             badges: {
               en: ['Thirsty (9.6 L/100km)', '2.4 NA + 5-AT Thirst'],
               de: ['Durstig (9,6 L/100km)', 'Durstig im Stadtverkehr'],
@@ -2602,7 +2602,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 9.7,
+            score: 8.5,
             badges: {
               en: ['556L Boot (1,532L Max)', 'Sliding Rear + Shelf'],
               de: ['556L Kofferraum (1.532L Max)', 'Schiebebank & Doppelboden'],
@@ -2610,7 +2610,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 9.6,
+            score: 8.6,
             badges: {
               en: ['550 kg Payload', '600 / 2,000 kg Towing'],
               de: ['550 kg Zuladung', '600 / 2.000 kg Zuglast'],
@@ -2618,7 +2618,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 6.0,
+            score: 6.3,
             badges: {
               en: ['0–100 km/h: 9.6 s', '190 km/h Top Speed'],
               de: ['0–100 km/h: 9,6 s', '190 km/h Spitze'],
@@ -2626,7 +2626,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 8.0,
+            score: 8.4,
             badges: {
               en: ['350 Nm Strong Mid-Range', 'No Downshift Needed To Pass'],
               de: ['350 Nm kräftiger Durchzug', 'Überholen ohne Herunterschalten'],
@@ -2642,7 +2642,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 6.0,
+            score: 6.8,
             badges: {
               en: ['100–0 km/h: 37.2 m', 'SUV Mass • Soft Initial Bite'],
               de: ['100–0 km/h: 37,2 m', 'SUV-Gewicht • Weiches Ansprechen'],
@@ -2650,7 +2650,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 7.9,
+            score: 6.2,
             badges: {
               en: ['6.7 L/100km', '850+ km Tank Range'],
               de: ['6,7 L/100km', '850+ km Reichweite'],
@@ -2684,7 +2684,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 7.6,
+            score: 9.4,
             badges: {
               en: ['Popular Caravan Tow Car', 'Euro 5 City Discount'],
               de: ['Beliebtes Zugfahrzeug', 'Euro-5-Abschlag'],
@@ -3079,7 +3079,7 @@ registerAutoDuelVehicle({
             }
           },
           interiorBootSpace: {
-            score: 9.2,
+            score: 8.5,
             badges: {
               en: ['556L Boot (1,532L Max)', 'Sliding Rear Bench'],
               de: ['556L Kofferraum (1.532L Max)', 'Verschiebbare Rückbank'],
@@ -3087,7 +3087,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 9.2,
+            score: 8.6,
             badges: {
               en: ['560 kg Payload', '2,000 kg Braked Tow'],
               de: ['560 kg Zuladung', '2.000 kg Anhängelast'],
@@ -3095,7 +3095,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 5.4,
+            score: 5.8,
             badges: {
               en: ['0–100 km/h: 10.3 s', '187 km/h Top Speed'],
               de: ['0–100 km/h: 10,3 s', '187 km/h Spitze'],
@@ -3103,7 +3103,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 8.0,
+            score: 8.2,
             badges: {
               en: ['340 Nm Strong Mid-Range', 'No Downshift Needed To Pass'],
               de: ['340 Nm kräftiger Durchzug', 'Überholen ohne Herunterschalten'],
@@ -3119,7 +3119,7 @@ registerAutoDuelVehicle({
             }
           },
           brakingPerformance: {
-            score: 6.0,
+            score: 6.8,
             badges: {
               en: ['100–0 km/h: 37.2 m', 'SUV Mass • Soft Initial Bite'],
               de: ['100–0 km/h: 37,2 m', 'SUV-Gewicht • Weiches Ansprechen'],
@@ -3127,7 +3127,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 7.8,
+            score: 6.0,
             badges: {
               en: ['7.4 L/100km', '173 g/km CO2 (Euro 4)'],
               de: ['7,4 L/100km', '173 g/km CO2 (Euro 4)'],
@@ -3161,7 +3161,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 7.2,
+            score: 9.4,
             badges: {
               en: ['Affordable 4WD Tow SUV', 'Euro 4 Age Discount'],
               de: ['Günstiges 4WD-Zugfahrzeug', 'Euro-4-Abschlag'],
@@ -3175,7 +3175,7 @@ registerAutoDuelVehicle({
   angles: ['front', 'frontSide', 'side', 'sideRear', 'rear'],
   mirroredAngles: null,
   paints: [
-    { name: 'Polished Metal Metallic', code: 'NH-737M', hex: '#5d646b', glow: 'rgba(93, 100, 107, 0.18)' },
+    { name: 'Polished Metal Metallic', code: 'NH-737M', hex: '#5d646b', glow: 'rgba(93, 100, 107, 0.18)', isDefault: true },
     { name: 'Alabaster Silver', code: 'NH-700M', hex: '#b8c0c8', glow: 'rgba(184, 192, 200, 0.16)' },
     { name: 'Crystal Black Pearl', code: 'NH-731P', hex: '#171a1f', glow: 'rgba(65, 76, 92, 0.18)' },
     { name: 'Taffeta White', code: 'NH-578', hex: '#f0f2f5', glow: 'rgba(240, 242, 245, 0.16)' },

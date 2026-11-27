@@ -1143,7 +1143,8 @@ function buildFusedMatchupBannerHtml(leftCar, rightCar, ui) {
         ${getDrivetrainSvg(car.drivetrain)}
       </span>
     `;
-    const rarityHtml = `<span class="rarity-badge fused-matchup-rarity">${car.rarityLabel[currentLang]}</span>`;
+    const rarityText = (car.rarityLabel && (car.rarityLabel[currentLang] || car.rarityLabel.en)) || '';
+    const rarityHtml = rarityText ? `<span class="rarity-badge fused-matchup-rarity">${rarityText}</span>` : '';
 
     const titleRowHtml =
       side === 'left'

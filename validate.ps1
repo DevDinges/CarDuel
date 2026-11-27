@@ -281,6 +281,36 @@ public static class JsInDepthValidator {
         return s;
     }
 
+    public static string EnginesDir = "";
+
+    private static string BuildObj(Dictionary<string, string> map) {
+        var parts = new List<string>();
+        foreach (var kv in map) parts.Add(kv.Key + ": " + kv.Value);
+        return "{ " + string.Join(", ", parts.ToArray()) + " }";
+    }
+
+    public static string LoadEngineLibSource(string refId) {
+        if (string.IsNullOrEmpty(EnginesDir) || string.IsNullOrEmpty(refId)) return null;
+        string p = System.IO.Path.Combine(EnginesDir, refId + ".js");
+        if (!System.IO.File.Exists(p)) return null;
+        return System.IO.File.ReadAllText(p, System.Text.Encoding.UTF8);
+    }
+
+    public static Dictionary<string, string> ParseEngineLib(string src) {
+        int idx = src.IndexOf("registerAutoDuelEngine", StringComparison.Ordinal);
+        if (idx < 0) return null;
+        int open = src.IndexOf('{', idx);
+        if (open < 0) return null;
+        int end = SkipBalanced(src, open, '{', '}');
+        var top = ParseObj(src.Substring(open, end - open));
+        if (!top.ContainsKey("definition")) return null;
+        var def = ParseObj(top["definition"]);
+        if (!def.ContainsKey("engines")) return null;
+        var items = ParseArrayItems(def["engines"]);
+        if (items.Count == 0) return null;
+        return ParseObj(items[0]);
+    }
+
     public static int CountFullCarSchemaChecks = 0;
 
     public static List<string> CheckFullCarSchema(
@@ -348,6 +378,7 @@ public static class JsInDepthValidator {
         var edMap = top.ContainsKey("engineDates") ? ParseObj(top["engineDates"]) : new Dictionary<string, string>();
         string ymVal = roster.ContainsKey("yearMake") ? Unquote(roster["yearMake"]) : "";
         bool hasRosterYears = Regex.IsMatch(ymVal, @"\d{4}");
+        var extraSources = new System.Text.StringBuilder();
         foreach (string eo in engineObjs) {
             var ep = ParseObj(eo);
             string eid = ep.ContainsKey("id") ? Unquote(ep["id"]) : "";
@@ -355,6 +386,45 @@ public static class JsInDepthValidator {
             if (!engineIds.Add(eid)) errs.Add(cid + ": duplicate engine id '" + eid + "'");
             CountFullCarSchemaChecks++;
 
+            // Shared engine library: engine-owned data comes from data/engines/<engineRef>.js and always wins
+            if (ep.ContainsKey("engineRef")) {
+                string refId = Unquote(ep["engineRef"]);
+                string libSrc = LoadEngineLibSource(refId);
+                var libEp = libSrc == null ? null : ParseEngineLib(libSrc);
+                if (libEp == null) {
+                    errs.Add(cid + "/" + eid + ": engineRef '" + refId + "' missing or invalid in data/engines/" + refId + ".js");
+                } else {
+                    extraSources.Append(libSrc).Append('\n');
+                    string libFuel = libEp.ContainsKey("fuelType") ? Unquote(libEp["fuelType"]) : "";
+                    string carFuel = ep.ContainsKey("fuelType") ? Unquote(ep["fuelType"]) : "";
+                    if (libFuel != carFuel) errs.Add(cid + "/" + eid + ": fuelType '" + carFuel + "' differs from shared engine " + refId + " ('" + libFuel + "')");
+                    string libHp = libEp.ContainsKey("hp") ? libEp["hp"].Trim() : "";
+                    string carHp = ep.ContainsKey("hp") ? ep["hp"].Trim() : "";
+                    int libHpInt, carHpInt;
+                    if (int.TryParse(libHp, out libHpInt) && int.TryParse(carHp, out carHpInt)) {
+                        // +/-1 tolerates PS vs kW rounding of the same engine (e.g. 130 vs 131 PS)
+                        if (Math.Abs(libHpInt - carHpInt) > 1) errs.Add(cid + "/" + eid + ": hp " + carHp + " differs from shared engine " + refId + " (" + libHp + ")");
+                    }
+
+                    var mergedOvr = ep.ContainsKey("specOverrides") ? ParseObj(ep["specOverrides"]) : new Dictionary<string, string>();
+                    if (libEp.ContainsKey("specOverrides")) {
+                        foreach (var kv in ParseObj(libEp["specOverrides"])) {
+                            if (mergedOvr.ContainsKey(kv.Key)) errs.Add(cid + "/" + eid + ": specOverrides." + kv.Key + " is engine-owned (data/engines/" + refId + ".js) - remove it from the car file");
+                            mergedOvr[kv.Key] = kv.Value;
+                        }
+                    }
+                    ep["specOverrides"] = BuildObj(mergedOvr);
+
+                    var mergedSubs = ep.ContainsKey("subStats") ? ParseObj(ep["subStats"]) : new Dictionary<string, string>();
+                    if (libEp.ContainsKey("subStats")) {
+                        foreach (var kv in ParseObj(libEp["subStats"])) {
+                            if (mergedSubs.ContainsKey(kv.Key)) errs.Add(cid + "/" + eid + ": subStats." + kv.Key + " is engine-owned (data/engines/" + refId + ".js) - remove it from the car file");
+                            mergedSubs[kv.Key] = kv.Value;
+                        }
+                    }
+                    ep["subStats"] = BuildObj(mergedSubs);
+                }
+            }
             string enSub = "";
             if (ep.ContainsKey("engineSubLabel")) {
                 var slObj = ParseObj(ep["engineSubLabel"]);
@@ -585,11 +655,12 @@ public static class JsInDepthValidator {
         }
 
         // Token & tech-label referential integrity across whole file
-        foreach (Match tm in Regex.Matches(carSource, "'(@[A-Za-z0-9_]+)'")) {
+        string tokenSource = carSource + "\n" + extraSources.ToString();
+        foreach (Match tm in Regex.Matches(tokenSource, "'(@[A-Za-z0-9_]+)'")) {
             string tok = tm.Groups[1].Value;
             if (!validAtTokens.Contains(tok)) errs.Add(cid + ": unknown token/preset '" + tok + "'");
         }
-        foreach (Match km in Regex.Matches(carSource, "\\{\\s*k:\\s*'([A-Za-z0-9_]+)'")) {
+        foreach (Match km in Regex.Matches(tokenSource, "\\{\\s*k:\\s*'([A-Za-z0-9_]+)'")) {
             string tk = km.Groups[1].Value;
             if (!validTechKeys.Contains(tk)) errs.Add(cid + ": unknown DOSSIER_TECH_LABELS key '" + tk + "'");
         }
@@ -621,7 +692,11 @@ try {
     './js/app.js'
   )
   $templateFile = './data/cars/_template.js'
-  $jsFiles = @($manifestPath) + $appJsModules + @($carFiles | ForEach-Object { "./data/cars/$($_.Name)" })
+  $engineLibFiles = if (Test-Path -LiteralPath './data/engines') {
+    @(Get-ChildItem -LiteralPath './data/engines' -Filter '*.js' -File | Sort-Object Name)
+  } else { @() }
+  [JsInDepthValidator]::EnginesDir = $(if (Test-Path -LiteralPath './data/engines') { (Resolve-Path -LiteralPath './data/engines').Path } else { '' })
+  $jsFiles = @($manifestPath) + $appJsModules + @($carFiles | ForEach-Object { "./data/cars/$($_.Name)" }) + @($engineLibFiles | ForEach-Object { "./data/engines/$($_.Name)" })
   $allSourceFiles = @('./index.html') + $cssModules + $jsFiles
   if (Test-Path -LiteralPath $templateFile) { $jsFiles += $templateFile; $allSourceFiles += $templateFile }
   else { Add-Fail "Missing golden vehicle template: $templateFile" }
@@ -930,8 +1005,12 @@ try {
         $cCnt = ([regex]::Matches($paintsMatch.Groups[1].Value, 'code:')).Count
         $hCnt = ([regex]::Matches($paintsMatch.Groups[1].Value, 'hex:')).Count
         $gCnt = ([regex]::Matches($paintsMatch.Groups[1].Value, 'glow:')).Count
+        $defCnt = ([regex]::Matches($paintsMatch.Groups[1].Value, 'isDefault:\s*true')).Count
         if ($pCnt -lt 5 -or $cCnt -ne $pCnt -or $hCnt -ne $pCnt -or $gCnt -ne $pCnt) {
           Add-Fail "$carFileKey paints invalid (need >=5 entries with name/code/hex/glow; got $pCnt/$cCnt/$hCnt/$gCnt)"
+        }
+        if ($defCnt -ne 1) {
+          Add-Fail "$carFileKey paints must mark exactly 1 entry with isDefault: true (got $defCnt)"
         }
       }
       if ($carRaw -match '(?m)^\s{2}inDepth:\s*\{') {
@@ -1033,7 +1112,7 @@ try {
   foreach ($f in $scanTargets) {
     if (-not $fileCache.ContainsKey($f)) { continue }
     $txt = $fileCache[$f]
-    if ($f -like './data/cars/*' -and $txt -match "en:\s*'[^']*Sportfahrwerk") { $sportLeak += $f }
+    if (($f -like './data/cars/*' -or $f -like './data/engines/*') -and $txt -match "en:\s*'[^']*Sportfahrwerk") { $sportLeak += $f }
     if ($f -like './data/cars/*') {
       foreach ($dm in [regex]::Matches($txt, "de:\s*'([^'\\]*(?:\\.[^'\\\\]*)*)'")) {
         $dv = $dm.Groups[1].Value
@@ -1051,9 +1130,101 @@ try {
       }
     }
     if ($txt -match 'KH/TK/VK') { $insLeak += $f }
-    if ($f -like './data/cars/*' -and $txt -match '\(\d+(?:\.\d+)?/10\)') {
+    if (($f -like './data/cars/*' -or $f -like './data/engines/*') -and $txt -match '\(\d+(?:\.\d+)?/10\)') {
       Add-Fail "$f contains hardcoded (/10) score string in text"
     }
+    if ($f -like './data/cars/*' -and $f -notmatch '_template\.js$') {
+      if ($txt -notmatch 'rarityLabel:\s*\{') {
+        Add-Fail "$f missing required trilingual rarityLabel"
+      }
+      if ($txt -match "realWorldFuel:\s*'[^']*\(~€") {
+        Add-Fail "$f contains (~€...) cost suffix inside realWorldFuel"
+      }
+      if ($f -notmatch 'toyota-' -and $txt -match '@gbManual6Toyota') {
+        Add-Fail "$f uses Toyota-specific gearbox preset @gbManual6Toyota in a non-Toyota file"
+      }
+      if ($f -notmatch 'honda-' -and $txt -match '@gb(?:Manual[56]Honda|CvtHonda)') {
+        Add-Fail "$f uses Honda-specific gearbox preset in a non-Honda file"
+      }
+      if ($f -notmatch 'ford-' -and $txt -match '@gb(?:Manual[56]Ford|Auto6Ford)') {
+        Add-Fail "$f uses Ford-specific gearbox preset in a non-Ford file"
+      }
+      if ($f -notmatch 'peugeot-' -and $txt -match '@gbManual6Psa') {
+        Add-Fail "$f uses Peugeot-specific gearbox preset @gbManual6Psa in a non-Peugeot file"
+      }
+      if ($txt -match "efficiencyFuel:[^\r\n]*'\d+(?:[.,]\d+)?\s+[Rr]eal'") {
+        Add-Fail "$f has bare 'X.X Real' fuel badge without L/100km unit"
+      }
+      if ($txt -match 'dossierBreakdowns:\s*\{\s*gearbox:') {
+        Add-Fail "$f has flat dossierBreakdowns.gearbox (must wrap under transmissionDriveline)"
+      }
+    }
+  }
+
+  # Shared engine library integrity + duplicate-engine guard
+  $engineRefUse = @{}
+  foreach ($cf in $carFiles) {
+    $ctxt = $fileCache["./data/cars/$($cf.Name)"]
+    foreach ($rm in [regex]::Matches($ctxt, "(?m)^\s{8}engineRef:\s*'([^']+)'")) {
+      $rname = $rm.Groups[1].Value
+      if (-not $engineRefUse.ContainsKey($rname)) { $engineRefUse[$rname] = New-Object 'System.Collections.Generic.HashSet[string]' }
+      [void]$engineRefUse[$rname].Add($cf.BaseName)
+    }
+  }
+  $allowedLibKeys = @('forcedInduction', 'injection', 'timingDrive', 'peakTorque', 'passingPunch', 'powertrainDurability', 'midRangeTorquePassing')
+  $engineLibProblems = New-Object System.Collections.Generic.List[string]
+  foreach ($ef in $engineLibFiles) {
+    $ref = $ef.BaseName
+    $etxt = $fileCache["./data/engines/$($ef.Name)"]
+    $escRef = [regex]::Escape($ref)
+    if ($etxt -notmatch "registerAutoDuelEngine\(\{\s*id:\s*'$escRef'") { $engineLibProblems.Add("${ref}: registerAutoDuelEngine id must equal the file name") }
+    if ($etxt -notmatch "(?m)^\s{8}id:\s*'$escRef'") { $engineLibProblems.Add("${ref}: engines[0].id must equal the file name") }
+    if ($etxt -notmatch "(?m)^\s{8}fuelType:\s*'(petrol|diesel|hybrid)'") { $engineLibProblems.Add("${ref}: invalid or missing fuelType") }
+    if ($etxt -notmatch '(?m)^\s{8}hp:\s*\d+') { $engineLibProblems.Add("${ref}: missing numeric hp") }
+    foreach ($req in @('peakTorque', 'powertrainDurability', 'midRangeTorquePassing')) {
+      if ($etxt -notmatch "(?m)^\s{10}${req}:") { $engineLibProblems.Add("${ref}: missing required engine-owned key $req") }
+    }
+    foreach ($km in [regex]::Matches($etxt, '(?m)^\s{10}(\w+):')) {
+      if ($allowedLibKeys -notcontains $km.Groups[1].Value) { $engineLibProblems.Add("${ref}: '$($km.Groups[1].Value)' is car-owned and must not live in a shared engine file") }
+    }
+    if (-not $engineRefUse.ContainsKey($ref)) { $engineLibProblems.Add("${ref}: not referenced by any car (orphan shared engine)") }
+  }
+  if ($engineLibProblems.Count -gt 0) { Add-Fail "Shared engine library problems: $($engineLibProblems -join '; ')" }
+  else { Add-Pass "All $($engineLibFiles.Count) shared engine files valid & referenced ($(@($engineRefUse.Values | ForEach-Object { $_.Count } | Measure-Object -Sum).Sum) engineRef links)" }
+
+  $codeOwners = @{}
+  foreach ($cf in $carFiles) {
+    $ctxt = $fileCache["./data/cars/$($cf.Name)"]
+    $starts = [regex]::Matches($ctxt, "(?m)^ {6}\{\s*\r?\n {8}id:\s*'([^']+)'")
+    for ($si = 0; $si -lt $starts.Count; $si++) {
+      $segEnd = if ($si + 1 -lt $starts.Count) { $starts[$si + 1].Index } else { $ctxt.Length }
+      $seg = $ctxt.Substring($starts[$si].Index, $segEnd - $starts[$si].Index)
+      if ($seg -match '(?m)^ {8}engineRef:') { continue }
+      $cm = [regex]::Match($seg, "k:\s*'engineCode',\s*v:\s*'([^']+)'")
+      if (-not $cm.Success) { continue }
+      foreach ($tok in ($cm.Groups[1].Value -split '[\s/\u00b7,()]+')) {
+        if ($tok -cmatch '^[A-Z]{4}$') {
+          if (-not $codeOwners.ContainsKey($tok)) { $codeOwners[$tok] = @{} }
+          $codeOwners[$tok][$cf.BaseName] = $true
+        }
+      }
+    }
+  }
+  # Engine codes whose data conflicts between cars and needs a factual review before they can be shared.
+  # Listed codes only print a WARN; every other duplicated code fails validation.
+  $engineCodeReviewList = @('CJSB')
+  $dupEngineCodes = @($codeOwners.GetEnumerator() | Where-Object { $_.Value.Count -gt 1 -and $engineCodeReviewList -notcontains $_.Key } | ForEach-Object { "$($_.Key) (cars: $($_.Value.Keys -join ', '))" })
+  foreach ($rv in @($codeOwners.GetEnumerator() | Where-Object { $_.Value.Count -gt 1 -and $engineCodeReviewList -contains $_.Key })) {
+    Write-Host "WARN: engine code $($rv.Key) differs between cars ($($rv.Value.Keys -join ', ')) - review data, then move it to data/engines/" -ForegroundColor Yellow
+  }
+  if ($dupEngineCodes.Count -gt 0) { Add-Fail "Same engine code used by 2+ cars without a shared data/engines file: $($dupEngineCodes -join '; ')" }
+  else { Add-Pass "Zero duplicated engine codes across cars outside the shared engine library" }
+
+  $calOut = & powershell -ExecutionPolicy Bypass -File './scripts/calibrate-scores.ps1' -Check 2>&1
+  if ($LASTEXITCODE -ne 0) {
+    Add-Fail "Objective metric calibration check failed:`n$($calOut -join "`n")"
+  } else {
+    Add-Pass "All engines pass objective metric calibration (tolerance <= 0.2)"
   }
   if ($sportLeak.Count -gt 0) { Add-Fail "English Sportfahrwerk leak in: $($sportLeak -join ', ')" }
   else { Add-Pass "Zero English Sportfahrwerk leaks" }

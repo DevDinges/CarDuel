@@ -1407,7 +1407,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 5.8,
+            score: 7.2,
             badges: {
               en: ['1,500 kg Braked Tow', '475 kg Payload'],
               de: ['1.500 kg Anhängelast', '475 kg Zuladung'],
@@ -1415,7 +1415,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 6.4,
+            score: 6.7,
             badges: {
               en: ['0–100 km/h: 9.3 s', '215 km/h Top Speed'],
               de: ['0–100 km/h: 9,3 s', '215 km/h Spitze'],
@@ -1423,7 +1423,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 5.1,
+            score: 5.0,
             badges: {
               en: ['192 Nm • High-Rev Delivery', 'Needs Downshifts To Pass'],
               de: ['192 Nm • Drehzahl nötig', 'Herunterschalten zum Überholen'],
@@ -1447,7 +1447,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 7.3,
+            score: 5.4,
             badges: {
               en: ['7.6 L/100km', '165 g/km CO2'],
               de: ['7,6 L/100km', '165 g/km CO2'],
@@ -1480,7 +1480,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 9.0,
+            score: 9.4,
             badges: {
               en: ['High Honda Resale Demand', 'Slow Value Drop'],
               de: ['Hohe Gebrauchtnachfrage', 'Sehr wertstabil'],
@@ -1900,7 +1900,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 5.8,
+            score: 7.4,
             badges: {
               en: ['1,500 kg Braked Tow', '470 kg Payload'],
               de: ['1.500 kg Anhängelast', '470 kg Zuladung'],
@@ -1916,7 +1916,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 6.0,
+            score: 5.7,
             badges: {
               en: ['234 Nm Smooth Linear Pull', 'Strongest Above 3,500 RPM'],
               de: ['234 Nm linearer Sauger', 'Am stärksten ab 3.500/min'],
@@ -1940,7 +1940,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 5.1,
+            score: 3.8,
             badges: {
               en: ['Thirsty (9.1 L/100km)', '204 g/km CO2'],
               de: ['Durstig (9,1 L/100km)', '204 g/km CO2'],
@@ -1973,7 +1973,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 9.2,
+            score: 9.4,
             badges: {
               en: ['High 2.4L Accord Demand', 'Appreciating Clean Units'],
               de: ['Hohe 2.4L Nachfrage', 'Sehr hoher Werterhalt'],
@@ -2388,7 +2388,7 @@ registerAutoDuelVehicle({
             }
           },
           payloadTowing: {
-            score: 6.4,
+            score: 7.7,
             badges: {
               en: ['1,700 kg Braked Tow', 'Strong Diesel Pull'],
               de: ['1.700 kg Anhängelast', 'Starker Durchzug'],
@@ -2396,7 +2396,7 @@ registerAutoDuelVehicle({
             }
           },
           accelerationOvertaking: {
-            score: 6.7,
+            score: 6.5,
             badges: {
               en: ['0–100 km/h: 8.5–9.6 s', '207–220 km/h Top Speed'],
               de: ['0–100 km/h: 8,5–9,6 s', '207–220 km/h Spitze'],
@@ -2404,7 +2404,7 @@ registerAutoDuelVehicle({
             }
           },
           midRangeTorquePassing: {
-            score: 8.6,
+            score: 8.4,
             badges: {
               en: ['350–380 Nm Strong Mid-Range', 'No Downshift Needed To Pass'],
               de: ['350–380 Nm kräftiger Durchzug', 'Überholen ohne Herunterschalten'],
@@ -2428,7 +2428,7 @@ registerAutoDuelVehicle({
             }
           },
           efficiencyFuel: {
-            score: 8.2,
+            score: 7.0,
             badges: {
               en: ['5.9 L/100km', '147 g/km CO2'],
               de: ['5,9 L/100km', '147 g/km CO2'],
@@ -2462,7 +2462,7 @@ registerAutoDuelVehicle({
             }
           },
           depreciationResale: {
-            score: 7.8,
+            score: 9.4,
             badges: {
               en: ['Steady Diesel Demand', 'Euro 5 Zone Discount'],
               de: ['Solide Diesel-Nachfrage', 'Euro-5-Abschlag'],
@@ -2480,7 +2480,7 @@ registerAutoDuelVehicle({
     { name: 'Alabaster Silver', code: 'NH-700M', hex: '#b6bec6', glow: 'rgba(182, 190, 198, 0.16)' },
     { name: 'Polished Metal Metallic', code: 'NH-737M', hex: '#5a6068', glow: 'rgba(90, 96, 104, 0.18)' },
     { name: 'White Orchid Pearl', code: 'NH-788P', hex: '#eff2f6', glow: 'rgba(239, 242, 246, 0.16)' },
-    { name: 'Cobalt Blue Pearl', code: 'B-553P', hex: '#234a7a', glow: 'rgba(35, 74, 122, 0.2)' },
+    { name: 'Cobalt Blue Pearl', code: 'B-553P', hex: '#234a7a', glow: 'rgba(35, 74, 122, 0.2)', isDefault: true },
     { name: 'Milano Red', code: 'R-81', hex: '#c41d24', glow: 'rgba(196, 29, 36, 0.2)' },
     { name: 'Burano Silver', code: 'NH-704M', hex: '#7f858d', glow: 'rgba(127, 133, 141, 0.18)' },
     { name: 'Royal Blue Pearl', code: 'B-536P', hex: '#1d324c', glow: 'rgba(29, 50, 76, 0.2)' },

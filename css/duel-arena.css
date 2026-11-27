@@ -1835,7 +1835,7 @@ html[data-theme="light"] .fused-sub-score .score-loss {
 
 .fused-scrollbar:hover,
 .fused-scrollbar.is-dragging {
-  width: 7px;
+  filter: brightness(1.18);
 }
 
 .fused-scrollbar.is-inactive {

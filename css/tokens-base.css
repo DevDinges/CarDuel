@@ -77,20 +77,20 @@ html[data-theme="dark"] {
 
 /* 2. WHITE MODE (Vibrant Light Theme) */
 html[data-theme="light"] {
-  --bg-dark: #eef2f7;
+  --bg-dark: #ffffff;
   --body-bg:
-    radial-gradient(circle at 30% 35%, rgba(0, 150, 255, 0.1), transparent 50%),
-    radial-gradient(circle at 70% 35%, rgba(255, 130, 0, 0.1), transparent 50%),
-    linear-gradient(180deg, #f7f9fc 0%, #e6ebf2 100%);
+    radial-gradient(circle at 30% 35%, rgba(0, 150, 255, 0.06), transparent 50%),
+    radial-gradient(circle at 70% 35%, rgba(255, 130, 0, 0.06), transparent 50%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
   --stage-bg: var(--body-bg);
-  --hud-bg: rgba(255, 255, 255, 0.96);
+  --hud-bg: rgba(220, 229, 240, 0.96);
   --dock-bg: rgba(250, 252, 255, 0.98);
-  --stat-col-bg: rgba(242, 246, 252, 0.85);
-  --header-card-bg: linear-gradient(180deg, #ffffff 0%, #eef2f8 100%);
-  --stats-card-bg: linear-gradient(180deg, #ffffff 0%, #f4f7fb 100%);
-  --arena-bg: linear-gradient(180deg, #dce5f0 0%, #cbd6e4 58%, #d5dce6 60%, #c2cbd8 100%);
-  --sub-list-bg: rgba(230, 236, 245, 0.75);
-  --sub-row-bg: rgba(255, 255, 255, 0.85);
+  --stat-col-bg: rgba(255, 255, 255, 0.96);
+  --header-card-bg: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  --stats-card-bg: linear-gradient(180deg, #ffffff 0%, #fafcfe 100%);
+  --arena-bg: linear-gradient(180deg, #ffffff 0%, #f9fbfd 58%, #f4f7fb 60%, #f0f4f8 100%);
+  --sub-list-bg: #f8fafc;
+  --sub-row-bg: #ffffff;
   --control-bg: #ffffff;
   --control-border: rgba(15, 23, 42, 0.22);
   --tile-bg: linear-gradient(135deg, #ffffff 0%, #eef3f9 100%);
@@ -99,7 +99,7 @@ html[data-theme="light"] {
   --purchase-box-text: #ffffff;
   --secondary-box-bg: #dfe6f0;
   --secondary-box-text: #11161f;
-  --market-strip-bg: #e6ecf5;
+  --market-strip-bg: #f1f5f9;
   --row-divider: rgba(15, 23, 42, 0.12);
   --panel-border: rgba(15, 23, 42, 0.14);
   --text-main: #111622;
@@ -126,9 +126,9 @@ html[data-theme="light"] {
   --rarity-legendary: #d97706;
   --rarity-dependable: #0284c7;
   --watermark-color: rgba(15, 23, 42, 0.07);
-  --topbar-bg: rgba(255, 255, 255, 0.96);
-  --topbar-inset: #e3e9f1;
-  --topbar-hover: #f3f6fb;
+  --topbar-bg: rgba(220, 229, 240, 0.96);
+  --topbar-inset: #ffffff;
+  --topbar-hover: #eef3f9;
   --topbar-border-subtle: rgba(15, 23, 42, 0.13);
   --topbar-border-strong: rgba(15, 23, 42, 0.28);
   --topbar-lime: #ccf600;

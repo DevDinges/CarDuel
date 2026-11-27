@@ -17,7 +17,9 @@ function openVehicleView(carId, engineId = null, gearboxId = null) {
   vehicleViewEngineId = engineId || (prevCarId === base.id && vehicleViewEngineId ? vehicleViewEngineId : base.defaultEngineId);
   vehicleViewGearboxId =
     gearboxId || (prevCarId === base.id && prevEngineId === vehicleViewEngineId ? vehicleViewGearboxId : null);
-  vehicleViewPaintIdx = 0;
+  const paints = getPaintsForCar(base.id);
+  const defaultPaintIdx = paints.findIndex((p) => p && p.isDefault);
+  vehicleViewPaintIdx = defaultPaintIdx >= 0 ? defaultPaintIdx : 0;
 
   const gallery = getCarGallery(getCarById(base.id, vehicleViewEngineId, vehicleViewGearboxId));
   const fsIdx = gallery.findIndex((g) => g.src === base.image);
@@ -507,6 +509,15 @@ function renderVehicleView() {
     });
     paintTrack.addEventListener('scroll', syncPaintScrollBtns, { passive: true });
     requestAnimationFrame(syncPaintScrollBtns);
+  }
+  if (paintTrack) {
+    const activeSwatch = paintTrack.querySelector(`[data-paint-idx="${vehicleViewPaintIdx}"]`);
+    if (activeSwatch) {
+      requestAnimationFrame(() => {
+        activeSwatch.scrollIntoView({ behavior: 'auto', block: 'nearest', inline: 'nearest' });
+        syncPaintScrollBtns();
+      });
+    }
   }
 
   document.querySelectorAll('#vehicle-paint-swatches [data-paint-idx]').forEach((btn) => {

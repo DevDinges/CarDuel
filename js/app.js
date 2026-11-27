@@ -671,6 +671,9 @@ function initHudUtilityMenus() {
       const nextLang = item.getAttribute('data-lang-choice');
       if (!nextLang || nextLang === currentLang) return;
       currentLang = nextLang;
+      try {
+        localStorage.setItem(LANG_STORAGE_KEY, nextLang);
+      } catch {}
       updateArena();
     });
   });
@@ -779,7 +782,7 @@ function updateWeightEqualizerVisuals() {
     }
     if (dot) dot.style.left = `${pct}%`;
     if (rangeEl) rangeEl.value = String(level);
-    if (multEl) multEl.textContent = `${mult.toFixed(2).replace(/\.00$/, '.0').replace(/0$/, '')}×`;
+    if (multEl) multEl.textContent = `${Number(mult.toFixed(2))}×`;
     row.classList.toggle('is-boosted', level > 3);
     row.classList.toggle('is-reduced', level < 3);
   });
@@ -801,7 +804,7 @@ function renderWeightEqualizer() {
     const pct = ((level - 1) / 4) * 100;
     const seg = getEqFillSegment(level);
     const mult = WEIGHT_LEVEL_MULTIPLIERS[level] || 1.0;
-    const multText = `${mult.toFixed(2).replace(/\.00$/, '.0').replace(/0$/, '')}×`;
+    const multText = `${Number(mult.toFixed(2))}×`;
     const stateCls = level > 3 ? 'is-boosted' : level < 3 ? 'is-reduced' : '';
     const shortName = p.label[currentLang] || p.label.en;
     const iconSvg = PILLAR_ICONS[p.id] || '';
